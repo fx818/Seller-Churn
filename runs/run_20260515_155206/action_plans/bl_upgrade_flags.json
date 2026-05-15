@@ -1,0 +1,23 @@
+{
+  "generated_at": "2026-05-15T10:22:07.164779+00:00",
+  "total_eligible": 0,
+  "mode_a_count": 0,
+  "mode_b_count": 0,
+  "flags": {
+    "236": {
+      "glid": "236",
+      "company": "Astrra Chemicals",
+      "city": "Chennai",
+      "eligible": false,
+      "mode": null,
+      "upgrade_message_hi": "",
+      "upgrade_message_en": "",
+      "gifted_lead": null,
+      "bl_skill_data": {
+        "eligible": false,
+        "mode": null,
+        "reason": "churn_score=50.0, days_to_renewal=999 — no trigger criteria met"
+      }
+    }
+  }
+}

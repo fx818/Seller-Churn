@@ -1,0 +1,29 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 21474346,
+        "hotlead_date": "2026-05-13",
+        "hotlead_id": 14379674,
+        "hotlead_type_id": 1117134293,
+        "data_type": "PUA",
+        "activity": "Premium Activity - Online",
+        "activity_id": 4685
+      },
+      {
+        "gluser_id": 21474346,
+        "hotlead_date": "2026-05-10",
+        "hotlead_id": 14379674,
+        "hotlead_type_id": 1115845440,
+        "data_type": "ENQR",
+        "activity": "Premium Activity - Enquiry Received",
+        "activity_id": 10004
+      }
+    ],
+    "total": 2,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

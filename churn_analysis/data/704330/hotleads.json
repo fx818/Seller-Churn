@@ -1,0 +1,83 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 704330,
+        "hotlead_date": "2026-03-20",
+        "hotlead_id": 9885637,
+        "hotlead_type_id": 1096172062,
+        "data_type": "PNCHF",
+        "activity": "E-nach",
+        "activity_id": 0
+      },
+      {
+        "gluser_id": 704330,
+        "hotlead_date": "2026-03-12",
+        "hotlead_id": 9885637,
+        "hotlead_type_id": 1092817712,
+        "data_type": "PUA",
+        "activity": "Premium Activity - Online",
+        "activity_id": 1874
+      },
+      {
+        "gluser_id": 704330,
+        "hotlead_date": "2026-01-17",
+        "hotlead_id": 9885637,
+        "hotlead_type_id": 1069538050,
+        "data_type": "PUA",
+        "activity": "Premium Activity - Online",
+        "activity_id": 2062
+      },
+      {
+        "gluser_id": 704330,
+        "hotlead_date": "2025-12-31",
+        "hotlead_id": 9885637,
+        "hotlead_type_id": 1062473839,
+        "data_type": "UA",
+        "activity": "Winback Pool NACH details",
+        "activity_id": 4050
+      },
+      {
+        "gluser_id": 704330,
+        "hotlead_date": "2025-11-28",
+        "hotlead_id": 9885637,
+        "hotlead_type_id": 1048348270,
+        "data_type": "PUT",
+        "activity": "Power User Top3",
+        "activity_id": 10006
+      },
+      {
+        "gluser_id": 704330,
+        "hotlead_date": "2025-11-18",
+        "hotlead_id": 9885637,
+        "hotlead_type_id": 1044326233,
+        "data_type": "PIM",
+        "activity": "Payment Interest - MDC",
+        "activity_id": 4296
+      },
+      {
+        "gluser_id": 704330,
+        "hotlead_date": "2025-11-13",
+        "hotlead_id": 9885637,
+        "hotlead_type_id": 1042185431,
+        "data_type": "UA",
+        "activity": "Winback Pool NACH details",
+        "activity_id": 4050
+      },
+      {
+        "gluser_id": 704330,
+        "hotlead_date": "2025-06-12",
+        "hotlead_id": 9885637,
+        "hotlead_type_id": 974493082,
+        "data_type": "PNSR",
+        "activity": "Premium Activity - PNS Call Received",
+        "activity_id": 10001
+      }
+    ],
+    "total": 8,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

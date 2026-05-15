@@ -1,0 +1,29 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 9149400,
+        "hotlead_date": "2026-02-12",
+        "hotlead_id": 11411375,
+        "hotlead_type_id": 1081087840,
+        "data_type": "PANF",
+        "activity": "E-nach",
+        "activity_id": 0
+      },
+      {
+        "gluser_id": 9149400,
+        "hotlead_date": "2026-02-06",
+        "hotlead_id": 11411375,
+        "hotlead_type_id": 1078595651,
+        "data_type": "UA",
+        "activity": "Show Latest BL Page",
+        "activity_id": 574
+      }
+    ],
+    "total": 2,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

@@ -1,0 +1,56 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 264930469,
+        "hotlead_date": "2026-04-15",
+        "hotlead_id": 14192384,
+        "hotlead_type_id": 1106952396,
+        "data_type": "PUA",
+        "activity": "Premium Activity - Online",
+        "activity_id": 1874
+      },
+      {
+        "gluser_id": 264930469,
+        "hotlead_date": "2026-04-03",
+        "hotlead_id": 14192384,
+        "hotlead_type_id": 1102310419,
+        "data_type": "PNSR",
+        "activity": "Premium Activity - PNS Call Received",
+        "activity_id": 10001
+      },
+      {
+        "gluser_id": 264930469,
+        "hotlead_date": "2026-02-24",
+        "hotlead_id": 14192384,
+        "hotlead_type_id": 1086531793,
+        "data_type": "TF",
+        "activity": "Toll Free",
+        "activity_id": 4295
+      },
+      {
+        "gluser_id": 264930469,
+        "hotlead_date": "2026-02-21",
+        "hotlead_id": 14192384,
+        "hotlead_type_id": 1085051170,
+        "data_type": "NUR",
+        "activity": "HL From DHL(soi)",
+        "activity_id": 2157
+      },
+      {
+        "gluser_id": 264930469,
+        "hotlead_date": "2026-02-20",
+        "hotlead_id": 14192384,
+        "hotlead_type_id": 1084882926,
+        "data_type": "PUA",
+        "activity": "Premium Activity - Online",
+        "activity_id": 1874
+      }
+    ],
+    "total": 5,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

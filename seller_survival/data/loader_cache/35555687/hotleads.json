@@ -1,0 +1,29 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 35555687,
+        "hotlead_date": "2026-05-13",
+        "hotlead_id": 9624677,
+        "hotlead_type_id": 1116879748,
+        "data_type": "PIM",
+        "activity": "Payment Interest - MDC",
+        "activity_id": 4342
+      },
+      {
+        "gluser_id": 35555687,
+        "hotlead_date": "2026-05-06",
+        "hotlead_id": 9624677,
+        "hotlead_type_id": 1114569683,
+        "data_type": "ENQR",
+        "activity": "Premium Activity - Enquiry Received",
+        "activity_id": 10004
+      }
+    ],
+    "total": 2,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

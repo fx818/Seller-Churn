@@ -1,0 +1,56 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 57642726,
+        "hotlead_date": "2026-02-14",
+        "hotlead_id": 11138213,
+        "hotlead_type_id": 1082353901,
+        "data_type": "PIM",
+        "activity": "Payment Interest - MDC",
+        "activity_id": 2368
+      },
+      {
+        "gluser_id": 57642726,
+        "hotlead_date": "2026-02-02",
+        "hotlead_id": 11138213,
+        "hotlead_type_id": 1076703872,
+        "data_type": "PIM",
+        "activity": "Payment Interest - MDC",
+        "activity_id": 2352
+      },
+      {
+        "gluser_id": 57642726,
+        "hotlead_date": "2025-12-14",
+        "hotlead_id": 11138213,
+        "hotlead_type_id": 1055338799,
+        "data_type": "PNSM",
+        "activity": "Premium Activity - PNS Call Missed",
+        "activity_id": 10002
+      },
+      {
+        "gluser_id": 57642726,
+        "hotlead_date": "2025-10-15",
+        "hotlead_id": 11138213,
+        "hotlead_type_id": 1030869926,
+        "data_type": "ENQR",
+        "activity": "Premium Activity - Enquiry Received",
+        "activity_id": 10004
+      },
+      {
+        "gluser_id": 57642726,
+        "hotlead_date": "2025-08-24",
+        "hotlead_id": 11138213,
+        "hotlead_type_id": 1007658072,
+        "data_type": "PNSM",
+        "activity": "Premium Activity - PNS Call Missed",
+        "activity_id": 10002
+      }
+    ],
+    "total": 5,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

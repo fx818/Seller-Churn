@@ -1,0 +1,587 @@
+{
+  "status": 200,
+  "data": {
+    "gluser_id": 265062992,
+    "event_count": 8,
+    "events": [
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.google.com/",
+        "glb_city": "Pimpri-Chinchwad",
+        "glusr_id": 265062992,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260415131258",
+        "glb_state": "MH",
+        "remote_ip": "103.164.241.157",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "www.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /upstec/?srsltid=AfmBOorDrRniZLNVrERpPEsGSFGVjBfwFFeZ6fyP6lqX0JxHmX7Wtiw_ HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 18.626313,
+        "glb_longitude": 73.805498,
+        "response_size": 42887,
+        "response_time": 3221,
+        "fk_activity_id": 527,
+        "ga_utma_cookie": "GA1.1.1017656683.1751792626",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604151312"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 265062992,
+        "catalog_owner_glusr_id": 2929295,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "g%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 699,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.indiamart.com/upstec/?srsltid=AfmBOorDrRniZLNVrERpPEsGSFGVjBfwFFeZ6fyP6lqX0JxHmX7Wtiw_",
+        "glb_city": "Pimpri-Chinchwad",
+        "glusr_id": 265062992,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260415131300",
+        "glb_state": "MH",
+        "remote_ip": "103.164.241.157",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "www.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /api/ajax-services/glb_city/?_ts=1776238981780 HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 18.626313,
+        "glb_longitude": 73.805498,
+        "response_size": 121,
+        "response_time": 14573,
+        "fk_activity_id": 527,
+        "ga_utma_cookie": "GA1.1.1017656683.1751792626",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604151313"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Page",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 265062992,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "g%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.indiamart.com/upstec/?srsltid=AfmBOorDrRniZLNVrERpPEsGSFGVjBfwFFeZ6fyP6lqX0JxHmX7Wtiw_",
+        "glb_city": "Pimpri-Chinchwad",
+        "glusr_id": 265062992,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260415131302",
+        "glb_state": "MH",
+        "remote_ip": "103.164.241.157",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "www.indiamart.com",
+        "http_status": 200,
+        "request_url": "POST /prod-fcp/files/review_rating.php HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 18.626313,
+        "glb_longitude": 73.805498,
+        "response_size": 1203,
+        "response_time": 27380,
+        "fk_activity_id": 4123,
+        "ga_utma_cookie": "GA1.1.1017656683.1751792626",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604151313"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Ratings and Reviews on Catalog",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 265062992,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "g%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.google.com/",
+        "glb_city": "Pimpri-Chinchwad",
+        "glusr_id": 265062992,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260415140956",
+        "glb_state": "MH",
+        "remote_ip": "103.164.241.157",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "www.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /company/104659788/?srsltid=AfmBOoqlEF-1Eq7pMPWeH0XnC5WgqEBgzkXRA294MlUzuSvFwBcRqDk6 HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 18.626313,
+        "glb_longitude": 73.805498,
+        "response_size": 37586,
+        "response_time": 3375,
+        "fk_activity_id": 527,
+        "ga_utma_cookie": "GA1.1.1017656683.1751792626",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604151409"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Page",
+        "owner_gl_country": null,
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 265062992,
+        "catalog_owner_glusr_id": 104659788,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "g%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 1899,
+        "owner_glusr_usr_listing_status": null
+      },
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 600,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.google.com/",
+        "glb_city": "Pimpri-Chinchwad",
+        "glusr_id": 265062992,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            21558
+          ]
+        },
+        "datevalue": "20260415141034",
+        "glb_state": "MH",
+        "remote_ip": "103.164.241.157",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "www.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /proddetail/v-guard-vg-400-for-1-5-ton-a-c-170v-to-270v-grey-2858858924397.html HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 18.626313,
+        "glb_longitude": 73.805498,
+        "response_size": 7819,
+        "response_time": 60102,
+        "fk_activity_id": 438,
+        "ga_utma_cookie": "GA1.1.1017656683.1751792626",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604151410"
+        },
+        "seller_city_id": 73797,
+        "fk_glcat_grp_id": 122,
+        "log_status_flag": 35,
+        "product_disp_id": 2858858924397,
+        "fk_display_title": "Show Product Details Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 265062992,
+        "catalog_owner_glusr_id": 265062992,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "g%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 1199,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.indiamart.com/proddetail/v-guard-vg-400-for-1-5-ton-a-c-170v-to-270v-grey-2858858924397.html",
+        "glb_city": "Pimpri-Chinchwad",
+        "glusr_id": 265062992,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260415141037",
+        "glb_state": "MH",
+        "remote_ip": "103.164.241.157",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "www.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /api/ajax-services/caps_service/?displayid=2858858924397&count=20&cityid=70630&mcatid=21558&webAddLoc=www.indiamart.com&glidBuyer=265062992 HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 18.626313,
+        "glb_longitude": 73.805498,
+        "response_size": 5456,
+        "response_time": 179079,
+        "fk_activity_id": 527,
+        "ga_utma_cookie": "GA1.1.1017656683.1751792626",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604151410"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Page",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 265062992,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "g%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.indiamart.com/proddetail/v-guard-vg-400-for-1-5-ton-a-c-170v-to-270v-grey-2858858924397.html",
+        "glb_city": "Pimpri-Chinchwad",
+        "glusr_id": 265062992,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260415141037",
+        "glb_state": "MH",
+        "remote_ip": "103.164.241.157",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "www.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /api/ajax-services/glb_city/?_ts=1776242439051 HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 18.626313,
+        "glb_longitude": 73.805498,
+        "response_size": 120,
+        "response_time": 19273,
+        "fk_activity_id": 527,
+        "ga_utma_cookie": "GA1.1.1017656683.1751792626",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604151410"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Page",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 265062992,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "g%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "LEAP",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 265062992,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260415144018",
+        "glb_state": "-",
+        "remote_ip": "-",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "LEAP",
+        "http_status": 0,
+        "request_url": "-",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 4444,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604151440"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 1,
+        "product_disp_id": null,
+        "fk_display_title": "Whatsapp-Outbound",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 0,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "-",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      }
+    ],
+    "updated_at": "2026-05-14T18:43:00.307668Z"
+  },
+  "error": null
+}

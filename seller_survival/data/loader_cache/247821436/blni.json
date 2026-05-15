@@ -1,0 +1,21 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 247821436,
+        "event_date": "2026-02-24",
+        "offer_id": 139492586359,
+        "mcat_id": 40761,
+        "reason_code": 15,
+        "reason_text": "Wrong Result",
+        "comment": null,
+        "module_id": "FENQ"
+      }
+    ],
+    "total": 1,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

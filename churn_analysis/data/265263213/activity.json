@@ -1,0 +1,443 @@
+{
+  "status": 200,
+  "data": {
+    "gluser_id": 265263213,
+    "event_count": 6,
+    "events": [
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.indiamart.com/jagdambapowdercoating/profile.html?srsltid=AfmBOoo5vJmDBo6SV1Xn3V8lB_-YodGl-r1RFFJYWZhZWHPZU57OVNIB",
+        "glb_city": "Mumbai",
+        "glusr_id": 265263213,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260423001330",
+        "glb_state": "MH",
+        "remote_ip": "106.219.52.122",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "www.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /api/ajax-services/glb_city/?_ts=1776883410753 HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 18.958193,
+        "glb_longitude": 72.832073,
+        "response_size": 113,
+        "response_time": 15022,
+        "fk_activity_id": 527,
+        "ga_utma_cookie": "GA1.1.590402624.1746367743",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604230013"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Page",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 265263213,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "e%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.google.com/",
+        "glb_city": "Mumbai",
+        "glusr_id": 265263213,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260423001330",
+        "glb_state": "MH",
+        "remote_ip": "106.219.52.122",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "www.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /jagdambapowdercoating/profile.html?srsltid=AfmBOoo5vJmDBo6SV1Xn3V8lB_-YodGl-r1RFFJYWZhZWHPZU57OVNIB HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 18.958193,
+        "glb_longitude": 72.832073,
+        "response_size": 35879,
+        "response_time": 3627,
+        "fk_activity_id": 658,
+        "ga_utma_cookie": "GA1.1.590402624.1746367743",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604230013"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Inside Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 265263213,
+        "catalog_owner_glusr_id": 13828122,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "e%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 1209,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.indiamart.com/jagdambapowdercoating/profile.html?srsltid=AfmBOoo5vJmDBo6SV1Xn3V8lB_-YodGl-r1RFFJYWZhZWHPZU57OVNIB",
+        "glb_city": "Mumbai",
+        "glusr_id": 265263213,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260423001334",
+        "glb_state": "MH",
+        "remote_ip": "106.219.52.122",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "www.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /jagdambapowdercoating/ HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 18.958193,
+        "glb_longitude": 72.832073,
+        "response_size": 38997,
+        "response_time": 1690,
+        "fk_activity_id": 527,
+        "ga_utma_cookie": "GA1.1.590402624.1746367743",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604230013"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 265263213,
+        "catalog_owner_glusr_id": 13828122,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "e%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 1209,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.google.com/",
+        "glb_city": "Mumbai",
+        "glusr_id": 265263213,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260423001508",
+        "glb_state": "MH",
+        "remote_ip": "106.219.52.122",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "www.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /jagdambapowdercoating/profile.html?srsltid=AfmBOoo5vJmDBo6SV1Xn3V8lB_-YodGl-r1RFFJYWZhZWHPZU57OVNIB HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 18.958193,
+        "glb_longitude": 72.832073,
+        "response_size": 35850,
+        "response_time": 1691,
+        "fk_activity_id": 658,
+        "ga_utma_cookie": "GA1.1.590402624.1746367743",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604230015"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Inside Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 265263213,
+        "catalog_owner_glusr_id": 13828122,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "e%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 1209,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.google.com/",
+        "glb_city": "Mumbai",
+        "glusr_id": 265263213,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            8775
+          ]
+        },
+        "datevalue": "20260508161655",
+        "glb_state": "MH",
+        "remote_ip": "106.192.63.29",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Mobile Safari/537.36",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /dolpowersystems/about-us.html HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 18.958193,
+        "glb_longitude": 72.832073,
+        "response_size": 20523,
+        "response_time": 1879,
+        "fk_activity_id": 660,
+        "ga_utma_cookie": "GA1.1.252738487.1723131769",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605081616"
+        },
+        "seller_city_id": 70627,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Inside Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 265263213,
+        "catalog_owner_glusr_id": 4106108,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 1259,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 544,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.google.com/",
+        "glb_city": "Mumbai",
+        "glusr_id": 265263213,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            476
+          ]
+        },
+        "datevalue": "20260509170211",
+        "glb_state": "MH",
+        "remote_ip": "27.60.44.155",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Mobile Safari/537.36",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /city/mumbai/rectifiers.html HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 18.958193,
+        "glb_longitude": 72.832073,
+        "response_size": 25302,
+        "response_time": 150505,
+        "fk_activity_id": 826,
+        "ga_utma_cookie": "GA1.1.252738487.1723131769",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605091702"
+        },
+        "seller_city_id": 70624,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "City Impcat Page",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 265263213,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            70624
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[Mumbai]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      }
+    ],
+    "updated_at": "2026-05-14T18:44:51.867768Z"
+  },
+  "error": null
+}

@@ -1,0 +1,1163 @@
+{
+  "status": 200,
+  "data": {
+    "gluser_id": 35856414,
+    "event_count": 16,
+    "events": [
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.google.com/",
+        "glb_city": "Madurai",
+        "glusr_id": 35856414,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            182246
+          ]
+        },
+        "datevalue": "20260417160138",
+        "glb_state": "TN",
+        "remote_ip": "106.51.26.41",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Mobile Safari/537.36",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /badri-foods-product/aboutus.html HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 9.925201,
+        "glb_longitude": 78.119775,
+        "response_size": 17913,
+        "response_time": 148658,
+        "fk_activity_id": 660,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604171601"
+        },
+        "seller_city_id": 70630,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Inside Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 35856414,
+        "catalog_owner_glusr_id": 38720398,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 1239,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 560,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.google.com/",
+        "glb_city": "Chennai",
+        "glusr_id": 35856414,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            18682
+          ]
+        },
+        "datevalue": "20260417182905",
+        "glb_state": "TN",
+        "remote_ip": "27.61.54.50",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Mobile Safari/537.36",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /city/madurai/stand-up-pouch.html HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 13.084301,
+        "glb_longitude": 80.270462,
+        "response_size": 22593,
+        "response_time": 1449,
+        "fk_activity_id": 826,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604171829"
+        },
+        "seller_city_id": 70711,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "City Impcat Page",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 35856414,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            70711
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[Madurai]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 560,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/city/madurai/stand-up-pouch.html",
+        "glb_city": "Chennai",
+        "glusr_id": 35856414,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            18682
+          ]
+        },
+        "datevalue": "20260417182919",
+        "glb_state": "TN",
+        "remote_ip": "27.61.54.50",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Mobile Safari/537.36",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /proddetail/zipper-stand-up-pouch-9847451462.html HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 13.084301,
+        "glb_longitude": 80.270462,
+        "response_size": 16116,
+        "response_time": 1379,
+        "fk_activity_id": 559,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604171829"
+        },
+        "seller_city_id": 70472,
+        "fk_glcat_grp_id": 30,
+        "log_status_flag": 35,
+        "product_disp_id": 9847451462,
+        "fk_display_title": "Show Product Details Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 35856414,
+        "catalog_owner_glusr_id": 2107458,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 199,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/proddetail/zipper-stand-up-pouch-9847451462.html",
+        "glb_city": "Chennai",
+        "glusr_id": 35856414,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260417182920",
+        "glb_state": "TN",
+        "remote_ip": "27.61.54.50",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Mobile Safari/537.36",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /ajaxrequest/proddetail/widgets/relatedproducts?MCAT_ID=18682&city=&prod_count=20&ecomflag=&smp=9847451462&glid=35856414 HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 13.084301,
+        "glb_longitude": 80.270462,
+        "response_size": 4216,
+        "response_time": 34454,
+        "fk_activity_id": 4746,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604171829"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Related Products",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 35856414,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 560,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.google.com/",
+        "glb_city": "Chennai",
+        "glusr_id": 35856414,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            18682
+          ]
+        },
+        "datevalue": "20260417182924",
+        "glb_state": "TN",
+        "remote_ip": "27.61.54.50",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Mobile Safari/537.36",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /city/madurai/stand-up-pouch.html HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 13.084301,
+        "glb_longitude": 80.270462,
+        "response_size": 22604,
+        "response_time": 310,
+        "fk_activity_id": 826,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604171829"
+        },
+        "seller_city_id": 70711,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "City Impcat Page",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 35856414,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            70711
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[Madurai]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/proddetail/kraft-paper-stand-up-pouch-with-window-10771491188.html",
+        "glb_city": "Chennai",
+        "glusr_id": 35856414,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260417182928",
+        "glb_state": "TN",
+        "remote_ip": "27.61.54.50",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Mobile Safari/537.36",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /ajaxrequest/proddetail/widgets/relatedproducts?MCAT_ID=18682&city=&prod_count=20&ecomflag=&smp=10771491188&glid=35856414 HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 13.084301,
+        "glb_longitude": 80.270462,
+        "response_size": 3324,
+        "response_time": 33935,
+        "fk_activity_id": 4746,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604171829"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Related Products",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 35856414,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 560,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/city/madurai/stand-up-pouch.html",
+        "glb_city": "Chennai",
+        "glusr_id": 35856414,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            18682
+          ]
+        },
+        "datevalue": "20260417182928",
+        "glb_state": "TN",
+        "remote_ip": "27.61.54.50",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Mobile Safari/537.36",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /proddetail/kraft-paper-stand-up-pouch-with-window-10771491188.html HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 13.084301,
+        "glb_longitude": 80.270462,
+        "response_size": 16790,
+        "response_time": 1422,
+        "fk_activity_id": 559,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604171829"
+        },
+        "seller_city_id": 70701,
+        "fk_glcat_grp_id": 30,
+        "log_status_flag": 35,
+        "product_disp_id": 10771491188,
+        "fk_display_title": "Show Product Details Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 35856414,
+        "catalog_owner_glusr_id": 9732825,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 199,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/",
+        "glb_city": "Chennai",
+        "glusr_id": 35856414,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260417184616",
+        "glb_state": "TN",
+        "remote_ip": "27.61.50.50",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Mobile Safari/537.36",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET / HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 13.084301,
+        "glb_longitude": 80.270462,
+        "response_size": 59549,
+        "response_time": 12850,
+        "fk_activity_id": 594,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604171846"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show IM Mobile Home Page",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 35856414,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/",
+        "glb_city": "Coimbatore",
+        "glusr_id": 35856414,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260417215605",
+        "glb_state": "TN",
+        "remote_ip": "223.185.26.184",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Mobile Safari/537.36",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET / HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 10.997369,
+        "glb_longitude": 76.958888,
+        "response_size": 59465,
+        "response_time": 401,
+        "fk_activity_id": 594,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604172156"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show IM Mobile Home Page",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 35856414,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 3,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.google.com/",
+        "glb_city": "Madurai",
+        "glusr_id": 35856414,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            35478
+          ]
+        },
+        "datevalue": "20260419181300",
+        "glb_state": "TN",
+        "remote_ip": "106.51.24.204",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Mobile Safari/537.36",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /impcat/potassium-sorbate.html HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 9.925201,
+        "glb_longitude": 78.119775,
+        "response_size": 23183,
+        "response_time": 1399,
+        "fk_activity_id": 548,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604191813"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show Mcat Page",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 35856414,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 3,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/impcat/potassium-sorbate.html",
+        "glb_city": "Madurai",
+        "glusr_id": 35856414,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            35478
+          ]
+        },
+        "datevalue": "20260419181310",
+        "glb_state": "TN",
+        "remote_ip": "106.51.24.204",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Mobile Safari/537.36",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /proddetail/potassium-sorbate-food-grade-2851306893548.html HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 9.925201,
+        "glb_longitude": 78.119775,
+        "response_size": 16028,
+        "response_time": 59535,
+        "fk_activity_id": 559,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604191813"
+        },
+        "seller_city_id": 70630,
+        "fk_glcat_grp_id": 16,
+        "log_status_flag": 35,
+        "product_disp_id": 2851306893548,
+        "fk_display_title": "Show Product Details Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 35856414,
+        "catalog_owner_glusr_id": 2807452,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 199,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/proddetail/potassium-sorbate-food-grade-2851306893548.html",
+        "glb_city": "Madurai",
+        "glusr_id": 35856414,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260419181311",
+        "glb_state": "TN",
+        "remote_ip": "106.51.24.204",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Mobile Safari/537.36",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /ajaxrequest/proddetail/widgets/relatedproducts?MCAT_ID=35478&city=&prod_count=20&ecomflag=&smp=2851306893548&glid=35856414 HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 9.925201,
+        "glb_longitude": 78.119775,
+        "response_size": 2643,
+        "response_time": 19042,
+        "fk_activity_id": 4746,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604191813"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Related Products",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 35856414,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 3,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.google.com/",
+        "glb_city": "Madurai",
+        "glusr_id": 35856414,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            35478
+          ]
+        },
+        "datevalue": "20260419181312",
+        "glb_state": "TN",
+        "remote_ip": "106.51.24.204",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Mobile Safari/537.36",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /impcat/potassium-sorbate.html HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 9.925201,
+        "glb_longitude": 78.119775,
+        "response_size": 23234,
+        "response_time": 276,
+        "fk_activity_id": 548,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604191813"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show Mcat Page",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 35856414,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.google.com/",
+        "glb_city": "Madurai",
+        "glusr_id": 35856414,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            1441
+          ]
+        },
+        "datevalue": "20260426191058",
+        "glb_state": "TN",
+        "remote_ip": "202.53.6.70",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Mobile Safari/537.36",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /nataraj-co-chennai/aboutus.html HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 9.925201,
+        "glb_longitude": 78.119775,
+        "response_size": 19763,
+        "response_time": 1894,
+        "fk_activity_id": 660,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604261910"
+        },
+        "seller_city_id": 70711,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Inside Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 35856414,
+        "catalog_owner_glusr_id": 567067,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 1199,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.google.com/",
+        "glb_city": "Chennai",
+        "glusr_id": 35856414,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            1441
+          ]
+        },
+        "datevalue": "20260426203451",
+        "glb_state": "TN",
+        "remote_ip": "106.195.36.250",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Mobile Safari/537.36",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /nataraj-co-chennai/aboutus.html HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 13.084301,
+        "glb_longitude": 80.270462,
+        "response_size": 18147,
+        "response_time": 1590,
+        "fk_activity_id": 660,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604262034"
+        },
+        "seller_city_id": 70711,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Inside Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 35856414,
+        "catalog_owner_glusr_id": 567067,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 1199,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.google.com/",
+        "glb_city": "Madurai",
+        "glusr_id": 35856414,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            444090
+          ]
+        },
+        "datevalue": "20260430005642",
+        "glb_state": "TN",
+        "remote_ip": "106.51.25.46",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Mobile Safari/537.36",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /reeya-trendz/profile.html HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 9.925201,
+        "glb_longitude": 78.119775,
+        "response_size": 25276,
+        "response_time": 193696,
+        "fk_activity_id": 660,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604300056"
+        },
+        "seller_city_id": 70532,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Inside Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 35856414,
+        "catalog_owner_glusr_id": 28852683,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 1199,
+        "owner_glusr_usr_listing_status": "LST"
+      }
+    ],
+    "updated_at": "2026-05-14T19:30:55.286338Z"
+  },
+  "error": null
+}

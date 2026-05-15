@@ -1,0 +1,61 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 193419231,
+        "event_date": "2026-04-04",
+        "offer_id": 141889928385,
+        "mcat_id": 10527,
+        "reason_code": 3,
+        "reason_text": "Specification Mismatch",
+        "comment": null,
+        "module_id": "FENQ"
+      },
+      {
+        "gluser_id": 193419231,
+        "event_date": "2026-02-12",
+        "offer_id": 138605115113,
+        "mcat_id": 44040,
+        "reason_code": 1,
+        "reason_text": "Wrong Product",
+        "comment": null,
+        "module_id": "IMOB"
+      },
+      {
+        "gluser_id": 193419231,
+        "event_date": "2026-02-12",
+        "offer_id": 138574609946,
+        "mcat_id": 10527,
+        "reason_code": 17,
+        "reason_text": null,
+        "comment": null,
+        "module_id": "FENQ"
+      },
+      {
+        "gluser_id": 193419231,
+        "event_date": "2026-02-12",
+        "offer_id": 138740073552,
+        "mcat_id": 9278,
+        "reason_code": 17,
+        "reason_text": null,
+        "comment": null,
+        "module_id": "IMOB"
+      },
+      {
+        "gluser_id": 193419231,
+        "event_date": "2026-02-12",
+        "offer_id": 138547266052,
+        "mcat_id": 10527,
+        "reason_code": 17,
+        "reason_text": null,
+        "comment": null,
+        "module_id": "ANDROID"
+      }
+    ],
+    "total": 5,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

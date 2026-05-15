@@ -1,0 +1,141 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 231414685,
+        "event_date": "2026-04-20",
+        "offer_id": 142802869546,
+        "mcat_id": 5177,
+        "reason_code": 3,
+        "reason_text": "Specification Mismatch",
+        "comment": null,
+        "module_id": "FLPNS"
+      },
+      {
+        "gluser_id": 231414685,
+        "event_date": "2026-03-09",
+        "offer_id": 140265847313,
+        "mcat_id": 5177,
+        "reason_code": 10,
+        "reason_text": "Specification Missing",
+        "comment": null,
+        "module_id": "MY"
+      },
+      {
+        "gluser_id": 231414685,
+        "event_date": "2026-03-06",
+        "offer_id": 140125511446,
+        "mcat_id": 143886,
+        "reason_code": 3,
+        "reason_text": "Specification Mismatch",
+        "comment": null,
+        "module_id": "FLPNS"
+      },
+      {
+        "gluser_id": 231414685,
+        "event_date": "2026-03-02",
+        "offer_id": 139854457059,
+        "mcat_id": 5177,
+        "reason_code": 3,
+        "reason_text": "Specification Mismatch",
+        "comment": null,
+        "module_id": "FLPNS"
+      },
+      {
+        "gluser_id": 231414685,
+        "event_date": "2026-03-01",
+        "offer_id": 139845848475,
+        "mcat_id": 181340,
+        "reason_code": 3,
+        "reason_text": "Specification Mismatch",
+        "comment": null,
+        "module_id": "FENQ"
+      },
+      {
+        "gluser_id": 231414685,
+        "event_date": "2026-02-27",
+        "offer_id": 139588494346,
+        "mcat_id": 14043,
+        "reason_code": 11,
+        "reason_text": "Retail Lead",
+        "comment": null,
+        "module_id": "ANDWEB"
+      },
+      {
+        "gluser_id": 231414685,
+        "event_date": "2026-02-25",
+        "offer_id": 139521718359,
+        "mcat_id": 143886,
+        "reason_code": 3,
+        "reason_text": "Specification Mismatch",
+        "comment": null,
+        "module_id": "FLPNS"
+      },
+      {
+        "gluser_id": 231414685,
+        "event_date": "2026-02-12",
+        "offer_id": 138741396267,
+        "mcat_id": 5177,
+        "reason_code": 11,
+        "reason_text": "Retail Lead",
+        "comment": null,
+        "module_id": "FENQ"
+      },
+      {
+        "gluser_id": 231414685,
+        "event_date": "2026-02-12",
+        "offer_id": 138784542746,
+        "mcat_id": 14043,
+        "reason_code": 11,
+        "reason_text": "Retail Lead",
+        "comment": null,
+        "module_id": "IMOB"
+      },
+      {
+        "gluser_id": 231414685,
+        "event_date": "2026-02-12",
+        "offer_id": 138758429395,
+        "mcat_id": 181338,
+        "reason_code": 11,
+        "reason_text": "Retail Lead",
+        "comment": null,
+        "module_id": "ANDWEB"
+      },
+      {
+        "gluser_id": 231414685,
+        "event_date": "2026-02-12",
+        "offer_id": 138716794546,
+        "mcat_id": 14043,
+        "reason_code": 17,
+        "reason_text": null,
+        "comment": null,
+        "module_id": "FENQ"
+      },
+      {
+        "gluser_id": 231414685,
+        "event_date": "2026-02-12",
+        "offer_id": 138609234052,
+        "mcat_id": 5177,
+        "reason_code": 3,
+        "reason_text": "Specification Mismatch",
+        "comment": null,
+        "module_id": "FLPNS"
+      },
+      {
+        "gluser_id": 231414685,
+        "event_date": "2026-02-12",
+        "offer_id": 138613137859,
+        "mcat_id": 14043,
+        "reason_code": 3,
+        "reason_text": "Specification Mismatch",
+        "comment": null,
+        "module_id": "IOS"
+      }
+    ],
+    "total": 13,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

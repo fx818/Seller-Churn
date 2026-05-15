@@ -1,0 +1,29 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 264879000,
+        "hotlead_date": "2026-02-20",
+        "hotlead_id": 14188862,
+        "hotlead_type_id": 1084632215,
+        "data_type": "NUR",
+        "activity": "HL From DHL(soi)",
+        "activity_id": 2032
+      },
+      {
+        "gluser_id": 264879000,
+        "hotlead_date": "2026-02-19",
+        "hotlead_id": 14188862,
+        "hotlead_type_id": 1084383516,
+        "data_type": "PUA",
+        "activity": "Premium Activity - Online",
+        "activity_id": 1874
+      }
+    ],
+    "total": 2,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

@@ -1,0 +1,47 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 108983094,
+        "hotlead_date": "2026-02-17",
+        "hotlead_id": 14170027,
+        "hotlead_type_id": 1083248893,
+        "data_type": "PANF",
+        "activity": "E-nach",
+        "activity_id": 0
+      },
+      {
+        "gluser_id": 108983094,
+        "hotlead_date": "2026-02-16",
+        "hotlead_id": 14170027,
+        "hotlead_type_id": 1082964974,
+        "data_type": "PAM",
+        "activity": "Payment Attempt - MDC",
+        "activity_id": 2299
+      },
+      {
+        "gluser_id": 108983094,
+        "hotlead_date": "2026-02-13",
+        "hotlead_id": 14170027,
+        "hotlead_type_id": 1081561636,
+        "data_type": "NUR",
+        "activity": "HL From DHL(soi)",
+        "activity_id": 2157
+      },
+      {
+        "gluser_id": 108983094,
+        "hotlead_date": "2026-02-12",
+        "hotlead_id": 14170027,
+        "hotlead_type_id": 1081399473,
+        "data_type": "UA",
+        "activity": "GST Details",
+        "activity_id": 2158
+      }
+    ],
+    "total": 4,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

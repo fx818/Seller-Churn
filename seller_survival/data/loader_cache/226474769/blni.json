@@ -1,0 +1,51 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 226474769,
+        "event_date": "2026-03-27",
+        "offer_id": 141339951575,
+        "mcat_id": 1098,
+        "reason_code": 11,
+        "reason_text": "Retail Lead",
+        "comment": null,
+        "module_id": "FENQ"
+      },
+      {
+        "gluser_id": 226474769,
+        "event_date": "2026-03-27",
+        "offer_id": 141309274252,
+        "mcat_id": 11469,
+        "reason_code": 11,
+        "reason_text": "Retail Lead",
+        "comment": null,
+        "module_id": "FENQ"
+      },
+      {
+        "gluser_id": 226474769,
+        "event_date": "2026-03-27",
+        "offer_id": 141275025059,
+        "mcat_id": 30049,
+        "reason_code": 11,
+        "reason_text": "Retail Lead",
+        "comment": null,
+        "module_id": "FENQ"
+      },
+      {
+        "gluser_id": 226474769,
+        "event_date": "2026-03-20",
+        "offer_id": 140943414167,
+        "mcat_id": 11398,
+        "reason_code": 11,
+        "reason_text": "Retail Lead",
+        "comment": null,
+        "module_id": "FENQ"
+      }
+    ],
+    "total": 4,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

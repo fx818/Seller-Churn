@@ -1,0 +1,29 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 268100164,
+        "hotlead_date": "2026-04-25",
+        "hotlead_id": 14348624,
+        "hotlead_type_id": 1110695440,
+        "data_type": "PANF",
+        "activity": "E-nach",
+        "activity_id": 0
+      },
+      {
+        "gluser_id": 268100164,
+        "hotlead_date": "2026-04-24",
+        "hotlead_id": 14348624,
+        "hotlead_type_id": 1110577746,
+        "data_type": "PUA",
+        "activity": "Premium Activity - Online",
+        "activity_id": 1528
+      }
+    ],
+    "total": 2,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

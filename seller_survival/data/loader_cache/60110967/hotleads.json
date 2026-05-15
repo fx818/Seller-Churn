@@ -1,0 +1,47 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 60110967,
+        "hotlead_date": "2026-02-23",
+        "hotlead_id": 12973012,
+        "hotlead_type_id": 1085946568,
+        "data_type": "OLP",
+        "activity": "Payment Attempt - BL",
+        "activity_id": 1626
+      },
+      {
+        "gluser_id": 60110967,
+        "hotlead_date": "2026-02-09",
+        "hotlead_id": 12973012,
+        "hotlead_type_id": 1079856598,
+        "data_type": "PIM",
+        "activity": "Payment Interest - MDC",
+        "activity_id": 4342
+      },
+      {
+        "gluser_id": 60110967,
+        "hotlead_date": "2025-09-23",
+        "hotlead_id": 12973012,
+        "hotlead_type_id": 1021572424,
+        "data_type": "UA",
+        "activity": "SOI Click on Sell-on-Indiamart",
+        "activity_id": 2385
+      },
+      {
+        "gluser_id": 60110967,
+        "hotlead_date": "2025-05-29",
+        "hotlead_id": 12973012,
+        "hotlead_type_id": 968579434,
+        "data_type": "UA",
+        "activity": "Who Viewed Your Catalog",
+        "activity_id": 2256
+      }
+    ],
+    "total": 4,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

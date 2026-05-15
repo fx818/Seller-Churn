@@ -1,0 +1,1595 @@
+{
+  "status": 200,
+  "data": {
+    "gluser_id": 82822643,
+    "event_count": 22,
+    "events": [
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": null,
+        "glb_city": "-",
+        "glusr_id": 82822643,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260422143203",
+        "glb_state": "-",
+        "remote_ip": "106.192.134.124",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": null,
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Inline_Banner_View_AndWeb",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 4707,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604221432"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Free_Seller_View_Inline_Banner_AndWeb",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 0,
+        "coordinate_accuracy": 22.773,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "-",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 778,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "android-app://com.google.android.googlequicksearchbox/",
+        "glb_city": "Pune",
+        "glusr_id": 82822643,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            146480
+          ]
+        },
+        "datevalue": "20260502134526",
+        "glb_state": "MH",
+        "remote_ip": "106.195.1.238",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Mobile Safari/537.36",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /proddetail/pu-jaw-coupling-spider-2856753110130.html HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 18.524609,
+        "glb_longitude": 73.878624,
+        "response_size": 14853,
+        "response_time": 1267,
+        "fk_activity_id": 559,
+        "ga_utma_cookie": "GA1.1.746219368.1690464674",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605021345"
+        },
+        "seller_city_id": 70472,
+        "fk_glcat_grp_id": 7,
+        "log_status_flag": 35,
+        "product_disp_id": 2856753110130,
+        "fk_display_title": "Show Product Details Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 82822643,
+        "catalog_owner_glusr_id": 155242623,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 1199,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/proddetail/pu-jaw-coupling-spider-2856753110130.html",
+        "glb_city": "Pune",
+        "glusr_id": 82822643,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260502134528",
+        "glb_state": "MH",
+        "remote_ip": "106.195.1.238",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Mobile Safari/537.36",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /ajaxrequest/pdp/user/Search?s=pu-coupling-spider&source=imob.pdp.search&citydata=Pune&useML=1 HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 18.524609,
+        "glb_longitude": 73.878624,
+        "response_size": 22731,
+        "response_time": 2063,
+        "fk_activity_id": 4743,
+        "ga_utma_cookie": "GA1.1.746219368.1690464674",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605021345"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "PDP SearchRecomm",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 82822643,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/proddetail/pu-jaw-coupling-spider-2856753110130.html",
+        "glb_city": "Pune",
+        "glusr_id": 82822643,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260502134528",
+        "glb_state": "MH",
+        "remote_ip": "106.195.1.238",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Mobile Safari/537.36",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /ajaxrequest/proddetail/widgets/relatedproducts?MCAT_ID=146480&city=&prod_count=20&ecomflag=&smp=2856753110130&glid=82822643 HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 18.524609,
+        "glb_longitude": 73.878624,
+        "response_size": 2079,
+        "response_time": 106935,
+        "fk_activity_id": 4746,
+        "ga_utma_cookie": "GA1.1.746219368.1690464674",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605021345"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Related Products",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 82822643,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/proddetail/pu-jaw-coupling-spider-2856753110130.html",
+        "glb_city": "Pune",
+        "glusr_id": 82822643,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            146480
+          ]
+        },
+        "datevalue": "20260502134534",
+        "glb_state": "MH",
+        "remote_ip": "106.195.1.238",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Mobile Safari/537.36",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "POST /ajaxrequest/identified/call/ HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 18.524609,
+        "glb_longitude": 73.878624,
+        "response_size": 131,
+        "response_time": 23066,
+        "fk_activity_id": 2307,
+        "ga_utma_cookie": "GA1.1.746219368.1690464674",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605021345"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": 2856753110130,
+        "fk_display_title": "Track Click To Call Button Clicked - PWA",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 82822643,
+        "catalog_owner_glusr_id": 155242623,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "PNS",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 82822643,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260502134656",
+        "glb_state": "-",
+        "remote_ip": "-",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "-",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 4372,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605021347"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 0,
+        "product_disp_id": null,
+        "fk_display_title": "-",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 0,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "-",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 841,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "android-app://com.google.android.googlequicksearchbox/",
+        "glb_city": "Pune",
+        "glusr_id": 82822643,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            145239
+          ]
+        },
+        "datevalue": "20260509135410",
+        "glb_state": "MH",
+        "remote_ip": "106.210.208.190",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Mobile Safari/537.36",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /proddetail/screw-flights-25541185762.html HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 18.524609,
+        "glb_longitude": 73.878624,
+        "response_size": 14015,
+        "response_time": 51795,
+        "fk_activity_id": 559,
+        "ga_utma_cookie": "GA1.1.746219368.1690464674",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605091354"
+        },
+        "seller_city_id": 70627,
+        "fk_glcat_grp_id": 34,
+        "log_status_flag": 35,
+        "product_disp_id": 25541185762,
+        "fk_display_title": "Show Product Details Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 82822643,
+        "catalog_owner_glusr_id": 57528869,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 199,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/proddetail/screw-flights-25541185762.html",
+        "glb_city": "Pune",
+        "glusr_id": 82822643,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260509135411",
+        "glb_state": "MH",
+        "remote_ip": "106.210.208.190",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Mobile Safari/537.36",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /ajaxrequest/proddetail/widgets/relatedproducts?MCAT_ID=145239&city=&prod_count=20&ecomflag=&smp=25541185762&glid=82822643 HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 18.524609,
+        "glb_longitude": 73.878624,
+        "response_size": 2634,
+        "response_time": 36571,
+        "fk_activity_id": 4746,
+        "ga_utma_cookie": "GA1.1.746219368.1690464674",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605091354"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Related Products",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 82822643,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/proddetail/screw-flights-25541185762.html",
+        "glb_city": "Pune",
+        "glusr_id": 82822643,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260509135412",
+        "glb_state": "MH",
+        "remote_ip": "106.210.208.190",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Mobile Safari/537.36",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /ajaxrequest/pdp/user/Search?s=screw-flights&source=imob.pdp.search&citydata=Pune&useML=1 HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 18.524609,
+        "glb_longitude": 73.878624,
+        "response_size": 19565,
+        "response_time": 1507,
+        "fk_activity_id": 4743,
+        "ga_utma_cookie": "GA1.1.746219368.1690464674",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605091354"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "PDP SearchRecomm",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 82822643,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/proddetail/screw-flights-25541185762.html",
+        "glb_city": "Pune",
+        "glusr_id": 82822643,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            145239
+          ]
+        },
+        "datevalue": "20260509135423",
+        "glb_state": "MH",
+        "remote_ip": "106.210.208.190",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Mobile Safari/537.36",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "POST /ajaxrequest/identified/call/ HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 18.524609,
+        "glb_longitude": 73.878624,
+        "response_size": 131,
+        "response_time": 22660,
+        "fk_activity_id": 2307,
+        "ga_utma_cookie": "GA1.1.746219368.1690464674",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605091354"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": 25541185762,
+        "fk_display_title": "Track Click To Call Button Clicked - PWA",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 82822643,
+        "catalog_owner_glusr_id": 57528869,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "PNS",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 82822643,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260509135631",
+        "glb_state": "-",
+        "remote_ip": "-",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "-",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 4372,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605091356"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 0,
+        "product_disp_id": null,
+        "fk_display_title": "-",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 0,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "-",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 841,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "android-app://com.google.android.googlequicksearchbox/",
+        "glb_city": "Pune",
+        "glusr_id": 82822643,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            145239
+          ]
+        },
+        "datevalue": "20260509141256",
+        "glb_state": "MH",
+        "remote_ip": "106.210.208.190",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Mobile Safari/537.36",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /proddetail/screw-conveyor-flight-11388854891.html?srsltid=AfmBOoo0RKOVMXv0kTLsfAKOgjwoYUqBDKjV1--76bf8tStzq_3hk_2V HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 18.524609,
+        "glb_longitude": 73.878624,
+        "response_size": 15466,
+        "response_time": 58901,
+        "fk_activity_id": 559,
+        "ga_utma_cookie": "GA1.1.746219368.1690464674",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605091412"
+        },
+        "seller_city_id": 73568,
+        "fk_glcat_grp_id": 34,
+        "log_status_flag": 35,
+        "product_disp_id": 11388854891,
+        "fk_display_title": "Show Product Details Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 82822643,
+        "catalog_owner_glusr_id": 3667317,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 199,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/proddetail/screw-conveyor-flight-11388854891.html?srsltid=AfmBOoo0RKOVMXv0kTLsfAKOgjwoYUqBDKjV1--76bf8tStzq_3hk_2V",
+        "glb_city": "Pune",
+        "glusr_id": 82822643,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260509141257",
+        "glb_state": "MH",
+        "remote_ip": "106.210.208.190",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Mobile Safari/537.36",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /ajaxrequest/proddetail/widgets/relatedproducts?MCAT_ID=145239&city=&prod_count=20&ecomflag=&smp=11388854891&glid=82822643 HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 18.524609,
+        "glb_longitude": 73.878624,
+        "response_size": 2632,
+        "response_time": 121000,
+        "fk_activity_id": 4746,
+        "ga_utma_cookie": "GA1.1.746219368.1690464674",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605091412"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Related Products",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 82822643,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/proddetail/screw-conveyor-flight-11388854891.html?srsltid=AfmBOoo0RKOVMXv0kTLsfAKOgjwoYUqBDKjV1--76bf8tStzq_3hk_2V",
+        "glb_city": "Pune",
+        "glusr_id": 82822643,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260509141258",
+        "glb_state": "MH",
+        "remote_ip": "106.210.208.190",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Mobile Safari/537.36",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /ajaxrequest/pdp/user/Search?s=screw-flights&source=imob.pdp.search&citydata=Pune&useML=1 HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 18.524609,
+        "glb_longitude": 73.878624,
+        "response_size": 19594,
+        "response_time": 382,
+        "fk_activity_id": 4743,
+        "ga_utma_cookie": "GA1.1.746219368.1690464674",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605091412"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "PDP SearchRecomm",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 82822643,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "LEAP",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 82822643,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260509142647",
+        "glb_state": "-",
+        "remote_ip": "-",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "LEAP",
+        "http_status": 0,
+        "request_url": "-",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 4444,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605091426"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 1,
+        "product_disp_id": null,
+        "fk_display_title": "Whatsapp-Outbound",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 0,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "-",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 82822643,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260510113734",
+        "glb_state": "-",
+        "remote_ip": "110.227.4.108",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "User Verification Blocker Screen",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2186,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605101138"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "User Verification",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 22.773,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 699,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "Pune",
+        "glusr_id": 82822643,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            178350
+          ]
+        },
+        "datevalue": "20260510113734",
+        "glb_state": "MH",
+        "remote_ip": "110.227.4.108",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; V2225 Build/AP3A.240905.015.A2_CS; wv) Version/4.0 Chrome/147.0.7727.137 Mobile Safari/537.36 IM-Android_Webview/13.7.7_05MAY26",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /proddetail/4157965412.html?null&app=deeplink HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 18.524609,
+        "glb_longitude": 73.878624,
+        "response_size": 14478,
+        "response_time": 42988,
+        "fk_activity_id": 559,
+        "ga_utma_cookie": "GA1.1.596448054.1771844839",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605101137"
+        },
+        "seller_city_id": 70630,
+        "fk_glcat_grp_id": 114,
+        "log_status_flag": 40,
+        "product_disp_id": 4157965412,
+        "fk_display_title": "Show Product Details Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 82822643,
+        "catalog_owner_glusr_id": 1523181,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "a*********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 199,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/proddetail/4157965412.html?null&app=deeplink",
+        "glb_city": "Pune",
+        "glusr_id": 82822643,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260510113735",
+        "glb_state": "MH",
+        "remote_ip": "110.227.4.108",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; V2225 Build/AP3A.240905.015.A2_CS; wv) Version/4.0 Chrome/147.0.7727.137 Mobile Safari/537.36 IM-Android_Webview/13.7.7_05MAY26",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /ajaxrequest/proddetail/widgets/relatedproducts?MCAT_ID=178350&city=&prod_count=20&ecomflag=&smp=4157965412&glid=82822643 HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 18.524609,
+        "glb_longitude": 73.878624,
+        "response_size": 4289,
+        "response_time": 240190,
+        "fk_activity_id": 4746,
+        "ga_utma_cookie": "GA1.1.596448054.1771844839",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605101137"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Related Products",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 82822643,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "a*********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 82822643,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260510113736",
+        "glb_state": "-",
+        "remote_ip": "110.227.4.108",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "User Verification Blocker Screen",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2186,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605101137"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "User Verification",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 100,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/proddetail/4157965412.html?null&app=deeplink",
+        "glb_city": "Pune",
+        "glusr_id": 82822643,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            178350
+          ]
+        },
+        "datevalue": "20260510113753",
+        "glb_state": "MH",
+        "remote_ip": "110.227.4.108",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; V2225 Build/AP3A.240905.015.A2_CS; wv) Version/4.0 Chrome/147.0.7727.137 Mobile Safari/537.36 IM-Android_Webview/13.7.7_05MAY26",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "POST /ajaxrequest/identified/call/ HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 18.524609,
+        "glb_longitude": 73.878624,
+        "response_size": 131,
+        "response_time": 23693,
+        "fk_activity_id": 2307,
+        "ga_utma_cookie": "GA1.1.596448054.1771844839",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605101137"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": 4157965412,
+        "fk_display_title": "Track Click To Call Button Clicked - PWA",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 82822643,
+        "catalog_owner_glusr_id": 1523181,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "a*********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "PNS",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 82822643,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260510114201",
+        "glb_state": "-",
+        "remote_ip": "-",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "-",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 4372,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605101142"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 0,
+        "product_disp_id": null,
+        "fk_display_title": "-",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 0,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "-",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "PNS",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 82822643,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260511095759",
+        "glb_state": "-",
+        "remote_ip": "-",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "-",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 4382,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605110958"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 0,
+        "product_disp_id": null,
+        "fk_display_title": "-",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 0,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "-",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      }
+    ],
+    "updated_at": "2026-05-14T18:45:06.896241Z"
+  },
+  "error": null
+}

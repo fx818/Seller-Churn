@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seller Survival Intelligence — Impact Report</title>
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg:   #0f1117;
+  --s1:   #1a1d27;
+  --s2:   #22263a;
+  --bdr:  #2e3350;
+  --acc:  #6366f1;
+  --red:  #ef4444;
+  --amber:#f59e0b;
+  --green:#10b981;
+  --txt:  #e2e8f0;
+  --mut:  #94a3b8;
+}
+body {
+  background: var(--bg);
+  color: var(--txt);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+h1, h2, h3 { font-weight: 700; }
+h1 { font-size: 1.8rem; margin-bottom: .25rem; }
+h2 { font-size: 1.2rem; color: var(--acc); margin: 2rem 0 .75rem; text-transform: uppercase; letter-spacing: .06em; }
+h3 { font-size: 1rem; color: var(--mut); margin-bottom: .5rem; }
+.subtitle { color: var(--mut); font-size: .9rem; margin-bottom: 2rem; }
+/* Cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.card {
+  background: var(--s1);
+  border: 1px solid var(--bdr);
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+}
+.card-label { font-size: .78rem; color: var(--mut); text-transform: uppercase; letter-spacing: .05em; margin-bottom: .4rem; }
+.card-value { font-size: 2rem; font-weight: 700; line-height: 1; }
+.card-value.red    { color: var(--red); }
+.card-value.amber  { color: var(--amber); }
+.card-value.green  { color: var(--green); }
+.card-value.accent { color: var(--acc); }
+.card-sub  { font-size: .78rem; color: var(--mut); margin-top: .3rem; }
+/* Efficiency row */
+.eff-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.eff-card {
+  background: var(--s2);
+  border: 1px solid var(--bdr);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+}
+.eff-label { font-size: .78rem; color: var(--mut); text-transform: uppercase; letter-spacing: .04em; margin-bottom: .3rem; }
+.eff-value { font-size: 1.5rem; font-weight: 700; color: var(--acc); }
+.eff-sub   { font-size: .75rem; color: var(--mut); margin-top: .2rem; }
+/* RCA bar chart */
+.rca-table { width: 100%; border-collapse: collapse; margin-bottom: 2rem; }
+.rca-table th { text-align: left; font-size: .78rem; color: var(--mut); padding: .4rem .6rem; border-bottom: 1px solid var(--bdr); }
+.rca-table td { padding: .45rem .6rem; border-bottom: 1px solid var(--bdr); vertical-align: middle; }
+.rca-bar-wrap { width: 100%; background: var(--s2); border-radius: 4px; height: 14px; }
+.rca-bar { height: 14px; border-radius: 4px; background: var(--acc); }
+.rca-count { color: var(--txt); font-weight: 600; width: 40px; text-align: right; }
+.rca-pct   { color: var(--mut); font-size: .8rem; width: 55px; text-align: right; }
+/* Action queue table */
+.queue-wrap { overflow-x: auto; margin-bottom: 2rem; }
+table.queue { width: 100%; border-collapse: collapse; font-size: .85rem; }
+table.queue th { text-align: left; padding: .5rem .75rem; background: var(--s2); color: var(--mut); text-transform: uppercase; font-size: .72rem; letter-spacing: .05em; }
+table.queue td { padding: .55rem .75rem; border-bottom: 1px solid var(--bdr); }
+table.queue tr:hover td { background: var(--s1); }
+.tier-badge {
+  display: inline-block;
+  padding: .1rem .55rem;
+  border-radius: 999px;
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.tier-red    { background: rgba(239,68,68,.15);   color: var(--red); }
+.tier-amber  { background: rgba(245,158,11,.15);  color: var(--amber); }
+.tier-green  { background: rgba(16,185,129,.15);  color: var(--green); }
+.action-badge {
+  display: inline-block;
+  padding: .1rem .55rem;
+  border-radius: 4px;
+  font-size: .72rem;
+  font-weight: 600;
+  background: rgba(99,102,241,.15);
+  color: var(--acc);
+}
+footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--bdr);
+  color: var(--mut);
+  font-size: .8rem;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<!-- ── Header ─────────────────────────────────────────────────────────── -->
+<h1>Seller Survival Intelligence</h1>
+<p class="subtitle">
+  Impact Report &nbsp;·&nbsp;
+  <span style="color:var(--acc)">run_20260515_142812</span>
+  &nbsp;·&nbsp;
+  Generated: 2026-05-15T08:58:13.148795Z
+</p>
+
+<!-- ── Headline Metrics ────────────────────────────────────────────────── -->
+<h2>Headline Metrics</h2>
+<div class="card-grid">
+  <div class="card">
+    <div class="card-label">Total Sellers Analyzed</div>
+    <div class="card-value accent">1</div>
+  </div>
+  <div class="card">
+    <div class="card-label">Red Tier — Immediate Action</div>
+    <div class="card-value red">0</div>
+    <div class="card-sub">1 Amber &nbsp;|&nbsp; 0 Green</div>
+  </div>
+  <div class="card">
+    <div class="card-label">Estimated ARR at Risk</div>
+    <div class="card-value red">₹0</div>
+    <div class="card-sub">Red sellers × ₹15 K avg ARR</div>
+  </div>
+  <div class="card">
+    <div class="card-label">Estimated ARR Saveable</div>
+    <div class="card-value green">₹0</div>
+    <div class="card-sub">60 % recovery assumption</div>
+  </div>
+  <div class="card">
+    <div class="card-label">LLM Cohort Scored</div>
+    <div class="card-value accent">0</div>
+    <div class="card-sub">Coverage: 0.0%</div>
+  </div>
+  <div class="card">
+    <div class="card-label">LLM Upgraded to Red</div>
+    <div class="card-value amber">0</div>
+    <div class="card-sub">Caught by AI, missed by rules</div>
+  </div>
+</div>
+
+<!-- ── Efficiency Metrics ──────────────────────────────────────────────── -->
+<h2>Efficiency Metrics</h2>
+<div class="eff-grid">
+  <div class="eff-card">
+    <div class="eff-label">Human Calls Queued</div>
+    <div class="eff-value">0</div>
+    <div class="eff-sub">Same-day Red-tier escalations</div>
+  </div>
+  <div class="eff-card">
+    <div class="eff-label">WhatsApp Messages Queued</div>
+    <div class="eff-value">1</div>
+    <div class="eff-sub">Amber + Green outreach</div>
+  </div>
+  <div class="eff-card">
+    <div class="eff-label">Rep Time Saved (prep)</div>
+    <div class="eff-value">0 min</div>
+    <div class="eff-sub">24.5 min saved per call (0 calls)</div>
+  </div>
+  <div class="eff-card">
+    <div class="eff-label">Post-call CRM Savings</div>
+    <div class="eff-value">0 min</div>
+    <div class="eff-sub">17.5 min saved per call (0 calls)</div>
+  </div>
+  <div class="eff-card">
+    <div class="eff-label">Gifted Leads Allocated</div>
+    <div class="eff-value">0</div>
+    <div class="eff-sub">High-risk sellers with gifted lead offer</div>
+  </div>
+  <div class="eff-card">
+    <div class="eff-label">Winback Eligible</div>
+    <div class="eff-value">0</div>
+    <div class="eff-sub">Lapsed sellers targeted for reactivation</div>
+  </div>
+</div>
+
+<!-- ── RCA Breakdown ───────────────────────────────────────────────────── -->
+<h2>Root Cause Analysis Breakdown</h2>
+<table class="rca-table">
+  <thead>
+    <tr>
+      <th>RCA Category</th>
+      <th style="text-align:right">Count</th>
+      <th style="text-align:right">% Total</th>
+      <th>Distribution</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+        <tr>
+          <td style="color:var(--txt);font-weight:500;min-width:160px">UNKNOWN</td>
+          <td class="rca-count">1</td>
+          <td class="rca-pct">100.0%</td>
+          <td style="width:100%">
+            <div class="rca-bar-wrap"><div class="rca-bar" style="width:100%"></div></div>
+          </td>
+        </tr>
+  </tbody>
+</table>
+
+<!-- ── Action Queue (Top 10 Red) ──────────────────────────────────────── -->
+<h2>Action Queue — Top Priority Sellers</h2>
+<div class="queue-wrap">
+  <table class="queue">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>GLID</th>
+        <th>Company</th>
+        <th>City</th>
+        <th style="text-align:center">Score</th>
+        <th>Tier</th>
+        <th>RCA</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr>
+          <td style="color:var(--mut)">1</td>
+          <td style="font-family:monospace;font-size:.8rem">236</td>
+          <td>Astrra Chemicals</td>
+          <td style="color:var(--mut)">Chennai</td>
+          <td style="text-align:center;font-weight:700;color:var(--red)">50</td>
+          <td><span class="tier-badge tier-amber">Amber</span></td>
+          <td style="color:var(--mut);font-size:.8rem">UNKNOWN</td>
+          <td><span class="action-badge">WHATSAPP</span> <span style="color:var(--mut);font-size:.72rem">48H</span></td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ── Footer ─────────────────────────────────────────────────────────── -->
+<footer>
+  Generated by <strong>Seller Survival Intelligence</strong>
+  &nbsp;·&nbsp; IndiaMART Hackathon 2026
+</footer>
+
+</body>
+</html>

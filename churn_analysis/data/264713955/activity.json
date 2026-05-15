@@ -1,0 +1,155 @@
+{
+  "status": 200,
+  "data": {
+    "gluser_id": 264713955,
+    "event_count": 2,
+    "events": [
+      {
+        "empid": 0,
+        "modid": "SELLERMY",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "Ghaziabad",
+        "glusr_id": 264713955,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260424164922",
+        "glb_state": "UP",
+        "remote_ip": "122.161.73.127",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36",
+        "domain_name": "seller.indiamart.com",
+        "http_status": 302,
+        "request_url": "GET /login/autologin/?userid=3aQAmZjWulsg&eem=n%2FNXxYeW9hp6UnHaf6Mo0vF0yh5k&utm_source=Daily_BL_Alert&utm_medium=email&utm_campaign=Free_Supplier_benefit_ManageProducts_card1&verify_screen=EMAIL_VERIFICATION_FROM_DAILY_BL_ALERT_BUYLEAD&verify_agency=ONLINE&redirect=https%3A%2F%2Fseller.indiamart.com%2Fproduct%2Fmanageproducts%2F%3Futm_source%3DDaily_BL_Alert%26utm_medium%3Demail%26utm_campaign%3DFree_Supplier_benefit_ManageProducts_card1 HTTP/1.1",
+        "server_name": 0,
+        "glb_latitude": 28.669157,
+        "glb_longitude": 77.453758,
+        "response_size": 466,
+        "response_time": 4288,
+        "fk_activity_id": 4139,
+        "ga_utma_cookie": "GA1.1.848740545.1776846966",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604241649"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 10,
+        "product_disp_id": null,
+        "fk_display_title": "Free_Supplier_benefit_ManageProducts_card Login",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "SELLERMY",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "Chicago",
+        "glusr_id": 264713955,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260424164928",
+        "glb_state": "IL",
+        "remote_ip": "74.125.19.34",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+        "domain_name": "seller.indiamart.com",
+        "http_status": 302,
+        "request_url": "GET /login/autologin/?userid=3aQAmZjWulsg&eem=n%2FNXxYeW9hp6UnHaf6Mo0vF0yh5k&utm_source=Daily_BL_Alert&utm_medium=email&utm_campaign=Free_Supplier_benefit_ManageProducts_card1&verify_screen=EMAIL_VERIFICATION_FROM_DAILY_BL_ALERT_BUYLEAD&verify_agency=ONLINE&redirect=https%3A%2F%2Fseller.indiamart.com%2Fproduct%2Fmanageproducts%2F%3Futm_source%3DDaily_BL_Alert%26utm_medium%3Demail%26utm_campaign%3DFree_Supplier_benefit_ManageProducts_card1 HTTP/1.1",
+        "server_name": 0,
+        "glb_latitude": 41.88325,
+        "glb_longitude": -87.632388,
+        "response_size": 466,
+        "response_time": 4035,
+        "fk_activity_id": 4139,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604241649"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 10,
+        "product_disp_id": null,
+        "fk_display_title": "Free_Supplier_benefit_ManageProducts_card Login",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      }
+    ],
+    "updated_at": "2026-05-14T18:40:53.644455Z"
+  },
+  "error": null
+}

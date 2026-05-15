@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IndiaMART Churn — All Runs</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0f172a;color:#e2e8f0;font-family:'Inter',system-ui,sans-serif;min-height:100vh}
+.hdr{background:linear-gradient(135deg,#1e1b4b,#0f172a);padding:28px 40px;border-bottom:1px solid #1e293b}
+.hdr h1{font-size:24px;font-weight:800;color:#fff;letter-spacing:-.3px}
+.hdr p{color:#64748b;margin-top:6px;font-size:13px}
+.hdr-meta{display:flex;align-items:center;gap:16px;margin-top:14px;flex-wrap:wrap}
+.hdr-stat{font-size:13px;color:#475569}
+.hdr-stat b{color:#94a3b8}
+.container{padding:32px 40px;max-width:1400px;margin:0 auto}
+.section-label{font-size:11px;font-weight:700;color:#475569;text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px}
+.runs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:20px}
+.run-card{background:#1e293b;border:1px solid #334155;border-radius:14px;padding:22px;transition:border-color .15s}
+.run-card:hover{border-color:#4F46E5}
+.run-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:14px}
+.run-name{font-size:13px;font-weight:600;color:#f1f5f9;font-family:monospace}
+.run-ts{font-size:12px;color:#475569;margin-top:3px}
+.run-total{text-align:right;font-size:28px;font-weight:800;color:#f1f5f9;line-height:1}
+.run-total span{display:block;font-size:11px;font-weight:400;color:#64748b;margin-top:2px}
+.run-risk-bar{display:flex;height:6px;border-radius:4px;overflow:hidden;margin-bottom:12px;gap:2px}
+.rb-red{background:#ef4444;border-radius:3px}.rb-amber{background:#f59e0b;border-radius:3px}.rb-green{background:#22c55e;border-radius:3px}
+.run-stats{display:flex;gap:16px;margin-bottom:16px;flex-wrap:wrap}
+.rs{font-size:11px;color:#64748b}.rs span{display:block;font-size:18px;font-weight:700;line-height:1.2}
+.rs.red span{color:#ef4444}.rs.amber span{color:#f59e0b}.rs.green span{color:#22c55e}.rs.neutral span{color:#94a3b8}
+.run-actions{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-block;padding:8px 18px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;transition:all .15s}
+.btn-master{background:#4F46E5;color:#fff}.btn-master:hover{background:#4338CA}
+.btn-index{background:#1e293b;color:#94a3b8;border:1px solid #334155}.btn-index:hover{border-color:#94a3b8;color:#f1f5f9}
+.btn-disabled{background:#0f172a;color:#334155;border:1px solid #1e293b;display:inline-block;padding:8px 18px;border-radius:8px;font-size:13px}
+.empty{background:#1e293b;border:1px solid #334155;border-radius:12px;padding:40px;text-align:center;color:#475569}
+.empty code{background:#0f172a;padding:4px 10px;border-radius:6px;color:#94a3b8;font-size:13px}
+::-webkit-scrollbar{width:4px}.hdr-badge{background:#1e293b;border:1px solid #334155;padding:4px 12px;border-radius:20px;font-size:12px;color:#64748b}
+</style>
+</head><body>
+<div class="hdr">
+  <h1>IndiaMART Churn Analysis</h1>
+  <p>All pipeline runs — each run is isolated with its own data, dashboards and analysis</p>
+  <div class="hdr-meta">
+    <div class="hdr-badge">1 run</div>
+    <div class="hdr-stat">Latest: <b>15 May 2026, 01:00</b></div>
+    <div class="hdr-stat">To start a new run: <b>python pipeline.py glids.txt</b></div>
+  </div>
+</div>
+<div class="container">
+  <div class="section-label">All Runs — newest first</div>
+  <div class="runs-grid"><div class="run-card">
+          <div class="run-header">
+            <div>
+              <div class="run-name">run_20260515_010036</div>
+              <div class="run-ts">15 May 2026, 01:00</div>
+            </div>
+            <div class="run-total">11<span>sellers</span></div>
+          </div>
+          <div class="run-risk-bar">
+            <div class="rb-red"   style="flex:5"></div>
+            <div class="rb-amber" style="flex:6"></div>
+            <div class="rb-green" style="flex:0"></div>
+          </div>
+          <div class="run-stats">
+            <div class="rs red"><span>5</span>Red (45.5%)</div>
+            <div class="rs amber"><span>6</span>Amber</div>
+            <div class="rs green"><span>0</span>Green (0.0%)</div>
+            <div class="rs neutral"><span>61.2</span>Avg Score</div>
+          </div>
+          <div class="run-actions"><a href="runs/run_20260515_010036/master_dashboard.html" class="btn btn-master">Master Dashboard</a><a href="runs/run_20260515_010036/index.html" class="btn btn-index">Seller Index</a></div>
+        </div></div>
+</div>
+</body></html>

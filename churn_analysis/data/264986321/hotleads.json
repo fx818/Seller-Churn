@@ -1,0 +1,47 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 264986321,
+        "hotlead_date": "2026-05-09",
+        "hotlead_id": 14199089,
+        "hotlead_type_id": 1115606506,
+        "data_type": "PUA",
+        "activity": "Premium Activity - Online",
+        "activity_id": 1874
+      },
+      {
+        "gluser_id": 264986321,
+        "hotlead_date": "2026-04-04",
+        "hotlead_id": 14199089,
+        "hotlead_type_id": 1102535534,
+        "data_type": "ENQR",
+        "activity": "Premium Activity - Enquiry Received",
+        "activity_id": 10004
+      },
+      {
+        "gluser_id": 264986321,
+        "hotlead_date": "2026-03-05",
+        "hotlead_id": 14199089,
+        "hotlead_type_id": 1089972781,
+        "data_type": "PIM",
+        "activity": "Payment Interest - MDC",
+        "activity_id": 4296
+      },
+      {
+        "gluser_id": 264986321,
+        "hotlead_date": "2026-02-23",
+        "hotlead_id": 14199089,
+        "hotlead_type_id": 1085880604,
+        "data_type": "PUA",
+        "activity": "Premium Activity - Online",
+        "activity_id": 2283
+      }
+    ],
+    "total": 4,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

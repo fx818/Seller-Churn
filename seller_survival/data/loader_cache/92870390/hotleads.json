@@ -1,0 +1,83 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 92870390,
+        "hotlead_date": "2026-02-09",
+        "hotlead_id": 13216089,
+        "hotlead_type_id": 1079885483,
+        "data_type": "PAM",
+        "activity": "Payment Attempt - MDC",
+        "activity_id": 2538
+      },
+      {
+        "gluser_id": 92870390,
+        "hotlead_date": "2026-01-26",
+        "hotlead_id": 13216089,
+        "hotlead_type_id": 1073612429,
+        "data_type": "PIM",
+        "activity": "Payment Interest - MDC",
+        "activity_id": 2368
+      },
+      {
+        "gluser_id": 92870390,
+        "hotlead_date": "2025-12-22",
+        "hotlead_id": 13216089,
+        "hotlead_type_id": 1058741780,
+        "data_type": "PIM",
+        "activity": "Payment Interest - MDC",
+        "activity_id": 2355
+      },
+      {
+        "gluser_id": 92870390,
+        "hotlead_date": "2025-10-04",
+        "hotlead_id": 13216089,
+        "hotlead_type_id": 1026122733,
+        "data_type": "UA",
+        "activity": "Similar Leads",
+        "activity_id": 2206
+      },
+      {
+        "gluser_id": 92870390,
+        "hotlead_date": "2025-07-09",
+        "hotlead_id": 13216089,
+        "hotlead_type_id": 986659015,
+        "data_type": "PIM",
+        "activity": "Payment Interest - MDC",
+        "activity_id": 2368
+      },
+      {
+        "gluser_id": 92870390,
+        "hotlead_date": "2025-06-18",
+        "hotlead_id": 13216089,
+        "hotlead_type_id": 977317425,
+        "data_type": "PIM",
+        "activity": "Payment Interest - MDC",
+        "activity_id": 2352
+      },
+      {
+        "gluser_id": 92870390,
+        "hotlead_date": "2025-06-11",
+        "hotlead_id": 13216089,
+        "hotlead_type_id": 974114868,
+        "data_type": "PIM",
+        "activity": "Payment Interest - MDC",
+        "activity_id": 2368
+      },
+      {
+        "gluser_id": 92870390,
+        "hotlead_date": "2025-05-26",
+        "hotlead_id": 13216089,
+        "hotlead_type_id": 967334407,
+        "data_type": "PIM",
+        "activity": "Payment Interest - MDC",
+        "activity_id": 2351
+      }
+    ],
+    "total": 8,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

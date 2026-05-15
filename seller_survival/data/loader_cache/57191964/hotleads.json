@@ -1,0 +1,47 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 57191964,
+        "hotlead_date": "2026-02-17",
+        "hotlead_id": 11896813,
+        "hotlead_type_id": 1083349357,
+        "data_type": "PUA",
+        "activity": "Premium Activity - Online",
+        "activity_id": 2063
+      },
+      {
+        "gluser_id": 57191964,
+        "hotlead_date": "2026-01-21",
+        "hotlead_id": 11896813,
+        "hotlead_type_id": 1071183549,
+        "data_type": "ENQR",
+        "activity": "Premium Activity - Enquiry Received",
+        "activity_id": 10004
+      },
+      {
+        "gluser_id": 57191964,
+        "hotlead_date": "2025-08-28",
+        "hotlead_id": 11896813,
+        "hotlead_type_id": 1009666483,
+        "data_type": "OLP",
+        "activity": "Payment Attempt - BL",
+        "activity_id": 1608
+      },
+      {
+        "gluser_id": 57191964,
+        "hotlead_date": "2025-07-28",
+        "hotlead_id": 11896813,
+        "hotlead_type_id": 995568791,
+        "data_type": "PNSR",
+        "activity": "Premium Activity - PNS Call Received",
+        "activity_id": 10001
+      }
+    ],
+    "total": 4,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

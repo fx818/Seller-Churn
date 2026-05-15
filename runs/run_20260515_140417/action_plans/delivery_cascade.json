@@ -1,0 +1,68 @@
+{
+  "generated_at": "2026-05-15T08:34:18.064826Z",
+  "total_plans": 1,
+  "cascade_plans": [
+    {
+      "glid": "488587",
+      "company": "Hind Polybags",
+      "city": "",
+      "risk_tier": "Amber",
+      "churn_score": 0,
+      "rca": "UNKNOWN",
+      "steps": [
+        {
+          "step": 1,
+          "channel": "WHATSAPP",
+          "timing": "NOW",
+          "delay_hours": 0,
+          "trigger": "immediate",
+          "message_hi": "नमस्ते Hind Polybags! आपके IndiaMart खाते को बेहतर बनाने के लिए हमारे पास कुछ सुझाव हैं। क्या आप अभी देखना चाहेंगे?",
+          "message_en": "Hello Hind Polybags! We have suggestions to improve your IndiaMart account performance. Would you like to review them now?"
+        },
+        {
+          "step": 2,
+          "channel": "SMS",
+          "timing": "48h",
+          "delay_hours": 48,
+          "trigger": "if_unread_48h",
+          "message_hi": "IndiaMart: Hind Polybags - आपके अकाउंट को बेहतर बनाने के सुझाव तैयार हैं।",
+          "message_en": "IndiaMart: Hind Polybags - Improvement suggestions ready for your account."
+        }
+      ]
+    }
+  ],
+  "queue": [
+    {
+      "glid": "488587",
+      "company": "Hind Polybags",
+      "city": "",
+      "risk_tier": "Amber",
+      "priority": 2,
+      "step": 1,
+      "channel": "WHATSAPP",
+      "timing": "NOW",
+      "delay_hours": 0,
+      "trigger": "immediate",
+      "churn_score": 0,
+      "scheduled_at": "NOW",
+      "message_hi": "नमस्ते Hind Polybags! आपके IndiaMart खाते को बेहतर बनाने के लिए हमारे पास कुछ सुझाव हैं। क्या आप अभी देखना चाहेंगे?",
+      "message_en": "Hello Hind Polybags! We have suggestions to improve your IndiaMart account performance. Would you like to review them now?"
+    },
+    {
+      "glid": "488587",
+      "company": "Hind Polybags",
+      "city": "",
+      "risk_tier": "Amber",
+      "priority": 2,
+      "step": 2,
+      "channel": "SMS",
+      "timing": "48h",
+      "delay_hours": 48,
+      "trigger": "if_unread_48h",
+      "churn_score": 0,
+      "scheduled_at": "48h",
+      "message_hi": "IndiaMart: Hind Polybags - आपके अकाउंट को बेहतर बनाने के सुझाव तैयार हैं।",
+      "message_en": "IndiaMart: Hind Polybags - Improvement suggestions ready for your account."
+    }
+  ]
+}

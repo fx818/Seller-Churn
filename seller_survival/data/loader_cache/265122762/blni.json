@@ -1,0 +1,21 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 265122762,
+        "event_date": "2026-02-25",
+        "offer_id": 139581189467,
+        "mcat_id": 127511,
+        "reason_code": 3,
+        "reason_text": "Specification Mismatch",
+        "comment": null,
+        "module_id": "FLPNS"
+      }
+    ],
+    "total": 1,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

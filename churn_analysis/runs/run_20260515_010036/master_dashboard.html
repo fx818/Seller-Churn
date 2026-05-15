@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Master Dashboard — run_20260515_010036</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0f172a;color:#e2e8f0;font-family:'Inter',system-ui,sans-serif;font-size:14px;line-height:1.5}
+.hdr{background:linear-gradient(135deg,#1e1b4b,#0f172a);padding:24px 36px;border-bottom:1px solid #1e293b}
+.hdr h1{font-size:22px;font-weight:700;color:#fff}.hdr p{color:#64748b;margin-top:4px;font-size:13px}
+.hdr-links{display:flex;gap:8px;margin-top:12px}
+.hdr-links a{background:#1e293b;border:1px solid #334155;color:#94a3b8;padding:6px 14px;border-radius:8px;text-decoration:none;font-size:12px}
+.container{padding:28px 36px;max-width:1600px;margin:0 auto}
+.section{margin-bottom:40px}
+.stitle{font-size:16px;font-weight:600;color:#f1f5f9;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid #1e293b}
+.kpis{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:16px;margin-bottom:32px}
+.kpi{background:#1e293b;border-radius:12px;padding:20px;border:1px solid #334155}
+.kpi-val{font-size:28px;font-weight:700;color:#f1f5f9}.kpi.red .kpi-val{color:#ef4444}.kpi.amber .kpi-val{color:#f59e0b}.kpi.green .kpi-val{color:#22c55e}
+.kpi-lbl{font-size:11px;color:#64748b;margin-top:4px;text-transform:uppercase;letter-spacing:.05em}
+.kpi-sub{font-size:11px;color:#475569;margin-top:2px}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(400px,1fr));gap:20px}
+.ccard{background:#1e293b;border-radius:12px;padding:20px;border:1px solid #334155}
+.ccard h3{font-size:13px;font-weight:600;color:#94a3b8;margin-bottom:14px}
+.cwrap{position:relative;height:280px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:900px){.two-col{grid-template-columns:1fr}}
+.stab{background:#1e293b;border:1px solid #334155;color:#94a3b8;padding:8px 16px;border-radius:8px;cursor:pointer;font-size:13px}
+.spanel{display:none;background:#1e293b;border-radius:12px;padding:24px;border:1px solid #334155}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{background:#0f172a;color:#64748b;text-align:left;padding:10px 12px;border-bottom:1px solid #1e293b;font-weight:600;text-transform:uppercase;font-size:11px;letter-spacing:.05em}
+td{padding:10px 12px;border-bottom:1px solid #1e293b;color:#cbd5e1}
+tr:hover td{background:#1e293b}
+</style>
+</head><body>
+<div class="hdr">
+  <h1>IndiaMART Churn — Master Analytics Dashboard</h1>
+  <p>Run: run_20260515_010036 &nbsp;|&nbsp; 11 sellers &nbsp;|&nbsp; Generated: 2026-05-15 01:02</p>
+  <div class="hdr-links">
+    <a href="index.html">Seller Index</a>
+  </div>
+</div>
+<div class="container">
+
+<div class="section">
+  <div class="kpis">
+    <div class="kpi"><div class="kpi-val">11</div><div class="kpi-lbl">Total Sellers</div><div class="kpi-sub">This run</div></div>
+    <div class="kpi red"><div class="kpi-val">5</div><div class="kpi-lbl">Red — High Risk</div><div class="kpi-sub">45.5% of sellers</div></div>
+    <div class="kpi amber"><div class="kpi-val">6</div><div class="kpi-lbl">Amber — Moderate</div><div class="kpi-sub">54.5%</div></div>
+    <div class="kpi green"><div class="kpi-val">0</div><div class="kpi-lbl">Green — Healthy</div><div class="kpi-sub">0.0%</div></div>
+    <div class="kpi"><div class="kpi-val">Rs 75,000</div><div class="kpi-lbl">Est. At-Risk ARR</div><div class="kpi-sub">Red x Rs 15k avg</div></div>
+    <div class="kpi"><div class="kpi-val">61.2</div><div class="kpi-lbl">Avg Churn Score</div><div class="kpi-sub">0 safe, 100 churned</div></div>
+    <div class="kpi"><div class="kpi-val">0.0%</div><div class="kpi-lbl">Avg Reply Rate</div><div class="kpi-sub">Last 30 days</div></div>
+    <div class="kpi"><div class="kpi-val">73.1</div><div class="kpi-lbl">Avg CQS</div><div class="kpi-sub">Catalog quality</div></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="stitle">Risk Distribution &amp; Score Spread</div>
+  <div class="cgrid">
+    <div class="ccard"><h3>Risk Tier Distribution</h3><div class="cwrap"><canvas id="riskDist"></canvas></div></div>
+    <div class="ccard"><h3>Churn Score Distribution</h3><div class="cwrap"><canvas id="scoreDist"></canvas></div></div>
+    <div class="ccard"><h3>Key Metrics by Risk Tier (Averages)</h3><div class="cwrap"><canvas id="tierM"></canvas></div></div>
+    <div class="ccard"><h3>Top Cities — Red Tier</h3><div class="cwrap"><canvas id="cityChart"></canvas></div></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="stitle">Top 10 Churn Reasons — All 11 Sellers</div>
+  <div class="two-col">
+    <div class="ccard"><h3>All Sellers (n=11)</h3><div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">1. Inactivity / Low Login</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:100%;height:100%;background:#ef4444;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">11 sellers (100.0%)</span>
+          </div>
+        </div><div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">2. Low Reply Rate</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:64%;height:100%;background:#f97316;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">7 sellers (63.6%)</span>
+          </div>
+        </div><div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">3. No Platform Activity</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:55%;height:100%;background:#f59e0b;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">6 sellers (54.5%)</span>
+          </div>
+        </div><div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">4. BL Decline / Velocity Drop</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:45%;height:100%;background:#eab308;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">5 sellers (45.5%)</span>
+          </div>
+        </div><div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">5. No Enquiry Flow</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:36%;height:100%;background:#84cc16;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">4 sellers (36.4%)</span>
+          </div>
+        </div><div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">6. Poor RAG Rating</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:36%;height:100%;background:#22c55e;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">4 sellers (36.4%)</span>
+          </div>
+        </div><div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">7. Low Catalog Quality (CQS)</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:27%;height:100%;background:#14b8a6;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">3 sellers (27.3%)</span>
+          </div>
+        </div><div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">8. No Hotlead Engagement</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:9%;height:100%;background:#3b82f6;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">1 sellers (9.1%)</span>
+          </div>
+        </div></div>
+    <div class="ccard"><h3>Red Tier Only (n=5)</h3><div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">1. Inactivity / Low Login</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:100%;height:100%;background:#ef4444;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">5 sellers (100.0%)</span>
+          </div>
+        </div><div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">2. Low Reply Rate</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:80%;height:100%;background:#f97316;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">4 sellers (80.0%)</span>
+          </div>
+        </div><div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">3. BL Decline / Velocity Drop</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:60%;height:100%;background:#f59e0b;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">3 sellers (60.0%)</span>
+          </div>
+        </div><div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">4. No Platform Activity</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:60%;height:100%;background:#eab308;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">3 sellers (60.0%)</span>
+          </div>
+        </div><div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">5. Low Catalog Quality (CQS)</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:60%;height:100%;background:#84cc16;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">3 sellers (60.0%)</span>
+          </div>
+        </div><div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">6. Poor RAG Rating</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:40%;height:100%;background:#22c55e;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">2 sellers (40.0%)</span>
+          </div>
+        </div><div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">7. No Enquiry Flow</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:20%;height:100%;background:#14b8a6;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">1 sellers (20.0%)</span>
+          </div>
+        </div><div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">8. No Hotlead Engagement</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:20%;height:100%;background:#3b82f6;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">1 sellers (20.0%)</span>
+          </div>
+        </div></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="stitle">Churn Reasons by Enterprise Segment</div>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px"><button onclick="showTab('ent',0)" id="ent-t0" class="stab">Proprietor (7)</button><button onclick="showTab('ent',1)" id="ent-t1" class="stab">ME (Mid-Enterprise) (3)</button><button onclick="showTab('ent',2)" id="ent-t2" class="stab">Unknown (1)</button></div>
+    <div><div id="ent-p0" class="spanel">
+          <div style="margin-bottom:16px">
+            <h3 style="font-size:16px;font-weight:600;color:#f1f5f9">Proprietor</h3>
+            <div style="font-size:13px;color:#64748b;margin-top:4px">
+              7 sellers &nbsp;|&nbsp; Avg Churn Score: <b style="color:#f1f5f9">60.86</b>
+              &nbsp;|&nbsp; Avg Reply Rate: <b style="color:#f1f5f9">0.0%</b>
+              &nbsp;|&nbsp; Avg CQS: <b style="color:#f1f5f9">68.64</b>
+            </div>
+            <div style="margin-top:6px">
+              <span style="background:#7f1d1d;color:#fca5a5;padding:2px 8px;border-radius:4px;font-size:12px;margin-right:4px">3 Red</span>
+              <span style="background:#78350f;color:#fcd34d;padding:2px 8px;border-radius:4px;font-size:12px;margin-right:4px">4 Amber</span>
+              <span style="background:#14532d;color:#86efac;padding:2px 8px;border-radius:4px;font-size:12px">0 Green</span>
+            </div>
+          </div>
+          <h4 style="font-size:12px;font-weight:600;color:#64748b;text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px">Top 7 Churn Reasons</h4>
+          <div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">1. Inactivity / Low Login</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:100%;height:100%;background:#ef4444;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">7 sellers (100.0%)</span>
+          </div>
+        </div><div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">2. Low Reply Rate</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:71%;height:100%;background:#f97316;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">5 sellers (71.4%)</span>
+          </div>
+        </div><div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">3. BL Decline / Velocity Drop</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:57%;height:100%;background:#f59e0b;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">4 sellers (57.1%)</span>
+          </div>
+        </div><div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">4. Poor RAG Rating</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:43%;height:100%;background:#eab308;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">3 sellers (42.9%)</span>
+          </div>
+        </div><div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">5. No Enquiry Flow</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:29%;height:100%;background:#84cc16;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">2 sellers (28.6%)</span>
+          </div>
+        </div><div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">6. No Platform Activity</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:29%;height:100%;background:#22c55e;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">2 sellers (28.6%)</span>
+          </div>
+        </div><div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">7. Low Catalog Quality (CQS)</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:29%;height:100%;background:#14b8a6;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">2 sellers (28.6%)</span>
+          </div>
+        </div>
+        </div><div id="ent-p1" class="spanel">
+          <div style="margin-bottom:16px">
+            <h3 style="font-size:16px;font-weight:600;color:#f1f5f9">ME (Mid-Enterprise)</h3>
+            <div style="font-size:13px;color:#64748b;margin-top:4px">
+              3 sellers &nbsp;|&nbsp; Avg Churn Score: <b style="color:#f1f5f9">59.67</b>
+              &nbsp;|&nbsp; Avg Reply Rate: <b style="color:#f1f5f9">0.0%</b>
+              &nbsp;|&nbsp; Avg CQS: <b style="color:#f1f5f9">83.53</b>
+            </div>
+            <div style="margin-top:6px">
+              <span style="background:#7f1d1d;color:#fca5a5;padding:2px 8px;border-radius:4px;font-size:12px;margin-right:4px">1 Red</span>
+              <span style="background:#78350f;color:#fcd34d;padding:2px 8px;border-radius:4px;font-size:12px;margin-right:4px">2 Amber</span>
+              <span style="background:#14532d;color:#86efac;padding:2px 8px;border-radius:4px;font-size:12px">0 Green</span>
+            </div>
+          </div>
+          <h4 style="font-size:12px;font-weight:600;color:#64748b;text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px">Top 6 Churn Reasons</h4>
+          <div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">1. Inactivity / Low Login</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:100%;height:100%;background:#ef4444;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">3 sellers (100.0%)</span>
+          </div>
+        </div><div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">2. No Platform Activity</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:100%;height:100%;background:#f97316;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">3 sellers (100.0%)</span>
+          </div>
+        </div><div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">3. Low Reply Rate</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:67%;height:100%;background:#f59e0b;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">2 sellers (66.7%)</span>
+          </div>
+        </div><div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">4. No Enquiry Flow</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:33%;height:100%;background:#eab308;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">1 sellers (33.3%)</span>
+          </div>
+        </div><div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">5. Poor RAG Rating</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:33%;height:100%;background:#84cc16;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">1 sellers (33.3%)</span>
+          </div>
+        </div><div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">6. BL Decline / Velocity Drop</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:33%;height:100%;background:#22c55e;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">1 sellers (33.3%)</span>
+          </div>
+        </div>
+        </div><div id="ent-p2" class="spanel">
+          <div style="margin-bottom:16px">
+            <h3 style="font-size:16px;font-weight:600;color:#f1f5f9">Unknown</h3>
+            <div style="font-size:13px;color:#64748b;margin-top:4px">
+              1 sellers &nbsp;|&nbsp; Avg Churn Score: <b style="color:#f1f5f9">68.0</b>
+              &nbsp;|&nbsp; Avg Reply Rate: <b style="color:#f1f5f9">0.0%</b>
+              &nbsp;|&nbsp; Avg CQS: <b style="color:#f1f5f9">0.0</b>
+            </div>
+            <div style="margin-top:6px">
+              <span style="background:#7f1d1d;color:#fca5a5;padding:2px 8px;border-radius:4px;font-size:12px;margin-right:4px">1 Red</span>
+              <span style="background:#78350f;color:#fcd34d;padding:2px 8px;border-radius:4px;font-size:12px;margin-right:4px">0 Amber</span>
+              <span style="background:#14532d;color:#86efac;padding:2px 8px;border-radius:4px;font-size:12px">0 Green</span>
+            </div>
+          </div>
+          <h4 style="font-size:12px;font-weight:600;color:#64748b;text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px">Top 5 Churn Reasons</h4>
+          <div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">1. Inactivity / Low Login</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:100%;height:100%;background:#ef4444;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">1 sellers (100.0%)</span>
+          </div>
+        </div><div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">2. No Enquiry Flow</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:100%;height:100%;background:#f97316;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">1 sellers (100.0%)</span>
+          </div>
+        </div><div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">3. Low Catalog Quality (CQS)</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:100%;height:100%;background:#f59e0b;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">1 sellers (100.0%)</span>
+          </div>
+        </div><div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">4. No Hotlead Engagement</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:100%;height:100%;background:#eab308;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">1 sellers (100.0%)</span>
+          </div>
+        </div><div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">5. No Platform Activity</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:100%;height:100%;background:#84cc16;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">1 sellers (100.0%)</span>
+          </div>
+        </div>
+        </div></div>
+    <script>
+    (function(){
+      var p='ent', n=["Proprietor", "ME (Mid-Enterprise)", "Unknown"];
+      function show(i){
+        n.forEach(function(_,j){
+          var t=document.getElementById(p+'-t'+j), pn=document.getElementById(p+'-p'+j);
+          t.style.background=j===i?'#4F46E5':'#1e293b';
+          t.style.color=j===i?'#fff':'#94a3b8';
+          t.style.borderColor=j===i?'#4F46E5':'#334155';
+          pn.style.display=j===i?'block':'none';
+        });
+      }
+      window['showTab'+(p)]=show;
+      var oldST=window.showTab;
+      window.showTab=function(px,i){if(px===p)show(i);else if(oldST&&oldST!==window.showTab)oldST(px,i);};
+      show(0);
+    })();
+    </script>
+</div>
+
+<div class="section">
+  <div class="stitle">Churn Reasons by Subscription Type</div>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px"><button onclick="showTab('ct',0)" id="ct-t0" class="stab">FCP+PNS (9)</button><button onclick="showTab('ct',1)" id="ct-t1" class="stab">Other (1)</button><button onclick="showTab('ct',2)" id="ct-t2" class="stab">Unknown (1)</button></div>
+    <div><div id="ct-p0" class="spanel">
+          <div style="margin-bottom:16px">
+            <h3 style="font-size:16px;font-weight:600;color:#f1f5f9">FCP+PNS</h3>
+            <div style="font-size:13px;color:#64748b;margin-top:4px">
+              9 sellers &nbsp;|&nbsp; Avg Churn Score: <b style="color:#f1f5f9">60.56</b>
+              &nbsp;|&nbsp; Avg Reply Rate: <b style="color:#f1f5f9">0.0%</b>
+              &nbsp;|&nbsp; Avg CQS: <b style="color:#f1f5f9">71.92</b>
+            </div>
+            <div style="margin-top:6px">
+              <span style="background:#7f1d1d;color:#fca5a5;padding:2px 8px;border-radius:4px;font-size:12px;margin-right:4px">4 Red</span>
+              <span style="background:#78350f;color:#fcd34d;padding:2px 8px;border-radius:4px;font-size:12px;margin-right:4px">5 Amber</span>
+              <span style="background:#14532d;color:#86efac;padding:2px 8px;border-radius:4px;font-size:12px">0 Green</span>
+            </div>
+          </div>
+          <h4 style="font-size:12px;font-weight:600;color:#64748b;text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px">Top 7 Churn Reasons</h4>
+          <div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">1. Inactivity / Low Login</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:100%;height:100%;background:#ef4444;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">9 sellers (100.0%)</span>
+          </div>
+        </div><div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">2. Low Reply Rate</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:67%;height:100%;background:#f97316;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">6 sellers (66.7%)</span>
+          </div>
+        </div><div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">3. No Platform Activity</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:56%;height:100%;background:#f59e0b;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">5 sellers (55.6%)</span>
+          </div>
+        </div><div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">4. BL Decline / Velocity Drop</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:44%;height:100%;background:#eab308;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">4 sellers (44.4%)</span>
+          </div>
+        </div><div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">5. Poor RAG Rating</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:44%;height:100%;background:#84cc16;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">4 sellers (44.4%)</span>
+          </div>
+        </div><div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">6. No Enquiry Flow</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:33%;height:100%;background:#22c55e;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">3 sellers (33.3%)</span>
+          </div>
+        </div><div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">7. Low Catalog Quality (CQS)</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:22%;height:100%;background:#14b8a6;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">2 sellers (22.2%)</span>
+          </div>
+        </div>
+        </div><div id="ct-p1" class="spanel">
+          <div style="margin-bottom:16px">
+            <h3 style="font-size:16px;font-weight:600;color:#f1f5f9">Other</h3>
+            <div style="font-size:13px;color:#64748b;margin-top:4px">
+              1 sellers &nbsp;|&nbsp; Avg Churn Score: <b style="color:#f1f5f9">68.0</b>
+              &nbsp;|&nbsp; Avg Reply Rate: <b style="color:#f1f5f9">0.0%</b>
+              &nbsp;|&nbsp; Avg CQS: <b style="color:#f1f5f9">0.0</b>
+            </div>
+            <div style="margin-top:6px">
+              <span style="background:#7f1d1d;color:#fca5a5;padding:2px 8px;border-radius:4px;font-size:12px;margin-right:4px">1 Red</span>
+              <span style="background:#78350f;color:#fcd34d;padding:2px 8px;border-radius:4px;font-size:12px;margin-right:4px">0 Amber</span>
+              <span style="background:#14532d;color:#86efac;padding:2px 8px;border-radius:4px;font-size:12px">0 Green</span>
+            </div>
+          </div>
+          <h4 style="font-size:12px;font-weight:600;color:#64748b;text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px">Top 5 Churn Reasons</h4>
+          <div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">1. Inactivity / Low Login</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:100%;height:100%;background:#ef4444;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">1 sellers (100.0%)</span>
+          </div>
+        </div><div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">2. No Enquiry Flow</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:100%;height:100%;background:#f97316;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">1 sellers (100.0%)</span>
+          </div>
+        </div><div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">3. Low Catalog Quality (CQS)</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:100%;height:100%;background:#f59e0b;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">1 sellers (100.0%)</span>
+          </div>
+        </div><div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">4. No Hotlead Engagement</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:100%;height:100%;background:#eab308;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">1 sellers (100.0%)</span>
+          </div>
+        </div><div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">5. No Platform Activity</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:100%;height:100%;background:#84cc16;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">1 sellers (100.0%)</span>
+          </div>
+        </div>
+        </div><div id="ct-p2" class="spanel">
+          <div style="margin-bottom:16px">
+            <h3 style="font-size:16px;font-weight:600;color:#f1f5f9">Unknown</h3>
+            <div style="font-size:13px;color:#64748b;margin-top:4px">
+              1 sellers &nbsp;|&nbsp; Avg Churn Score: <b style="color:#f1f5f9">60.0</b>
+              &nbsp;|&nbsp; Avg Reply Rate: <b style="color:#f1f5f9">0.0%</b>
+              &nbsp;|&nbsp; Avg CQS: <b style="color:#f1f5f9">83.8</b>
+            </div>
+            <div style="margin-top:6px">
+              <span style="background:#7f1d1d;color:#fca5a5;padding:2px 8px;border-radius:4px;font-size:12px;margin-right:4px">0 Red</span>
+              <span style="background:#78350f;color:#fcd34d;padding:2px 8px;border-radius:4px;font-size:12px;margin-right:4px">1 Amber</span>
+              <span style="background:#14532d;color:#86efac;padding:2px 8px;border-radius:4px;font-size:12px">0 Green</span>
+            </div>
+          </div>
+          <h4 style="font-size:12px;font-weight:600;color:#64748b;text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px">Top 3 Churn Reasons</h4>
+          <div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">1. Low Reply Rate</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:100%;height:100%;background:#ef4444;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">1 sellers (100.0%)</span>
+          </div>
+        </div><div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">2. Inactivity / Low Login</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:100%;height:100%;background:#f97316;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">1 sellers (100.0%)</span>
+          </div>
+        </div><div style="margin-bottom:10px">
+          <div style="font-size:13px;color:#cbd5e1;font-weight:500;margin-bottom:4px">3. BL Decline / Velocity Drop</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="flex:1;height:12px;background:#1e293b;border-radius:6px;overflow:hidden">
+              <div style="width:100%;height:100%;background:#f59e0b;border-radius:6px"></div>
+            </div>
+            <span style="font-size:12px;color:#64748b;white-space:nowrap">1 sellers (100.0%)</span>
+          </div>
+        </div>
+        </div></div>
+    <script>
+    (function(){
+      var p='ct', n=["FCP+PNS", "Other", "Unknown"];
+      function show(i){
+        n.forEach(function(_,j){
+          var t=document.getElementById(p+'-t'+j), pn=document.getElementById(p+'-p'+j);
+          t.style.background=j===i?'#4F46E5':'#1e293b';
+          t.style.color=j===i?'#fff':'#94a3b8';
+          t.style.borderColor=j===i?'#4F46E5':'#334155';
+          pn.style.display=j===i?'block':'none';
+        });
+      }
+      window['showTab'+(p)]=show;
+      var oldST=window.showTab;
+      window.showTab=function(px,i){if(px===p)show(i);else if(oldST&&oldST!==window.showTab)oldST(px,i);};
+      show(0);
+    })();
+    </script>
+</div>
+
+<div class="section">
+  <div class="stitle">Red-Tier Sellers (5) — Sorted by Score</div>
+  <div style="overflow-x:auto;background:#1e293b;border-radius:12px;border:1px solid #334155">
+    <table>
+      <thead><tr><th>GLID</th><th>Company</th><th>City</th><th>Segment</th><th>Score</th>
+        <th>Reply%</th><th>CQS</th><th>Active Days</th><th>Enq 30d</th><th>Top Reasons</th></tr></thead>
+      <tbody><tr>
+      <td><a href="data/126858381/dashboard.html" target="_blank" style="color:#818cf8">126858381</a></td>
+      <td>Baba Vishwanath Traders</td>
+      <td>Vaishali</td>
+      <td>Proprietor</td>
+      <td><span style="background:#7f1d1d;color:#fca5a5;padding:2px 8px;border-radius:6px;font-weight:700">84</span></td>
+      <td>0.0%</td>
+      <td>81.3</td>
+      <td>0</td>
+      <td>7</td>
+      <td style="font-size:11px;color:#94a3b8">Low reply rate: 0.0% (threshold 40%); Zero LMS active days i</td>
+    </tr><tr>
+      <td><a href="data/110784290/dashboard.html" target="_blank" style="color:#818cf8">110784290</a></td>
+      <td>Odipay Tech Private Limited</td>
+      <td>Baleshwar</td>
+      <td>ME</td>
+      <td><span style="background:#7f1d1d;color:#fca5a5;padding:2px 8px;border-radius:6px;font-weight:700">72</span></td>
+      <td>0.0%</td>
+      <td>80.6</td>
+      <td>0</td>
+      <td>2</td>
+      <td style="font-size:11px;color:#94a3b8">Low reply rate: 0.0% (threshold 40%); Zero LMS active days i</td>
+    </tr><tr>
+      <td><a href="data/151729919/dashboard.html" target="_blank" style="color:#818cf8">151729919</a></td>
+      <td>Vital Overseas Private Limit</td>
+      <td></td>
+      <td></td>
+      <td><span style="background:#7f1d1d;color:#fca5a5;padding:2px 8px;border-radius:6px;font-weight:700">68</span></td>
+      <td>0%</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td style="font-size:11px;color:#94a3b8">Zero LMS active days in last 30d; Zero enquiries in last 30d</td>
+    </tr><tr>
+      <td><a href="data/118547465/dashboard.html" target="_blank" style="color:#818cf8">118547465</a></td>
+      <td>Radhe Krishna Steel</td>
+      <td>Rajkot</td>
+      <td>Proprietor</td>
+      <td><span style="background:#7f1d1d;color:#fca5a5;padding:2px 8px;border-radius:6px;font-weight:700">67</span></td>
+      <td>0.0%</td>
+      <td>21.6</td>
+      <td>2</td>
+      <td>7</td>
+      <td style="font-size:11px;color:#94a3b8">Low reply rate: 0.0% (threshold 40%); Only 2 active days in </td>
+    </tr><tr>
+      <td><a href="data/203711931/dashboard.html" target="_blank" style="color:#818cf8">203711931</a></td>
+      <td>Shree Khodal Enterprise</td>
+      <td>Rajkot</td>
+      <td>Proprietor</td>
+      <td><span style="background:#7f1d1d;color:#fca5a5;padding:2px 8px;border-radius:6px;font-weight:700">65</span></td>
+      <td>0.0%</td>
+      <td>53.1</td>
+      <td>0</td>
+      <td>2</td>
+      <td style="font-size:11px;color:#94a3b8">Low reply rate: 0.0% (threshold 40%); Zero LMS active days i</td>
+    </tr></tbody>
+    </table>
+  </div>
+</div>
+
+</div>
+<script>
+new Chart(document.getElementById('riskDist'), {"type": "doughnut", "data": {"labels": ["Red", "Amber", "Green"], "datasets": [{"data": [5, 6, 0], "backgroundColor": ["#ef4444", "#f59e0b", "#22c55e"], "borderWidth": 2, "borderColor": "#0f172a"}]}, "options": {"responsive": true, "maintainAspectRatio": false, "plugins": {"legend": {"position": "right", "labels": {"color": "#cbd5e1", "font": {"size": 11}}}}}});
+new Chart(document.getElementById('scoreDist'), {"type": "bar", "data": {"labels": ["0-19", "20-34", "35-49", "50-64", "65-79", "80+"], "datasets": [{"label": "Sellers", "data": [0, 0, 3, 3, 4, 1], "backgroundColor": "#8b5cf6", "borderRadius": 4}]}, "options": {"indexAxis": "x", "responsive": true, "maintainAspectRatio": false, "plugins": {"legend": {"display": false}}, "scales": {"x": {"beginAtZero": true, "ticks": {"color": "#94a3b8"}, "grid": {"color": "#1e293b"}}, "y": {"ticks": {"color": "#cbd5e1", "font": {"size": 11}}, "grid": {"display": false}}}}});
+new Chart(document.getElementById('tierM'), {"type": "bar", "data": {"labels": ["Reply Rate %", "CQS Score", "Active Days/30d", "Hotleads"], "datasets": [{"label": "Red", "data": [0.0, 47.32, 0.4, 6.2], "backgroundColor": "#ef4444", "borderRadius": 4}, {"label": "Amber", "data": [0.0, 82.42, 0.0, 6.0], "backgroundColor": "#f59e0b", "borderRadius": 4}, {"label": "Green", "data": [0, 0, 0, 0], "backgroundColor": "#22c55e", "borderRadius": 4}]}, "options": {"responsive": true, "maintainAspectRatio": false, "plugins": {"legend": {"labels": {"color": "#cbd5e1"}}}, "scales": {"x": {"ticks": {"color": "#94a3b8"}, "grid": {"color": "#1e293b"}}, "y": {"beginAtZero": true, "ticks": {"color": "#94a3b8"}, "grid": {"color": "#1e293b"}}}}});
+new Chart(document.getElementById('cityChart'), {"type": "bar", "data": {"labels": ["Rajkot", "Baleshwar", "Vaishali"], "datasets": [{"label": "Red Sellers", "data": [2, 1, 1], "backgroundColor": "#ef4444", "borderRadius": 4}]}, "options": {"indexAxis": "y", "responsive": true, "maintainAspectRatio": false, "plugins": {"legend": {"display": false}}, "scales": {"x": {"beginAtZero": true, "ticks": {"color": "#94a3b8"}, "grid": {"color": "#1e293b"}}, "y": {"ticks": {"color": "#cbd5e1", "font": {"size": 11}}, "grid": {"display": false}}}}});
+</script>
+</body></html>

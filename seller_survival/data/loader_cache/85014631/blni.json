@@ -1,0 +1,41 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 85014631,
+        "event_date": "2025-06-17",
+        "offer_id": 123849444795,
+        "mcat_id": null,
+        "reason_code": 5,
+        "reason_text": "Location",
+        "comment": null,
+        "module_id": null
+      },
+      {
+        "gluser_id": 85014631,
+        "event_date": "2025-06-17",
+        "offer_id": 123848778785,
+        "mcat_id": null,
+        "reason_code": 5,
+        "reason_text": "Location",
+        "comment": null,
+        "module_id": null
+      },
+      {
+        "gluser_id": 85014631,
+        "event_date": "2025-06-17",
+        "offer_id": 123852617895,
+        "mcat_id": null,
+        "reason_code": 5,
+        "reason_text": "Location",
+        "comment": null,
+        "module_id": null
+      }
+    ],
+    "total": 3,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

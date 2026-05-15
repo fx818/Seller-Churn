@@ -1,0 +1,41 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 264007932,
+        "event_date": "2026-02-12",
+        "offer_id": 138739730563,
+        "mcat_id": 186214,
+        "reason_code": 10,
+        "reason_text": "Specification Missing",
+        "comment": null,
+        "module_id": "FENQ"
+      },
+      {
+        "gluser_id": 264007932,
+        "event_date": "2026-02-12",
+        "offer_id": 138730203246,
+        "mcat_id": 186214,
+        "reason_code": 10,
+        "reason_text": "Specification Missing",
+        "comment": null,
+        "module_id": "FLPNS"
+      },
+      {
+        "gluser_id": 264007932,
+        "event_date": "2026-02-12",
+        "offer_id": 138734434167,
+        "mcat_id": 186214,
+        "reason_code": 10,
+        "reason_text": "Specification Missing",
+        "comment": null,
+        "module_id": "FENQ"
+      }
+    ],
+    "total": 3,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>IndiaMART API Dashboards — GLID 488587</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0f1117;--s1:#1a1d27;--s2:#22263a;--bdr:#2e3350;--acc:#6366f1;--acc2:#8b5cf6;--grn:#10b981;--red:#ef4444;--txt:#e2e8f0;--mut:#94a3b8;--r:12px}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',system-ui,sans-serif;min-height:100vh}
+.hdr{background:linear-gradient(135deg,#1e1b4b,#0f172a);border-bottom:1px solid var(--bdr);padding:24px 40px}
+.hdr h1{font-size:24px;font-weight:800;letter-spacing:-.5px}
+.hdr p{color:var(--mut);font-size:14px;margin-top:6px}
+.hdr-meta{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+.badge{background:var(--s2);border:1px solid var(--bdr);padding:5px 14px;border-radius:20px;font-size:12px;color:var(--mut)}
+.badge b{color:var(--txt)}
+main{padding:32px 40px}
+.group-title{font-size:12px;font-weight:700;color:var(--mut);text-transform:uppercase;letter-spacing:1px;margin:28px 0 12px;display:flex;align-items:center;gap:10px}
+.group-title::after{content:'';flex:1;height:1px;background:var(--bdr)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.api-card{background:var(--s1);border:1px solid var(--bdr);border-radius:var(--r);padding:20px;text-decoration:none;color:var(--txt);display:block;transition:all .15s;position:relative;overflow:hidden}
+.api-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--stripe,var(--acc))}
+.api-card:hover{border-color:var(--acc);transform:translateY(-2px);box-shadow:0 8px 24px #6366f122}
+.card-icon{font-size:28px;margin-bottom:12px}
+.card-title{font-size:15px;font-weight:700;margin-bottom:4px}
+.card-sub{font-size:12px;color:var(--mut);margin-bottom:10px}
+.card-meta{display:flex;gap:6px;flex-wrap:wrap}
+.tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:500}
+.tag-ok{background:#064e3b44;color:#34d399;border:1px solid #10b98144}
+.tag-err{background:#450a0a44;color:#fca5a5;border:1px solid #ef444444}
+.tag-na{background:var(--s2);color:var(--mut);border:1px solid var(--bdr)}
+.tag-updated{background:#1a2a1a;color:#4ade80;border:1px solid #22c55e44;font-size:10px}
+.tag-method{background:#1e3a5f44;color:#60a5fa;border:1px solid #3b82f644}
+footer{text-align:center;padding:32px;color:var(--mut);font-size:12px;border-top:1px solid var(--bdr);margin-top:20px}
+</style>
+</head>
+<body>
+<div class="hdr">
+  <h1>⚡ IndiaMART API Dashboards</h1>
+  <p>Call Personalisation — Internal API Analysis Suite</p>
+  <div class="hdr-meta">
+    <div class="badge">GLID: <b>488587</b></div>
+    <div class="badge">EmpID: <b>990151691</b></div>
+    <div class="badge">Total APIs: <b>18</b></div>
+    <div class="badge">Generated: <b>2026-05-14</b></div>
+  </div>
+</div>
+<main>
+
+<div class="group-title">DWH POST APIs</div>
+<div class="grid">
+  <a href="01_mcat/dashboard.html" class="api-card" style="--stripe:#6366f1">
+    <div class="card-icon">🗂️</div>
+    <div class="card-title">MCAT Location Details</div>
+    <div class="card-sub">mcatLocDtls</div>
+    <div class="card-meta"><span class="tag tag-ok">200 OK</span><span class="tag tag-method">POST</span></div>
+  </a>
+  <a href="02_scorecard_summary/dashboard.html" class="api-card" style="--stripe:#8b5cf6">
+    <div class="card-icon">📊</div>
+    <div class="card-title">Scorecard Summary</div>
+    <div class="card-sub">cust_wh_summary_api</div>
+    <div class="card-meta"><span class="tag tag-ok">200 OK</span><span class="tag tag-method">POST</span></div>
+  </a>
+  <a href="03_scorecard_6m/dashboard.html" class="api-card" style="--stripe:#06b6d4">
+    <div class="card-icon">📈</div>
+    <div class="card-title">Scorecard 6-Month</div>
+    <div class="card-sub">cust_scorecard_api</div>
+    <div class="card-meta"><span class="tag tag-ok">200 OK</span><span class="tag tag-method">POST</span></div>
+  </a>
+  <a href="04_scorecard_12m/dashboard.html" class="api-card" style="--stripe:#10b981">
+    <div class="card-icon">📅</div>
+    <div class="card-title">Scorecard 12-Month</div>
+    <div class="card-sub">cust_wh_apiv2</div>
+    <div class="card-meta"><span class="tag tag-ok">200 OK</span><span class="tag tag-method">POST</span></div>
+  </a>
+</div>
+
+<div class="group-title">Competitor APIs</div>
+<div class="grid">
+  <a href="05_competitors/dashboard.html" class="api-card" style="--stripe:#f59e0b">
+    <div class="card-icon">🏭</div>
+    <div class="card-title">Competitor Analysis</div>
+    <div class="card-sub">nsdprepplus (comp_flag=1)</div>
+    <div class="card-meta"><span class="tag tag-ok">200 OK</span><span class="tag tag-method">POST</span></div>
+  </a>
+  <a href="06_competitors_counts/dashboard.html" class="api-card" style="--stripe:#ec4899">
+    <div class="card-icon">🔢</div>
+    <div class="card-title">Competitor Market Counts</div>
+    <div class="card-sub">nsdprepplus (comp_flag=2)</div>
+    <div class="card-meta"><span class="tag tag-ok">200 OK</span><span class="tag tag-method">POST</span></div>
+  </a>
+</div>
+
+<div class="group-title">MERP GET APIs</div>
+<div class="grid">
+  <a href="07_history/dashboard.html" class="api-card" style="--stripe:#6366f1">
+    <div class="card-icon">📞</div>
+    <div class="card-title">Call History</div>
+    <div class="card-sub">newHistory — AK query param</div>
+    <div class="card-meta"><span class="tag tag-ok">200 OK</span><span class="tag tag-method">GET</span><span class="tag tag-updated">Updated</span></div>
+  </a>
+  <a href="08_dsr/dashboard.html" class="api-card" style="--stripe:#8b5cf6">
+    <div class="card-icon">📋</div>
+    <div class="card-title">DSR — History (glid=236)</div>
+    <div class="card-sub">newHistory — new URL + AK param</div>
+    <div class="card-meta"><span class="tag tag-ok">200 OK</span><span class="tag tag-method">GET</span><span class="tag tag-updated">Updated</span></div>
+  </a>
+  <a href="09_product_summary/dashboard.html" class="api-card" style="--stripe:#10b981">
+    <div class="card-icon">🛍️</div>
+    <div class="card-title">Product Quality Summary</div>
+    <div class="card-sub">qualityScoreDetails — AK query param</div>
+    <div class="card-meta"><span class="tag tag-ok">200 OK</span><span class="tag tag-method">GET</span><span class="tag tag-updated">Updated</span></div>
+  </a>
+  <a href="10_product_details/dashboard.html" class="api-card" style="--stripe:#f59e0b">
+    <div class="card-icon">📦</div>
+    <div class="card-title">Product Quality Details</div>
+    <div class="card-sub">qualityScoreDetails — AK query param</div>
+    <div class="card-meta"><span class="tag tag-ok">200 OK</span><span class="tag tag-method">GET</span><span class="tag tag-updated">Updated</span></div>
+  </a>
+</div>
+
+<div class="group-title">Ingestion Service APIs</div>
+<div class="grid">
+  <a href="11_ingestion_composite/dashboard.html" class="api-card" style="--stripe:#6366f1">
+    <div class="card-icon">🏢</div>
+    <div class="card-title">Seller Composite Profile</div>
+    <div class="card-sub">/api/v1/sellers/{glid}</div>
+    <div class="card-meta"><span class="tag tag-ok">200 OK</span><span class="tag tag-method">GET</span></div>
+  </a>
+  <a href="12_ingestion_calls/dashboard.html" class="api-card" style="--stripe:#8b5cf6">
+    <div class="card-icon">📞</div>
+    <div class="card-title">Calls</div>
+    <div class="card-sub">/api/v1/sellers/{glid}/calls</div>
+    <div class="card-meta"><span class="tag tag-ok">200 OK</span><span class="tag tag-method">GET</span><span class="tag tag-na">Empty</span></div>
+  </a>
+  <a href="13_ingestion_hotleads/dashboard.html" class="api-card" style="--stripe:#f59e0b">
+    <div class="card-icon">🔥</div>
+    <div class="card-title">Hotleads</div>
+    <div class="card-sub">/api/v1/sellers/{glid}/hotleads</div>
+    <div class="card-meta"><span class="tag tag-ok">200 OK</span><span class="tag tag-method">GET</span></div>
+  </a>
+  <a href="14_ingestion_blni/dashboard.html" class="api-card" style="--stripe:#06b6d4">
+    <div class="card-icon">📡</div>
+    <div class="card-title">BLNI</div>
+    <div class="card-sub">/api/v1/sellers/{glid}/blni</div>
+    <div class="card-meta"><span class="tag tag-ok">200 OK</span><span class="tag tag-method">GET</span><span class="tag tag-na">Empty</span></div>
+  </a>
+  <a href="15_ingestion_metrics/dashboard.html" class="api-card" style="--stripe:#10b981">
+    <div class="card-icon">📊</div>
+    <div class="card-title">Seller Metrics</div>
+    <div class="card-sub">/api/v1/sellers/{glid}/metrics</div>
+    <div class="card-meta"><span class="tag tag-ok">200 OK</span><span class="tag tag-method">GET</span></div>
+  </a>
+  <a href="16_ingestion_activity/dashboard.html" class="api-card" style="--stripe:#ec4899">
+    <div class="card-icon">⚡</div>
+    <div class="card-title">Activity Clickstream</div>
+    <div class="card-sub">/api/v1/sellers/236/activity</div>
+    <div class="card-meta"><span class="tag tag-ok">200 OK</span><span class="tag tag-method">GET</span><span class="tag tag-updated">Updated</span></div>
+  </a>
+</div>
+
+<div class="group-title">Context API (2-Step Flow)</div>
+<div class="grid">
+  <a href="17_context_uid/dashboard.html" class="api-card" style="--stripe:#a855f7">
+    <div class="card-icon">🔑</div>
+    <div class="card-title">Context UID</div>
+    <div class="card-sub">generateContextUID (Step 1)</div>
+    <div class="card-meta"><span class="tag tag-ok">200 OK</span><span class="tag tag-method">POST</span></div>
+  </a>
+  <a href="18_context_data/dashboard.html" class="api-card" style="--stripe:#14b8a6">
+    <div class="card-icon">🧩</div>
+    <div class="card-title">Context Data</div>
+    <div class="card-sub">getContext (Step 2 — auto-chained)</div>
+    <div class="card-meta"><span class="tag tag-ok">200 OK</span><span class="tag tag-method">GET</span></div>
+  </a>
+</div>
+
+</main>
+<footer>IndiaMART Call Personalisation — API Dashboard Suite &nbsp;|&nbsp; GLID 488587 &nbsp;|&nbsp; Generated 2026-05-14</footer>
+</body>
+</html>

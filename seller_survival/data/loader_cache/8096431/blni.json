@@ -1,0 +1,81 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 8096431,
+        "event_date": "2026-02-18",
+        "offer_id": 139133809785,
+        "mcat_id": 8032,
+        "reason_code": 3,
+        "reason_text": "Specification Mismatch",
+        "comment": null,
+        "module_id": "IMOB"
+      },
+      {
+        "gluser_id": 8096431,
+        "event_date": "2026-02-18",
+        "offer_id": 139057893959,
+        "mcat_id": 178809,
+        "reason_code": 5,
+        "reason_text": "Location",
+        "comment": null,
+        "module_id": "FCP"
+      },
+      {
+        "gluser_id": 8096431,
+        "event_date": "2026-02-18",
+        "offer_id": 139096240213,
+        "mcat_id": 174541,
+        "reason_code": 5,
+        "reason_text": "Location",
+        "comment": null,
+        "module_id": "IMOB"
+      },
+      {
+        "gluser_id": 8096431,
+        "event_date": "2026-01-12",
+        "offer_id": 136767813446,
+        "mcat_id": 137992,
+        "reason_code": 5,
+        "reason_text": "Location",
+        "comment": null,
+        "module_id": "FLPNS"
+      },
+      {
+        "gluser_id": 8096431,
+        "event_date": "2026-01-12",
+        "offer_id": 136736676459,
+        "mcat_id": 8032,
+        "reason_code": 5,
+        "reason_text": "Location",
+        "comment": null,
+        "module_id": "IMOB"
+      },
+      {
+        "gluser_id": 8096431,
+        "event_date": "2026-01-12",
+        "offer_id": 136809160252,
+        "mcat_id": 148344,
+        "reason_code": 5,
+        "reason_text": "Location",
+        "comment": null,
+        "module_id": "FENQ"
+      },
+      {
+        "gluser_id": 8096431,
+        "event_date": "2026-01-12",
+        "offer_id": 136790940785,
+        "mcat_id": 8032,
+        "reason_code": 5,
+        "reason_text": "Location",
+        "comment": null,
+        "module_id": "IMOB"
+      }
+    ],
+    "total": 7,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

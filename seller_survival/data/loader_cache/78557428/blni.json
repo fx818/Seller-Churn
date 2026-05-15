@@ -1,0 +1,31 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 78557428,
+        "event_date": "2026-03-02",
+        "offer_id": 139865564675,
+        "mcat_id": 186011,
+        "reason_code": 3,
+        "reason_text": "Specification Mismatch",
+        "comment": null,
+        "module_id": "ANDWEB"
+      },
+      {
+        "gluser_id": 78557428,
+        "event_date": "2026-03-02",
+        "offer_id": 139779459067,
+        "mcat_id": 34847,
+        "reason_code": 3,
+        "reason_text": "Specification Mismatch",
+        "comment": null,
+        "module_id": "FENQ"
+      }
+    ],
+    "total": 2,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

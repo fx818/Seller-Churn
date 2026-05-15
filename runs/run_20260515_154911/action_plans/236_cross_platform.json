@@ -1,0 +1,49 @@
+{
+  "platforms_found": [
+    "shopify"
+  ],
+  "platform_data": {
+    "justdial": {
+      "found": false,
+      "product_count": 0,
+      "rating": 0.0,
+      "reviews": 0,
+      "categories": [],
+      "url": ""
+    },
+    "tradeindia": {
+      "found": false,
+      "product_count": 0,
+      "rating": 0.0,
+      "reviews": 0,
+      "categories": [],
+      "url": "https://accounts.google.com/ServiceLogin?hl=en&passive=true&continue=https://www.google.com/search%3Fq%3D%2522Astrra%2520Chemicals%2522%2520Chennai%2Bsite:tradeindia.com%26sei%3DLPMGasOXC5fKp84P-9CFqQU&ec=futura_srp_og_si_72236_p"
+    },
+    "shopify": {
+      "found": true,
+      "product_count": 0,
+      "url": "https://accounts.google.com/ServiceLogin?hl=en&passive=true&continue=https://www.google.com/search%3Fq%3D%2522Astrra%2520Chemicals%2522%2520Chennai%2Bsite:myshopify.com&ec=futura_srp_og_si_72236_p"
+    }
+  },
+  "im_catalog_gap": {
+    "im_products": 0,
+    "other_avg_products": 0,
+    "gap_pct": 0,
+    "severity": "unknown"
+  },
+  "call_card": {
+    "headline_hi": "Astrra Bhai, aap Shopify pe bhi hain — IM catalog match karte hain.",
+    "headline_en": "You're on Shopify too. IndiaMART catalog is at parity.",
+    "data_points": [
+      "Shopify: Listed (product count unavailable)"
+    ],
+    "suggested_action": "Maintain catalog sync across platforms quarterly.",
+    "effort_estimate": "20 minutes",
+    "urgency": "unknown"
+  },
+  "competitive_positioning": "parity",
+  "scrape_status": "success",
+  "_tier": "Amber",
+  "_rca": "BL_DECLINE",
+  "_company": "Astrra Chemicals"
+}

@@ -1,0 +1,65 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 80128581,
+        "hotlead_date": "2025-09-24",
+        "hotlead_id": 10880812,
+        "hotlead_type_id": 1021804465,
+        "data_type": "PNSM",
+        "activity": "Premium Activity - PNS Call Missed",
+        "activity_id": 10002
+      },
+      {
+        "gluser_id": 80128581,
+        "hotlead_date": "2025-09-12",
+        "hotlead_id": 10880812,
+        "hotlead_type_id": 1016582983,
+        "data_type": "ENQR",
+        "activity": "Premium Activity - Enquiry Received",
+        "activity_id": 10004
+      },
+      {
+        "gluser_id": 80128581,
+        "hotlead_date": "2025-08-13",
+        "hotlead_id": 10880812,
+        "hotlead_type_id": 1002891899,
+        "data_type": "ENQR",
+        "activity": "Premium Activity - Enquiry Received",
+        "activity_id": 10004
+      },
+      {
+        "gluser_id": 80128581,
+        "hotlead_date": "2025-07-12",
+        "hotlead_id": 10880812,
+        "hotlead_type_id": 988204469,
+        "data_type": "PNSR",
+        "activity": "Premium Activity - PNS Call Received",
+        "activity_id": 10001
+      },
+      {
+        "gluser_id": 80128581,
+        "hotlead_date": "2025-07-11",
+        "hotlead_id": 10880812,
+        "hotlead_type_id": 987572131,
+        "data_type": "ENQR",
+        "activity": "Premium Activity - Enquiry Received",
+        "activity_id": 10004
+      },
+      {
+        "gluser_id": 80128581,
+        "hotlead_date": "2025-06-13",
+        "hotlead_id": 10880812,
+        "hotlead_type_id": 974786015,
+        "data_type": "PIM",
+        "activity": "Payment Interest - MDC",
+        "activity_id": 4296
+      }
+    ],
+    "total": 6,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

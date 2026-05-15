@@ -1,0 +1,22 @@
+{
+  "status": 200,
+  "data": {
+    "data": {
+      "CQS": 68,
+      "brochure_prod_perc": 0,
+      "desc_prod_perc": 76.9,
+      "incorrect_price_prod_perc": 0,
+      "isq_prod_perc": 95.5,
+      "photo_prod_perc": 100,
+      "pqs_less_than60_products": 5,
+      "pqs_less_than80_products": 13,
+      "pqs_more_than80_products": 8,
+      "total_products": 26,
+      "unapproved_products": 0,
+      "video_prod_perc": 0
+    },
+    "message": "success",
+    "status": 200
+  },
+  "error": null
+}

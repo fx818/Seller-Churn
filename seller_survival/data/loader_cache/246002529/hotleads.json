@@ -1,0 +1,83 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 246002529,
+        "hotlead_date": "2026-02-06",
+        "hotlead_id": 13373638,
+        "hotlead_type_id": 1078446245,
+        "data_type": "PNCHF",
+        "activity": "E-nach",
+        "activity_id": 0
+      },
+      {
+        "gluser_id": 246002529,
+        "hotlead_date": "2026-02-05",
+        "hotlead_id": 13373638,
+        "hotlead_type_id": 1077972456,
+        "data_type": "PNCHF",
+        "activity": "E-nach",
+        "activity_id": 0
+      },
+      {
+        "gluser_id": 246002529,
+        "hotlead_date": "2026-02-04",
+        "hotlead_id": 13373638,
+        "hotlead_type_id": 1077702799,
+        "data_type": "PAM",
+        "activity": "Payment Attempt - MDC",
+        "activity_id": 2538
+      },
+      {
+        "gluser_id": 246002529,
+        "hotlead_date": "2026-01-31",
+        "hotlead_id": 13373638,
+        "hotlead_type_id": 1075905136,
+        "data_type": "PIM",
+        "activity": "Payment Interest - MDC",
+        "activity_id": 535
+      },
+      {
+        "gluser_id": 246002529,
+        "hotlead_date": "2025-12-31",
+        "hotlead_id": 13373638,
+        "hotlead_type_id": 1062561318,
+        "data_type": "PUA",
+        "activity": "Premium Activity - Online",
+        "activity_id": 1874
+      },
+      {
+        "gluser_id": 246002529,
+        "hotlead_date": "2025-10-23",
+        "hotlead_id": 13373638,
+        "hotlead_type_id": 1033722802,
+        "data_type": "PNSM",
+        "activity": "Premium Activity - PNS Call Missed",
+        "activity_id": 10002
+      },
+      {
+        "gluser_id": 246002529,
+        "hotlead_date": "2025-09-26",
+        "hotlead_id": 13373638,
+        "hotlead_type_id": 1022598860,
+        "data_type": "ENQR",
+        "activity": "Premium Activity - Enquiry Received",
+        "activity_id": 10004
+      },
+      {
+        "gluser_id": 246002529,
+        "hotlead_date": "2025-06-06",
+        "hotlead_id": 13373638,
+        "hotlead_type_id": 971751306,
+        "data_type": "PANF",
+        "activity": "E-nach",
+        "activity_id": 0
+      }
+    ],
+    "total": 8,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

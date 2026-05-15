@@ -1,0 +1,21 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 12557700,
+        "event_date": "2025-12-22",
+        "offer_id": 135492851913,
+        "mcat_id": 139150,
+        "reason_code": 1,
+        "reason_text": "Wrong Product",
+        "comment": null,
+        "module_id": "FENQ"
+      }
+    ],
+    "total": 1,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

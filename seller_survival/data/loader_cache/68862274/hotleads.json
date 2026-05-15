@@ -1,0 +1,29 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 68862274,
+        "hotlead_date": "2026-02-15",
+        "hotlead_id": 14174979,
+        "hotlead_type_id": 1082453616,
+        "data_type": "PANF",
+        "activity": "E-nach",
+        "activity_id": 0
+      },
+      {
+        "gluser_id": 68862274,
+        "hotlead_date": "2026-02-14",
+        "hotlead_id": 14174979,
+        "hotlead_type_id": 1082188793,
+        "data_type": "PIM",
+        "activity": "Payment Interest - MDC",
+        "activity_id": 4501
+      }
+    ],
+    "total": 2,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

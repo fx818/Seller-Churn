@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Context Data — Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0f1117;--s1:#1a1d27;--s2:#22263a;--bdr:#2e3350;--acc:#6366f1;--acc2:#8b5cf6;--acc3:#06b6d4;--grn:#10b981;--ylw:#f59e0b;--red:#ef4444;--txt:#e2e8f0;--mut:#94a3b8;--r:12px}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',system-ui,sans-serif;min-height:100vh}
+.hdr{background:linear-gradient(135deg,#1e1b4b,#0f172a);border-bottom:1px solid var(--bdr);padding:20px 32px;display:flex;align-items:center;gap:16px}
+.hdr-icon{width:44px;height:44px;background:linear-gradient(135deg,var(--acc),var(--acc2));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.hdr h1{font-size:18px;font-weight:700}.hdr p{font-size:12px;color:var(--mut);margin-top:2px}
+.hdr-right{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+.badge{background:var(--s2);border:1px solid var(--bdr);padding:4px 12px;border-radius:20px;font-size:12px;color:var(--mut)}
+.badge b{color:var(--txt)}
+.badge.ok{border-color:#10b98144;color:var(--grn)}
+.badge.err{border-color:#ef444444;color:var(--red)}
+main{padding:24px 32px}
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+.card{background:var(--s1);border:1px solid var(--bdr);border-radius:var(--r);padding:20px;overflow:hidden}
+.card-title{font-size:13px;font-weight:600;color:var(--mut);text-transform:uppercase;letter-spacing:.5px;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.card-title span{flex:1}
+.metric-card{background:var(--s1);border:1px solid var(--bdr);border-radius:var(--r);padding:18px;position:relative;overflow:hidden}
+.metric-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--c,var(--acc))}
+.metric-lbl{font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.5px}
+.metric-val{font-size:26px;font-weight:800;margin:6px 0 4px;color:var(--c,var(--txt))}
+.metric-sub{font-size:11px;color:var(--mut)}
+.section{margin-bottom:28px}
+.section-title{font-size:15px;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+thead{background:var(--s2)}
+th{padding:10px 12px;text-align:left;font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.5px;white-space:nowrap;border-bottom:1px solid var(--bdr)}
+td{padding:10px 12px;border-bottom:1px solid var(--bdr);vertical-align:top}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:var(--s2)}
+.tbl-wrap{overflow-x:auto;border-radius:var(--r);border:1px solid var(--bdr)}
+.tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:500}
+.tag-green{background:#064e3b;color:#34d399}
+.tag-blue{background:#1e3a5f;color:#60a5fa}
+.tag-yellow{background:#451a03;color:#fbbf24}
+.tag-purple{background:#2d1b69;color:#a78bfa}
+.tag-red{background:#450a0a;color:#fca5a5}
+.kv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.kv-item{background:var(--s2);border:1px solid var(--bdr);border-radius:8px;padding:12px}
+.kv-key{font-size:11px;color:var(--mut);margin-bottom:4px}
+.kv-val{font-size:14px;font-weight:600;word-break:break-all}
+.chart-wrap{position:relative;height:300px}
+.chart-wrap-sm{position:relative;height:220px}
+.progress-bar{height:8px;background:var(--s2);border-radius:4px;overflow:hidden;margin-top:6px}
+.progress-fill{height:100%;border-radius:4px;transition:width .6s ease}
+.empty{text-align:center;padding:40px;color:var(--mut);font-size:14px}
+.json-viewer{background:#0a0a12;border:1px solid var(--bdr);border-radius:var(--r);padding:16px;font-family:monospace;font-size:12px;overflow:auto;max-height:400px;color:#a8b4c8;white-space:pre-wrap;word-break:break-all}
+.toggle-btn{background:var(--s2);border:1px solid var(--bdr);border-radius:6px;padding:6px 14px;color:var(--mut);cursor:pointer;font-size:12px;transition:all .15s}
+.toggle-btn:hover{border-color:var(--acc);color:var(--acc)}
+.timeline{display:flex;flex-direction:column;gap:0}
+.tl-item{display:flex;gap:16px;padding:12px 0;border-bottom:1px solid var(--bdr)}
+.tl-item:last-child{border-bottom:none}
+.tl-dot{width:10px;height:10px;border-radius:50%;background:var(--acc);flex-shrink:0;margin-top:5px}
+.tl-content{flex:1}
+.tl-title{font-size:13px;font-weight:600}
+.tl-time{font-size:11px;color:var(--mut);margin-top:2px}
+.tl-meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.dual-bar{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.dual-lbl{width:180px;font-size:12px;color:var(--mut);text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dual-track{flex:1;display:flex;gap:4px}
+.dual-fill{height:22px;border-radius:4px;display:flex;align-items:center;padding:0 8px;font-size:11px;font-weight:600;color:#fff;min-width:28px}
+.no-data{background:var(--s2);border:1px solid var(--bdr);border-radius:var(--r);padding:40px;text-align:center;color:var(--mut)}
+::-webkit-scrollbar{width:5px;height:5px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--bdr);border-radius:3px}
+@media(max-width:640px){main{padding:16px}.hdr{padding:16px}.dual-lbl{width:100px}}
+</style>
+</head>
+<body>
+<div class="hdr">
+  <div class="hdr-icon">🧩</div>
+  <div><h1>Context Data</h1><p>Context API — getContext</p></div>
+  <div class="hdr-right">
+    <div class="badge ok"><b>HTTP 200</b></div>
+    <div class="badge">GLID: <b>488587</b></div>
+    <div class="badge">Generated: <b>2026-05-14 23:26</b></div>
+  </div>
+</div>
+<main id="main">
+<div class="section">
+      <div class="section-title">🧾 Actual Data</div>
+      <div class="grid g4">
+        <div class="metric-card" style="--c:#6366f1"><div class="metric-lbl">GLID</div><div class="metric-val">488587</div></div>
+        <div class="metric-card" style="--c:#06b6d4"><div class="metric-lbl">Preferred Cities</div><div class="metric-val" style="font-size:16px">Delhi</div></div>
+        <div class="metric-card" style="--c:#8b5cf6"><div class="metric-lbl">Uploaded At</div><div class="metric-val" style="font-size:13px">2026-05-14T23:07:21</div></div>
+      </div>
+    </div><div class="section">
+      <div class="section-title">📦 BL Details</div>
+      <div class="grid g4"><div class="metric-card" style="--c:#6366f1"><div class="metric-lbl">BL Available (City)</div><div class="metric-val">0</div></div><div class="metric-card" style="--c:#06b6d4"><div class="metric-lbl">BL Available (Pref City)</div><div class="metric-val">0</div></div><div class="metric-card" style="--c:#10b981"><div class="metric-lbl">A-Rank BL</div><div class="metric-val">0</div></div><div class="metric-card" style="--c:#8b5cf6"><div class="metric-lbl">A-Rank BL (Pref City)</div><div class="metric-val">0</div></div></div>
+      <div class="no-data" style="margin-top:12px;padding:16px">No active BL details.</div>
+    </div><div class="section">
+      <div class="section-title">⚡ Buyer Activity (25 events)</div>
+      <div class="grid g2">
+        <div class="card"><div class="card-title"><span>By Activity Type</span></div><div class="chart-wrap-sm"><canvas id="ch_act"></canvas></div></div>
+        <div class="card"><div class="card-title"><span>Recent Activity Timeline</span></div><div class="timeline"><div class="tl-item">
+          <div class="tl-dot" style="background:#6366f1"></div>
+          <div class="tl-content">
+            <div class="tl-title">Browse</div>
+            <div class="tl-time">2026-05-11 14:40:36</div>
+            <div class="tl-meta">
+              
+              
+            </div>
+          </div>
+        </div><div class="tl-item">
+          <div class="tl-dot" style="background:#94a3b8"></div>
+          <div class="tl-content">
+            <div class="tl-title">Others</div>
+            <div class="tl-time">2026-05-11 14:40:35</div>
+            <div class="tl-meta">
+              
+              <span class="tag tag-purple">Seller: 39581457</span>
+            </div>
+          </div>
+        </div><div class="tl-item">
+          <div class="tl-dot" style="background:#94a3b8"></div>
+          <div class="tl-content">
+            <div class="tl-title">Others</div>
+            <div class="tl-time">2026-05-11 14:39:33</div>
+            <div class="tl-meta">
+              
+              <span class="tag tag-purple">Seller: 39581457</span>
+            </div>
+          </div>
+        </div><div class="tl-item">
+          <div class="tl-dot" style="background:#94a3b8"></div>
+          <div class="tl-content">
+            <div class="tl-title">Others</div>
+            <div class="tl-time">2026-05-11 14:39:32</div>
+            <div class="tl-meta">
+              
+              <span class="tag tag-purple">Seller: 39581457</span>
+            </div>
+          </div>
+        </div><div class="tl-item">
+          <div class="tl-dot" style="background:#94a3b8"></div>
+          <div class="tl-content">
+            <div class="tl-title">Others</div>
+            <div class="tl-time">2026-05-11 14:39:09</div>
+            <div class="tl-meta">
+              
+              <span class="tag tag-purple">Seller: 39581457</span>
+            </div>
+          </div>
+        </div><div class="tl-item">
+          <div class="tl-dot" style="background:#6366f1"></div>
+          <div class="tl-content">
+            <div class="tl-title">Browse</div>
+            <div class="tl-time">2026-05-11 14:39:09</div>
+            <div class="tl-meta">
+              
+              
+            </div>
+          </div>
+        </div><div class="tl-item">
+          <div class="tl-dot" style="background:#6366f1"></div>
+          <div class="tl-content">
+            <div class="tl-title">Browse</div>
+            <div class="tl-time">2026-05-11 14:39:09</div>
+            <div class="tl-meta">
+              
+              
+            </div>
+          </div>
+        </div><div class="tl-item">
+          <div class="tl-dot" style="background:#6366f1"></div>
+          <div class="tl-content">
+            <div class="tl-title">Browse</div>
+            <div class="tl-time">2026-05-11 14:39:09</div>
+            <div class="tl-meta">
+              
+              
+            </div>
+          </div>
+        </div><div class="tl-item">
+          <div class="tl-dot" style="background:#6366f1"></div>
+          <div class="tl-content">
+            <div class="tl-title">Browse</div>
+            <div class="tl-time">2026-05-11 14:39:09</div>
+            <div class="tl-meta">
+              
+              
+            </div>
+          </div>
+        </div><div class="tl-item">
+          <div class="tl-dot" style="background:#6366f1"></div>
+          <div class="tl-content">
+            <div class="tl-title">Browse</div>
+            <div class="tl-time">2026-05-11 14:39:09</div>
+            <div class="tl-meta">
+              
+              
+            </div>
+          </div>
+        </div><div class="tl-item">
+          <div class="tl-dot" style="background:#6366f1"></div>
+          <div class="tl-content">
+            <div class="tl-title">Browse</div>
+            <div class="tl-time">2026-05-11 14:39:09</div>
+            <div class="tl-meta">
+              
+              
+            </div>
+          </div>
+        </div><div class="tl-item">
+          <div class="tl-dot" style="background:#94a3b8"></div>
+          <div class="tl-content">
+            <div class="tl-title">Others</div>
+            <div class="tl-time">2026-05-06 15:16:21</div>
+            <div class="tl-meta">
+              
+              <span class="tag tag-purple">Seller: 39240878</span>
+            </div>
+          </div>
+        </div><div class="tl-item">
+          <div class="tl-dot" style="background:#94a3b8"></div>
+          <div class="tl-content">
+            <div class="tl-title">Others</div>
+            <div class="tl-time">2026-05-06 15:10:45</div>
+            <div class="tl-meta">
+              
+              <span class="tag tag-purple">Seller: 39240878</span>
+            </div>
+          </div>
+        </div><div class="tl-item">
+          <div class="tl-dot" style="background:#94a3b8"></div>
+          <div class="tl-content">
+            <div class="tl-title">Others</div>
+            <div class="tl-time">2026-05-06 15:10:45</div>
+            <div class="tl-meta">
+              
+              
+            </div>
+          </div>
+        </div><div class="tl-item">
+          <div class="tl-dot" style="background:#6366f1"></div>
+          <div class="tl-content">
+            <div class="tl-title">Browse</div>
+            <div class="tl-time">2026-05-04 20:23:31</div>
+            <div class="tl-meta">
+              
+              
+            </div>
+          </div>
+        </div><div class="tl-item">
+          <div class="tl-dot" style="background:#6366f1"></div>
+          <div class="tl-content">
+            <div class="tl-title">Browse</div>
+            <div class="tl-time">2026-05-04 20:23:31</div>
+            <div class="tl-meta">
+              
+              
+            </div>
+          </div>
+        </div><div class="tl-item">
+          <div class="tl-dot" style="background:#6366f1"></div>
+          <div class="tl-content">
+            <div class="tl-title">Browse</div>
+            <div class="tl-time">2026-05-04 20:23:31</div>
+            <div class="tl-meta">
+              
+              
+            </div>
+          </div>
+        </div><div class="tl-item">
+          <div class="tl-dot" style="background:#6366f1"></div>
+          <div class="tl-content">
+            <div class="tl-title">Browse</div>
+            <div class="tl-time">2026-04-21 10:07:07</div>
+            <div class="tl-meta">
+              
+              
+            </div>
+          </div>
+        </div><div class="tl-item">
+          <div class="tl-dot" style="background:#6366f1"></div>
+          <div class="tl-content">
+            <div class="tl-title">Browse</div>
+            <div class="tl-time">2026-04-21 10:07:07</div>
+            <div class="tl-meta">
+              
+              
+            </div>
+          </div>
+        </div><div class="tl-item">
+          <div class="tl-dot" style="background:#6366f1"></div>
+          <div class="tl-content">
+            <div class="tl-title">Browse</div>
+            <div class="tl-time">2026-04-21 10:07:07</div>
+            <div class="tl-meta">
+              
+              
+            </div>
+          </div>
+        </div></div></div>
+      </div>
+    </div><div class="section">
+      <div class="section-title">📞 Connect Details (30D)</div>
+      <div class="grid g4" style="margin-bottom:16px">
+      <div class="metric-card" style="--c:#06b6d4"><div class="metric-lbl">Connects (30D)</div><div class="metric-val">4</div></div>
+      <div class="metric-card" style="--c:#8b5cf6"><div class="metric-lbl">App Sharing</div><div class="metric-val">0</div></div>
+    </div>
+      <div class="card"><div class="timeline"><div class="tl-item">
+          <div class="tl-dot" style="background:#6366f1"></div>
+          <div class="tl-content">
+            <div class="tl-title">Call by EmpID 119243
+              
+              
+            </div>
+            <div class="tl-time">2026-05-08 15:06:20</div>
+            
+            
+          </div>
+        </div><div class="tl-item">
+          <div class="tl-dot" style="background:#10b981"></div>
+          <div class="tl-content">
+            <div class="tl-title">Call by EmpID 119243
+               — <span class="tag tag-green">Has Note</span>
+              
+            </div>
+            <div class="tl-time">2026-05-08 14:50:10</div>
+            <div style="font-size:12px;color:var(--mut);margin-top:6px">Had ROI issues, tried to convince him, asked to send details of Various plans, will plan and update you</div>
+            
+          </div>
+        </div><div class="tl-item">
+          <div class="tl-dot" style="background:#6366f1"></div>
+          <div class="tl-content">
+            <div class="tl-title">Call by EmpID 119243
+              
+              
+            </div>
+            <div class="tl-time">2026-05-08 14:49:10</div>
+            
+            
+          </div>
+        </div><div class="tl-item">
+          <div class="tl-dot" style="background:#10b981"></div>
+          <div class="tl-content">
+            <div class="tl-title">Call by EmpID 119243
+               — <span class="tag tag-green">Has Note</span>
+              
+            </div>
+            <div class="tl-time">2026-05-07 16:28:53</div>
+            <div style="font-size:12px;color:var(--mut);margin-top:6px">busy, connect tomorrow</div>
+            
+          </div>
+        </div></div></div>
+    </div><div class="section">
+      <div class="section-title">🔍 KYC — Last 10 Supplier Activities</div>
+      <div class="card"><div class="timeline"><div class="tl-item">
+          <div class="tl-dot" style="background:#f59e0b"></div>
+          <div class="tl-content">
+            <div class="tl-title">Show FCP / MDC Inside Page</div>
+            <div class="tl-time">11-May-26 02:40:35 PM</div>
+            <div class="tl-meta">
+              <span class="tag tag-blue">3 days</span>
+              <span class="tag tag-purple">IN</span>
+              <span class="tag tag-yellow" style="background:#451a0344;color:#fbbf24">GET /unicoenterprises/profile.html?app=organic HTTP/1.1</span>
+            </div>
+          </div>
+        </div><div class="tl-item">
+          <div class="tl-dot" style="background:#f59e0b"></div>
+          <div class="tl-content">
+            <div class="tl-title">Show FCP / MDC Page</div>
+            <div class="tl-time">11-May-26 02:39:33 PM</div>
+            <div class="tl-meta">
+              <span class="tag tag-blue">3 days</span>
+              <span class="tag tag-purple">IN</span>
+              <span class="tag tag-yellow" style="background:#451a0344;color:#fbbf24">GET /unicoenterprises/ HTTP/1.1</span>
+            </div>
+          </div>
+        </div><div class="tl-item">
+          <div class="tl-dot" style="background:#f59e0b"></div>
+          <div class="tl-content">
+            <div class="tl-title">Premium Activity - PNS Call Received</div>
+            <div class="tl-time">09-May-26 05:40:02 PM</div>
+            <div class="tl-meta">
+              <span class="tag tag-blue">5 days</span>
+              <span class="tag tag-purple">IN</span>
+              
+            </div>
+          </div>
+        </div><div class="tl-item">
+          <div class="tl-dot" style="background:#f59e0b"></div>
+          <div class="tl-content">
+            <div class="tl-title">Relevant Buy Leads Page</div>
+            <div class="tl-time">07-May-26 09:58:38 AM</div>
+            <div class="tl-meta">
+              <span class="tag tag-blue">7 days</span>
+              <span class="tag tag-purple">IN</span>
+              <span class="tag tag-yellow" style="background:#451a0344;color:#fbbf24">GET /bltxn/?pref=relevant HTTP/1.1</span>
+            </div>
+          </div>
+        </div><div class="tl-item">
+          <div class="tl-dot" style="background:#f59e0b"></div>
+          <div class="tl-content">
+            <div class="tl-title">Show Dashboard Page</div>
+            <div class="tl-time">07-May-26 09:58:38 AM</div>
+            <div class="tl-meta">
+              <span class="tag tag-blue">7 days</span>
+              <span class="tag tag-purple">IN</span>
+              <span class="tag tag-yellow" style="background:#451a0344;color:#fbbf24">GET / HTTP/1.1</span>
+            </div>
+          </div>
+        </div><div class="tl-item">
+          <div class="tl-dot" style="background:#f59e0b"></div>
+          <div class="tl-content">
+            <div class="tl-title">Premium Activity - Enquiry Received</div>
+            <div class="tl-time">04-May-26 08:45:01 PM</div>
+            <div class="tl-meta">
+              <span class="tag tag-blue">10 days</span>
+              <span class="tag tag-purple">IN</span>
+              
+            </div>
+          </div>
+        </div><div class="tl-item">
+          <div class="tl-dot" style="background:#f59e0b"></div>
+          <div class="tl-content">
+            <div class="tl-title">BMC Conversation Seller
+</div>
+            <div class="tl-time">04-May-26 08:23:34 PM</div>
+            <div class="tl-meta">
+              <span class="tag tag-blue">10 days</span>
+              <span class="tag tag-purple">IN</span>
+              <span class="tag tag-yellow" style="background:#451a0344;color:#fbbf24">POST /api/bmcajax/addressbook/conversation_Seller HTTP/1.1</span>
+            </div>
+          </div>
+        </div></div></div>
+    </div><div class="section">
+      <div class="section-title">🎫 Tickets Details</div>
+      <div class="grid g4" style="margin-bottom:16px">
+        <div class="metric-card" style="--c:#6366f1"><div class="metric-lbl">Total (7D)</div><div class="metric-val">0</div></div>
+        <div class="metric-card" style="--c:#f59e0b"><div class="metric-lbl">Total (8–90D)</div><div class="metric-val">0</div></div>
+        <div class="metric-card" style="--c:#10b981"><div class="metric-lbl">B/S Conflict</div><div class="metric-val" style="font-size:16px">No</div></div>
+      </div>
+      <div class="card"><div class="card-title"><span>Ticket Breakdown</span></div><div class="chart-wrap"><canvas id="ch_tkt"></canvas></div></div>
+      
+    </div><div class="section">
+      <div class="section-title">🔗 Duplicate GLID Details</div>
+      <div class="grid g2">
+        <div class="metric-card" style="--c:#10b981">
+          <div class="metric-lbl">Duplicate GLID</div>
+          <div class="metric-val" style="font-size:16px">None</div>
+        </div>
+        <div class="metric-card" style="--c:#10b981">
+          <div class="metric-lbl">Duplicate Paid IDs</div>
+          <div class="metric-val" style="font-size:16px">None</div>
+        </div>
+      </div>
+    </div>
+<div class="section">
+  <div class="section-title">🔍 Raw JSON Explorer</div>
+  <button class="toggle-btn" onclick="toggleRaw()">Show / Hide Raw JSON</button>
+  <div id="raw-json" class="json-viewer" style="display:none;margin-top:12px">{
+  &quot;status&quot;: 200,
+  &quot;data&quot;: {
+    &quot;code&quot;: 200,
+    &quot;data&quot;: {
+      &quot;ActualData&quot;: {
+        &quot;glid&quot;: &quot;488587&quot;,
+        &quot;preferred_cities&quot;: [
+          &quot;Delhi&quot;
+        ],
+        &quot;upload_metadata&quot;: {
+          &quot;upload_modid&quot;: &quot;global_context_consumer&quot;,
+          &quot;upload_time&quot;: &quot;2026-05-14T23:07:21.25957698+05:30&quot;
+        }
+      },
+      &quot;BLdetails&quot;: {
+        &quot;BL_available_gl_city&quot;: 0,
+        &quot;active_bl_details&quot;: [],
+        &quot;bl_available_a_rank&quot;: 0,
+        &quot;bl_available_a_rank_pref_city&quot;: 0,
+        &quot;bl_available_pref_city&quot;: 0,
+        &quot;glid&quot;: &quot;488587&quot;,
+        &quot;upload_metadata&quot;: {
+          &quot;upload_modid&quot;: &quot;global_context_consumer&quot;,
+          &quot;upload_time&quot;: &quot;2026-05-14T23:07:21.259576505+05:30&quot;
+        }
+      },
+      &quot;activitydetails&quot;: {
+        &quot;BUYER_ACTIVITY&quot;: [
+          {
+            &quot;ACTIVITY_ID&quot;: &quot;2175&quot;,
+            &quot;ACTIVITY_TIME&quot;: &quot;20260511144036&quot;,
+            &quot;ACTIVITY_TYPE&quot;: &quot;Browse&quot;,
+            &quot;CATEGORY_ID&quot;: &quot;0&quot;,
+            &quot;CATEGORY_NAME&quot;: &quot;-&quot;,
+            &quot;KEYWORD&quot;: &quot;&quot;,
+            &quot;PRODUCT_ID&quot;: &quot;0&quot;,
+            &quot;SELLER_GLUSR_ID&quot;: &quot;0&quot;
+          },
+          {
+            &quot;ACTIVITY_ID&quot;: &quot;660&quot;,
+            &quot;ACTIVITY_TIME&quot;: &quot;20260511144035&quot;,
+            &quot;ACTIVITY_TYPE&quot;: &quot;Others&quot;,
+            &quot;CATEGORY_ID&quot;: &quot;163766&quot;,
+            &quot;CATEGORY_NAME&quot;: &quot;-&quot;,
+            &quot;KEYWORD&quot;: &quot;-&quot;,
+            &quot;PRODUCT_ID&quot;: &quot;0&quot;,
+            &quot;SELLER_GLUSR_ID&quot;: &quot;39581457&quot;
+          },
+          {
+            &quot;ACTIVITY_ID&quot;: &quot;575&quot;,
+            &quot;ACTIVITY_TIME&quot;: &quot;20260511143933&quot;,
+            &quot;ACTIVITY_TYPE&quot;: &quot;Others&quot;,
+            &quot;CATEGORY_ID&quot;: &quot;163766&quot;,
+            &quot;CATEGORY_NAME&quot;: &quot;-&quot;,
+            &quot;KEYWORD&quot;: &quot;-&quot;,
+            &quot;PRODUCT_ID&quot;: &quot;0&quot;,
+            &quot;SELLER_GLUSR_ID&quot;: &quot;39581457&quot;
+          },
+          {
+            &quot;ACTIVITY_ID&quot;: &quot;575&quot;,
+            &quot;ACTIVITY_TIME&quot;: &quot;20260511143932&quot;,
+            &quot;ACTIVITY_TYPE&quot;: &quot;Others&quot;,
+            &quot;CATEGORY_ID&quot;: &quot;163766&quot;,
+            &quot;CATEGORY_NAME&quot;: &quot;-&quot;,
+            &quot;KEYWORD&quot;: &quot;-&quot;,
+            &quot;PRODUCT_ID&quot;: &quot;0&quot;,
+            &quot;SELLER_GLUSR_ID&quot;: &quot;39581457&quot;
+          },
+          {
+            &quot;ACTIVITY_ID&quot;: &quot;660&quot;,
+            &quot;ACTIVITY_TIME&quot;: &quot;20260511143909&quot;,
+            &quot;ACTIVITY_TYPE&quot;: &quot;Others&quot;,
+            &quot;CATEGORY_ID&quot;: &quot;163766&quot;,
+            &quot;CATEGORY_NAME&quot;: &quot;-&quot;,
+            &quot;KEYWORD&quot;: &quot;-&quot;,
+            &quot;PRODUCT_ID&quot;: &quot;0&quot;,
+            &quot;SELLER_GLUSR_ID&quot;: &quot;39581457&quot;
+          },
+          {
+            &quot;ACTIVITY_ID&quot;: &quot;2175&quot;,
+            &quot;ACTIVITY_TIME&quot;: &quot;20260511143909&quot;,
+            &quot;ACTIVITY_TYPE&quot;: &quot;Browse&quot;,
+            &quot;CATEGORY_ID&quot;: &quot;0&quot;,
+            &quot;CATEGORY_NAME&quot;: &quot;-&quot;,
+            &quot;KEYWORD&quot;: &quot;&quot;,
+            &quot;PRODUCT_ID&quot;: &quot;0&quot;,
+            &quot;SELLER_GLUSR_ID&quot;: &quot;0&quot;
+          },
+          {
+            &quot;ACTIVITY_ID&quot;: &quot;2175&quot;,
+            &quot;ACTIVITY_TIME&quot;: &quot;20260511143909&quot;,
+            &quot;ACTIVITY_TYPE&quot;: &quot;Browse&quot;,
+            &quot;CATEGORY_ID&quot;: &quot;0&quot;,
+            &quot;CATEGORY_NAME&quot;: &quot;-&quot;,
+            &quot;KEYWORD&quot;: &quot;&quot;,
+            &quot;PRODUCT_ID&quot;: &quot;0&quot;,
+            &quot;SELLER_GLUSR_ID&quot;: &quot;0&quot;
+          },
+          {
+            &quot;ACTIVITY_ID&quot;: &quot;2175&quot;,
+            &quot;ACTIVITY_TIME&quot;: &quot;20260511143909&quot;,
+            &quot;ACTIVITY_TYPE&quot;: &quot;Browse&quot;,
+            &quot;CATEGORY_ID&quot;: &quot;10033&quot;,
+            &quot;CATEGORY_NAME&quot;: &quot;-&quot;,
+            &quot;KEYWORD&quot;: &quot;&quot;,
+            &quot;PRODUCT_ID&quot;: &quot;0&quot;,
+            &quot;SELLER_GLUSR_ID&quot;: &quot;0&quot;
+          },
+          {
+            &quot;ACTIVITY_ID&quot;: &quot;2175&quot;,
+            &quot;ACTIVITY_TIME&quot;: &quot;20260511143909&quot;,
+            &quot;ACTIVITY_TYPE&quot;: &quot;Browse&quot;,
+            &quot;CATEGORY_ID&quot;: &quot;10033&quot;,
+            &quot;CATEGORY_NAME&quot;: &quot;-&quot;,
+            &quot;KEYWORD&quot;: &quot;&quot;,
+            &quot;PRODUCT_ID&quot;: &quot;0&quot;,
+            &quot;SELLER_GLUSR_ID&quot;: &quot;0&quot;
+          },
+          {
+            &quot;ACTIVITY_ID&quot;: &quot;2175&quot;,
+            &quot;ACTIVITY_TIME&quot;: &quot;20260511143909&quot;,
+            &quot;ACTIVITY_TYPE&quot;: &quot;Browse&quot;,
+            &quot;CATEGORY_ID&quot;: &quot;0&quot;,
+            &quot;CATEGORY_NAME&quot;: &quot;-&quot;,
+            &quot;KEYWORD&quot;: &quot;&quot;,
+            &quot;PRODUCT_ID&quot;: &quot;0&quot;,
+            &quot;SELLER_GLUSR_ID&quot;: &quot;0&quot;
+          },
+          {
+            &quot;ACTIVITY_ID&quot;: &quot;2175&quot;,
+            &quot;ACTIVITY_TIME&quot;: &quot;20260511143909&quot;,
+            &quot;ACTIVITY_TYPE&quot;: &quot;Browse&quot;,
+            &quot;CATEGORY_ID&quot;: &quot;0&quot;,
+            &quot;CATEGORY_NAME&quot;: &quot;-&quot;,
+            &quot;KEYWORD&quot;: &quot;&quot;,
+            &quot;PRODUCT_ID&quot;: &quot;0&quot;,
+            &quot;SELLER_GLUSR_ID&quot;: &quot;0&quot;
+          },
+          {
+            &quot;ACTIVITY_ID&quot;: &quot;527&quot;,
+            &quot;ACTIVITY_TIME&quot;: &quot;20260506151621&quot;,
+            &quot;ACTIVITY_TYPE&quot;: &quot;Others&quot;,
+            &quot;CATEGORY_ID&quot;: &quot;0&quot;,
+            &quot;CATEGORY_NAME&quot;: &quot;-&quot;,
+            &quot;KEYWORD&quot;: &quot;&quot;,
+            &quot;PRODUCT_ID&quot;: &quot;0&quot;,
+            &quot;SELLER_GLUSR_ID&quot;: &quot;39240878&quot;
+          },
+          {
+            &quot;ACTIVITY_ID&quot;: &quot;527&quot;,
+            &quot;ACTIVITY_TIME&quot;: &quot;20260506151045&quot;,
+            &quot;ACTIVITY_TYPE&quot;: &quot;Others&quot;,
+            &quot;CATEGORY_ID&quot;: &quot;0&quot;,
+            &quot;CATEGORY_NAME&quot;: &quot;-&quot;,
+            &quot;KEYWORD&quot;: &quot;&quot;,
+            &quot;PRODUCT_ID&quot;: &quot;0&quot;,
+            &quot;SELLER_GLUSR_ID&quot;: &quot;39240878&quot;
+          },
+          {
+            &quot;ACTIVITY_ID&quot;: &quot;527&quot;,
+            &quot;ACTIVITY_TIME&quot;: &quot;20260506151045&quot;,
+            &quot;ACTIVITY_TYPE&quot;: &quot;Others&quot;,
+            &quot;CATEGORY_ID&quot;: &quot;0&quot;,
+            &quot;CATEGORY_NAME&quot;: &quot;-&quot;,
+            &quot;KEYWORD&quot;: &quot;&quot;,
+            &quot;PRODUCT_ID&quot;: &quot;0&quot;,
+            &quot;SELLER_GLUSR_ID&quot;: &quot;0&quot;
+          },
+          {
+            &quot;ACTIVITY_ID&quot;: &quot;2175&quot;,
+            &quot;ACTIVITY_TIME&quot;: &quot;20260504202331&quot;,
+            &quot;ACTIVITY_TYPE&quot;: &quot;Browse&quot;,
+            &quot;CATEGORY_ID&quot;: &quot;0&quot;,
+            &quot;CATEGORY_NAME&quot;: &quot;-&quot;,
+            &quot;KEYWORD&quot;: &quot;&quot;,
+            &quot;PRODUCT_ID&quot;: &quot;0&quot;,
+            &quot;SELLER_GLUSR_ID&quot;: &quot;0&quot;
+          },
+          {
+            &quot;ACTIVITY_ID&quot;: &quot;2175&quot;,
+            &quot;ACTIVITY_TIME&quot;: &quot;20260504202331&quot;,
+            &quot;ACTIVITY_TYPE&quot;: &quot;Browse&quot;,
+            &quot;CATEGORY_ID&quot;: &quot;0&quot;,
+            &quot;CATEGORY_NAME&quot;: &quot;-&quot;,
+            &quot;KEYWORD&quot;: &quot;&quot;,
+            &quot;PRODUCT_ID&quot;: &quot;0&quot;,
+            &quot;SELLER_GLUSR_ID&quot;: &quot;0&quot;
+          },
+          {
+            &quot;ACTIVITY_ID&quot;: &quot;2175&quot;,
+            &quot;ACTIVITY_TIME&quot;: &quot;20260504202331&quot;,
+            &quot;ACTIVITY_TYPE&quot;: &quot;Browse&quot;,
+            &quot;CATEGORY_ID&quot;: &quot;10033&quot;,
+            &quot;CATEGORY_NAME&quot;: &quot;-&quot;,
+            &quot;KEYWORD&quot;: &quot;&quot;,
+            &quot;PRODUCT_ID&quot;: &quot;0&quot;,
+            &quot;SELLER_GLUSR_ID&quot;: &quot;0&quot;
+          },
+          {
+            &quot;ACTIVITY_ID&quot;: &quot;2175&quot;,
+            &quot;ACTIVITY_TIME&quot;: &quot;20260421100707&quot;,
+            &quot;ACTIVITY_TYPE&quot;: &quot;Browse&quot;,
+            &quot;CATEGORY_ID&quot;: &quot;10033&quot;,
+            &quot;CATEGORY_NAME&quot;: &quot;-&quot;,
+            &quot;KEYWORD&quot;: &quot;&quot;,
+            &quot;PRODUCT_ID&quot;: &quot;0&quot;,
+            &quot;SELLER_GLUSR_ID&quot;: &quot;0&quot;
+          },
+          {
+            &quot;ACTIVITY_ID&quot;: &quot;2175&quot;,
+            &quot;ACTIVITY_TIME&quot;: &quot;20260421100707&quot;,
+            &quot;ACTIVITY_TYPE&quot;: &quot;Browse&quot;,
+            &quot;CATEGORY_ID&quot;: &quot;0&quot;,
+            &quot;CATEGORY_NAME&quot;: &quot;-&quot;,
+            &quot;KEYWORD&quot;: &quot;&quot;,
+            &quot;PRODUCT_ID&quot;: &quot;0&quot;,
+            &quot;SELLER_GLUSR_ID&quot;: &quot;0&quot;
+          },
+          {
+            &quot;ACTIVITY_ID&quot;: &quot;2175&quot;,
+            &quot;ACTIVITY_TIME&quot;: &quot;20260421100707&quot;,
+            &quot;ACTIVITY_TYPE&quot;: &quot;Browse&quot;,
+            &quot;CATEGORY_ID&quot;: &quot;0&quot;,
+            &quot;CATEGORY_NAME&quot;: &quot;-&quot;,
+            &quot;KEYWORD&quot;: &quot;&quot;,
+            &quot;PRODUCT_ID&quot;: &quot;0&quot;,
+            &quot;SELLER_GLUSR_ID&quot;: &quot;0&quot;
+          },
+          {
+            &quot;ACTIVITY_ID&quot;: &quot;2175&quot;,
+            &quot;ACTIVITY_TIME&quot;: &quot;20260421100706&quot;,
+            &quot;ACTIVITY_TYPE&quot;: &quot;Browse&quot;,
+            &quot;CATEGORY_ID&quot;: &quot;0&quot;,
+            &quot;CATEGORY_NAME&quot;: &quot;-&quot;,
+            &quot;KEYWORD&quot;: &quot;&quot;,
+            &quot;PRODUCT_ID&quot;: &quot;0&quot;,
+            &quot;SELLER_GLUSR_ID&quot;: &quot;0&quot;
+          },
+          {
+            &quot;ACTIVITY_ID&quot;: &quot;2175&quot;,
+            &quot;ACTIVITY_TIME&quot;: &quot;20260421100706&quot;,
+            &quot;ACTIVITY_TYPE&quot;: &quot;Browse&quot;,
+            &quot;CATEGORY_ID&quot;: &quot;0&quot;,
+            &quot;CATEGORY_NAME&quot;: &quot;-&quot;,
+            &quot;KEYWORD&quot;: &quot;&quot;,
+            &quot;PRODUCT_ID&quot;: &quot;0&quot;,
+            &quot;SELLER_GLUSR_ID&quot;: &quot;0&quot;
+          },
+          {
+            &quot;ACTIVITY_ID&quot;: &quot;2175&quot;,
+            &quot;ACTIVITY_TIME&quot;: &quot;20260417151137&quot;,
+            &quot;ACTIVITY_TYPE&quot;: &quot;Browse&quot;,
+            &quot;CATEGORY_ID&quot;: &quot;0&quot;,
+            &quot;CATEGORY_NAME&quot;: &quot;-&quot;,
+            &quot;KEYWORD&quot;: &quot;&quot;,
+            &quot;PRODUCT_ID&quot;: &quot;0&quot;,
+            &quot;SELLER_GLUSR_ID&quot;: &quot;0&quot;
+          },
+          {
+            &quot;ACTIVITY_ID&quot;: &quot;2175&quot;,
+            &quot;ACTIVITY_TIME&quot;: &quot;20260417151137&quot;,
+            &quot;ACTIVITY_TYPE&quot;: &quot;Browse&quot;,
+            &quot;CATEGORY_ID&quot;: &quot;0&quot;,
+            &quot;CATEGORY_NAME&quot;: &quot;-&quot;,
+            &quot;KEYWORD&quot;: &quot;&quot;,
+            &quot;PRODUCT_ID&quot;: &quot;0&quot;,
+            &quot;SELLER_GLUSR_ID&quot;: &quot;0&quot;
+          },
+          {
+            &quot;ACTIVITY_ID&quot;: &quot;2175&quot;,
+            &quot;ACTIVITY_TIME&quot;: &quot;20260417151137&quot;,
+            &quot;ACTIVITY_TYPE&quot;: &quot;Browse&quot;,
+            &quot;CATEGORY_ID&quot;: &quot;10033&quot;,
+            &quot;CATEGORY_NAME&quot;: &quot;-&quot;,
+            &quot;KEYWORD&quot;: &quot;&quot;,
+            &quot;PRODUCT_ID&quot;: &quot;0&quot;,
+            &quot;SELLER_GLUSR_ID&quot;: &quot;0&quot;
+          }
+        ],
+        &quot;ISQ_DATA&quot;: {
+          &quot;ISQ&quot;: null
+        },
+        &quot;LAST_ENQUIRY&quot;: {
+          &quot;DESCRIPTION&quot;: &quot;I am interested in Slotted Angle Partition Rack, 5400mm&quot;,
+          &quot;ENQUIRY_ID&quot;: &quot;3127000692&quot;,
+          &quot;PRODUCT_NAME&quot;: &quot;Enquiry for Slotted Angle Partition Rack, 5400mm from Amar via IndiaMART&quot;,
+          &quot;TITLE&quot;: &quot;Slotted Angle Partition Rack, 5400mm&quot;
+        },
+        &quot;LAST_LEAD&quot;: {
+          &quot;DATE_R&quot;: &quot;2026-04-13 13:47:38.702179&quot;,
+          &quot;IMAGE_PATH1&quot;: &quot;&quot;,
+          &quot;IMAGE_PATH2&quot;: &quot;&quot;,
+          &quot;IMAGE_PATH3&quot;: &quot;&quot;,
+          &quot;LEAD_ID&quot;: &quot;142472106575&quot;,
+          &quot;TITLE&quot;: &quot;Aluminium Slotted Angle Rack&quot;
+        },
+        &quot;LAST_WA8181_CHAT&quot;: [],
+        &quot;LAST_WA9696_CHAT&quot;: [],
+        &quot;enq_last_30_days&quot;: 6,
+        &quot;enq_last_90_days&quot;: 15,
+        &quot;glid&quot;: &quot;488587&quot;,
+        &quot;hl_pns_received_30d&quot;: 3,
+        &quot;hl_pns_success_30d&quot;: 100,
+        &quot;last_3_month&quot;: {
+          &quot;bl_active_days&quot;: 0,
+          &quot;lms_active_days&quot;: &quot;0 D&quot;
+        },
+        &quot;last_4_week&quot;: {
+          &quot;a_rank_mcats&quot;: 3,
+          &quot;approved_prd&quot;: 132,
+          &quot;bl_active_days&quot;: 0,
+          &quot;bl_cons&quot;: 0,
+          &quot;bl_cons_app_percent&quot;: 0,
+          &quot;bl_cons_desktop_percent&quot;: 0,
+          &quot;bl_cons_mobile_percent&quot;: 0,
+          &quot;bl_credits_alctd&quot;: 0,
+          &quot;blni&quot;: 0,
+          &quot;blni_loc&quot;: 0,
+          &quot;blni_spec&quot;: 0,
+          &quot;blni_wrng_product&quot;: 0,
+          &quot;cons_0_4_hrs&quot;: 0,
+          &quot;cons_0_4_hrs_percent&quot;: 0,
+          &quot;cons_4_24_hrs&quot;: 0,
+          &quot;cons_4_24_hrs_percent&quot;: 0,
+          &quot;cons_grter_1day&quot;: 0,
+          &quot;cons_grter_1day_percent&quot;: 0,
+          &quot;high_sold_mcats&quot;: 0,
+          &quot;high_sold_mcats_percent&quot;: 0,
+          &quot;lms_active_days&quot;: &quot;1 D&quot;,
+          &quot;location_preference&quot;: [
+            &quot;Regional&quot;,
+            &quot;Regional&quot;,
+            &quot;Regional&quot;,
+            &quot;Regional&quot;
+          ],
+          &quot;negative_ctg_count&quot;: 0,
+          &quot;negative_ctg_with_product_mapped&quot;: 0,
+          &quot;notification_clicked&quot;: 2,
+          &quot;notification_clicked_percent&quot;: 1.87,
+          &quot;pns_call_picked&quot;: 3,
+          &quot;pns_call_received&quot;: 3,
+          &quot;prd_without_ctg_mapping&quot;: 4,
+          &quot;prd_without_photo&quot;: 0,
+          &quot;prd_without_price&quot;: 4,
+          &quot;preferred_cities_count&quot;: 4,
+          &quot;preferred_state&quot;: 0,
+          &quot;premium_ctg_without_a_rank&quot;: 0,
+          &quot;premium_ctg_without_primary_prd&quot;: 0,
+          &quot;total_enquiry&quot;: 4,
+          &quot;total_hide&quot;: 0,
+          &quot;total_mcats&quot;: 52,
+          &quot;total_negative_cities&quot;: 0,
+          &quot;total_notifications&quot;: 107
+        },
+        &quot;last_month&quot;: {
+          &quot;a_rank_mcats&quot;: 0,
+          &quot;approved_prd&quot;: 33,
+          &quot;bl_active_days&quot;: 0,
+          &quot;bl_cons&quot;: 0,
+          &quot;bl_cons_app_percent&quot;: 0,
+          &quot;bl_cons_desktop_percent&quot;: 0,
+          &quot;bl_cons_mobile_percent&quot;: 0,
+          &quot;bl_credits_alctd&quot;: 0,
+          &quot;blni&quot;: 0,
+          &quot;blni_loc&quot;: 0,
+          &quot;blni_spec&quot;: 0,
+          &quot;blni_wrng_product&quot;: 0,
+          &quot;cnt_neg_cities&quot;: 0,
+          &quot;cons_0_4_hrs&quot;: 0,
+          &quot;cons_0_4_hrs_percent&quot;: 0,
+          &quot;cons_4_24_hrs&quot;: 0,
+          &quot;cons_4_24_hrs_percent&quot;: 0,
+          &quot;cons_grter_1day&quot;: 0,
+          &quot;cons_grter_1day_percent&quot;: 0,
+          &quot;cq_score&quot;: 77,
+          &quot;ctg_without_a_rank&quot;: 0,
+          &quot;ctg_without_primary_prd&quot;: 0,
+          &quot;enquiry&quot;: 3,
+          &quot;high_sold_a_rank&quot;: 0,
+          &quot;high_sold_mcats_percent&quot;: 0,
+          &quot;lms_active_days&quot;: &quot;0 D&quot;,
+          &quot;location_preference&quot;: &quot;Regional&quot;,
+          &quot;negative_ctg&quot;: 0,
+          &quot;negative_ctg_count&quot;: 0,
+          &quot;negative_ctg_product_mapped&quot;: 0,
+          &quot;negative_ctg_with_product_mapped&quot;: 0,
+          &quot;notification_clicked&quot;: 0,
+          &quot;notification_clicked_percent&quot;: 0,
+          &quot;pmcat_count&quot;: 0,
+          &quot;prd_without_ctg_mapping&quot;: 1,
+          &quot;prd_without_photo&quot;: 0,
+          &quot;prd_without_price&quot;: 1,
+          &quot;pref_state&quot;: 0,
+          &quot;preferred_cities_count&quot;: 0,
+          &quot;preferred_city_count&quot;: 1,
+          &quot;premium_ctg_without_a_rank&quot;: 0,
+          &quot;premium_ctg_without_primary_prd&quot;: 0,
+          &quot;total_hide&quot;: 0,
+          &quot;total_mcats&quot;: 13,
+          &quot;total_notifications&quot;: 12
+        },
+        &quot;last_week&quot;: {
+          &quot;bl_active_days&quot;: 0,
+          &quot;bl_cons&quot;: 0,
+          &quot;blni&quot;: 0,
+          &quot;blni_loc&quot;: 0,
+          &quot;blni_spec&quot;: 0,
+          &quot;blni_wrng_product&quot;: 0,
+          &quot;cons_0_4_hrs&quot;: 0,
+          &quot;cons_4_24_hrs&quot;: 0,
+          &quot;cons_grter_1day&quot;: 0,
+          &quot;lms_active_days&quot;: &quot;0 D&quot;,
+          &quot;total_hide&quot;: 0
+        },
+        &quot;pns_received_30_days&quot;: 3,
+        &quot;pns_received_90_days&quot;: 8,
+        &quot;top3mcat_competitors&quot;: [
+          {
+            &quot;catalog_url&quot;: &quot;https://www.veerfile.com/&quot;,
+            &quot;competitor_city&quot;: &quot;New Delhi&quot;,
+            &quot;competitor_company&quot;: &quot;Veer File Products&quot;,
+            &quot;competitor_glusr_id&quot;: 74578710,
+            &quot;competitor_membersince&quot;: &quot;Oct 2018&quot;,
+            &quot;custtype_name&quot;: &quot;TSCATALOG&quot;,
+            &quot;distance_city&quot;: 0,
+            &quot;glusr_usr_id&quot;: 488587
+          },
+          {
+            &quot;catalog_url&quot;: &quot;https://www.indiamart.com/bhartiya-printers-delhi/&quot;,
+            &quot;competitor_city&quot;: &quot;New Delhi&quot;,
+            &quot;competitor_company&quot;: &quot;Bhartiya Printers&quot;,
+            &quot;competitor_glusr_id&quot;: 122560791,
+            &quot;competitor_membersince&quot;: &quot;Nov 2023&quot;,
+            &quot;custtype_name&quot;: &quot;TSCATALOG&quot;,
+            &quot;distance_city&quot;: 0,
+            &quot;glusr_usr_id&quot;: 488587
+          },
+          {
+            &quot;catalog_url&quot;: &quot;https://www.silvertonegravu.co.in/&quot;,
+            &quot;competitor_city&quot;: &quot;New Delhi&quot;,
+            &quot;competitor_company&quot;: &quot;Silvertone Gravu Flex Pvt. Ltd.&quot;,
+            &quot;competitor_glusr_id&quot;: 416751,
+            &quot;competitor_membersince&quot;: &quot;Mar 2013&quot;,
+            &quot;custtype_name&quot;: &quot;LEADER&quot;,
+            &quot;distance_city&quot;: 0,
+            &quot;glusr_usr_id&quot;: 488587
+          },
+          {
+            &quot;catalog_url&quot;: &quot;https://www.indiamart.com/madhutradersnewdelhi/&quot;,
+            &quot;competitor_city&quot;: &quot;New Delhi&quot;,
+            &quot;competitor_company&quot;: &quot;Madhu Traders&quot;,
+            &quot;competitor_glusr_id&quot;: 109245564,
+            &quot;competitor_membersince&quot;: &quot;Mar 2024&quot;,
+            &quot;custtype_name&quot;: &quot;CATALOG&quot;,
+            &quot;distance_city&quot;: 0,
+            &quot;glusr_usr_id&quot;: 488587
+          },
+          {
+            &quot;catalog_url&quot;: &quot;https://www.indiamart.com/shubham-polymers-new-delhi/&quot;,
+            &quot;competitor_city&quot;: &quot;New Delhi&quot;,
+            &quot;competitor_company&quot;: &quot;Shubham Polymers&quot;,
+            &quot;competitor_glusr_id&quot;: 236645229,
+            &quot;competitor_membersince&quot;: &quot;Nov 2025&quot;,
+            &quot;custtype_name&quot;: &quot;CATALOG&quot;,
+            &quot;distance_city&quot;: 0,
+            &quot;glusr_usr_id&quot;: 488587
+          },
+          {
+            &quot;catalog_url&quot;: &quot;https://www.shivshaktippbags.com/&quot;,
+            &quot;competitor_city&quot;: &quot;New Delhi&quot;,
+            &quot;competitor_company&quot;: &quot;Shivshakti Global&quot;,
+            &quot;competitor_glusr_id&quot;: 246297099,
+            &quot;competitor_membersince&quot;: &quot;Jun 2025&quot;,
+            &quot;custtype_name&quot;: &quot;TSCATALOG&quot;,
+            &quot;distance_city&quot;: 0,
+            &quot;glusr_usr_id&quot;: 488587
+          },
+          {
+            &quot;catalog_url&quot;: &quot;https://www.indiamart.com/tanejapolyprints/&quot;,
+            &quot;competitor_city&quot;: &quot;New Delhi&quot;,
+            &quot;competitor_company&quot;: &quot;Taneja Poly Prints&quot;,
+            &quot;competitor_glusr_id&quot;: 4778994,
+            &quot;competitor_membersince&quot;: &quot;Sep 2017&quot;,
+            &quot;custtype_name&quot;: &quot;TSCATALOG&quot;,
+            &quot;distance_city&quot;: 0,
+            &quot;glusr_usr_id&quot;: 488587
+          },
+          {
+            &quot;catalog_url&quot;: &quot;https://www.indiamart.com/jagdamba-packers/&quot;,
+            &quot;competitor_city&quot;: &quot;New Delhi&quot;,
+            &quot;competitor_company&quot;: &quot;Jagdamba Packers&quot;,
+            &quot;competitor_glusr_id&quot;: 65128848,
+            &quot;competitor_membersince&quot;: &quot;Jan 2024&quot;,
+            &quot;custtype_name&quot;: &quot;TSCATALOG&quot;,
+            &quot;distance_city&quot;: 0,
+            &quot;glusr_usr_id&quot;: 488587
+          },
+          {
+            &quot;catalog_url&quot;: &quot;https://www.starkpackmate.co.in/&quot;,
+            &quot;competitor_city&quot;: &quot;New Delhi&quot;,
+            &quot;competitor_company&quot;: &quot;Stark Packmate Pvt. Ltd.&quot;,
+            &quot;competitor_glusr_id&quot;: 98512932,
+            &quot;competitor_membersince&quot;: &quot;Jan 2024&quot;,
+            &quot;custtype_name&quot;: &quot;TSCATALOG&quot;,
+            &quot;distance_city&quot;: 0,
+            &quot;glusr_usr_id&quot;: 488587
+          },
+          {
+            &quot;catalog_url&quot;: &quot;https://www.indiamart.com/tayaltradingcompany/&quot;,
+            &quot;competitor_city&quot;: &quot;New Delhi&quot;,
+            &quot;competitor_company&quot;: &quot;Tayal Trading Co.&quot;,
+            &quot;competitor_glusr_id&quot;: 1593489,
+            &quot;competitor_membersince&quot;: &quot;May 2016&quot;,
+            &quot;custtype_name&quot;: &quot;TSCATALOG&quot;,
+            &quot;distance_city&quot;: 0,
+            &quot;glusr_usr_id&quot;: 488587
+          }
+        ],
+        &quot;top3mcat_data&quot;: [
+          {
+            &quot;hyperlocal_bl&quot;: 168,
+            &quot;hyperlocal_paid_sellers&quot;: 201,
+            &quot;local_bl&quot;: 360,
+            &quot;local_paid_sellers&quot;: 241,
+            &quot;mcat_list&quot;: &quot;[{\&quot;mcat_name\&quot;: \&quot;Laminated Pouches\&quot;},{\&quot;mcat_name\&quot;: \&quot;Dried Fruit Pouches\&quot;},{\&quot;mcat_name\&quot;: \&quot;Spices Packaging Bags\&quot;}]&quot;,
+            &quot;total_bl&quot;: 1676,
+            &quot;total_paid_sellers&quot;: 241
+          }
+        ],
+        &quot;upload_metadata&quot;: {
+          &quot;upload_modid&quot;: &quot;global_context_consumer&quot;,
+          &quot;upload_time&quot;: &quot;2026-05-14T23:07:21.25957671+05:30&quot;
+        }
+      },
+      &quot;connectdetails&quot;: {
+        &quot;app_sharing_counts&quot;: 0,
+        &quot;connect_30D&quot;: [
+          {
+            &quot;call_answered_date&quot;: &quot;2026-05-08 15:06:20&quot;,
+            &quot;call_answered_summary&quot;: &quot;&quot;,
+            &quot;call_answered_transcript&quot;: &quot;&quot;,
+            &quot;call_by&quot;: &quot;119243&quot;,
+            &quot;call_sts_update&quot;: &quot;&quot;,
+            &quot;meet_sts_update&quot;: &quot;&quot;,
+            &quot;meet_sucessful_date&quot;: &quot;&quot;,
+            &quot;met_by&quot;: &quot;&quot;,
+            &quot;video_meet_by&quot;: &quot;&quot;,
+            &quot;video_meet_sts_update&quot;: &quot;&quot;,
+            &quot;video_verified_date&quot;: &quot;&quot;
+          },
+          {
+            &quot;call_answered_date&quot;: &quot;2026-05-08 14:50:10&quot;,
+            &quot;call_answered_summary&quot;: &quot;&quot;,
+            &quot;call_answered_transcript&quot;: &quot;&quot;,
+            &quot;call_by&quot;: &quot;119243&quot;,
+            &quot;call_sts_update&quot;: &quot;Had ROI issues, tried to convince him, asked to send details of Various plans, will plan and update you&quot;,
+            &quot;meet_sts_update&quot;: &quot;&quot;,
+            &quot;meet_sucessful_date&quot;: &quot;&quot;,
+            &quot;met_by&quot;: &quot;&quot;,
+            &quot;video_meet_by&quot;: &quot;&quot;,
+            &quot;video_meet_sts_update&quot;: &quot;&quot;,
+            &quot;video_verified_date&quot;: &quot;&quot;
+          },
+          {
+            &quot;call_answered_date&quot;: &quot;2026-05-08 14:49:10&quot;,
+            &quot;call_answered_summary&quot;: &quot;&quot;,
+            &quot;call_answered_transcript&quot;: &quot;&quot;,
+            &quot;call_by&quot;: &quot;119243&quot;,
+            &quot;call_sts_update&quot;: &quot;&quot;,
+            &quot;meet_sts_update&quot;: &quot;&quot;,
+            &quot;meet_sucessful_date&quot;: &quot;&quot;,
+            &quot;met_by&quot;: &quot;&quot;,
+            &quot;video_meet_by&quot;: &quot;&quot;,
+            &quot;video_meet_sts_update&quot;: &quot;&quot;,
+            &quot;video_verified_date&quot;: &quot;&quot;
+          },
+          {
+            &quot;call_answered_date&quot;: &quot;2026-05-07 16:28:53&quot;,
+            &quot;call_answered_summary&quot;: &quot;&quot;,
+            &quot;call_answered_transcript&quot;: &quot;&quot;,
+            &quot;call_by&quot;: &quot;119243&quot;,
+            &quot;call_sts_update&quot;: &quot;busy, connect tomorrow&quot;,
+            &quot;meet_sts_update&quot;: &quot;&quot;,
+            &quot;meet_sucessful_date&quot;: &quot;&quot;,
+            &quot;met_by&quot;: &quot;&quot;,
+            &quot;video_meet_by&quot;: &quot;&quot;,
+            &quot;video_meet_sts_update&quot;: &quot;&quot;,
+            &quot;video_verified_date&quot;: &quot;&quot;
+          }
+        ],
+        &quot;connect_7D&quot;: [
+          {
+            &quot;call_answered_date&quot;: &quot;2026-05-08 15:06:20&quot;,
+            &quot;call_answered_summary&quot;: &quot;&quot;,
+            &quot;call_answered_transcript&quot;: &quot;&quot;,
+            &quot;call_by&quot;: &quot;119243&quot;,
+            &quot;call_sts_update&quot;: &quot;&quot;,
+            &quot;meet_sts_update&quot;: &quot;&quot;,
+            &quot;meet_sucessful_date&quot;: &quot;&quot;,
+            &quot;met_by&quot;: &quot;&quot;,
+            &quot;video_meet_by&quot;: &quot;&quot;,
+            &quot;video_meet_sts_update&quot;: &quot;&quot;,
+            &quot;video_verified_date&quot;: &quot;&quot;
+          },
+          {
+            &quot;call_answered_date&quot;: &quot;2026-05-08 14:50:10&quot;,
+            &quot;call_answered_summary&quot;: &quot;&quot;,
+            &quot;call_answered_transcript&quot;: &quot;&quot;,
+            &quot;call_by&quot;: &quot;119243&quot;,
+            &quot;call_sts_update&quot;: &quot;Had ROI issues, tried to convince him, asked to send details of Various plans, will plan and update you&quot;,
+            &quot;meet_sts_update&quot;: &quot;&quot;,
+            &quot;meet_sucessful_date&quot;: &quot;&quot;,
+            &quot;met_by&quot;: &quot;&quot;,
+            &quot;video_meet_by&quot;: &quot;&quot;,
+            &quot;video_meet_sts_update&quot;: &quot;&quot;,
+            &quot;video_verified_date&quot;: &quot;&quot;
+          },
+          {
+            &quot;call_answered_date&quot;: &quot;2026-05-08 14:49:10&quot;,
+            &quot;call_answered_summary&quot;: &quot;&quot;,
+            &quot;call_answered_transcript&quot;: &quot;&quot;,
+            &quot;call_by&quot;: &quot;119243&quot;,
+            &quot;call_sts_update&quot;: &quot;&quot;,
+            &quot;meet_sts_update&quot;: &quot;&quot;,
+            &quot;meet_sucessful_date&quot;: &quot;&quot;,
+            &quot;met_by&quot;: &quot;&quot;,
+            &quot;video_meet_by&quot;: &quot;&quot;,
+            &quot;video_meet_sts_update&quot;: &quot;&quot;,
+            &quot;video_verified_date&quot;: &quot;&quot;
+          }
+        ],
+        &quot;email_outbound_details&quot;: &quot;&quot;,
+        &quot;glid&quot;: &quot;488587&quot;,
+        &quot;last_call_summary&quot;: &quot;&quot;,
+        &quot;proposals_sent_counts&quot;: 0,
+        &quot;sms_outbound_details&quot;: &quot;&quot;,
+        &quot;upload_metadata&quot;: {
+          &quot;upload_modid&quot;: &quot;global_context_consumer&quot;,
+          &quot;upload_time&quot;: &quot;2026-05-14T23:07:21.259576587+05:30&quot;
+        }
+      },
+      &quot;duplicate_glids_details&quot;: {
+        &quot;duplicate_glid&quot;: null,
+        &quot;duplicate_paid_ids&quot;: null,
+        &quot;glid&quot;: &quot;488587&quot;,
+        &quot;upload_metadata&quot;: {
+          &quot;upload_modid&quot;: &quot;global_context_consumer&quot;,
+          &quot;upload_time&quot;: &quot;2026-05-14T23:07:21.259576792+05:30&quot;
+        }
+      },
+      &quot;glid&quot;: 488587,
+      &quot;kycdetails&quot;: {
+        &quot;LAST_10SUPPLIER_ACTIVITIES&quot;: [
+          {
+            &quot;activity_id&quot;: &quot;660&quot;,
+            &quot;date&quot;: &quot;11-May-26&quot;,
+            &quot;fk_display_title&quot;: &quot;Show FCP / MDC Inside Page&quot;,
+            &quot;gl_country&quot;: &quot;IN&quot;,
+            &quot;glusr_id&quot;: &quot;488587&quot;,
+            &quot;referer&quot;: &quot;-&quot;,
+            &quot;remote_ip&quot;: &quot;&quot;,
+            &quot;request_url&quot;: &quot;GET /unicoenterprises/profile.html?app=organic HTTP/1.1&quot;,
+            &quot;supplier_days&quot;: &quot;3 days&quot;,
+            &quot;time&quot;: &quot;14:40&quot;,
+            &quot;time_new&quot;: &quot;02:40:35 PM&quot;
+          },
+          {
+            &quot;activity_id&quot;: &quot;575&quot;,
+            &quot;date&quot;: &quot;11-May-26&quot;,
+            &quot;fk_display_title&quot;: &quot;Show FCP / MDC Page&quot;,
+            &quot;gl_country&quot;: &quot;IN&quot;,
+            &quot;glusr_id&quot;: &quot;488587&quot;,
+            &quot;referer&quot;: &quot;https://m.indiamart.com/unicoenterprises/&quot;,
+            &quot;remote_ip&quot;: &quot;&quot;,
+            &quot;request_url&quot;: &quot;GET /unicoenterprises/ HTTP/1.1&quot;,
+            &quot;supplier_days&quot;: &quot;3 days&quot;,
+            &quot;time&quot;: &quot;14:39&quot;,
+            &quot;time_new&quot;: &quot;02:39:33 PM&quot;
+          },
+          {
+            &quot;activity_id&quot;: &quot;10001&quot;,
+            &quot;date&quot;: &quot;09-May-26&quot;,
+            &quot;fk_display_title&quot;: &quot;Premium Activity - PNS Call Received&quot;,
+            &quot;gl_country&quot;: &quot;IN&quot;,
+            &quot;glusr_id&quot;: &quot;488587&quot;,
+            &quot;referer&quot;: &quot;&quot;,
+            &quot;remote_ip&quot;: &quot;&quot;,
+            &quot;request_url&quot;: &quot;&quot;,
+            &quot;supplier_days&quot;: &quot;5 days&quot;,
+            &quot;time&quot;: &quot;17:40&quot;,
+            &quot;time_new&quot;: &quot;05:40:02 PM&quot;
+          },
+          {
+            &quot;activity_id&quot;: &quot;2217&quot;,
+            &quot;date&quot;: &quot;07-May-26&quot;,
+            &quot;fk_display_title&quot;: &quot;Relevant Buy Leads Page&quot;,
+            &quot;gl_country&quot;: &quot;IN&quot;,
+            &quot;glusr_id&quot;: &quot;488587&quot;,
+            &quot;referer&quot;: &quot;https://seller.indiamart.com/bltxn/?pref=relevant&quot;,
+            &quot;remote_ip&quot;: &quot;&quot;,
+            &quot;request_url&quot;: &quot;GET /bltxn/?pref=relevant HTTP/1.1&quot;,
+            &quot;supplier_days&quot;: &quot;7 days&quot;,
+            &quot;time&quot;: &quot;09:58&quot;,
+            &quot;time_new&quot;: &quot;09:58:38 AM&quot;
+          },
+          {
+            &quot;activity_id&quot;: &quot;1874&quot;,
+            &quot;date&quot;: &quot;07-May-26&quot;,
+            &quot;fk_display_title&quot;: &quot;Show Dashboard Page&quot;,
+            &quot;gl_country&quot;: &quot;IN&quot;,
+            &quot;glusr_id&quot;: &quot;488587&quot;,
+            &quot;referer&quot;: &quot;https://seller.indiamart.com/bltxn/?pref=relevant&quot;,
+            &quot;remote_ip&quot;: &quot;&quot;,
+            &quot;request_url&quot;: &quot;GET / HTTP/1.1&quot;,
+            &quot;supplier_days&quot;: &quot;7 days&quot;,
+            &quot;time&quot;: &quot;09:58&quot;,
+            &quot;time_new&quot;: &quot;09:58:38 AM&quot;
+          },
+          {
+            &quot;activity_id&quot;: &quot;10004&quot;,
+            &quot;date&quot;: &quot;04-May-26&quot;,
+            &quot;fk_display_title&quot;: &quot;Premium Activity - Enquiry Received&quot;,
+            &quot;gl_country&quot;: &quot;IN&quot;,
+            &quot;glusr_id&quot;: &quot;488587&quot;,
+            &quot;referer&quot;: &quot;&quot;,
+            &quot;remote_ip&quot;: &quot;&quot;,
+            &quot;request_url&quot;: &quot;&quot;,
+            &quot;supplier_days&quot;: &quot;10 days&quot;,
+            &quot;time&quot;: &quot;20:45&quot;,
+            &quot;time_new&quot;: &quot;08:45:01 PM&quot;
+          },
+          {
+            &quot;activity_id&quot;: &quot;4682&quot;,
+            &quot;date&quot;: &quot;04-May-26&quot;,
+            &quot;fk_display_title&quot;: &quot;BMC Conversation Seller\n&quot;,
+            &quot;gl_country&quot;: &quot;IN&quot;,
+            &quot;glusr_id&quot;: &quot;488587&quot;,
+            &quot;referer&quot;: &quot;https://m.indiamart.com/messages/conversation?sup_glid=MjY4NDY4NTkx&amp;state_name=Delhi&amp;journey=notification&amp;type=Enq_Supplier_newenquiry_image&amp;varient=_WrtAimgTempISQ&amp;process_identifier=Enq_Supplier_newenquiry&quot;,
+            &quot;remote_ip&quot;: &quot;&quot;,
+            &quot;request_url&quot;: &quot;POST /api/bmcajax/addressbook/conversation_Seller HTTP/1.1&quot;,
+            &quot;supplier_days&quot;: &quot;10 days&quot;,
+            &quot;time&quot;: &quot;20:23&quot;,
+            &quot;time_new&quot;: &quot;08:23:34 PM&quot;
+          }
+        ],
+        &quot;LAST_TICKETS_CLM_FEEDBACK&quot;: [
+          {
+            &quot;ACTION_TAKEN&quot;: &quot;Refund&quot;,
+            &quot;CATAGEORY&quot;: &quot;Service Deactivation&quot;,
+            &quot;CUSTOMER_TICKET_CLOSEDATE&quot;: &quot;01-Oct-2025&quot;,
+            &quot;CUSTOMER_TICKET_ID&quot;: &quot;9402531&quot;,
+            &quot;CUSTOMER_TICKET_STATUS&quot;: &quot;C&quot;,
+            &quot;FEEDBACK&quot;: &quot;Not Submitted&quot;,
+            &quot;FK_GROUP_IDS&quot;: &quot;2&quot;,
+            &quot;LAST_COMMENTS&quot;: &quot;Closure RCA:\n1 What was the actual issue of client understood on call?    raised a complain for Refund   \n2 What was the solution offered to resolve his query?    \n-Client confirmed on call that refund amount has been received , \nclient has given closure for his concern   \n                                        \n3 Client  Satisfaction (CLM) response expected –   yes\n\n4 Ticket closure permission taken –  yes\n5 Is there any process/technical gaps Identified -No \n6 360 checklist was applicable here -no \n&quot;,
+            &quot;REASON&quot;: &quot;Refund - Less BL&quot;
+          },
+          {
+            &quot;ACTION_TAKEN&quot;: &quot;Wrong Buy Lead&quot;,
+            &quot;CATAGEORY&quot;: &quot;Buylead &amp; Enquiries&quot;,
+            &quot;CUSTOMER_TICKET_CLOSEDATE&quot;: &quot;08-Aug-2025&quot;,
+            &quot;CUSTOMER_TICKET_ID&quot;: &quot;9284615&quot;,
+            &quot;CUSTOMER_TICKET_STATUS&quot;: &quot;C&quot;,
+            &quot;FEEDBACK&quot;: &quot;Not Submitted&quot;,
+            &quot;FK_GROUP_IDS&quot;: &quot;2&quot;,
+            &quot;LAST_COMMENTS&quot;: &quot;Closing RCA :\nWhat was the actual issue of client understood on call : Client wants refund amount due to business maturity issue. \nWhat resolution was shared based on the concern shared by client : Had a discussion with the client regarding his concern, client is dont continue services because client told me that all buyers are demanding low order quantity value nd I suggested him to consume buy leads only bulk quantity . Seller wants buy leads minimum 25000 pieces nd 500 kg.\nMany buy leads are posting but supplier already mind makeup all buyers are demanding only retail quantity.\nI guided him to work properly and follow up basic process then you can mature business from IM.\nClient told me that update minimum order quantity so I updated.\nI have taken closure from client side.  \nIssue resolve\n\nShare reasons of each NO in Pre Call RCA :-Yes   \n\nBL and Query Discussion: Yes\n\nRecent BL &amp; Queries discussed (Y/N) (for relevancy) :- Yes\n\nFeedback taken on the last 3 BL purchased by client (Y/N) :- Yes\n\nFresh BL’s shared with client :- Yes\n\nTicket Closure: Yes\n\nConfirmed if the customer had any other concern : Yes\n\nPermission to close the concern taken (Y/N) : - Yes\n\nAvoided sharing Personal number sharing with client (Y/N) : - Yes\n\nAsked for customer’s experience on the call (Y/N) : - Yes\n\nCall transferred for feedback (Y/N):-        Yes\n&quot;,
+            &quot;REASON&quot;: &quot;BL-Maturity Issue&quot;
+          }
+        ],
+        &quot;SERVICE_VINTAGE&quot;: &quot;&quot;,
+        &quot;WIP_TICKET_BUCKET&quot;: [],
+        &quot;account_manager_bd&quot;: {
+          &quot;did&quot;: &quot;08048163271&quot;,
+          &quot;email&quot;: &quot;shayaan.mohd@indiamart.com&quot;,
+          &quot;empid&quot;: &quot;119243&quot;,
+          &quot;name&quot;: &quot;Mohd. Shayaan&quot;
+        },
+        &quot;account_manager_fsf&quot;: {
+          &quot;did&quot;: &quot;08048163271&quot;,
+          &quot;email&quot;: &quot;shayaan.mohd@indiamart.com&quot;,
+          &quot;empid&quot;: &quot;119243&quot;,
+          &quot;name&quot;: &quot;Mohd. Shayaan&quot;
+        },
+        &quot;address&quot;: &quot;N-270 Pocket-O, Sector-1, Bawana Industrial Estate Dsidc Bawana&quot;,
+        &quot;address_verification_status&quot;: true,
+        &quot;approved_product_count&quot;: &quot;33&quot;,
+        &quot;avg_rating_count&quot;: 0,
+        &quot;bl_active_dau_30&quot;: 0,
+        &quot;catalog_url&quot;: &quot;https://www.indiamart.com/hindpolybags/&quot;,
+        &quot;city&quot;: &quot;New Delhi&quot;,
+        &quot;company_name&quot;: &quot;Hind Polybags&quot;,
+        &quot;company_type&quot;: &quot;Proprietor&quot;,
+        &quot;country&quot;: &quot;India&quot;,
+        &quot;customer_name&quot;: &quot;Amar Agarwal&quot;,
+        &quot;customer_type&quot;: &quot;Free&quot;,
+        &quot;customer_vintage&quot;: &quot;1Y&quot;,
+        &quot;email1&quot;: &quot;agarwalamar2002@gmail.com&quot;,
+        &quot;fcp_flag&quot;: 1,
+        &quot;first_name&quot;: &quot;Amar&quot;,
+        &quot;freeshowroom_alias_im&quot;: &quot;hindpolybags&quot;,
+        &quot;glid&quot;: &quot;488587&quot;,
+        &quot;glusr_customer_type&quot;: &quot;vgFCPplus with PNS(G)&quot;,
+        &quot;glusr_custtype_id&quot;: 51,
+        &quot;glusr_disable_errmsg_value&quot;: &quot;&quot;,
+        &quot;glusr_disabled_reason&quot;: &quot;&quot;,
+        &quot;glusr_usr_approv&quot;: &quot;A&quot;,
+        &quot;glusr_usr_listing_status&quot;: &quot;LST&quot;,
+        &quot;gst_availability&quot;: &quot;&quot;,
+        &quot;gst_last_filling&quot;: &quot;&quot;,
+        &quot;gst_nature_of_business&quot;: &quot;Manufacturer&quot;,
+        &quot;gst_new&quot;: &quot;07AAEPA8882A1ZZ&quot;,
+        &quot;gst_registration_since&quot;: &quot;2017-07-01T00:00:00Z&quot;,
+        &quot;gst_status&quot;: &quot;Verified&quot;,
+        &quot;gst_turnover&quot;: &quot;1.5 - 5 Cr&quot;,
+        &quot;high_churn&quot;: false,
+        &quot;high_risk_suspected&quot;: &quot;No&quot;,
+        &quot;highest_service&quot;: &quot;&quot;,
+        &quot;iec_availibility&quot;: &quot;&quot;,
+        &quot;iec_status&quot;: &quot;&quot;,
+        &quot;input_email_verification_status&quot;: &quot;Verified&quot;,
+        &quot;input_mobile_verification_status&quot;: &quot;Verified&quot;,
+        &quot;is_nach_active&quot;: &quot;&quot;,
+        &quot;last_3_tickets_disposition&quot;: null,
+        &quot;last_call_details&quot;: [
+          {
+            &quot;COMMENTS&quot;: &quot;Had ROI issues, tried to convince him, asked to send details of Various plans, will plan and update you&quot;,
+            &quot;ENTERED_ON&quot;: &quot;08-May-2026&quot;
+          }
+        ],
+        &quot;last_name&quot;: &quot;Agarwal&quot;,
+        &quot;nach_deduction_date&quot;: &quot;0&quot;,
+        &quot;nach_status&quot;: [
+          {
+            &quot;DIS_TEXT&quot;: &quot;&quot;,
+            &quot;NACH_NEXT_DEDUCTION&quot;: &quot;0&quot;,
+            &quot;S_NAME&quot;: &quot;&quot;
+          }
+        ],
+        &quot;nach_stopped_date&quot;: &quot;&quot;,
+        &quot;payment_invoice_date&quot;: &quot;26-Sep-2025&quot;,
+        &quot;payment_plan&quot;: &quot;&quot;,
+        &quot;payment_receipt_date&quot;: &quot;&quot;,
+        &quot;rating_count&quot;: 0,
+        &quot;registered_since_with_indiamart&quot;: &quot;21 Y 2 M&quot;,
+        &quot;renewal_date&quot;: &quot;&quot;,
+        &quot;renewal_status&quot;: &quot;&quot;,
+        &quot;stsid&quot;: 655840,
+        &quot;tempblock_status&quot;: &quot;&quot;,
+        &quot;ticket_count&quot;: &quot;0&quot;,
+        &quot;top_city_rest_of_india&quot;: &quot;Delhi&quot;,
+        &quot;upload_metadata&quot;: {
+          &quot;upload_modid&quot;: &quot;global_context_consumer&quot;,
+          &quot;upload_time&quot;: &quot;2026-05-14T23:07:21.259576423+05:30&quot;
+        },
+        &quot;vertical_name&quot;: &quot;Winback&quot;,
+        &quot;workorder_details&quot;: null
+      },
+      &quot;ticketsdetails&quot;: {
+        &quot;WIP_LEGAL_TICKETS&quot;: null,
+        &quot;WIP_OPS_TICKETS&quot;: null,
+        &quot;current&quot;: {
+          &quot;tickets&quot;: null
+        },
+        &quot;glid&quot;: &quot;488587&quot;,
+        &quot;last_7_days&quot;: {
+          &quot;board_social_media_ticket_count&quot;: 0,
+          &quot;irate_complaint_count&quot;: 0,
+          &quot;negative_feedback_count&quot;: 0,
+          &quot;tickets&quot;: null,
+          &quot;total_ticket_count&quot;: 0,
+          &quot;whatsapp_negative_feedback_count&quot;: 0
+        },
+        &quot;last_8_to_90_days&quot;: {
+          &quot;board_social_media_ticket_count&quot;: 0,
+          &quot;bs_conflict_status&quot;: &quot;No&quot;,
+          &quot;dt_ticket_count&quot;: 0,
+          &quot;employee_ticket_count&quot;: 0,
+          &quot;irate_complaint_count&quot;: 0,
+          &quot;negative_feedback_count&quot;: 0,
+          &quot;tickets&quot;: null,
+          &quot;total_ticket_count&quot;: 0,
+          &quot;whatsapp_negative_feedback_count&quot;: 0
+        },
+        &quot;upload_metadata&quot;: {
+          &quot;upload_modid&quot;: &quot;global_context_consumer&quot;,
+          &quot;upload_time&quot;: &quot;2026-05-14T23:07:21.25957689+05:30&quot;
+        },
+        &quot;wip_tickets&quot;: {
+          &quot;ticket_id&quot;: &quot;&quot;,
+          &quot;ticket_issue_date&quot;: &quot;&quot;,
+          &quot;ticket_opening_comments&quot;: &quot;&quot;,
+          &quot;ticket_status&quot;: &quot;&quot;,
+          &quot;ticket_type&quot;: &quot;&quot;
+        }
+      }
+    },
+    &quot;message&quot;: &quot;Success&quot;
+  },
+  &quot;error&quot;: null
+}</div>
+</div>
+</main>
+<script>
+const DATA = {"status": 200, "data": {"code": 200, "data": {"ActualData": {"glid": "488587", "preferred_cities": ["Delhi"], "upload_metadata": {"upload_modid": "global_context_consumer", "upload_time": "2026-05-14T23:07:21.25957698+05:30"}}, "BLdetails": {"BL_available_gl_city": 0, "active_bl_details": [], "bl_available_a_rank": 0, "bl_available_a_rank_pref_city": 0, "bl_available_pref_city": 0, "glid": "488587", "upload_metadata": {"upload_modid": "global_context_consumer", "upload_time": "2026-05-14T23:07:21.259576505+05:30"}}, "activitydetails": {"BUYER_ACTIVITY": [{"ACTIVITY_ID": "2175", "ACTIVITY_TIME": "20260511144036", "ACTIVITY_TYPE": "Browse", "CATEGORY_ID": "0", "CATEGORY_NAME": "-", "KEYWORD": "", "PRODUCT_ID": "0", "SELLER_GLUSR_ID": "0"}, {"ACTIVITY_ID": "660", "ACTIVITY_TIME": "20260511144035", "ACTIVITY_TYPE": "Others", "CATEGORY_ID": "163766", "CATEGORY_NAME": "-", "KEYWORD": "-", "PRODUCT_ID": "0", "SELLER_GLUSR_ID": "39581457"}, {"ACTIVITY_ID": "575", "ACTIVITY_TIME": "20260511143933", "ACTIVITY_TYPE": "Others", "CATEGORY_ID": "163766", "CATEGORY_NAME": "-", "KEYWORD": "-", "PRODUCT_ID": "0", "SELLER_GLUSR_ID": "39581457"}, {"ACTIVITY_ID": "575", "ACTIVITY_TIME": "20260511143932", "ACTIVITY_TYPE": "Others", "CATEGORY_ID": "163766", "CATEGORY_NAME": "-", "KEYWORD": "-", "PRODUCT_ID": "0", "SELLER_GLUSR_ID": "39581457"}, {"ACTIVITY_ID": "660", "ACTIVITY_TIME": "20260511143909", "ACTIVITY_TYPE": "Others", "CATEGORY_ID": "163766", "CATEGORY_NAME": "-", "KEYWORD": "-", "PRODUCT_ID": "0", "SELLER_GLUSR_ID": "39581457"}, {"ACTIVITY_ID": "2175", "ACTIVITY_TIME": "20260511143909", "ACTIVITY_TYPE": "Browse", "CATEGORY_ID": "0", "CATEGORY_NAME": "-", "KEYWORD": "", "PRODUCT_ID": "0", "SELLER_GLUSR_ID": "0"}, {"ACTIVITY_ID": "2175", "ACTIVITY_TIME": "20260511143909", "ACTIVITY_TYPE": "Browse", "CATEGORY_ID": "0", "CATEGORY_NAME": "-", "KEYWORD": "", "PRODUCT_ID": "0", "SELLER_GLUSR_ID": "0"}, {"ACTIVITY_ID": "2175", "ACTIVITY_TIME": "20260511143909", "ACTIVITY_TYPE": "Browse", "CATEGORY_ID": "10033", "CATEGORY_NAME": "-", "KEYWORD": "", "PRODUCT_ID": "0", "SELLER_GLUSR_ID": "0"}, {"ACTIVITY_ID": "2175", "ACTIVITY_TIME": "20260511143909", "ACTIVITY_TYPE": "Browse", "CATEGORY_ID": "10033", "CATEGORY_NAME": "-", "KEYWORD": "", "PRODUCT_ID": "0", "SELLER_GLUSR_ID": "0"}, {"ACTIVITY_ID": "2175", "ACTIVITY_TIME": "20260511143909", "ACTIVITY_TYPE": "Browse", "CATEGORY_ID": "0", "CATEGORY_NAME": "-", "KEYWORD": "", "PRODUCT_ID": "0", "SELLER_GLUSR_ID": "0"}, {"ACTIVITY_ID": "2175", "ACTIVITY_TIME": "20260511143909", "ACTIVITY_TYPE": "Browse", "CATEGORY_ID": "0", "CATEGORY_NAME": "-", "KEYWORD": "", "PRODUCT_ID": "0", "SELLER_GLUSR_ID": "0"}, {"ACTIVITY_ID": "527", "ACTIVITY_TIME": "20260506151621", "ACTIVITY_TYPE": "Others", "CATEGORY_ID": "0", "CATEGORY_NAME": "-", "KEYWORD": "", "PRODUCT_ID": "0", "SELLER_GLUSR_ID": "39240878"}, {"ACTIVITY_ID": "527", "ACTIVITY_TIME": "20260506151045", "ACTIVITY_TYPE": "Others", "CATEGORY_ID": "0", "CATEGORY_NAME": "-", "KEYWORD": "", "PRODUCT_ID": "0", "SELLER_GLUSR_ID": "39240878"}, {"ACTIVITY_ID": "527", "ACTIVITY_TIME": "20260506151045", "ACTIVITY_TYPE": "Others", "CATEGORY_ID": "0", "CATEGORY_NAME": "-", "KEYWORD": "", "PRODUCT_ID": "0", "SELLER_GLUSR_ID": "0"}, {"ACTIVITY_ID": "2175", "ACTIVITY_TIME": "20260504202331", "ACTIVITY_TYPE": "Browse", "CATEGORY_ID": "0", "CATEGORY_NAME": "-", "KEYWORD": "", "PRODUCT_ID": "0", "SELLER_GLUSR_ID": "0"}, {"ACTIVITY_ID": "2175", "ACTIVITY_TIME": "20260504202331", "ACTIVITY_TYPE": "Browse", "CATEGORY_ID": "0", "CATEGORY_NAME": "-", "KEYWORD": "", "PRODUCT_ID": "0", "SELLER_GLUSR_ID": "0"}, {"ACTIVITY_ID": "2175", "ACTIVITY_TIME": "20260504202331", "ACTIVITY_TYPE": "Browse", "CATEGORY_ID": "10033", "CATEGORY_NAME": "-", "KEYWORD": "", "PRODUCT_ID": "0", "SELLER_GLUSR_ID": "0"}, {"ACTIVITY_ID": "2175", "ACTIVITY_TIME": "20260421100707", "ACTIVITY_TYPE": "Browse", "CATEGORY_ID": "10033", "CATEGORY_NAME": "-", "KEYWORD": "", "PRODUCT_ID": "0", "SELLER_GLUSR_ID": "0"}, {"ACTIVITY_ID": "2175", "ACTIVITY_TIME": "20260421100707", "ACTIVITY_TYPE": "Browse", "CATEGORY_ID": "0", "CATEGORY_NAME": "-", "KEYWORD": "", "PRODUCT_ID": "0", "SELLER_GLUSR_ID": "0"}, {"ACTIVITY_ID": "2175", "ACTIVITY_TIME": "20260421100707", "ACTIVITY_TYPE": "Browse", "CATEGORY_ID": "0", "CATEGORY_NAME": "-", "KEYWORD": "", "PRODUCT_ID": "0", "SELLER_GLUSR_ID": "0"}, {"ACTIVITY_ID": "2175", "ACTIVITY_TIME": "20260421100706", "ACTIVITY_TYPE": "Browse", "CATEGORY_ID": "0", "CATEGORY_NAME": "-", "KEYWORD": "", "PRODUCT_ID": "0", "SELLER_GLUSR_ID": "0"}, {"ACTIVITY_ID": "2175", "ACTIVITY_TIME": "20260421100706", "ACTIVITY_TYPE": "Browse", "CATEGORY_ID": "0", "CATEGORY_NAME": "-", "KEYWORD": "", "PRODUCT_ID": "0", "SELLER_GLUSR_ID": "0"}, {"ACTIVITY_ID": "2175", "ACTIVITY_TIME": "20260417151137", "ACTIVITY_TYPE": "Browse", "CATEGORY_ID": "0", "CATEGORY_NAME": "-", "KEYWORD": "", "PRODUCT_ID": "0", "SELLER_GLUSR_ID": "0"}, {"ACTIVITY_ID": "2175", "ACTIVITY_TIME": "20260417151137", "ACTIVITY_TYPE": "Browse", "CATEGORY_ID": "0", "CATEGORY_NAME": "-", "KEYWORD": "", "PRODUCT_ID": "0", "SELLER_GLUSR_ID": "0"}, {"ACTIVITY_ID": "2175", "ACTIVITY_TIME": "20260417151137", "ACTIVITY_TYPE": "Browse", "CATEGORY_ID": "10033", "CATEGORY_NAME": "-", "KEYWORD": "", "PRODUCT_ID": "0", "SELLER_GLUSR_ID": "0"}], "ISQ_DATA": {"ISQ": null}, "LAST_ENQUIRY": {"DESCRIPTION": "I am interested in Slotted Angle Partition Rack, 5400mm", "ENQUIRY_ID": "3127000692", "PRODUCT_NAME": "Enquiry for Slotted Angle Partition Rack, 5400mm from Amar via IndiaMART", "TITLE": "Slotted Angle Partition Rack, 5400mm"}, "LAST_LEAD": {"DATE_R": "2026-04-13 13:47:38.702179", "IMAGE_PATH1": "", "IMAGE_PATH2": "", "IMAGE_PATH3": "", "LEAD_ID": "142472106575", "TITLE": "Aluminium Slotted Angle Rack"}, "LAST_WA8181_CHAT": [], "LAST_WA9696_CHAT": [], "enq_last_30_days": 6, "enq_last_90_days": 15, "glid": "488587", "hl_pns_received_30d": 3, "hl_pns_success_30d": 100, "last_3_month": {"bl_active_days": 0, "lms_active_days": "0 D"}, "last_4_week": {"a_rank_mcats": 3, "approved_prd": 132, "bl_active_days": 0, "bl_cons": 0, "bl_cons_app_percent": 0, "bl_cons_desktop_percent": 0, "bl_cons_mobile_percent": 0, "bl_credits_alctd": 0, "blni": 0, "blni_loc": 0, "blni_spec": 0, "blni_wrng_product": 0, "cons_0_4_hrs": 0, "cons_0_4_hrs_percent": 0, "cons_4_24_hrs": 0, "cons_4_24_hrs_percent": 0, "cons_grter_1day": 0, "cons_grter_1day_percent": 0, "high_sold_mcats": 0, "high_sold_mcats_percent": 0, "lms_active_days": "1 D", "location_preference": ["Regional", "Regional", "Regional", "Regional"], "negative_ctg_count": 0, "negative_ctg_with_product_mapped": 0, "notification_clicked": 2, "notification_clicked_percent": 1.87, "pns_call_picked": 3, "pns_call_received": 3, "prd_without_ctg_mapping": 4, "prd_without_photo": 0, "prd_without_price": 4, "preferred_cities_count": 4, "preferred_state": 0, "premium_ctg_without_a_rank": 0, "premium_ctg_without_primary_prd": 0, "total_enquiry": 4, "total_hide": 0, "total_mcats": 52, "total_negative_cities": 0, "total_notifications": 107}, "last_month": {"a_rank_mcats": 0, "approved_prd": 33, "bl_active_days": 0, "bl_cons": 0, "bl_cons_app_percent": 0, "bl_cons_desktop_percent": 0, "bl_cons_mobile_percent": 0, "bl_credits_alctd": 0, "blni": 0, "blni_loc": 0, "blni_spec": 0, "blni_wrng_product": 0, "cnt_neg_cities": 0, "cons_0_4_hrs": 0, "cons_0_4_hrs_percent": 0, "cons_4_24_hrs": 0, "cons_4_24_hrs_percent": 0, "cons_grter_1day": 0, "cons_grter_1day_percent": 0, "cq_score": 77, "ctg_without_a_rank": 0, "ctg_without_primary_prd": 0, "enquiry": 3, "high_sold_a_rank": 0, "high_sold_mcats_percent": 0, "lms_active_days": "0 D", "location_preference": "Regional", "negative_ctg": 0, "negative_ctg_count": 0, "negative_ctg_product_mapped": 0, "negative_ctg_with_product_mapped": 0, "notification_clicked": 0, "notification_clicked_percent": 0, "pmcat_count": 0, "prd_without_ctg_mapping": 1, "prd_without_photo": 0, "prd_without_price": 1, "pref_state": 0, "preferred_cities_count": 0, "preferred_city_count": 1, "premium_ctg_without_a_rank": 0, "premium_ctg_without_primary_prd": 0, "total_hide": 0, "total_mcats": 13, "total_notifications": 12}, "last_week": {"bl_active_days": 0, "bl_cons": 0, "blni": 0, "blni_loc": 0, "blni_spec": 0, "blni_wrng_product": 0, "cons_0_4_hrs": 0, "cons_4_24_hrs": 0, "cons_grter_1day": 0, "lms_active_days": "0 D", "total_hide": 0}, "pns_received_30_days": 3, "pns_received_90_days": 8, "top3mcat_competitors": [{"catalog_url": "https://www.veerfile.com/", "competitor_city": "New Delhi", "competitor_company": "Veer File Products", "competitor_glusr_id": 74578710, "competitor_membersince": "Oct 2018", "custtype_name": "TSCATALOG", "distance_city": 0, "glusr_usr_id": 488587}, {"catalog_url": "https://www.indiamart.com/bhartiya-printers-delhi/", "competitor_city": "New Delhi", "competitor_company": "Bhartiya Printers", "competitor_glusr_id": 122560791, "competitor_membersince": "Nov 2023", "custtype_name": "TSCATALOG", "distance_city": 0, "glusr_usr_id": 488587}, {"catalog_url": "https://www.silvertonegravu.co.in/", "competitor_city": "New Delhi", "competitor_company": "Silvertone Gravu Flex Pvt. Ltd.", "competitor_glusr_id": 416751, "competitor_membersince": "Mar 2013", "custtype_name": "LEADER", "distance_city": 0, "glusr_usr_id": 488587}, {"catalog_url": "https://www.indiamart.com/madhutradersnewdelhi/", "competitor_city": "New Delhi", "competitor_company": "Madhu Traders", "competitor_glusr_id": 109245564, "competitor_membersince": "Mar 2024", "custtype_name": "CATALOG", "distance_city": 0, "glusr_usr_id": 488587}, {"catalog_url": "https://www.indiamart.com/shubham-polymers-new-delhi/", "competitor_city": "New Delhi", "competitor_company": "Shubham Polymers", "competitor_glusr_id": 236645229, "competitor_membersince": "Nov 2025", "custtype_name": "CATALOG", "distance_city": 0, "glusr_usr_id": 488587}, {"catalog_url": "https://www.shivshaktippbags.com/", "competitor_city": "New Delhi", "competitor_company": "Shivshakti Global", "competitor_glusr_id": 246297099, "competitor_membersince": "Jun 2025", "custtype_name": "TSCATALOG", "distance_city": 0, "glusr_usr_id": 488587}, {"catalog_url": "https://www.indiamart.com/tanejapolyprints/", "competitor_city": "New Delhi", "competitor_company": "Taneja Poly Prints", "competitor_glusr_id": 4778994, "competitor_membersince": "Sep 2017", "custtype_name": "TSCATALOG", "distance_city": 0, "glusr_usr_id": 488587}, {"catalog_url": "https://www.indiamart.com/jagdamba-packers/", "competitor_city": "New Delhi", "competitor_company": "Jagdamba Packers", "competitor_glusr_id": 65128848, "competitor_membersince": "Jan 2024", "custtype_name": "TSCATALOG", "distance_city": 0, "glusr_usr_id": 488587}, {"catalog_url": "https://www.starkpackmate.co.in/", "competitor_city": "New Delhi", "competitor_company": "Stark Packmate Pvt. Ltd.", "competitor_glusr_id": 98512932, "competitor_membersince": "Jan 2024", "custtype_name": "TSCATALOG", "distance_city": 0, "glusr_usr_id": 488587}, {"catalog_url": "https://www.indiamart.com/tayaltradingcompany/", "competitor_city": "New Delhi", "competitor_company": "Tayal Trading Co.", "competitor_glusr_id": 1593489, "competitor_membersince": "May 2016", "custtype_name": "TSCATALOG", "distance_city": 0, "glusr_usr_id": 488587}], "top3mcat_data": [{"hyperlocal_bl": 168, "hyperlocal_paid_sellers": 201, "local_bl": 360, "local_paid_sellers": 241, "mcat_list": "[{\"mcat_name\": \"Laminated Pouches\"},{\"mcat_name\": \"Dried Fruit Pouches\"},{\"mcat_name\": \"Spices Packaging Bags\"}]", "total_bl": 1676, "total_paid_sellers": 241}], "upload_metadata": {"upload_modid": "global_context_consumer", "upload_time": "2026-05-14T23:07:21.25957671+05:30"}}, "connectdetails": {"app_sharing_counts": 0, "connect_30D": [{"call_answered_date": "2026-05-08 15:06:20", "call_answered_summary": "", "call_answered_transcript": "", "call_by": "119243", "call_sts_update": "", "meet_sts_update": "", "meet_sucessful_date": "", "met_by": "", "video_meet_by": "", "video_meet_sts_update": "", "video_verified_date": ""}, {"call_answered_date": "2026-05-08 14:50:10", "call_answered_summary": "", "call_answered_transcript": "", "call_by": "119243", "call_sts_update": "Had ROI issues, tried to convince him, asked to send details of Various plans, will plan and update you", "meet_sts_update": "", "meet_sucessful_date": "", "met_by": "", "video_meet_by": "", "video_meet_sts_update": "", "video_verified_date": ""}, {"call_answered_date": "2026-05-08 14:49:10", "call_answered_summary": "", "call_answered_transcript": "", "call_by": "119243", "call_sts_update": "", "meet_sts_update": "", "meet_sucessful_date": "", "met_by": "", "video_meet_by": "", "video_meet_sts_update": "", "video_verified_date": ""}, {"call_answered_date": "2026-05-07 16:28:53", "call_answered_summary": "", "call_answered_transcript": "", "call_by": "119243", "call_sts_update": "busy, connect tomorrow", "meet_sts_update": "", "meet_sucessful_date": "", "met_by": "", "video_meet_by": "", "video_meet_sts_update": "", "video_verified_date": ""}], "connect_7D": [{"call_answered_date": "2026-05-08 15:06:20", "call_answered_summary": "", "call_answered_transcript": "", "call_by": "119243", "call_sts_update": "", "meet_sts_update": "", "meet_sucessful_date": "", "met_by": "", "video_meet_by": "", "video_meet_sts_update": "", "video_verified_date": ""}, {"call_answered_date": "2026-05-08 14:50:10", "call_answered_summary": "", "call_answered_transcript": "", "call_by": "119243", "call_sts_update": "Had ROI issues, tried to convince him, asked to send details of Various plans, will plan and update you", "meet_sts_update": "", "meet_sucessful_date": "", "met_by": "", "video_meet_by": "", "video_meet_sts_update": "", "video_verified_date": ""}, {"call_answered_date": "2026-05-08 14:49:10", "call_answered_summary": "", "call_answered_transcript": "", "call_by": "119243", "call_sts_update": "", "meet_sts_update": "", "meet_sucessful_date": "", "met_by": "", "video_meet_by": "", "video_meet_sts_update": "", "video_verified_date": ""}], "email_outbound_details": "", "glid": "488587", "last_call_summary": "", "proposals_sent_counts": 0, "sms_outbound_details": "", "upload_metadata": {"upload_modid": "global_context_consumer", "upload_time": "2026-05-14T23:07:21.259576587+05:30"}}, "duplicate_glids_details": {"duplicate_glid": null, "duplicate_paid_ids": null, "glid": "488587", "upload_metadata": {"upload_modid": "global_context_consumer", "upload_time": "2026-05-14T23:07:21.259576792+05:30"}}, "glid": 488587, "kycdetails": {"LAST_10SUPPLIER_ACTIVITIES": [{"activity_id": "660", "date": "11-May-26", "fk_display_title": "Show FCP / MDC Inside Page", "gl_country": "IN", "glusr_id": "488587", "referer": "-", "remote_ip": "", "request_url": "GET /unicoenterprises/profile.html?app=organic HTTP/1.1", "supplier_days": "3 days", "time": "14:40", "time_new": "02:40:35 PM"}, {"activity_id": "575", "date": "11-May-26", "fk_display_title": "Show FCP / MDC Page", "gl_country": "IN", "glusr_id": "488587", "referer": "https://m.indiamart.com/unicoenterprises/", "remote_ip": "", "request_url": "GET /unicoenterprises/ HTTP/1.1", "supplier_days": "3 days", "time": "14:39", "time_new": "02:39:33 PM"}, {"activity_id": "10001", "date": "09-May-26", "fk_display_title": "Premium Activity - PNS Call Received", "gl_country": "IN", "glusr_id": "488587", "referer": "", "remote_ip": "", "request_url": "", "supplier_days": "5 days", "time": "17:40", "time_new": "05:40:02 PM"}, {"activity_id": "2217", "date": "07-May-26", "fk_display_title": "Relevant Buy Leads Page", "gl_country": "IN", "glusr_id": "488587", "referer": "https://seller.indiamart.com/bltxn/?pref=relevant", "remote_ip": "", "request_url": "GET /bltxn/?pref=relevant HTTP/1.1", "supplier_days": "7 days", "time": "09:58", "time_new": "09:58:38 AM"}, {"activity_id": "1874", "date": "07-May-26", "fk_display_title": "Show Dashboard Page", "gl_country": "IN", "glusr_id": "488587", "referer": "https://seller.indiamart.com/bltxn/?pref=relevant", "remote_ip": "", "request_url": "GET / HTTP/1.1", "supplier_days": "7 days", "time": "09:58", "time_new": "09:58:38 AM"}, {"activity_id": "10004", "date": "04-May-26", "fk_display_title": "Premium Activity - Enquiry Received", "gl_country": "IN", "glusr_id": "488587", "referer": "", "remote_ip": "", "request_url": "", "supplier_days": "10 days", "time": "20:45", "time_new": "08:45:01 PM"}, {"activity_id": "4682", "date": "04-May-26", "fk_display_title": "BMC Conversation Seller\n", "gl_country": "IN", "glusr_id": "488587", "referer": "https://m.indiamart.com/messages/conversation?sup_glid=MjY4NDY4NTkx&state_name=Delhi&journey=notification&type=Enq_Supplier_newenquiry_image&varient=_WrtAimgTempISQ&process_identifier=Enq_Supplier_newenquiry", "remote_ip": "", "request_url": "POST /api/bmcajax/addressbook/conversation_Seller HTTP/1.1", "supplier_days": "10 days", "time": "20:23", "time_new": "08:23:34 PM"}], "LAST_TICKETS_CLM_FEEDBACK": [{"ACTION_TAKEN": "Refund", "CATAGEORY": "Service Deactivation", "CUSTOMER_TICKET_CLOSEDATE": "01-Oct-2025", "CUSTOMER_TICKET_ID": "9402531", "CUSTOMER_TICKET_STATUS": "C", "FEEDBACK": "Not Submitted", "FK_GROUP_IDS": "2", "LAST_COMMENTS": "Closure RCA:\n1 What was the actual issue of client understood on call?    raised a complain for Refund   \n2 What was the solution offered to resolve his query?    \n-Client confirmed on call that refund amount has been received , \nclient has given closure for his concern   \n                                        \n3 Client  Satisfaction (CLM) response expected –   yes\n\n4 Ticket closure permission taken –  yes\n5 Is there any process/technical gaps Identified -No \n6 360 checklist was applicable here -no \n", "REASON": "Refund - Less BL"}, {"ACTION_TAKEN": "Wrong Buy Lead", "CATAGEORY": "Buylead & Enquiries", "CUSTOMER_TICKET_CLOSEDATE": "08-Aug-2025", "CUSTOMER_TICKET_ID": "9284615", "CUSTOMER_TICKET_STATUS": "C", "FEEDBACK": "Not Submitted", "FK_GROUP_IDS": "2", "LAST_COMMENTS": "Closing RCA :\nWhat was the actual issue of client understood on call : Client wants refund amount due to business maturity issue. \nWhat resolution was shared based on the concern shared by client : Had a discussion with the client regarding his concern, client is dont continue services because client told me that all buyers are demanding low order quantity value nd I suggested him to consume buy leads only bulk quantity . Seller wants buy leads minimum 25000 pieces nd 500 kg.\nMany buy leads are posting but supplier already mind makeup all buyers are demanding only retail quantity.\nI guided him to work properly and follow up basic process then you can mature business from IM.\nClient told me that update minimum order quantity so I updated.\nI have taken closure from client side.  \nIssue resolve\n\nShare reasons of each NO in Pre Call RCA :-Yes   \n\nBL and Query Discussion: Yes\n\nRecent BL & Queries discussed (Y/N) (for relevancy) :- Yes\n\nFeedback taken on the last 3 BL purchased by client (Y/N) :- Yes\n\nFresh BL’s shared with client :- Yes\n\nTicket Closure: Yes\n\nConfirmed if the customer had any other concern : Yes\n\nPermission to close the concern taken (Y/N) : - Yes\n\nAvoided sharing Personal number sharing with client (Y/N) : - Yes\n\nAsked for customer’s experience on the call (Y/N) : - Yes\n\nCall transferred for feedback (Y/N):-        Yes\n", "REASON": "BL-Maturity Issue"}], "SERVICE_VINTAGE": "", "WIP_TICKET_BUCKET": [], "account_manager_bd": {"did": "08048163271", "email": "shayaan.mohd@indiamart.com", "empid": "119243", "name": "Mohd. Shayaan"}, "account_manager_fsf": {"did": "08048163271", "email": "shayaan.mohd@indiamart.com", "empid": "119243", "name": "Mohd. Shayaan"}, "address": "N-270 Pocket-O, Sector-1, Bawana Industrial Estate Dsidc Bawana", "address_verification_status": true, "approved_product_count": "33", "avg_rating_count": 0, "bl_active_dau_30": 0, "catalog_url": "https://www.indiamart.com/hindpolybags/", "city": "New Delhi", "company_name": "Hind Polybags", "company_type": "Proprietor", "country": "India", "customer_name": "Amar Agarwal", "customer_type": "Free", "customer_vintage": "1Y", "email1": "agarwalamar2002@gmail.com", "fcp_flag": 1, "first_name": "Amar", "freeshowroom_alias_im": "hindpolybags", "glid": "488587", "glusr_customer_type": "vgFCPplus with PNS(G)", "glusr_custtype_id": 51, "glusr_disable_errmsg_value": "", "glusr_disabled_reason": "", "glusr_usr_approv": "A", "glusr_usr_listing_status": "LST", "gst_availability": "", "gst_last_filling": "", "gst_nature_of_business": "Manufacturer", "gst_new": "07AAEPA8882A1ZZ", "gst_registration_since": "2017-07-01T00:00:00Z", "gst_status": "Verified", "gst_turnover": "1.5 - 5 Cr", "high_churn": false, "high_risk_suspected": "No", "highest_service": "", "iec_availibility": "", "iec_status": "", "input_email_verification_status": "Verified", "input_mobile_verification_status": "Verified", "is_nach_active": "", "last_3_tickets_disposition": null, "last_call_details": [{"COMMENTS": "Had ROI issues, tried to convince him, asked to send details of Various plans, will plan and update you", "ENTERED_ON": "08-May-2026"}], "last_name": "Agarwal", "nach_deduction_date": "0", "nach_status": [{"DIS_TEXT": "", "NACH_NEXT_DEDUCTION": "0", "S_NAME": ""}], "nach_stopped_date": "", "payment_invoice_date": "26-Sep-2025", "payment_plan": "", "payment_receipt_date": "", "rating_count": 0, "registered_since_with_indiamart": "21 Y 2 M", "renewal_date": "", "renewal_status": "", "stsid": 655840, "tempblock_status": "", "ticket_count": "0", "top_city_rest_of_india": "Delhi", "upload_metadata": {"upload_modid": "global_context_consumer", "upload_time": "2026-05-14T23:07:21.259576423+05:30"}, "vertical_name": "Winback", "workorder_details": null}, "ticketsdetails": {"WIP_LEGAL_TICKETS": null, "WIP_OPS_TICKETS": null, "current": {"tickets": null}, "glid": "488587", "last_7_days": {"board_social_media_ticket_count": 0, "irate_complaint_count": 0, "negative_feedback_count": 0, "tickets": null, "total_ticket_count": 0, "whatsapp_negative_feedback_count": 0}, "last_8_to_90_days": {"board_social_media_ticket_count": 0, "bs_conflict_status": "No", "dt_ticket_count": 0, "employee_ticket_count": 0, "irate_complaint_count": 0, "negative_feedback_count": 0, "tickets": null, "total_ticket_count": 0, "whatsapp_negative_feedback_count": 0}, "upload_metadata": {"upload_modid": "global_context_consumer", "upload_time": "2026-05-14T23:07:21.25957689+05:30"}, "wip_tickets": {"ticket_id": "", "ticket_issue_date": "", "ticket_opening_comments": "", "ticket_status": "", "ticket_type": ""}}}, "message": "Success"}, "error": null};
+function toggleRaw(){document.getElementById('raw-json').style.display=document.getElementById('raw-json').style.display==='none'?'block':'none'}
+new Chart(document.getElementById('ch_act'),{"type": "doughnut", "data": {"labels": ["Browse", "Others"], "datasets": [{"data": [18, 7], "backgroundColor": ["#6366f1", "#94a3b8"], "borderWidth": 0}]}, "options": {"responsive": true, "maintainAspectRatio": false, "plugins": {"legend": {"labels": {"color": "#94a3b8"}}}, "scales": {}}});
+new Chart(document.getElementById('ch_tkt'),{"type": "bar", "data": {"labels": ["Total Tickets", "Irate Complaints", "Negative Feedback", "Social Media Tickets", "WhatsApp Negative"], "datasets": [{"label": "Last 7 Days", "data": [0, 0, 0, 0, 0], "backgroundColor": "#6366f188", "borderColor": "#6366f1", "borderWidth": 2}, {"label": "8–90 Days", "data": [0, 0, 0, 0, 0], "backgroundColor": "#ef444488", "borderColor": "#ef4444", "borderWidth": 2}]}, "options": {"responsive": true, "maintainAspectRatio": false, "plugins": {"legend": {"labels": {"color": "#94a3b8"}}}, "scales": {"x": {"ticks": {"color": "#94a3b8"}, "grid": {"color": "#2e3350"}}, "y": {"ticks": {"color": "#94a3b8"}, "grid": {"color": "#2e3350"}}}}});
+</script>
+</body>
+</html>

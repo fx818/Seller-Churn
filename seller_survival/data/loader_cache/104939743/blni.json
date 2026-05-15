@@ -1,0 +1,31 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 104939743,
+        "event_date": "2025-06-20",
+        "offer_id": 123996847159,
+        "mcat_id": null,
+        "reason_code": 11,
+        "reason_text": "Retail Lead",
+        "comment": null,
+        "module_id": null
+      },
+      {
+        "gluser_id": 104939743,
+        "event_date": "2025-06-20",
+        "offer_id": 123978665852,
+        "mcat_id": null,
+        "reason_code": 11,
+        "reason_text": "Retail Lead",
+        "comment": null,
+        "module_id": null
+      }
+    ],
+    "total": 2,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

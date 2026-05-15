@@ -1,0 +1,74 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 264697251,
+        "hotlead_date": "2026-05-08",
+        "hotlead_id": 14178000,
+        "hotlead_type_id": 1115290666,
+        "data_type": "OLP",
+        "activity": "Payment Attempt - BL",
+        "activity_id": 1620
+      },
+      {
+        "gluser_id": 264697251,
+        "hotlead_date": "2026-04-10",
+        "hotlead_id": 14178000,
+        "hotlead_type_id": 1104869320,
+        "data_type": "PANF",
+        "activity": "E-nach",
+        "activity_id": 0
+      },
+      {
+        "gluser_id": 264697251,
+        "hotlead_date": "2026-04-07",
+        "hotlead_id": 14178000,
+        "hotlead_type_id": 1103595173,
+        "data_type": "OLP",
+        "activity": "Payment Attempt - BL",
+        "activity_id": 1625
+      },
+      {
+        "gluser_id": 264697251,
+        "hotlead_date": "2026-03-24",
+        "hotlead_id": 14178000,
+        "hotlead_type_id": 1097856173,
+        "data_type": "OLP",
+        "activity": "Payment Attempt - BL",
+        "activity_id": 1625
+      },
+      {
+        "gluser_id": 264697251,
+        "hotlead_date": "2026-02-20",
+        "hotlead_id": 14178000,
+        "hotlead_type_id": 1084630995,
+        "data_type": "PANF",
+        "activity": "E-nach",
+        "activity_id": 0
+      },
+      {
+        "gluser_id": 264697251,
+        "hotlead_date": "2026-02-19",
+        "hotlead_id": 14178000,
+        "hotlead_type_id": 1084322069,
+        "data_type": "OLP",
+        "activity": "Payment Attempt - BL",
+        "activity_id": 1611
+      },
+      {
+        "gluser_id": 264697251,
+        "hotlead_date": "2026-02-15",
+        "hotlead_id": 14178000,
+        "hotlead_type_id": 1082671917,
+        "data_type": "PUA",
+        "activity": "Premium Activity - Online",
+        "activity_id": 1874
+      }
+    ],
+    "total": 7,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

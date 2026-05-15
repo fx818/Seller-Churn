@@ -1,0 +1,126 @@
+{
+  "glid": "98268073",
+  "company": "Precot Limited",
+  "city": "Hassan",
+  "final_tier": "Red",
+  "churn_score": 74.0,
+  "rca_category": "UNKNOWN",
+  "generated_at": "2026-05-15T08:54:57.647193+00:00",
+  "actions": {
+    "whatsapp_message": {
+      "message_hi": "Precot Bhai, aapka IndiaMART account review kiya.\nKuch quick improvements hain jo leads badha sakti hain.\nEk call karein? 📞",
+      "message_en": "Hi Precot, reviewed your IndiaMART account.\nThere are a few quick improvements that could boost your leads.\nCan we connect? 📞",
+      "message_type": "retention_nudge",
+      "rca_used": "UNKNOWN",
+      "cta": "Reply YES for a quick review call",
+      "personalization_vars": [
+        "name",
+        "enq_30d",
+        "cqs",
+        "bl_velocity_pct_abs"
+      ],
+      "estimated_open_rate": 0.72
+    },
+    "pre_call_brief": {
+      "company": "Precot Limited",
+      "city": "Hassan",
+      "enterprise": "—",
+      "ctype": "vgFCPplus with PNS",
+      "opening_line_hi": "Precot Bhai, maine aapka account review kiya — discuss karna chahta hoon.",
+      "opening_line_en": "Precot ji, reviewed your account — want to discuss a few key things.",
+      "key_signals": [
+        {
+          "label": "Churn Score",
+          "value": "74.0/100",
+          "severity": "critical"
+        },
+        {
+          "label": "Lead Volume Trend",
+          "value": "+0% MoM",
+          "severity": "medium"
+        },
+        {
+          "label": "PNS Answer Rate",
+          "value": "0%",
+          "severity": "high"
+        },
+        {
+          "label": "Active Days (30d)",
+          "value": "0",
+          "severity": "critical"
+        },
+        {
+          "label": "Catalog Score (CQS)",
+          "value": "81",
+          "severity": "medium"
+        }
+      ],
+      "suggested_actions": [
+        "Conduct discovery call",
+        "Identify main blocker"
+      ],
+      "do_not_mention": [
+        "renewal price",
+        "subscription cost",
+        "competitor pricing"
+      ],
+      "call_type": "RETENTION",
+      "estimated_call_duration": "8-12 min",
+      "rca_category": "UNKNOWN",
+      "llm_risk_level": null,
+      "llm_bands_display": null,
+      "llm_reasoning": "",
+      "churned_lookalikes": [],
+      "retained_lookalikes": [],
+      "brief_text": "SELLER: Precot Limited | Hassan | —/vgFCPplus with PNS | Age: 1347d\nCHURN SCORE: 74.0/100 | RISK: Unknown\nMAIN ISSUE: UNKNOWN — \nOPENING: Precot ji, reviewed your account — want to discuss a few key things.\nACTIONS: Conduct discovery call; Identify main blocker"
+    },
+    "script_generation": {
+      "script_parts": {
+        "opening": "Ramesh Bhai, maine aapka account review kiya — kuch important hai.",
+        "diagnostic": "Aapke leads recently kam ho gaye hain. Koi specific reason aaya mind mein?",
+        "value_demo": "Maine ek specific fix identify ki hai jo aapke jaise sellers ke kaam aayi.",
+        "action": "Ek setting check karte hain — 5 minute.",
+        "close": "Aapke account mein potential hai — bas ek adjustment chahiye."
+      },
+      "script_parts_en": {
+        "opening": "Ramesh bhai, I reviewed your account — there's something important.",
+        "diagnostic": "Your leads have dropped recently. Any specific reason come to mind?",
+        "value_demo": "I've identified a specific fix that has worked for sellers like you.",
+        "action": "Let's check one setting — 5 minutes.",
+        "close": "Your account has potential — just needs one adjustment."
+      },
+      "objection_handlers": {
+        "competitor_platform": "Samajh sakta hoon — doosre platforms bhi kaam karte hain. Lekin IndiaMART pe B2B buyers specifically aate hain jo bulk order dene ka intent rakhte hain. Ek baar compare karte hain — aapke last 3 mahine ke leads ka source kya raha?",
+        "price_too_high": "Bilkul valid point hai. Lekin aise socho — agar sirf 2 orders extra aaye subscription se, toh ROI positive ho jaata hai. Main aapke category ke average order value se calculate kar sakta hoon.",
+        "no_time": "Koi baat nahi — main ek quick summary WhatsApp pe bhej deta hoon. Aap apne time pe dekh lena, aur jo bhi question ho directly reply karna."
+      },
+      "objection_handlers_en": {
+        "competitor_platform": "I understand — other platforms work too. But IndiaMART specifically attracts B2B buyers who intend to place bulk orders. Let's compare — what was the source of your leads over the last 3 months?",
+        "price_too_high": "Completely valid point. But think of it this way — if just 2 extra orders come through the subscription, the ROI turns positive. I can calculate that using your category's average order value.",
+        "no_time": "No problem — I'll send you a quick summary on WhatsApp. Check it at your convenience, and just reply directly with any questions."
+      },
+      "language": "hi",
+      "rca_used": "UNKNOWN",
+      "trajectory_type": "",
+      "estimated_duration_min": 7,
+      "call_type": "RETENTION"
+    },
+    "gifted_lead": {
+      "lead_found": false,
+      "reason": "No hotleads data available",
+      "fallback": "Use peer comparison data as value demonstration",
+      "total_qualifying": 0
+    },
+    "winback_priority": {
+      "winback_score": 33,
+      "priority": "LOW",
+      "cool_off_elapsed": true,
+      "cool_off_days_remaining": 0,
+      "winback_pitch_type": "GENERAL",
+      "opening_line_hi": "Bhai, aapka purana account dekha — aapki category mein ab accha demand hai.",
+      "gifted_lead_eligible": false,
+      "estimated_conversion_probability": 0.13,
+      "recommended_package": "annual"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 134395808,
+        "hotlead_date": "2026-02-25",
+        "hotlead_id": 14202500,
+        "hotlead_type_id": 1086698358,
+        "data_type": "PANF",
+        "activity": "E-nach",
+        "activity_id": 0
+      },
+      {
+        "gluser_id": 134395808,
+        "hotlead_date": "2026-02-24",
+        "hotlead_id": 14202500,
+        "hotlead_type_id": 1086369224,
+        "data_type": "OLP",
+        "activity": "Payment Attempt - BL",
+        "activity_id": 1611
+      }
+    ],
+    "total": 2,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

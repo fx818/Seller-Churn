@@ -1,0 +1,31 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 141482925,
+        "event_date": "2026-02-03",
+        "offer_id": 138168646059,
+        "mcat_id": 159243,
+        "reason_code": 17,
+        "reason_text": null,
+        "comment": null,
+        "module_id": "LEAP"
+      },
+      {
+        "gluser_id": 141482925,
+        "event_date": "2026-02-03",
+        "offer_id": 138117502375,
+        "mcat_id": 159243,
+        "reason_code": 17,
+        "reason_text": null,
+        "comment": null,
+        "module_id": "FENQ"
+      }
+    ],
+    "total": 2,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

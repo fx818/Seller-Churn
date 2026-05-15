@@ -1,0 +1,31 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 68587742,
+        "event_date": "2026-03-12",
+        "offer_id": 140498319552,
+        "mcat_id": 9615,
+        "reason_code": 5,
+        "reason_text": "Location",
+        "comment": null,
+        "module_id": "FENQ"
+      },
+      {
+        "gluser_id": 68587742,
+        "event_date": "2026-03-12",
+        "offer_id": 140497368975,
+        "mcat_id": 2483,
+        "reason_code": 5,
+        "reason_text": "Location",
+        "comment": null,
+        "module_id": "IMOB"
+      }
+    ],
+    "total": 2,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

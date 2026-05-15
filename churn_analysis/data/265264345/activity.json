@@ -1,0 +1,83 @@
+{
+  "status": 200,
+  "data": {
+    "gluser_id": 265264345,
+    "event_count": 1,
+    "events": [
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.indiamart.com/arihant-industries-india/",
+        "glb_city": "Mumbai",
+        "glusr_id": 265264345,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260427113439",
+        "glb_state": "MH",
+        "remote_ip": "43.230.45.171",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "www.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /arihant-industries-india/enquiry.html HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 18.958193,
+        "glb_longitude": 72.832073,
+        "response_size": 19753,
+        "response_time": 92180,
+        "fk_activity_id": 526,
+        "ga_utma_cookie": "GA1.1.1887528444.1777269795",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604271134"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Enquiry Page",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 3299,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 265264345,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      }
+    ],
+    "updated_at": "2026-05-14T18:44:52.887380Z"
+  },
+  "error": null
+}

@@ -1,0 +1,3890 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Ingestion Service",
+    "summary": "Multi-source call data ingestion API",
+    "description": "Ingest call data from CSV uploads, scheduled API polling, and event streams",
+    "contact": {
+      "name": "Indiamart Voice AI team",
+      "email": "aa@indiamart.com"
+    },
+    "license": {
+      "name": "Proprietary",
+      "identifier": "LicenseRef-IndiaMart-Proprietary"
+    },
+    "version": "0.1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8007",
+      "description": "Local development"
+    },
+    {
+      "url": "https://ingestion-service-kntbneg73q-el.a.run.app",
+      "description": "Production"
+    }
+  ],
+  "paths": {
+    "/health": {
+      "get": {
+        "tags": [
+          "health"
+        ],
+        "summary": "Health check",
+        "operationId": "health_check_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "type": "object",
+                  "title": "Response Health Check Health Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "tags": [
+          "service"
+        ],
+        "summary": "Service metadata",
+        "operationId": "root__get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "type": "object",
+                  "title": "Response Root  Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/calls/upload": {
+      "post": {
+        "tags": [
+          "ingestion"
+        ],
+        "summary": "Upload call data via CSV",
+        "description": "Accepts a CSV file with call records and bulk-inserts them into call_master. Existing call_ids are silently skipped (idempotent).",
+        "operationId": "upload_csv_api_v1_calls_upload_post",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_upload_csv_api_v1_calls_upload_post"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IngestionResult"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The `detail` field tells you exactly what is wrong: 'Missing Content-Type header; expected text/csv.', 'Unsupported file type: {actual_type}. Expected text/csv.', or 'Uploaded file is empty'."
+          },
+          "401": {
+            "description": "Missing or invalid authentication credentials."
+          },
+          "413": {
+            "description": "File exceeds upload size limit. Split into smaller batches."
+          },
+          "422": {
+            "description": "The `detail` field names the exact problem: 'CSV file is empty or has no header row', 'CSV missing required columns: call_id' (lists each missing column), or 'Too many parsing errors' (\u003E50% of rows failed)."
+          },
+          "503": {
+            "description": "Database unavailable — retry after a short delay."
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/seller/sync": {
+      "post": {
+        "tags": [
+          "seller-sync"
+        ],
+        "summary": "Sync seller dimension from Redash",
+        "description": "Fetches rows from the configured Redash queries and upserts them into seller_profile, seller_gst, and seller_hotlead. Pass `tables` to restrict which tables are synced (default: all three).",
+        "operationId": "sync_sellers_api_v1_seller_sync_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SellerSyncRequest",
+                "default": {
+                  "tables": [
+                    "profile",
+                    "gst",
+                    "hotlead"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SellerSyncResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unknown table name in `tables` list."
+          },
+          "401": {
+            "description": "Missing or invalid authentication credentials."
+          },
+          "502": {
+            "description": "Could not reach Redash — check REDASH_BASE_URL and REDASH_API_KEY."
+          },
+          "503": {
+            "description": "Database unavailable — retry after a short delay."
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/daily-sync": {
+      "post": {
+        "tags": [
+          "daily-sync"
+        ],
+        "summary": "Run daily Redash → DB sync",
+        "description": "Triggers the full Redash → DB pipeline and upserts results into the database. Designed to be called by Cloud Scheduler daily. Eight steps in order: call_master, seller_profile, seller_gst, seller_hotlead, seller_blni (per-event rejections + narrow upsert of blni_count_* on seller_engagement for every seller in seller_profile), seller_engagement (merged Redash + HTTP sources, scoped to today's callees only — not every known seller; BLNI aggregates are NOT included, they are written in step 4.5 via a separate narrow upsert), seller_profile_extras, call_master_outcomes. On partial failure, completed_steps lists what succeeded and failed_step / failure_error indicate where it stopped.",
+        "operationId": "daily_sync_api_v1_daily_sync_post",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DailySyncResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or invalid authentication credentials."
+          },
+          "502": {
+            "description": "Could not reach Redash."
+          },
+          "503": {
+            "description": "Redash query IDs not configured or database unavailable."
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/daily-sync/refresh-blni": {
+      "post": {
+        "tags": [
+          "daily-sync"
+        ],
+        "summary": "Refresh BLNI for every seller in seller_profile",
+        "description": "One-shot refresh of the BLNI table (plus blni_count_* on seller_engagement) for every GLID in seller_profile. Uses the same parameterised Redash query as daily sync step 4.5 and the same narrow engagement upsert, so it's safe to run at any time — it only adds missing per-event rows (insert-skip-duplicate) and refreshes the aggregate counts. Typical runtime for 5k sellers: ~30s (5 batches of 1000 @ ~5s each).",
+        "operationId": "refresh_blni_api_v1_daily_sync_refresh_blni_post",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SellerSyncResult"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or invalid authentication credentials."
+          },
+          "502": {
+            "description": "Could not reach Redash."
+          },
+          "503": {
+            "description": "Redash BLNI query ID not configured."
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/sellers/stats": {
+      "get": {
+        "tags": [
+          "sellers-read"
+        ],
+        "summary": "Get Seller Stats",
+        "description": "Aggregate KPIs: total sellers, GST coverage, RAG breakdown.\n\nWhen date range is provided, only counts sellers we called within that\nwindow (joins through `call_master.lead_generated_on`).",
+        "operationId": "get_seller_stats_api_v1_sellers_stats_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "from_date",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by call date start",
+              "title": "From Date"
+            },
+            "description": "Filter by call date start"
+          },
+          {
+            "name": "to_date",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by call date end",
+              "title": "To Date"
+            },
+            "description": "Filter by call date end"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SellerStatsOut"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/sellers": {
+      "get": {
+        "tags": [
+          "sellers-read"
+        ],
+        "summary": "List Sellers",
+        "description": "List sellers with filters. Supports pagination and date-range filter by call window.",
+        "operationId": "list_sellers_api_v1_sellers_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "default": 1,
+              "title": "Page"
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 100,
+              "minimum": 1,
+              "default": 20,
+              "title": "Page Size"
+            }
+          },
+          {
+            "name": "rag_category",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Rag Category"
+            }
+          },
+          {
+            "name": "city",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "City"
+            }
+          },
+          {
+            "name": "has_gst",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Has Gst"
+            }
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Company name substring search",
+              "title": "Q"
+            },
+            "description": "Company name substring search"
+          },
+          {
+            "name": "sort_by",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "created_at",
+              "title": "Sort By"
+            }
+          },
+          {
+            "name": "sort_order",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "type": "string",
+              "default": "desc",
+              "title": "Sort Order"
+            }
+          },
+          {
+            "name": "called_from",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Only sellers we called on/after this date",
+              "title": "Called From"
+            },
+            "description": "Only sellers we called on/after this date"
+          },
+          {
+            "name": "called_to",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Only sellers we called on/before this date",
+              "title": "Called To"
+            },
+            "description": "Only sellers we called on/before this date"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaginatedList_SellerSummaryOut_"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/sellers/{gluser_id}": {
+      "get": {
+        "tags": [
+          "sellers-read"
+        ],
+        "summary": "Get Seller",
+        "description": "Full seller composite (profile + gst + engagement).\n\nThe staleness check runs on every request — a warm-but-stale non-callee\nis silently refreshed before ``load_seller_detail`` runs, so callers\nalways get data that is at most ``seller_staleness_ttl_hours`` old\n(default 24h). This mirrors the same contract as the sub-resource\nendpoints (``/calls``, ``/hotleads``, etc.).\n\nOn a DB miss, ``maybe_warm_seller`` performs the upstream fan-out (via\nthe implicit staleness path — a missing row is treated as stale). Returns\n404 only if upstream also has no profile row for the GLID. Returns 503\nif the backfill doesn't complete within the configured timeout.\n\nOptional ``?backfill=true`` warms the seller only on a cold miss;\n``?refresh=true`` forces an upstream re-fetch unconditionally. See the\nsub-resource endpoint docs for full semantics.",
+        "operationId": "get_seller_api_v1_sellers__gluser_id__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "gluser_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Gluser Id"
+            }
+          },
+          {
+            "name": "backfill",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "description": "Run upstream backfill if seller has no profile row.",
+              "default": false,
+              "title": "Backfill"
+            },
+            "description": "Run upstream backfill if seller has no profile row."
+          },
+          {
+            "name": "refresh",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "description": "Force upstream re-fetch even if seller is already warm.",
+              "default": false,
+              "title": "Refresh"
+            },
+            "description": "Force upstream re-fetch even if seller is already warm."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SellerDetailOut"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/sellers/bulk": {
+      "post": {
+        "tags": [
+          "sellers-read"
+        ],
+        "summary": "Bulk Get Sellers",
+        "description": "Bulk lookup by gluser_ids.\n\nReturns sellers found under `items` and IDs with no seller_profile row\nunder `not_found_ids` so callers can distinguish missing records from\nempty fields.",
+        "operationId": "bulk_get_sellers_api_v1_sellers_bulk_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SellerBulkRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SellerBulkResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/sellers/{gluser_id}/calls": {
+      "get": {
+        "tags": [
+          "sellers-read"
+        ],
+        "summary": "List Seller Calls",
+        "description": "List calls for a seller within an optional date range.\n\nReturns 404 if the seller is unknown (no `seller_profile` row). An empty\n200 response means the seller exists but has no calls in the window.\n\nOptional ``?backfill=true`` warms the seller (full upstream fan-out)\nif its profile is missing — useful for first-time access where the DB\nhasn't yet been populated. ``?refresh=true`` forces an upstream\nre-fetch unconditionally (use sparingly; 5-15s + clobbers daily-sync\naggregates).",
+        "operationId": "list_seller_calls_api_v1_sellers__gluser_id__calls_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "gluser_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Gluser Id"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "default": 1,
+              "title": "Page"
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 100,
+              "minimum": 1,
+              "default": 20,
+              "title": "Page Size"
+            }
+          },
+          {
+            "name": "from_date",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "From Date"
+            }
+          },
+          {
+            "name": "to_date",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "To Date"
+            }
+          },
+          {
+            "name": "backfill",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "description": "Run upstream backfill if seller has no profile row.",
+              "default": false,
+              "title": "Backfill"
+            },
+            "description": "Run upstream backfill if seller has no profile row."
+          },
+          {
+            "name": "refresh",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "description": "Force upstream re-fetch even if seller is already warm.",
+              "default": false,
+              "title": "Refresh"
+            },
+            "description": "Force upstream re-fetch even if seller is already warm."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaginatedList_CallOut_"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/sellers/{gluser_id}/hotleads": {
+      "get": {
+        "tags": [
+          "sellers-read"
+        ],
+        "summary": "List Seller Hotleads",
+        "description": "List hotlead events for a seller within an optional date range.\n\nReturns 404 if the seller is unknown (no `seller_profile` row).\n\nOptional ``?backfill=true`` / ``?refresh=true`` — see ``/calls``.",
+        "operationId": "list_seller_hotleads_api_v1_sellers__gluser_id__hotleads_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "gluser_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Gluser Id"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "default": 1,
+              "title": "Page"
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 100,
+              "minimum": 1,
+              "default": 20,
+              "title": "Page Size"
+            }
+          },
+          {
+            "name": "from_date",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "From Date"
+            }
+          },
+          {
+            "name": "to_date",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "To Date"
+            }
+          },
+          {
+            "name": "data_type",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Data Type"
+            }
+          },
+          {
+            "name": "backfill",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "description": "Run upstream backfill if seller has no profile row.",
+              "default": false,
+              "title": "Backfill"
+            },
+            "description": "Run upstream backfill if seller has no profile row."
+          },
+          {
+            "name": "refresh",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "description": "Force upstream re-fetch even if seller is already warm.",
+              "default": false,
+              "title": "Refresh"
+            },
+            "description": "Force upstream re-fetch even if seller is already warm."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaginatedList_SellerHotleadOut_"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/sellers/{gluser_id}/blni": {
+      "get": {
+        "tags": [
+          "sellers-read"
+        ],
+        "summary": "List Seller Blni",
+        "description": "List buylead-not-interested (BLNI) events for a seller with reason + comment.\n\nEach row carries the full reject context — reason code, human-readable\nreason text, free-form reseller comment, and the mcat/offer IDs. Filter\nby date range and/or reason_code.\n\nNo dependency on seller_profile existence — BLNI is a global IndiaMart\nsignal, not scoped to our bot-called sellers. Unknown gluser_ids return\nan empty page (total=0) rather than 404.\n\nOptional ``?backfill=true`` / ``?refresh=true`` — see ``/calls``.",
+        "operationId": "list_seller_blni_api_v1_sellers__gluser_id__blni_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "gluser_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Gluser Id"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "default": 1,
+              "title": "Page"
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 100,
+              "minimum": 1,
+              "default": 20,
+              "title": "Page Size"
+            }
+          },
+          {
+            "name": "from_date",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "From Date"
+            }
+          },
+          {
+            "name": "to_date",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "To Date"
+            }
+          },
+          {
+            "name": "reason_code",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "1,3,5,7,10,11,13,15,17",
+              "title": "Reason Code"
+            },
+            "description": "1,3,5,7,10,11,13,15,17"
+          },
+          {
+            "name": "backfill",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "description": "Run upstream backfill if seller has no profile row. Note: if the seller has a profile but no BLNI data yet, use ?refresh=true instead — ?backfill=true is a no-op for warm sellers.",
+              "default": false,
+              "title": "Backfill"
+            },
+            "description": "Run upstream backfill if seller has no profile row. Note: if the seller has a profile but no BLNI data yet, use ?refresh=true instead — ?backfill=true is a no-op for warm sellers."
+          },
+          {
+            "name": "refresh",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "description": "Force upstream re-fetch even if seller is already warm.",
+              "default": false,
+              "title": "Refresh"
+            },
+            "description": "Force upstream re-fetch even if seller is already warm."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaginatedList_SellerBlniOut_"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/sellers/{gluser_id}/activity": {
+      "get": {
+        "tags": [
+          "sellers-read"
+        ],
+        "summary": "Get Seller Activity",
+        "description": "Seller's 30-day CSL activity events (from ``seller_engagement``).\n\nReads the ``activity_events_30d`` JSONB blob populated by the daily sync\nand the /sellers/{id} cold-miss backfill. Each event carries bizfeed\nfields like ``datevalue``, ``fk_activity_id``, ``fk_display_title``,\n``modid``, ``request_url``.\n\nReturns 404 if no ``seller_engagement`` row exists for the GLID. A 200\nwith ``event_count=0`` means the seller has no activity in the window.\n``updated_at`` reflects the engagement row's last refresh — callers can\nuse it to decide whether to wait for the next daily sync.\n\nOptional ``?backfill=true`` / ``?refresh=true`` — see ``/calls``.",
+        "operationId": "get_seller_activity_api_v1_sellers__gluser_id__activity_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "gluser_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Gluser Id"
+            }
+          },
+          {
+            "name": "backfill",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "description": "Run upstream backfill if seller has no profile row.",
+              "default": false,
+              "title": "Backfill"
+            },
+            "description": "Run upstream backfill if seller has no profile row."
+          },
+          {
+            "name": "refresh",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "description": "Force upstream re-fetch even if seller is already warm.",
+              "default": false,
+              "title": "Refresh"
+            },
+            "description": "Force upstream re-fetch even if seller is already warm."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SellerActivityOut"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/sellers/{gluser_id}/metrics": {
+      "get": {
+        "tags": [
+          "sellers-read"
+        ],
+        "summary": "Get Seller Metrics At Date",
+        "description": "Point-in-time engagement metrics at a caller-supplied reference date.\n\nThe daily sync overwrites ``seller_engagement`` with today's rolling\nvalues, so past-date lookups aren't possible from that table. This\nendpoint computes them on demand by firing 9 parameterised Redash\nqueries in parallel (enq_received, enq_replies, callback, pns,\ncall_stats, NI/NP/WN, meetings, hot_meetings, products_modified)\nand reading BLNI counts from the local ``seller_blni`` table. No\nsnapshots are stored.\n\nBehaviour:\n- No seller_profile dependency — works for any gluser_id. Sellers\n  with no activity return fields=None (JSON null); the endpoint\n  never coalesces missing values to 0.\n- Partial failures don't 500: if one source fails (Redash timeout,\n  bad JSON), that source's fields stay None and ``failed_sources``\n  lists its name.\n- Latency: ~3-5s on a cache miss (dominated by slowest Redash call);\n  sub-10ms on a cache hit. Results are cached per ``(gluser_id, as_of)``\n  for ``ENGAGEMENT_METRICS_CACHE_TTL_SECONDS`` (default 1h, in-process)\n  so a burst of eval-agent calls on the same seller / same day shares\n  one upstream fetch.\n\nConstraints:\n- ``as_of`` must be on or before today.\n- ``as_of`` should be within the last 2 years; beyond that, Redash\n  source data may not fully cover the 1yr window.",
+        "operationId": "get_seller_metrics_at_date_api_v1_sellers__gluser_id__metrics_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "gluser_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Gluser Id"
+            }
+          },
+          {
+            "name": "as_of",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "description": "Reference date (YYYY-MM-DD). 90d/1yr windows end here.",
+              "title": "As Of"
+            },
+            "description": "Reference date (YYYY-MM-DD). 90d/1yr windows end here."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SellerMetricsAtDateOut"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/sellers/{gluser_id}/category-city-report": {
+      "get": {
+        "tags": [
+          "sellers-read"
+        ],
+        "summary": "Get Seller Category City Report",
+        "description": "Seller \"Category-City Report\" — the seller's MCAT × City buy-lead matrix.\n\nPorts ``Categories.getAllData`` from the legacy\n``company/Category_CityDetails.aspx`` page (Redash query 2500, data\nsource 16). Thin Redash wrapper, no DB storage — the query gives the\nseller's last 6 months of *business* buy-lead purchases, aggregated by\nMCAT × buy-lead city, with the marketplace-wide \"BL Approved\" count, the\nseller's \"BL Consumed\" count, trade-alert rank, mapped product count and\nmapped premium service. Capped at 200 rows ordered by BL Consumed desc,\nthen trade-alert rank asc, then preferred-city desc.\n\nBehaviour:\n- No seller_profile dependency — works for any gluser_id. A seller with\n  no qualifying purchases returns ``row_count: 0``.\n- Optional ``mcat_id`` / ``city_id`` narrow the report (echoed back on\n  the response). They map to the upstream query's optional filters.\n- ``limit`` (1..200, default 200) trims the response to the top N rows;\n  the upstream query/cache still cover the full ≤200, so varying\n  ``limit`` is a free slice of the same cached result.\n- Results are cached on Redash per ``(gluser_id, mcat_id, city_id)`` for\n  ``REDASH_CATEGORY_CITY_CACHE_SECONDS`` (default 30 min). First/cold\n  call: a few seconds for most sellers, up to ~30-40s for sellers in\n  very popular categories (the query counts marketplace offers across\n  all their categories); cached hits return immediately.\n\nErrors:\n- ``501`` if the Redash query id isn't configured\n  (``REDASH_QUERY_CATEGORY_CITY`` unset).\n- ``502`` if the upstream Redash call fails or times out.",
+        "operationId": "get_seller_category_city_report_api_v1_sellers__gluser_id__category_city_report_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "gluser_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Gluser Id"
+            }
+          },
+          {
+            "name": "mcat_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Optional MCAT filter (glcat_mcat_id).",
+              "title": "Mcat Id"
+            },
+            "description": "Optional MCAT filter (glcat_mcat_id)."
+          },
+          {
+            "name": "city_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Optional buy-lead-city filter (gl_city_id).",
+              "title": "City Id"
+            },
+            "description": "Optional buy-lead-city filter (gl_city_id)."
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 200,
+              "minimum": 1,
+              "description": "Return only the top N rows (by BL Consumed).",
+              "default": 200,
+              "title": "Limit"
+            },
+            "description": "Return only the top N rows (by BL Consumed)."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SellerCategoryCityReportOut"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/calls-read": {
+      "get": {
+        "tags": [
+          "calls-read"
+        ],
+        "summary": "List Calls",
+        "description": "List calls filtered by date range and optional seller/outcome filters.",
+        "operationId": "list_calls_api_v1_calls_read_get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "default": 1,
+              "title": "Page"
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 100,
+              "minimum": 1,
+              "default": 20,
+              "title": "Page Size"
+            }
+          },
+          {
+            "name": "from_date",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "From Date"
+            }
+          },
+          {
+            "name": "to_date",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "To Date"
+            }
+          },
+          {
+            "name": "gluser_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Gluser Id"
+            }
+          },
+          {
+            "name": "meeting_fixed",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Meeting Fixed"
+            }
+          },
+          {
+            "name": "vendor",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Vendor"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaginatedList_CallOut_"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/context/{call_id}": {
+      "get": {
+        "tags": [
+          "context-read"
+        ],
+        "summary": "Get Call Context",
+        "description": "Full context for a call — metadata + seller profile, gst, engagement.",
+        "operationId": "get_call_context_api_v1_context__call_id__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "call_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Call Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CallContextOut"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Body_upload_csv_api_v1_calls_upload_post": {
+        "properties": {
+          "file": {
+            "type": "string",
+            "format": "binary",
+            "title": "File"
+          }
+        },
+        "type": "object",
+        "required": [
+          "file"
+        ],
+        "title": "Body_upload_csv_api_v1_calls_upload_post"
+      },
+      "CallContextOut": {
+        "properties": {
+          "call": {
+            "$ref": "#/components/schemas/CallOut"
+          },
+          "seller": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/SellerDetailOut"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "call"
+        ],
+        "title": "CallContextOut",
+        "description": "Full context for a specific call — call metadata + seller sections."
+      },
+      "CallOut": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Id"
+          },
+          "gluser_id": {
+            "type": "integer",
+            "title": "Gluser Id"
+          },
+          "call_id": {
+            "type": "integer",
+            "title": "Call Id"
+          },
+          "recording_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Recording Url"
+          },
+          "meeting_fixed": {
+            "type": "boolean",
+            "title": "Meeting Fixed"
+          },
+          "callback_fixed": {
+            "type": "boolean",
+            "title": "Callback Fixed"
+          },
+          "lead_generated_on": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Lead Generated On"
+          },
+          "vendor_call_time": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Vendor Call Time"
+          },
+          "vendor": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Vendor"
+          },
+          "call_duration": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Call Duration"
+          },
+          "meeting_done": {
+            "type": "boolean",
+            "title": "Meeting Done",
+            "default": false
+          },
+          "sale": {
+            "type": "boolean",
+            "title": "Sale",
+            "default": false
+          },
+          "sale_date": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sale Date"
+          },
+          "proforma_amount": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Proforma Amount"
+          },
+          "hl_type": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Hl Type"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "gluser_id",
+          "call_id",
+          "meeting_fixed",
+          "callback_fixed"
+        ],
+        "title": "CallOut",
+        "description": "Call metadata for listing under a seller."
+      },
+      "DailySyncResponse": {
+        "properties": {
+          "call_master": {
+            "$ref": "#/components/schemas/IngestionResult"
+          },
+          "seller_profile": {
+            "$ref": "#/components/schemas/SellerSyncResult"
+          },
+          "seller_gst": {
+            "$ref": "#/components/schemas/SellerSyncResult"
+          },
+          "seller_hotlead": {
+            "$ref": "#/components/schemas/SellerSyncResult"
+          },
+          "seller_blni": {
+            "$ref": "#/components/schemas/SellerSyncResult"
+          },
+          "seller_engagement": {
+            "$ref": "#/components/schemas/SellerSyncResult"
+          },
+          "seller_profile_extras": {
+            "$ref": "#/components/schemas/SellerSyncResult"
+          },
+          "call_master_outcomes": {
+            "$ref": "#/components/schemas/SellerSyncResult"
+          },
+          "completed_steps": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Completed Steps"
+          },
+          "failed_step": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Failed Step"
+          },
+          "failure_error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Failure Error"
+          }
+        },
+        "type": "object",
+        "required": [
+          "call_master",
+          "seller_profile",
+          "seller_gst",
+          "seller_hotlead",
+          "seller_blni",
+          "seller_engagement",
+          "seller_profile_extras",
+          "call_master_outcomes",
+          "completed_steps"
+        ],
+        "title": "DailySyncResponse",
+        "description": "Combined result of the daily sync pipeline."
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "IngestionResult": {
+        "properties": {
+          "inserted_count": {
+            "type": "integer",
+            "title": "Inserted Count"
+          },
+          "skipped_count": {
+            "type": "integer",
+            "title": "Skipped Count"
+          },
+          "error_count": {
+            "type": "integer",
+            "title": "Error Count",
+            "default": 0
+          },
+          "errors": {
+            "items": {
+              "$ref": "#/components/schemas/RowError"
+            },
+            "type": "array",
+            "title": "Errors"
+          },
+          "errors_truncated": {
+            "type": "boolean",
+            "title": "Errors Truncated",
+            "default": false
+          }
+        },
+        "type": "object",
+        "required": [
+          "inserted_count",
+          "skipped_count"
+        ],
+        "title": "IngestionResult",
+        "description": "Result of a bulk ingestion operation."
+      },
+      "PaginatedList_CallOut_": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/CallOut"
+            },
+            "type": "array",
+            "title": "Items"
+          },
+          "total": {
+            "type": "integer",
+            "title": "Total"
+          },
+          "page": {
+            "type": "integer",
+            "title": "Page"
+          },
+          "page_size": {
+            "type": "integer",
+            "title": "Page Size"
+          }
+        },
+        "type": "object",
+        "required": [
+          "items",
+          "total",
+          "page",
+          "page_size"
+        ],
+        "title": "PaginatedList[CallOut]"
+      },
+      "PaginatedList_SellerBlniOut_": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/SellerBlniOut"
+            },
+            "type": "array",
+            "title": "Items"
+          },
+          "total": {
+            "type": "integer",
+            "title": "Total"
+          },
+          "page": {
+            "type": "integer",
+            "title": "Page"
+          },
+          "page_size": {
+            "type": "integer",
+            "title": "Page Size"
+          }
+        },
+        "type": "object",
+        "required": [
+          "items",
+          "total",
+          "page",
+          "page_size"
+        ],
+        "title": "PaginatedList[SellerBlniOut]"
+      },
+      "PaginatedList_SellerHotleadOut_": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/SellerHotleadOut"
+            },
+            "type": "array",
+            "title": "Items"
+          },
+          "total": {
+            "type": "integer",
+            "title": "Total"
+          },
+          "page": {
+            "type": "integer",
+            "title": "Page"
+          },
+          "page_size": {
+            "type": "integer",
+            "title": "Page Size"
+          }
+        },
+        "type": "object",
+        "required": [
+          "items",
+          "total",
+          "page",
+          "page_size"
+        ],
+        "title": "PaginatedList[SellerHotleadOut]"
+      },
+      "PaginatedList_SellerSummaryOut_": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/SellerSummaryOut"
+            },
+            "type": "array",
+            "title": "Items"
+          },
+          "total": {
+            "type": "integer",
+            "title": "Total"
+          },
+          "page": {
+            "type": "integer",
+            "title": "Page"
+          },
+          "page_size": {
+            "type": "integer",
+            "title": "Page Size"
+          }
+        },
+        "type": "object",
+        "required": [
+          "items",
+          "total",
+          "page",
+          "page_size"
+        ],
+        "title": "PaginatedList[SellerSummaryOut]"
+      },
+      "RowError": {
+        "properties": {
+          "row": {
+            "type": "integer",
+            "title": "Row"
+          },
+          "error": {
+            "type": "string",
+            "title": "Error"
+          }
+        },
+        "type": "object",
+        "required": [
+          "row",
+          "error"
+        ],
+        "title": "RowError",
+        "description": "A single row-level error encountered during ingestion."
+      },
+      "SellerActivityOut": {
+        "properties": {
+          "gluser_id": {
+            "type": "integer",
+            "title": "Gluser Id"
+          },
+          "event_count": {
+            "type": "integer",
+            "title": "Event Count"
+          },
+          "events": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Events"
+          },
+          "updated_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Updated At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "gluser_id",
+          "event_count",
+          "events"
+        ],
+        "title": "SellerActivityOut",
+        "description": "CSL activity events (last 30 days) for a seller.\n\n``events`` is the raw list returned by the bizfeed GladminActivity API,\ndeduped across paginated pages. Populated at most once per daily sync\nor /sellers/{id} cold-miss backfill and stored as JSONB on\n``seller_engagement.activity_events_30d``. ``updated_at`` is the\nengagement row's last refresh timestamp — use it to judge freshness."
+      },
+      "SellerBlniOut": {
+        "properties": {
+          "gluser_id": {
+            "type": "integer",
+            "title": "Gluser Id"
+          },
+          "event_date": {
+            "type": "string",
+            "format": "date",
+            "title": "Event Date"
+          },
+          "offer_id": {
+            "type": "integer",
+            "title": "Offer Id"
+          },
+          "mcat_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mcat Id"
+          },
+          "reason_code": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reason Code"
+          },
+          "reason_text": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reason Text"
+          },
+          "comment": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Comment"
+          },
+          "module_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Module Id"
+          }
+        },
+        "type": "object",
+        "required": [
+          "gluser_id",
+          "event_date",
+          "offer_id"
+        ],
+        "title": "SellerBlniOut",
+        "description": "One buylead-not-interested rejection event with full reject context."
+      },
+      "SellerBulkRequest": {
+        "properties": {
+          "gluser_ids": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array",
+            "maxItems": 200,
+            "minItems": 1,
+            "title": "Gluser Ids"
+          }
+        },
+        "type": "object",
+        "required": [
+          "gluser_ids"
+        ],
+        "title": "SellerBulkRequest"
+      },
+      "SellerBulkResponse": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/SellerDetailOut"
+            },
+            "type": "array",
+            "title": "Items"
+          },
+          "not_found_ids": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array",
+            "title": "Not Found Ids"
+          }
+        },
+        "type": "object",
+        "required": [
+          "items",
+          "not_found_ids"
+        ],
+        "title": "SellerBulkResponse",
+        "description": "Bulk lookup response.\n\n`items` contains one entry per gluser_id that has a seller_profile row.\n`not_found_ids` lists any IDs the caller passed that had no profile row,\nso callers can distinguish \"record missing\" from \"fields unpopulated\"."
+      },
+      "SellerCategoryCityReportOut": {
+        "properties": {
+          "gluser_id": {
+            "type": "integer",
+            "title": "Gluser Id"
+          },
+          "mcat_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mcat Id"
+          },
+          "city_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "City Id"
+          },
+          "limit": {
+            "type": "integer",
+            "title": "Limit",
+            "default": 200
+          },
+          "row_count": {
+            "type": "integer",
+            "title": "Row Count"
+          },
+          "rows": {
+            "items": {
+              "$ref": "#/components/schemas/SellerCategoryCityRow"
+            },
+            "type": "array",
+            "title": "Rows"
+          }
+        },
+        "type": "object",
+        "required": [
+          "gluser_id",
+          "row_count",
+          "rows"
+        ],
+        "title": "SellerCategoryCityReportOut",
+        "description": "Seller \"Category-City Report\" — the MCAT × City buy-lead matrix.\n\nThin Redash wrapper (no DB storage): the upstream query (Redash 2500,\nports ``Categories.getAllData`` from ``company/Category_CityDetails.aspx.vb``)\ncovers the seller's last 6 months of *business* buy-lead purchases,\naggregated by MCAT × buy-lead city, capped at 200 rows ordered by BL\nConsumed desc, then trade-alert rank asc, then preferred-city desc.\nResults are Redash-cached per ``(gluser_id, mcat_id, city_id)`` for a\nshort TTL (``REDASH_CATEGORY_CITY_CACHE_SECONDS``, default 30 min).\n\n``mcat_id`` / ``city_id`` echo the optional filters that were applied\n(``None`` when unfiltered); ``limit`` echoes the requested cap.\n``row_count`` is the number of rows actually returned (``\u003C= limit``)."
+      },
+      "SellerCategoryCityRow": {
+        "properties": {
+          "glcat_mcat_id": {
+            "type": "integer",
+            "title": "Glcat Mcat Id"
+          },
+          "category_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Category Name"
+          },
+          "gl_city_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Gl City Id"
+          },
+          "city_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "City Name"
+          },
+          "bl_approved_6m": {
+            "type": "integer",
+            "title": "Bl Approved 6M",
+            "default": 0
+          },
+          "bl_consumed_6m": {
+            "type": "integer",
+            "title": "Bl Consumed 6M",
+            "default": 0
+          },
+          "category_rank": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Category Rank"
+          },
+          "product_count": {
+            "type": "integer",
+            "title": "Product Count",
+            "default": 0
+          },
+          "services_mapped": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Services Mapped"
+          }
+        },
+        "type": "object",
+        "required": [
+          "glcat_mcat_id"
+        ],
+        "title": "SellerCategoryCityRow",
+        "description": "One row of the seller's MCAT × City buy-lead matrix (last 6 months).\n\nMirrors a row of the live \"Category-City Report\" grid on\n``company/Category_CityDetails.aspx``: Category Name, City Name,\nBL Approved (6M), BL Consumed (6M), Category Rank, Product Count,\nServices Mapped — plus the MCAT / city ids so the ``?mcat_id=`` /\n``?city_id=`` filters are usable."
+      },
+      "SellerDetailOut": {
+        "properties": {
+          "gluser_id": {
+            "type": "integer",
+            "title": "Gluser Id"
+          },
+          "profile": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/SellerProfileOut"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "gst": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/SellerGstOut"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "engagement": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/SellerEngagementOut"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "gluser_id"
+        ],
+        "title": "SellerDetailOut",
+        "description": "Full seller composite — profile + gst + engagement as sections."
+      },
+      "SellerEngagementOut": {
+        "properties": {
+          "gluser_id": {
+            "type": "integer",
+            "title": "Gluser Id"
+          },
+          "enq_received_90d": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Enq Received 90D"
+          },
+          "enq_received_1yr": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Enq Received 1Yr"
+          },
+          "enq_replies_90d": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Enq Replies 90D"
+          },
+          "enq_replies_1yr": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Enq Replies 1Yr"
+          },
+          "callback_90d": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Callback 90D"
+          },
+          "callback_1yr": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Callback 1Yr"
+          },
+          "pns_received_90d": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pns Received 90D"
+          },
+          "pns_received_1yr": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pns Received 1Yr"
+          },
+          "pns_answered_90d": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pns Answered 90D"
+          },
+          "pns_answered_1yr": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pns Answered 1Yr"
+          },
+          "call_attempts_90d": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Call Attempts 90D"
+          },
+          "call_attempts_1yr": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Call Attempts 1Yr"
+          },
+          "answered_calls_90d": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Answered Calls 90D"
+          },
+          "answered_calls_1yr": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Answered Calls 1Yr"
+          },
+          "pickup_ratio_90d": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pickup Ratio 90D"
+          },
+          "pickup_ratio_1yr": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pickup Ratio 1Yr"
+          },
+          "short_calls_90d": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Short Calls 90D"
+          },
+          "short_calls_1yr": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Short Calls 1Yr"
+          },
+          "long_calls_90d": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Long Calls 90D"
+          },
+          "long_calls_1yr": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Long Calls 1Yr"
+          },
+          "ni_count_90d": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ni Count 90D"
+          },
+          "np_count_90d": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Np Count 90D"
+          },
+          "wn_count_90d": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Wn Count 90D"
+          },
+          "ni_count_1yr": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ni Count 1Yr"
+          },
+          "np_count_1yr": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Np Count 1Yr"
+          },
+          "wn_count_1yr": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Wn Count 1Yr"
+          },
+          "blni_count_90d": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Blni Count 90D"
+          },
+          "blni_count_1yr": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Blni Count 1Yr"
+          },
+          "app_notif_clicks": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "App Notif Clicks"
+          },
+          "email_notif_clicks": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Email Notif Clicks"
+          },
+          "product_count": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Product Count"
+          },
+          "cqs": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cqs"
+          },
+          "products_modified_90d": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Products Modified 90D"
+          },
+          "products_modified_1yr": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Products Modified 1Yr"
+          },
+          "meetings_90d": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Meetings 90D"
+          },
+          "meetings_1yr": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Meetings 1Yr"
+          },
+          "hot_meetings_90d": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Hot Meetings 90D"
+          },
+          "hot_meetings_1yr": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Hot Meetings 1Yr"
+          },
+          "verified_meetings_90d": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Verified Meetings 90D"
+          },
+          "verified_meetings_1yr": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Verified Meetings 1Yr"
+          },
+          "similar_bl_consumed_30d": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Similar Bl Consumed 30D"
+          },
+          "similar_enq_received_30d": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Similar Enq Received 30D"
+          },
+          "similar_pns_received_30d": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Similar Pns Received 30D"
+          },
+          "activity_30d": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Activity 30D"
+          }
+        },
+        "type": "object",
+        "required": [
+          "gluser_id"
+        ],
+        "title": "SellerEngagementOut"
+      },
+      "SellerGstOut": {
+        "properties": {
+          "gluser_id": {
+            "type": "integer",
+            "title": "Gluser Id"
+          },
+          "business_activity": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Business Activity"
+          },
+          "annual_turnover_slab": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Annual Turnover Slab"
+          },
+          "gst_registration_date": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Gst Registration Date"
+          },
+          "gstin_status": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Gstin Status"
+          },
+          "verification_status": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Verification Status"
+          },
+          "verification_source_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Verification Source Id"
+          },
+          "nob": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Nob"
+          },
+          "gst_verified_status": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Gst Verified Status"
+          },
+          "gst_verification_source": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Gst Verification Source"
+          }
+        },
+        "type": "object",
+        "required": [
+          "gluser_id"
+        ],
+        "title": "SellerGstOut"
+      },
+      "SellerHotleadOut": {
+        "properties": {
+          "gluser_id": {
+            "type": "integer",
+            "title": "Gluser Id"
+          },
+          "hotlead_date": {
+            "type": "string",
+            "format": "date",
+            "title": "Hotlead Date"
+          },
+          "hotlead_id": {
+            "type": "integer",
+            "title": "Hotlead Id"
+          },
+          "hotlead_type_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Hotlead Type Id"
+          },
+          "data_type": {
+            "type": "string",
+            "title": "Data Type"
+          },
+          "activity": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Activity"
+          },
+          "activity_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Activity Id"
+          }
+        },
+        "type": "object",
+        "required": [
+          "gluser_id",
+          "hotlead_date",
+          "hotlead_id",
+          "data_type"
+        ],
+        "title": "SellerHotleadOut"
+      },
+      "SellerMetricsAtDateOut": {
+        "properties": {
+          "gluser_id": {
+            "type": "integer",
+            "title": "Gluser Id"
+          },
+          "as_of": {
+            "type": "string",
+            "format": "date",
+            "title": "As Of"
+          },
+          "enq_received_90d": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Enq Received 90D"
+          },
+          "enq_received_1yr": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Enq Received 1Yr"
+          },
+          "enq_replies_90d": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Enq Replies 90D"
+          },
+          "enq_replies_1yr": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Enq Replies 1Yr"
+          },
+          "callback_90d": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Callback 90D"
+          },
+          "callback_1yr": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Callback 1Yr"
+          },
+          "pns_received_90d": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pns Received 90D"
+          },
+          "pns_received_1yr": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pns Received 1Yr"
+          },
+          "pns_answered_90d": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pns Answered 90D"
+          },
+          "pns_answered_1yr": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pns Answered 1Yr"
+          },
+          "call_attempts_90d": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Call Attempts 90D"
+          },
+          "call_attempts_1yr": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Call Attempts 1Yr"
+          },
+          "answered_calls_90d": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Answered Calls 90D"
+          },
+          "answered_calls_1yr": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Answered Calls 1Yr"
+          },
+          "short_calls_90d": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Short Calls 90D"
+          },
+          "short_calls_1yr": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Short Calls 1Yr"
+          },
+          "long_calls_90d": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Long Calls 90D"
+          },
+          "long_calls_1yr": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Long Calls 1Yr"
+          },
+          "ni_count_90d": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ni Count 90D"
+          },
+          "ni_count_1yr": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ni Count 1Yr"
+          },
+          "np_count_90d": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Np Count 90D"
+          },
+          "np_count_1yr": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Np Count 1Yr"
+          },
+          "wn_count_90d": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Wn Count 90D"
+          },
+          "wn_count_1yr": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Wn Count 1Yr"
+          },
+          "meetings_90d": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Meetings 90D"
+          },
+          "meetings_1yr": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Meetings 1Yr"
+          },
+          "hot_meetings_90d": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Hot Meetings 90D"
+          },
+          "hot_meetings_1yr": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Hot Meetings 1Yr"
+          },
+          "verified_meetings_90d": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Verified Meetings 90D"
+          },
+          "verified_meetings_1yr": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Verified Meetings 1Yr"
+          },
+          "products_modified_90d": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Products Modified 90D"
+          },
+          "products_modified_1yr": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Products Modified 1Yr"
+          },
+          "blni_count_90d": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Blni Count 90D"
+          },
+          "blni_count_1yr": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Blni Count 1Yr"
+          },
+          "failed_sources": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Failed Sources"
+          }
+        },
+        "type": "object",
+        "required": [
+          "gluser_id",
+          "as_of"
+        ],
+        "title": "SellerMetricsAtDateOut",
+        "description": "Point-in-time 90d / 1yr engagement metrics computed at `as_of`.\n\nEach field is independently nullable so that a failure in any single\nupstream source (e.g. one of the Redash queries timing out) only NULLs\nthe affected fields rather than failing the whole endpoint.\n``failed_sources`` names any source that didn't contribute."
+      },
+      "SellerProfileOut": {
+        "properties": {
+          "gluser_id": {
+            "type": "integer",
+            "title": "Gluser Id"
+          },
+          "company_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Company Name"
+          },
+          "city": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "City"
+          },
+          "account_age_days": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Account Age Days"
+          },
+          "customer_type": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Customer Type"
+          },
+          "creation_date": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Creation Date"
+          },
+          "sibling_count": {
+            "type": "integer",
+            "title": "Sibling Count",
+            "default": 0
+          },
+          "paid_history": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Paid History"
+          },
+          "rag_score": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rag Score"
+          },
+          "rag_category": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rag Category"
+          },
+          "mcat_negative": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mcat Negative"
+          },
+          "profile_score": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Profile Score"
+          },
+          "active_bl": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Active Bl"
+          },
+          "related_glids_count": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Related Glids Count"
+          },
+          "hrs_bs_conflict": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Hrs Bs Conflict"
+          },
+          "longitude": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Longitude"
+          },
+          "latitude": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Latitude"
+          },
+          "locality": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Locality"
+          },
+          "pincode": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pincode"
+          },
+          "contact_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Contact Name"
+          },
+          "showroom_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Showroom Url"
+          },
+          "last_meeting_latitude": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Meeting Latitude"
+          },
+          "last_meeting_longitude": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Meeting Longitude"
+          },
+          "last_meeting_date": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Meeting Date"
+          }
+        },
+        "type": "object",
+        "required": [
+          "gluser_id"
+        ],
+        "title": "SellerProfileOut"
+      },
+      "SellerStatsOut": {
+        "properties": {
+          "total_sellers": {
+            "type": "integer",
+            "title": "Total Sellers"
+          },
+          "sellers_with_gst": {
+            "type": "integer",
+            "title": "Sellers With Gst"
+          },
+          "sellers_with_engagement": {
+            "type": "integer",
+            "title": "Sellers With Engagement"
+          },
+          "rag_breakdown": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "type": "object",
+            "title": "Rag Breakdown"
+          },
+          "from_date": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "From Date"
+          },
+          "to_date": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "To Date"
+          }
+        },
+        "type": "object",
+        "required": [
+          "total_sellers",
+          "sellers_with_gst",
+          "sellers_with_engagement",
+          "rag_breakdown"
+        ],
+        "title": "SellerStatsOut",
+        "description": "Aggregate KPIs for sellers in an optional date window."
+      },
+      "SellerSummaryOut": {
+        "properties": {
+          "gluser_id": {
+            "type": "integer",
+            "title": "Gluser Id"
+          },
+          "company_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Company Name"
+          },
+          "city": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "City"
+          },
+          "rag_category": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rag Category"
+          },
+          "rag_score": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rag Score"
+          },
+          "customer_type": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Customer Type"
+          }
+        },
+        "type": "object",
+        "required": [
+          "gluser_id"
+        ],
+        "title": "SellerSummaryOut",
+        "description": "Lightweight shape for list/search responses."
+      },
+      "SellerSyncRequest": {
+        "properties": {
+          "tables": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Tables",
+            "default": [
+              "profile",
+              "gst",
+              "hotlead"
+            ]
+          }
+        },
+        "type": "object",
+        "title": "SellerSyncRequest",
+        "description": "Optional body to restrict which tables to sync."
+      },
+      "SellerSyncResponse": {
+        "properties": {
+          "results": {
+            "items": {
+              "$ref": "#/components/schemas/SellerSyncResult"
+            },
+            "type": "array",
+            "title": "Results"
+          }
+        },
+        "type": "object",
+        "required": [
+          "results"
+        ],
+        "title": "SellerSyncResponse",
+        "description": "Combined result across all synced tables."
+      },
+      "SellerSyncResult": {
+        "properties": {
+          "table": {
+            "type": "string",
+            "title": "Table"
+          },
+          "upserted": {
+            "type": "integer",
+            "title": "Upserted",
+            "default": 0
+          },
+          "skipped": {
+            "type": "integer",
+            "title": "Skipped",
+            "default": 0
+          },
+          "error_count": {
+            "type": "integer",
+            "title": "Error Count",
+            "default": 0
+          },
+          "errors": {
+            "items": {
+              "$ref": "#/components/schemas/RowError"
+            },
+            "type": "array",
+            "title": "Errors"
+          }
+        },
+        "type": "object",
+        "required": [
+          "table"
+        ],
+        "title": "SellerSyncResult"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    },
+    "securitySchemes": {
+      "HTTPBearer": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "service",
+      "description": "Service metadata endpoints"
+    },
+    {
+      "name": "health",
+      "description": "Operational health endpoints"
+    },
+    {
+      "name": "ingestion",
+      "description": "Call data ingestion endpoints"
+    },
+    {
+      "name": "seller-sync",
+      "description": "Seller dimension sync endpoints"
+    },
+    {
+      "name": "daily-sync",
+      "description": "Daily Redash → DB sync pipeline"
+    }
+  ]
+}

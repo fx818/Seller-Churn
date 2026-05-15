@@ -1,0 +1,45 @@
+{
+  "glid": "35856414",
+  "company": "Asoka Vermicelli Factory",
+  "city": "Madurai",
+  "final_tier": "Amber",
+  "churn_score": 57.0,
+  "rca_category": "UNKNOWN",
+  "generated_at": "2026-05-15T08:53:38.232697+00:00",
+  "actions": {
+    "whatsapp_message": {
+      "message_hi": "Asoka Vermicelli Factory Bhai, aapka IndiaMART account review kiya.\nKuch quick improvements hain jo leads badha sakti hain.\nEk call karein? 📞",
+      "message_en": "Hi Asoka Vermicelli Factory, reviewed your IndiaMART account.\nThere are a few quick improvements that could boost your leads.\nCan we connect? 📞",
+      "message_type": "retention_nudge",
+      "rca_used": "UNKNOWN",
+      "cta": "Reply YES for a quick review call",
+      "personalization_vars": [
+        "name",
+        "enq_30d",
+        "cqs"
+      ],
+      "estimated_open_rate": 0.72
+    },
+    "pre_call_brief": null,
+    "script_generation": {
+      "error": "Missing required inputs: ['seller_name']"
+    },
+    "gifted_lead": {
+      "lead_found": false,
+      "reason": "No hotleads data available",
+      "fallback": "Use peer comparison data as value demonstration",
+      "total_qualifying": 0
+    },
+    "winback_priority": {
+      "winback_score": 33,
+      "priority": "LOW",
+      "cool_off_elapsed": true,
+      "cool_off_days_remaining": 0,
+      "winback_pitch_type": "GENERAL",
+      "opening_line_hi": "Bhai, aapka purana account dekha — aapki category mein ab accha demand hai.",
+      "gifted_lead_eligible": false,
+      "estimated_conversion_probability": 0.13,
+      "recommended_package": "annual"
+    }
+  }
+}

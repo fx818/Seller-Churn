@@ -1,0 +1,29 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 66781872,
+        "hotlead_date": "2026-02-13",
+        "hotlead_id": 14169277,
+        "hotlead_type_id": 1081671795,
+        "data_type": "PUA",
+        "activity": "Premium Activity - Online",
+        "activity_id": 1874
+      },
+      {
+        "gluser_id": 66781872,
+        "hotlead_date": "2026-02-12",
+        "hotlead_id": 14169277,
+        "hotlead_type_id": 1081288858,
+        "data_type": "UA",
+        "activity": "Edit Product-Details changed",
+        "activity_id": 2292
+      }
+    ],
+    "total": 2,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

@@ -1,0 +1,65 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 134666582,
+        "hotlead_date": "2026-02-26",
+        "hotlead_id": 13701404,
+        "hotlead_type_id": 1087364518,
+        "data_type": "PAM",
+        "activity": "Payment Attempt - MDC",
+        "activity_id": 2299
+      },
+      {
+        "gluser_id": 134666582,
+        "hotlead_date": "2026-02-05",
+        "hotlead_id": 13701404,
+        "hotlead_type_id": 1078177480,
+        "data_type": "PIM",
+        "activity": "Payment Interest - MDC",
+        "activity_id": 2368
+      },
+      {
+        "gluser_id": 134666582,
+        "hotlead_date": "2026-02-01",
+        "hotlead_id": 13701404,
+        "hotlead_type_id": 1076366972,
+        "data_type": "ENQR",
+        "activity": "Premium Activity - Enquiry Received",
+        "activity_id": 10004
+      },
+      {
+        "gluser_id": 134666582,
+        "hotlead_date": "2025-11-25",
+        "hotlead_id": 13701404,
+        "hotlead_type_id": 1047203874,
+        "data_type": "TF",
+        "activity": "From: MERP - Comments: 11640636023399826~~Received a call from 89*****500.. Hot lead Created",
+        "activity_id": null
+      },
+      {
+        "gluser_id": 134666582,
+        "hotlead_date": "2025-10-18",
+        "hotlead_id": 13701404,
+        "hotlead_type_id": 1032283232,
+        "data_type": "PIM",
+        "activity": "Payment Interest - MDC",
+        "activity_id": 4345
+      },
+      {
+        "gluser_id": 134666582,
+        "hotlead_date": "2025-09-11",
+        "hotlead_id": 13701404,
+        "hotlead_type_id": 1016350127,
+        "data_type": "TF",
+        "activity": "From: MERP - Comments: 25257591239532628~~Received a call from 89*****500.. Hot lead Created",
+        "activity_id": null
+      }
+    ],
+    "total": 6,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

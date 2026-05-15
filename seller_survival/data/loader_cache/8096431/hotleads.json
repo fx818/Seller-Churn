@@ -1,0 +1,29 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 8096431,
+        "hotlead_date": "2026-05-05",
+        "hotlead_id": 10273065,
+        "hotlead_type_id": 1114203541,
+        "data_type": "PNSR",
+        "activity": "Premium Activity - PNS Call Received",
+        "activity_id": 10001
+      },
+      {
+        "gluser_id": 8096431,
+        "hotlead_date": "2026-05-04",
+        "hotlead_id": 10273065,
+        "hotlead_type_id": 1114008934,
+        "data_type": "ENQR",
+        "activity": "Premium Activity - Enquiry Received",
+        "activity_id": 10003
+      }
+    ],
+    "total": 2,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

@@ -1,0 +1,5411 @@
+{
+  "status": 200,
+  "data": {
+    "gluser_id": 264884335,
+    "event_count": 75,
+    "events": [
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421131553",
+        "glb_state": "-",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "BuyerDashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2175,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211315"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Buyer Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 20,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421131554",
+        "glb_state": "-",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "User Verification Blocker Screen",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2186,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211316"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "User Verification",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 20,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421131555",
+        "glb_state": "-",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "User Verification Blocker Screen",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2186,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211316"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "User Verification",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 13.095,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 723,
+        "adminln": "-",
+        "keyword": "Padded%20Bra",
+        "referer": "-",
+        "glb_city": "Delhi",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            68595
+          ]
+        },
+        "datevalue": "20260421131555",
+        "glb_state": "DL",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; RMX3710 Build/AP3A.240617.008; wv) Version/4.0 Chrome/146.0.7680.177 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /isearch.php?s=Padded+Bra&cq=New+Delhi& HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.681455,
+        "glb_longitude": 77.22279,
+        "response_size": 55747,
+        "response_time": 329262,
+        "fk_activity_id": 1282,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211315"
+        },
+        "seller_city_id": 70469,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "M.IM Search",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": null,
+        "glb_city": null,
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421131558",
+        "glb_state": null,
+        "remote_ip": "10.143.8.188:32816",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": null,
+        "domain_name": null,
+        "http_status": 0,
+        "request_url": null,
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 4658,
+        "ga_utma_cookie": null,
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211316"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": null,
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421131558",
+        "glb_state": "-",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "BuyerDashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2175,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211315"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Buyer Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 20,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421131638",
+        "glb_state": "-",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Supplier Dashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2176,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211316"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Supplier Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 20,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421131638",
+        "glb_state": "-",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "BuyerDashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2175,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211316"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Buyer Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 20,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421131638",
+        "glb_state": "-",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Supplier-Dashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2176,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211316"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Supplier Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 20,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": null,
+        "glb_city": "-",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421131639",
+        "glb_state": "-",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": null,
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "MDCviaSellerTools",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2352,
+        "ga_utma_cookie": null,
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211316"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 10,
+        "product_disp_id": null,
+        "fk_display_title": "Pitching MDCviaSellerTools",
+        "owner_gl_country": null,
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "NFL"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421131648",
+        "glb_state": "-",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Supplier-Dashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2176,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211316"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Supplier Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 20,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 723,
+        "adminln": "-",
+        "keyword": "Padded%20Bra",
+        "referer": "-",
+        "glb_city": "Delhi",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            68595
+          ]
+        },
+        "datevalue": "20260421131656",
+        "glb_state": "DL",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; RMX3710 Build/AP3A.240617.008; wv) Version/4.0 Chrome/146.0.7680.177 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /isearch.php?s=Padded+Bra&cq=New+Delhi&src=as-recent&prdsrc=1 HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.681455,
+        "glb_longitude": 77.22279,
+        "response_size": 55747,
+        "response_time": 43234,
+        "fk_activity_id": 1282,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211316"
+        },
+        "seller_city_id": 70469,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "M.IM Search",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": null,
+        "glb_city": null,
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421131658",
+        "glb_state": null,
+        "remote_ip": "10.143.8.188:32816",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": null,
+        "domain_name": null,
+        "http_status": 0,
+        "request_url": null,
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 4658,
+        "ga_utma_cookie": null,
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211317"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": null,
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": null,
+        "glb_city": null,
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421131658",
+        "glb_state": null,
+        "remote_ip": "10.143.8.188:48676",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": null,
+        "domain_name": null,
+        "http_status": 0,
+        "request_url": null,
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 4660,
+        "ga_utma_cookie": null,
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211317"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": null,
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/isearch.php?s=Padded+Bra&cq=new+delhi&src=as-recent&prdsrc=1&no_sugg=1&tags=res%3ARC3%7Cktp%3ASA1%7Cstype%3Aattr%3D1%7Cmtp%3AS%7Cwc%3A2%7Clcf%3A3%7Ccq%3Anew+delhi%7Cqr_nm%3Agl-gd%7Ccs%3A18890%7Ccom-cf%3Anl%7Cptrs%3Ana%7Cm",
+        "glb_city": "Delhi",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            69389
+          ]
+        },
+        "datevalue": "20260421131713",
+        "glb_state": "DL",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; RMX3710 Build/AP3A.240617.008; wv) Version/4.0 Chrome/146.0.7680.177 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /tinuji/?pos=1&kwd=padded%20bra&tags=rk:A|plc:1|dt:0|db:01|prc:1|dtp:p||sv:S|rsf:gd|prv:103.95|ri:S_A_0_P|em:1-|-res:RC3|ktp:SA1|stype:attr=1|mtp:S|wc:2|lcf:3|cq:new%20delhi|qr_nm:gl-gd|cs:18890|com-cf:nl|ptrs:na|mc:68595|cat:723|qry_typ:P|lang:en|ty HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.681455,
+        "glb_longitude": 77.22279,
+        "response_size": 25678,
+        "response_time": 854,
+        "fk_activity_id": 575,
+        "ga_utma_cookie": "GA1.1.818069534.1771497011",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211317"
+        },
+        "seller_city_id": 70469,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 15787692,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 199,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/tinuji/?pos=1&kwd=padded%20bra&tags=rk:A|plc:1|dt:0|db:01|prc:1|dtp:p||sv:S|rsf:gd|prv:103.95|ri:S_A_0_P|em:1-|-res:RC3|ktp:SA1|stype:attr=1|mtp:S|wc:2|lcf:3|cq:new%20delhi|qr_nm:gl-gd|cs:18890|com-cf:nl|ptrs:na|mc:68595|",
+        "glb_city": "Delhi",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            69389
+          ]
+        },
+        "datevalue": "20260421131722",
+        "glb_state": "DL",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; RMX3710 Build/AP3A.240617.008; wv) Version/4.0 Chrome/146.0.7680.177 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /tinuji/ladies-leggings-palazzo.html HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.681455,
+        "glb_longitude": 77.22279,
+        "response_size": 31225,
+        "response_time": 1009,
+        "fk_activity_id": 660,
+        "ga_utma_cookie": "GA1.1.818069534.1771497011",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211317"
+        },
+        "seller_city_id": 70469,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Inside Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 15787692,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 199,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/tinuji/ladies-leggings-palazzo.html",
+        "glb_city": "Delhi",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            69389
+          ]
+        },
+        "datevalue": "20260421131734",
+        "glb_state": "DL",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; RMX3710 Build/AP3A.240617.008; wv) Version/4.0 Chrome/146.0.7680.177 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /tinuji/profile.html HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.681455,
+        "glb_longitude": 77.22279,
+        "response_size": 29068,
+        "response_time": 833,
+        "fk_activity_id": 660,
+        "ga_utma_cookie": "GA1.1.818069534.1771497011",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211317"
+        },
+        "seller_city_id": 70469,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Inside Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 15787692,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 199,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/tinuji/profile.html",
+        "glb_city": "Delhi",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            69389
+          ]
+        },
+        "datevalue": "20260421131743",
+        "glb_state": "DL",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; RMX3710 Build/AP3A.240617.008; wv) Version/4.0 Chrome/146.0.7680.177 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /tinuji/photos.html HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.681455,
+        "glb_longitude": 77.22279,
+        "response_size": 49529,
+        "response_time": 114772,
+        "fk_activity_id": 660,
+        "ga_utma_cookie": "GA1.1.818069534.1771497011",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211317"
+        },
+        "seller_city_id": 70469,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Inside Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 15787692,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 199,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/tinuji/ladies-leggings-palazzo.html",
+        "glb_city": "Delhi",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            69389
+          ]
+        },
+        "datevalue": "20260421131754",
+        "glb_state": "DL",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; RMX3710 Build/AP3A.240617.008; wv) Version/4.0 Chrome/146.0.7680.177 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /tinuji/profile.html HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.681455,
+        "glb_longitude": 77.22279,
+        "response_size": 29064,
+        "response_time": 558,
+        "fk_activity_id": 660,
+        "ga_utma_cookie": "GA1.1.818069534.1771497011",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211317"
+        },
+        "seller_city_id": 70469,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Inside Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 15787692,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 199,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/tinuji/profile.html",
+        "glb_city": "Delhi",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            69389
+          ]
+        },
+        "datevalue": "20260421131757",
+        "glb_state": "DL",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; RMX3710 Build/AP3A.240617.008; wv) Version/4.0 Chrome/146.0.7680.177 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /tinuji/videos.html HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.681455,
+        "glb_longitude": 77.22279,
+        "response_size": 25393,
+        "response_time": 124135,
+        "fk_activity_id": 660,
+        "ga_utma_cookie": "GA1.1.818069534.1771497011",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211317"
+        },
+        "seller_city_id": 70469,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Inside Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 15787692,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 199,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/tinuji/ladies-leggings-palazzo.html",
+        "glb_city": "Delhi",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            69389
+          ]
+        },
+        "datevalue": "20260421131759",
+        "glb_state": "DL",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; RMX3710 Build/AP3A.240617.008; wv) Version/4.0 Chrome/146.0.7680.177 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /tinuji/profile.html HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.681455,
+        "glb_longitude": 77.22279,
+        "response_size": 29064,
+        "response_time": 818,
+        "fk_activity_id": 660,
+        "ga_utma_cookie": "GA1.1.818069534.1771497011",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211318"
+        },
+        "seller_city_id": 70469,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Inside Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 15787692,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 199,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/tinuji/videos.html",
+        "glb_city": "Delhi",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            69389
+          ]
+        },
+        "datevalue": "20260421131759",
+        "glb_state": "DL",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; RMX3710 Build/AP3A.240617.008; wv) Version/4.0 Chrome/146.0.7680.177 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /ajaxrequest/getCompanyData?end_idx=19&alias=tinuji HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.681455,
+        "glb_longitude": 77.22279,
+        "response_size": 8718,
+        "response_time": 60863,
+        "fk_activity_id": 539,
+        "ga_utma_cookie": "GA1.1.818069534.1771497011",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211318"
+        },
+        "seller_city_id": 70469,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 15787692,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 199,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/tinuji/?pos=1&kwd=padded%20bra&tags=rk:A|plc:1|dt:0|db:01|prc:1|dtp:p||sv:S|rsf:gd|prv:103.95|ri:S_A_0_P|em:1-|-res:RC3|ktp:SA1|stype:attr=1|mtp:S|wc:2|lcf:3|cq:new%20delhi|qr_nm:gl-gd|cs:18890|com-cf:nl|ptrs:na|mc:68595|",
+        "glb_city": "Delhi",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            69389
+          ]
+        },
+        "datevalue": "20260421131805",
+        "glb_state": "DL",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; RMX3710 Build/AP3A.240617.008; wv) Version/4.0 Chrome/146.0.7680.177 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /tinuji/ladies-leggings-palazzo.html HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.681455,
+        "glb_longitude": 77.22279,
+        "response_size": 31223,
+        "response_time": 845,
+        "fk_activity_id": 660,
+        "ga_utma_cookie": "GA1.1.818069534.1771497011",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211318"
+        },
+        "seller_city_id": 70469,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Inside Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 15787692,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 199,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 723,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/tinuji/ladies-leggings-palazzo.html",
+        "glb_city": "Delhi",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            445623
+          ]
+        },
+        "datevalue": "20260421131812",
+        "glb_state": "DL",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; RMX3710 Build/AP3A.240617.008; wv) Version/4.0 Chrome/146.0.7680.177 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /proddetail/ladies-non-padded-bra-23414195291.html HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.681455,
+        "glb_longitude": 77.22279,
+        "response_size": 14341,
+        "response_time": 40763,
+        "fk_activity_id": 559,
+        "ga_utma_cookie": "GA1.1.818069534.1771497011",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211318"
+        },
+        "seller_city_id": 70469,
+        "fk_glcat_grp_id": 3,
+        "log_status_flag": 40,
+        "product_disp_id": 23414195291,
+        "fk_display_title": "Show Product Details Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 15787692,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 199,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/proddetail/ladies-non-padded-bra-23414195291.html",
+        "glb_city": "Delhi",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421131814",
+        "glb_state": "DL",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; RMX3710 Build/AP3A.240617.008; wv) Version/4.0 Chrome/146.0.7680.177 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /ajaxrequest/proddetail/widgets/relatedproducts?MCAT_ID=445623&city=&prod_count=20&ecomflag=&smp=23414195291&glid=264884335 HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.681455,
+        "glb_longitude": 77.22279,
+        "response_size": 3140,
+        "response_time": 29217,
+        "fk_activity_id": 4746,
+        "ga_utma_cookie": "GA1.1.818069534.1771497011",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211318"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Related Products",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/tinuji/?pos=1&kwd=padded%20bra&tags=rk:A|plc:1|dt:0|db:01|prc:1|dtp:p||sv:S|rsf:gd|prv:103.95|ri:S_A_0_P|em:1-|-res:RC3|ktp:SA1|stype:attr=1|mtp:S|wc:2|lcf:3|cq:new%20delhi|qr_nm:gl-gd|cs:18890|com-cf:nl|ptrs:na|mc:68595|",
+        "glb_city": "Delhi",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            69389
+          ]
+        },
+        "datevalue": "20260421131817",
+        "glb_state": "DL",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; RMX3710 Build/AP3A.240617.008; wv) Version/4.0 Chrome/146.0.7680.177 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /tinuji/ladies-leggings-palazzo.html HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.681455,
+        "glb_longitude": 77.22279,
+        "response_size": 31223,
+        "response_time": 844,
+        "fk_activity_id": 660,
+        "ga_utma_cookie": "GA1.1.818069534.1771497011",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211318"
+        },
+        "seller_city_id": 70469,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Inside Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 15787692,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 199,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/isearch.php?s=Padded+Bra&cq=new+delhi&src=as-recent&prdsrc=1&no_sugg=1&tags=res%3ARC3%7Cktp%3ASA1%7Cstype%3Aattr%3D1%7Cmtp%3AS%7Cwc%3A2%7Clcf%3A3%7Ccq%3Anew+delhi%7Cqr_nm%3Agl-gd%7Ccs%3A18890%7Ccom-cf%3Anl%7Cptrs%3Ana%7Cm",
+        "glb_city": "Delhi",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            69389
+          ]
+        },
+        "datevalue": "20260421131901",
+        "glb_state": "DL",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; RMX3710 Build/AP3A.240617.008; wv) Version/4.0 Chrome/146.0.7680.177 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /tinuji/?pos=1&kwd=padded%20bra&tags=rk:A|plc:1|dt:0|db:01|prc:1|dtp:p||sv:S|rsf:gd|prv:103.95|ri:S_A_0_P|em:1-|-res:RC3|ktp:SA1|stype:attr=1|mtp:S|wc:2|lcf:3|cq:new%20delhi|qr_nm:gl-gd|cs:18890|com-cf:nl|ptrs:na|mc:68595|cat:723|qry_typ:P|lang:en|ty HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.681455,
+        "glb_longitude": 77.22279,
+        "response_size": 25675,
+        "response_time": 858,
+        "fk_activity_id": 575,
+        "ga_utma_cookie": "GA1.1.818069534.1771497011",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211319"
+        },
+        "seller_city_id": 70469,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 15787692,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 199,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 723,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "Padded%20Bra",
+        "referer": "-",
+        "glb_city": "Delhi",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            68595
+          ]
+        },
+        "datevalue": "20260421131903",
+        "glb_state": "DL",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; RMX3710 Build/AP3A.240617.008; wv) Version/4.0 Chrome/146.0.7680.177 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /isearch.php?s=Padded+Bra&cq=new+delhi&src=as-recent&prdsrc=1&no_sugg=1&tags=res%3ARC3%7Cktp%3ASA1%7Cstype%3Aattr%3D1%7Cmtp%3AS%7Cwc%3A2%7Clcf%3A3%7Ccq%3Anew+delhi%7Cqr_nm%3Agl-gd%7Ccs%3A18890%7Ccom-cf%3Anl%7Cptrs%3Ana%7Cmc%3A68595%7Ccat%3A723%7Cqry_ HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.681455,
+        "glb_longitude": 77.22279,
+        "response_size": 48941,
+        "response_time": 203824,
+        "fk_activity_id": 1282,
+        "ga_utma_cookie": "GA1.1.818069534.1771497011",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211319"
+        },
+        "seller_city_id": 70469,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "M.IM Search",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/isearch.php?s=Padded+Bra&cq=new+delhi&src=as-recent&prdsrc=1&no_sugg=1&tags=res%3ARC3%7Cktp%3ASA1%7Cstype%3Aattr%3D1%7Cmtp%3AS%7Cwc%3A2%7Clcf%3A3%7Ccq%3Anew+delhi%7Cqr_nm%3Agl-gd%7Ccs%3A18890%7Ccom-cf%3Anl%7Cptrs%3Ana%7Cm",
+        "glb_city": "Delhi",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            49963
+          ]
+        },
+        "datevalue": "20260421131915",
+        "glb_state": "DL",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; RMX3710 Build/AP3A.240617.008; wv) Version/4.0 Chrome/146.0.7680.177 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /right-click-india/?pos=2&kwd=padded%20bra&tags=rk:A|plc:1|dt:0|db:01|prc:1|dtp:p||sv:S|rsf:gd|prv:48|ri:S_A_0_P|em:1-|-res:RC3|ktp:SA1|stype:attr=1|mtp:S|wc:2|lcf:3|cq:new%20delhi|qr_nm:gl-gd|cs:19668|com-cf:nl|ptrs:na|mc:68595|cat:723|qry_typ:P|lan HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.681455,
+        "glb_longitude": 77.22279,
+        "response_size": 26783,
+        "response_time": 1003,
+        "fk_activity_id": 575,
+        "ga_utma_cookie": "GA1.1.818069534.1771497011",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211319"
+        },
+        "seller_city_id": 70469,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 155836467,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 699,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/right-click-india/?pos=2&kwd=padded%20bra&tags=rk:A|plc:1|dt:0|db:01|prc:1|dtp:p||sv:S|rsf:gd|prv:48|ri:S_A_0_P|em:1-|-res:RC3|ktp:SA1|stype:attr=1|mtp:S|wc:2|lcf:3|cq:new%20delhi|qr_nm:gl-gd|cs:19668|com-cf:nl|ptrs:na|mc",
+        "glb_city": "Delhi",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            49963
+          ]
+        },
+        "datevalue": "20260421131922",
+        "glb_state": "DL",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; RMX3710 Build/AP3A.240617.008; wv) Version/4.0 Chrome/146.0.7680.177 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /right-click-india/products.html HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.681455,
+        "glb_longitude": 77.22279,
+        "response_size": 35219,
+        "response_time": 151302,
+        "fk_activity_id": 577,
+        "ga_utma_cookie": "GA1.1.818069534.1771497011",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211319"
+        },
+        "seller_city_id": 70469,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP/MDC Products Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 155836467,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 699,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/right-click-india/products.html",
+        "glb_city": "Delhi",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            49963
+          ]
+        },
+        "datevalue": "20260421131929",
+        "glb_state": "DL",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; RMX3710 Build/AP3A.240617.008; wv) Version/4.0 Chrome/146.0.7680.177 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /right-click-india/profile.html HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.681455,
+        "glb_longitude": 77.22279,
+        "response_size": 34968,
+        "response_time": 94468,
+        "fk_activity_id": 660,
+        "ga_utma_cookie": "GA1.1.818069534.1771497011",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211319"
+        },
+        "seller_city_id": 70469,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Inside Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 155836467,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 699,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/right-click-india/profile.html",
+        "glb_city": "Delhi",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            49963
+          ]
+        },
+        "datevalue": "20260421131931",
+        "glb_state": "DL",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; RMX3710 Build/AP3A.240617.008; wv) Version/4.0 Chrome/146.0.7680.177 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /right-click-india/photos.html HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.681455,
+        "glb_longitude": 77.22279,
+        "response_size": 63533,
+        "response_time": 182787,
+        "fk_activity_id": 660,
+        "ga_utma_cookie": "GA1.1.818069534.1771497011",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211319"
+        },
+        "seller_city_id": 70469,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Inside Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 155836467,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 699,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/right-click-india/products.html",
+        "glb_city": "Delhi",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            49963
+          ]
+        },
+        "datevalue": "20260421131934",
+        "glb_state": "DL",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; RMX3710 Build/AP3A.240617.008; wv) Version/4.0 Chrome/146.0.7680.177 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /right-click-india/profile.html HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.681455,
+        "glb_longitude": 77.22279,
+        "response_size": 34913,
+        "response_time": 741,
+        "fk_activity_id": 660,
+        "ga_utma_cookie": "GA1.1.818069534.1771497011",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211319"
+        },
+        "seller_city_id": 70469,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Inside Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 155836467,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 699,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/right-click-india/?pos=2&kwd=padded%20bra&tags=rk:A|plc:1|dt:0|db:01|prc:1|dtp:p||sv:S|rsf:gd|prv:48|ri:S_A_0_P|em:1-|-res:RC3|ktp:SA1|stype:attr=1|mtp:S|wc:2|lcf:3|cq:new%20delhi|qr_nm:gl-gd|cs:19668|com-cf:nl|ptrs:na|mc",
+        "glb_city": "Delhi",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            49963
+          ]
+        },
+        "datevalue": "20260421131942",
+        "glb_state": "DL",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; RMX3710 Build/AP3A.240617.008; wv) Version/4.0 Chrome/146.0.7680.177 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /right-click-india/products.html HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.681455,
+        "glb_longitude": 77.22279,
+        "response_size": 35165,
+        "response_time": 878,
+        "fk_activity_id": 577,
+        "ga_utma_cookie": "GA1.1.818069534.1771497011",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211319"
+        },
+        "seller_city_id": 70469,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP/MDC Products Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 155836467,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 699,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 723,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/right-click-india/products.html",
+        "glb_city": "Delhi",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            445623
+          ]
+        },
+        "datevalue": "20260421131944",
+        "glb_state": "DL",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; RMX3710 Build/AP3A.240617.008; wv) Version/4.0 Chrome/146.0.7680.177 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /proddetail/ladies-non-padded-t-shirt-bra-2851852683133.html HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.681455,
+        "glb_longitude": 77.22279,
+        "response_size": 14608,
+        "response_time": 45273,
+        "fk_activity_id": 559,
+        "ga_utma_cookie": "GA1.1.818069534.1771497011",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211319"
+        },
+        "seller_city_id": 70469,
+        "fk_glcat_grp_id": 3,
+        "log_status_flag": 40,
+        "product_disp_id": 2851852683133,
+        "fk_display_title": "Show Product Details Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 155836467,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 199,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/proddetail/ladies-non-padded-t-shirt-bra-2851852683133.html",
+        "glb_city": "Delhi",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421131945",
+        "glb_state": "DL",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; RMX3710 Build/AP3A.240617.008; wv) Version/4.0 Chrome/146.0.7680.177 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /ajaxrequest/proddetail/widgets/relatedproducts?MCAT_ID=445623&city=&prod_count=20&ecomflag=&smp=2851852683133&glid=264884335 HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.681455,
+        "glb_longitude": 77.22279,
+        "response_size": 3497,
+        "response_time": 25645,
+        "fk_activity_id": 4746,
+        "ga_utma_cookie": "GA1.1.818069534.1771497011",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211319"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Related Products",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/right-click-india/?pos=2&kwd=padded%20bra&tags=rk:A|plc:1|dt:0|db:01|prc:1|dtp:p||sv:S|rsf:gd|prv:48|ri:S_A_0_P|em:1-|-res:RC3|ktp:SA1|stype:attr=1|mtp:S|wc:2|lcf:3|cq:new%20delhi|qr_nm:gl-gd|cs:19668|com-cf:nl|ptrs:na|mc",
+        "glb_city": "Delhi",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            49963
+          ]
+        },
+        "datevalue": "20260421131946",
+        "glb_state": "DL",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; RMX3710 Build/AP3A.240617.008; wv) Version/4.0 Chrome/146.0.7680.177 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /right-click-india/products.html HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.681455,
+        "glb_longitude": 77.22279,
+        "response_size": 35165,
+        "response_time": 720,
+        "fk_activity_id": 577,
+        "ga_utma_cookie": "GA1.1.818069534.1771497011",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211319"
+        },
+        "seller_city_id": 70469,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP/MDC Products Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 155836467,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 699,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/isearch.php?s=Padded+Bra&cq=new+delhi&src=as-recent&prdsrc=1&no_sugg=1&tags=res%3ARC3%7Cktp%3ASA1%7Cstype%3Aattr%3D1%7Cmtp%3AS%7Cwc%3A2%7Clcf%3A3%7Ccq%3Anew+delhi%7Cqr_nm%3Agl-gd%7Ccs%3A18890%7Ccom-cf%3Anl%7Cptrs%3Ana%7Cm",
+        "glb_city": "Delhi",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            49963
+          ]
+        },
+        "datevalue": "20260421131949",
+        "glb_state": "DL",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; RMX3710 Build/AP3A.240617.008; wv) Version/4.0 Chrome/146.0.7680.177 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /right-click-india/?pos=2&kwd=padded%20bra&tags=rk:A|plc:1|dt:0|db:01|prc:1|dtp:p||sv:S|rsf:gd|prv:48|ri:S_A_0_P|em:1-|-res:RC3|ktp:SA1|stype:attr=1|mtp:S|wc:2|lcf:3|cq:new%20delhi|qr_nm:gl-gd|cs:19668|com-cf:nl|ptrs:na|mc:68595|cat:723|qry_typ:P|lan HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.681455,
+        "glb_longitude": 77.22279,
+        "response_size": 26789,
+        "response_time": 868,
+        "fk_activity_id": 575,
+        "ga_utma_cookie": "GA1.1.818069534.1771497011",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211319"
+        },
+        "seller_city_id": 70469,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 155836467,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 699,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421132301",
+        "glb_state": "-",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Supplier-Dashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2176,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211323"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Supplier Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 20,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 543,
+        "adminln": "-",
+        "keyword": "brake%20pad",
+        "referer": "-",
+        "glb_city": "Delhi",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            68270
+          ]
+        },
+        "datevalue": "20260421132304",
+        "glb_state": "DL",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; RMX3710 Build/AP3A.240617.008; wv) Version/4.0 Chrome/146.0.7680.177 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /isearch.php?s=brake+pad&cq=New+Delhi&src=as-popular-suggestion&prdsrc=1 HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.681455,
+        "glb_longitude": 77.22279,
+        "response_size": 54862,
+        "response_time": 374077,
+        "fk_activity_id": 1282,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211323"
+        },
+        "seller_city_id": 70469,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "M.IM Search",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": null,
+        "glb_city": null,
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421132306",
+        "glb_state": null,
+        "remote_ip": "10.143.8.188:51182",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": null,
+        "domain_name": null,
+        "http_status": 0,
+        "request_url": null,
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 4660,
+        "ga_utma_cookie": null,
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211323"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": null,
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": null,
+        "glb_city": null,
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421132306",
+        "glb_state": null,
+        "remote_ip": "10.143.8.188:45434",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": null,
+        "domain_name": null,
+        "http_status": 0,
+        "request_url": null,
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 4658,
+        "ga_utma_cookie": null,
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211323"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": null,
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421132325",
+        "glb_state": "-",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "My-Product-Listing",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2170,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211323"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "My Products List",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 20,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421132601",
+        "glb_state": "-",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Supplier-Dashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2176,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211326"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Supplier Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 20,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": null,
+        "glb_city": "-",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421132602",
+        "glb_state": "-",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": null,
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "MDCviaUpgrade_bottom_nav",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 4748,
+        "ga_utma_cookie": null,
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211326"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 10,
+        "product_disp_id": null,
+        "fk_display_title": "SubscriptionPlanFooterIcon",
+        "owner_gl_country": null,
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "NFL"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            138962
+          ]
+        },
+        "datevalue": "20260421132633",
+        "glb_state": "-",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Similar Leads FullView-BL List",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2206,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211326"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Similar Leads",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 20,
+        "coordinate_latitude": 28.709541,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.270905,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": null,
+        "glb_city": "-",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421132650",
+        "glb_state": "-",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; RMX3710 Build/AP3A.240617.008; wv) Version/4.0 Chrome/146.0.7680.177 Mobile Safari/537.36 IM-Android_BL_Webview/13.7.6_15APR26/264884335",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "MDCviaBL",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2355,
+        "ga_utma_cookie": null,
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211326"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 10,
+        "product_disp_id": null,
+        "fk_display_title": "Pitching MDCviaBL",
+        "owner_gl_country": null,
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "NFL"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": null,
+        "glb_city": "-",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421132728",
+        "glb_state": "-",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": null,
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Inline_Banner_View_AndWeb",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 4707,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211327"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Free_Seller_View_Inline_Banner_AndWeb",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 0,
+        "coordinate_accuracy": 20,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "-",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421132744",
+        "glb_state": "-",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Supplier-Dashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2176,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211327"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Supplier Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 20,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421132750",
+        "glb_state": "-",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; RMX3710 Build/AP3A.240617.008; wv) Version/4.0 Chrome/146.0.7680.177 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26/New_BMC",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /messages?state_name=Delhi HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 8559,
+        "response_time": 208535,
+        "fk_activity_id": 2103,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211327"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Load Messages",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421132750",
+        "glb_state": "-",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Supplier-Dashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2176,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211327"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Supplier Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 20,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/messages?state_name=Delhi",
+        "glb_city": "-",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421132752",
+        "glb_state": "-",
+        "remote_ip": "-",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; RMX3710 Build/AP3A.240617.008; wv) Version/4.0 Chrome/146.0.7680.177 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26/New_BMC",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "POST /api/bmcajax/addressbook/listing_Seller HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 553,
+        "response_time": 20704,
+        "fk_activity_id": 4680,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211327"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "BMC Listing Seller\n",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 69514,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421132753",
+        "glb_state": "-",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "My-Product-Listing",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2170,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211328"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "My Products List",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 20,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421132756",
+        "glb_state": "-",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "My-Product-Listing",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2170,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211328"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "My Products List",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 20,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421132759",
+        "glb_state": "-",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Edit Product",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2165,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211328"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Edit Product Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 20,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": null,
+        "glb_city": "-",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421132807",
+        "glb_state": "-",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": null,
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Inline_Banner_View_AndWeb",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 4707,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211328"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Free_Seller_View_Inline_Banner_AndWeb",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 0,
+        "coordinate_accuracy": 20,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "-",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421132809",
+        "glb_state": "-",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Supplier-Dashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2176,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211328"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Supplier Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 20,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": null,
+        "glb_city": "-",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421132810",
+        "glb_state": "-",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": null,
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "MDCviaUpgrade_bottom_nav",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 4748,
+        "ga_utma_cookie": null,
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211328"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 10,
+        "product_disp_id": null,
+        "fk_display_title": "SubscriptionPlanFooterIcon",
+        "owner_gl_country": null,
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "NFL"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421132843",
+        "glb_state": "-",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; RMX3710 Build/AP3A.240617.008; wv) Version/4.0 Chrome/146.0.7680.177 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26/New_BMC",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /messages?state_name=Delhi HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 8554,
+        "response_time": 1006916,
+        "fk_activity_id": 2103,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211328"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Load Messages",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421132844",
+        "glb_state": "-",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "My-Product-Listing",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2170,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211328"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "My Products List",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 20,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/messages?state_name=Delhi",
+        "glb_city": "-",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421132846",
+        "glb_state": "-",
+        "remote_ip": "-",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; RMX3710 Build/AP3A.240617.008; wv) Version/4.0 Chrome/146.0.7680.177 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26/New_BMC",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "POST /api/bmcajax/addressbook/listing_Seller HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 553,
+        "response_time": 19850,
+        "fk_activity_id": 4680,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211328"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "BMC Listing Seller\n",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 69514,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421132847",
+        "glb_state": "-",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "My-Product-Listing",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2170,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211328"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "My Products List",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 20,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 723,
+        "adminln": "-",
+        "keyword": "Padded%20Bra",
+        "referer": "-",
+        "glb_city": "Delhi",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            68595
+          ]
+        },
+        "datevalue": "20260421132906",
+        "glb_state": "DL",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; RMX3710 Build/AP3A.240617.008; wv) Version/4.0 Chrome/146.0.7680.177 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /isearch.php?s=Padded+Bra&cq=New+Delhi&src=as-recent&prdsrc=1 HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.681455,
+        "glb_longitude": 77.22279,
+        "response_size": 55747,
+        "response_time": 70250,
+        "fk_activity_id": 1282,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211329"
+        },
+        "seller_city_id": 70469,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "M.IM Search",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": null,
+        "glb_city": null,
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421132907",
+        "glb_state": null,
+        "remote_ip": "10.143.12.191:59082",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": null,
+        "domain_name": null,
+        "http_status": 0,
+        "request_url": null,
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 4658,
+        "ga_utma_cookie": null,
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211329"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": null,
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": null,
+        "glb_city": null,
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421132907",
+        "glb_state": null,
+        "remote_ip": "10.143.12.191:40818",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": null,
+        "domain_name": null,
+        "http_status": 0,
+        "request_url": null,
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 4660,
+        "ga_utma_cookie": null,
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211329"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": null,
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/isearch.php?s=Padded+Bra&cq=new+delhi&src=as-recent&prdsrc=1&no_sugg=1&tags=res%3ARC3%7Cktp%3ASA1%7Cstype%3Aattr%3D1%7Cmtp%3AS%7Cwc%3A2%7Clcf%3A3%7Ccq%3Anew+delhi%7Cqr_nm%3Agl-gd%7Ccs%3A18890%7Ccom-cf%3Anl%7Cptrs%3Ana%7Cm",
+        "glb_city": "Delhi",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            69389
+          ]
+        },
+        "datevalue": "20260421132911",
+        "glb_state": "DL",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; RMX3710 Build/AP3A.240617.008; wv) Version/4.0 Chrome/146.0.7680.177 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /tinuji/?pos=1&kwd=padded%20bra&tags=rk:A|plc:1|dt:0|db:01|prc:1|dtp:p||sv:S|rsf:gd|prv:103.95|ri:S_A_0_P|em:1-|-res:RC3|ktp:SA1|stype:attr=1|mtp:S|wc:2|lcf:3|cq:new%20delhi|qr_nm:gl-gd|cs:18890|com-cf:nl|ptrs:na|mc:68595|cat:723|qry_typ:P|lang:en|ty HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.681455,
+        "glb_longitude": 77.22279,
+        "response_size": 25675,
+        "response_time": 866,
+        "fk_activity_id": 575,
+        "ga_utma_cookie": "GA1.1.818069534.1771497011",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211329"
+        },
+        "seller_city_id": 70469,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 15787692,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 199,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/tinuji/?pos=1&kwd=padded%20bra&tags=rk:A|plc:1|dt:0|db:01|prc:1|dtp:p||sv:S|rsf:gd|prv:103.95|ri:S_A_0_P|em:1-|-res:RC3|ktp:SA1|stype:attr=1|mtp:S|wc:2|lcf:3|cq:new%20delhi|qr_nm:gl-gd|cs:18890|com-cf:nl|ptrs:na|mc:68595|",
+        "glb_city": "Delhi",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            69389
+          ]
+        },
+        "datevalue": "20260421132921",
+        "glb_state": "DL",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; RMX3710 Build/AP3A.240617.008; wv) Version/4.0 Chrome/146.0.7680.177 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /tinuji/ladies-leggings-palazzo.html HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.681455,
+        "glb_longitude": 77.22279,
+        "response_size": 31223,
+        "response_time": 876,
+        "fk_activity_id": 660,
+        "ga_utma_cookie": "GA1.1.818069534.1771497011",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211329"
+        },
+        "seller_city_id": 70469,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Inside Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 15787692,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 199,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/tinuji/ladies-leggings-palazzo.html",
+        "glb_city": "Delhi",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            69389
+          ]
+        },
+        "datevalue": "20260421132943",
+        "glb_state": "DL",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; RMX3710 Build/AP3A.240617.008; wv) Version/4.0 Chrome/146.0.7680.177 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /tinuji/profile.html HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.681455,
+        "glb_longitude": 77.22279,
+        "response_size": 29064,
+        "response_time": 583,
+        "fk_activity_id": 660,
+        "ga_utma_cookie": "GA1.1.818069534.1771497011",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211329"
+        },
+        "seller_city_id": 70469,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Inside Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 15787692,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 199,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/tinuji/profile.html",
+        "glb_city": "Delhi",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            69389
+          ]
+        },
+        "datevalue": "20260421132949",
+        "glb_state": "DL",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; RMX3710 Build/AP3A.240617.008; wv) Version/4.0 Chrome/146.0.7680.177 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /tinuji/photos.html HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.681455,
+        "glb_longitude": 77.22279,
+        "response_size": 49427,
+        "response_time": 655,
+        "fk_activity_id": 660,
+        "ga_utma_cookie": "GA1.1.818069534.1771497011",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211329"
+        },
+        "seller_city_id": 70469,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Inside Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 15787692,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 199,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/tinuji/ladies-leggings-palazzo.html",
+        "glb_city": "Delhi",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            69389
+          ]
+        },
+        "datevalue": "20260421133016",
+        "glb_state": "DL",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; RMX3710 Build/AP3A.240617.008; wv) Version/4.0 Chrome/146.0.7680.177 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /tinuji/profile.html HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.681455,
+        "glb_longitude": 77.22279,
+        "response_size": 29064,
+        "response_time": 656,
+        "fk_activity_id": 660,
+        "ga_utma_cookie": "GA1.1.818069534.1771497011",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211330"
+        },
+        "seller_city_id": 70469,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Inside Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 15787692,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 199,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": null,
+        "glb_city": "-",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421133512",
+        "glb_state": "-",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": null,
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "MDCviaMainMenu",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2363,
+        "ga_utma_cookie": null,
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211335"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 10,
+        "product_disp_id": null,
+        "fk_display_title": "Pitching MDCviaMainMenu",
+        "owner_gl_country": null,
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "NFL"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 723,
+        "adminln": "-",
+        "keyword": "Padded%20Bra",
+        "referer": "-",
+        "glb_city": "Delhi",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            68595
+          ]
+        },
+        "datevalue": "20260421133608",
+        "glb_state": "DL",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; RMX3710 Build/AP3A.240617.008; wv) Version/4.0 Chrome/146.0.7680.177 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /isearch.php?s=Padded+Bra&cq=New+Delhi&src=as-recent&prdsrc=1 HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.681455,
+        "glb_longitude": 77.22279,
+        "response_size": 55737,
+        "response_time": 48920,
+        "fk_activity_id": 1282,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211336"
+        },
+        "seller_city_id": 70469,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "M.IM Search",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": null,
+        "glb_city": null,
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421133610",
+        "glb_state": null,
+        "remote_ip": "10.143.12.191:44094",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": null,
+        "domain_name": null,
+        "http_status": 0,
+        "request_url": null,
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 4658,
+        "ga_utma_cookie": null,
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211336"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": null,
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": null,
+        "glb_city": null,
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421133610",
+        "glb_state": null,
+        "remote_ip": "10.143.12.191:54184",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": null,
+        "domain_name": null,
+        "http_status": 0,
+        "request_url": null,
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 4660,
+        "ga_utma_cookie": null,
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211336"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": null,
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/isearch.php?s=Padded+Bra&cq=new+delhi&src=as-recent&prdsrc=1&no_sugg=1&tags=res%3ARC3%7Cktp%3ASA1%7Cstype%3Aattr%3D1%7Cmtp%3AS%7Cwc%3A2%7Clcf%3A3%7Ccq%3Anew+delhi%7Cqr_nm%3Agl-gd%7Ccs%3A18890%7Ccom-cf%3Anl%7Cptrs%3Ana%7Cm",
+        "glb_city": "Delhi",
+        "glusr_id": 264884335,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            69389
+          ]
+        },
+        "datevalue": "20260421133658",
+        "glb_state": "DL",
+        "remote_ip": "103.168.31.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 15; RMX3710 Build/AP3A.240617.008; wv) Version/4.0 Chrome/146.0.7680.177 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /tinuji/?pos=1&kwd=padded%20bra&tags=rk:A|plc:1|dt:0|db:01|prc:1|dtp:p||sv:S|rsf:gd|prv:103.95|ri:S_A_0_P|em:1-|-res:RC3|ktp:SA1|stype:attr=1|mtp:S|wc:2|lcf:3|cq:new%20delhi|qr_nm:gl-gd|cs:18890|com-cf:nl|ptrs:na|mc:68595|cat:723|qry_typ:P|lang:en|ty HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.681455,
+        "glb_longitude": 77.22279,
+        "response_size": 25675,
+        "response_time": 899,
+        "fk_activity_id": 575,
+        "ga_utma_cookie": "GA1.1.818069534.1771497011",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211336"
+        },
+        "seller_city_id": 70469,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264884335,
+        "catalog_owner_glusr_id": 15787692,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 199,
+        "owner_glusr_usr_listing_status": "LST"
+      }
+    ],
+    "updated_at": "2026-05-14T18:42:06.551542Z"
+  },
+  "error": null
+}

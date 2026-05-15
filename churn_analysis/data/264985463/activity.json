@@ -1,0 +1,155 @@
+{
+  "status": 200,
+  "data": {
+    "gluser_id": 264985463,
+    "event_count": 2,
+    "events": [
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.indiamart.com/company/144303817/?srsltid=AfmBOooJJ4tIqbm72MVJgWW-g9obqlunzU-m_lYx-RzOSp1R5-dGK1eu",
+        "glb_city": "Noida",
+        "glusr_id": 264985463,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260502123001",
+        "glb_state": "UP",
+        "remote_ip": "122.161.52.78",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+        "domain_name": "www.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /api/ajax-services/glb_city/?_ts=1777705201456 HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.535516,
+        "glb_longitude": 77.391026,
+        "response_size": 112,
+        "response_time": 16170,
+        "fk_activity_id": 527,
+        "ga_utma_cookie": "GA1.1.141519473.1771676583",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605021230"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Page",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264985463,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "g%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.google.com/",
+        "glb_city": "Noida",
+        "glusr_id": 264985463,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260502123001",
+        "glb_state": "UP",
+        "remote_ip": "122.161.52.78",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+        "domain_name": "www.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /company/144303817/?srsltid=AfmBOooJJ4tIqbm72MVJgWW-g9obqlunzU-m_lYx-RzOSp1R5-dGK1eu HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.535516,
+        "glb_longitude": 77.391026,
+        "response_size": 35203,
+        "response_time": 54929,
+        "fk_activity_id": 527,
+        "ga_utma_cookie": "GA1.1.141519473.1771676583",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605021230"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 264985463,
+        "catalog_owner_glusr_id": 144303817,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "g%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 1899,
+        "owner_glusr_usr_listing_status": "LST"
+      }
+    ],
+    "updated_at": "2026-05-14T18:42:46.799569Z"
+  },
+  "error": null
+}

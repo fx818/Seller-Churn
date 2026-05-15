@@ -1,0 +1,31 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 14207861,
+        "event_date": "2026-01-07",
+        "offer_id": 136335047563,
+        "mcat_id": 182597,
+        "reason_code": 5,
+        "reason_text": "Location",
+        "comment": null,
+        "module_id": "IMOB"
+      },
+      {
+        "gluser_id": 14207861,
+        "event_date": "2026-01-01",
+        "offer_id": 136063196167,
+        "mcat_id": 182597,
+        "reason_code": 3,
+        "reason_text": "Specification Mismatch",
+        "comment": null,
+        "module_id": "ANDWEB"
+      }
+    ],
+    "total": 2,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

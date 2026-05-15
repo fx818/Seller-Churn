@@ -1,0 +1,128 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 184754865,
+        "hotlead_date": "2026-04-30",
+        "hotlead_id": 12222078,
+        "hotlead_type_id": 1112446965,
+        "data_type": "PANF",
+        "activity": "E-nach",
+        "activity_id": 0
+      },
+      {
+        "gluser_id": 184754865,
+        "hotlead_date": "2026-04-29",
+        "hotlead_id": 12222078,
+        "hotlead_type_id": 1112280100,
+        "data_type": "PAM",
+        "activity": "Payment Attempt - MDC",
+        "activity_id": 2539
+      },
+      {
+        "gluser_id": 184754865,
+        "hotlead_date": "2026-02-06",
+        "hotlead_id": 12222078,
+        "hotlead_type_id": 1078469294,
+        "data_type": "PIM",
+        "activity": "Payment Interest - MDC",
+        "activity_id": 2352
+      },
+      {
+        "gluser_id": 184754865,
+        "hotlead_date": "2026-01-21",
+        "hotlead_id": 12222078,
+        "hotlead_type_id": 1071404454,
+        "data_type": "PIM",
+        "activity": "Payment Interest - MDC",
+        "activity_id": 2352
+      },
+      {
+        "gluser_id": 184754865,
+        "hotlead_date": "2026-01-19",
+        "hotlead_id": 12222078,
+        "hotlead_type_id": 1070446669,
+        "data_type": "PNSM",
+        "activity": "Premium Activity - PNS Call Missed",
+        "activity_id": 10002
+      },
+      {
+        "gluser_id": 184754865,
+        "hotlead_date": "2026-01-05",
+        "hotlead_id": 12222078,
+        "hotlead_type_id": 1064578921,
+        "data_type": "ENQR",
+        "activity": "Premium Activity - Enquiry Received",
+        "activity_id": 10004
+      },
+      {
+        "gluser_id": 184754865,
+        "hotlead_date": "2025-11-30",
+        "hotlead_id": 12222078,
+        "hotlead_type_id": 1049372464,
+        "data_type": "PIM",
+        "activity": "Payment Interest - MDC",
+        "activity_id": 2368
+      },
+      {
+        "gluser_id": 184754865,
+        "hotlead_date": "2025-11-18",
+        "hotlead_id": 12222078,
+        "hotlead_type_id": 1044176238,
+        "data_type": "PIM",
+        "activity": "Payment Interest - MDC",
+        "activity_id": 2352
+      },
+      {
+        "gluser_id": 184754865,
+        "hotlead_date": "2025-11-04",
+        "hotlead_id": 12222078,
+        "hotlead_type_id": 1038555501,
+        "data_type": "PIM",
+        "activity": "Payment Interest - MDC",
+        "activity_id": 4220
+      },
+      {
+        "gluser_id": 184754865,
+        "hotlead_date": "2025-11-02",
+        "hotlead_id": 12222078,
+        "hotlead_type_id": 1037553106,
+        "data_type": "ENQR",
+        "activity": "Premium Activity - Enquiry Received",
+        "activity_id": 10004
+      },
+      {
+        "gluser_id": 184754865,
+        "hotlead_date": "2025-10-03",
+        "hotlead_id": 12222078,
+        "hotlead_type_id": 1025497023,
+        "data_type": "PIM",
+        "activity": "Payment Interest - MDC",
+        "activity_id": 2352
+      },
+      {
+        "gluser_id": 184754865,
+        "hotlead_date": "2025-09-26",
+        "hotlead_id": 12222078,
+        "hotlead_type_id": 1022738551,
+        "data_type": "PIM",
+        "activity": "Payment Interest - MDC",
+        "activity_id": 2352
+      },
+      {
+        "gluser_id": 184754865,
+        "hotlead_date": "2025-09-03",
+        "hotlead_id": 12222078,
+        "hotlead_type_id": 1012476976,
+        "data_type": "PIM",
+        "activity": "Payment Interest - MDC",
+        "activity_id": 2352
+      }
+    ],
+    "total": 13,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

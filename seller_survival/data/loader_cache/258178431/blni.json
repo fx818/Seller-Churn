@@ -1,0 +1,101 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 258178431,
+        "event_date": "2026-02-26",
+        "offer_id": 139615724085,
+        "mcat_id": 8067,
+        "reason_code": 5,
+        "reason_text": "Location",
+        "comment": null,
+        "module_id": "FENQ"
+      },
+      {
+        "gluser_id": 258178431,
+        "event_date": "2026-02-26",
+        "offer_id": 139473001067,
+        "mcat_id": 9497,
+        "reason_code": 5,
+        "reason_text": "Location",
+        "comment": null,
+        "module_id": "FENQ"
+      },
+      {
+        "gluser_id": 258178431,
+        "event_date": "2026-02-25",
+        "offer_id": 139442533946,
+        "mcat_id": 21908,
+        "reason_code": 11,
+        "reason_text": "Retail Lead",
+        "comment": null,
+        "module_id": "IMOB"
+      },
+      {
+        "gluser_id": 258178431,
+        "event_date": "2026-02-25",
+        "offer_id": 139468408346,
+        "mcat_id": 2607,
+        "reason_code": 11,
+        "reason_text": "Retail Lead",
+        "comment": null,
+        "module_id": "FLPNS"
+      },
+      {
+        "gluser_id": 258178431,
+        "event_date": "2026-02-25",
+        "offer_id": 139455207263,
+        "mcat_id": 177237,
+        "reason_code": 7,
+        "reason_text": "Any Other",
+        "comment": null,
+        "module_id": "FENQ"
+      },
+      {
+        "gluser_id": 258178431,
+        "event_date": "2026-02-25",
+        "offer_id": 139599111175,
+        "mcat_id": 2607,
+        "reason_code": 7,
+        "reason_text": "Any Other",
+        "comment": "Small quantity",
+        "module_id": "FENQ"
+      },
+      {
+        "gluser_id": 258178431,
+        "event_date": "2026-02-25",
+        "offer_id": 139488031313,
+        "mcat_id": 8067,
+        "reason_code": 11,
+        "reason_text": "Retail Lead",
+        "comment": null,
+        "module_id": "FENQ"
+      },
+      {
+        "gluser_id": 258178431,
+        "event_date": "2026-02-25",
+        "offer_id": 139380555634,
+        "mcat_id": 3793,
+        "reason_code": 7,
+        "reason_text": "Any Other",
+        "comment": null,
+        "module_id": "FENQ"
+      },
+      {
+        "gluser_id": 258178431,
+        "event_date": "2026-02-25",
+        "offer_id": 139556000863,
+        "mcat_id": 21908,
+        "reason_code": 11,
+        "reason_text": "Retail Lead",
+        "comment": null,
+        "module_id": "IMOB"
+      }
+    ],
+    "total": 9,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

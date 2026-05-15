@@ -1,0 +1,71 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 264879000,
+        "event_date": "2026-03-28",
+        "offer_id": 141370861385,
+        "mcat_id": 26247,
+        "reason_code": 1,
+        "reason_text": "Wrong Product",
+        "comment": null,
+        "module_id": "INDIC"
+      },
+      {
+        "gluser_id": 264879000,
+        "event_date": "2026-03-28",
+        "offer_id": 141375388995,
+        "mcat_id": 36524,
+        "reason_code": 1,
+        "reason_text": "Wrong Product",
+        "comment": null,
+        "module_id": "FENQ"
+      },
+      {
+        "gluser_id": 264879000,
+        "event_date": "2026-03-28",
+        "offer_id": 141456519146,
+        "mcat_id": 43776,
+        "reason_code": 3,
+        "reason_text": "Specification Mismatch",
+        "comment": null,
+        "module_id": "IMOB"
+      },
+      {
+        "gluser_id": 264879000,
+        "event_date": "2026-03-28",
+        "offer_id": 141402182867,
+        "mcat_id": 23241,
+        "reason_code": 3,
+        "reason_text": "Specification Mismatch",
+        "comment": null,
+        "module_id": "ANDWEB"
+      },
+      {
+        "gluser_id": 264879000,
+        "event_date": "2026-03-26",
+        "offer_id": 141294114546,
+        "mcat_id": 43775,
+        "reason_code": 3,
+        "reason_text": "Specification Mismatch",
+        "comment": null,
+        "module_id": "IMOB"
+      },
+      {
+        "gluser_id": 264879000,
+        "event_date": "2026-03-26",
+        "offer_id": 141305466052,
+        "mcat_id": 43776,
+        "reason_code": 3,
+        "reason_text": "Specification Mismatch",
+        "comment": null,
+        "module_id": "IOS"
+      }
+    ],
+    "total": 6,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

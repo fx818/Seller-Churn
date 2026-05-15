@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-05-15T10:21:06.292930+00:00",
+  "total_sellers": 1,
+  "red": 0,
+  "amber": 1,
+  "green": 0,
+  "llm_scored": 0,
+  "tiers": {
+    "236": {
+      "glid": "236",
+      "company": "Astrra Chemicals",
+      "city": "Chennai",
+      "churn_score": 50.0,
+      "final_score": 50.0,
+      "final_tier": "Amber",
+      "model": "renewal",
+      "rca_category": "BL_DECLINE",
+      "llm_risk_level": null,
+      "llm_confidence": null
+    }
+  }
+}

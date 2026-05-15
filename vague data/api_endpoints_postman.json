@@ -1,0 +1,257 @@
+{
+  "info": {
+    "name": "Call Personalisation — IndiaMART Internal APIs",
+    "description": "All 11 endpoints used by call_personalisation/agent/data_sources/api_client.py.\n\nBefore running:\n1. Open the collection → Variables tab.\n2. Set: glid, empid, jwt (IM_INTERNAL_JWT), c2cid.\n3. Then run any request.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "glid",  "value": "REPLACE_WITH_GLID",  "description": "Seller GLID (numeric)" },
+    { "key": "empid", "value": "REPLACE_WITH_EMPID", "description": "Your IM employee ID" },
+    { "key": "jwt",   "value": "REPLACE_WITH_IM_INTERNAL_JWT", "description": "Bearer token (IM_INTERNAL_JWT)" },
+    { "key": "c2cid", "value": "REPLACE_WITH_C2CID", "description": "Click-to-call ID from a DSR connect entry" }
+  ],
+  "item": [
+    {
+      "name": "DWH POST",
+      "item": [
+        {
+          "name": "mcat",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "text/plain" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"in_glusr_usr_id\":\"{{glid}}\",\"in_rpt_type\":\"1\"}"
+            },
+            "url": {
+              "raw": "https://imdwh.intermesh.net/api/go/mcatLocDtls",
+              "protocol": "https",
+              "host": ["imdwh", "intermesh", "net"],
+              "path": ["api", "go", "mcatLocDtls"]
+            }
+          }
+        },
+        {
+          "name": "scorecard_summary",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "text/plain" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"in_glusr_usr_id\":\"{{glid}}\",\"in_rpt_type\":\"1\"}"
+            },
+            "url": {
+              "raw": "https://imdwh.intermesh.net/api/go/cust_wh_summary_api",
+              "protocol": "https",
+              "host": ["imdwh", "intermesh", "net"],
+              "path": ["api", "go", "cust_wh_summary_api"]
+            }
+          }
+        },
+        {
+          "name": "scorecard_6m",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "text/plain" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"in_glusr_usr_id\":\"{{glid}}\",\"in_rpt_type\":\"1\"}"
+            },
+            "url": {
+              "raw": "https://imdwh.intermesh.net/api/go/cust_scorecard_api",
+              "protocol": "https",
+              "host": ["imdwh", "intermesh", "net"],
+              "path": ["api", "go", "cust_scorecard_api"]
+            }
+          }
+        },
+        {
+          "name": "scorecard_12m",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "text/plain" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"in_glusr_usr_id\":\"{{glid}}\",\"in_rpt_type\":\"1\"}"
+            },
+            "url": {
+              "raw": "https://imdwh.intermesh.net/api/go/cust_wh_apiv2",
+              "protocol": "https",
+              "host": ["imdwh", "intermesh", "net"],
+              "path": ["api", "go", "cust_wh_apiv2"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Competitors",
+      "item": [
+        {
+          "name": "competitors (comp_flag=1)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "accept", "value": "application/json" },
+              { "key": "Content-Type", "value": "body/raw" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"in_glusr_usr_id\":\"{{glid}}\",\"comp_flag\":\"1\"}"
+            },
+            "url": {
+              "raw": "https://imdwh.intermesh.net/api/go/nsdprepplus?in_glusr_usr_id={{glid}}&comp_flag=1",
+              "protocol": "https",
+              "host": ["imdwh", "intermesh", "net"],
+              "path": ["api", "go", "nsdprepplus"],
+              "query": [
+                { "key": "in_glusr_usr_id", "value": "{{glid}}" },
+                { "key": "comp_flag", "value": "1" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "competitors_counts (comp_flag=2)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "accept", "value": "application/json" },
+              { "key": "Content-Type", "value": "body/raw" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"in_glusr_usr_id\":\"{{glid}}\",\"comp_flag\":\"2\"}"
+            },
+            "url": {
+              "raw": "https://imdwh.intermesh.net/api/go/nsdprepplus?in_glusr_usr_id={{glid}}&comp_flag=2",
+              "protocol": "https",
+              "host": ["imdwh", "intermesh", "net"],
+              "path": ["api", "go", "nsdprepplus"],
+              "query": [
+                { "key": "in_glusr_usr_id", "value": "{{glid}}" },
+                { "key": "comp_flag", "value": "2" }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "MERP GET",
+      "item": [
+        {
+          "name": "history",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "accept", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{jwt}}" }
+            ],
+            "url": {
+              "raw": "https://merp.intermesh.net/index.php/Userlist/newHistory?glid={{glid}}&empid={{empid}}&tab=history&platform=VoiceEval&duration=7",
+              "protocol": "https",
+              "host": ["merp", "intermesh", "net"],
+              "path": ["index.php", "Userlist", "newHistory"],
+              "query": [
+                { "key": "glid", "value": "{{glid}}" },
+                { "key": "empid", "value": "{{empid}}" },
+                { "key": "tab", "value": "history" },
+                { "key": "platform", "value": "VoiceEval" },
+                { "key": "duration", "value": "7" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "dsr",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "accept", "value": "application/json" },
+              { "key": "Authorization", "value": "Bearer {{jwt}}" }
+            ],
+            "url": {
+              "raw": "https://merp.intermesh.net/bi/reports/dsr/glusrDSR?glid={{glid}}&empid={{empid}}&modid=WEBERP&screen_name=DSR",
+              "protocol": "https",
+              "host": ["merp", "intermesh", "net"],
+              "path": ["bi", "reports", "dsr", "glusrDSR"],
+              "query": [
+                { "key": "glid", "value": "{{glid}}" },
+                { "key": "empid", "value": "{{empid}}" },
+                { "key": "modid", "value": "WEBERP" },
+                { "key": "screen_name", "value": "DSR" }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Product Quality",
+      "item": [
+        {
+          "name": "product_summary",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{jwt}}" }],
+            "url": {
+              "raw": "https://merp.intermesh.net/go/api/csd/v1/qualityScoreDetails?glid={{glid}}&empid={{empid}}&flag=summary",
+              "protocol": "https",
+              "host": ["merp", "intermesh", "net"],
+              "path": ["go", "api", "csd", "v1", "qualityScoreDetails"],
+              "query": [
+                { "key": "glid", "value": "{{glid}}" },
+                { "key": "empid", "value": "{{empid}}" },
+                { "key": "flag", "value": "summary" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "product_details (paginated — bump offset by 20)",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{jwt}}" }],
+            "url": {
+              "raw": "https://merp.intermesh.net/go/api/csd/v1/qualityScoreDetails?glid={{glid}}&empid={{empid}}&limit=20&offset=0",
+              "protocol": "https",
+              "host": ["merp", "intermesh", "net"],
+              "path": ["go", "api", "csd", "v1", "qualityScoreDetails"],
+              "query": [
+                { "key": "glid", "value": "{{glid}}" },
+                { "key": "empid", "value": "{{empid}}" },
+                { "key": "limit", "value": "20" },
+                { "key": "offset", "value": "0" }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Transcripts",
+      "item": [
+        {
+          "name": "transcript (one c2cid per call)",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{jwt}}" }],
+            "url": {
+              "raw": "https://merp.intermesh.net/go/api/genericMod/v1/calltranscriptread?empid={{empid}}&c2cid={{c2cid}}&modid=VoiceAI&screen_name=VoiceAI",
+              "protocol": "https",
+              "host": ["merp", "intermesh", "net"],
+              "path": ["go", "api", "genericMod", "v1", "calltranscriptread"],
+              "query": [
+                { "key": "empid", "value": "{{empid}}" },
+                { "key": "c2cid", "value": "{{c2cid}}" },
+                { "key": "modid", "value": "VoiceAI" },
+                { "key": "screen_name", "value": "VoiceAI" }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

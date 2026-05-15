@@ -1,0 +1,74 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 71527595,
+        "hotlead_date": "2026-03-10",
+        "hotlead_id": 13795451,
+        "hotlead_type_id": 1091922038,
+        "data_type": "OLP",
+        "activity": "Payment Attempt - BL",
+        "activity_id": 1620
+      },
+      {
+        "gluser_id": 71527595,
+        "hotlead_date": "2026-03-05",
+        "hotlead_id": 13795451,
+        "hotlead_type_id": 1089850401,
+        "data_type": "PANF",
+        "activity": "E-nach",
+        "activity_id": 0
+      },
+      {
+        "gluser_id": 71527595,
+        "hotlead_date": "2026-03-04",
+        "hotlead_id": 13795451,
+        "hotlead_type_id": 1089556828,
+        "data_type": "PANF",
+        "activity": "E-nach",
+        "activity_id": 0
+      },
+      {
+        "gluser_id": 71527595,
+        "hotlead_date": "2026-02-24",
+        "hotlead_id": 13795451,
+        "hotlead_type_id": 1086233188,
+        "data_type": "PANF",
+        "activity": "E-nach",
+        "activity_id": 0
+      },
+      {
+        "gluser_id": 71527595,
+        "hotlead_date": "2026-02-18",
+        "hotlead_id": 13795451,
+        "hotlead_type_id": 1083739974,
+        "data_type": "PANF",
+        "activity": "E-nach",
+        "activity_id": 0
+      },
+      {
+        "gluser_id": 71527595,
+        "hotlead_date": "2026-02-14",
+        "hotlead_id": 13795451,
+        "hotlead_type_id": 1082390853,
+        "data_type": "PIM",
+        "activity": "Payment Interest - MDC",
+        "activity_id": 2358
+      },
+      {
+        "gluser_id": 71527595,
+        "hotlead_date": "2025-10-10",
+        "hotlead_id": 13795451,
+        "hotlead_type_id": 1028783284,
+        "data_type": "TF",
+        "activity": "Toll Free",
+        "activity_id": 4240
+      }
+    ],
+    "total": 7,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

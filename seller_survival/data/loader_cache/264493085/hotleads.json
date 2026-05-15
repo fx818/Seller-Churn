@@ -1,0 +1,29 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 264493085,
+        "hotlead_date": "2026-02-14",
+        "hotlead_id": 14166336,
+        "hotlead_type_id": 1082320688,
+        "data_type": "PUA",
+        "activity": "Premium Activity - Online",
+        "activity_id": 2063
+      },
+      {
+        "gluser_id": 264493085,
+        "hotlead_date": "2026-02-11",
+        "hotlead_id": 14166336,
+        "hotlead_type_id": 1080851456,
+        "data_type": "UA",
+        "activity": "Step 3 Product Add",
+        "activity_id": 2032
+      }
+    ],
+    "total": 2,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

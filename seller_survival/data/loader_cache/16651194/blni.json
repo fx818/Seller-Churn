@@ -1,0 +1,41 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 16651194,
+        "event_date": "2026-03-10",
+        "offer_id": 140298340459,
+        "mcat_id": 40549,
+        "reason_code": 7,
+        "reason_text": "Any Other",
+        "comment": "WE DO NOT DEAL IN FAN CAP",
+        "module_id": "IMOB"
+      },
+      {
+        "gluser_id": 16651194,
+        "event_date": "2026-03-10",
+        "offer_id": 140309233346,
+        "mcat_id": 20601,
+        "reason_code": 7,
+        "reason_text": "Any Other",
+        "comment": "WE DO NOT DEAL IN THIS",
+        "module_id": "IMOB"
+      },
+      {
+        "gluser_id": 16651194,
+        "event_date": "2026-03-10",
+        "offer_id": 140307122534,
+        "mcat_id": 37186,
+        "reason_code": 7,
+        "reason_text": "Any Other",
+        "comment": "WE DO NOT DEAL IN THIS",
+        "module_id": "FENQ"
+      }
+    ],
+    "total": 3,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

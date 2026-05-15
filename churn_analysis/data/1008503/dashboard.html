@@ -1,0 +1,191 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GLID 1008503 — Seller Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0f1117;--s1:#1a1d27;--s2:#22263a;--bdr:#2e3350;--acc:#6366f1;--acc2:#8b5cf6;--acc3:#06b6d4;--grn:#10b981;--ylw:#f59e0b;--red:#ef4444;--txt:#e2e8f0;--mut:#94a3b8;--r:12px}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',system-ui,sans-serif;min-height:100vh}
+.hdr{background:linear-gradient(135deg,#1e1b4b,#0f172a);border-bottom:1px solid var(--bdr);padding:18px 28px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.hdr-icon{width:40px;height:40px;background:linear-gradient(135deg,var(--acc),var(--acc2));border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.hdr h1{font-size:17px;font-weight:700}.hdr p{font-size:11px;color:var(--mut);margin-top:2px}
+.hdr-right{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap}
+.badge{background:var(--s2);border:1px solid var(--bdr);padding:3px 10px;border-radius:14px;font-size:11px;color:var(--mut)}
+.badge b{color:var(--txt)}.badge.risk-red{border-color:#ef444466;color:#ef4444}.badge.risk-amber{border-color:#f59e0b66;color:#f59e0b}.badge.risk-green{border-color:#10b98166;color:#10b981}
+main{padding:20px 28px}
+.grid{display:grid;gap:14px}.g2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}.g3{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}.g4{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.card{background:var(--s1);border:1px solid var(--bdr);border-radius:var(--r);padding:18px;overflow:hidden}
+.card-title{font-size:12px;font-weight:600;color:var(--mut);text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px}
+.metric-card{background:var(--s1);border:1px solid var(--bdr);border-radius:var(--r);padding:16px;position:relative;overflow:hidden}
+.metric-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--c,var(--acc))}
+.metric-lbl{font-size:10px;color:var(--mut);text-transform:uppercase;letter-spacing:.5px}
+.metric-val{font-size:22px;font-weight:800;margin:5px 0 3px;color:var(--c,var(--txt))}
+.metric-sub{font-size:10px;color:var(--mut)}
+.section{margin-bottom:24px}
+.section-title{font-size:14px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--bdr);padding-bottom:8px}
+table{width:100%;border-collapse:collapse;font-size:12px}
+thead{background:var(--s2)}
+th{padding:8px 10px;text-align:left;font-size:10px;color:var(--mut);text-transform:uppercase;letter-spacing:.4px;white-space:nowrap;border-bottom:1px solid var(--bdr)}
+td{padding:9px 10px;border-bottom:1px solid var(--bdr);vertical-align:top}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:var(--s2)}
+.tbl-wrap{overflow-x:auto;border-radius:var(--r);border:1px solid var(--bdr)}
+.tag{display:inline-block;padding:2px 7px;border-radius:4px;font-size:10px;font-weight:500}
+.tag-green{background:#064e3b44;color:#34d399;border:1px solid #10b98144}
+.tag-red{background:#450a0a44;color:#fca5a5;border:1px solid #ef444444}
+.tag-blue{background:#1e3a5f44;color:#60a5fa;border:1px solid #3b82f644}
+.tag-yellow{background:#451a0344;color:#fbbf24;border:1px solid #f59e0b44}
+.tag-purple{background:#2d1b6944;color:#a78bfa;border:1px solid #8b5cf644}
+.chart-wrap{position:relative;height:260px}.chart-wrap-sm{position:relative;height:190px}
+.dual-bar{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.dual-lbl{width:160px;font-size:11px;color:var(--mut);text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex-shrink:0}
+.dual-track{flex:1;display:flex;gap:3px}
+.dual-fill{height:20px;border-radius:4px;display:flex;align-items:center;padding:0 6px;font-size:10px;font-weight:600;color:#fff;min-width:24px}
+.tl-item{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--bdr)}
+.tl-item:last-child{border-bottom:none}
+.tl-dot{width:8px;height:8px;border-radius:50%;background:var(--acc);flex-shrink:0;margin-top:4px}
+.tl-title{font-size:12px;font-weight:600}
+.tl-time{font-size:10px;color:var(--mut);margin-top:2px}
+.tl-meta{display:flex;gap:4px;flex-wrap:wrap;margin-top:4px}
+.no-data{background:var(--s2);border:1px solid var(--bdr);border-radius:var(--r);padding:24px;text-align:center;color:var(--mut);font-size:12px}
+.churn-banner{border-radius:var(--r);padding:16px 20px;margin-bottom:20px;display:flex;align-items:center;gap:16px}
+.churn-banner.red{background:#450a0a44;border:1px solid #ef444466}
+.churn-banner.amber{background:#451a0344;border:1px solid #f59e0b66}
+.churn-banner.green{background:#064e3b44;border:1px solid #10b98166}
+.churn-score{font-size:36px;font-weight:900;flex-shrink:0}
+.churn-reasons{font-size:12px;color:var(--mut);margin-top:4px}
+.churn-reasons li{margin-top:3px}
+::-webkit-scrollbar{width:4px;height:4px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--bdr);border-radius:2px}
+</style></head><body>
+<div class="hdr">
+  <div class="hdr-icon">📊</div>
+  <div><h1>Seller Dashboard — GLID 1008503</h1><p>Unicon Equipment Co.</p></div>
+  <div class="hdr-right">
+    <div class="badge risk-amber"><b>Amber Risk · Score 35</b></div>
+    <div class="badge">Greater Noida</div>
+    <div class="badge">Generated: 2026-05-15</div>
+    <a href="../index.html" style="text-decoration:none"><div class="badge">← All Sellers</div></a>
+  </div>
+</div>
+<main><div class="churn-banner amber">
+      <div>
+        <div style="font-size:11px;color:#f59e0b;font-weight:700;text-transform:uppercase;letter-spacing:1px">Churn Risk</div>
+        <div class="churn-score" style="color:#f59e0b">35</div>
+        <div style="font-size:11px;color:#f59e0b">Amber Tier</div>
+      </div>
+      <div style="flex:1">
+        <div style="font-size:13px;font-weight:600;margin-bottom:6px">Risk Signals</div>
+        <ul class="churn-reasons"><li>⚠ Low reply rate: 0.0% (threshold 40%)</li><li>⚠ CQS (Catalog Quality Score): 8.3 — below 60, poor product visibility</li></ul>
+      </div>
+    </div><div class="section">
+      <div class="section-title">👤 Seller Profile</div>
+      <div class="grid g4">
+        <div class="metric-card" style="--c:#6366f1"><div class="metric-lbl">Company</div><div class="metric-val" style="font-size:13px;margin-top:8px">Unicon Equipment Co.</div></div>
+        <div class="metric-card" style="--c:#06b6d4"><div class="metric-lbl">City</div><div class="metric-val" style="font-size:15px">Greater Noida</div></div>
+        <div class="metric-card" style="--c:#8b5cf6"><div class="metric-lbl">Customer Type</div><div class="metric-val" style="font-size:12px;margin-top:8px">CATALOG</div></div>
+        <div class="metric-card" style="--c:#f59e0b"><div class="metric-lbl">Account Age</div><div class="metric-val">6737</div><div class="metric-sub">days</div></div>
+        <div class="metric-card" style="--c:#f59e0b"><div class="metric-lbl">RAG Category</div><div class="metric-val" style="font-size:15px;color:#f59e0b">Green</div></div>
+        <div class="metric-card" style="--c:#10b981"><div class="metric-lbl">Paid History</div><div class="metric-val" style="font-size:15px">Yes</div></div>
+        <div class="metric-card" style="--c:#ec4899"><div class="metric-lbl">Client Since</div><div class="metric-val" style="font-size:15px">3M</div></div>
+        <div class="metric-card" style="--c:#14b8a6"><div class="metric-lbl">CQS Score</div><div class="metric-val">8.3</div></div>
+      </div>
+    </div><div class="section">
+      <div class="section-title">📊 Engagement Signals</div>
+      <div class="grid g4">
+        <div class="metric-card" style="--c:#6366f1"><div class="metric-lbl">Enquiries (30d)</div><div class="metric-val">6</div></div>
+        <div class="metric-card" style="--c:#10b981"><div class="metric-lbl">Reply Rate (30d)</div><div class="metric-val">0.0%</div></div>
+        <div class="metric-card" style="--c:#06b6d4"><div class="metric-lbl">Active Days (30d)</div><div class="metric-val">4</div></div>
+        <div class="metric-card" style="--c:#f59e0b"><div class="metric-lbl">BL Cons (30d)</div><div class="metric-val">0</div></div>
+        <div class="metric-card" style="--c:#8b5cf6"><div class="metric-lbl">PNS Received (90d)</div><div class="metric-val">—</div></div>
+        <div class="metric-card" style="--c:#ec4899"><div class="metric-lbl">PNS Answered (90d)</div><div class="metric-val">—</div></div>
+        <div class="metric-card" style="--c:#14b8a6"><div class="metric-lbl">Meetings (90d)</div><div class="metric-val">—</div></div>
+        <div class="metric-card" style="--c:#f97316"><div class="metric-lbl">Hotleads</div><div class="metric-val">4</div></div>
+      </div>
+    </div><div class="section">
+          <div class="section-title">📈 Monthly Trends</div>
+          <div class="grid g2">
+            <div class="card"><div class="card-title">Enquiries vs Replies</div><div class="chart-wrap"><canvas id="ch_enq"></canvas></div></div>
+            <div class="card"><div class="card-title">PNS Calls</div><div class="chart-wrap"><canvas id="ch_pns"></canvas></div></div>
+          </div>
+          <div class="card" style="margin-top:14px"><div class="card-title">Platform Active Days</div><div class="chart-wrap-sm"><canvas id="ch_act"></canvas></div></div>
+        </div><div class="section">
+              <div class="section-title">🏭 Top Competitors (10 total)</div>
+              <div class="tbl-wrap"><table>
+                <thead><tr><th>Company</th><th>Type</th><th>City</th><th>Member Since</th></tr></thead>
+                <tbody><tr>
+              <td>Stainlee Kitchen Equipment</td>
+              <td><span class="tag tag-blue">TSCATALOG</span></td>
+              <td>Greater Noida</td>
+              <td>Feb 2022</td>
+            </tr><tr>
+              <td>A J Enterprises</td>
+              <td><span class="tag tag-blue">STAR</span></td>
+              <td>Noida</td>
+              <td>Feb 2016</td>
+            </tr><tr>
+              <td>Sunlight Kitchen Solutions</td>
+              <td><span class="tag tag-blue">TSCATALOG</span></td>
+              <td>Noida</td>
+              <td>May 2018</td>
+            </tr><tr>
+              <td>Varada Kitchen Equipment</td>
+              <td><span class="tag tag-blue">CATALOG</span></td>
+              <td>Greater Noida</td>
+              <td>Oct 2019</td>
+            </tr><tr>
+              <td>M K Service And Food Equipment</td>
+              <td><span class="tag tag-blue">CATALOG</span></td>
+              <td>Dadri</td>
+              <td>Oct 2023</td>
+            </tr><tr>
+              <td>Davson Kitchen Solution</td>
+              <td><span class="tag tag-blue">TSCATALOG</span></td>
+              <td>Noida</td>
+              <td>Jan 2025</td>
+            </tr><tr>
+              <td>Prince Engineering</td>
+              <td><span class="tag tag-blue">TSCATALOG</span></td>
+              <td>Greater Noida</td>
+              <td>Nov 2020</td>
+            </tr><tr>
+              <td>Classic Kitchen Equipment</td>
+              <td><span class="tag tag-blue">CATALOG</span></td>
+              <td>Greater Noida</td>
+              <td>Dec 2025</td>
+            </tr><tr>
+              <td>Brinda Creates</td>
+              <td><span class="tag tag-blue">TSCATALOG</span></td>
+              <td>Greater Noida</td>
+              <td>Mar 2024</td>
+            </tr><tr>
+              <td>Foxrun Advisors Private Limited</td>
+              <td><span class="tag tag-blue">TSCATALOG</span></td>
+              <td>Noida</td>
+              <td>Dec 2025</td>
+            </tr></tbody>
+              </table></div>
+              <div style="margin-top:10px;font-size:11px;color:var(--mut)">Market: 808 total BLs | 330 paid sellers</div>
+            </div><div class="section">
+              <div class="section-title">🔥 Hotlead Activity (4 events)</div>
+              <div class="card"><div class="tl-item">
+              <div class="tl-dot" style="background:#6366f1"></div>
+              <div><div class="tl-title">Premium Activity - Online</div>
+              <div class="tl-time">2026-02-09 <span class="tag tag-purple">PUA</span></div></div>
+            </div><div class="tl-item">
+              <div class="tl-dot" style="background:#f59e0b"></div>
+              <div><div class="tl-title">Premium Activity - Enquiry Received</div>
+              <div class="tl-time">2025-12-04 <span class="tag tag-purple">ENQR</span></div></div>
+            </div><div class="tl-item">
+              <div class="tl-dot" style="background:#f59e0b"></div>
+              <div><div class="tl-title">Premium Activity - Enquiry Received</div>
+              <div class="tl-time">2025-10-29 <span class="tag tag-purple">ENQR</span></div></div>
+            </div><div class="tl-item">
+              <div class="tl-dot" style="background:#94a3b8"></div>
+              <div><div class="tl-title">Premium Activity - PNS Call Missed</div>
+              <div class="tl-time">2025-05-20 <span class="tag tag-purple">PNSM</span></div></div>
+            </div></div>
+            </div></main>
+<script>new Chart(document.getElementById('ch_enq'),{"type": "bar", "data": {"labels": ["Nov 2025", "Dec 2025", "Jan 2026", "Feb 2026", "Mar 2026", "Apr 2026", "May 2026"], "datasets": [{"label": "Enquiries", "data": [0, 1, 0, 14, 10, 0, 0], "backgroundColor": "#6366f188", "borderColor": "#6366f1", "borderWidth": 2}, {"label": "Replies", "data": [0, 0, 2, 41, 15, 12, 4], "backgroundColor": "#10b98188", "borderColor": "#10b981", "borderWidth": 2}]}, "options": {"responsive": true, "maintainAspectRatio": false, "plugins": {"legend": {"labels": {"color": "#94a3b8"}}}, "scales": {"x": {"ticks": {"color": "#94a3b8"}, "grid": {"color": "#2e3350"}}, "y": {"ticks": {"color": "#94a3b8"}, "grid": {"color": "#2e3350"}}}}});new Chart(document.getElementById('ch_pns'),{"type": "bar", "data": {"labels": ["Nov 2025", "Dec 2025", "Jan 2026", "Feb 2026", "Mar 2026", "Apr 2026", "May 2026"], "datasets": [{"label": "PNS Received", "data": [0, 0, 0, 1, 0, 0, 0], "backgroundColor": "#06b6d488", "borderColor": "#06b6d4", "borderWidth": 2}, {"label": "PNS Answered", "data": [0, 0, 0, 1, 0, 0, 0], "backgroundColor": "#10b98188", "borderColor": "#10b981", "borderWidth": 2}]}, "options": {"responsive": true, "maintainAspectRatio": false, "plugins": {"legend": {"labels": {"color": "#94a3b8"}}}, "scales": {"x": {"ticks": {"color": "#94a3b8"}, "grid": {"color": "#2e3350"}}, "y": {"ticks": {"color": "#94a3b8"}, "grid": {"color": "#2e3350"}}}}});new Chart(document.getElementById('ch_act'),{"type": "line", "data": {"labels": ["Nov 2025", "Dec 2025", "Jan 2026", "Feb 2026", "Mar 2026", "Apr 2026", "May 2026"], "datasets": [{"label": "Active Days", "data": [0, 0, 1, 13, 4, 5, 2], "borderColor": "#f59e0b", "backgroundColor": "#f59e0b22", "borderWidth": 2, "tension": 0.4, "fill": true}]}, "options": {"responsive": true, "maintainAspectRatio": false, "plugins": {"legend": {"labels": {"color": "#94a3b8"}}}, "scales": {"x": {"ticks": {"color": "#94a3b8"}, "grid": {"color": "#2e3350"}}, "y": {"ticks": {"color": "#94a3b8"}, "grid": {"color": "#2e3350"}}}}});</script>
+</body></html>

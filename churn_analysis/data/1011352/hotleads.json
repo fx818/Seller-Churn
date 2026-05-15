@@ -1,0 +1,47 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 1011352,
+        "hotlead_date": "2026-03-01",
+        "hotlead_id": 9269324,
+        "hotlead_type_id": 1088672280,
+        "data_type": "PNSR",
+        "activity": "Premium Activity - PNS Call Received",
+        "activity_id": 10001
+      },
+      {
+        "gluser_id": 1011352,
+        "hotlead_date": "2025-11-26",
+        "hotlead_id": 9269324,
+        "hotlead_type_id": 1047560618,
+        "data_type": "PIM",
+        "activity": "Payment Interest - MDC",
+        "activity_id": 4515
+      },
+      {
+        "gluser_id": 1011352,
+        "hotlead_date": "2025-08-25",
+        "hotlead_id": 9269324,
+        "hotlead_type_id": 1008466392,
+        "data_type": "UA",
+        "activity": "Seller Login Through Mailer",
+        "activity_id": 4079
+      },
+      {
+        "gluser_id": 1011352,
+        "hotlead_date": "2025-06-17",
+        "hotlead_id": 9269324,
+        "hotlead_type_id": 976734192,
+        "data_type": "ENQR",
+        "activity": "Premium Activity - Enquiry Received",
+        "activity_id": 10004
+      }
+    ],
+    "total": 4,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

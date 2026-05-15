@@ -1,0 +1,29 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 181542068,
+        "hotlead_date": "2026-02-21",
+        "hotlead_id": 14191664,
+        "hotlead_type_id": 1085121927,
+        "data_type": "OLP",
+        "activity": "Payment Attempt - BL",
+        "activity_id": 1625
+      },
+      {
+        "gluser_id": 181542068,
+        "hotlead_date": "2026-02-20",
+        "hotlead_id": 14191664,
+        "hotlead_type_id": 1084784863,
+        "data_type": "PUA",
+        "activity": "Premium Activity - Online",
+        "activity_id": 1874
+      }
+    ],
+    "total": 2,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

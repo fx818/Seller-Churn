@@ -1,0 +1,98 @@
+{
+  "glid": "207450939",
+  "company": "Nitu International Education",
+  "city": "Bengaluru",
+  "final_tier": "Red",
+  "churn_score": 100.0,
+  "rca_category": "UNKNOWN",
+  "generated_at": "2026-05-15T08:53:38.242633+00:00",
+  "actions": {
+    "whatsapp_message": {
+      "message_hi": "Nitu International Education Bhai, aapka IndiaMART account review kiya.\nKuch quick improvements hain jo leads badha sakti hain.\nEk call karein? 📞",
+      "message_en": "Hi Nitu International Education, reviewed your IndiaMART account.\nThere are a few quick improvements that could boost your leads.\nCan we connect? 📞",
+      "message_type": "retention_nudge",
+      "rca_used": "UNKNOWN",
+      "cta": "Reply YES for a quick review call",
+      "personalization_vars": [
+        "name",
+        "enq_30d",
+        "cqs",
+        "bl_velocity_pct_abs"
+      ],
+      "estimated_open_rate": 0.72
+    },
+    "pre_call_brief": {
+      "company": "Nitu International Education",
+      "city": "Bengaluru",
+      "enterprise": "—",
+      "ctype": "vgFCPplus with PNS",
+      "opening_line_hi": "Nitu Bhai, maine aapka account review kiya — discuss karna chahta hoon.",
+      "opening_line_en": "Nitu ji, reviewed your account — want to discuss a few key things.",
+      "key_signals": [
+        {
+          "label": "Churn Score",
+          "value": "100.0/100",
+          "severity": "critical"
+        },
+        {
+          "label": "Lead Volume Trend",
+          "value": "-100% MoM",
+          "severity": "critical"
+        },
+        {
+          "label": "PNS Answer Rate",
+          "value": "0%",
+          "severity": "high"
+        },
+        {
+          "label": "Active Days (30d)",
+          "value": "0",
+          "severity": "critical"
+        },
+        {
+          "label": "Catalog Score (CQS)",
+          "value": "83",
+          "severity": "medium"
+        }
+      ],
+      "suggested_actions": [
+        "Conduct discovery call",
+        "Identify main blocker"
+      ],
+      "do_not_mention": [
+        "renewal price",
+        "subscription cost",
+        "competitor pricing"
+      ],
+      "call_type": "RETENTION",
+      "estimated_call_duration": "8-12 min",
+      "rca_category": "UNKNOWN",
+      "llm_risk_level": null,
+      "llm_bands_display": null,
+      "llm_reasoning": "",
+      "churned_lookalikes": [],
+      "retained_lookalikes": [],
+      "brief_text": "SELLER: Nitu International Education | Bengaluru | —/vgFCPplus with PNS | Age: 373d\nCHURN SCORE: 100.0/100 | RISK: Unknown\nMAIN ISSUE: UNKNOWN — \nOPENING: Nitu ji, reviewed your account — want to discuss a few key things.\nACTIONS: Conduct discovery call; Identify main blocker"
+    },
+    "script_generation": {
+      "error": "Missing required inputs: ['seller_name']"
+    },
+    "gifted_lead": {
+      "lead_found": false,
+      "reason": "No hotleads data available",
+      "fallback": "Use peer comparison data as value demonstration",
+      "total_qualifying": 0
+    },
+    "winback_priority": {
+      "winback_score": 33,
+      "priority": "LOW",
+      "cool_off_elapsed": true,
+      "cool_off_days_remaining": 0,
+      "winback_pitch_type": "GENERAL",
+      "opening_line_hi": "Bhai, aapka purana account dekha — aapki category mein ab accha demand hai.",
+      "gifted_lead_eligible": false,
+      "estimated_conversion_probability": 0.13,
+      "recommended_package": "annual"
+    }
+  }
+}

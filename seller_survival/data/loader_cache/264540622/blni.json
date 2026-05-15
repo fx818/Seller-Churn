@@ -1,0 +1,41 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 264540622,
+        "event_date": "2026-04-25",
+        "offer_id": 143214928695,
+        "mcat_id": 135705,
+        "reason_code": 5,
+        "reason_text": "Location",
+        "comment": null,
+        "module_id": "FLPNS"
+      },
+      {
+        "gluser_id": 264540622,
+        "event_date": "2026-04-25",
+        "offer_id": 143217616285,
+        "mcat_id": 189105,
+        "reason_code": 5,
+        "reason_text": "Location",
+        "comment": null,
+        "module_id": "ANDWEB"
+      },
+      {
+        "gluser_id": 264540622,
+        "event_date": "2026-02-28",
+        "offer_id": 139588684834,
+        "mcat_id": 35591,
+        "reason_code": 11,
+        "reason_text": "Retail Lead",
+        "comment": null,
+        "module_id": "IMOB"
+      }
+    ],
+    "total": 3,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

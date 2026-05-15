@@ -1,0 +1,38 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 55709000,
+        "hotlead_date": "2026-02-05",
+        "hotlead_id": 13961986,
+        "hotlead_type_id": 1078120283,
+        "data_type": "PUA",
+        "activity": "Premium Activity - Online",
+        "activity_id": 1874
+      },
+      {
+        "gluser_id": 55709000,
+        "hotlead_date": "2026-02-04",
+        "hotlead_id": 13961986,
+        "hotlead_type_id": 1077564213,
+        "data_type": "UA",
+        "activity": "SOI Click on Sell-on-Indiamart",
+        "activity_id": 2385
+      },
+      {
+        "gluser_id": 55709000,
+        "hotlead_date": "2025-12-07",
+        "hotlead_id": 13961986,
+        "hotlead_type_id": 1052169529,
+        "data_type": "PUA",
+        "activity": "Premium Activity - Online",
+        "activity_id": 4337
+      }
+    ],
+    "total": 3,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

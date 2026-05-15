@@ -1,0 +1,31 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 210787717,
+        "event_date": "2026-03-05",
+        "offer_id": 139983430263,
+        "mcat_id": 85907,
+        "reason_code": 3,
+        "reason_text": "Specification Mismatch",
+        "comment": null,
+        "module_id": "FENQ"
+      },
+      {
+        "gluser_id": 210787717,
+        "event_date": "2026-03-05",
+        "offer_id": 139930277152,
+        "mcat_id": 136185,
+        "reason_code": 3,
+        "reason_text": "Specification Mismatch",
+        "comment": null,
+        "module_id": "PRODDTL"
+      }
+    ],
+    "total": 2,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

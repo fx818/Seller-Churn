@@ -1,0 +1,47 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 675711,
+        "hotlead_date": "2026-01-31",
+        "hotlead_id": 9762696,
+        "hotlead_type_id": 1075804759,
+        "data_type": "PUA",
+        "activity": "Premium Activity - Online",
+        "activity_id": 1874
+      },
+      {
+        "gluser_id": 675711,
+        "hotlead_date": "2025-12-29",
+        "hotlead_id": 9762696,
+        "hotlead_type_id": 1061825456,
+        "data_type": "ENQR",
+        "activity": "Premium Activity - Enquiry Received",
+        "activity_id": 10004
+      },
+      {
+        "gluser_id": 675711,
+        "hotlead_date": "2025-11-28",
+        "hotlead_id": 9762696,
+        "hotlead_type_id": 1048406557,
+        "data_type": "PUA",
+        "activity": "Premium Activity - Online",
+        "activity_id": 1874
+      },
+      {
+        "gluser_id": 675711,
+        "hotlead_date": "2025-10-21",
+        "hotlead_id": 9762696,
+        "hotlead_type_id": 1032951702,
+        "data_type": "ENQR",
+        "activity": "Premium Activity - Enquiry Received",
+        "activity_id": 10004
+      }
+    ],
+    "total": 4,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

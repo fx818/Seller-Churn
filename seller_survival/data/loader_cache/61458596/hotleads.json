@@ -1,0 +1,56 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 61458596,
+        "hotlead_date": "2025-07-27",
+        "hotlead_id": 11686975,
+        "hotlead_type_id": 995069214,
+        "data_type": "PIM",
+        "activity": "Payment Interest - MDC",
+        "activity_id": 4296
+      },
+      {
+        "gluser_id": 61458596,
+        "hotlead_date": "2025-07-20",
+        "hotlead_id": 11686975,
+        "hotlead_type_id": 991550267,
+        "data_type": "PAM",
+        "activity": "Payment Attempt - MDC",
+        "activity_id": 2539
+      },
+      {
+        "gluser_id": 61458596,
+        "hotlead_date": "2025-07-13",
+        "hotlead_id": 11686975,
+        "hotlead_type_id": 988431509,
+        "data_type": "OLP",
+        "activity": "Payment Attempt - BL",
+        "activity_id": 1611
+      },
+      {
+        "gluser_id": 61458596,
+        "hotlead_date": "2025-07-11",
+        "hotlead_id": 11686975,
+        "hotlead_type_id": 987448250,
+        "data_type": "PUT",
+        "activity": "Power User Top3",
+        "activity_id": 10006
+      },
+      {
+        "gluser_id": 61458596,
+        "hotlead_date": "2025-07-08",
+        "hotlead_id": 11686975,
+        "hotlead_type_id": 986337049,
+        "data_type": "PIM",
+        "activity": "Payment Interest - MDC",
+        "activity_id": 4296
+      }
+    ],
+    "total": 5,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

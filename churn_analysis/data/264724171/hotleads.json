@@ -1,0 +1,38 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 264724171,
+        "hotlead_date": "2026-02-23",
+        "hotlead_id": 14179273,
+        "hotlead_type_id": 1085850063,
+        "data_type": "PIM",
+        "activity": "Payment Interest - MDC",
+        "activity_id": 2368
+      },
+      {
+        "gluser_id": 264724171,
+        "hotlead_date": "2026-02-17",
+        "hotlead_id": 14179273,
+        "hotlead_type_id": 1083250004,
+        "data_type": "NUR",
+        "activity": "HL From DHL(soi)",
+        "activity_id": 2515
+      },
+      {
+        "gluser_id": 264724171,
+        "hotlead_date": "2026-02-16",
+        "hotlead_id": 14179273,
+        "hotlead_type_id": 1082899566,
+        "data_type": "PUA",
+        "activity": "Premium Activity - Online",
+        "activity_id": 2165
+      }
+    ],
+    "total": 3,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

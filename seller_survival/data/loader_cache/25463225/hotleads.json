@@ -1,0 +1,74 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 25463225,
+        "hotlead_date": "2026-02-13",
+        "hotlead_id": 10425347,
+        "hotlead_type_id": 1081676578,
+        "data_type": "PIM",
+        "activity": "Payment Interest - MDC",
+        "activity_id": 2352
+      },
+      {
+        "gluser_id": 25463225,
+        "hotlead_date": "2026-02-06",
+        "hotlead_id": 10425347,
+        "hotlead_type_id": 1078599390,
+        "data_type": "PUA",
+        "activity": "Premium Activity - Online",
+        "activity_id": 1784
+      },
+      {
+        "gluser_id": 25463225,
+        "hotlead_date": "2026-01-03",
+        "hotlead_id": 10425347,
+        "hotlead_type_id": 1063843202,
+        "data_type": "ENQR",
+        "activity": "Premium Activity - Enquiry Received",
+        "activity_id": 10004
+      },
+      {
+        "gluser_id": 25463225,
+        "hotlead_date": "2025-12-05",
+        "hotlead_id": 10425347,
+        "hotlead_type_id": 1051596384,
+        "data_type": "ENQR",
+        "activity": "Premium Activity - Enquiry Received",
+        "activity_id": 10004
+      },
+      {
+        "gluser_id": 25463225,
+        "hotlead_date": "2025-10-05",
+        "hotlead_id": 10425347,
+        "hotlead_type_id": 1026639132,
+        "data_type": "UA",
+        "activity": "Free_Supplier_ExploreBuyers Login",
+        "activity_id": 4138
+      },
+      {
+        "gluser_id": 25463225,
+        "hotlead_date": "2025-09-12",
+        "hotlead_id": 10425347,
+        "hotlead_type_id": 1016678546,
+        "data_type": "PNSM",
+        "activity": "Premium Activity - PNS Call Missed",
+        "activity_id": 10002
+      },
+      {
+        "gluser_id": 25463225,
+        "hotlead_date": "2025-06-03",
+        "hotlead_id": 10425347,
+        "hotlead_type_id": 970417024,
+        "data_type": "ENQR",
+        "activity": "Premium Activity - Enquiry Received",
+        "activity_id": 10004
+      }
+    ],
+    "total": 7,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

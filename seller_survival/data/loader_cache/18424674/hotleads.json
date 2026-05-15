@@ -1,0 +1,29 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 18424674,
+        "hotlead_date": "2026-04-20",
+        "hotlead_id": 14326401,
+        "hotlead_type_id": 1108923865,
+        "data_type": "UA",
+        "activity": "SOI Click on Sell-on-Indiamart",
+        "activity_id": 2385
+      },
+      {
+        "gluser_id": 18424674,
+        "hotlead_date": "2026-04-15",
+        "hotlead_id": 14326401,
+        "hotlead_type_id": 1106936674,
+        "data_type": "ENQR",
+        "activity": "Premium Activity - Enquiry Received",
+        "activity_id": 10004
+      }
+    ],
+    "total": 2,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Seller Survival Intelligence</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0f1117;--s1:#1a1d27;--s2:#22263a;--s3:#2a2f47;
+  --bdr:#2e3350;--acc:#6366f1;--acc2:#8b5cf6;
+  --red:#ef4444;--amber:#f59e0b;--green:#10b981;
+  --txt:#e2e8f0;--mut:#94a3b8;--r:10px;
+}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',system-ui,sans-serif;min-height:100vh;padding:0}
+
+/* ── Header ── */
+.hdr{background:var(--s1);border-bottom:1px solid var(--bdr);padding:18px 32px;display:flex;align-items:center;gap:16px}
+.hdr-logo{width:38px;height:38px;background:linear-gradient(135deg,var(--acc),var(--acc2));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px}
+.hdr-title{font-size:18px;font-weight:700;letter-spacing:-.3px}
+.hdr-sub{font-size:12px;color:var(--mut);margin-top:2px}
+.lib-badge{margin-left:auto;padding:5px 14px;border-radius:999px;font-size:11px;font-weight:600;
+  background:{% if snapshots_available %}rgba(16,185,129,.15){% else %}rgba(245,158,11,.15){% endif %};
+  color:{% if snapshots_available %}var(--green){% else %}var(--amber){% endif %};
+  border:1px solid {% if snapshots_available %}rgba(16,185,129,.3){% else %}rgba(245,158,11,.3){% endif %}}
+
+/* ── Layout ── */
+.main{max-width:1200px;margin:0 auto;padding:32px 24px;display:grid;grid-template-columns:360px 1fr;gap:24px}
+@media(max-width:900px){.main{grid-template-columns:1fr}}
+
+/* ── Input card ── */
+.card{background:var(--s1);border:1px solid var(--bdr);border-radius:var(--r);padding:24px}
+.card-title{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--mut);margin-bottom:16px}
+.inp-wrap{position:relative;margin-bottom:14px}
+.inp-label{font-size:12px;color:var(--mut);margin-bottom:6px;display:block}
+.inp{width:100%;background:var(--s2);border:1px solid var(--bdr);border-radius:8px;padding:12px 14px;color:var(--txt);font-size:15px;outline:none;transition:.2s border-color}
+.inp:focus{border-color:var(--acc)}
+.inp::placeholder{color:var(--mut)}
+select.inp{cursor:pointer}
+.btn{width:100%;background:linear-gradient(135deg,var(--acc),var(--acc2));border:none;border-radius:8px;padding:13px;color:#fff;font-size:15px;font-weight:600;cursor:pointer;transition:.2s opacity}
+.btn:hover{opacity:.9}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.chk-row{display:flex;align-items:center;gap:8px;margin-bottom:14px;font-size:13px;color:var(--mut)}
+.chk-row input{accent-color:var(--acc)}
+
+/* ── Progress ── */
+.progress-wrap{margin-top:20px;display:none}
+.prog-bar-bg{background:var(--s2);border-radius:999px;height:6px;overflow:hidden;margin-bottom:12px}
+.prog-bar{height:100%;background:linear-gradient(90deg,var(--acc),var(--acc2));border-radius:999px;width:0;transition:width .4s ease}
+.prog-steps{list-style:none;display:flex;flex-direction:column;gap:6px}
+.step-item{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--mut);padding:4px 0}
+.step-item.done{color:var(--green)}
+.step-item.running{color:var(--acc)}
+.step-item.skipped{color:var(--mut);opacity:.6}
+.step-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;background:var(--bdr)}
+.step-item.done .step-dot{background:var(--green)}
+.step-item.running .step-dot{background:var(--acc);animation:pulse 1s infinite}
+.step-item.skipped .step-dot{background:var(--mut)}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* ── Results pane ── */
+.results-pane{display:none}
+.results-pane.show{display:block}
+
+/* ── Risk badge ── */
+.risk-banner{border-radius:var(--r);padding:20px 24px;margin-bottom:20px;display:flex;align-items:center;gap:20px}
+.risk-banner.Red{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3)}
+.risk-banner.Amber{background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.3)}
+.risk-banner.Green{background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.3)}
+.risk-circle{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;flex-shrink:0}
+.risk-circle.Red{background:rgba(239,68,68,.2);color:var(--red)}
+.risk-circle.Amber{background:rgba(245,158,11,.2);color:var(--amber)}
+.risk-circle.Green{background:rgba(16,185,129,.2);color:var(--green)}
+.risk-meta h2{font-size:22px;font-weight:700}
+.risk-meta p{font-size:13px;color:var(--mut);margin-top:4px}
+.score-pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.pill{padding:4px 12px;border-radius:999px;font-size:12px;font-weight:600;background:var(--s2);border:1px solid var(--bdr)}
+
+/* ── Tabs ── */
+.tabs{display:flex;gap:4px;border-bottom:1px solid var(--bdr);margin-bottom:20px}
+.tab{padding:10px 18px;cursor:pointer;font-size:13px;font-weight:500;color:var(--mut);border-bottom:2px solid transparent;transition:.15s}
+.tab:hover{color:var(--txt)}
+.tab.active{color:var(--acc);border-bottom-color:var(--acc)}
+.tab-content{display:none}
+.tab-content.active{display:block}
+
+/* ── Signal cards grid ── */
+.sig-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-bottom:20px}
+.sig-card{background:var(--s2);border:1px solid var(--bdr);border-radius:8px;padding:14px}
+.sig-card.critical{border-color:rgba(239,68,68,.4);background:rgba(239,68,68,.06)}
+.sig-card.high{border-color:rgba(245,158,11,.4);background:rgba(245,158,11,.06)}
+.sig-label{font-size:11px;color:var(--mut);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+.sig-val{font-size:20px;font-weight:700}
+.sig-sub{font-size:11px;color:var(--mut);margin-top:3px}
+
+/* ── Section blocks ── */
+.section{margin-bottom:20px}
+.section-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;color:var(--mut);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--bdr)}
+
+/* ── RCA card ── */
+.rca-card{background:var(--s2);border:1px solid var(--bdr);border-radius:8px;padding:16px;margin-bottom:16px}
+.rca-cat{font-size:14px;font-weight:700;margin-bottom:6px}
+.rca-text{font-size:13px;color:var(--mut);line-height:1.6}
+.rca-hi{margin-top:10px;padding:12px;background:var(--s1);border-radius:6px;border-left:3px solid var(--acc);font-size:13px;line-height:1.6}
+
+/* ── WhatsApp preview ── */
+.wa-preview{background:#1a2a1a;border:1px solid #2d4a2d;border-radius:10px;padding:16px;font-size:13px;line-height:1.7;white-space:pre-wrap;font-family:inherit;color:#d4edda}
+.wa-preview.en{background:var(--s2);border-color:var(--bdr);color:var(--txt);margin-top:12px}
+.wa-tabs{display:flex;gap:8px;margin-bottom:10px}
+.wa-tab{padding:4px 14px;border-radius:999px;font-size:12px;cursor:pointer;background:var(--s3);border:1px solid var(--bdr);color:var(--mut);transition:.15s}
+.wa-tab.active{background:var(--acc);color:#fff;border-color:var(--acc)}
+
+/* ── Pre-call brief ── */
+.brief-signals{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
+.brief-sig{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--s2);border-radius:8px;border:1px solid var(--bdr)}
+.brief-sig.critical{border-color:rgba(239,68,68,.4)}
+.brief-sig.high{border-color:rgba(245,158,11,.4)}
+.brief-sig label{font-size:12px;color:var(--mut)}
+.brief-sig .val{font-size:14px;font-weight:600}
+.brief-sig.critical .val{color:var(--red)}
+.brief-sig.high .val{color:var(--amber)}
+.action-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.action-item{padding:10px 14px;background:var(--s2);border-radius:8px;font-size:13px;border-left:3px solid var(--acc)}
+.action-item:nth-child(1){border-left-color:var(--red)}
+
+/* ── Band display ── */
+.bands-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.band-card{flex:1;min-width:110px;background:var(--s2);border:1px solid var(--bdr);border-radius:8px;padding:12px;text-align:center}
+.band-card.R{border-color:rgba(239,68,68,.4);background:rgba(239,68,68,.07)}
+.band-card.A{border-color:rgba(245,158,11,.4);background:rgba(245,158,11,.07)}
+.band-card.G{border-color:rgba(16,185,129,.4);background:rgba(16,185,129,.07)}
+.band-label{font-size:11px;color:var(--mut);margin-bottom:6px}
+.band-val{font-size:26px;font-weight:800}
+.band-card.R .band-val{color:var(--red)}
+.band-card.A .band-val{color:var(--amber)}
+.band-card.G .band-val{color:var(--green)}
+
+/* ── Monthly trend chart ── */
+.trend-bar-wrap{display:flex;align-items:flex-end;gap:4px;height:80px;margin-top:8px}
+.trend-bar{flex:1;border-radius:3px 3px 0 0;background:var(--acc);min-height:4px;transition:.3s}
+.trend-label{font-size:10px;color:var(--mut);text-align:center;margin-top:4px}
+
+/* ── Error box ── */
+.err-box{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);border-radius:8px;padding:16px;margin-top:16px;font-size:13px;color:#fca5a5}
+.err-box pre{margin-top:8px;font-size:11px;overflow:auto;max-height:200px;white-space:pre-wrap;color:var(--mut)}
+
+/* ── Cohort match info ── */
+.cohort-info{background:var(--s2);border:1px solid var(--bdr);border-radius:8px;padding:14px;font-size:13px;margin-bottom:14px}
+.cohort-info .row{display:flex;justify-content:space-between;padding:4px 0;color:var(--mut)}
+.cohort-info .row span:last-child{color:var(--txt);font-weight:500}
+
+.lookalike-list{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.lookalike{padding:4px 10px;border-radius:6px;font-size:11px;font-weight:600;font-family:monospace}
+.lookalike.churned{background:rgba(239,68,68,.15);color:#fca5a5;border:1px solid rgba(239,68,68,.3)}
+.lookalike.retained{background:rgba(16,185,129,.15);color:#6ee7b7;border:1px solid rgba(16,185,129,.3)}
+
+/* ── Journey timeline ── */
+.traj-badge{display:inline-block;padding:6px 16px;border-radius:999px;font-size:13px;font-weight:700;margin-bottom:14px}
+.traj-badge.TYPE_A{background:rgba(239,68,68,.15);color:var(--red);border:1px solid rgba(239,68,68,.3)}
+.traj-badge.TYPE_B{background:rgba(245,158,11,.15);color:var(--amber);border:1px solid rgba(245,158,11,.3)}
+.traj-badge.TYPE_C{background:rgba(139,92,246,.15);color:var(--acc2);border:1px solid rgba(139,92,246,.3)}
+.traj-badge.UNKNOWN{background:var(--s2);color:var(--mut);border:1px solid var(--bdr)}
+.journey-timeline{display:flex;align-items:flex-end;gap:3px;height:90px;margin:12px 0 4px}
+.jt-bar{flex:1;border-radius:3px 3px 0 0;min-height:4px;position:relative;transition:.3s}
+.jt-bar.cliff{background:var(--red);opacity:.8}
+.jt-bar.normal{background:var(--acc)}
+.jt-bar.low{background:var(--s3)}
+.jt-cliff-marker{position:absolute;top:-18px;left:50%;transform:translateX(-50%);font-size:14px}
+.opening-card{padding:14px;background:var(--s1);border-radius:8px;border-left:3px solid var(--acc2);font-size:13px;line-height:1.7;margin-top:12px}
+
+/* ── Call Script ── */
+.script-part{margin-bottom:14px;border:1px solid var(--bdr);border-radius:8px;overflow:hidden}
+.script-part-hdr{padding:8px 14px;background:var(--s2);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--mut);display:flex;justify-content:space-between}
+.script-part-body{padding:14px;font-size:13px;line-height:1.7}
+.script-lang-btn{padding:3px 12px;border-radius:999px;font-size:11px;cursor:pointer;border:1px solid var(--bdr);background:transparent;color:var(--mut);transition:.15s}
+.script-lang-btn.active{background:var(--acc);color:#fff;border-color:var(--acc)}
+.objection-row{padding:8px 0;border-bottom:1px solid var(--bdr);font-size:13px}
+.objection-row:last-child{border-bottom:none}
+.objection-q{color:var(--mut);margin-bottom:4px;font-style:italic}
+.objection-a{color:var(--txt);line-height:1.6}
+
+/* ── Cross-platform compare ── */
+.platform-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-bottom:14px}
+.platform-card{background:var(--s2);border:1px solid var(--bdr);border-radius:8px;padding:12px}
+.platform-card.found{border-color:rgba(16,185,129,.4)}
+.platform-card.not-found{opacity:.55}
+.platform-name{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--mut);margin-bottom:8px}
+.platform-metric{display:flex;justify-content:space-between;font-size:12px;padding:3px 0;color:var(--mut)}
+.platform-metric span:last-child{font-weight:600;color:var(--txt)}
+
+/* ── Winback / Gifted / BL ── */
+.wb-card{background:var(--s2);border:1px solid var(--bdr);border-radius:8px;padding:16px;margin-bottom:12px}
+.wb-score{font-size:32px;font-weight:800;margin-bottom:4px}
+.info-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--bdr);font-size:13px}
+.info-row:last-child{border-bottom:none}
+.info-row label{color:var(--mut)}
+.info-row span{font-weight:600}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div class="hdr-logo">🎯</div>
+  <div>
+    <div class="hdr-title">Seller Survival Intelligence</div>
+    <div class="hdr-sub">Active Drift Detection — Phase 1</div>
+  </div>
+  <div class="lib-badge">
+    {% if snapshots_available %}✓ Reference Library Ready{% else %}⚠ Library Not Built{% endif %}
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- ── LEFT: Input panel ── -->
+  <div>
+    <div class="card">
+      <div class="card-title">Score a Seller</div>
+
+      <div class="inp-wrap">
+        <label class="inp-label" for="glid-inp">GLID (Seller ID)</label>
+        <input class="inp" id="glid-inp" type="text" placeholder="e.g. 27257635" autocomplete="off">
+      </div>
+
+      <div class="inp-wrap">
+        <label class="inp-label" for="model-sel">LLM Model <span style="color:var(--mut);font-weight:400">(via {{ llm_base or 'configured provider' }})</span></label>
+        <select class="inp" id="model-sel">
+          <option value="{{ llm_model }}" selected>{{ llm_model }} (configured)</option>
+        </select>
+        <input class="inp" id="model-custom" type="text" placeholder="or type a model name..."
+               style="margin-top:6px;font-size:13px"
+               oninput="if(this.value){document.getElementById('model-sel').value=''}"
+               onfocus="document.getElementById('model-sel').value=''">
+      </div>
+
+      <div class="chk-row">
+        <input type="checkbox" id="skip-llm">
+        <label for="skip-llm">Skip AI cohort scoring (rule-based only)</label>
+      </div>
+
+      <button class="btn" id="score-btn" onclick="startScore()">Analyze Seller →</button>
+
+      <!-- Progress -->
+      <div class="progress-wrap" id="prog-wrap">
+        <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--mut);margin-bottom:6px">
+          <span id="prog-label">Starting...</span>
+          <span id="prog-pct">0%</span>
+        </div>
+        <div class="prog-bar-bg"><div class="prog-bar" id="prog-bar"></div></div>
+        <ul class="prog-steps" id="prog-steps"></ul>
+      </div>
+    </div>
+
+    <!-- Quick GLID examples -->
+    <div class="card" style="margin-top:16px">
+      <div class="card-title">Quick Examples</div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div onclick="setGlid('27257635')" style="cursor:pointer;padding:10px;background:var(--s2);border-radius:6px;font-size:13px;border:1px solid var(--bdr)">
+          <span style="color:var(--acc);font-weight:600">27257635</span>
+          <span style="color:var(--mut);margin-left:8px">Cohort A churned seller</span>
+        </div>
+        <div onclick="setGlid('488587')" style="cursor:pointer;padding:10px;background:var(--s2);border-radius:6px;font-size:13px;border:1px solid var(--bdr)">
+          <span style="color:var(--acc);font-weight:600">488587</span>
+          <span style="color:var(--mut);margin-left:8px">Sample established seller</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── RIGHT: Results pane ── -->
+  <div class="results-pane" id="results-pane">
+
+    <!-- Risk banner -->
+    <div class="risk-banner" id="risk-banner">
+      <div class="risk-circle" id="risk-circle">?</div>
+      <div class="risk-meta">
+        <h2 id="risk-title">Analyzing...</h2>
+        <p id="risk-sub"></p>
+        <div class="score-pills" id="score-pills"></div>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <div class="tab active" onclick="switchTab('overview',this)">Overview</div>
+      <div class="tab" onclick="switchTab('bl',this)">BL Signals</div>
+      <div class="tab" onclick="switchTab('lms',this)">LMS & Calls</div>
+      <div class="tab" onclick="switchTab('ai',this)">AI Cohort</div>
+      <div class="tab" onclick="switchTab('journey',this)">Journey</div>
+      <div class="tab" onclick="switchTab('platforms',this)">Platforms</div>
+      <div class="tab" onclick="switchTab('script',this)">Call Script</div>
+      <div class="tab" onclick="switchTab('actions',this)">Actions</div>
+    </div>
+
+    <!-- ── TAB: Overview ── -->
+    <div class="tab-content active" id="tab-overview">
+      <div class="sig-grid" id="sig-grid"></div>
+
+      <div class="section" id="rca-section">
+        <div class="section-title">Root Cause Analysis</div>
+        <div class="rca-card" id="rca-card">
+          <div class="rca-cat" id="rca-cat">—</div>
+          <div class="rca-text" id="rca-en">—</div>
+          <div class="rca-hi" id="rca-hi">—</div>
+        </div>
+      </div>
+
+      <div class="section" id="peer-section">
+        <div class="section-title">Peer Benchmark</div>
+        <div id="peer-content" style="font-size:13px;color:var(--mut)">Loading...</div>
+      </div>
+    </div>
+
+    <!-- ── TAB: BL Signals ── -->
+    <div class="tab-content" id="tab-bl">
+      <div class="section">
+        <div class="section-title">Buy Lead Consumption (90d)</div>
+        <div class="sig-grid" id="bl-grid"></div>
+      </div>
+      <div class="section">
+        <div class="section-title">Weekly BL Activity (last 5 weeks)</div>
+        <div id="bl-weekly-chart" style="display:flex;align-items:flex-end;gap:6px;height:80px;margin-top:8px"></div>
+        <div id="bl-weekly-labels" style="display:flex;gap:6px;margin-top:4px"></div>
+      </div>
+      <div class="section">
+        <div class="section-title">Monthly Enquiry Trend (12m)</div>
+        <div class="trend-bar-wrap" id="enq-trend"></div>
+        <div style="display:flex;gap:4px;margin-top:4px" id="enq-labels"></div>
+      </div>
+    </div>
+
+    <!-- ── TAB: LMS & Calls ── -->
+    <div class="tab-content" id="tab-lms">
+      <div class="section">
+        <div class="section-title">LMS Call Metrics (90d)</div>
+        <div class="sig-grid" id="lms-grid"></div>
+      </div>
+      <div class="section">
+        <div class="section-title">Activity Trend</div>
+        <div class="sig-grid" id="act-grid"></div>
+      </div>
+    </div>
+
+    <!-- ── TAB: AI Cohort ── -->
+    <div class="tab-content" id="tab-ai">
+      <div id="ai-content">
+        <p style="color:var(--mut);font-size:13px">AI cohort scoring results will appear here after analysis.</p>
+      </div>
+    </div>
+
+    <!-- ── TAB: Journey ── -->
+    <div class="tab-content" id="tab-journey">
+      <div class="section">
+        <div class="section-title">Conversion Point Detection</div>
+        <div id="journey-content">
+          <p style="color:var(--mut);font-size:13px">Journey analysis will appear here after scoring.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── TAB: Platforms ── -->
+    <div class="tab-content" id="tab-platforms">
+      <div class="section">
+        <div class="section-title">Cross-Platform Intelligence</div>
+        <div id="xp-content"><p style="color:var(--mut);font-size:13px">Cross-platform scan results will appear here after scoring.</p></div>
+      </div>
+    </div>
+
+    <!-- ── TAB: Script ── -->
+    <div class="tab-content" id="tab-script">
+      <div id="script-content">
+        <p style="color:var(--mut);font-size:13px">Call script will appear here after scoring.</p>
+      </div>
+    </div>
+
+    <!-- ── TAB: Actions ── -->
+    <div class="tab-content" id="tab-actions">
+      <div class="section">
+        <div class="section-title">Recommended Actions</div>
+        <ul class="action-list" id="action-list"></ul>
+      </div>
+
+      <div class="section" id="wa-section">
+        <div class="section-title">WhatsApp Message</div>
+        <div class="wa-tabs">
+          <div class="wa-tab active" onclick="switchWA('hi',this)">Hindi</div>
+          <div class="wa-tab" onclick="switchWA('en',this)">English</div>
+        </div>
+        <div class="wa-preview" id="wa-hi">—</div>
+        <div class="wa-preview en" id="wa-en" style="display:none">—</div>
+        <div style="margin-top:10px;font-size:12px;color:var(--mut)" id="wa-cta"></div>
+      </div>
+
+      <div class="section" id="brief-section" style="display:none">
+        <div class="section-title">Pre-Call Brief</div>
+        <div id="brief-opening" style="margin-bottom:14px"></div>
+        <div class="brief-signals" id="brief-sigs"></div>
+        <div class="section-title" style="margin-top:12px">Suggested Actions</div>
+        <ul class="action-list" id="brief-actions"></ul>
+        <div style="margin-top:14px;padding:12px;background:var(--s2);border-radius:8px;font-size:12px;color:var(--mut)">
+          <strong style="color:var(--red)">Do NOT mention:</strong>
+          <span id="brief-dnm"></span>
+        </div>
+      </div>
+
+      <div class="section" id="winback-section" style="display:none">
+        <div class="section-title">Winback Priority</div>
+        <div id="winback-content"></div>
+      </div>
+
+      <div class="section" id="gifted-section" style="display:none">
+        <div class="section-title">Gifted Lead</div>
+        <div id="gifted-content"></div>
+      </div>
+
+      <div class="section" id="bl-upgrade-section" style="display:none">
+        <div class="section-title">BL Upgrade Opportunity</div>
+        <div id="bl-upgrade-content"></div>
+      </div>
+    </div>
+
+  </div><!-- end results-pane -->
+</div><!-- end main -->
+
+<script>
+let _es = null;
+let _plan = null;
+
+function setGlid(g){ document.getElementById('glid-inp').value = g; }
+
+function switchTab(name, el){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('tab-'+name).classList.add('active');
+}
+
+function switchWA(lang, el){
+  document.querySelectorAll('.wa-tab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('wa-hi').style.display = lang==='hi'?'block':'none';
+  document.getElementById('wa-en').style.display = lang==='en'?'block':'none';
+}
+
+function startScore(){
+  const glid = document.getElementById('glid-inp').value.trim();
+  if(!glid || !/^\d+$/.test(glid)){ alert('Enter a valid numeric GLID'); return; }
+  const customModel = document.getElementById('model-custom').value.trim();
+  const model   = customModel || document.getElementById('model-sel').value;
+  const skipLlm = document.getElementById('skip-llm').checked;
+
+  if(_es){ _es.close(); }
+
+  // Reset UI
+  document.getElementById('score-btn').disabled = true;
+  document.getElementById('prog-wrap').style.display = 'block';
+  document.getElementById('prog-bar').style.width = '0%';
+  document.getElementById('prog-label').textContent = 'Starting...';
+  document.getElementById('prog-pct').textContent = '0%';
+  document.getElementById('prog-steps').innerHTML = '';
+  document.getElementById('results-pane').classList.remove('show');
+
+  const steps = ['conversion_point','churn_scoring','shap_rca','peer_benchmark','demand_index',
+                 'onboarding_health','llm_cohort_scorer','whatsapp_message','pre_call_brief',
+                 'cross_platform','script_generation','gifted_lead','winback_priority','bl_upgrade'];
+  const stepEls = {};
+  steps.forEach(s=>{
+    const li = document.createElement('li');
+    li.className = 'step-item';
+    li.id = 'step-'+s;
+    li.innerHTML = `<div class="step-dot"></div><span>${_stepLabel(s)}</span>`;
+    document.getElementById('prog-steps').appendChild(li);
+    stepEls[s] = li;
+  });
+
+  const url = `/score/stream?glid=${glid}&model=${encodeURIComponent(model)}&skip_llm=${skipLlm}`;
+  _es = new EventSource(url);
+
+  _es.onmessage = function(e){
+    const msg = JSON.parse(e.data);
+
+    if(msg.event === 'progress'){
+      setProgress(msg.pct, msg.label);
+
+    } else if(msg.event === 'skill_progress'){
+      setProgress(msg.pct, msg.label);
+      const el = stepEls[msg.step];
+      if(el){
+        el.className = 'step-item ' + (msg.status==='done'?'done':msg.status==='skipped'?'skipped':'running');
+        const lbl = el.querySelector('span');
+        if(lbl) lbl.textContent = msg.label;
+      }
+      // Render partial data as it arrives
+      if(msg.step === 'shap_rca' && msg.status === 'done') renderRCA(msg.data);
+      if(msg.step === 'peer_benchmark' && msg.status === 'done') renderPeer(msg.data);
+      if(msg.step === 'churn_scoring' && msg.status === 'done') renderChurnBanner(msg.data);
+
+    } else if(msg.event === 'snapshot'){
+      renderSnapshot(msg.data);
+
+    } else if(msg.event === 'result'){
+      _plan = msg.data;
+      renderFullResult(msg.data);
+      _es.close();
+      document.getElementById('score-btn').disabled = false;
+      setProgress(100, 'Analysis complete ✓');
+
+    } else if(msg.event === 'error'){
+      showError(msg.message, msg.trace);
+      _es.close();
+      document.getElementById('score-btn').disabled = false;
+    }
+  };
+
+  _es.onerror = function(){
+    showError('Connection lost. Check that the server is running.');
+    document.getElementById('score-btn').disabled = false;
+  };
+}
+
+function setProgress(pct, label){
+  document.getElementById('prog-bar').style.width = pct+'%';
+  document.getElementById('prog-pct').textContent = pct+'%';
+  document.getElementById('prog-label').textContent = label;
+}
+
+function _stepLabel(s){
+  return {
+    conversion_point:'Journey Pattern',churn_scoring:'Churn Scoring',
+    shap_rca:'Root Cause Analysis',peer_benchmark:'Peer Benchmark',
+    demand_index:'Demand Index',onboarding_health:'Onboarding Check',
+    llm_cohort_scorer:'AI Cohort Scoring (LLM)',whatsapp_message:'WhatsApp Message',
+    pre_call_brief:'Pre-Call Brief',cross_platform:'Cross-Platform Scan',
+    script_generation:'Call Script',gifted_lead:'Gifted Leads',
+    winback_priority:'Winback Priority',bl_upgrade:'BL Upgrade Check',
+  }[s] || s;
+}
+
+function _riskColor(r){ return r==='Red'?'var(--red)':r==='Amber'?'var(--amber)':'var(--green)'; }
+function _riskEmoji(r){ return r==='Red'?'🔴':r==='Amber'?'🟡':'🟢'; }
+
+function renderChurnBanner(data){
+  const risk = data.risk || 'Unknown';
+  document.getElementById('results-pane').classList.add('show');
+  const banner = document.getElementById('risk-banner');
+  banner.className = 'risk-banner '+risk;
+  document.getElementById('risk-circle').className = 'risk-circle '+risk;
+  document.getElementById('risk-circle').textContent = data.churn_score ?? '?';
+  document.getElementById('risk-title').textContent = risk+' Risk';
+  document.getElementById('risk-sub').textContent = `Churn Score: ${data.churn_score}/100  •  Signals: ${data.signals_available||'?'}/7`;
+
+  const pills = document.getElementById('score-pills');
+  pills.innerHTML = '';
+  (data.reason_tags || []).slice(0,4).forEach(t=>{
+    const p = document.createElement('div');
+    p.className = 'pill'; p.textContent = t;
+    pills.appendChild(p);
+  });
+}
+
+function renderSnapshot(data){
+  const ctx = data.context || {};
+  const beh = data.behavioral || {};
+  const bl  = beh.bl || {};
+  const lms = beh.lms || {};
+  const act = beh.activity || {};
+
+  // Overview sig-grid
+  const sigs = [
+    {label:'BL Received (90d)', val:bl.received_90d??'—', sev:''},
+    {label:'BL Consumed (90d)', val:bl.consumed_90d??'—', sev:''},
+    {label:'Consumption Rate', val:bl.consumption_rate!=null?Math.round(bl.consumption_rate*100)+'%':'—', sev: bl.consumption_rate<0.1?'critical':''},
+    {label:'Reply Rate', val:bl.reply_rate!=null?Math.round(bl.reply_rate*100)+'%':'—', sev:''},
+    {label:'LMS Active Days', val:lms.lms_active_days_90d??'—', sev: (lms.lms_active_days_90d||0)===0?'critical':''},
+    {label:'Call Pickup Rate', val:lms.call_pickup_ratio_90d!=null?Math.round(lms.call_pickup_ratio_90d*100)+'%':'—', sev:''},
+    {label:'Activity (30d)', val:act.activity_30d??'—', sev:''},
+    {label:'Event Count', val:act.event_count??'—', sev: (act.event_count||0)===0?'critical':''},
+  ];
+  const grid = document.getElementById('sig-grid');
+  grid.innerHTML = '';
+  sigs.forEach(s=>{
+    grid.innerHTML += `<div class="sig-card ${s.sev}"><div class="sig-label">${s.label}</div><div class="sig-val">${s.val}</div></div>`;
+  });
+
+  // BL tab
+  const blGrid = document.getElementById('bl-grid');
+  blGrid.innerHTML = `
+    <div class="sig-card"><div class="sig-label">Received 90d</div><div class="sig-val">${bl.received_90d??'—'}</div></div>
+    <div class="sig-card"><div class="sig-label">Consumed 90d</div><div class="sig-val">${bl.consumed_90d??'—'}</div></div>
+    <div class="sig-card ${(bl.consumption_rate||0)<0.1?'critical':''}"><div class="sig-label">Consumption Rate</div><div class="sig-val">${bl.consumption_rate!=null?Math.round(bl.consumption_rate*100)+'%':'—'}</div></div>
+    <div class="sig-card"><div class="sig-label">Reply Rate</div><div class="sig-val">${bl.reply_rate!=null?Math.round(bl.reply_rate*100)+'%':'—'}</div></div>
+    <div class="sig-card"><div class="sig-label">Active BL</div><div class="sig-val">${bl.active_bl??'—'}</div></div>
+    <div class="sig-card"><div class="sig-label">BLNI Count (1yr)</div><div class="sig-val">${bl.blni_count_1yr??'—'}</div></div>
+  `;
+
+  // Weekly BL bars
+  const wba = bl.weekly_bl_active || [];
+  const wMax = Math.max(...wba, 1);
+  const wChart = document.getElementById('bl-weekly-chart');
+  const wLabels = document.getElementById('bl-weekly-labels');
+  wChart.innerHTML = ''; wLabels.innerHTML = '';
+  wba.forEach((v,i)=>{
+    const h = Math.round((v/wMax)*76)+4;
+    wChart.innerHTML += `<div style="flex:1;height:${h}px;background:${i===0?'var(--acc)':'var(--s3)'};border-radius:3px 3px 0 0;min-height:4px"></div>`;
+    wLabels.innerHTML += `<div style="flex:1;font-size:10px;text-align:center;color:var(--mut)">W${i}</div>`;
+  });
+
+  // LMS tab
+  const lmsGrid = document.getElementById('lms-grid');
+  lmsGrid.innerHTML = `
+    <div class="sig-card"><div class="sig-label">Call Attempts (90d)</div><div class="sig-val">${lms.call_attempts_90d??'—'}</div></div>
+    <div class="sig-card"><div class="sig-label">Answered (90d)</div><div class="sig-val">${lms.call_answered_90d??'—'}</div></div>
+    <div class="sig-card ${(lms.call_pickup_ratio_90d||1)<0.6?'high':''}"><div class="sig-label">Pickup Ratio</div><div class="sig-val">${lms.call_pickup_ratio_90d!=null?Math.round(lms.call_pickup_ratio_90d*100)+'%':'—'}</div></div>
+    <div class="sig-card"><div class="sig-label">1min+ Calls (90d)</div><div class="sig-val">${lms.calls_1min_plus_90d??'—'}</div></div>
+    <div class="sig-card"><div class="sig-label">Last Succ Call</div><div class="sig-val" style="font-size:14px">${lms.last_succ_call_dt??'—'}</div></div>
+    <div class="sig-card"><div class="sig-label">LMS Days (90d)</div><div class="sig-val">${lms.lms_active_days_90d??'—'}</div></div>
+  `;
+
+  // Activity tab
+  const actGrid = document.getElementById('act-grid');
+  actGrid.innerHTML = `
+    <div class="sig-card"><div class="sig-label">Activity (30d)</div><div class="sig-val">${act.activity_30d??'—'}</div></div>
+    <div class="sig-card ${(act.event_count||0)===0?'critical':''}"><div class="sig-label">Total Events</div><div class="sig-val">${act.event_count??'—'}</div></div>
+    <div class="sig-card"><div class="sig-label">CQS Score</div><div class="sig-val">${act.cqs??'—'}</div></div>
+  `;
+
+  // Monthly trend chart
+  const monthly = act.monthly_trend || [];
+  const enqs = monthly.map(m=>m.total_enq||0);
+  const eMax = Math.max(...enqs, 1);
+  const enqChart = document.getElementById('enq-trend');
+  const enqLabels = document.getElementById('enq-labels');
+  enqChart.innerHTML = ''; enqLabels.innerHTML = '';
+  monthly.forEach((m,i)=>{
+    const h = Math.round((m.total_enq||0)/eMax*76)+4;
+    enqChart.innerHTML += `<div style="flex:1;height:${h}px;background:${i===monthly.length-1?'var(--red)':'var(--acc)'};border-radius:3px 3px 0 0;min-height:4px;title='${m.data_month} ${m.bl_cons}'"></div>`;
+    enqLabels.innerHTML += `<div style="flex:1;font-size:9px;text-align:center;color:var(--mut)">${(m.data_month||'').slice(0,3)}</div>`;
+  });
+}
+
+function renderRCA(data){
+  document.getElementById('rca-cat').textContent = (data.rca_category||'').replace(/_/g,' ');
+  document.getElementById('rca-en').textContent  = data.rca_explanation_en || '';
+  document.getElementById('rca-hi').textContent  = data.rca_explanation_hi || '';
+}
+
+function renderPeer(data){
+  const el = document.getElementById('peer-content');
+  if(!data.peer_data_available){
+    el.textContent = data.peer_summary_line || 'No peer data available.';
+    return;
+  }
+  el.innerHTML = `
+    <div class="rca-card" style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+      <div><div class="sig-label">Peer Group</div><div style="font-weight:600;font-size:13px">${data.peer_group||'—'}</div></div>
+      <div><div class="sig-label">Peer Count</div><div style="font-weight:600;font-size:13px">${data.peer_n||'—'}</div></div>
+      <div><div class="sig-label">Peer Median Enq</div><div style="font-weight:600;font-size:13px">${data.peer_median_enq??'—'}</div></div>
+      <div><div class="sig-label">Your Delta</div><div style="font-weight:600;font-size:13px;color:${(data.enq_delta_pct||0)<0?'var(--red)':'var(--green)'}">${data.enq_delta_pct??'—'}%</div></div>
+      <div><div class="sig-label">Your Percentile</div><div style="font-weight:600;font-size:13px">${data.enq_percentile??'—'}th</div></div>
+      <div><div class="sig-label">Gap Severity</div><div style="font-weight:600;font-size:13px;color:var(--${data.gap_severity==='high'?'red':data.gap_severity==='medium'?'amber':'green'})">${data.gap_severity||'—'}</div></div>
+    </div>
+    <p style="margin-top:10px;font-size:13px;color:var(--mut)">${data.peer_summary_line||''}</p>
+  `;
+}
+
+function renderFullResult(plan){
+  const skills = plan.skill_outputs || {};
+
+  // WhatsApp
+  const wa = skills.whatsapp_message || {};
+  document.getElementById('wa-hi').textContent = wa.message_hi || '—';
+  document.getElementById('wa-en').textContent = wa.message_en || '—';
+  document.getElementById('wa-cta').textContent = '📲 CTA: ' + (wa.cta || '');
+
+  // Pre-call brief
+  const brief = skills.pre_call_brief || {};
+  if(!brief.skipped && Object.keys(brief).length > 1){
+    document.getElementById('brief-section').style.display = 'block';
+    const sigs = brief.key_signals || [];
+    const bsEl = document.getElementById('brief-sigs');
+    bsEl.innerHTML = sigs.map(s=>`
+      <div class="brief-sig ${s.severity}">
+        <label>${s.label}</label>
+        <span class="val">${s.value}</span>
+      </div>`).join('');
+    document.getElementById('brief-opening').innerHTML = `
+      <div style="padding:12px;background:var(--s1);border-radius:8px;border-left:3px solid var(--acc2)">
+        <div style="font-size:11px;color:var(--mut);margin-bottom:6px">OPENING LINE (Hindi)</div>
+        <div style="font-size:14px">${brief.opening_line_hi||''}</div>
+        <div style="font-size:11px;color:var(--mut);margin-top:8px;margin-bottom:4px">OPENING LINE (English)</div>
+        <div style="font-size:13px;color:var(--mut)">${brief.opening_line_en||''}</div>
+      </div>`;
+    const baEl = document.getElementById('brief-actions');
+    baEl.innerHTML = (brief.suggested_actions||[]).map(a=>`<li class="action-item">${a}</li>`).join('');
+    document.getElementById('brief-dnm').textContent = ' ' + (brief.do_not_mention||[]).join(', ');
+  }
+
+  // AI cohort tab
+  const llm = skills.llm_cohort_scorer || {};
+  const aiEl = document.getElementById('ai-content');
+  if(llm.skipped || llm.error){
+    const isErr = llm.error || (llm.reason && llm.reason.startsWith('LLM error'));
+    aiEl.innerHTML = `<div style="padding:20px;text-align:center;color:var(--mut);font-size:13px">
+      <div style="font-size:32px;margin-bottom:12px">${isErr?'⚠️':'🔬'}</div>
+      <div style="font-weight:600;margin-bottom:6px">${isErr?'AI Cohort Scoring Failed':'AI Cohort Scoring Skipped'}</div>
+      <div>${llm.reason || llm.error || ''}</div>
+    </div>`;
+  } else if(llm.risk_level){
+    const bands = llm.bands || {};
+    const bmap  = {R:'🔴 Red', A:'🟡 Amber', G:'🟢 Green'};
+    aiEl.innerHTML = `
+      <div class="cohort-info" style="margin-bottom:16px">
+        <div class="row"><span>AI Risk Level</span><span style="font-size:16px;font-weight:700;color:var(--${llm.pipeline_tier==='Red'?'red':llm.pipeline_tier==='Amber'?'amber':'green'})">${llm.risk_level}</span></div>
+        <div class="row"><span>Confidence</span><span>${llm.confidence_score}%</span></div>
+        <div class="row"><span>Pipeline Tier</span><span>${llm.pipeline_tier||'—'}</span></div>
+      </div>
+      <div class="bands-row">
+        <div class="band-card ${bands.bl||''}"><div class="band-label">BL Consumption</div><div class="band-val">${bmap[bands.bl]||'—'}</div></div>
+        <div class="band-card ${bands.lms||''}"><div class="band-label">LMS Activity</div><div class="band-val">${bmap[bands.lms]||'—'}</div></div>
+        <div class="band-card ${bands.activity||''}"><div class="band-label">Activity Trend</div><div class="band-val">${bmap[bands.activity]||'—'}</div></div>
+      </div>
+      <div class="cohort-info">
+        <div class="row"><span>Cohort Filtered</span><span>${(llm.cohort_match||{}).n_filtered||0} sellers</span></div>
+        <div class="row"><span>Match Tier</span><span>${(llm.cohort_match||{}).tier||'—'}</span></div>
+        <div class="row"><span>Shown to LLM</span><span>${(llm.cohort_match||{}).shown_to_llm||0} sellers</span></div>
+      </div>
+      <div class="section" style="margin-top:16px">
+        <div class="section-title">AI Reasoning</div>
+        <div style="font-size:13px;line-height:1.7;color:var(--txt);padding:14px;background:var(--s2);border-radius:8px">${llm.reasoning||'—'}</div>
+      </div>
+      <div style="margin-top:14px">
+        <div class="section-title">Churned Lookalikes</div>
+        <div class="lookalike-list">${(llm.churned_lookalikes||[]).map(g=>`<div class="lookalike churned">${g}</div>`).join('')}</div>
+        <div class="section-title" style="margin-top:12px">Retained Lookalikes</div>
+        <div class="lookalike-list">${(llm.retained_lookalikes||[]).map(g=>`<div class="lookalike retained">${g}</div>`).join('')}</div>
+      </div>
+    `;
+  }
+
+  // Journey tab — conversion point
+  const cp = skills.conversion_point || {};
+  renderJourney(cp, plan);
+
+  // Platforms tab
+  const xp = skills.cross_platform || {};
+  renderCrossplatform(xp);
+
+  // Script tab
+  const sc = skills.script_generation || {};
+  renderScript(sc);
+
+  // Winback priority
+  const wb = skills.winback_priority || {};
+  renderWinback(wb);
+
+  // Gifted lead
+  const gl = skills.gifted_lead || {};
+  renderGiftedLead(gl);
+
+  // BL upgrade
+  const blu = skills.bl_upgrade || {};
+  renderBLUpgrade(blu);
+
+  // Actions tab
+  const actions = plan.actions || [];
+  const alEl = document.getElementById('action-list');
+  alEl.innerHTML = actions.map((a,i)=>`
+    <li class="action-item">
+      <div style="font-weight:600;font-size:13px">${a.type} — <span style="color:var(--mut)">${a.priority} priority</span></div>
+      <div style="font-size:12px;color:var(--mut);margin-top:4px">Timing: ${a.timing}</div>
+      ${a.note ? `<div style="font-size:12px;margin-top:4px">${a.note}</div>` : ''}
+      ${a.message_hi ? `<div style="font-size:12px;margin-top:6px;padding:8px;background:var(--s2);border-radius:6px">${a.message_hi}</div>` : ''}
+    </li>`).join('');
+}
+
+function renderJourney(cp, plan){
+  const el = document.getElementById('journey-content');
+  const ttype = cp.trajectory_type || 'UNKNOWN';
+  const label = cp.trajectory_label || ttype;
+  const monthly = cp.monthly_enq || [];
+  const cliffIdx = cp.cliff_month_index;
+  const maxV = Math.max(...monthly, 1);
+
+  let barsHtml = monthly.map((v,i)=>{
+    const h = Math.round(((v||0)/maxV)*82)+4;
+    const isCliff = (cliffIdx != null && i === cliffIdx);
+    const cls = isCliff ? 'cliff' : ((v||0) < maxV*0.1 ? 'low' : 'normal');
+    return `<div class="jt-bar ${cls}" style="height:${h}px">${isCliff?'<span class="jt-cliff-marker">⚡</span>':''}</div>`;
+  }).join('');
+
+  el.innerHTML = `
+    <div class="traj-badge ${ttype}">${label}</div>
+    <p style="font-size:13px;color:var(--mut);margin-bottom:10px">${cp.explanation||'—'}</p>
+    ${monthly.length>1?`<div class="journey-timeline">${barsHtml}</div><div style="font-size:11px;color:var(--mut)">Monthly enquiry trend (oldest → newest)</div>`:''}
+    ${cp.cliff_drop_pct?`<p style="font-size:12px;color:var(--red);margin-top:8px">Drop: ${cp.cliff_drop_pct}% at month ${(cliffIdx||0)+1}</p>`:''}
+    <div class="opening-card">
+      <div style="font-size:11px;color:var(--mut);margin-bottom:6px">SUGGESTED OPENING (Hindi)</div>
+      <div>${cp.opening_line_hi||'—'}</div>
+    </div>
+    ${plan.trajectory_type?`<p style="font-size:11px;color:var(--mut);margin-top:10px">Trajectory: <strong style="color:var(--txt)">${plan.trajectory_type}</strong> — affects script, onboarding check routing.</p>`:''}
+  `;
+}
+
+function renderScript(sc){
+  const el = document.getElementById('script-content');
+  if(!sc || !sc.script_parts){
+    el.innerHTML = `<div style="padding:20px;text-align:center;color:var(--mut);font-size:13px">
+      <div style="font-size:32px;margin-bottom:12px">📞</div>
+      <div>${(sc&&sc.reason) || 'Call script not generated.'}</div>
+    </div>`;
+    return;
+  }
+
+  let lang = 'hi';
+  const partLabels = {
+    opening:'Opening', diagnostic:'Problem Statement',
+    value_demo:'Value Demo', action:'Action Ask', close:'Closing'
+  };
+
+  function buildParts(){
+    const parts = lang==='hi' ? sc.script_parts : (sc.script_parts_en||sc.script_parts);
+    const objsRaw = lang==='hi' ? (sc.objection_handlers||{}) : (sc.objection_handlers_en||sc.objection_handlers||{});
+    // objection_handlers is a dict {key: text} — convert to display format
+    const objEntries = Array.isArray(objsRaw)
+      ? objsRaw
+      : Object.entries(objsRaw).map(([k,v])=>({q: k.replace(/_/g,' '), a: v}));
+
+    let html = Object.entries(parts).map(([k,v])=>`
+      <div class="script-part">
+        <div class="script-part-hdr"><span>${partLabels[k]||k}</span></div>
+        <div class="script-part-body">${v||'—'}</div>
+      </div>`).join('');
+    if(objEntries.length){
+      html += `<div class="script-part">
+        <div class="script-part-hdr"><span>Objection Handlers</span></div>
+        <div class="script-part-body">
+          ${objEntries.map(o=>`<div class="objection-row">
+            <div class="objection-q">❓ ${o.objection||o.q||''}</div>
+            <div class="objection-a">💬 ${o.response||o.a||''}</div>
+          </div>`).join('')}
+        </div></div>`;
+    }
+    return html;
+  }
+
+  el.innerHTML = `
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;flex-wrap:wrap">
+      <span style="font-size:13px;font-weight:600">Script Language:</span>
+      <button class="script-lang-btn active" id="slb-hi" onclick="toggleScriptLang('hi')">Hindi</button>
+      <button class="script-lang-btn" id="slb-en" onclick="toggleScriptLang('en')">English</button>
+      <span style="margin-left:auto;font-size:12px;color:var(--mut)">
+        RCA: ${sc.rca_used||'—'} | Type: ${sc.trajectory_type||'—'} | ~${sc.estimated_duration_min||'?'} min
+      </span>
+    </div>
+    <div id="script-parts">${buildParts()}</div>
+  `;
+
+  window.toggleScriptLang = function(l){
+    lang = l;
+    document.getElementById('slb-hi').className = 'script-lang-btn'+(l==='hi'?' active':'');
+    document.getElementById('slb-en').className = 'script-lang-btn'+(l==='en'?' active':'');
+    document.getElementById('script-parts').innerHTML = buildParts();
+  };
+}
+
+function renderCrossplatform(xp){
+  const xpContent = document.getElementById('xp-content');
+  if(!xp || xp.skipped){
+    xpContent.innerHTML = `<div style="padding:20px;text-align:center;color:var(--mut);font-size:13px">
+      <div style="font-size:32px;margin-bottom:10px">🔍</div>
+      <div style="font-weight:600;margin-bottom:6px">Cross-Platform Scan Skipped</div>
+      <div>${xp&&xp.reason ? xp.reason : 'Only runs for Red/Amber sellers.'}</div>
+    </div>`;
+    return;
+  }
+  if(xp.error || xp.scrape_status==='failed'){
+    xpContent.innerHTML = `<div style="padding:16px;color:var(--mut);font-size:13px">
+      <strong style="color:var(--red)">Scrape failed:</strong> ${xp.error||'Unknown error'}
+    </div>`;
+    return;
+  }
+
+  const platforms = xp.platform_data || {};
+  const gap = xp.im_catalog_gap || {};
+  const call_card = xp.call_card || {};
+  const found = xp.platforms_found || [];
+
+  const sevColor = gap.severity==='high'?'var(--red)':gap.severity==='medium'?'var(--amber)':'var(--green)';
+
+  const _platformLabel = p => ({justdial:'JustDial',tradeindia:'TradeIndia',own_website:'Own Website'}[p] || p.charAt(0).toUpperCase()+p.slice(1));
+  let cards = Object.entries(platforms).map(([name, data])=>{
+    const cls = data.found ? 'found' : 'not-found';
+    const displayName = _platformLabel(name);
+    return `<div class="platform-card ${cls}">
+      <div class="platform-name">${displayName} ${data.found?'✓':'✗'}</div>
+      <div class="platform-metric"><span>Found</span><span style="color:${data.found?'var(--green)':'var(--mut)'}">${data.found?'Yes':'No'}</span></div>
+      ${data.product_count>0
+        ? `<div class="platform-metric"><span>Products/Services</span><span style="font-weight:600">${data.product_count}</span></div>`
+        : data.catalog_items>0
+        ? `<div class="platform-metric"><span>Catalog Items</span><span style="font-weight:600">${data.catalog_items}</span></div>`
+        : data.photo_count>0
+        ? `<div class="platform-metric"><span>Photos</span><span>${data.photo_count} <span style="color:var(--mut);font-size:11px">(catalog: ${data.catalog_flag?'yes':'—'})</span></span></div>`
+        : data.catalog_flag
+        ? `<div class="platform-metric"><span>Catalog</span><span style="color:var(--amber)">Listed (count unavailable)</span></div>`
+        : ''}
+      ${data.rating>0?`<div class="platform-metric"><span>Rating</span><span>${data.rating} ⭐</span></div>`:''}
+      ${data.reviews>0?`<div class="platform-metric"><span>Reviews</span><span>${data.reviews}</span></div>`:''}
+      ${(data.categories||[]).length>0?`<div class="platform-metric"><span>Categories</span><span style="font-size:11px">${data.categories.slice(0,2).join(', ')}</span></div>`:''}
+      ${data.name_matched&&data.name_matched!==name?`<div class="platform-metric"><span>Matched as</span><span style="font-size:11px;color:var(--mut)">${data.name_matched}</span></div>`:''}
+      ${data.domain?`<div class="platform-metric"><span>Domain</span><span style="font-size:11px">${data.domain}</span></div>`:''}
+      ${data.url&&data.found?`<div style="margin-top:8px"><a href="${data.url}" target="_blank" style="font-size:11px;color:var(--acc)">View listing →</a></div>`:''}
+    </div>`;
+  }).join('');
+
+  xpContent.innerHTML = `
+    ${found.length>0
+      ? `<div style="margin-bottom:14px;padding:10px 14px;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.3);border-radius:8px;font-size:13px">
+           ✅ Found on: <strong>${found.map(p=>_platformLabel(p)).join(', ')}</strong>
+         </div>`
+      : `<div style="margin-bottom:14px;padding:10px 14px;background:var(--s2);border:1px solid var(--bdr);border-radius:8px;font-size:13px;color:var(--mut)">
+           Seller not found on JustDial or TradeIndia — IndiaMART is their primary platform.
+         </div>`
+    }
+    <div class="platform-grid">${cards}</div>
+    ${gap.severity&&gap.severity!=='unknown' ? `
+    <div class="section">
+      <div class="section-title">IM Catalog Gap</div>
+      <div class="wb-card">
+        <div class="info-row"><label>IM Products</label><span>${gap.im_products??'—'}</span></div>
+        <div class="info-row"><label>Other Platforms Avg</label><span>${gap.other_avg_products??'—'}</span></div>
+        <div class="info-row"><label>Gap %</label><span style="color:${sevColor}">${gap.gap_pct??'—'}%</span></div>
+        <div class="info-row"><label>Severity</label><span style="color:${sevColor}">${gap.severity||'—'}</span></div>
+      </div>
+    </div>` : ''}
+    ${call_card.headline_hi ? `
+    <div class="section">
+      <div class="section-title">Salesperson Call Card</div>
+      <div class="opening-card">
+        <div style="font-size:11px;color:var(--mut);margin-bottom:8px">HINDI</div>
+        <div style="margin-bottom:10px;font-size:14px">${call_card.headline_hi}</div>
+        <div style="font-size:11px;color:var(--mut);margin-bottom:6px">ENGLISH</div>
+        <div style="color:var(--mut);font-size:13px;margin-bottom:10px">${call_card.headline_en||''}</div>
+        ${call_card.data_points&&call_card.data_points.length?`
+        <div style="font-size:11px;color:var(--mut);margin-bottom:6px;margin-top:10px">DATA POINTS</div>
+        ${call_card.data_points.map(p=>`<div style="font-size:12px;padding:4px 0;border-bottom:1px solid var(--bdr)">• ${p}</div>`).join('')}`:''}
+        ${call_card.suggested_action?`<div style="margin-top:10px;font-size:13px;color:var(--acc)">→ ${call_card.suggested_action}</div>`:''}
+      </div>
+    </div>` : ''}
+  `;
+}
+
+function renderWinback(wb){
+  if(!wb || wb.skipped || !wb.winback_score) return;
+  const el = document.getElementById('winback-section');
+  const ct = document.getElementById('winback-content');
+  el.style.display = '';
+  const scoreColor = wb.priority==='HIGH'?'var(--red)':wb.priority==='MEDIUM'?'var(--amber)':'var(--green)';
+  ct.innerHTML = `
+    <div class="wb-card">
+      <div class="wb-score" style="color:${scoreColor}">${wb.winback_score}<span style="font-size:14px;font-weight:400;color:var(--mut)">/100</span></div>
+      <div class="info-row"><label>Priority</label><span style="color:${scoreColor}">${wb.priority||'—'}</span></div>
+      <div class="info-row"><label>Pitch Type</label><span>${wb.winback_pitch_type||'—'}</span></div>
+      <div class="info-row"><label>Cool-off Elapsed</label><span>${wb.cool_off_elapsed?'Yes':'No'}</span></div>
+      <div class="info-row"><label>Est. Conversion</label><span>${wb.estimated_conversion_probability!=null?Math.round(wb.estimated_conversion_probability*100)+'%':'—'}</span></div>
+      <div class="info-row"><label>Recommended Package</label><span>${wb.recommended_package||'—'}</span></div>
+    </div>
+    ${wb.opening_line_hi?`<div class="opening-card">
+      <div style="font-size:11px;color:var(--mut);margin-bottom:6px">OPENING LINE</div>
+      <div>${wb.opening_line_hi}</div>
+    </div>`:''}
+  `;
+}
+
+function renderGiftedLead(gl){
+  if(!gl) return;
+  const el = document.getElementById('gifted-section');
+  const ct = document.getElementById('gifted-content');
+  el.style.display = '';
+  if(gl.lead_found){
+    ct.innerHTML = `<div class="wb-card">
+      <div style="color:var(--green);font-size:14px;font-weight:700;margin-bottom:10px">✅ Gifted Lead Available</div>
+      <div class="info-row"><label>Total Qualifying</label><span>${gl.total_qualifying||0}</span></div>
+      ${gl.top_lead?`<div class="info-row"><label>Top Lead</label><span>${JSON.stringify(gl.top_lead)}</span></div>`:''}
+    </div>`;
+  } else {
+    ct.innerHTML = `<div class="wb-card">
+      <div style="color:var(--mut);font-size:13px;margin-bottom:8px">No gifted lead available</div>
+      <div style="font-size:12px;color:var(--mut)">${gl.reason||''}</div>
+      ${gl.fallback?`<div style="margin-top:10px;font-size:12px;color:var(--acc)">Fallback: ${gl.fallback}</div>`:''}
+    </div>`;
+  }
+}
+
+function renderBLUpgrade(blu){
+  if(!blu || blu.skipped) return;
+  const el = document.getElementById('bl-upgrade-section');
+  const ct = document.getElementById('bl-upgrade-content');
+  el.style.display = '';
+  if(blu.eligible){
+    ct.innerHTML = `<div class="wb-card">
+      <div style="color:var(--green);font-size:14px;font-weight:700;margin-bottom:10px">✅ BL Upgrade Eligible</div>
+      <div class="info-row"><label>Mode</label><span>${blu.mode||'—'}</span></div>
+      ${blu.upgrade_message_hi?`<div class="opening-card" style="margin-top:10px">
+        <div style="font-size:11px;color:var(--mut);margin-bottom:6px">UPGRADE MESSAGE</div>
+        <div>${blu.upgrade_message_hi}</div>
+      </div>`:''}
+    </div>`;
+  } else {
+    ct.innerHTML = `<div class="wb-card">
+      <div style="color:var(--mut);font-size:13px">${blu.reason||'Not eligible for BL upgrade at this time.'}</div>
+    </div>`;
+  }
+}
+
+function showError(msg, trace){
+  document.getElementById('results-pane').classList.add('show');
+  document.getElementById('results-pane').innerHTML = `
+    <div class="err-box">
+      <strong>Error:</strong> ${msg}
+      ${trace ? `<pre>${trace}</pre>` : ''}
+    </div>`;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,1656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>IndiaMART — Churn Master Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0f172a;color:#e2e8f0;font-family:'Inter',system-ui,sans-serif;font-size:14px;line-height:1.5}
+.header{background:linear-gradient(135deg,#1e1b4b,#0f172a);padding:28px 36px;border-bottom:1px solid #1e293b}
+.header h1{font-size:24px;font-weight:700;color:#fff}
+.header p{color:#94a3b8;margin-top:4px}
+.container{padding:28px 36px;max-width:1600px;margin:0 auto}
+.section{margin-bottom:40px}
+.section-title{font-size:17px;font-weight:600;color:#f1f5f9;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid #1e293b;display:flex;align-items:center;gap:8px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px;margin-bottom:32px}
+.kpi{background:#1e293b;border-radius:12px;padding:20px;border:1px solid #334155}
+.kpi-val{font-size:28px;font-weight:700;color:#f1f5f9}
+.kpi-lbl{font-size:12px;color:#64748b;margin-top:4px;text-transform:uppercase;letter-spacing:.05em}
+.kpi-sub{font-size:12px;color:#94a3b8;margin-top:2px}
+.kpi.red .kpi-val{color:#ef4444} .kpi.amber .kpi-val{color:#f59e0b} .kpi.green .kpi-val{color:#22c55e}
+.charts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(420px,1fr));gap:20px}
+.chart-card{background:#1e293b;border-radius:12px;padding:20px;border:1px solid #334155}
+.chart-card h3{font-size:14px;font-weight:600;color:#cbd5e1;margin-bottom:16px}
+.chart-wrap{position:relative;height:280px}
+.chart-wrap.tall{height:360px}
+.chart-wrap.short{height:220px}
+.reason-list{display:flex;flex-direction:column;gap:10px}
+.reason-row{display:flex;flex-direction:column;gap:4px}
+.reason-label{font-size:13px;color:#cbd5e1;font-weight:500}
+.reason-bar-wrap{display:flex;align-items:center;gap:10px}
+.reason-bar{height:12px;border-radius:6px;min-width:4px;transition:width .3s}
+.reason-num{font-size:12px;color:#64748b;white-space:nowrap}
+.seg-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.seg-tab{background:#1e293b;border:1px solid #334155;color:#94a3b8;padding:8px 16px;border-radius:8px;cursor:pointer;font-size:13px;transition:all .2s}
+.seg-tab:hover,.seg-tab.active{background:#4F46E5;border-color:#4F46E5;color:#fff}
+.seg-panel{display:none;background:#1e293b;border-radius:12px;padding:24px;border:1px solid #334155}
+.seg-header{margin-bottom:16px}
+.seg-header h3{font-size:16px;font-weight:600;color:#f1f5f9;margin-bottom:6px}
+.seg-meta{font-size:13px;color:#64748b} .seg-meta.mt4{margin-top:4px}
+.seg-panel h4{font-size:13px;font-weight:600;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em;margin:16px 0 12px}
+.badge-red{background:#7f1d1d;color:#fca5a5;padding:2px 8px;border-radius:4px;font-size:12px}
+.badge-amber{background:#78350f;color:#fcd34d;padding:2px 8px;border-radius:4px;font-size:12px}
+.badge-green{background:#14532d;color:#86efac;padding:2px 8px;border-radius:4px;font-size:12px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{background:#0f172a;color:#64748b;text-align:left;padding:10px 12px;border-bottom:1px solid #1e293b;font-weight:600;text-transform:uppercase;font-size:11px;letter-spacing:.05em}
+td{padding:10px 12px;border-bottom:1px solid #1e293b;color:#cbd5e1}
+tr:hover td{background:#1e293b}
+td a{color:#818cf8;text-decoration:none} td a:hover{text-decoration:underline}
+.score-badge{display:inline-block;padding:2px 8px;border-radius:6px;font-weight:700;font-size:13px}
+.score-red{background:#7f1d1d;color:#fca5a5}
+.score-amber{background:#78350f;color:#fcd34d}
+.score-green{background:#14532d;color:#86efac}
+.full-width{grid-column:1/-1}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:900px){.two-col{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>IndiaMART Churn — Master Analytics Dashboard</h1>
+  <p>228 sellers analysed &nbsp;|&nbsp; Data as of 2026-05-15 &nbsp;|&nbsp; Signals: Reply Rate, BL Velocity, PNS, CQS, RAG, Hotleads, Activity</p>
+</div>
+<div class="container">
+
+<!-- KPIs -->
+<div class="section">
+  <div class="kpis">
+    <div class="kpi"><div class="kpi-val">228</div><div class="kpi-lbl">Total Sellers</div><div class="kpi-sub">Analysed</div></div>
+    <div class="kpi red"><div class="kpi-val">50</div><div class="kpi-lbl">Red — High Risk</div><div class="kpi-sub">21.9% of sellers</div></div>
+    <div class="kpi amber"><div class="kpi-val">155</div><div class="kpi-lbl">Amber — Moderate</div><div class="kpi-sub">68.0% of sellers</div></div>
+    <div class="kpi green"><div class="kpi-val">23</div><div class="kpi-lbl">Green — Low Risk</div><div class="kpi-sub">10.1% of sellers</div></div>
+    <div class="kpi"><div class="kpi-val">Rs 750,000</div><div class="kpi-lbl">Est. At-Risk ARR</div><div class="kpi-sub">Red x Rs 15k avg</div></div>
+    <div class="kpi"><div class="kpi-val">52.8</div><div class="kpi-lbl">Avg Churn Score</div><div class="kpi-sub">0 = Safe, 100 = Churned</div></div>
+    <div class="kpi"><div class="kpi-val">0.0%</div><div class="kpi-lbl">Avg Reply Rate</div><div class="kpi-sub">Last 30 days</div></div>
+    <div class="kpi"><div class="kpi-val">50.2</div><div class="kpi-lbl">Avg CQS</div><div class="kpi-sub">Catalog Quality Score</div></div>
+  </div>
+</div>
+
+<!-- Charts row 1 -->
+<div class="section">
+  <div class="section-title">Risk Distribution &amp; Score Spread</div>
+  <div class="charts-grid">
+    <div class="chart-card">
+      <h3>Risk Tier Distribution</h3>
+      <div class="chart-wrap"><canvas id="riskDist"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>Churn Score Distribution</h3>
+      <div class="chart-wrap"><canvas id="scoreDist"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>Key Metrics by Risk Tier (Averages)</h3>
+      <div class="chart-wrap"><canvas id="tierMetrics"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>Top Cities — Red Tier Sellers</h3>
+      <div class="chart-wrap"><canvas id="citiesRed"></canvas></div>
+    </div>
+  </div>
+</div>
+
+<!-- Overall top 10 reasons -->
+<div class="section">
+  <div class="section-title">Top 10 Churn Reasons — All 228 Sellers</div>
+  <div class="two-col">
+    <div class="chart-card">
+      <h3>All Sellers (n=228)</h3>
+      <div class="reason-list">
+        <div class="reason-row">
+          <div class="reason-label">1. Low Catalog Quality (CQS)</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:100%;background:#ef4444"></div>
+            <span class="reason-num">178 sellers (78.1%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">2. Low Reply Rate</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:93%;background:#f97316"></div>
+            <span class="reason-num">166 sellers (72.8%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">3. Inactivity / Low Login</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:68%;background:#f59e0b"></div>
+            <span class="reason-num">121 sellers (53.1%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">4. BL Decline / Negative Velocity</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:49%;background:#eab308"></div>
+            <span class="reason-num">88 sellers (38.6%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">5. Poor RAG Rating</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:47%;background:#84cc16"></div>
+            <span class="reason-num">83 sellers (36.4%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">6. Zero Enquiries In Last 30D — No Lead Flow</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:35%;background:#22c55e"></div>
+            <span class="reason-num">62 sellers (27.2%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">7. Low Platform Activity</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:30%;background:#14b8a6"></div>
+            <span class="reason-num">54 sellers (23.7%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">8. No Hotlead Engagement</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:10%;background:#3b82f6"></div>
+            <span class="reason-num">18 sellers (7.9%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">9. Low PNS Answer Rate</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:6%;background:#8b5cf6"></div>
+            <span class="reason-num">10 sellers (4.4%)</span>
+          </div>
+        </div></div>
+    </div>
+    <div class="chart-card">
+      <h3>Red Tier Only (n=50)</h3>
+      <div class="reason-list">
+        <div class="reason-row">
+          <div class="reason-label">1. Low Catalog Quality (CQS)</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:100%;background:#ef4444"></div>
+            <span class="reason-num">48 sellers (96.0%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">2. Inactivity / Low Login</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:94%;background:#f97316"></div>
+            <span class="reason-num">45 sellers (90.0%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">3. Poor RAG Rating</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:90%;background:#f59e0b"></div>
+            <span class="reason-num">43 sellers (86.0%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">4. BL Decline / Negative Velocity</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:60%;background:#eab308"></div>
+            <span class="reason-num">29 sellers (58.0%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">5. Low Reply Rate</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:58%;background:#84cc16"></div>
+            <span class="reason-num">28 sellers (56.0%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">6. Low Platform Activity</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:56%;background:#22c55e"></div>
+            <span class="reason-num">27 sellers (54.0%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">7. Zero Enquiries In Last 30D — No Lead Flow</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:46%;background:#14b8a6"></div>
+            <span class="reason-num">22 sellers (44.0%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">8. Low PNS Answer Rate</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:2%;background:#3b82f6"></div>
+            <span class="reason-num">1 sellers (2.0%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">9. No Hotlead Engagement</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:2%;background:#8b5cf6"></div>
+            <span class="reason-num">1 sellers (2.0%)</span>
+          </div>
+        </div></div>
+    </div>
+  </div>
+</div>
+
+<!-- By enterprise segment -->
+<div class="section">
+  <div class="section-title">Churn Reasons by Enterprise Segment — Top 10 per Segment</div>
+  
+    <div class="seg-tabs"><button class="seg-tab" onclick="showSeg('ent','Proprietor')" id="ent-tab-0">Proprietor (154)</button><button class="seg-tab" onclick="showSeg('ent','ME (Mid Enterprise)')" id="ent-tab-1">ME (Mid Enterprise) (37)</button><button class="seg-tab" onclick="showSeg('ent','Partnership')" id="ent-tab-2">Partnership (27)</button><button class="seg-tab" onclick="showSeg('ent','Unknown')" id="ent-tab-3">Unknown (8)</button><button class="seg-tab" onclick="showSeg('ent','BB (Big Business)')" id="ent-tab-4">BB (Big Business) (2)</button></div>
+    <div class="seg-panels">
+        <div class="seg-panel" id="ent-panel-0">
+          <div class="seg-header">
+            <div>
+              <h3>Proprietor</h3>
+              <div class="seg-meta">154 sellers &nbsp;|&nbsp; Avg Churn Score: <b>51.7</b>
+              &nbsp;|&nbsp; Avg Reply Rate: <b>0.0%</b>
+              &nbsp;|&nbsp; Avg CQS: <b>48.32</b></div>
+              <div class="seg-meta mt4"><span class="badge-red">30 Red</span> <span class="badge-amber">108 Amber</span> <span class="badge-green">16 Green</span></div>
+            </div>
+          </div>
+          <h4>Top 9 Churn Reasons</h4>
+          <div class="reason-list">
+        <div class="reason-row">
+          <div class="reason-label">1. Low Catalog Quality (CQS)</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:100%;background:#ef4444"></div>
+            <span class="reason-num">122 sellers (79.2%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">2. Low Reply Rate</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:95%;background:#f97316"></div>
+            <span class="reason-num">116 sellers (75.3%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">3. Inactivity / Low Login</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:62%;background:#f59e0b"></div>
+            <span class="reason-num">76 sellers (49.4%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">4. BL Decline / Negative Velocity</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:48%;background:#eab308"></div>
+            <span class="reason-num">58 sellers (37.7%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">5. Poor RAG Rating</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:46%;background:#84cc16"></div>
+            <span class="reason-num">56 sellers (36.4%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">6. Zero Enquiries In Last 30D — No Lead Flow</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:31%;background:#22c55e"></div>
+            <span class="reason-num">38 sellers (24.7%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">7. Low Platform Activity</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:25%;background:#14b8a6"></div>
+            <span class="reason-num">31 sellers (20.1%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">8. No Hotlead Engagement</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:11%;background:#3b82f6"></div>
+            <span class="reason-num">13 sellers (8.4%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">9. Low PNS Answer Rate</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:6%;background:#8b5cf6"></div>
+            <span class="reason-num">7 sellers (4.5%)</span>
+          </div>
+        </div></div>
+        </div>
+        <div class="seg-panel" id="ent-panel-1">
+          <div class="seg-header">
+            <div>
+              <h3>ME (Mid Enterprise)</h3>
+              <div class="seg-meta">37 sellers &nbsp;|&nbsp; Avg Churn Score: <b>53.32</b>
+              &nbsp;|&nbsp; Avg Reply Rate: <b>0.0%</b>
+              &nbsp;|&nbsp; Avg CQS: <b>51.4</b></div>
+              <div class="seg-meta mt4"><span class="badge-red">7 Red</span> <span class="badge-amber">27 Amber</span> <span class="badge-green">3 Green</span></div>
+            </div>
+          </div>
+          <h4>Top 9 Churn Reasons</h4>
+          <div class="reason-list">
+        <div class="reason-row">
+          <div class="reason-label">1. Low Reply Rate</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:100%;background:#ef4444"></div>
+            <span class="reason-num">31 sellers (83.8%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">2. Low Catalog Quality (CQS)</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:94%;background:#f97316"></div>
+            <span class="reason-num">29 sellers (78.4%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">3. BL Decline / Negative Velocity</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:61%;background:#f59e0b"></div>
+            <span class="reason-num">19 sellers (51.4%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">4. Inactivity / Low Login</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:61%;background:#eab308"></div>
+            <span class="reason-num">19 sellers (51.4%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">5. Poor RAG Rating</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:32%;background:#84cc16"></div>
+            <span class="reason-num">10 sellers (27.0%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">6. Zero Enquiries In Last 30D — No Lead Flow</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:19%;background:#22c55e"></div>
+            <span class="reason-num">6 sellers (16.2%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">7. Low Platform Activity</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:19%;background:#14b8a6"></div>
+            <span class="reason-num">6 sellers (16.2%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">8. No Hotlead Engagement</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:13%;background:#3b82f6"></div>
+            <span class="reason-num">4 sellers (10.8%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">9. Low PNS Answer Rate</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:6%;background:#8b5cf6"></div>
+            <span class="reason-num">2 sellers (5.4%)</span>
+          </div>
+        </div></div>
+        </div>
+        <div class="seg-panel" id="ent-panel-2">
+          <div class="seg-header">
+            <div>
+              <h3>Partnership</h3>
+              <div class="seg-meta">27 sellers &nbsp;|&nbsp; Avg Churn Score: <b>53.15</b>
+              &nbsp;|&nbsp; Avg Reply Rate: <b>0.0%</b>
+              &nbsp;|&nbsp; Avg CQS: <b>53.06</b></div>
+              <div class="seg-meta mt4"><span class="badge-red">7 Red</span> <span class="badge-amber">16 Amber</span> <span class="badge-green">4 Green</span></div>
+            </div>
+          </div>
+          <h4>Top 9 Churn Reasons</h4>
+          <div class="reason-list">
+        <div class="reason-row">
+          <div class="reason-label">1. Low Reply Rate</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:100%;background:#ef4444"></div>
+            <span class="reason-num">17 sellers (63.0%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">2. Low Catalog Quality (CQS)</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:100%;background:#f97316"></div>
+            <span class="reason-num">17 sellers (63.0%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">3. Inactivity / Low Login</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:100%;background:#f59e0b"></div>
+            <span class="reason-num">17 sellers (63.0%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">4. Zero Enquiries In Last 30D — No Lead Flow</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:59%;background:#eab308"></div>
+            <span class="reason-num">10 sellers (37.0%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">5. Poor RAG Rating</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:59%;background:#84cc16"></div>
+            <span class="reason-num">10 sellers (37.0%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">6. Low Platform Activity</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:59%;background:#22c55e"></div>
+            <span class="reason-num">10 sellers (37.0%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">7. BL Decline / Negative Velocity</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:53%;background:#14b8a6"></div>
+            <span class="reason-num">9 sellers (33.3%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">8. Low PNS Answer Rate</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:6%;background:#3b82f6"></div>
+            <span class="reason-num">1 sellers (3.7%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">9. No Hotlead Engagement</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:6%;background:#8b5cf6"></div>
+            <span class="reason-num">1 sellers (3.7%)</span>
+          </div>
+        </div></div>
+        </div>
+        <div class="seg-panel" id="ent-panel-3">
+          <div class="seg-header">
+            <div>
+              <h3>Unknown</h3>
+              <div class="seg-meta">8 sellers &nbsp;|&nbsp; Avg Churn Score: <b>66.75</b>
+              &nbsp;|&nbsp; Avg Reply Rate: <b>0.0%</b>
+              &nbsp;|&nbsp; Avg CQS: <b>0.0</b></div>
+              <div class="seg-meta mt4"><span class="badge-red">5 Red</span> <span class="badge-amber">3 Amber</span> <span class="badge-green">0 Green</span></div>
+            </div>
+          </div>
+          <h4>Top 5 Churn Reasons</h4>
+          <div class="reason-list">
+        <div class="reason-row">
+          <div class="reason-label">1. Inactivity / Low Login</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:100%;background:#ef4444"></div>
+            <span class="reason-num">8 sellers (100.0%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">2. Zero Enquiries In Last 30D — No Lead Flow</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:100%;background:#f97316"></div>
+            <span class="reason-num">8 sellers (100.0%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">3. Low Catalog Quality (CQS)</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:100%;background:#f59e0b"></div>
+            <span class="reason-num">8 sellers (100.0%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">4. Low Platform Activity</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:88%;background:#eab308"></div>
+            <span class="reason-num">7 sellers (87.5%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">5. Poor RAG Rating</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:75%;background:#84cc16"></div>
+            <span class="reason-num">6 sellers (75.0%)</span>
+          </div>
+        </div></div>
+        </div>
+        <div class="seg-panel" id="ent-panel-4">
+          <div class="seg-header">
+            <div>
+              <h3>BB (Big Business)</h3>
+              <div class="seg-meta">2 sellers &nbsp;|&nbsp; Avg Churn Score: <b>64.0</b>
+              &nbsp;|&nbsp; Avg Reply Rate: <b>0.0%</b>
+              &nbsp;|&nbsp; Avg CQS: <b>54.95</b></div>
+              <div class="seg-meta mt4"><span class="badge-red">1 Red</span> <span class="badge-amber">1 Amber</span> <span class="badge-green">0 Green</span></div>
+            </div>
+          </div>
+          <h4>Top 5 Churn Reasons</h4>
+          <div class="reason-list">
+        <div class="reason-row">
+          <div class="reason-label">1. Low Reply Rate</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:100%;background:#ef4444"></div>
+            <span class="reason-num">2 sellers (100.0%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">2. BL Decline / Negative Velocity</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:100%;background:#f97316"></div>
+            <span class="reason-num">2 sellers (100.0%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">3. Low Catalog Quality (CQS)</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:100%;background:#f59e0b"></div>
+            <span class="reason-num">2 sellers (100.0%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">4. Inactivity / Low Login</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:50%;background:#eab308"></div>
+            <span class="reason-num">1 sellers (50.0%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">5. Poor RAG Rating</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:50%;background:#84cc16"></div>
+            <span class="reason-num">1 sellers (50.0%)</span>
+          </div>
+        </div></div>
+        </div></div>
+    <script>
+    (function(){
+      var prefix='ent';
+      var names=["Proprietor", "ME (Mid Enterprise)", "Partnership", "Unknown", "BB (Big Business)"];
+      function activate(idx){
+        names.forEach(function(n,i){
+          var tb=document.getElementById(prefix+'-tab-'+i);
+          var pn=document.getElementById(prefix+'-panel-'+i);
+          if(i===idx){tb.classList.add('active');pn.style.display='block';}
+          else{tb.classList.remove('active');pn.style.display='none';}
+        });
+      }
+      window.showSeg=window.showSeg||function(p,n){
+        var idx=names.indexOf(n);
+        if(prefix===p) activate(idx);
+      };
+      // override for this prefix
+      var oldShow=window.showSeg;
+      window.showSeg=function(p,n){
+        if(p===prefix){activate(names.indexOf(n));}
+        else{oldShow(p,n);}
+      };
+      activate(0);
+    })();
+    </script>
+</div>
+
+<!-- By subscription type -->
+<div class="section">
+  <div class="section-title">Churn Reasons by Subscription Type — Top 10 per Type</div>
+  
+    <div class="seg-tabs"><button class="seg-tab" onclick="showSeg('ct','CATALOG')" id="ct-tab-0">CATALOG (104)</button><button class="seg-tab" onclick="showSeg('ct','FCP+PNS')" id="ct-tab-1">FCP+PNS (62)</button><button class="seg-tab" onclick="showSeg('ct','Unknown')" id="ct-tab-2">Unknown (52)</button><button class="seg-tab" onclick="showSeg('ct','FREELIST')" id="ct-tab-3">FREELIST (5)</button><button class="seg-tab" onclick="showSeg('ct','Other')" id="ct-tab-4">Other (3)</button><button class="seg-tab" onclick="showSeg('ct','LEADER')" id="ct-tab-5">LEADER (1)</button><button class="seg-tab" onclick="showSeg('ct','BL Paid')" id="ct-tab-6">BL Paid (1)</button></div>
+    <div class="seg-panels">
+        <div class="seg-panel" id="ct-panel-0">
+          <div class="seg-header">
+            <div>
+              <h3>CATALOG</h3>
+              <div class="seg-meta">104 sellers &nbsp;|&nbsp; Avg Churn Score: <b>48.16</b>
+              &nbsp;|&nbsp; Avg Reply Rate: <b>0.0%</b>
+              &nbsp;|&nbsp; Avg CQS: <b>59.8</b></div>
+              <div class="seg-meta mt4"><span class="badge-red">12 Red</span> <span class="badge-amber">78 Amber</span> <span class="badge-green">14 Green</span></div>
+            </div>
+          </div>
+          <h4>Top 9 Churn Reasons</h4>
+          <div class="reason-list">
+        <div class="reason-row">
+          <div class="reason-label">1. Low Reply Rate</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:100%;background:#ef4444"></div>
+            <span class="reason-num">103 sellers (99.0%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">2. Low Catalog Quality (CQS)</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:70%;background:#f97316"></div>
+            <span class="reason-num">72 sellers (69.2%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">3. BL Decline / Negative Velocity</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:48%;background:#f59e0b"></div>
+            <span class="reason-num">49 sellers (47.1%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">4. Poor RAG Rating</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:39%;background:#eab308"></div>
+            <span class="reason-num">40 sellers (38.5%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">5. Inactivity / Low Login</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:27%;background:#84cc16"></div>
+            <span class="reason-num">28 sellers (26.9%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">6. No Hotlead Engagement</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:17%;background:#22c55e"></div>
+            <span class="reason-num">17 sellers (16.3%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">7. Low PNS Answer Rate</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:7%;background:#14b8a6"></div>
+            <span class="reason-num">7 sellers (6.7%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">8. Low Platform Activity</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:2%;background:#3b82f6"></div>
+            <span class="reason-num">2 sellers (1.9%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">9. Zero Enquiries In Last 30D — No Lead Flow</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:1%;background:#8b5cf6"></div>
+            <span class="reason-num">1 sellers (1.0%)</span>
+          </div>
+        </div></div>
+        </div>
+        <div class="seg-panel" id="ct-panel-1">
+          <div class="seg-header">
+            <div>
+              <h3>FCP+PNS</h3>
+              <div class="seg-meta">62 sellers &nbsp;|&nbsp; Avg Churn Score: <b>64.39</b>
+              &nbsp;|&nbsp; Avg Reply Rate: <b>0.0%</b>
+              &nbsp;|&nbsp; Avg CQS: <b>31.5</b></div>
+              <div class="seg-meta mt4"><span class="badge-red">30 Red</span> <span class="badge-amber">31 Amber</span> <span class="badge-green">1 Green</span></div>
+            </div>
+          </div>
+          <h4>Top 8 Churn Reasons</h4>
+          <div class="reason-list">
+        <div class="reason-row">
+          <div class="reason-label">1. Inactivity / Low Login</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:100%;background:#ef4444"></div>
+            <span class="reason-num">58 sellers (93.5%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">2. Low Catalog Quality (CQS)</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:98%;background:#f97316"></div>
+            <span class="reason-num">57 sellers (91.9%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">3. Zero Enquiries In Last 30D — No Lead Flow</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:67%;background:#f59e0b"></div>
+            <span class="reason-num">39 sellers (62.9%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">4. Poor RAG Rating</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:62%;background:#eab308"></div>
+            <span class="reason-num">36 sellers (58.1%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">5. Low Platform Activity</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:57%;background:#84cc16"></div>
+            <span class="reason-num">33 sellers (53.2%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">6. Low Reply Rate</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:40%;background:#22c55e"></div>
+            <span class="reason-num">23 sellers (37.1%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">7. BL Decline / Negative Velocity</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:34%;background:#14b8a6"></div>
+            <span class="reason-num">20 sellers (32.3%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">8. Low PNS Answer Rate</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:2%;background:#3b82f6"></div>
+            <span class="reason-num">1 sellers (1.6%)</span>
+          </div>
+        </div></div>
+        </div>
+        <div class="seg-panel" id="ct-panel-2">
+          <div class="seg-header">
+            <div>
+              <h3>Unknown</h3>
+              <div class="seg-meta">52 sellers &nbsp;|&nbsp; Avg Churn Score: <b>45.83</b>
+              &nbsp;|&nbsp; Avg Reply Rate: <b>0.0%</b>
+              &nbsp;|&nbsp; Avg CQS: <b>49.44</b></div>
+              <div class="seg-meta mt4"><span class="badge-red">2 Red</span> <span class="badge-amber">42 Amber</span> <span class="badge-green">8 Green</span></div>
+            </div>
+          </div>
+          <h4>Top 8 Churn Reasons</h4>
+          <div class="reason-list">
+        <div class="reason-row">
+          <div class="reason-label">1. Low Catalog Quality (CQS)</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:100%;background:#ef4444"></div>
+            <span class="reason-num">39 sellers (75.0%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">2. Low Reply Rate</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:97%;background:#f97316"></div>
+            <span class="reason-num">38 sellers (73.1%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">3. Inactivity / Low Login</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:67%;background:#f59e0b"></div>
+            <span class="reason-num">26 sellers (50.0%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">4. BL Decline / Negative Velocity</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:46%;background:#eab308"></div>
+            <span class="reason-num">18 sellers (34.6%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">5. Zero Enquiries In Last 30D — No Lead Flow</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:36%;background:#84cc16"></div>
+            <span class="reason-num">14 sellers (26.9%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">6. Low Platform Activity</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:31%;background:#22c55e"></div>
+            <span class="reason-num">12 sellers (23.1%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">7. Low PNS Answer Rate</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:5%;background:#14b8a6"></div>
+            <span class="reason-num">2 sellers (3.8%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">8. No Hotlead Engagement</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:3%;background:#3b82f6"></div>
+            <span class="reason-num">1 sellers (1.9%)</span>
+          </div>
+        </div></div>
+        </div>
+        <div class="seg-panel" id="ct-panel-3">
+          <div class="seg-header">
+            <div>
+              <h3>FREELIST</h3>
+              <div class="seg-meta">5 sellers &nbsp;|&nbsp; Avg Churn Score: <b>70.8</b>
+              &nbsp;|&nbsp; Avg Reply Rate: <b>0.0%</b>
+              &nbsp;|&nbsp; Avg CQS: <b>0.0</b></div>
+              <div class="seg-meta mt4"><span class="badge-red">5 Red</span> <span class="badge-amber">0 Amber</span> <span class="badge-green">0 Green</span></div>
+            </div>
+          </div>
+          <h4>Top 5 Churn Reasons</h4>
+          <div class="reason-list">
+        <div class="reason-row">
+          <div class="reason-label">1. Inactivity / Low Login</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:100%;background:#ef4444"></div>
+            <span class="reason-num">5 sellers (100.0%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">2. Zero Enquiries In Last 30D — No Lead Flow</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:100%;background:#f97316"></div>
+            <span class="reason-num">5 sellers (100.0%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">3. Poor RAG Rating</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:100%;background:#f59e0b"></div>
+            <span class="reason-num">5 sellers (100.0%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">4. Low Catalog Quality (CQS)</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:100%;background:#eab308"></div>
+            <span class="reason-num">5 sellers (100.0%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">5. Low Platform Activity</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:100%;background:#84cc16"></div>
+            <span class="reason-num">5 sellers (100.0%)</span>
+          </div>
+        </div></div>
+        </div>
+        <div class="seg-panel" id="ct-panel-4">
+          <div class="seg-header">
+            <div>
+              <h3>Other</h3>
+              <div class="seg-meta">3 sellers &nbsp;|&nbsp; Avg Churn Score: <b>61.67</b>
+              &nbsp;|&nbsp; Avg Reply Rate: <b>0.0%</b>
+              &nbsp;|&nbsp; Avg CQS: <b>19.9</b></div>
+              <div class="seg-meta mt4"><span class="badge-red">1 Red</span> <span class="badge-amber">2 Amber</span> <span class="badge-green">0 Green</span></div>
+            </div>
+          </div>
+          <h4>Top 6 Churn Reasons</h4>
+          <div class="reason-list">
+        <div class="reason-row">
+          <div class="reason-label">1. Inactivity / Low Login</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:100%;background:#ef4444"></div>
+            <span class="reason-num">3 sellers (100.0%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">2. Low Catalog Quality (CQS)</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:100%;background:#f97316"></div>
+            <span class="reason-num">3 sellers (100.0%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">3. Zero Enquiries In Last 30D — No Lead Flow</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:67%;background:#f59e0b"></div>
+            <span class="reason-num">2 sellers (66.7%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">4. Poor RAG Rating</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:67%;background:#eab308"></div>
+            <span class="reason-num">2 sellers (66.7%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">5. Low Reply Rate</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:33%;background:#84cc16"></div>
+            <span class="reason-num">1 sellers (33.3%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">6. Low Platform Activity</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:33%;background:#22c55e"></div>
+            <span class="reason-num">1 sellers (33.3%)</span>
+          </div>
+        </div></div>
+        </div>
+        <div class="seg-panel" id="ct-panel-5">
+          <div class="seg-header">
+            <div>
+              <h3>LEADER</h3>
+              <div class="seg-meta">1 sellers &nbsp;|&nbsp; Avg Churn Score: <b>49.0</b>
+              &nbsp;|&nbsp; Avg Reply Rate: <b>0.0%</b>
+              &nbsp;|&nbsp; Avg CQS: <b>74.9</b></div>
+              <div class="seg-meta mt4"><span class="badge-red">0 Red</span> <span class="badge-amber">1 Amber</span> <span class="badge-green">0 Green</span></div>
+            </div>
+          </div>
+          <h4>Top 3 Churn Reasons</h4>
+          <div class="reason-list">
+        <div class="reason-row">
+          <div class="reason-label">1. Low Reply Rate</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:100%;background:#ef4444"></div>
+            <span class="reason-num">1 sellers (100.0%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">2. BL Decline / Negative Velocity</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:100%;background:#f97316"></div>
+            <span class="reason-num">1 sellers (100.0%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">3. Low Catalog Quality (CQS)</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:100%;background:#f59e0b"></div>
+            <span class="reason-num">1 sellers (100.0%)</span>
+          </div>
+        </div></div>
+        </div>
+        <div class="seg-panel" id="ct-panel-6">
+          <div class="seg-header">
+            <div>
+              <h3>BL Paid</h3>
+              <div class="seg-meta">1 sellers &nbsp;|&nbsp; Avg Churn Score: <b>60.0</b>
+              &nbsp;|&nbsp; Avg Reply Rate: <b>0.0%</b>
+              &nbsp;|&nbsp; Avg CQS: <b>6.9</b></div>
+              <div class="seg-meta mt4"><span class="badge-red">0 Red</span> <span class="badge-amber">1 Amber</span> <span class="badge-green">0 Green</span></div>
+            </div>
+          </div>
+          <h4>Top 4 Churn Reasons</h4>
+          <div class="reason-list">
+        <div class="reason-row">
+          <div class="reason-label">1. Inactivity / Low Login</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:100%;background:#ef4444"></div>
+            <span class="reason-num">1 sellers (100.0%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">2. Zero Enquiries In Last 30D — No Lead Flow</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:100%;background:#f97316"></div>
+            <span class="reason-num">1 sellers (100.0%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">3. Low Catalog Quality (CQS)</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:100%;background:#f59e0b"></div>
+            <span class="reason-num">1 sellers (100.0%)</span>
+          </div>
+        </div>
+        <div class="reason-row">
+          <div class="reason-label">4. Low Platform Activity</div>
+          <div class="reason-bar-wrap">
+            <div class="reason-bar" style="width:100%;background:#eab308"></div>
+            <span class="reason-num">1 sellers (100.0%)</span>
+          </div>
+        </div></div>
+        </div></div>
+    <script>
+    (function(){
+      var prefix='ct';
+      var names=["CATALOG", "FCP+PNS", "Unknown", "FREELIST", "Other", "LEADER", "BL Paid"];
+      function activate(idx){
+        names.forEach(function(n,i){
+          var tb=document.getElementById(prefix+'-tab-'+i);
+          var pn=document.getElementById(prefix+'-panel-'+i);
+          if(i===idx){tb.classList.add('active');pn.style.display='block';}
+          else{tb.classList.remove('active');pn.style.display='none';}
+        });
+      }
+      window.showSeg=window.showSeg||function(p,n){
+        var idx=names.indexOf(n);
+        if(prefix===p) activate(idx);
+      };
+      // override for this prefix
+      var oldShow=window.showSeg;
+      window.showSeg=function(p,n){
+        if(p===prefix){activate(names.indexOf(n));}
+        else{oldShow(p,n);}
+      };
+      activate(0);
+    })();
+    </script>
+</div>
+
+<!-- Red sellers table -->
+<div class="section">
+  <div class="section-title">Red-Tier Sellers (50) — Sorted by Churn Score</div>
+  <div style="overflow-x:auto;background:#1e293b;border-radius:12px;border:1px solid #334155;padding:4px">
+    <table>
+      <thead>
+        <tr>
+          <th>GLID</th><th>Company</th><th>City</th><th>Segment</th>
+          <th>Score</th><th>Reply%</th><th>CQS</th><th>Active Days</th>
+          <th>Enq 30d</th><th>Top Reasons</th>
+        </tr>
+      </thead>
+      <tbody>
+<tr>
+  <td><a href="data/264966708/dashboard.html" target="_blank">264966708</a></td>
+  <td>Durga Enterprises</td>
+  <td>Noida</td>
+  <td>Proprietor</td>
+  <td><span class="score-badge score-red">99</span></td>
+  <td>0.0%</td>
+  <td>31.3</td>
+  <td>0</td>
+  <td>1</td>
+  <td>Low reply rate: 0.0% (threshold 40%); Zero LMS active days i</td>
+</tr>
+<tr>
+  <td><a href="data/265281931/dashboard.html" target="_blank">265281931</a></td>
+  <td>Kapoor Bros</td>
+  <td>New Delhi</td>
+  <td>Proprietor</td>
+  <td><span class="score-badge score-red">94</span></td>
+  <td>0%</td>
+  <td>31.4</td>
+  <td>0</td>
+  <td>0</td>
+  <td>Zero LMS active days in last 30d — seller not logging in; Ze</td>
+</tr>
+<tr>
+  <td><a href="data/264883105/dashboard.html" target="_blank">264883105</a></td>
+  <td>Siyon Internationals</td>
+  <td>New Delhi</td>
+  <td>Proprietor</td>
+  <td><span class="score-badge score-red">93</span></td>
+  <td>0.0%</td>
+  <td>58.1</td>
+  <td>0</td>
+  <td>1</td>
+  <td>Low reply rate: 0.0% (threshold 40%); Zero LMS active days i</td>
+</tr>
+<tr>
+  <td><a href="data/264207199/dashboard.html" target="_blank">264207199</a></td>
+  <td>Dhruvi Handicraft</td>
+  <td>Ahmedabad</td>
+  <td>Proprietor</td>
+  <td><span class="score-badge score-red">87</span></td>
+  <td>0.0%</td>
+  <td>56</td>
+  <td>0</td>
+  <td>1</td>
+  <td>Low reply rate: 0.0% (threshold 40%); Zero LMS active days i</td>
+</tr>
+<tr>
+  <td><a href="data/264706192/dashboard.html" target="_blank">264706192</a></td>
+  <td>Rugved Enterprizes</td>
+  <td>Navi Mumbai</td>
+  <td>Proprietor</td>
+  <td><span class="score-badge score-red">87</span></td>
+  <td>0.0%</td>
+  <td>30.6</td>
+  <td>0</td>
+  <td>3</td>
+  <td>Low reply rate: 0.0% (threshold 40%); Zero LMS active days i</td>
+</tr>
+<tr>
+  <td><a href="data/265055089/dashboard.html" target="_blank">265055089</a></td>
+  <td>Printy5</td>
+  <td>Pune</td>
+  <td>Proprietor</td>
+  <td><span class="score-badge score-red">87</span></td>
+  <td>0.0%</td>
+  <td>17</td>
+  <td>0</td>
+  <td>2</td>
+  <td>Low reply rate: 0.0% (threshold 40%); Zero LMS active days i</td>
+</tr>
+<tr>
+  <td><a href="data/265092696/dashboard.html" target="_blank">265092696</a></td>
+  <td>—</td>
+  <td>Mumbai</td>
+  <td>Proprietor</td>
+  <td><span class="score-badge score-red">87</span></td>
+  <td>0.0%</td>
+  <td>37.9</td>
+  <td>0</td>
+  <td>2</td>
+  <td>Low reply rate: 0.0% (threshold 40%); Zero LMS active days i</td>
+</tr>
+<tr>
+  <td><a href="data/265022227/dashboard.html" target="_blank">265022227</a></td>
+  <td>Raftech Solutions Pvt. Ltd.</td>
+  <td>Mumbai</td>
+  <td>ME</td>
+  <td><span class="score-badge score-red">82</span></td>
+  <td>0%</td>
+  <td>33.3</td>
+  <td>0</td>
+  <td>0</td>
+  <td>Zero LMS active days in last 30d — seller not logging in; Ze</td>
+</tr>
+<tr>
+  <td><a href="data/223037463/dashboard.html" target="_blank">223037463</a></td>
+  <td>Munna Chikki Mart</td>
+  <td>Mumbai</td>
+  <td>Proprietor</td>
+  <td><span class="score-badge score-red">79</span></td>
+  <td>0.0%</td>
+  <td>58.4</td>
+  <td>2</td>
+  <td>9</td>
+  <td>Low reply rate: 0.0% (threshold 40%); Only 2 active days in </td>
+</tr>
+<tr>
+  <td><a href="data/264780113/dashboard.html" target="_blank">264780113</a></td>
+  <td>Dharampal Satyapal Ltd.</td>
+  <td>Noida</td>
+  <td>BB</td>
+  <td><span class="score-badge score-red">79</span></td>
+  <td>0.0%</td>
+  <td>35</td>
+  <td>1</td>
+  <td>1</td>
+  <td>Low reply rate: 0.0% (threshold 40%); Only 1 active days in </td>
+</tr>
+<tr>
+  <td><a href="data/264952821/dashboard.html" target="_blank">264952821</a></td>
+  <td>Raz Garment</td>
+  <td>Ahmedabad</td>
+  <td>Proprietor</td>
+  <td><span class="score-badge score-red">79</span></td>
+  <td>0.0%</td>
+  <td>25.3</td>
+  <td>1</td>
+  <td>1</td>
+  <td>Low reply rate: 0.0% (threshold 40%); Only 1 active days in </td>
+</tr>
+<tr>
+  <td><a href="data/265066474/dashboard.html" target="_blank">265066474</a></td>
+  <td>Taana Baana Collections</td>
+  <td>New Delhi</td>
+  <td>Proprietor</td>
+  <td><span class="score-badge score-red">79</span></td>
+  <td>0.0%</td>
+  <td>15.7</td>
+  <td>1</td>
+  <td>2</td>
+  <td>Low reply rate: 0.0% (threshold 40%); Only 1 active days in </td>
+</tr>
+<tr>
+  <td><a href="data/68608123/dashboard.html" target="_blank">68608123</a></td>
+  <td>Maa Ambe Collection</td>
+  <td>Mumbai</td>
+  <td>Proprietor</td>
+  <td><span class="score-badge score-red">79</span></td>
+  <td>0.0%</td>
+  <td>22.9</td>
+  <td>2</td>
+  <td>2</td>
+  <td>Low reply rate: 0.0% (threshold 40%); Only 2 active days in </td>
+</tr>
+<tr>
+  <td><a href="data/923025/dashboard.html" target="_blank">923025</a></td>
+  <td>Ferrotherm Induction Pvt. Ltd.</td>
+  <td>Pune</td>
+  <td>ME</td>
+  <td><span class="score-badge score-red">79</span></td>
+  <td>0.0%</td>
+  <td>65</td>
+  <td>1</td>
+  <td>4</td>
+  <td>Low reply rate: 0.0% (threshold 40%); Only 1 active days in </td>
+</tr>
+<tr>
+  <td><a href="data/995971/dashboard.html" target="_blank">995971</a></td>
+  <td>Ambica Furniture Pvt. Ltd.</td>
+  <td>Ahmedabad</td>
+  <td>ME</td>
+  <td><span class="score-badge score-red">79</span></td>
+  <td>0.0%</td>
+  <td>34.8</td>
+  <td>1</td>
+  <td>17</td>
+  <td>Low reply rate: 0.0% (threshold 40%); Only 1 active days in </td>
+</tr>
+<tr>
+  <td><a href="data/102449301/dashboard.html" target="_blank">102449301</a></td>
+  <td>Imagine</td>
+  <td>Thane</td>
+  <td>Proprietor</td>
+  <td><span class="score-badge score-red">73</span></td>
+  <td>0.0%</td>
+  <td>61.4</td>
+  <td>0</td>
+  <td>3</td>
+  <td>Low reply rate: 0.0% (threshold 40%); Zero LMS active days i</td>
+</tr>
+<tr>
+  <td><a href="data/265062992/dashboard.html" target="_blank">265062992</a></td>
+  <td>Voltwork Electricals Pvt. Ltd.</td>
+  <td>Pimpri Chinchwad</td>
+  <td>ME</td>
+  <td><span class="score-badge score-red">73</span></td>
+  <td>0.0%</td>
+  <td>13.8</td>
+  <td>1</td>
+  <td>10</td>
+  <td>Low reply rate: 0.0% (threshold 40%); Only 1 active days in </td>
+</tr>
+<tr>
+  <td><a href="data/264730518/dashboard.html" target="_blank">264730518</a></td>
+  <td>CHD Exim (OPC) Private Limited</td>
+  <td>Ahmedabad</td>
+  <td>ME</td>
+  <td><span class="score-badge score-red">72</span></td>
+  <td>0%</td>
+  <td>18.3</td>
+  <td>0</td>
+  <td>0</td>
+  <td>Zero LMS active days in last 30d — seller not logging in; Ze</td>
+</tr>
+<tr>
+  <td><a href="data/264764433/dashboard.html" target="_blank">264764433</a></td>
+  <td>Ideal Fab And Construction</td>
+  <td>Faridabad</td>
+  <td>Proprietor</td>
+  <td><span class="score-badge score-red">72</span></td>
+  <td>0%</td>
+  <td>3.3</td>
+  <td>0</td>
+  <td>0</td>
+  <td>Zero LMS active days in last 30d — seller not logging in; Ze</td>
+</tr>
+<tr>
+  <td><a href="data/264782849/dashboard.html" target="_blank">264782849</a></td>
+  <td>Archana Agency</td>
+  <td>Pune</td>
+  <td>Partnership</td>
+  <td><span class="score-badge score-red">72</span></td>
+  <td>0%</td>
+  <td>18</td>
+  <td>0</td>
+  <td>0</td>
+  <td>Zero LMS active days in last 30d — seller not logging in; Ze</td>
+</tr>
+<tr>
+  <td><a href="data/264875441/dashboard.html" target="_blank">264875441</a></td>
+  <td>Carevance Global LLP</td>
+  <td>Ahmedabad</td>
+  <td>Partnership</td>
+  <td><span class="score-badge score-red">72</span></td>
+  <td>0%</td>
+  <td>7.5</td>
+  <td>0</td>
+  <td>0</td>
+  <td>Zero LMS active days in last 30d — seller not logging in; Ze</td>
+</tr>
+<tr>
+  <td><a href="data/264920173/dashboard.html" target="_blank">264920173</a></td>
+  <td>Adiance Technologies Private L</td>
+  <td></td>
+  <td></td>
+  <td><span class="score-badge score-red">72</span></td>
+  <td>0%</td>
+  <td>0</td>
+  <td>0</td>
+  <td>0</td>
+  <td>Zero LMS active days in last 30d — seller not logging in; Ze</td>
+</tr>
+<tr>
+  <td><a href="data/264932813/dashboard.html" target="_blank">264932813</a></td>
+  <td>Aceget Private Limited</td>
+  <td></td>
+  <td></td>
+  <td><span class="score-badge score-red">72</span></td>
+  <td>0%</td>
+  <td>0</td>
+  <td>0</td>
+  <td>0</td>
+  <td>Zero LMS active days in last 30d — seller not logging in; Ze</td>
+</tr>
+<tr>
+  <td><a href="data/264973432/dashboard.html" target="_blank">264973432</a></td>
+  <td>Adil Tin Scrap Store</td>
+  <td>New Delhi</td>
+  <td>Partnership</td>
+  <td><span class="score-badge score-red">72</span></td>
+  <td>0%</td>
+  <td>38.8</td>
+  <td>0</td>
+  <td>0</td>
+  <td>Zero LMS active days in last 30d — seller not logging in; Ze</td>
+</tr>
+<tr>
+  <td><a href="data/265078333/dashboard.html" target="_blank">265078333</a></td>
+  <td>Kalyani Biotech (OPC) Private </td>
+  <td></td>
+  <td></td>
+  <td><span class="score-badge score-red">72</span></td>
+  <td>0%</td>
+  <td>0</td>
+  <td>0</td>
+  <td>0</td>
+  <td>Zero LMS active days in last 30d — seller not logging in; Ze</td>
+</tr>
+<tr>
+  <td><a href="data/265119966/dashboard.html" target="_blank">265119966</a></td>
+  <td>Balaji Waste Paper</td>
+  <td></td>
+  <td></td>
+  <td><span class="score-badge score-red">72</span></td>
+  <td>0%</td>
+  <td>0</td>
+  <td>0</td>
+  <td>0</td>
+  <td>Zero LMS active days in last 30d — seller not logging in; Ze</td>
+</tr>
+<tr>
+  <td><a href="data/265177816/dashboard.html" target="_blank">265177816</a></td>
+  <td>KBN Enterprises</td>
+  <td>Navi Mumbai</td>
+  <td>Proprietor</td>
+  <td><span class="score-badge score-red">72</span></td>
+  <td>0%</td>
+  <td>6.7</td>
+  <td>0</td>
+  <td>0</td>
+  <td>Zero LMS active days in last 30d — seller not logging in; Ze</td>
+</tr>
+<tr>
+  <td><a href="data/265182638/dashboard.html" target="_blank">265182638</a></td>
+  <td>Auli International Fashion</td>
+  <td>Mumbai</td>
+  <td>Partnership</td>
+  <td><span class="score-badge score-red">72</span></td>
+  <td>0%</td>
+  <td>18.3</td>
+  <td>0</td>
+  <td>0</td>
+  <td>Zero LMS active days in last 30d — seller not logging in; Ze</td>
+</tr>
+<tr>
+  <td><a href="data/265185056/dashboard.html" target="_blank">265185056</a></td>
+  <td>Pratap Enterprises</td>
+  <td>Gurugram</td>
+  <td>Proprietor</td>
+  <td><span class="score-badge score-red">72</span></td>
+  <td>0%</td>
+  <td>40.7</td>
+  <td>0</td>
+  <td>0</td>
+  <td>Zero LMS active days in last 30d — seller not logging in; Ze</td>
+</tr>
+<tr>
+  <td><a href="data/265186678/dashboard.html" target="_blank">265186678</a></td>
+  <td>Innovative Homes</td>
+  <td>Gurugram</td>
+  <td>Proprietor</td>
+  <td><span class="score-badge score-red">72</span></td>
+  <td>0%</td>
+  <td>3.3</td>
+  <td>0</td>
+  <td>0</td>
+  <td>Zero LMS active days in last 30d — seller not logging in; Ze</td>
+</tr>
+<tr>
+  <td><a href="data/265317574/dashboard.html" target="_blank">265317574</a></td>
+  <td>Subh Narayan Enterprises</td>
+  <td>New Delhi</td>
+  <td>Proprietor</td>
+  <td><span class="score-badge score-red">72</span></td>
+  <td>0%</td>
+  <td>0</td>
+  <td>0</td>
+  <td>0</td>
+  <td>Zero LMS active days in last 30d — seller not logging in; Ze</td>
+</tr>
+<tr>
+  <td><a href="data/564660/dashboard.html" target="_blank">564660</a></td>
+  <td>Infinity House</td>
+  <td>New Delhi</td>
+  <td>Proprietor</td>
+  <td><span class="score-badge score-red">72</span></td>
+  <td>0.0%</td>
+  <td>75.4</td>
+  <td>0</td>
+  <td>3</td>
+  <td>Low reply rate: 0.0% (threshold 40%); Zero LMS active days i</td>
+</tr>
+<tr>
+  <td><a href="data/264008657/dashboard.html" target="_blank">264008657</a></td>
+  <td>Goodblue (OPC) Private Limited</td>
+  <td>Noida</td>
+  <td>ME</td>
+  <td><span class="score-badge score-red">71</span></td>
+  <td>0.0%</td>
+  <td>71.6</td>
+  <td>1</td>
+  <td>10</td>
+  <td>Low reply rate: 0.0% (threshold 40%); Only 1 active days in </td>
+</tr>
+<tr>
+  <td><a href="data/48454436/dashboard.html" target="_blank">48454436</a></td>
+  <td>Yash Auto</td>
+  <td>Pune</td>
+  <td>Proprietor</td>
+  <td><span class="score-badge score-red">71</span></td>
+  <td>0.0%</td>
+  <td>67.4</td>
+  <td>2</td>
+  <td>10</td>
+  <td>Low reply rate: 0.0% (threshold 40%); Only 2 active days in </td>
+</tr>
+<tr>
+  <td><a href="data/66781872/dashboard.html" target="_blank">66781872</a></td>
+  <td>Prisha Enterprises</td>
+  <td>New Delhi</td>
+  <td>Proprietor</td>
+  <td><span class="score-badge score-red">71</span></td>
+  <td>0.0%</td>
+  <td>66.2</td>
+  <td>2</td>
+  <td>3</td>
+  <td>Low reply rate: 0.0% (threshold 40%); Only 2 active days in </td>
+</tr>
+<tr>
+  <td><a href="data/160130544/dashboard.html" target="_blank">160130544</a></td>
+  <td>Infinity World Enterprises</td>
+  <td>New Delhi</td>
+  <td>Proprietor</td>
+  <td><span class="score-badge score-red">69</span></td>
+  <td>0.0%</td>
+  <td>43</td>
+  <td>5</td>
+  <td>2</td>
+  <td>Low reply rate: 0.0% (threshold 40%); BL velocity drop: -100</td>
+</tr>
+<tr>
+  <td><a href="data/160210959/dashboard.html" target="_blank">160210959</a></td>
+  <td>Dewan Enterprises</td>
+  <td>New Delhi</td>
+  <td>Proprietor</td>
+  <td><span class="score-badge score-red">69</span></td>
+  <td>0.0%</td>
+  <td>53.3</td>
+  <td>10</td>
+  <td>41</td>
+  <td>Low reply rate: 0.0% (threshold 40%); BL velocity drop: -60.</td>
+</tr>
+<tr>
+  <td><a href="data/190150528/dashboard.html" target="_blank">190150528</a></td>
+  <td>Fargo Brushware Co.</td>
+  <td>New Delhi</td>
+  <td>Proprietor</td>
+  <td><span class="score-badge score-red">69</span></td>
+  <td>0.0%</td>
+  <td>62.6</td>
+  <td>0</td>
+  <td>12</td>
+  <td>Low reply rate: 0.0% (threshold 40%); Zero LMS active days i</td>
+</tr>
+<tr>
+  <td><a href="data/268129235/dashboard.html" target="_blank">268129235</a></td>
+  <td>Nutri Agri Foods</td>
+  <td>Indore</td>
+  <td>Proprietor</td>
+  <td><span class="score-badge score-red">69</span></td>
+  <td>0.0%</td>
+  <td>44.3</td>
+  <td>9</td>
+  <td>21</td>
+  <td>Low reply rate: 0.0% (threshold 40%); BL velocity drop: -100</td>
+</tr>
+<tr>
+  <td><a href="data/27257635/dashboard.html" target="_blank">27257635</a></td>
+  <td>Pinnacle Enterprises</td>
+  <td>New Delhi</td>
+  <td>Proprietor</td>
+  <td><span class="score-badge score-red">69</span></td>
+  <td>0.0%</td>
+  <td>53.7</td>
+  <td>25</td>
+  <td>85</td>
+  <td>Low reply rate: 0.0% (threshold 40%); BL velocity drop: -74.</td>
+</tr>
+<tr>
+  <td><a href="data/41584202/dashboard.html" target="_blank">41584202</a></td>
+  <td>Mass Industries</td>
+  <td>Faridabad</td>
+  <td>Proprietor</td>
+  <td><span class="score-badge score-red">69</span></td>
+  <td>0.0%</td>
+  <td>42.6</td>
+  <td>4</td>
+  <td>10</td>
+  <td>Low reply rate: 0.0% (threshold 40%); BL velocity drop: -93.</td>
+</tr>
+<tr>
+  <td><a href="data/264930469/dashboard.html" target="_blank">264930469</a></td>
+  <td>Posh Living Company</td>
+  <td>Noida</td>
+  <td>Partnership</td>
+  <td><span class="score-badge score-red">67</span></td>
+  <td>0%</td>
+  <td>85</td>
+  <td>0</td>
+  <td>0</td>
+  <td>Zero LMS active days in last 30d — seller not logging in; Ze</td>
+</tr>
+<tr>
+  <td><a href="data/638745/dashboard.html" target="_blank">638745</a></td>
+  <td>Esquire Trading Co.</td>
+  <td>Vadodara</td>
+  <td>Proprietor</td>
+  <td><span class="score-badge score-red">67</span></td>
+  <td>0.0%</td>
+  <td>28</td>
+  <td>1</td>
+  <td>7</td>
+  <td>Low reply rate: 0.0% (threshold 40%); Only 1 active days in </td>
+</tr>
+<tr>
+  <td><a href="data/868259/dashboard.html" target="_blank">868259</a></td>
+  <td>Jagrati Herbs Pvt. Ltd.</td>
+  <td>Udaipur</td>
+  <td>ME</td>
+  <td><span class="score-badge score-red">67</span></td>
+  <td>0.0%</td>
+  <td>57.5</td>
+  <td>3</td>
+  <td>22</td>
+  <td>Low reply rate: 0.0% (threshold 40%); Only 3 active days in </td>
+</tr>
+<tr>
+  <td><a href="data/264985463/dashboard.html" target="_blank">264985463</a></td>
+  <td>Navyya Nirman Company</td>
+  <td>Ghaziabad</td>
+  <td>Proprietor</td>
+  <td><span class="score-badge score-red">66</span></td>
+  <td>0%</td>
+  <td>0</td>
+  <td>0</td>
+  <td>0</td>
+  <td>Zero LMS active days in last 30d — seller not logging in; Ze</td>
+</tr>
+<tr>
+  <td><a href="data/265067295/dashboard.html" target="_blank">265067295</a></td>
+  <td>Delhi Seller.Com</td>
+  <td>New Delhi</td>
+  <td>Proprietor</td>
+  <td><span class="score-badge score-red">66</span></td>
+  <td>0%</td>
+  <td>8.3</td>
+  <td>0</td>
+  <td>0</td>
+  <td>Zero LMS active days in last 30d — seller not logging in; Ze</td>
+</tr>
+<tr>
+  <td><a href="data/265264345/dashboard.html" target="_blank">265264345</a></td>
+  <td>Digireach Marketing Solutions </td>
+  <td></td>
+  <td></td>
+  <td><span class="score-badge score-red">66</span></td>
+  <td>0%</td>
+  <td>0</td>
+  <td>0</td>
+  <td>0</td>
+  <td>Zero LMS active days in last 30d — seller not logging in; Ze</td>
+</tr>
+<tr>
+  <td><a href="data/265290234/dashboard.html" target="_blank">265290234</a></td>
+  <td>HN Furniture & Decorators</td>
+  <td>New Delhi</td>
+  <td>Proprietor</td>
+  <td><span class="score-badge score-red">66</span></td>
+  <td>0%</td>
+  <td>22.5</td>
+  <td>0</td>
+  <td>0</td>
+  <td>Zero LMS active days in last 30d — seller not logging in; Ze</td>
+</tr>
+<tr>
+  <td><a href="data/265302448/dashboard.html" target="_blank">265302448</a></td>
+  <td>Cravedot</td>
+  <td>Ahmedabad</td>
+  <td>Partnership</td>
+  <td><span class="score-badge score-red">66</span></td>
+  <td>0%</td>
+  <td>6.7</td>
+  <td>0</td>
+  <td>0</td>
+  <td>Zero LMS active days in last 30d — seller not logging in; Ze</td>
+</tr>
+<tr>
+  <td><a href="data/264817756/dashboard.html" target="_blank">264817756</a></td>
+  <td>—</td>
+  <td>Mumbai</td>
+  <td>Partnership</td>
+  <td><span class="score-badge score-red">65</span></td>
+  <td>0.0%</td>
+  <td>12.5</td>
+  <td>0</td>
+  <td>1</td>
+  <td>Low reply rate: 0.0% (threshold 40%); Zero LMS active days i</td>
+</tr></tbody>
+    </table>
+  </div>
+</div>
+
+</div>
+<script>
+var riskCfg={"type": "doughnut", "data": {"labels": ["Red", "Amber", "Green"], "datasets": [{"data": [50, 155, 23], "backgroundColor": ["#ef4444", "#f59e0b", "#22c55e"], "borderWidth": 2, "borderColor": "#0f172a"}]}, "options": {"responsive": true, "maintainAspectRatio": false, "plugins": {"legend": {"position": "right", "labels": {"color": "#cbd5e1", "font": {"size": 11}}}}}};
+var scoreCfg={"type": "bar", "data": {"labels": ["0-19", "20-34", "35-49", "50-64", "65-79", "80+"], "datasets": [{"label": "Sellers", "data": [0, 23, 87, 68, 42, 8], "backgroundColor": "#8b5cf6", "borderRadius": 4}]}, "options": {"indexAxis": "x", "responsive": true, "maintainAspectRatio": false, "plugins": {"legend": {"display": false}}, "scales": {"x": {"beginAtZero": true, "ticks": {"color": "#94a3b8"}, "grid": {"color": "#1e293b"}}, "y": {"ticks": {"color": "#cbd5e1", "font": {"size": 11}}, "grid": {"display": false}}}}};
+var tierCfg={"type": "bar", "data": {"labels": ["Reply Rate %", "CQS Score", "Active Days/30d", "Hotleads"], "datasets": [{"label": "Red", "data": [0.0, 31.67, 1.44, 2.31], "backgroundColor": "#ef4444", "borderRadius": 4}, {"label": "Amber", "data": [0.0, 48.38, 7.63, 2.59], "backgroundColor": "#f59e0b", "borderRadius": 4}, {"label": "Green", "data": [0.0, 78.37, 8.7, 2.94], "backgroundColor": "#22c55e", "borderRadius": 4}]}, "options": {"responsive": true, "maintainAspectRatio": false, "plugins": {"legend": {"labels": {"color": "#cbd5e1"}}}, "scales": {"x": {"ticks": {"color": "#94a3b8"}, "grid": {"color": "#1e293b"}}, "y": {"beginAtZero": true, "ticks": {"color": "#94a3b8"}, "grid": {"color": "#1e293b"}}}}};
+var cityCfg={"type": "bar", "data": {"labels": ["New Delhi", "Mumbai", "Ahmedabad", "Noida", "Pune", "Navi Mumbai", "Faridabad", "Gurugram", "Thane", "Ghaziabad"], "datasets": [{"label": "Red Sellers", "data": [13, 6, 6, 4, 4, 2, 2, 2, 1, 1], "backgroundColor": "#ef4444", "borderRadius": 4}]}, "options": {"indexAxis": "y", "responsive": true, "maintainAspectRatio": false, "plugins": {"legend": {"display": false}}, "scales": {"x": {"beginAtZero": true, "ticks": {"color": "#94a3b8"}, "grid": {"color": "#1e293b"}}, "y": {"ticks": {"color": "#cbd5e1", "font": {"size": 11}}, "grid": {"display": false}}}}};
+
+new Chart(document.getElementById('riskDist'), riskCfg);
+new Chart(document.getElementById('scoreDist'), scoreCfg);
+new Chart(document.getElementById('tierMetrics'), tierCfg);
+new Chart(document.getElementById('citiesRed'), cityCfg);
+</script>
+</body>
+</html>

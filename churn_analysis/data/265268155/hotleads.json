@@ -1,0 +1,65 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 265268155,
+        "hotlead_date": "2026-05-12",
+        "hotlead_id": 14214937,
+        "hotlead_type_id": 1116623833,
+        "data_type": "TF",
+        "activity": "Toll Free",
+        "activity_id": 4240
+      },
+      {
+        "gluser_id": 265268155,
+        "hotlead_date": "2026-05-09",
+        "hotlead_id": 14214937,
+        "hotlead_type_id": 1115669847,
+        "data_type": "ENQR",
+        "activity": "Premium Activity - Enquiry Received",
+        "activity_id": 10004
+      },
+      {
+        "gluser_id": 265268155,
+        "hotlead_date": "2026-04-03",
+        "hotlead_id": 14214937,
+        "hotlead_type_id": 1102238757,
+        "data_type": "PIM",
+        "activity": "Payment Interest - MDC",
+        "activity_id": 2355
+      },
+      {
+        "gluser_id": 265268155,
+        "hotlead_date": "2026-03-12",
+        "hotlead_id": 14214937,
+        "hotlead_type_id": 1092728328,
+        "data_type": "PAM",
+        "activity": "Payment Attempt - MDC",
+        "activity_id": 2539
+      },
+      {
+        "gluser_id": 265268155,
+        "hotlead_date": "2026-03-01",
+        "hotlead_id": 14214937,
+        "hotlead_type_id": 1088518066,
+        "data_type": "NUR",
+        "activity": "HL From DHL(soi)",
+        "activity_id": 2032
+      },
+      {
+        "gluser_id": 265268155,
+        "hotlead_date": "2026-02-28",
+        "hotlead_id": 14214937,
+        "hotlead_type_id": 1088378714,
+        "data_type": "PUA",
+        "activity": "Premium Activity - Online",
+        "activity_id": 1528
+      }
+    ],
+    "total": 6,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

@@ -1,0 +1,158 @@
+{
+  "total": 228,
+  "red": 50,
+  "amber": 155,
+  "green": 23,
+  "risk_pct": {
+    "Red": 21.9,
+    "Amber": 68.0,
+    "Green": 10.1
+  },
+  "top_reasons": [
+    [
+      "Low Reply Rate",
+      166
+    ],
+    [
+      "Poor Catalog Quality (<60)",
+      131
+    ],
+    [
+      "Low Login Activity",
+      121
+    ],
+    [
+      "BL Velocity Drop",
+      88
+    ],
+    [
+      "RAG Amber Category",
+      83
+    ],
+    [
+      "No Clickstream Activity",
+      72
+    ],
+    [
+      "Zero Enquiry Flow",
+      62
+    ],
+    [
+      "Moderate Catalog Quality",
+      47
+    ],
+    [
+      "Low PNS Answer Rate",
+      10
+    ]
+  ],
+  "enq": {
+    "red": 5.7,
+    "amber": 28.6,
+    "green": 23.6
+  },
+  "reply": {
+    "red": 0.0,
+    "amber": 0.0,
+    "green": 0.0
+  },
+  "act": {
+    "red": 1.4,
+    "amber": 7.6,
+    "green": 8.7
+  },
+  "cqs": {
+    "red": 31.7,
+    "amber": 48.4,
+    "green": 78.4
+  },
+  "pns": {
+    "red": 0.0,
+    "amber": 0.7,
+    "green": 0.1
+  },
+  "bl_vel": {
+    "avg": -10.3,
+    "declining_count": 88,
+    "declining_pct": 72.7,
+    "total": 121
+  },
+  "rag_counts": {
+    "Green+": 37,
+    "Green": 40,
+    "Unknown": 68,
+    "Amber": 83
+  },
+  "cqs_buckets": {
+    "<60": 131,
+    "60-75": 47,
+    "75-90": 46,
+    "90+": 4
+  },
+  "vel_buckets": {
+    "<-30%": 81,
+    "-30% to -10%": 7,
+    "-10% to 0%": 0,
+    "0% to +20%": 10,
+    ">+20%": 23
+  },
+  "hotlead": {
+    "has_hl": 185,
+    "no_hl": 43,
+    "avg_score_hl": 54.8,
+    "avg_score_no_hl": 43.9
+  },
+  "age_avg_scores": {
+    "<1yr (0-365d)": 53.3,
+    "1-3yr": 56.2,
+    "3-5yr": 60.6,
+    "5yr+": 49.0
+  },
+  "age_counts": {
+    "<1yr (0-365d)": 157,
+    "1-3yr": 13,
+    "3-5yr": 8,
+    "5yr+": 50
+  },
+  "score_buckets": {
+    "0-20": 4,
+    "21-40": 50,
+    "41-60": 115,
+    "61-80": 51,
+    "81-100": 8
+  },
+  "top_cities_red": [
+    [
+      "New Delhi",
+      13
+    ],
+    [
+      "Mumbai",
+      6
+    ],
+    [
+      "Ahmedabad",
+      6
+    ],
+    [
+      "Unknown",
+      5
+    ],
+    [
+      "Noida",
+      4
+    ],
+    [
+      "Pune",
+      4
+    ],
+    [
+      "Navi Mumbai",
+      2
+    ],
+    [
+      "Faridabad",
+      2
+    ]
+  ]
+}

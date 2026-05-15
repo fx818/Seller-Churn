@@ -1,0 +1,65 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 987760,
+        "hotlead_date": "2026-01-23",
+        "hotlead_id": 9693723,
+        "hotlead_type_id": 1072250377,
+        "data_type": "OLP",
+        "activity": "Payment Attempt - BL",
+        "activity_id": 1626
+      },
+      {
+        "gluser_id": 987760,
+        "hotlead_date": "2026-01-15",
+        "hotlead_id": 9693723,
+        "hotlead_type_id": 1068682639,
+        "data_type": "PIM",
+        "activity": "Payment Interest - MDC",
+        "activity_id": 4296
+      },
+      {
+        "gluser_id": 987760,
+        "hotlead_date": "2025-11-16",
+        "hotlead_id": 9693723,
+        "hotlead_type_id": 1043450921,
+        "data_type": "ENQR",
+        "activity": "Premium Activity - Enquiry Received",
+        "activity_id": 10004
+      },
+      {
+        "gluser_id": 987760,
+        "hotlead_date": "2025-09-29",
+        "hotlead_id": 9693723,
+        "hotlead_type_id": 1024122305,
+        "data_type": "PUA",
+        "activity": "Premium Activity - Online",
+        "activity_id": 4107
+      },
+      {
+        "gluser_id": 987760,
+        "hotlead_date": "2025-06-16",
+        "hotlead_id": 9693723,
+        "hotlead_type_id": 976354915,
+        "data_type": "ENQR",
+        "activity": "Premium Activity - Enquiry Received",
+        "activity_id": 10003
+      },
+      {
+        "gluser_id": 987760,
+        "hotlead_date": "2025-05-16",
+        "hotlead_id": 9693723,
+        "hotlead_type_id": 962867652,
+        "data_type": "PNSR",
+        "activity": "Premium Activity - PNS Call Received",
+        "activity_id": 10001
+      }
+    ],
+    "total": 6,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

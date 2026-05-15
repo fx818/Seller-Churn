@@ -1,0 +1,443 @@
+{
+  "status": 200,
+  "data": {
+    "gluser_id": 265109646,
+    "event_count": 6,
+    "events": [
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.google.com/",
+        "glb_city": "Delhi",
+        "glusr_id": 265109646,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260504124125",
+        "glb_state": "DL",
+        "remote_ip": "122.183.40.204",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "www.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /pd-sd-exports/?srsltid=AfmBOorY7q0j-sA-yecxQZ4oES7WeA5QnqeiS7Tiwep2Lk13aueZw1Qx HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.681455,
+        "glb_longitude": 77.22279,
+        "response_size": 36140,
+        "response_time": 2519,
+        "fk_activity_id": 527,
+        "ga_utma_cookie": "GA1.1.329481683.1771836287",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605041241"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 265109646,
+        "catalog_owner_glusr_id": 89921898,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "d*******@westendenterprises.co.in",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 1229,
+        "owner_glusr_usr_listing_status": "TFL"
+      },
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.indiamart.com/pd-sd-exports/?srsltid=AfmBOorY7q0j-sA-yecxQZ4oES7WeA5QnqeiS7Tiwep2Lk13aueZw1Qx",
+        "glb_city": "Delhi",
+        "glusr_id": 265109646,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260504124126",
+        "glb_state": "DL",
+        "remote_ip": "122.183.40.204",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "www.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /api/ajax-services/glb_city/?_ts=1777878686141 HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.681455,
+        "glb_longitude": 77.22279,
+        "response_size": 114,
+        "response_time": 15053,
+        "fk_activity_id": 527,
+        "ga_utma_cookie": "GA1.1.329481683.1771836287",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605041241"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Page",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 265109646,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "d*******@westendenterprises.co.in",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.google.com/",
+        "glb_city": "Delhi",
+        "glusr_id": 265109646,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260505121847",
+        "glb_state": "DL",
+        "remote_ip": "106.219.154.227",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "www.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /ms-fashion-and-style/?srsltid=AfmBOoq6jm0L2Ys4nwOPXhk3EL5uFesQbJcwNw0saNmebjXmq5N1blPw HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.681455,
+        "glb_longitude": 77.22279,
+        "response_size": 34978,
+        "response_time": 2984,
+        "fk_activity_id": 527,
+        "ga_utma_cookie": "GA1.1.329481683.1771836287",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605051218"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 265109646,
+        "catalog_owner_glusr_id": 151694675,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "d*******@westendenterprises.co.in",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 1279,
+        "owner_glusr_usr_listing_status": "TFL"
+      },
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.indiamart.com/ms-fashion-and-style/?srsltid=AfmBOoq6jm0L2Ys4nwOPXhk3EL5uFesQbJcwNw0saNmebjXmq5N1blPw",
+        "glb_city": "Delhi",
+        "glusr_id": 265109646,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260505121848",
+        "glb_state": "DL",
+        "remote_ip": "106.219.154.227",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "www.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /api/ajax-services/glb_city/?_ts=1777963728656 HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.681455,
+        "glb_longitude": 77.22279,
+        "response_size": 112,
+        "response_time": 16907,
+        "fk_activity_id": 527,
+        "ga_utma_cookie": "GA1.1.329481683.1771836287",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605051218"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Page",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 265109646,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "d*******@westendenterprises.co.in",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.indiamart.com/ms-fashion-and-style/?srsltid=AfmBOoq6jm0L2Ys4nwOPXhk3EL5uFesQbJcwNw0saNmebjXmq5N1blPw",
+        "glb_city": "Delhi",
+        "glusr_id": 265109646,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260505121859",
+        "glb_state": "DL",
+        "remote_ip": "106.219.154.227",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "www.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /ms-fashion-and-style/products.html HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.681455,
+        "glb_longitude": 77.22279,
+        "response_size": 28550,
+        "response_time": 45284,
+        "fk_activity_id": 658,
+        "ga_utma_cookie": "GA1.1.329481683.1771836287",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605051218"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Inside Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 265109646,
+        "catalog_owner_glusr_id": 151694675,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "d*******@westendenterprises.co.in",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 1279,
+        "owner_glusr_usr_listing_status": "TFL"
+      },
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.indiamart.com/ms-fashion-and-style/products.html",
+        "glb_city": "Delhi",
+        "glusr_id": 265109646,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260505121905",
+        "glb_state": "DL",
+        "remote_ip": "106.219.154.227",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "www.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /ms-fashion-and-style/ HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.681455,
+        "glb_longitude": 77.22279,
+        "response_size": 34978,
+        "response_time": 1042,
+        "fk_activity_id": 527,
+        "ga_utma_cookie": "GA1.1.329481683.1771836287",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605051219"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 265109646,
+        "catalog_owner_glusr_id": 151694675,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "d*******@westendenterprises.co.in",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 1279,
+        "owner_glusr_usr_listing_status": "TFL"
+      }
+    ],
+    "updated_at": "2026-05-14T18:44:15.653051Z"
+  },
+  "error": null
+}

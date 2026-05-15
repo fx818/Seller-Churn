@@ -1,0 +1,119 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 28896236,
+        "hotlead_date": "2026-02-21",
+        "hotlead_id": 9491575,
+        "hotlead_type_id": 1085098012,
+        "data_type": "SCHD",
+        "activity": "Schedule Demo",
+        "activity_id": 4263
+      },
+      {
+        "gluser_id": 28896236,
+        "hotlead_date": "2026-02-19",
+        "hotlead_id": 9491575,
+        "hotlead_type_id": 1084352684,
+        "data_type": "PUA",
+        "activity": "Premium Activity - Online",
+        "activity_id": 1874
+      },
+      {
+        "gluser_id": 28896236,
+        "hotlead_date": "2026-02-16",
+        "hotlead_id": 9491575,
+        "hotlead_type_id": 1082817722,
+        "data_type": "PNSM",
+        "activity": "Premium Activity - PNS Call Missed",
+        "activity_id": 10002
+      },
+      {
+        "gluser_id": 28896236,
+        "hotlead_date": "2026-01-18",
+        "hotlead_id": 9491575,
+        "hotlead_type_id": 1069981874,
+        "data_type": "PNSR",
+        "activity": "Premium Activity - PNS Call Received",
+        "activity_id": 10001
+      },
+      {
+        "gluser_id": 28896236,
+        "hotlead_date": "2025-12-11",
+        "hotlead_id": 9491575,
+        "hotlead_type_id": 1054144863,
+        "data_type": "PNSR",
+        "activity": "Premium Activity - PNS Call Received",
+        "activity_id": 10001
+      },
+      {
+        "gluser_id": 28896236,
+        "hotlead_date": "2025-12-04",
+        "hotlead_id": 9491575,
+        "hotlead_type_id": 1050926829,
+        "data_type": "ENQR",
+        "activity": "Premium Activity - Enquiry Received",
+        "activity_id": 10004
+      },
+      {
+        "gluser_id": 28896236,
+        "hotlead_date": "2025-10-22",
+        "hotlead_id": 9491575,
+        "hotlead_type_id": 1033304971,
+        "data_type": "ENQR",
+        "activity": "Premium Activity - Enquiry Received",
+        "activity_id": 10004
+      },
+      {
+        "gluser_id": 28896236,
+        "hotlead_date": "2025-09-22",
+        "hotlead_id": 9491575,
+        "hotlead_type_id": 1020833997,
+        "data_type": "PNSR",
+        "activity": "Premium Activity - PNS Call Received",
+        "activity_id": 10001
+      },
+      {
+        "gluser_id": 28896236,
+        "hotlead_date": "2025-08-24",
+        "hotlead_id": 9491575,
+        "hotlead_type_id": 1007644518,
+        "data_type": "PNSR",
+        "activity": "Premium Activity - PNS Call Received",
+        "activity_id": 10001
+      },
+      {
+        "gluser_id": 28896236,
+        "hotlead_date": "2025-07-03",
+        "hotlead_id": 9491575,
+        "hotlead_type_id": 984207935,
+        "data_type": "PNSR",
+        "activity": "Premium Activity - PNS Call Received",
+        "activity_id": 10001
+      },
+      {
+        "gluser_id": 28896236,
+        "hotlead_date": "2025-06-29",
+        "hotlead_id": 9491575,
+        "hotlead_type_id": 982425269,
+        "data_type": "ENQR",
+        "activity": "Premium Activity - Enquiry Received",
+        "activity_id": 10004
+      },
+      {
+        "gluser_id": 28896236,
+        "hotlead_date": "2025-06-01",
+        "hotlead_id": 9491575,
+        "hotlead_type_id": 969925765,
+        "data_type": "PNSR",
+        "activity": "Premium Activity - PNS Call Received",
+        "activity_id": 10001
+      }
+    ],
+    "total": 12,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

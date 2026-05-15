@@ -1,0 +1,31 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 192962146,
+        "event_date": "2026-01-12",
+        "offer_id": 136817681863,
+        "mcat_id": 144664,
+        "reason_code": 5,
+        "reason_text": "Location",
+        "comment": null,
+        "module_id": "IMOB"
+      },
+      {
+        "gluser_id": 192962146,
+        "event_date": "2026-01-12",
+        "offer_id": 136764054467,
+        "mcat_id": 145424,
+        "reason_code": 5,
+        "reason_text": "Location",
+        "comment": null,
+        "module_id": "LEAP"
+      }
+    ],
+    "total": 2,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

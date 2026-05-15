@@ -1,0 +1,47 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 148974080,
+        "hotlead_date": "2026-02-21",
+        "hotlead_id": 11099117,
+        "hotlead_type_id": 1085089216,
+        "data_type": "PAM",
+        "activity": "Payment Attempt - MDC",
+        "activity_id": 2538
+      },
+      {
+        "gluser_id": 148974080,
+        "hotlead_date": "2026-01-24",
+        "hotlead_id": 11099117,
+        "hotlead_type_id": 1072624495,
+        "data_type": "PIM",
+        "activity": "Payment Interest - MDC",
+        "activity_id": 2352
+      },
+      {
+        "gluser_id": 148974080,
+        "hotlead_date": "2025-08-03",
+        "hotlead_id": 11099117,
+        "hotlead_type_id": 998207189,
+        "data_type": "PIM",
+        "activity": "Payment Interest - MDC",
+        "activity_id": 2351
+      },
+      {
+        "gluser_id": 148974080,
+        "hotlead_date": "2025-08-02",
+        "hotlead_id": 11099117,
+        "hotlead_type_id": 997911551,
+        "data_type": "UA",
+        "activity": "Similar Leads",
+        "activity_id": 2206
+      }
+    ],
+    "total": 4,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

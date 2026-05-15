@@ -1,0 +1,61 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 263069351,
+        "event_date": "2026-02-10",
+        "offer_id": 138565064085,
+        "mcat_id": 999,
+        "reason_code": 3,
+        "reason_text": "Specification Mismatch",
+        "comment": null,
+        "module_id": "FENQ"
+      },
+      {
+        "gluser_id": 263069351,
+        "event_date": "2026-02-09",
+        "offer_id": 138574918585,
+        "mcat_id": 73311,
+        "reason_code": 3,
+        "reason_text": "Specification Mismatch",
+        "comment": null,
+        "module_id": "IMOB"
+      },
+      {
+        "gluser_id": 263069351,
+        "event_date": "2026-02-07",
+        "offer_id": 138445354985,
+        "mcat_id": 999,
+        "reason_code": 3,
+        "reason_text": "Specification Mismatch",
+        "comment": null,
+        "module_id": "FLPNS"
+      },
+      {
+        "gluser_id": 263069351,
+        "event_date": "2026-02-07",
+        "offer_id": 138351517113,
+        "mcat_id": 5805,
+        "reason_code": 3,
+        "reason_text": "Specification Mismatch",
+        "comment": null,
+        "module_id": "FENQ"
+      },
+      {
+        "gluser_id": 263069351,
+        "event_date": "2026-02-07",
+        "offer_id": 138253347346,
+        "mcat_id": 73596,
+        "reason_code": 3,
+        "reason_text": "Specification Mismatch",
+        "comment": null,
+        "module_id": "ANDWEB"
+      }
+    ],
+    "total": 5,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

@@ -1,0 +1,31 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 126591005,
+        "event_date": "2026-03-02",
+        "offer_id": 139888494385,
+        "mcat_id": 207927,
+        "reason_code": 7,
+        "reason_text": "Any Other",
+        "comment": "do not deal in gujrat",
+        "module_id": "FENQ"
+      },
+      {
+        "gluser_id": 126591005,
+        "event_date": "2026-03-02",
+        "offer_id": 139887267646,
+        "mcat_id": 3092,
+        "reason_code": 5,
+        "reason_text": "Location",
+        "comment": null,
+        "module_id": "ANDROID"
+      }
+    ],
+    "total": 2,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

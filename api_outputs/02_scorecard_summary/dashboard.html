@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Scorecard Summary — Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0f1117;--s1:#1a1d27;--s2:#22263a;--bdr:#2e3350;--acc:#6366f1;--acc2:#8b5cf6;--acc3:#06b6d4;--grn:#10b981;--ylw:#f59e0b;--red:#ef4444;--txt:#e2e8f0;--mut:#94a3b8;--r:12px}
+body{background:var(--bg);color:var(--txt);font-family:'Inter',system-ui,sans-serif;min-height:100vh}
+.hdr{background:linear-gradient(135deg,#1e1b4b,#0f172a);border-bottom:1px solid var(--bdr);padding:20px 32px;display:flex;align-items:center;gap:16px}
+.hdr-icon{width:44px;height:44px;background:linear-gradient(135deg,var(--acc),var(--acc2));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.hdr h1{font-size:18px;font-weight:700}.hdr p{font-size:12px;color:var(--mut);margin-top:2px}
+.hdr-right{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+.badge{background:var(--s2);border:1px solid var(--bdr);padding:4px 12px;border-radius:20px;font-size:12px;color:var(--mut)}
+.badge b{color:var(--txt)}
+.badge.ok{border-color:#10b98144;color:var(--grn)}
+.badge.err{border-color:#ef444444;color:var(--red)}
+main{padding:24px 32px}
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+.card{background:var(--s1);border:1px solid var(--bdr);border-radius:var(--r);padding:20px;overflow:hidden}
+.card-title{font-size:13px;font-weight:600;color:var(--mut);text-transform:uppercase;letter-spacing:.5px;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.card-title span{flex:1}
+.metric-card{background:var(--s1);border:1px solid var(--bdr);border-radius:var(--r);padding:18px;position:relative;overflow:hidden}
+.metric-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--c,var(--acc))}
+.metric-lbl{font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.5px}
+.metric-val{font-size:26px;font-weight:800;margin:6px 0 4px;color:var(--c,var(--txt))}
+.metric-sub{font-size:11px;color:var(--mut)}
+.section{margin-bottom:28px}
+.section-title{font-size:15px;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+thead{background:var(--s2)}
+th{padding:10px 12px;text-align:left;font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.5px;white-space:nowrap;border-bottom:1px solid var(--bdr)}
+td{padding:10px 12px;border-bottom:1px solid var(--bdr);vertical-align:top}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:var(--s2)}
+.tbl-wrap{overflow-x:auto;border-radius:var(--r);border:1px solid var(--bdr)}
+.tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:500}
+.tag-green{background:#064e3b;color:#34d399}
+.tag-blue{background:#1e3a5f;color:#60a5fa}
+.tag-yellow{background:#451a03;color:#fbbf24}
+.tag-purple{background:#2d1b69;color:#a78bfa}
+.tag-red{background:#450a0a;color:#fca5a5}
+.kv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.kv-item{background:var(--s2);border:1px solid var(--bdr);border-radius:8px;padding:12px}
+.kv-key{font-size:11px;color:var(--mut);margin-bottom:4px}
+.kv-val{font-size:14px;font-weight:600;word-break:break-all}
+.chart-wrap{position:relative;height:300px}
+.chart-wrap-sm{position:relative;height:220px}
+.progress-bar{height:8px;background:var(--s2);border-radius:4px;overflow:hidden;margin-top:6px}
+.progress-fill{height:100%;border-radius:4px;transition:width .6s ease}
+.empty{text-align:center;padding:40px;color:var(--mut);font-size:14px}
+.json-viewer{background:#0a0a12;border:1px solid var(--bdr);border-radius:var(--r);padding:16px;font-family:monospace;font-size:12px;overflow:auto;max-height:400px;color:#a8b4c8;white-space:pre-wrap;word-break:break-all}
+.toggle-btn{background:var(--s2);border:1px solid var(--bdr);border-radius:6px;padding:6px 14px;color:var(--mut);cursor:pointer;font-size:12px;transition:all .15s}
+.toggle-btn:hover{border-color:var(--acc);color:var(--acc)}
+.timeline{display:flex;flex-direction:column;gap:0}
+.tl-item{display:flex;gap:16px;padding:12px 0;border-bottom:1px solid var(--bdr)}
+.tl-item:last-child{border-bottom:none}
+.tl-dot{width:10px;height:10px;border-radius:50%;background:var(--acc);flex-shrink:0;margin-top:5px}
+.tl-content{flex:1}
+.tl-title{font-size:13px;font-weight:600}
+.tl-time{font-size:11px;color:var(--mut);margin-top:2px}
+.tl-meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.dual-bar{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.dual-lbl{width:180px;font-size:12px;color:var(--mut);text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dual-track{flex:1;display:flex;gap:4px}
+.dual-fill{height:22px;border-radius:4px;display:flex;align-items:center;padding:0 8px;font-size:11px;font-weight:600;color:#fff;min-width:28px}
+.no-data{background:var(--s2);border:1px solid var(--bdr);border-radius:var(--r);padding:40px;text-align:center;color:var(--mut)}
+::-webkit-scrollbar{width:5px;height:5px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--bdr);border-radius:3px}
+@media(max-width:640px){main{padding:16px}.hdr{padding:16px}.dual-lbl{width:100px}}
+</style>
+</head>
+<body>
+<div class="hdr">
+  <div class="hdr-icon">📊</div>
+  <div><h1>Scorecard Summary</h1><p>DWH POST — cust_wh_summary_api</p></div>
+  <div class="hdr-right">
+    <div class="badge ok"><b>HTTP 200</b></div>
+    <div class="badge">GLID: <b>488587</b></div>
+    <div class="badge">Generated: <b>2026-05-14 23:12</b></div>
+  </div>
+</div>
+<main id="main">
+
+    <div class="section">
+      <div class="section-title">👤 Seller Profile</div>
+      <div class="grid g4">
+        <div class="metric-card" style="--c:#6366f1"><div class="metric-lbl">City</div><div class="metric-val" style="font-size:18px">New Delhi</div><div class="metric-sub">DL</div></div>
+        <div class="metric-card" style="--c:#06b6d4"><div class="metric-lbl">Client Since</div><div class="metric-val" style="font-size:18px">1Y</div></div>
+        <div class="metric-card" style="--c:#10b981"><div class="metric-lbl">Enterprise Type</div><div class="metric-val" style="font-size:14px;padding-top:6px">Proprietor</div></div>
+        <div class="metric-card" style="--c:#f59e0b"><div class="metric-lbl">GLID</div><div class="metric-val" style="font-size:18px">488587</div></div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-title">📊 Engagement (7d / 30d / 90d)</div>
+      <div class="grid g2">
+        
+        <div class="metric-card" style="--c:#6366f1">
+          <div class="metric-lbl">📩 Total Enquiries</div>
+          <div class="grid g3" style="margin-top:12px">
+            <div><div class="metric-lbl">7D</div><div class="metric-val" style="font-size:18px;color:#6366f1">1</div></div> <div><div class="metric-lbl">30D</div><div class="metric-val" style="font-size:18px;color:#6366f1">6</div></div> <div><div class="metric-lbl">90D</div><div class="metric-val" style="font-size:18px;color:#6366f1">15</div></div>
+          </div>
+        </div>
+        
+        
+        <div class="metric-card" style="--c:#06b6d4">
+          <div class="metric-lbl">👥 Buyers Responded</div>
+          <div class="grid g3" style="margin-top:12px">
+            <div><div class="metric-lbl">7D</div><div class="metric-val" style="font-size:18px;color:#06b6d4">0</div></div> <div><div class="metric-lbl">30D</div><div class="metric-val" style="font-size:18px;color:#06b6d4">0</div></div> <div><div class="metric-lbl">90D</div><div class="metric-val" style="font-size:18px;color:#06b6d4">0</div></div>
+          </div>
+        </div>
+        
+        <div class="metric-card" style="--c:#f59e0b">
+          <div class="metric-lbl">📞 Seller Initiated Connects</div>
+          <div class="grid g3" style="margin-top:12px">
+            <div><div class="metric-lbl">7D</div><div class="metric-val" style="font-size:18px;color:#f59e0b">0</div></div> <div><div class="metric-lbl">30D</div><div class="metric-val" style="font-size:18px;color:#f59e0b">0</div></div> <div><div class="metric-lbl">90D</div><div class="metric-val" style="font-size:18px;color:#f59e0b">0</div></div>
+          </div>
+        </div>
+        
+        <div class="metric-card" style="--c:#8b5cf6">
+          <div class="metric-lbl">📅 LMS Active Days</div>
+          <div class="grid g3" style="margin-top:12px">
+            <div><div class="metric-lbl">7D</div><div class="metric-val" style="font-size:18px;color:#8b5cf6">0</div></div> <div><div class="metric-lbl">30D</div><div class="metric-val" style="font-size:18px;color:#8b5cf6">0</div></div> <div><div class="metric-lbl">90D</div><div class="metric-val" style="font-size:18px;color:#8b5cf6">1</div></div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+<div class="section">
+  <div class="section-title">🔍 Raw JSON Explorer</div>
+  <button class="toggle-btn" onclick="toggleRaw()">Show / Hide Raw JSON</button>
+  <div id="raw-json" class="json-viewer" style="display:none;margin-top:12px">{
+  &quot;status&quot;: 200,
+  &quot;data&quot;: {
+    &quot;err_txt&quot;: &quot;&quot;,
+    &quot;response&quot;: &quot;{\&quot;summary\&quot;:[{\&quot;glid\&quot;:488587,\&quot;gl_state_code\&quot;:\&quot;DL\&quot;,\&quot;gl_city_name\&quot;:\&quot;New Delhi\&quot;,\&quot;client_since\&quot;:\&quot;1Y\&quot;,\&quot;enterprise_type\&quot;:\&quot;Proprietor\&quot;,\&quot;major_cities_list\&quot;:\&quot;{\\\&quot;1\\\&quot;:{\\\&quot;city\\\&quot;:\\\&quot;Delhi\\\&quot;}}\&quot;,\&quot;seller_init_conn\&quot;:\&quot;{\\\&quot;7d\\\&quot;:0,\\\&quot;30d\\\&quot;:0,\\\&quot;90d\\\&quot;:0}\&quot;,\&quot;buyers_responded\&quot;:\&quot;{\\\&quot;7d\\\&quot;:0,\\\&quot;30d\\\&quot;:0,\\\&quot;90d\\\&quot;:0}\&quot;,\&quot;wp_enq_count\&quot;:\&quot;{\\\&quot;7d\\\&quot;:0,\\\&quot;30d\\\&quot;:0,\\\&quot;90d\\\&quot;:0}\&quot;,\&quot;non_wp_enq_wp_conv_count\&quot;:\&quot;{\\\&quot;7d\\\&quot;:0,\\\&quot;30d\\\&quot;:0,\\\&quot;90d\\\&quot;:0}\&quot;,\&quot;lms_active_days\&quot;:\&quot;{\\\&quot;7d\\\&quot;:0,\\\&quot;30d\\\&quot;:0,\\\&quot;90d\\\&quot;:1}\&quot;,\&quot;tot_enq\&quot;:\&quot;{\\\&quot;7d\\\&quot;:1,\\\&quot;30d\\\&quot;:6,\\\&quot;90d\\\&quot;:15}\&quot;,\&quot;top_10_categories\&quot;:null,\&quot;top_10_neg_categories\&quot;:null,\&quot;top_10_cities\&quot;:\&quot;{\\\&quot;1\\\&quot;:{\\\&quot;city\\\&quot;:\\\&quot;Delhi\\\&quot;,\\\&quot;bl\\\&quot;:\\\&quot;0\\\&quot;,\\\&quot;enq\\\&quot;:\\\&quot;2\\\&quot;,\\\&quot;pns\\\&quot;:\\\&quot;5\\\&quot;}}\&quot;,\&quot;top_10_neg_cities\&quot;:null,\&quot;catalog_bl_cons\&quot;:\&quot;{\\\&quot;7d\\\&quot;:0,\\\&quot;30d\\\&quot;:0,\\\&quot;90d\\\&quot;:0}\&quot;,\&quot;legal_status\&quot;:4,\&quot;bl_all_cons\&quot;:\&quot;{\\\&quot;7d\\\&quot;:0,\\\&quot;30d\\\&quot;:0,\\\&quot;90d\\\&quot;:0}\&quot;,\&quot;pns_calls_recd\&quot;:\&quot;{\\\&quot;7d\\\&quot;:1,\\\&quot;30d\\\&quot;:3,\\\&quot;90d\\\&quot;:8}\&quot;,\&quot;direct_enq\&quot;:\&quot;{\\\&quot;7d\\\&quot;:0,\\\&quot;30d\\\&quot;:3,\\\&quot;90d\\\&quot;:7}\&quot;,\&quot;ast_buy_enq\&quot;:\&quot;{\\\&quot;7d\\\&quot;:0,\\\&quot;30d\\\&quot;:0,\\\&quot;90d\\\&quot;:0}\&quot;,\&quot;weekly_bl_active_days\&quot;:\&quot;{\\\&quot;w0\\\&quot;:0,\\\&quot;w1\\\&quot;:0,\\\&quot;w2\\\&quot;:0,\\\&quot;w3\\\&quot;:0,\\\&quot;w4\\\&quot;:0}\&quot;,\&quot;call_answered\&quot;:\&quot;{\\\&quot;7d\\\&quot;:2,\\\&quot;30d\\\&quot;:2,\\\&quot;90d\\\&quot;:2}\&quot;,\&quot;call_answered_1m_plus\&quot;:\&quot;{\\\&quot;7d\\\&quot;:1,\\\&quot;30d\\\&quot;:1,\\\&quot;90d\\\&quot;:1}\&quot;,\&quot;video_meet\&quot;:\&quot;{\\\&quot;7d\\\&quot;:0,\\\&quot;30d\\\&quot;:0,\\\&quot;90d\\\&quot;:0}\&quot;,\&quot;physical_meet\&quot;:\&quot;{\\\&quot;7d\\\&quot;:0,\\\&quot;30d\\\&quot;:0,\\\&quot;90d\\\&quot;:0}\&quot;,\&quot;cqs\&quot;:77,\&quot;name_only_prd\&quot;:0,\&quot;prod_wo_image\&quot;:0,\&quot;prd_wo_isq\&quot;:1,\&quot;prd_no_prices\&quot;:1,\&quot;a_rank_wo_prim_prd\&quot;:0,\&quot;count_of_number_mapped\&quot;:2,\&quot;production_wip\&quot;:0,\&quot;last_video_meet_dt\&quot;:\&quot;2025-05-15\&quot;,\&quot;last_physical_meet_dt\&quot;:\&quot;2025-08-07\&quot;,\&quot;last_succ_call_dt\&quot;:\&quot;2026-05-08\&quot;,\&quot;nach_hit_date\&quot;:null,\&quot;total_tickets\&quot;:0,\&quot;deactivation_tickets\&quot;:0,\&quot;repeat_60d\&quot;:0,\&quot;live_prd_cnt\&quot;:33,\&quot;d_rank_mcats\&quot;:0,\&quot;physical_meet_scheduled\&quot;:\&quot;{\\\&quot;7d\\\&quot;:0,\\\&quot;30d\\\&quot;:0,\\\&quot;90d\\\&quot;:0}\&quot;,\&quot;video_meet_scheduled\&quot;:\&quot;{\\\&quot;7d\\\&quot;:0,\\\&quot;30d\\\&quot;:0,\\\&quot;90d\\\&quot;:0}\&quot;,\&quot;call_attempted\&quot;:\&quot;{\\\&quot;7d\\\&quot;:4,\\\&quot;30d\\\&quot;:4,\\\&quot;90d\\\&quot;:4}\&quot;,\&quot;last_succ_call_dt_1m_plus\&quot;:\&quot;2026-05-08\&quot;,\&quot;nach_active\&quot;:null,\&quot;nach_amount\&quot;:null,\&quot;catalog_score\&quot;:77.2}]}&quot;,
+    &quot;status_code&quot;: 200
+  },
+  &quot;error&quot;: null
+}</div>
+</div>
+</main>
+<script>
+const DATA = {"status": 200, "data": {"err_txt": "", "response": "{\"summary\":[{\"glid\":488587,\"gl_state_code\":\"DL\",\"gl_city_name\":\"New Delhi\",\"client_since\":\"1Y\",\"enterprise_type\":\"Proprietor\",\"major_cities_list\":\"{\\\"1\\\":{\\\"city\\\":\\\"Delhi\\\"}}\",\"seller_init_conn\":\"{\\\"7d\\\":0,\\\"30d\\\":0,\\\"90d\\\":0}\",\"buyers_responded\":\"{\\\"7d\\\":0,\\\"30d\\\":0,\\\"90d\\\":0}\",\"wp_enq_count\":\"{\\\"7d\\\":0,\\\"30d\\\":0,\\\"90d\\\":0}\",\"non_wp_enq_wp_conv_count\":\"{\\\"7d\\\":0,\\\"30d\\\":0,\\\"90d\\\":0}\",\"lms_active_days\":\"{\\\"7d\\\":0,\\\"30d\\\":0,\\\"90d\\\":1}\",\"tot_enq\":\"{\\\"7d\\\":1,\\\"30d\\\":6,\\\"90d\\\":15}\",\"top_10_categories\":null,\"top_10_neg_categories\":null,\"top_10_cities\":\"{\\\"1\\\":{\\\"city\\\":\\\"Delhi\\\",\\\"bl\\\":\\\"0\\\",\\\"enq\\\":\\\"2\\\",\\\"pns\\\":\\\"5\\\"}}\",\"top_10_neg_cities\":null,\"catalog_bl_cons\":\"{\\\"7d\\\":0,\\\"30d\\\":0,\\\"90d\\\":0}\",\"legal_status\":4,\"bl_all_cons\":\"{\\\"7d\\\":0,\\\"30d\\\":0,\\\"90d\\\":0}\",\"pns_calls_recd\":\"{\\\"7d\\\":1,\\\"30d\\\":3,\\\"90d\\\":8}\",\"direct_enq\":\"{\\\"7d\\\":0,\\\"30d\\\":3,\\\"90d\\\":7}\",\"ast_buy_enq\":\"{\\\"7d\\\":0,\\\"30d\\\":0,\\\"90d\\\":0}\",\"weekly_bl_active_days\":\"{\\\"w0\\\":0,\\\"w1\\\":0,\\\"w2\\\":0,\\\"w3\\\":0,\\\"w4\\\":0}\",\"call_answered\":\"{\\\"7d\\\":2,\\\"30d\\\":2,\\\"90d\\\":2}\",\"call_answered_1m_plus\":\"{\\\"7d\\\":1,\\\"30d\\\":1,\\\"90d\\\":1}\",\"video_meet\":\"{\\\"7d\\\":0,\\\"30d\\\":0,\\\"90d\\\":0}\",\"physical_meet\":\"{\\\"7d\\\":0,\\\"30d\\\":0,\\\"90d\\\":0}\",\"cqs\":77,\"name_only_prd\":0,\"prod_wo_image\":0,\"prd_wo_isq\":1,\"prd_no_prices\":1,\"a_rank_wo_prim_prd\":0,\"count_of_number_mapped\":2,\"production_wip\":0,\"last_video_meet_dt\":\"2025-05-15\",\"last_physical_meet_dt\":\"2025-08-07\",\"last_succ_call_dt\":\"2026-05-08\",\"nach_hit_date\":null,\"total_tickets\":0,\"deactivation_tickets\":0,\"repeat_60d\":0,\"live_prd_cnt\":33,\"d_rank_mcats\":0,\"physical_meet_scheduled\":\"{\\\"7d\\\":0,\\\"30d\\\":0,\\\"90d\\\":0}\",\"video_meet_scheduled\":\"{\\\"7d\\\":0,\\\"30d\\\":0,\\\"90d\\\":0}\",\"call_attempted\":\"{\\\"7d\\\":4,\\\"30d\\\":4,\\\"90d\\\":4}\",\"last_succ_call_dt_1m_plus\":\"2026-05-08\",\"nach_active\":null,\"nach_amount\":null,\"catalog_score\":77.2}]}", "status_code": 200}, "error": null};
+function toggleRaw(){document.getElementById('raw-json').style.display=document.getElementById('raw-json').style.display==='none'?'block':'none'}
+
+</script>
+</body>
+</html>

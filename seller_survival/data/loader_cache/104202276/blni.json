@@ -1,0 +1,91 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 104202276,
+        "event_date": "2026-02-18",
+        "offer_id": 139016746467,
+        "mcat_id": 8301,
+        "reason_code": 3,
+        "reason_text": "Specification Mismatch",
+        "comment": null,
+        "module_id": "IMOB"
+      },
+      {
+        "gluser_id": 104202276,
+        "event_date": "2026-02-18",
+        "offer_id": 138996576146,
+        "mcat_id": 46011,
+        "reason_code": 1,
+        "reason_text": "Wrong Product",
+        "comment": null,
+        "module_id": "FLPNS"
+      },
+      {
+        "gluser_id": 104202276,
+        "event_date": "2026-02-18",
+        "offer_id": 139086254963,
+        "mcat_id": 5571,
+        "reason_code": 11,
+        "reason_text": "Retail Lead",
+        "comment": null,
+        "module_id": "FLPNS"
+      },
+      {
+        "gluser_id": 104202276,
+        "event_date": "2026-02-18",
+        "offer_id": 139149548652,
+        "mcat_id": 28331,
+        "reason_code": 11,
+        "reason_text": "Retail Lead",
+        "comment": null,
+        "module_id": "IMOB"
+      },
+      {
+        "gluser_id": 104202276,
+        "event_date": "2026-02-18",
+        "offer_id": 139113908113,
+        "mcat_id": 26081,
+        "reason_code": 11,
+        "reason_text": "Retail Lead",
+        "comment": null,
+        "module_id": "FENQ"
+      },
+      {
+        "gluser_id": 104202276,
+        "event_date": "2026-02-18",
+        "offer_id": 139144993713,
+        "mcat_id": 147252,
+        "reason_code": 11,
+        "reason_text": "Retail Lead",
+        "comment": null,
+        "module_id": "FLPNS"
+      },
+      {
+        "gluser_id": 104202276,
+        "event_date": "2026-02-18",
+        "offer_id": 139145184975,
+        "mcat_id": 22111,
+        "reason_code": 11,
+        "reason_text": "Retail Lead",
+        "comment": null,
+        "module_id": "FENQ"
+      },
+      {
+        "gluser_id": 104202276,
+        "event_date": "2026-01-20",
+        "offer_id": 137171452185,
+        "mcat_id": 33479,
+        "reason_code": 1,
+        "reason_text": "Wrong Product",
+        "comment": null,
+        "module_id": "FLPNS"
+      }
+    ],
+    "total": 8,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

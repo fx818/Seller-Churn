@@ -1,0 +1,91 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 6698157,
+        "event_date": "2025-10-06",
+        "offer_id": 130695879785,
+        "mcat_id": null,
+        "reason_code": 1,
+        "reason_text": "Wrong Product",
+        "comment": null,
+        "module_id": null
+      },
+      {
+        "gluser_id": 6698157,
+        "event_date": "2025-09-24",
+        "offer_id": 130010172563,
+        "mcat_id": null,
+        "reason_code": 1,
+        "reason_text": "Wrong Product",
+        "comment": null,
+        "module_id": null
+      },
+      {
+        "gluser_id": 6698157,
+        "event_date": "2025-09-23",
+        "offer_id": 129920815013,
+        "mcat_id": null,
+        "reason_code": 1,
+        "reason_text": "Wrong Product",
+        "comment": null,
+        "module_id": null
+      },
+      {
+        "gluser_id": 6698157,
+        "event_date": "2025-09-23",
+        "offer_id": 130008117852,
+        "mcat_id": null,
+        "reason_code": 3,
+        "reason_text": "Specification Mismatch",
+        "comment": null,
+        "module_id": null
+      },
+      {
+        "gluser_id": 6698157,
+        "event_date": "2025-08-12",
+        "offer_id": 127179333575,
+        "mcat_id": null,
+        "reason_code": 15,
+        "reason_text": "Wrong Result",
+        "comment": null,
+        "module_id": null
+      },
+      {
+        "gluser_id": 6698157,
+        "event_date": "2025-08-10",
+        "offer_id": 127028677567,
+        "mcat_id": null,
+        "reason_code": 3,
+        "reason_text": "Specification Mismatch",
+        "comment": null,
+        "module_id": null
+      },
+      {
+        "gluser_id": 6698157,
+        "event_date": "2025-08-08",
+        "offer_id": 126988193485,
+        "mcat_id": null,
+        "reason_code": 3,
+        "reason_text": "Specification Mismatch",
+        "comment": null,
+        "module_id": null
+      },
+      {
+        "gluser_id": 6698157,
+        "event_date": "2025-08-08",
+        "offer_id": 126817150067,
+        "mcat_id": null,
+        "reason_code": 3,
+        "reason_text": "Specification Mismatch",
+        "comment": null,
+        "module_id": null
+      }
+    ],
+    "total": 8,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}
