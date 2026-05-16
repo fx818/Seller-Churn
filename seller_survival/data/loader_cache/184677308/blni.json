@@ -1,0 +1,81 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 184677308,
+        "event_date": "2026-01-10",
+        "offer_id": 136708721695,
+        "mcat_id": 209095,
+        "reason_code": 1,
+        "reason_text": "Wrong Product",
+        "comment": null,
+        "module_id": "IMOB"
+      },
+      {
+        "gluser_id": 184677308,
+        "event_date": "2026-01-09",
+        "offer_id": 136620560913,
+        "mcat_id": 209095,
+        "reason_code": 1,
+        "reason_text": "Wrong Product",
+        "comment": null,
+        "module_id": "FENQ"
+      },
+      {
+        "gluser_id": 184677308,
+        "event_date": "2026-01-09",
+        "offer_id": 136643526867,
+        "mcat_id": 209095,
+        "reason_code": 1,
+        "reason_text": "Wrong Product",
+        "comment": null,
+        "module_id": "FLPNS"
+      },
+      {
+        "gluser_id": 184677308,
+        "event_date": "2026-01-09",
+        "offer_id": 136658803713,
+        "mcat_id": 30193,
+        "reason_code": 1,
+        "reason_text": "Wrong Product",
+        "comment": null,
+        "module_id": "IMOB"
+      },
+      {
+        "gluser_id": 184677308,
+        "event_date": "2026-01-09",
+        "offer_id": 136615276895,
+        "mcat_id": 73955,
+        "reason_code": 1,
+        "reason_text": "Wrong Product",
+        "comment": null,
+        "module_id": "FENQ"
+      },
+      {
+        "gluser_id": 184677308,
+        "event_date": "2025-09-02",
+        "offer_id": 128527915785,
+        "mcat_id": null,
+        "reason_code": 3,
+        "reason_text": "Specification Mismatch",
+        "comment": null,
+        "module_id": null
+      },
+      {
+        "gluser_id": 184677308,
+        "event_date": "2025-07-31",
+        "offer_id": 126516669646,
+        "mcat_id": null,
+        "reason_code": 3,
+        "reason_text": "Specification Mismatch",
+        "comment": null,
+        "module_id": null
+      }
+    ],
+    "total": 7,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

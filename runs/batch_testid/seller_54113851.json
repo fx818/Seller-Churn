@@ -1,0 +1,632 @@
+{
+  "glid": 54113851,
+  "run_at": "2026-05-16T18:18:47.002263",
+  "context": {
+    "company": "Pawan Tyres",
+    "turnover": "0 - 40 L",
+    "turnover_raw": "Slab: Rs. 40 lakhs to 1.5 Cr. (For FY 2024-2025)",
+    "city": "Alwar",
+    "state": "RJ",
+    "mcats": [],
+    "custtype": "CATALOG",
+    "account_age_days": 1255,
+    "rag_category": "",
+    "paid_history": true
+  },
+  "phases": {
+    "phase0_benchmark": {
+      "peer-benchmark": {
+        "success": true,
+        "confidence": 0.2,
+        "latency_ms": 0,
+        "data": {
+          "peer_group": "CATALOG|CATALOG",
+          "peer_n": 0,
+          "peer_data_available": false,
+          "gap_severity": "unknown",
+          "peer_summary_line": "No peer data available for group CATALOG|CATALOG."
+        },
+        "error": null
+      },
+      "demand-index": {
+        "success": true,
+        "confidence": 0.3,
+        "latency_ms": 0,
+        "data": {
+          "demand_index": 35,
+          "demand_tier": "Amber",
+          "market_bl_per_seller": 0.0,
+          "trend": "growing",
+          "trend_slope": 2.5699,
+          "is_high_risk_city": false,
+          "city_risk_prior": 0,
+          "is_high_risk_category": false,
+          "demand_explanation": "Market has 0.0 BLs per paid seller, trend is growing.",
+          "recommended_action": "Expand to nearby cities; improve catalog to capture existing demand"
+        },
+        "error": null
+      },
+      "conversion-point": {
+        "success": true,
+        "confidence": 0.85,
+        "latency_ms": 0,
+        "data": {
+          "trajectory_type": "TYPE_B",
+          "trajectory_label": "Gradual Drift",
+          "explanation": "Seller showed 3+ months of continuous decline — gradual drift away from platform.",
+          "opening_line_hi": "Pichle kuch mahino mein aapki IndiaMart activity dheere-dheere kam hui hai — kya koi specific issue hai jisme hum help kar sakte hain?",
+          "cliff_month_index": 9,
+          "cliff_drop_pct": null,
+          "monthly_enq": [
+            0,
+            20,
+            56,
+            43,
+            48,
+            37,
+            58,
+            42,
+            45,
+            63,
+            52,
+            35
+          ],
+          "peer_median_enq": 0,
+          "account_age_days": 1255,
+          "is_type_c": false,
+          "run_onboarding": false
+        },
+        "error": null
+      }
+    },
+    "phase1_onboarding": {
+      "skipped": true,
+      "reason": "condition false: context.account_age_days <= 90"
+    },
+    "phase2_churn": {
+      "churn-scoring": {
+        "success": true,
+        "confidence": 1.0,
+        "latency_ms": 10334,
+        "data": {
+          "churn_score": 43,
+          "risk": "Amber",
+          "churn_reasons": [
+            "Critical reply rate: 10.3%",
+            "Zero LMS active days in last 30d",
+            "No hotlead activity — no engagement events"
+          ],
+          "reason_tags": [
+            "CRITICAL_REPLY_RATE",
+            "ZERO_ACTIVE_DAYS",
+            "NO_HOTLEAD",
+            "TYPE_B_GRADUAL_DRIFT"
+          ],
+          "score_breakdown": {
+            "reply_rate": 14,
+            "active_days": 14,
+            "hotleads": 4
+          },
+          "red_flag_count": 2,
+          "red_flags": [
+            "CRITICAL_REPLY_RATE",
+            "ZERO_ACTIVE_DAYS"
+          ],
+          "reply_rate_30d": 10.3,
+          "signals_available": 7,
+          "base_score": 32,
+          "compound_multiplier": 1.0,
+          "compounded_score": 32.0,
+          "trajectory_adjustment": 1,
+          "trajectory_note": "TYPE_B Gradual Drift → +1 (proactive window)",
+          "pre_llm_score": 33,
+          "pre_llm_risk": "Green",
+          "llm_adjustment": 10,
+          "llm_justification": "The rule-based model underweights the compounding severity of zero active days combined with a 10.3% reply rate and zero hotlead engagement — this trifecta indicates near-complete platform abandonment despite healthy inbound BL volume (97 BLs), meaning the seller is passively receiving but actively ignoring the platform. The 21 clickstream events over 30 days alongside 0 active LMS days suggests minimal, possibly accidental or automated touchpoints rather than genuine engagement.",
+          "llm_interactions": [
+            "Zero active days + 10.3% reply rate = functional disengagement despite inbound demand (97 BLs ignored)",
+            "High BL volume (97) with zero hotlead conversion amplifies the signal — opportunity is present but seller is unresponsive",
+            "21 clickstream events vs 0 active days suggests superficial/passive presence, not meaningful engagement",
+            "PNS answer rate of 64.9% is moderate but cannot offset the complete collapse in reply rate and active days",
+            "TYPE_B Gradual Drift trajectory combined with all three critical flags (reply rate, active days, hotleads) suggests drift has already reached near-churn state"
+          ],
+          "llm_used": true,
+          "llm_error": null
+        },
+        "error": null
+      },
+      "shap-rca": {
+        "success": true,
+        "confidence": 0.55,
+        "latency_ms": 0,
+        "data": {
+          "rca_category": "LOW_ENGAGEMENT",
+          "rca_confidence": 0.55,
+          "rca_explanation_en": "Seller is not using the platform actively. Low login frequency, few clickstream events.",
+          "rca_explanation_hi": "Aapne platform pe login nahi kiya last few weeks. Notifications miss ho rahi hain.",
+          "intervention_hint": "Mobile app setup + notification activation call within 24h.",
+          "top_feature": null,
+          "top_feature_value": null,
+          "top_feature_contribution": 0,
+          "shap_breakdown": []
+        },
+        "error": null
+      }
+    },
+    "phase2_llm": {
+      "llm-cohort-scorer": {
+        "success": true,
+        "confidence": 0.74,
+        "latency_ms": 9711,
+        "data": {
+          "skipped": false,
+          "risk_level": "Very High",
+          "pipeline_tier": "Red",
+          "confidence_score": 74,
+          "bands": {
+            "bl": "R",
+            "lms": "A",
+            "activity": "R"
+          },
+          "reasoning": "The target's BL consumption rate (0.0946) and consumed_30d (8 of 97) are far below all cohort members—both churned and retained—where even the lowest retained seller consumed at 0.2667; reply rate of 0.034 is marginally above zero but negligible, placing BL engagement firmly in the red. LMS activity is amber: lms_active_days_30d is zero (matching churned seller 264144052) but call_pickup_ratio (0.396) and call_attempts_90d (154) are healthy and exceed most of the cohort, so the signal is mixed. Activity trend is red: recent_enq_trend is steeply declining (63→52→35), activity_30d of 21 and event_count of 21 are the lowest in the entire cohort by a wide margin, closely mirroring the most at-risk churned profiles.",
+          "churned_lookalikes": [
+            264144052,
+            202041505,
+            55709000
+          ],
+          "retained_lookalikes": [
+            16221202,
+            5957111
+          ],
+          "cohort_match": {
+            "n_filtered": 54,
+            "tier": "strict",
+            "shown_to_llm": 9
+          },
+          "snapshot_context": {
+            "company": "Pawan Tyres",
+            "turnover": "0 - 40 L",
+            "turnover_raw": "Slab: Rs. 40 lakhs to 1.5 Cr. (For FY 2024-2025)",
+            "city": "Alwar",
+            "state": "RJ",
+            "mcats": [],
+            "custtype": "CATALOG",
+            "account_age_days": 1255,
+            "rag_category": "",
+            "paid_history": true
+          }
+        },
+        "error": null
+      }
+    },
+    "phase3_actions": {
+      "pre-call-brief": {
+        "success": true,
+        "confidence": 0.85,
+        "latency_ms": 0,
+        "data": {
+          "company": "Pawan Tyres",
+          "city": "Alwar",
+          "enterprise": "CATALOG",
+          "ctype": "CATALOG",
+          "opening_line_hi": "Pawan Bhai, platform pe kuch din se activity nahi dikhte — sab theek hai?",
+          "opening_line_en": "Pawan ji, haven't seen much platform activity recently. Everything okay?",
+          "key_signals": [
+            {
+              "label": "Churn Score",
+              "value": "43/100",
+              "severity": "medium"
+            },
+            {
+              "label": "AI Risk Level",
+              "value": "Very High (cohort-calibrated)",
+              "severity": "critical"
+            },
+            {
+              "label": "PNS Answer Rate",
+              "value": "64.9%",
+              "severity": "medium"
+            },
+            {
+              "label": "Active Days (30d)",
+              "value": "0",
+              "severity": "critical"
+            },
+            {
+              "label": "Catalog Score (CQS)",
+              "value": "82",
+              "severity": "medium"
+            }
+          ],
+          "suggested_actions": [
+            "⚠️ AI-flagged as high churn risk — prioritize this call",
+            "Fix notification setup on mobile",
+            "Enable LMS reply from app"
+          ],
+          "do_not_mention": [
+            "renewal price",
+            "subscription cost",
+            "competitor pricing"
+          ],
+          "call_type": "RETENTION",
+          "estimated_call_duration": "8-12 min",
+          "rca_category": "LOW_ENGAGEMENT",
+          "llm_risk_level": "Very High",
+          "llm_bands_display": {
+            "BL Consumption": "🔴 Red",
+            "LMS Activity": "🟡 Amber",
+            "Activity Trend": "🔴 Red"
+          },
+          "llm_reasoning": "The target's BL consumption rate (0.0946) and consumed_30d (8 of 97) are far below all cohort members—both churned and retained—where even the lowest retained seller consumed at 0.2667; reply rate of 0.034 is marginally above zero but negligible, placing BL engagement firmly in the red. LMS activity is amber: lms_active_days_30d is zero (matching churned seller 264144052) but call_pickup_ratio (0.396) and call_attempts_90d (154) are healthy and exceed most of the cohort, so the signal is mixed. Activity trend is red: recent_enq_trend is steeply declining (63→52→35), activity_30d of 21 and event_count of 21 are the lowest in the entire cohort by a wide margin, closely mirroring the most at-risk churned profiles.",
+          "churned_lookalikes": [],
+          "retained_lookalikes": [],
+          "brief_text": "SELLER: Pawan Tyres | Alwar | CATALOG/CATALOG | Age: 1255d\nCHURN SCORE: 43/100 | RISK: Amber | AI: Very High\nMAIN ISSUE: LOW_ENGAGEMENT — Seller is not using the platform actively. Low login frequency, few clickstream events.\nOPENING: Pawan ji, haven't seen much platform activity recently. Everything okay?\nACTIONS: ⚠️ AI-flagged as high churn risk — prioritize this call; Fix notification setup on mobile; Enable LMS reply from app"
+        },
+        "error": null
+      },
+      "whatsapp-message": {
+        "success": true,
+        "confidence": 0.9,
+        "latency_ms": 0,
+        "data": {
+          "message_hi": "Pawan Tyres Bhai, aapke 97 leads last week respond nahi hue —\nkoi notification issue toh nahi aaya?\nMobile pe setup karein saath mein, 5 minute mein ho jaata hai. 🔔",
+          "message_en": "Hi Pawan Tyres, your 97 leads went unanswered last week —\nSeems like a notification issue.\nLet's fix it together — 5 minutes on mobile. 🔔",
+          "message_type": "retention_nudge",
+          "rca_used": "LOW_ENGAGEMENT",
+          "cta": "Reply YES to fix notification setup",
+          "personalization_vars": [
+            "name",
+            "enq_30d",
+            "cqs",
+            "pns_success_pct"
+          ],
+          "estimated_open_rate": 0.72
+        },
+        "error": null
+      },
+      "script-generation": {
+        "success": true,
+        "confidence": 0.92,
+        "latency_ms": 24395,
+        "data": {
+          "script_parts": {
+            "opening": "Namaskar, Pawan Tyres se baat ho rahi hai? Ji, main IndiaMART se bol raha hoon — dekh raha tha ki aapka account kaafi purana hai, almost saade teen saal se — 1255 din — lekin pichle 30 dinon mein platform pe ek bhi active day record nahi hua, toh sochaa ek baar seedha baat karte hain.",
+            "diagnostic": "Bhai ji, seedha poochhna chahta hoon — jab bhi koi buyer aapko inquiry bhejta hai, reply karne mein kya dikkat aati hai? Kyunki abhi aapka reply rate sirf 10.3% dikh raha hai, matlab 10 mein se sirf 1 lead ka jawab ja raha hai — kya time nahi milta, ya leads relevant nahi lag rahe?",
+            "value_demo": "Ek cheez share karta hoon — aapka CQS score 82 hai, jo actually achha hai, matlab aapka catalog strong hai. Aur aapki 64.9% PNS success rate bhi theek hai. Problem sirf engagement ki hai — agar aap sirf un leads ko bhi reply karein jo already aa rahi hain, toh conversion naturally upar jayega bina koi extra investment ke.",
+            "action": "Chaliye abhi ek kaam karte hain — main aapko IndiaMART app pe Lead Manager dikhata hoon, wahan jo pending inquiries hain unhe ek saath dekh lete hain aur ek quick reply template set kar dete hain taaki aage se reply karna 2 minute ka kaam ho jaye.",
+            "close": "Bhai ji, koi bada commitment nahi maang raha — bas agle 7 din mein ek baar daily 5 minute Lead Manager check karna, aur jo bhi inquiry aaye uspe reply karna. Ek hafte baad main phir call karta hoon dekhne ke liye ki kuch fark pada ya nahi — theek lagta hai?"
+          },
+          "script_parts_en": {
+            "opening": "Hello, am I speaking with Pawan Tyres? This is IndiaMART calling — I was reviewing your account and noticed that while you've been with us for 1,255 days, there have been zero active days on the platform in the last 30 days, so I wanted to have a direct conversation about what's going on.",
+            "diagnostic": "I want to ask you directly — when buyers send you inquiries, what's making it difficult to respond? Because right now your reply rate is only 10.3%, meaning only 1 out of every 10 leads is getting a response — is it a time issue, or are the leads not feeling relevant to your business?",
+            "value_demo": "Here's something worth noting — your CQS score is 82, which means your catalog is actually in good shape, and your PNS success rate is 64.9%. The only gap is engagement — if you simply start replying to the leads that are already coming in, your conversion will improve without any additional investment.",
+            "action": "Let's do one thing right now on this call — I'll walk you through the Lead Manager section on the IndiaMART app, we'll look at the pending inquiries together, and set up a quick reply template so that responding to future leads takes no more than 2 minutes.",
+            "close": "I'm not asking for any big commitment — just 5 minutes a day on Lead Manager for the next 7 days, and a reply to any inquiry that comes in. I'll call you again in a week to check if there's been any difference — does that work for you?"
+          },
+          "objection_handlers": {
+            "competitor_platform": "Samajh sakta hoon — doosre platforms bhi kaam karte hain. Lekin IndiaMART pe B2B buyers specifically aate hain jo bulk order dene ka intent rakhte hain. Ek baar compare karte hain — aapke last 3 mahine ke leads ka source kya raha?",
+            "price_too_high": "Bilkul valid point hai. Lekin aise socho — agar sirf 2 orders extra aaye subscription se, toh ROI positive ho jaata hai. Main aapke category ke average order value se calculate kar sakta hoon.",
+            "no_time": "Koi baat nahi — main ek quick summary WhatsApp pe bhej deta hoon. Aap apne time pe dekh lena, aur jo bhi question ho directly reply karna."
+          },
+          "objection_handlers_en": {
+            "competitor_platform": "I understand — other platforms work too. But IndiaMART specifically attracts B2B buyers who intend to place bulk orders. Let's compare — what was the source of your leads over the last 3 months?",
+            "price_too_high": "Completely valid point. But think of it this way — if just 2 extra orders come through the subscription, the ROI turns positive. I can calculate that using your category's average order value.",
+            "no_time": "No problem — I'll send you a quick summary on WhatsApp. Check it at your convenience, and just reply directly with any questions."
+          },
+          "language": "hi",
+          "rca_used": "LOW_ENGAGEMENT",
+          "trajectory_type": "TYPE_B",
+          "estimated_duration_min": 7,
+          "call_type": "RETENTION",
+          "llm_used": true,
+          "personalization_signals_used": [
+            "active_days_30d_zero",
+            "reply_rate_10.3%",
+            "account_age_1255_days",
+            "cqs_82",
+            "pns_success_64.9%",
+            "low_engagement_rca",
+            "type_b_gradual_drift"
+          ],
+          "generation_method": "llm"
+        },
+        "error": null
+      },
+      "gifted-lead": {
+        "success": true,
+        "confidence": 0.5,
+        "latency_ms": 0,
+        "data": {
+          "lead_found": false,
+          "reason": "No hotleads data available",
+          "fallback": "Use peer comparison data as value demonstration",
+          "total_qualifying": 0
+        },
+        "error": null
+      }
+    },
+    "phase3c_cross_platform": {
+      "cross-platform-intelligence": {
+        "success": true,
+        "confidence": 1.0,
+        "latency_ms": 24036,
+        "data": {
+          "platforms_found": [
+            "justdial"
+          ],
+          "platform_data": {
+            "justdial": {
+              "found": true,
+              "name_matched": "Pawan Tyres",
+              "product_count": 0,
+              "photo_count": 0,
+              "catalog_items": 0,
+              "catalog_flag": false,
+              "rating": 0.0,
+              "reviews": 0,
+              "categories": [
+                "Petroleum Testing Equipment Dealers",
+                "By Pass Road Bansur"
+              ],
+              "url": "https://www.justdial.com/DT-99LBRNBLSAH",
+              "match_score": 1.0
+            },
+            "tradeindia": {
+              "found": false,
+              "product_count": 0,
+              "rating": 0.0,
+              "reviews": 0,
+              "categories": [],
+              "url": ""
+            }
+          },
+          "im_catalog_gap": {
+            "im_products": 26,
+            "other_total_products": 0,
+            "other_max_products": 0,
+            "other_combination": "none",
+            "gap_pct": 0,
+            "severity": "unknown",
+            "match_method": "none",
+            "overlap_pairs": [],
+            "per_platform_unique": {}
+          },
+          "call_card": {
+            "headline_hi": "Pawan Bhai, aap Justdial pe bhi listed hain — IM catalog fresh rakho.",
+            "headline_en": "Listed on Justdial too. IndiaMART catalog at parity — keep it updated.",
+            "data_points": [
+              "Justdial: Listed",
+              "GST: 08AKNPY5855G1ZC",
+              "Address: Pawan Tower, Near Harsora Chowk, By Pass Road, Bansur"
+            ],
+            "suggested_action": "Maintain catalog sync quarterly.",
+            "effort_estimate": "20 minutes",
+            "urgency": "low"
+          },
+          "competitive_positioning": "parity",
+          "scrape_status": "success",
+          "context_enriched": true,
+          "company_name_used": "Pawan Tyres",
+          "im_product_count": 26,
+          "gst": "08AKNPY5855G1ZC",
+          "address": "Pawan Tower, Near Harsora Chowk, By Pass Road, Bansur",
+          "own_website_domain": "gmail.com"
+        },
+        "error": null
+      }
+    },
+    "phase4": {
+      "bl-upgrade": {
+        "success": true,
+        "confidence": 0.9,
+        "latency_ms": 0,
+        "data": {
+          "eligible": true,
+          "mode": "AT_RISK_RETENTION",
+          "upgrade_leads_count": 5,
+          "upgrade_message_hi": "Ramesh Bhai, renewal se pehle aapke liye 5 premium leads unlock ki hain — yeh normal sellers ko nahi milti.",
+          "upgrade_message_en": "We've unlocked 5 premium leads for you before renewal — these aren't available to regular sellers.",
+          "action": "OFFER_PREMIUM_LEADS",
+          "expected_conversion_uplift": 0.22
+        },
+        "error": null
+      }
+    },
+    "phase5": {
+      "skipped": true,
+      "reason": "condition false: flow.risk == Red"
+    },
+    "phase6_card": {
+      "bl-card": {
+        "success": true,
+        "confidence": 0.95,
+        "latency_ms": 0,
+        "data": {
+          "header": {
+            "glid": 54113851,
+            "company": "Pawan Tyres",
+            "location": "Alwar, RJ",
+            "customer_type": "CATALOG",
+            "rag": "—",
+            "account_age_days": 1255,
+            "verdict": "AT RISK — Schedule retention call within 7 days",
+            "priority": 43,
+            "im_product_count": 26
+          },
+          "scores": {
+            "churn_score": 43,
+            "risk_tier": "Amber",
+            "base_churn_score": 43,
+            "cp_adjustment": 0,
+            "cp_adjustment_note": "",
+            "llm_risk": "Very High",
+            "llm_tier": "Red",
+            "llm_confidence": 74,
+            "bands": {
+              "bl": "🔴 R",
+              "lms": "🟡 A",
+              "activity": "🔴 R"
+            },
+            "churn_breakdown": {
+              "base_score": 32,
+              "compound_multiplier": 1.0,
+              "trajectory_adjustment": 1,
+              "trajectory_note": "TYPE_B Gradual Drift → +1 (proactive window)",
+              "pre_llm_score": 33,
+              "llm_adjustment": 10,
+              "llm_justification": "The rule-based model underweights the compounding severity of zero active days combined with a 10.3% reply rate and zero hotlead engagement — this trifecta indicates near-complete platform abandonment despite healthy inbound BL volume (97 BLs), meaning the seller is passively receiving but actively ignoring the platform. The 21 clickstream events over 30 days alongside 0 active LMS days suggests minimal, possibly accidental or automated touchpoints rather than genuine engagement.",
+              "llm_used": true,
+              "red_flag_count": 2
+            }
+          },
+          "root_cause": {
+            "category": "LOW_ENGAGEMENT",
+            "confidence": 0.55,
+            "english": "Seller is not using the platform actively. Low login frequency, few clickstream events.",
+            "hindi": "Aapne platform pe login nahi kiya last few weeks. Notifications miss ho rahi hain.",
+            "intervention": "Mobile app setup + notification activation call within 24h."
+          },
+          "signals": {
+            "churn_reasons": [
+              "Critical reply rate: 10.3%",
+              "Zero LMS active days in last 30d",
+              "No hotlead activity — no engagement events"
+            ],
+            "reason_tags": [
+              "CRITICAL_REPLY_RATE",
+              "ZERO_ACTIVE_DAYS",
+              "NO_HOTLEAD",
+              "TYPE_B_GRADUAL_DRIFT"
+            ],
+            "reply_rate_30d": 10.3,
+            "trajectory": "Gradual Drift",
+            "trajectory_explanation": "Seller showed 3+ months of continuous decline — gradual drift away from platform.",
+            "demand_tier": "Amber",
+            "demand_index": 35,
+            "demand_message": "Market has 0.0 BLs per paid seller, trend is growing.",
+            "peer_comparison": "No peer data available for group CATALOG|CATALOG.",
+            "peer_n": 0
+          },
+          "action_plan": {
+            "opening_en": "Pawan ji, haven't seen much platform activity recently. Everything okay?",
+            "opening_hi": "Pawan Bhai, platform pe kuch din se activity nahi dikhte — sab theek hai?",
+            "suggested_actions": [
+              "⚠️ AI-flagged as high churn risk — prioritize this call",
+              "Fix notification setup on mobile",
+              "Enable LMS reply from app"
+            ],
+            "do_not_mention": [
+              "renewal price",
+              "subscription cost",
+              "competitor pricing"
+            ],
+            "estimated_duration": "8-12 min"
+          },
+          "messaging": {
+            "whatsapp_hi": "Pawan Tyres Bhai, aapke 97 leads last week respond nahi hue —\nkoi notification issue toh nahi aaya?\nMobile pe setup karein saath mein, 5 minute mein ho jaata hai. 🔔",
+            "whatsapp_en": "Hi Pawan Tyres, your 97 leads went unanswered last week —\nSeems like a notification issue.\nLet's fix it together — 5 minutes on mobile. 🔔",
+            "call_script_hi": {
+              "opening": "Namaskar, Pawan Tyres se baat ho rahi hai? Ji, main IndiaMART se bol raha hoon — dekh raha tha ki aapka account kaafi purana hai, almost saade teen saal se — 1255 din — lekin pichle 30 dinon mein platform pe ek bhi active day record nahi hua, toh sochaa ek baar seedha baat karte hain.",
+              "diagnostic": "Bhai ji, seedha poochhna chahta hoon — jab bhi koi buyer aapko inquiry bhejta hai, reply karne mein kya dikkat aati hai? Kyunki abhi aapka reply rate sirf 10.3% dikh raha hai, matlab 10 mein se sirf 1 lead ka jawab ja raha hai — kya time nahi milta, ya leads relevant nahi lag rahe?",
+              "value_demo": "Ek cheez share karta hoon — aapka CQS score 82 hai, jo actually achha hai, matlab aapka catalog strong hai. Aur aapki 64.9% PNS success rate bhi theek hai. Problem sirf engagement ki hai — agar aap sirf un leads ko bhi reply karein jo already aa rahi hain, toh conversion naturally upar jayega bina koi extra investment ke.",
+              "action": "Chaliye abhi ek kaam karte hain — main aapko IndiaMART app pe Lead Manager dikhata hoon, wahan jo pending inquiries hain unhe ek saath dekh lete hain aur ek quick reply template set kar dete hain taaki aage se reply karna 2 minute ka kaam ho jaye.",
+              "close": "Bhai ji, koi bada commitment nahi maang raha — bas agle 7 din mein ek baar daily 5 minute Lead Manager check karna, aur jo bhi inquiry aaye uspe reply karna. Ek hafte baad main phir call karta hoon dekhne ke liye ki kuch fark pada ya nahi — theek lagta hai?"
+            },
+            "call_script_en": {
+              "opening": "Hello, am I speaking with Pawan Tyres? This is IndiaMART calling — I was reviewing your account and noticed that while you've been with us for 1,255 days, there have been zero active days on the platform in the last 30 days, so I wanted to have a direct conversation about what's going on.",
+              "diagnostic": "I want to ask you directly — when buyers send you inquiries, what's making it difficult to respond? Because right now your reply rate is only 10.3%, meaning only 1 out of every 10 leads is getting a response — is it a time issue, or are the leads not feeling relevant to your business?",
+              "value_demo": "Here's something worth noting — your CQS score is 82, which means your catalog is actually in good shape, and your PNS success rate is 64.9%. The only gap is engagement — if you simply start replying to the leads that are already coming in, your conversion will improve without any additional investment.",
+              "action": "Let's do one thing right now on this call — I'll walk you through the Lead Manager section on the IndiaMART app, we'll look at the pending inquiries together, and set up a quick reply template so that responding to future leads takes no more than 2 minutes.",
+              "close": "I'm not asking for any big commitment — just 5 minutes a day on Lead Manager for the next 7 days, and a reply to any inquiry that comes in. I'll call you again in a week to check if there's been any difference — does that work for you?"
+            }
+          },
+          "interventions": {
+            "bl_upgrade_eligible": true,
+            "bl_upgrade_reason": "No hotleads data available",
+            "winback_score": null,
+            "winback_pitch": "",
+            "winback_priority": null,
+            "winback_pre_llm": null,
+            "winback_llm_used": null,
+            "winback_llm_adjustment": null,
+            "winback_llm_justification": null,
+            "winback_interaction_bonus": null,
+            "winback_sub_scores": {},
+            "winback_weights": {},
+            "winback_cool_off_elapsed": null,
+            "winback_cool_off_days_remaining": null,
+            "winback_demand_provided": null
+          },
+          "lookalikes": {
+            "churned": [],
+            "retained": []
+          },
+          "cross_platform": {
+            "platforms_found": [
+              "justdial"
+            ],
+            "platform_data": {
+              "justdial": {
+                "found": true,
+                "name_matched": "Pawan Tyres",
+                "product_count": 0,
+                "photo_count": 0,
+                "catalog_items": 0,
+                "catalog_flag": false,
+                "rating": 0.0,
+                "reviews": 0,
+                "categories": [
+                  "Petroleum Testing Equipment Dealers",
+                  "By Pass Road Bansur"
+                ],
+                "url": "https://www.justdial.com/DT-99LBRNBLSAH",
+                "match_score": 1.0
+              },
+              "tradeindia": {
+                "found": false,
+                "product_count": 0,
+                "rating": 0.0,
+                "reviews": 0,
+                "categories": [],
+                "url": ""
+              }
+            },
+            "im_catalog_gap": {
+              "im_products": 26,
+              "other_total_products": 0,
+              "other_max_products": 0,
+              "other_combination": "none",
+              "gap_pct": 0,
+              "severity": "unknown",
+              "match_method": "none",
+              "overlap_pairs": [],
+              "per_platform_unique": {}
+            },
+            "headline_hi": "Pawan Bhai, aap Justdial pe bhi listed hain — IM catalog fresh rakho.",
+            "headline_en": "Listed on Justdial too. IndiaMART catalog at parity — keep it updated.",
+            "data_points": [
+              "Justdial: Listed",
+              "GST: 08AKNPY5855G1ZC",
+              "Address: Pawan Tower, Near Harsora Chowk, By Pass Road, Bansur"
+            ],
+            "suggested_action": "Maintain catalog sync quarterly.",
+            "urgency": "low",
+            "competitive_positioning": "parity"
+          },
+          "onboarding": {
+            "health_score": null,
+            "health_tier": null,
+            "checks": {},
+            "trigger_action": "",
+            "risk_priors": [],
+            "activation_plan": {},
+            "plan_method": "",
+            "ran": false
+          },
+          "summary_text": "╔═══════════════════════════════════════════════════════════════════╗\n║ SELLER BL CARD — GLID 54113851\n║ Pawan Tyres | Alwar, RJ | CATALOG | Age: 1255d\n╠═══════════════════════════════════════════════════════════════════╣\n║ VERDICT:  AT RISK — Schedule retention call within 7 days\n║ PRIORITY: 43/100\n║ CHURN:    43/100 (Amber)  |  LLM: Very High\n║ RCA:      LOW_ENGAGEMENT — Seller is not using the platform actively. Low login frequen\n║ DEMAND:   Amber  |  TRAJECTORY: Gradual Drift\n║ CROSS-PLATFORM: justdial  IM=26p  OTHER=0p (none)  GAP=0%\n╠═══════════════════════════════════════════════════════════════════╣\n║ OPENING:  Pawan ji, haven't seen much platform activity recently. Everything okay?\n║ ACTIONS:  ⚠️ AI-flagged as high churn risk — prioritize this call | Fix notification setup\n╚═══════════════════════════════════════════════════════════════════╝"
+        },
+        "error": null
+      }
+    }
+  }
+}

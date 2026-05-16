@@ -1,0 +1,707 @@
+{
+  "glid": 205634747,
+  "run_at": "2026-05-16T18:23:45.101267",
+  "context": {
+    "company": "Mumbai Curtains",
+    "turnover": "0 - 40 L",
+    "turnover_raw": "Slab: Rs. 40 lakhs to 1.5 Cr. (For FY 2024-2025)",
+    "city": "Coimbatore",
+    "state": "TN",
+    "mcats": [],
+    "custtype": "CATALOG",
+    "account_age_days": 876,
+    "rag_category": "",
+    "paid_history": true
+  },
+  "phases": {
+    "phase0_benchmark": {
+      "peer-benchmark": {
+        "success": true,
+        "confidence": 0.2,
+        "latency_ms": 0,
+        "data": {
+          "peer_group": "CATALOG|CATALOG",
+          "peer_n": 0,
+          "peer_data_available": false,
+          "gap_severity": "unknown",
+          "peer_summary_line": "No peer data available for group CATALOG|CATALOG."
+        },
+        "error": null
+      },
+      "demand-index": {
+        "success": true,
+        "confidence": 0.3,
+        "latency_ms": 0,
+        "data": {
+          "demand_index": 20,
+          "demand_tier": "Red",
+          "market_bl_per_seller": 0.0,
+          "trend": "flat",
+          "trend_slope": -0.1294,
+          "is_high_risk_city": false,
+          "city_risk_prior": 0,
+          "is_high_risk_category": false,
+          "demand_explanation": "Market has 0.0 BLs per paid seller, trend is flat.",
+          "recommended_action": "Suggest national geography expansion; highlight metro buyer demand"
+        },
+        "error": null
+      },
+      "conversion-point": {
+        "success": true,
+        "confidence": 0.85,
+        "latency_ms": 0,
+        "data": {
+          "trajectory_type": "TYPE_A",
+          "trajectory_label": "Sudden Cliff",
+          "explanation": "Seller had strong activity then dropped ~100.0% around month 10 — sudden disengagement.",
+          "opening_line_hi": "Aapka business pehle bahut achha chal raha tha, phir achanak activity kam ho gayi — aaj iske baare mein baat karte hain.",
+          "cliff_month_index": 9,
+          "cliff_drop_pct": 100.0,
+          "monthly_enq": [
+            1,
+            2,
+            3,
+            3,
+            0,
+            1,
+            3,
+            2,
+            4,
+            0,
+            0,
+            0
+          ],
+          "peer_median_enq": 0,
+          "account_age_days": 876,
+          "is_type_c": false,
+          "run_onboarding": false
+        },
+        "error": null
+      }
+    },
+    "phase1_onboarding": {
+      "skipped": true,
+      "reason": "condition false: context.account_age_days <= 90"
+    },
+    "phase2_churn": {
+      "churn-scoring": {
+        "success": true,
+        "confidence": 1.0,
+        "latency_ms": 9692,
+        "data": {
+          "churn_score": 68,
+          "risk": "Amber",
+          "churn_reasons": [
+            "Zero reply rate (1 BLs unanswered)",
+            "Zero LMS active days in last 30d",
+            "Only 1 enquiries in 30d",
+            "PNS answer rate 40.0% — below 60%",
+            "CQS: 73 — below 75, room for improvement",
+            "No hotlead activity — no engagement events",
+            "Zero clickstream events — no platform activity",
+            "Trajectory: sudden cliff (last few months) — emergency intervention window"
+          ],
+          "reason_tags": [
+            "ZERO_REPLY_RATE",
+            "ZERO_ACTIVE_DAYS",
+            "LOW_ENQUIRY_FLOW",
+            "LOW_PNS_RATE",
+            "LOW_CQS_MODERATE",
+            "NO_HOTLEAD",
+            "NO_PLATFORM_ACTIVITY",
+            "TYPE_A_SUDDEN_CLIFF"
+          ],
+          "score_breakdown": {
+            "reply_rate": 18,
+            "active_days": 14,
+            "enq": 4,
+            "pns": 6,
+            "cqs": 3,
+            "hotleads": 4,
+            "activity": 8
+          },
+          "red_flag_count": 3,
+          "red_flags": [
+            "ZERO_REPLY_RATE",
+            "ZERO_ACTIVE_DAYS",
+            "NO_PLATFORM_ACTIVITY"
+          ],
+          "reply_rate_30d": 0.0,
+          "signals_available": 5,
+          "base_score": 57,
+          "compound_multiplier": 1.0,
+          "compounded_score": 57.0,
+          "trajectory_adjustment": 3,
+          "trajectory_note": "TYPE_A Sudden Cliff (drop 100.0%) → +3 urgency",
+          "pre_llm_score": 60,
+          "pre_llm_risk": "Amber",
+          "llm_adjustment": 8,
+          "llm_justification": "The combination of zero clickstream events, zero active days, and zero reply rate across a 30-day window indicates complete platform abandonment rather than mere disengagement — the seller has not logged in, not clicked, and not responded to the only enquiry received, which together signal a near-certain churn state that the rule-based model underweights individually. The TYPE_A Sudden Cliff trajectory compounds this severely, as the drop appears abrupt rather than gradual, suggesting an external trigger (business closure, competitor switch, or dissatisfaction event) that makes recovery without immediate intervention highly unlikely.",
+          "llm_interactions": [
+            "Zero clickstream + zero active days + zero reply rate form a complete disengagement triad — no passive or active platform presence whatsoever",
+            "TYPE_A Sudden Cliff trajectory combined with total inactivity suggests a triggering event, not natural decay, elevating urgency beyond what individual flags imply",
+            "Only 1 BL received and 0 replied — even minimal enquiry flow is being entirely ignored, reinforcing abandonment over low-traffic explanation",
+            "PNS answer rate of 40% pre-dates the cliff, suggesting engagement was already weakening before the sudden drop, indicating a deteriorating trend the rule model treats as isolated",
+            "CQS of 73 (below threshold) alongside zero activity means profile quality is stagnant with no corrective action being taken, compounding retention risk"
+          ],
+          "llm_used": true,
+          "llm_error": null
+        },
+        "error": null
+      },
+      "shap-rca": {
+        "success": true,
+        "confidence": 0.6,
+        "latency_ms": 0,
+        "data": {
+          "rca_category": "LOW_ENGAGEMENT",
+          "rca_confidence": 0.6,
+          "rca_explanation_en": "Seller is not using the platform actively. Low login frequency, few clickstream events.",
+          "rca_explanation_hi": "Aapne platform pe login nahi kiya last few weeks. Notifications miss ho rahi hain.",
+          "intervention_hint": "Mobile app setup + notification activation call within 24h.",
+          "top_feature": null,
+          "top_feature_value": null,
+          "top_feature_contribution": 0,
+          "shap_breakdown": []
+        },
+        "error": null
+      }
+    },
+    "phase2_llm": {
+      "llm-cohort-scorer": {
+        "success": true,
+        "confidence": 0.74,
+        "latency_ms": 5733,
+        "data": {
+          "skipped": false,
+          "risk_level": "Critical",
+          "pipeline_tier": "Red",
+          "confidence_score": 74,
+          "bands": {
+            "bl": "R",
+            "lms": "R",
+            "activity": "R"
+          },
+          "reasoning": "The target seller has zero BL consumption, zero reply rate, and zero LMS active days in 30d, closely mirroring the worst churned sellers (55774518, 29144049) who share identical or near-identical zero-consumption and zero-activity profiles. Call attempts in 90d are extremely low (5) and activity_30d is zero, placing the target at the very bottom of both cohorts on every activity dimension; the flat enquiry trend [0,0,0] confirms complete disengagement with no retained seller showing such total inactivity.",
+          "churned_lookalikes": [
+            55774518,
+            29144049,
+            264144052
+          ],
+          "retained_lookalikes": [
+            16221202,
+            5957111
+          ],
+          "cohort_match": {
+            "n_filtered": 56,
+            "tier": "strict",
+            "shown_to_llm": 10
+          },
+          "snapshot_context": {
+            "company": "Mumbai Curtains",
+            "turnover": "0 - 40 L",
+            "turnover_raw": "Slab: Rs. 40 lakhs to 1.5 Cr. (For FY 2024-2025)",
+            "city": "Coimbatore",
+            "state": "TN",
+            "mcats": [],
+            "custtype": "CATALOG",
+            "account_age_days": 876,
+            "rag_category": "",
+            "paid_history": true
+          }
+        },
+        "error": null
+      }
+    },
+    "phase3_actions": {
+      "pre-call-brief": {
+        "success": true,
+        "confidence": 0.85,
+        "latency_ms": 0,
+        "data": {
+          "company": "Mumbai Curtains",
+          "city": "Coimbatore",
+          "enterprise": "CATALOG",
+          "ctype": "CATALOG",
+          "opening_line_hi": "Mumbai Bhai, platform pe kuch din se activity nahi dikhte — sab theek hai?",
+          "opening_line_en": "Mumbai ji, haven't seen much platform activity recently. Everything okay?",
+          "key_signals": [
+            {
+              "label": "Churn Score",
+              "value": "68/100",
+              "severity": "critical"
+            },
+            {
+              "label": "AI Risk Level",
+              "value": "Critical (cohort-calibrated)",
+              "severity": "critical"
+            },
+            {
+              "label": "PNS Answer Rate",
+              "value": "40.0%",
+              "severity": "high"
+            },
+            {
+              "label": "Active Days (30d)",
+              "value": "0",
+              "severity": "critical"
+            },
+            {
+              "label": "Catalog Score (CQS)",
+              "value": "73",
+              "severity": "medium"
+            }
+          ],
+          "suggested_actions": [
+            "⚠️ AI-flagged as high churn risk — prioritize this call",
+            "Fix notification setup on mobile",
+            "Enable LMS reply from app"
+          ],
+          "do_not_mention": [
+            "renewal price",
+            "subscription cost",
+            "competitor pricing"
+          ],
+          "call_type": "RETENTION",
+          "estimated_call_duration": "8-12 min",
+          "rca_category": "LOW_ENGAGEMENT",
+          "llm_risk_level": "Critical",
+          "llm_bands_display": {
+            "BL Consumption": "🔴 Red",
+            "LMS Activity": "🔴 Red",
+            "Activity Trend": "🔴 Red"
+          },
+          "llm_reasoning": "The target seller has zero BL consumption, zero reply rate, and zero LMS active days in 30d, closely mirroring the worst churned sellers (55774518, 29144049) who share identical or near-identical zero-consumption and zero-activity profiles. Call attempts in 90d are extremely low (5) and activity_30d is zero, placing the target at the very bottom of both cohorts on every activity dimension; the flat enquiry trend [0,0,0] confirms complete disengagement with no retained seller showing such total inactivity.",
+          "churned_lookalikes": [],
+          "retained_lookalikes": [],
+          "brief_text": "SELLER: Mumbai Curtains | Coimbatore | CATALOG/CATALOG | Age: 876d\nCHURN SCORE: 68/100 | RISK: Amber | AI: Critical\nMAIN ISSUE: LOW_ENGAGEMENT — Seller is not using the platform actively. Low login frequency, few clickstream events.\nOPENING: Mumbai ji, haven't seen much platform activity recently. Everything okay?\nACTIONS: ⚠️ AI-flagged as high churn risk — prioritize this call; Fix notification setup on mobile; Enable LMS reply from app"
+        },
+        "error": null
+      },
+      "whatsapp-message": {
+        "success": true,
+        "confidence": 0.9,
+        "latency_ms": 0,
+        "data": {
+          "message_hi": "Mumbai Curtains Bhai, aapke 1 leads last week respond nahi hue —\nkoi notification issue toh nahi aaya?\nMobile pe setup karein saath mein, 5 minute mein ho jaata hai. 🔔",
+          "message_en": "Hi Mumbai Curtains, your 1 leads went unanswered last week —\nSeems like a notification issue.\nLet's fix it together — 5 minutes on mobile. 🔔",
+          "message_type": "retention_nudge",
+          "rca_used": "LOW_ENGAGEMENT",
+          "cta": "Reply YES to fix notification setup",
+          "personalization_vars": [
+            "name",
+            "enq_30d",
+            "cqs",
+            "pns_success_pct"
+          ],
+          "estimated_open_rate": 0.72
+        },
+        "error": null
+      },
+      "script-generation": {
+        "success": true,
+        "confidence": 0.92,
+        "latency_ms": 30720,
+        "data": {
+          "script_parts": {
+            "opening": "Namaste, Mumbai Curtains ji — main IndiaMART se bol raha hoon. Dekha ki aapka account pichle 10 mahine tak bahut achha chal raha tha, phir achanak last 30 days mein zero active days ho gaye — ek bhi login nahi. Isliye directly call kiya, kyunki yeh sudden change thoda concerning lag raha hai.",
+            "diagnostic": "Bhai, seedha poochhna chahta hoon — kya koi specific wajah hai jiske wajah se platform use karna band ho gaya? Matlab koi technical issue tha, ya leads ki quality se disappointment tha, ya phir business mein koi doosri priority aa gayi thi?",
+            "value_demo": "Ek important baat share karna chahta hoon — abhi aapke paas sirf 1 enquiry aayi hai last 30 days mein, aur us ek buyer ko bhi reply nahi mila, matlab reply rate zero percent hai. Jab buyer ko response nahi milta, toh woh doosre seller ke paas chala jaata hai — aur Coimbatore mein curtains ka demand tier Red hai, matlab competition already tight hai, toh har ek lead bahut valuable hai.",
+            "action": "Abhi is call pe, main aapka account open karta hoon — pehle us ek unanswered buyer lead ko saath mein dekhte hain aur ek quick reply draft karte hain, sirf 2 minute ka kaam hai. Saath hi aapka CQS score 73 hai jo 75 se thoda neeche hai, toh ek-do catalog field update karke usse bhi fix kar sakte hain abhi.",
+            "close": "Bhai, abhi koi bada commitment nahi maang raha — bas yeh ek reply bhej dete hain aur catalog mein woh ek-do fields update kar dete hain. Phir agle hafte ek short call karein aur dekhein ki koi enquiry aayi ya nahi — theek lagta hai?"
+          },
+          "script_parts_en": {
+            "opening": "Hello, Mumbai Curtains ji — I'm calling from IndiaMART. I noticed your account was performing well for about 10 months, and then suddenly in the last 30 days there have been zero active days — not a single login. That sudden drop is what prompted me to call you directly today.",
+            "diagnostic": "I want to ask you directly, bhai — is there a specific reason you stopped using the platform? Was it a technical issue, disappointment with lead quality, or did some other business priority come up that took your attention away?",
+            "value_demo": "Here's something important to consider — you've received only 1 enquiry in the last 30 days, and that one buyer got zero reply from your side, bringing your reply rate to 0%. When a buyer doesn't get a response, they simply move to the next seller. And with Coimbatore's curtain market already in the Red demand tier — meaning competition is tight — every single lead counts and cannot be left unanswered.",
+            "action": "Right now, on this call, let me open your account together with you — we'll look at that one unanswered buyer lead and draft a quick reply together, it'll take just 2 minutes. Also, your CQS score is 73, just slightly below the 75 threshold, so we can fix one or two catalog fields right now to push it above the benchmark.",
+            "close": "I'm not asking for any big commitment right now, bhai — let's just send that one reply and update those couple of catalog fields today. Then we can do a short follow-up call next week to check if any new enquiries came in — does that work for you?"
+          },
+          "objection_handlers": {
+            "competitor_platform": "Samajh sakta hoon — doosre platforms bhi kaam karte hain. Lekin IndiaMART pe B2B buyers specifically aate hain jo bulk order dene ka intent rakhte hain. Ek baar compare karte hain — aapke last 3 mahine ke leads ka source kya raha?",
+            "price_too_high": "Bilkul valid point hai. Lekin aise socho — agar sirf 2 orders extra aaye subscription se, toh ROI positive ho jaata hai. Main aapke category ke average order value se calculate kar sakta hoon.",
+            "no_time": "Koi baat nahi — main ek quick summary WhatsApp pe bhej deta hoon. Aap apne time pe dekh lena, aur jo bhi question ho directly reply karna."
+          },
+          "objection_handlers_en": {
+            "competitor_platform": "I understand — other platforms work too. But IndiaMART specifically attracts B2B buyers who intend to place bulk orders. Let's compare — what was the source of your leads over the last 3 months?",
+            "price_too_high": "Completely valid point. But think of it this way — if just 2 extra orders come through the subscription, the ROI turns positive. I can calculate that using your category's average order value.",
+            "no_time": "No problem — I'll send you a quick summary on WhatsApp. Check it at your convenience, and just reply directly with any questions."
+          },
+          "language": "hi",
+          "rca_used": "LOW_ENGAGEMENT",
+          "trajectory_type": "TYPE_A",
+          "estimated_duration_min": 7,
+          "call_type": "RETENTION",
+          "llm_used": true,
+          "personalization_signals_used": [
+            "sudden_cliff_type_a_drop_month_10",
+            "zero_active_days_30d",
+            "zero_reply_rate_1_bl_unanswered",
+            "only_1_enquiry_30d",
+            "cqs_73_below_75",
+            "demand_tier_red_coimbatore",
+            "pns_40_percent_below_60"
+          ],
+          "generation_method": "llm"
+        },
+        "error": null
+      },
+      "gifted-lead": {
+        "success": true,
+        "confidence": 0.5,
+        "latency_ms": 0,
+        "data": {
+          "lead_found": false,
+          "reason": "No hotleads data available",
+          "fallback": "Use peer comparison data as value demonstration",
+          "total_qualifying": 0
+        },
+        "error": null
+      }
+    },
+    "phase3c_cross_platform": {
+      "cross-platform-intelligence": {
+        "success": true,
+        "confidence": 1.0,
+        "latency_ms": 28134,
+        "data": {
+          "platforms_found": [
+            "justdial",
+            "tradeindia"
+          ],
+          "platform_data": {
+            "justdial": {
+              "found": true,
+              "name_matched": "Mumbai Curtains",
+              "product_count": 5,
+              "photo_count": 60,
+              "catalog_items": 5,
+              "catalog_flag": false,
+              "rating": 3.7,
+              "reviews": 134,
+              "categories": [
+                "Mosquito Net Dealers",
+                "Wall Paper Dealers",
+                "Mettupalayam Road RS Puram Coimbatore"
+              ],
+              "url": "https://www.justdial.com/DT-21UDF3URSMB",
+              "match_score": 1.0
+            },
+            "tradeindia": {
+              "found": true,
+              "product_count": 2,
+              "product_titles": [
+                "Advertise with Us",
+                "Featured Products",
+                "menu",
+                "product"
+              ],
+              "rating": 0.0,
+              "reviews": 0,
+              "categories": [],
+              "url": "https://www.tradeindia.com/seller/mumbai-curtains/"
+            }
+          },
+          "im_catalog_gap": {
+            "im_products": 21,
+            "other_total_products": 5,
+            "other_max_products": 5,
+            "other_combination": "name_dedupe_overlap",
+            "platform_counts": [
+              5,
+              2
+            ],
+            "other_avg_products": 5,
+            "gap_pct": 320.0,
+            "severity": "low",
+            "match_method": "names",
+            "unique_via_names": 3,
+            "overlap_pairs": [],
+            "per_platform_unique": {
+              "justdial": 0,
+              "tradeindia": 3
+            },
+            "titles_sampled": {
+              "tradeindia": [
+                "Advertise with Us",
+                "Featured Products",
+                "menu",
+                "product"
+              ]
+            }
+          },
+          "call_card": {
+            "headline_hi": "Mumbai Bhai, aap Justdial pe bhi listed hain — IM catalog fresh rakho.",
+            "headline_en": "Listed on Justdial too. IndiaMART catalog at parity — keep it updated.",
+            "data_points": [
+              "Justdial: Listed | 5 products | Rating 3.7/5 | 134 reviews",
+              "Tradeindia: Listed | 2 products",
+              "GST: 33ABGFM3766J2Z0",
+              "Address: 704/1 Mettupalayam Road"
+            ],
+            "suggested_action": "Maintain catalog sync quarterly.",
+            "effort_estimate": "20 minutes",
+            "urgency": "low"
+          },
+          "competitive_positioning": "seller_stronger_on_im",
+          "scrape_status": "success",
+          "context_enriched": true,
+          "company_name_used": "Mumbai Curtains",
+          "im_product_count": 21,
+          "gst": "33ABGFM3766J2Z0",
+          "address": "704/1 Mettupalayam Road",
+          "own_website_domain": "gmail.com"
+        },
+        "error": null
+      }
+    },
+    "phase4": {
+      "bl-upgrade": {
+        "success": true,
+        "confidence": 0.9,
+        "latency_ms": 0,
+        "data": {
+          "eligible": true,
+          "mode": "AT_RISK_RETENTION",
+          "upgrade_leads_count": 5,
+          "upgrade_message_hi": "Ramesh Bhai, renewal se pehle aapke liye 5 premium leads unlock ki hain — yeh normal sellers ko nahi milti.",
+          "upgrade_message_en": "We've unlocked 5 premium leads for you before renewal — these aren't available to regular sellers.",
+          "action": "OFFER_PREMIUM_LEADS",
+          "expected_conversion_uplift": 0.22
+        },
+        "error": null
+      }
+    },
+    "phase5": {
+      "skipped": true,
+      "reason": "condition false: flow.risk == Red"
+    },
+    "phase6_card": {
+      "bl-card": {
+        "success": true,
+        "confidence": 0.95,
+        "latency_ms": 0,
+        "data": {
+          "header": {
+            "glid": 205634747,
+            "company": "Mumbai Curtains",
+            "location": "Coimbatore, TN",
+            "customer_type": "CATALOG",
+            "rag": "—",
+            "account_age_days": 876,
+            "verdict": "AT RISK — Schedule retention call within 7 days",
+            "priority": 83,
+            "im_product_count": 21
+          },
+          "scores": {
+            "churn_score": 68,
+            "risk_tier": "Amber",
+            "base_churn_score": 68,
+            "cp_adjustment": 0,
+            "cp_adjustment_note": "",
+            "llm_risk": "Critical",
+            "llm_tier": "Red",
+            "llm_confidence": 74,
+            "bands": {
+              "bl": "🔴 R",
+              "lms": "🔴 R",
+              "activity": "🔴 R"
+            },
+            "churn_breakdown": {
+              "base_score": 57,
+              "compound_multiplier": 1.0,
+              "trajectory_adjustment": 3,
+              "trajectory_note": "TYPE_A Sudden Cliff (drop 100.0%) → +3 urgency",
+              "pre_llm_score": 60,
+              "llm_adjustment": 8,
+              "llm_justification": "The combination of zero clickstream events, zero active days, and zero reply rate across a 30-day window indicates complete platform abandonment rather than mere disengagement — the seller has not logged in, not clicked, and not responded to the only enquiry received, which together signal a near-certain churn state that the rule-based model underweights individually. The TYPE_A Sudden Cliff trajectory compounds this severely, as the drop appears abrupt rather than gradual, suggesting an external trigger (business closure, competitor switch, or dissatisfaction event) that makes recovery without immediate intervention highly unlikely.",
+              "llm_used": true,
+              "red_flag_count": 3
+            }
+          },
+          "root_cause": {
+            "category": "LOW_ENGAGEMENT",
+            "confidence": 0.6,
+            "english": "Seller is not using the platform actively. Low login frequency, few clickstream events.",
+            "hindi": "Aapne platform pe login nahi kiya last few weeks. Notifications miss ho rahi hain.",
+            "intervention": "Mobile app setup + notification activation call within 24h."
+          },
+          "signals": {
+            "churn_reasons": [
+              "Zero reply rate (1 BLs unanswered)",
+              "Zero LMS active days in last 30d",
+              "Only 1 enquiries in 30d",
+              "PNS answer rate 40.0% — below 60%",
+              "CQS: 73 — below 75, room for improvement",
+              "No hotlead activity — no engagement events",
+              "Zero clickstream events — no platform activity",
+              "Trajectory: sudden cliff (last few months) — emergency intervention window"
+            ],
+            "reason_tags": [
+              "ZERO_REPLY_RATE",
+              "ZERO_ACTIVE_DAYS",
+              "LOW_ENQUIRY_FLOW",
+              "LOW_PNS_RATE",
+              "LOW_CQS_MODERATE",
+              "NO_HOTLEAD",
+              "NO_PLATFORM_ACTIVITY",
+              "TYPE_A_SUDDEN_CLIFF"
+            ],
+            "reply_rate_30d": 0.0,
+            "trajectory": "Sudden Cliff",
+            "trajectory_explanation": "Seller had strong activity then dropped ~100.0% around month 10 — sudden disengagement.",
+            "demand_tier": "Red",
+            "demand_index": 20,
+            "demand_message": "Market has 0.0 BLs per paid seller, trend is flat.",
+            "peer_comparison": "No peer data available for group CATALOG|CATALOG.",
+            "peer_n": 0
+          },
+          "action_plan": {
+            "opening_en": "Mumbai ji, haven't seen much platform activity recently. Everything okay?",
+            "opening_hi": "Mumbai Bhai, platform pe kuch din se activity nahi dikhte — sab theek hai?",
+            "suggested_actions": [
+              "⚠️ AI-flagged as high churn risk — prioritize this call",
+              "Fix notification setup on mobile",
+              "Enable LMS reply from app"
+            ],
+            "do_not_mention": [
+              "renewal price",
+              "subscription cost",
+              "competitor pricing"
+            ],
+            "estimated_duration": "8-12 min"
+          },
+          "messaging": {
+            "whatsapp_hi": "Mumbai Curtains Bhai, aapke 1 leads last week respond nahi hue —\nkoi notification issue toh nahi aaya?\nMobile pe setup karein saath mein, 5 minute mein ho jaata hai. 🔔",
+            "whatsapp_en": "Hi Mumbai Curtains, your 1 leads went unanswered last week —\nSeems like a notification issue.\nLet's fix it together — 5 minutes on mobile. 🔔",
+            "call_script_hi": {
+              "opening": "Namaste, Mumbai Curtains ji — main IndiaMART se bol raha hoon. Dekha ki aapka account pichle 10 mahine tak bahut achha chal raha tha, phir achanak last 30 days mein zero active days ho gaye — ek bhi login nahi. Isliye directly call kiya, kyunki yeh sudden change thoda concerning lag raha hai.",
+              "diagnostic": "Bhai, seedha poochhna chahta hoon — kya koi specific wajah hai jiske wajah se platform use karna band ho gaya? Matlab koi technical issue tha, ya leads ki quality se disappointment tha, ya phir business mein koi doosri priority aa gayi thi?",
+              "value_demo": "Ek important baat share karna chahta hoon — abhi aapke paas sirf 1 enquiry aayi hai last 30 days mein, aur us ek buyer ko bhi reply nahi mila, matlab reply rate zero percent hai. Jab buyer ko response nahi milta, toh woh doosre seller ke paas chala jaata hai — aur Coimbatore mein curtains ka demand tier Red hai, matlab competition already tight hai, toh har ek lead bahut valuable hai.",
+              "action": "Abhi is call pe, main aapka account open karta hoon — pehle us ek unanswered buyer lead ko saath mein dekhte hain aur ek quick reply draft karte hain, sirf 2 minute ka kaam hai. Saath hi aapka CQS score 73 hai jo 75 se thoda neeche hai, toh ek-do catalog field update karke usse bhi fix kar sakte hain abhi.",
+              "close": "Bhai, abhi koi bada commitment nahi maang raha — bas yeh ek reply bhej dete hain aur catalog mein woh ek-do fields update kar dete hain. Phir agle hafte ek short call karein aur dekhein ki koi enquiry aayi ya nahi — theek lagta hai?"
+            },
+            "call_script_en": {
+              "opening": "Hello, Mumbai Curtains ji — I'm calling from IndiaMART. I noticed your account was performing well for about 10 months, and then suddenly in the last 30 days there have been zero active days — not a single login. That sudden drop is what prompted me to call you directly today.",
+              "diagnostic": "I want to ask you directly, bhai — is there a specific reason you stopped using the platform? Was it a technical issue, disappointment with lead quality, or did some other business priority come up that took your attention away?",
+              "value_demo": "Here's something important to consider — you've received only 1 enquiry in the last 30 days, and that one buyer got zero reply from your side, bringing your reply rate to 0%. When a buyer doesn't get a response, they simply move to the next seller. And with Coimbatore's curtain market already in the Red demand tier — meaning competition is tight — every single lead counts and cannot be left unanswered.",
+              "action": "Right now, on this call, let me open your account together with you — we'll look at that one unanswered buyer lead and draft a quick reply together, it'll take just 2 minutes. Also, your CQS score is 73, just slightly below the 75 threshold, so we can fix one or two catalog fields right now to push it above the benchmark.",
+              "close": "I'm not asking for any big commitment right now, bhai — let's just send that one reply and update those couple of catalog fields today. Then we can do a short follow-up call next week to check if any new enquiries came in — does that work for you?"
+            }
+          },
+          "interventions": {
+            "bl_upgrade_eligible": true,
+            "bl_upgrade_reason": "No hotleads data available",
+            "winback_score": null,
+            "winback_pitch": "",
+            "winback_priority": null,
+            "winback_pre_llm": null,
+            "winback_llm_used": null,
+            "winback_llm_adjustment": null,
+            "winback_llm_justification": null,
+            "winback_interaction_bonus": null,
+            "winback_sub_scores": {},
+            "winback_weights": {},
+            "winback_cool_off_elapsed": null,
+            "winback_cool_off_days_remaining": null,
+            "winback_demand_provided": null
+          },
+          "lookalikes": {
+            "churned": [],
+            "retained": []
+          },
+          "cross_platform": {
+            "platforms_found": [
+              "justdial",
+              "tradeindia"
+            ],
+            "platform_data": {
+              "justdial": {
+                "found": true,
+                "name_matched": "Mumbai Curtains",
+                "product_count": 5,
+                "photo_count": 60,
+                "catalog_items": 5,
+                "catalog_flag": false,
+                "rating": 3.7,
+                "reviews": 134,
+                "categories": [
+                  "Mosquito Net Dealers",
+                  "Wall Paper Dealers",
+                  "Mettupalayam Road RS Puram Coimbatore"
+                ],
+                "url": "https://www.justdial.com/DT-21UDF3URSMB",
+                "match_score": 1.0
+              },
+              "tradeindia": {
+                "found": true,
+                "product_count": 2,
+                "product_titles": [
+                  "Advertise with Us",
+                  "Featured Products",
+                  "menu",
+                  "product"
+                ],
+                "rating": 0.0,
+                "reviews": 0,
+                "categories": [],
+                "url": "https://www.tradeindia.com/seller/mumbai-curtains/"
+              }
+            },
+            "im_catalog_gap": {
+              "im_products": 21,
+              "other_total_products": 5,
+              "other_max_products": 5,
+              "other_combination": "name_dedupe_overlap",
+              "platform_counts": [
+                5,
+                2
+              ],
+              "other_avg_products": 5,
+              "gap_pct": 320.0,
+              "severity": "low",
+              "match_method": "names",
+              "unique_via_names": 3,
+              "overlap_pairs": [],
+              "per_platform_unique": {
+                "justdial": 0,
+                "tradeindia": 3
+              },
+              "titles_sampled": {
+                "tradeindia": [
+                  "Advertise with Us",
+                  "Featured Products",
+                  "menu",
+                  "product"
+                ]
+              }
+            },
+            "headline_hi": "Mumbai Bhai, aap Justdial pe bhi listed hain — IM catalog fresh rakho.",
+            "headline_en": "Listed on Justdial too. IndiaMART catalog at parity — keep it updated.",
+            "data_points": [
+              "Justdial: Listed | 5 products | Rating 3.7/5 | 134 reviews",
+              "Tradeindia: Listed | 2 products",
+              "GST: 33ABGFM3766J2Z0",
+              "Address: 704/1 Mettupalayam Road"
+            ],
+            "suggested_action": "Maintain catalog sync quarterly.",
+            "urgency": "low",
+            "competitive_positioning": "seller_stronger_on_im"
+          },
+          "onboarding": {
+            "health_score": null,
+            "health_tier": null,
+            "checks": {},
+            "trigger_action": "",
+            "risk_priors": [],
+            "activation_plan": {},
+            "plan_method": "",
+            "ran": false
+          },
+          "summary_text": "╔═══════════════════════════════════════════════════════════════════╗\n║ SELLER BL CARD — GLID 205634747\n║ Mumbai Curtains | Coimbatore, TN | CATALOG | Age: 876d\n╠═══════════════════════════════════════════════════════════════════╣\n║ VERDICT:  AT RISK — Schedule retention call within 7 days\n║ PRIORITY: 83/100\n║ CHURN:    68/100 (Amber)  |  LLM: Critical\n║ RCA:      LOW_ENGAGEMENT — Seller is not using the platform actively. Low login frequen\n║ DEMAND:   Red  |  TRAJECTORY: Sudden Cliff\n║ CROSS-PLATFORM: justdial,tradeindia  IM=21p  OTHER=5p (name_dedupe_overlap)  GAP=320.0%\n╠═══════════════════════════════════════════════════════════════════╣\n║ OPENING:  Mumbai ji, haven't seen much platform activity recently. Everything okay?\n║ ACTIONS:  ⚠️ AI-flagged as high churn risk — prioritize this call | Fix notification setup\n╚═══════════════════════════════════════════════════════════════════╝"
+        },
+        "error": null
+      }
+    }
+  }
+}

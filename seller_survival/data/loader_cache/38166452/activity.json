@@ -1,0 +1,2963 @@
+{
+  "status": 200,
+  "data": {
+    "gluser_id": 38166452,
+    "event_count": 41,
+    "events": [
+      {
+        "empid": 0,
+        "modid": "SELLERMY",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "Mumbai",
+        "glusr_id": 38166452,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260418171950",
+        "glb_state": "MH",
+        "remote_ip": "223.181.63.205",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "seller.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /product/manageproducts/ HTTP/1.1",
+        "server_name": 0,
+        "glb_latitude": 18.958193,
+        "glb_longitude": 72.832073,
+        "response_size": 19411,
+        "response_time": 99838,
+        "fk_activity_id": 2322,
+        "ga_utma_cookie": "GA1.1.1627888180.1529317629",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604181719"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Show Manage Products",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 38166452,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "s%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "SELLERMY",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://seller.indiamart.com/product/manageproducts/",
+        "glb_city": "Mumbai",
+        "glusr_id": 38166452,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260418172156",
+        "glb_state": "MH",
+        "remote_ip": "223.181.63.205",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "seller.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /companyprofile/manageprofile HTTP/1.1",
+        "server_name": 0,
+        "glb_latitude": 18.958193,
+        "glb_longitude": 72.832073,
+        "response_size": 12142,
+        "response_time": 13639,
+        "fk_activity_id": 2063,
+        "ga_utma_cookie": "GA1.1.1627888180.1529317629",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604181721"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Company Profile",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 38166452,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "s%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "SELLERMY",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://seller.indiamart.com/misc/privacysettings/",
+        "glb_city": "Mumbai",
+        "glusr_id": 38166452,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260418172241",
+        "glb_state": "MH",
+        "remote_ip": "223.181.63.205",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "seller.indiamart.com",
+        "http_status": 200,
+        "request_url": "POST /miscreact/ajaxrequest/seller/settings/buyleadpreferences/locationPref/ HTTP/1.1",
+        "server_name": 0,
+        "glb_latitude": 18.958193,
+        "glb_longitude": 72.832073,
+        "response_size": 1699,
+        "response_time": 52145,
+        "fk_activity_id": 1221,
+        "ga_utma_cookie": "GA1.1.1627888180.1529317629",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604181722"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Location Preferences Updated",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 38166452,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "s%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "SELLERMY",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://seller.indiamart.com/misc/privacysettings/",
+        "glb_city": "Mumbai",
+        "glusr_id": 38166452,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260418172243",
+        "glb_state": "MH",
+        "remote_ip": "223.181.63.205",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "seller.indiamart.com",
+        "http_status": 200,
+        "request_url": "POST /miscreact/ajaxrequest/seller/settings/pnssettings/ HTTP/1.1",
+        "server_name": 0,
+        "glb_latitude": 18.958193,
+        "glb_longitude": 72.832073,
+        "response_size": 781,
+        "response_time": 19649,
+        "fk_activity_id": 1206,
+        "ga_utma_cookie": "GA1.1.1627888180.1529317629",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604181722"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Show PNS prference setting Page",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 38166452,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "s%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "SELLERMY",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://seller.indiamart.com/misc/privacysettings/",
+        "glb_city": "Mumbai",
+        "glusr_id": 38166452,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260418172256",
+        "glb_state": "MH",
+        "remote_ip": "223.181.63.205",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "seller.indiamart.com",
+        "http_status": 200,
+        "request_url": "POST /miscreact/ajaxrequest/seller/settings/buyleadpreferences/locationPref/ HTTP/1.1",
+        "server_name": 0,
+        "glb_latitude": 18.958193,
+        "glb_longitude": 72.832073,
+        "response_size": 1696,
+        "response_time": 29113,
+        "fk_activity_id": 1221,
+        "ga_utma_cookie": "GA1.1.1627888180.1529317629",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604181722"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Location Preferences Updated",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 38166452,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "s%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "SELLERMY",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://seller.indiamart.com/companyprofile/manageprofile",
+        "glb_city": "Mumbai",
+        "glusr_id": 38166452,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260418172331",
+        "glb_state": "MH",
+        "remote_ip": "223.181.63.205",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "seller.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /report/ HTTP/1.1",
+        "server_name": 0,
+        "glb_latitude": 18.958193,
+        "glb_longitude": 72.832073,
+        "response_size": 13935,
+        "response_time": 31373,
+        "fk_activity_id": 2644,
+        "ga_utma_cookie": "GA1.1.1627888180.1529317629",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604181723"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Show Performance Report",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 38166452,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "s%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "SELLERMY",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://seller.indiamart.com/report/",
+        "glb_city": "Mumbai",
+        "glusr_id": 38166452,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260418172401",
+        "glb_state": "MH",
+        "remote_ip": "223.181.63.205",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "seller.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /report/ HTTP/1.1",
+        "server_name": 0,
+        "glb_latitude": 18.958193,
+        "glb_longitude": 72.832073,
+        "response_size": 13938,
+        "response_time": 37017,
+        "fk_activity_id": 2644,
+        "ga_utma_cookie": "GA1.1.1627888180.1529317629",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604181724"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Show Performance Report",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 38166452,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "s%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "SELLERMY",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://seller.indiamart.com/report/",
+        "glb_city": "Mumbai",
+        "glusr_id": 38166452,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260418172446",
+        "glb_state": "MH",
+        "remote_ip": "223.181.63.205",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "seller.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /misc/privacysettings/ HTTP/1.1",
+        "server_name": 0,
+        "glb_latitude": 18.958193,
+        "glb_longitude": 72.832073,
+        "response_size": 12076,
+        "response_time": 18389,
+        "fk_activity_id": 971,
+        "ga_utma_cookie": "GA1.1.1627888180.1529317629",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604181724"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Show Privacy Settings Page",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 38166452,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "s%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "SELLERMY",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://seller.indiamart.com/misc/privacysettings/",
+        "glb_city": "Mumbai",
+        "glusr_id": 38166452,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260418172449",
+        "glb_state": "MH",
+        "remote_ip": "223.181.63.205",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "seller.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /misc/privacysettings HTTP/1.1",
+        "server_name": 0,
+        "glb_latitude": 18.958193,
+        "glb_longitude": 72.832073,
+        "response_size": 12071,
+        "response_time": 20215,
+        "fk_activity_id": 971,
+        "ga_utma_cookie": "GA1.1.1627888180.1529317629",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604181724"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Show Privacy Settings Page",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 38166452,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "s%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "SELLERMY",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://seller.indiamart.com/messagecentre",
+        "glb_city": "Mumbai",
+        "glusr_id": 38166452,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260418172453",
+        "glb_state": "MH",
+        "remote_ip": "223.181.63.205",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "seller.indiamart.com",
+        "http_status": 200,
+        "request_url": "POST /enquiry/messagecentre/MessageReadCount HTTP/1.1",
+        "server_name": 0,
+        "glb_latitude": 18.958193,
+        "glb_longitude": 72.832073,
+        "response_size": 476,
+        "response_time": 12389,
+        "fk_activity_id": 2609,
+        "ga_utma_cookie": "GA1.1.1627888180.1529317629",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604181724"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Internal",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 38166452,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "s%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "SELLERMY",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://seller.indiamart.com/messagecentre",
+        "glb_city": "Mumbai",
+        "glusr_id": 38166452,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260418172527",
+        "glb_state": "MH",
+        "remote_ip": "223.181.63.205",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "seller.indiamart.com",
+        "http_status": 200,
+        "request_url": "POST /enquiry/messagecentre/MessageReadCount HTTP/1.1",
+        "server_name": 0,
+        "glb_latitude": 18.958193,
+        "glb_longitude": 72.832073,
+        "response_size": 476,
+        "response_time": 11895,
+        "fk_activity_id": 2609,
+        "ga_utma_cookie": "GA1.1.1627888180.1529317629",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604181725"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Internal",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 38166452,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "s%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "SELLERMY",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://seller.indiamart.com/messagecentre",
+        "glb_city": "Mumbai",
+        "glusr_id": 38166452,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260418172541",
+        "glb_state": "MH",
+        "remote_ip": "223.181.63.205",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "seller.indiamart.com",
+        "http_status": 200,
+        "request_url": "POST /lmsreact/UpdateTemplates HTTP/1.1",
+        "server_name": 0,
+        "glb_latitude": 18.958193,
+        "glb_longitude": 72.832073,
+        "response_size": 624,
+        "response_time": 8841,
+        "fk_activity_id": 1928,
+        "ga_utma_cookie": "GA1.1.1627888180.1529317629",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604181725"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Update Templates",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 38166452,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "s%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "SELLERMY",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://seller.indiamart.com/messagecentre",
+        "glb_city": "Mumbai",
+        "glusr_id": 38166452,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260418172541",
+        "glb_state": "MH",
+        "remote_ip": "223.181.63.205",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "seller.indiamart.com",
+        "http_status": 200,
+        "request_url": "POST /lmsreact/sendMessage HTTP/1.1",
+        "server_name": 0,
+        "glb_latitude": 18.958193,
+        "glb_longitude": 72.832073,
+        "response_size": 651,
+        "response_time": 24592,
+        "fk_activity_id": 2291,
+        "ga_utma_cookie": "GA1.1.1627888180.1529317629",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604181725"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Send Reply",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 38166452,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "s%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "SELLERMY",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://seller.indiamart.com/messagecentre",
+        "glb_city": "Mumbai",
+        "glusr_id": 38166452,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260418172543",
+        "glb_state": "MH",
+        "remote_ip": "223.181.63.205",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "seller.indiamart.com",
+        "http_status": 200,
+        "request_url": "POST /lmsreact/sendMessage HTTP/1.1",
+        "server_name": 0,
+        "glb_latitude": 18.958193,
+        "glb_longitude": 72.832073,
+        "response_size": 651,
+        "response_time": 23478,
+        "fk_activity_id": 2291,
+        "ga_utma_cookie": "GA1.1.1627888180.1529317629",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604181725"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Send Reply",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 38166452,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "s%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "SELLERMY",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://seller.indiamart.com/messagecentre",
+        "glb_city": "Mumbai",
+        "glusr_id": 38166452,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260418172543",
+        "glb_state": "MH",
+        "remote_ip": "223.181.63.205",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "seller.indiamart.com",
+        "http_status": 200,
+        "request_url": "POST /lmsreact/UpdateTemplates HTTP/1.1",
+        "server_name": 0,
+        "glb_latitude": 18.958193,
+        "glb_longitude": 72.832073,
+        "response_size": 624,
+        "response_time": 9853,
+        "fk_activity_id": 1928,
+        "ga_utma_cookie": "GA1.1.1627888180.1529317629",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604181725"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Update Templates",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 38166452,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "s%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "SELLERMY",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://seller.indiamart.com/messagecentre",
+        "glb_city": "Mumbai",
+        "glusr_id": 38166452,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260418172548",
+        "glb_state": "MH",
+        "remote_ip": "223.181.63.205",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "seller.indiamart.com",
+        "http_status": 200,
+        "request_url": "POST /lmsreact/sendMessage HTTP/1.1",
+        "server_name": 0,
+        "glb_latitude": 18.958193,
+        "glb_longitude": 72.832073,
+        "response_size": 651,
+        "response_time": 27688,
+        "fk_activity_id": 2291,
+        "ga_utma_cookie": "GA1.1.1627888180.1529317629",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604181725"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Send Reply",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 38166452,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "s%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "SELLERMY",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://seller.indiamart.com/messagecentre",
+        "glb_city": "Mumbai",
+        "glusr_id": 38166452,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260418172548",
+        "glb_state": "MH",
+        "remote_ip": "223.181.63.205",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "seller.indiamart.com",
+        "http_status": 200,
+        "request_url": "POST /lmsreact/UpdateTemplates HTTP/1.1",
+        "server_name": 0,
+        "glb_latitude": 18.958193,
+        "glb_longitude": 72.832073,
+        "response_size": 624,
+        "response_time": 7077,
+        "fk_activity_id": 1928,
+        "ga_utma_cookie": "GA1.1.1627888180.1529317629",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604181725"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Update Templates",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 38166452,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "s%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "SELLERMY",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://seller.indiamart.com/messagecentre",
+        "glb_city": "Mumbai",
+        "glusr_id": 38166452,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260418172552",
+        "glb_state": "MH",
+        "remote_ip": "223.181.63.205",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "seller.indiamart.com",
+        "http_status": 200,
+        "request_url": "POST /lmsreact/sendMessage HTTP/1.1",
+        "server_name": 0,
+        "glb_latitude": 18.958193,
+        "glb_longitude": 72.832073,
+        "response_size": 651,
+        "response_time": 33598,
+        "fk_activity_id": 2291,
+        "ga_utma_cookie": "GA1.1.1627888180.1529317629",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604181725"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Send Reply",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 38166452,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "s%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "SELLERMY",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://seller.indiamart.com/messagecentre",
+        "glb_city": "Mumbai",
+        "glusr_id": 38166452,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260418172552",
+        "glb_state": "MH",
+        "remote_ip": "223.181.63.205",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "seller.indiamart.com",
+        "http_status": 200,
+        "request_url": "POST /lmsreact/UpdateTemplates HTTP/1.1",
+        "server_name": 0,
+        "glb_latitude": 18.958193,
+        "glb_longitude": 72.832073,
+        "response_size": 624,
+        "response_time": 7884,
+        "fk_activity_id": 1928,
+        "ga_utma_cookie": "GA1.1.1627888180.1529317629",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604181725"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Update Templates",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 38166452,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "s%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "SELLERMY",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://seller.indiamart.com/messagecentre",
+        "glb_city": "Mumbai",
+        "glusr_id": 38166452,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260418172637",
+        "glb_state": "MH",
+        "remote_ip": "223.181.63.205",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "seller.indiamart.com",
+        "http_status": 200,
+        "request_url": "POST /lmsreact/sendMessage HTTP/1.1",
+        "server_name": 0,
+        "glb_latitude": 18.958193,
+        "glb_longitude": 72.832073,
+        "response_size": 651,
+        "response_time": 30349,
+        "fk_activity_id": 2291,
+        "ga_utma_cookie": "GA1.1.1627888180.1529317629",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604181726"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Send Reply",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 38166452,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "s%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "SELLERMY",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://seller.indiamart.com/messagecentre",
+        "glb_city": "Mumbai",
+        "glusr_id": 38166452,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260418172637",
+        "glb_state": "MH",
+        "remote_ip": "223.181.63.205",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "seller.indiamart.com",
+        "http_status": 200,
+        "request_url": "POST /lmsreact/UpdateTemplates HTTP/1.1",
+        "server_name": 0,
+        "glb_latitude": 18.958193,
+        "glb_longitude": 72.832073,
+        "response_size": 624,
+        "response_time": 7480,
+        "fk_activity_id": 1928,
+        "ga_utma_cookie": "GA1.1.1627888180.1529317629",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604181726"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Update Templates",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 38166452,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "s%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "SELLERMY",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://seller.indiamart.com/messagecentre",
+        "glb_city": "Mumbai",
+        "glusr_id": 38166452,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260418172640",
+        "glb_state": "MH",
+        "remote_ip": "223.181.63.205",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "seller.indiamart.com",
+        "http_status": 200,
+        "request_url": "POST /lmsreact/UpdateTemplates HTTP/1.1",
+        "server_name": 0,
+        "glb_latitude": 18.958193,
+        "glb_longitude": 72.832073,
+        "response_size": 624,
+        "response_time": 7052,
+        "fk_activity_id": 1928,
+        "ga_utma_cookie": "GA1.1.1627888180.1529317629",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604181726"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Update Templates",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 38166452,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "s%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "SELLERMY",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://seller.indiamart.com/messagecentre",
+        "glb_city": "Mumbai",
+        "glusr_id": 38166452,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260418172640",
+        "glb_state": "MH",
+        "remote_ip": "223.181.63.205",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "seller.indiamart.com",
+        "http_status": 200,
+        "request_url": "POST /lmsreact/sendMessage HTTP/1.1",
+        "server_name": 0,
+        "glb_latitude": 18.958193,
+        "glb_longitude": 72.832073,
+        "response_size": 651,
+        "response_time": 27087,
+        "fk_activity_id": 2291,
+        "ga_utma_cookie": "GA1.1.1627888180.1529317629",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604181726"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Send Reply",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 38166452,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "s%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "SELLERMY",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://seller.indiamart.com/messagecentre",
+        "glb_city": "Mumbai",
+        "glusr_id": 38166452,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260418172646",
+        "glb_state": "MH",
+        "remote_ip": "223.181.63.205",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "seller.indiamart.com",
+        "http_status": 200,
+        "request_url": "POST /lmsreact/sendMessage HTTP/1.1",
+        "server_name": 0,
+        "glb_latitude": 18.958193,
+        "glb_longitude": 72.832073,
+        "response_size": 651,
+        "response_time": 30341,
+        "fk_activity_id": 2291,
+        "ga_utma_cookie": "GA1.1.1627888180.1529317629",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604181726"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Send Reply",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 38166452,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "s%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "SELLERMY",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://seller.indiamart.com/messagecentre",
+        "glb_city": "Mumbai",
+        "glusr_id": 38166452,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260418172646",
+        "glb_state": "MH",
+        "remote_ip": "223.181.63.205",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "seller.indiamart.com",
+        "http_status": 200,
+        "request_url": "POST /lmsreact/UpdateTemplates HTTP/1.1",
+        "server_name": 0,
+        "glb_latitude": 18.958193,
+        "glb_longitude": 72.832073,
+        "response_size": 624,
+        "response_time": 7983,
+        "fk_activity_id": 1928,
+        "ga_utma_cookie": "GA1.1.1627888180.1529317629",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604181726"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Update Templates",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 38166452,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "s%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "SELLERMY",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://seller.indiamart.com/messagecentre",
+        "glb_city": "Mumbai",
+        "glusr_id": 38166452,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260418172649",
+        "glb_state": "MH",
+        "remote_ip": "223.181.63.205",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "seller.indiamart.com",
+        "http_status": 200,
+        "request_url": "POST /lmsreact/UpdateTemplates HTTP/1.1",
+        "server_name": 0,
+        "glb_latitude": 18.958193,
+        "glb_longitude": 72.832073,
+        "response_size": 624,
+        "response_time": 8368,
+        "fk_activity_id": 1928,
+        "ga_utma_cookie": "GA1.1.1627888180.1529317629",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604181726"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Update Templates",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 38166452,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "s%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "SELLERMY",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://seller.indiamart.com/messagecentre",
+        "glb_city": "Mumbai",
+        "glusr_id": 38166452,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260418172649",
+        "glb_state": "MH",
+        "remote_ip": "223.181.63.205",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "seller.indiamart.com",
+        "http_status": 200,
+        "request_url": "POST /lmsreact/sendMessage HTTP/1.1",
+        "server_name": 0,
+        "glb_latitude": 18.958193,
+        "glb_longitude": 72.832073,
+        "response_size": 651,
+        "response_time": 29321,
+        "fk_activity_id": 2291,
+        "ga_utma_cookie": "GA1.1.1627888180.1529317629",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604181726"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Send Reply",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 38166452,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "s%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "SELLERMY",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://seller.indiamart.com/messagecentre",
+        "glb_city": "Mumbai",
+        "glusr_id": 38166452,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260418172654",
+        "glb_state": "MH",
+        "remote_ip": "223.181.63.205",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "seller.indiamart.com",
+        "http_status": 200,
+        "request_url": "POST /lmsreact/sendMessage HTTP/1.1",
+        "server_name": 0,
+        "glb_latitude": 18.958193,
+        "glb_longitude": 72.832073,
+        "response_size": 651,
+        "response_time": 29880,
+        "fk_activity_id": 2291,
+        "ga_utma_cookie": "GA1.1.1627888180.1529317629",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604181726"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Send Reply",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 38166452,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "s%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "SELLERMY",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://seller.indiamart.com/messagecentre",
+        "glb_city": "Mumbai",
+        "glusr_id": 38166452,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260418172654",
+        "glb_state": "MH",
+        "remote_ip": "223.181.63.205",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "seller.indiamart.com",
+        "http_status": 200,
+        "request_url": "POST /lmsreact/UpdateTemplates HTTP/1.1",
+        "server_name": 0,
+        "glb_latitude": 18.958193,
+        "glb_longitude": 72.832073,
+        "response_size": 624,
+        "response_time": 9455,
+        "fk_activity_id": 1928,
+        "ga_utma_cookie": "GA1.1.1627888180.1529317629",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604181726"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Update Templates",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 38166452,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "s%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "SELLERMY",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://seller.indiamart.com/companyprofile/manageprofile",
+        "glb_city": "Mumbai",
+        "glusr_id": 38166452,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260418172749",
+        "glb_state": "MH",
+        "remote_ip": "223.181.63.205",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "seller.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /product/manageproducts/ HTTP/1.1",
+        "server_name": 0,
+        "glb_latitude": 18.958193,
+        "glb_longitude": 72.832073,
+        "response_size": 18685,
+        "response_time": 25853,
+        "fk_activity_id": 2322,
+        "ga_utma_cookie": "GA1.1.1627888180.1529317629",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604181727"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Show Manage Products",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 38166452,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "s%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a%2a@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 38166452,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260425134811",
+        "glb_state": "-",
+        "remote_ip": "152.58.17.242",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "User Verification Blocker Screen",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2186,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604251348"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "User Verification",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 48.9,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 38166452,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260425134813",
+        "glb_state": "-",
+        "remote_ip": "152.58.17.242",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "User Verification Blocker Screen",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2186,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604251348"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "User Verification",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 20,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 38166452,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260425134842",
+        "glb_state": "-",
+        "remote_ip": "152.58.17.242",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Seller Rating Screen",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2228,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604251348"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Rate Seller",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 44.664,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 38166452,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260425134842",
+        "glb_state": "-",
+        "remote_ip": "152.58.17.242",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "My-Profile",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2201,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604251348"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "My Profile",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 44.664,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 38166452,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260425134844",
+        "glb_state": "-",
+        "remote_ip": "152.58.17.242",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "My-Profile",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2201,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604251348"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "My Profile",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 44.664,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 38166452,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260425141828",
+        "glb_state": "-",
+        "remote_ip": "152.58.17.242",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Seller Rating Screen",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2228,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604251419"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Rate Seller",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 44.664,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 38166452,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            182830
+          ]
+        },
+        "datevalue": "20260425191850",
+        "glb_state": "-",
+        "remote_ip": "152.58.17.242",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Similar Leads FullView-BL List",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2206,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604251918"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Similar Leads",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 44.664,
+        "coordinate_latitude": 19.254824,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 73.04254,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 38166452,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260429114024",
+        "glb_state": "-",
+        "remote_ip": "152.56.13.100",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "User Verification Blocker Screen",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2186,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604291141"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "User Verification",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 14.218,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 38166452,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260429114025",
+        "glb_state": "-",
+        "remote_ip": "152.56.13.100",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "User Verification Blocker Screen",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2186,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604291141"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "User Verification",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 100,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 38166452,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260514124858",
+        "glb_state": "-",
+        "remote_ip": "106.222.207.234",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "User Verification Blocker Screen",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2186,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605141249"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "User Verification",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 100,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 38166452,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260514124900",
+        "glb_state": "-",
+        "remote_ip": "106.222.207.234",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "User Verification Blocker Screen",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2186,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605141249"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "User Verification",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 12.612,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      }
+    ],
+    "updated_at": "2026-05-16T10:31:19.493679Z"
+  },
+  "error": null
+}

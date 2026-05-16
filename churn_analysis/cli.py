@@ -43,13 +43,13 @@ def _print_pretty(skill_name: str, glid: int, version: str, sr) -> None:
     print()
 
     # Special pretty layouts
-    if skill_name == "cross_platform_intelligence" and sr.success:
+    if skill_name == "cross-platform-intelligence" and sr.success:
         _print_cross_platform_pretty(sr.data or {})
         return
-    if skill_name == "churn_scoring" and sr.success:
+    if skill_name == "churn-scoring" and sr.success:
         _print_churn_scoring_pretty(sr.data or {})
         return
-    if skill_name == "winback_priority" and sr.success:
+    if skill_name == "winback-priority" and sr.success:
         _print_winback_pretty(sr.data or {})
         return
 

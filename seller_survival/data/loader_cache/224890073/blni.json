@@ -1,0 +1,191 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 224890073,
+        "event_date": "2026-01-03",
+        "offer_id": 136237011495,
+        "mcat_id": 5740,
+        "reason_code": 3,
+        "reason_text": "Specification Mismatch",
+        "comment": null,
+        "module_id": "IMOB"
+      },
+      {
+        "gluser_id": 224890073,
+        "event_date": "2026-01-03",
+        "offer_id": 136234505963,
+        "mcat_id": 217382,
+        "reason_code": 11,
+        "reason_text": "Retail Lead",
+        "comment": null,
+        "module_id": "IMOB"
+      },
+      {
+        "gluser_id": 224890073,
+        "event_date": "2025-12-17",
+        "offer_id": 135206852667,
+        "mcat_id": 11750,
+        "reason_code": 5,
+        "reason_text": "Location",
+        "comment": null,
+        "module_id": "FENQ"
+      },
+      {
+        "gluser_id": 224890073,
+        "event_date": "2025-12-17",
+        "offer_id": 135201720475,
+        "mcat_id": 38698,
+        "reason_code": 11,
+        "reason_text": "Retail Lead",
+        "comment": null,
+        "module_id": "FENQ"
+      },
+      {
+        "gluser_id": 224890073,
+        "event_date": "2025-11-25",
+        "offer_id": 133856707313,
+        "mcat_id": 9615,
+        "reason_code": 11,
+        "reason_text": "Retail Lead",
+        "comment": null,
+        "module_id": "FENQ"
+      },
+      {
+        "gluser_id": 224890073,
+        "event_date": "2025-11-25",
+        "offer_id": 133853138163,
+        "mcat_id": 26848,
+        "reason_code": 11,
+        "reason_text": "Retail Lead",
+        "comment": null,
+        "module_id": "FENQ"
+      },
+      {
+        "gluser_id": 224890073,
+        "event_date": "2025-11-22",
+        "offer_id": 133646498963,
+        "mcat_id": 36643,
+        "reason_code": 3,
+        "reason_text": "Specification Mismatch",
+        "comment": null,
+        "module_id": "FENQ"
+      },
+      {
+        "gluser_id": 224890073,
+        "event_date": "2025-11-21",
+        "offer_id": 133637720695,
+        "mcat_id": 418854,
+        "reason_code": 11,
+        "reason_text": "Retail Lead",
+        "comment": null,
+        "module_id": "IMOB"
+      },
+      {
+        "gluser_id": 224890073,
+        "event_date": "2025-11-21",
+        "offer_id": 133620477013,
+        "mcat_id": 166049,
+        "reason_code": 1,
+        "reason_text": "Wrong Product",
+        "comment": null,
+        "module_id": "FLPNS"
+      },
+      {
+        "gluser_id": 224890073,
+        "event_date": "2025-11-21",
+        "offer_id": 133528211059,
+        "mcat_id": 3212,
+        "reason_code": 11,
+        "reason_text": "Retail Lead",
+        "comment": null,
+        "module_id": "FENQ"
+      },
+      {
+        "gluser_id": 224890073,
+        "event_date": "2025-11-20",
+        "offer_id": 133575288634,
+        "mcat_id": 6507,
+        "reason_code": 11,
+        "reason_text": "Retail Lead",
+        "comment": null,
+        "module_id": "FENQ"
+      },
+      {
+        "gluser_id": 224890073,
+        "event_date": "2025-11-20",
+        "offer_id": 133563875652,
+        "mcat_id": 2140,
+        "reason_code": 11,
+        "reason_text": "Retail Lead",
+        "comment": null,
+        "module_id": "FENQ"
+      },
+      {
+        "gluser_id": 224890073,
+        "event_date": "2025-09-17",
+        "offer_id": 129600103659,
+        "mcat_id": null,
+        "reason_code": 1,
+        "reason_text": "Wrong Product",
+        "comment": null,
+        "module_id": null
+      },
+      {
+        "gluser_id": 224890073,
+        "event_date": "2025-09-17",
+        "offer_id": 129565840567,
+        "mcat_id": null,
+        "reason_code": 11,
+        "reason_text": "Retail Lead",
+        "comment": null,
+        "module_id": null
+      },
+      {
+        "gluser_id": 224890073,
+        "event_date": "2025-09-17",
+        "offer_id": 129557535667,
+        "mcat_id": null,
+        "reason_code": 11,
+        "reason_text": "Retail Lead",
+        "comment": null,
+        "module_id": null
+      },
+      {
+        "gluser_id": 224890073,
+        "event_date": "2025-09-10",
+        "offer_id": 129050052775,
+        "mcat_id": null,
+        "reason_code": 11,
+        "reason_text": "Retail Lead",
+        "comment": null,
+        "module_id": null
+      },
+      {
+        "gluser_id": 224890073,
+        "event_date": "2025-09-10",
+        "offer_id": 129007612195,
+        "mcat_id": null,
+        "reason_code": 3,
+        "reason_text": "Specification Mismatch",
+        "comment": "i donot deal in this brand",
+        "module_id": null
+      },
+      {
+        "gluser_id": 224890073,
+        "event_date": "2025-09-10",
+        "offer_id": 128927079813,
+        "mcat_id": null,
+        "reason_code": 11,
+        "reason_text": "Retail Lead",
+        "comment": null,
+        "module_id": null
+      }
+    ],
+    "total": 18,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

@@ -1,0 +1,56 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 64601,
+        "hotlead_date": "2026-04-06",
+        "hotlead_id": 10295189,
+        "hotlead_type_id": 1103191645,
+        "data_type": "PUA",
+        "activity": "Premium Activity - Online",
+        "activity_id": 1874
+      },
+      {
+        "gluser_id": 64601,
+        "hotlead_date": "2025-09-25",
+        "hotlead_id": 10295189,
+        "hotlead_type_id": 1022286238,
+        "data_type": "PUA",
+        "activity": "Premium Activity - Online",
+        "activity_id": 2062
+      },
+      {
+        "gluser_id": 64601,
+        "hotlead_date": "2025-09-18",
+        "hotlead_id": 10295189,
+        "hotlead_type_id": 1019359573,
+        "data_type": "PNSR",
+        "activity": "Premium Activity - PNS Call Received",
+        "activity_id": 10001
+      },
+      {
+        "gluser_id": 64601,
+        "hotlead_date": "2025-07-22",
+        "hotlead_id": 10295189,
+        "hotlead_type_id": 992511648,
+        "data_type": "PUA",
+        "activity": "Premium Activity - Online",
+        "activity_id": 1874
+      },
+      {
+        "gluser_id": 64601,
+        "hotlead_date": "2025-06-20",
+        "hotlead_id": 10295189,
+        "hotlead_type_id": 978025338,
+        "data_type": "UA",
+        "activity": "Message Center-Contact-Details",
+        "activity_id": 2263
+      }
+    ],
+    "total": 5,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

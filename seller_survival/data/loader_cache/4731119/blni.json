@@ -1,0 +1,31 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 4731119,
+        "event_date": "2026-04-27",
+        "offer_id": 143311706959,
+        "mcat_id": 2626,
+        "reason_code": 11,
+        "reason_text": "Retail Lead",
+        "comment": null,
+        "module_id": "FENQ"
+      },
+      {
+        "gluser_id": 4731119,
+        "event_date": "2026-04-27",
+        "offer_id": 143293851713,
+        "mcat_id": 8051,
+        "reason_code": 11,
+        "reason_text": "Retail Lead",
+        "comment": null,
+        "module_id": "IMOB"
+      }
+    ],
+    "total": 2,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

@@ -1,0 +1,29 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 25944058,
+        "hotlead_date": "2025-12-28",
+        "hotlead_id": 13962058,
+        "hotlead_type_id": 1061285828,
+        "data_type": "PIM",
+        "activity": "Payment Interest - MDC",
+        "activity_id": 4342
+      },
+      {
+        "gluser_id": 25944058,
+        "hotlead_date": "2025-12-07",
+        "hotlead_id": 13962058,
+        "hotlead_type_id": 1052180782,
+        "data_type": "PUA",
+        "activity": "Premium Activity - Online",
+        "activity_id": 1874
+      }
+    ],
+    "total": 2,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

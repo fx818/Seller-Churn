@@ -53,7 +53,7 @@ skills/
 
 **Leaf skills (`skills/<name>/`)**  
 No logic changes. Structural changes only:
-1. `meta.yaml` content merged into `SKILL.md` frontmatter (`version`, `category`, `inputs`, `outputs`, `python_class`)
+1. `meta.yaml` content merged into `SKILL.md` frontmatter under the `metadata:` key (AgentSkills spec extension point) — fields: `version`, `category`, `inputs`, `outputs`, `python_class`
 2. `skill.py` → `scripts/skill.py`
 3. `SKILL.md` gains `compatibility: Requires Python 3.11+, seller_survival package`
 

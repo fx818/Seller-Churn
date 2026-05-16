@@ -685,21 +685,21 @@ def render_bl_card_skill(d):
 
 
 SKILL_RENDERERS = {
-    "churn_scoring":              render_churn_scoring,
-    "shap_rca":                   render_shap_rca,
-    "llm_cohort_scorer":          render_llm_cohort,
-    "peer_benchmark":             render_peer_benchmark,
-    "demand_index":               render_demand_index,
-    "conversion_point":           render_conversion_point,
-    "onboarding_health":          render_onboarding_health,
-    "pre_call_brief":             render_pre_call_brief,
-    "whatsapp_message":           render_whatsapp,
-    "script_generation":          render_script_generation,
-    "gifted_lead":                render_gifted_lead,
-    "cross_platform_intelligence": render_cross_platform,
-    "bl_upgrade":                 render_bl_upgrade,
-    "winback_priority":           render_winback,
-    "bl_card":                    render_bl_card_skill,
+    "churn-scoring":              render_churn_scoring,
+    "shap-rca":                   render_shap_rca,
+    "llm-cohort-scorer":          render_llm_cohort,
+    "peer-benchmark":             render_peer_benchmark,
+    "demand-index":               render_demand_index,
+    "conversion-point":           render_conversion_point,
+    "onboarding-health":          render_onboarding_health,
+    "pre-call-brief":             render_pre_call_brief,
+    "whatsapp-message":           render_whatsapp,
+    "script-generation":          render_script_generation,
+    "gifted-lead":                render_gifted_lead,
+    "cross-platform-intelligence": render_cross_platform,
+    "bl-upgrade":                 render_bl_upgrade,
+    "winback-priority":           render_winback,
+    "bl-card":                    render_bl_card_skill,
 }
 
 
@@ -1251,7 +1251,7 @@ if page == "🔬 Pipeline Analysis":
 
         # ── BL Card (top) ────────────────────────────────────────────────────
         st.markdown("## 💼 BL CARD — Aggregated Briefing")
-        bl_card_data = phases.get("phase6_card", {}).get("bl_card", {}).get("data", {})
+        bl_card_data = phases.get("phase6_card", {}).get("bl-card", {}).get("data", {})
         render_bl_card(bl_card_data)
 
         st.divider()
@@ -1367,7 +1367,7 @@ else:
         with st.spinner("Analyzing call transcript..."):
             try:
                 from churn_analysis.skills.registry import registry
-                sr = registry.run("call_summary", {
+                sr = registry.run("call-summary", {
                     "glid":          pcs_glid,
                     "transcript":    transcript,
                     "call_type":     pcs_call_type,

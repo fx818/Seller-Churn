@@ -1,0 +1,41 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 66578,
+        "event_date": "2025-11-03",
+        "offer_id": 132370872767,
+        "mcat_id": null,
+        "reason_code": 7,
+        "reason_text": "Any Other",
+        "comment": "I'm not dealing with Narrain Trolley",
+        "module_id": null
+      },
+      {
+        "gluser_id": 66578,
+        "event_date": "2025-11-03",
+        "offer_id": 132368909763,
+        "mcat_id": null,
+        "reason_code": 7,
+        "reason_text": "Any Other",
+        "comment": null,
+        "module_id": null
+      },
+      {
+        "gluser_id": 66578,
+        "event_date": "2025-10-17",
+        "offer_id": 131536369159,
+        "mcat_id": null,
+        "reason_code": 3,
+        "reason_text": "Specification Mismatch",
+        "comment": null,
+        "module_id": null
+      }
+    ],
+    "total": 3,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

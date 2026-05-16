@@ -1,0 +1,374 @@
+{
+  "glid": 1575438,
+  "run_at": "2026-05-16T18:16:18.173875",
+  "context": {
+    "company": "Ayaan Leathers",
+    "turnover": "0 - 40 L",
+    "turnover_raw": "Slab: Rs. 40 lakhs to 1.5 Cr. (For FY 2024-2025)",
+    "city": "Vellore",
+    "state": "TN",
+    "mcats": [],
+    "custtype": "TSCATALOG",
+    "account_age_days": 3694,
+    "rag_category": "",
+    "paid_history": true
+  },
+  "phases": {
+    "phase0_benchmark": {
+      "peer-benchmark": {
+        "success": true,
+        "confidence": 0.2,
+        "latency_ms": 0,
+        "data": {
+          "peer_group": "TSCATALOG|TSCATALOG",
+          "peer_n": 0,
+          "peer_data_available": false,
+          "gap_severity": "unknown",
+          "peer_summary_line": "No peer data available for group TSCATALOG|TSCATALOG."
+        },
+        "error": null
+      },
+      "demand-index": {
+        "success": true,
+        "confidence": 0.3,
+        "latency_ms": 0,
+        "data": {
+          "demand_index": 5,
+          "demand_tier": "Red",
+          "market_bl_per_seller": 0.0,
+          "trend": "declining",
+          "trend_slope": -2.5804,
+          "is_high_risk_city": false,
+          "city_risk_prior": 0,
+          "is_high_risk_category": false,
+          "demand_explanation": "Market has 0.0 BLs per paid seller, trend is declining.",
+          "recommended_action": "Suggest national geography expansion; highlight metro buyer demand"
+        },
+        "error": null
+      },
+      "conversion-point": {
+        "success": true,
+        "confidence": 0.85,
+        "latency_ms": 0,
+        "data": {
+          "trajectory_type": "TYPE_B",
+          "trajectory_label": "Gradual Drift",
+          "explanation": "Seller showed 3+ months of continuous decline — gradual drift away from platform.",
+          "opening_line_hi": "Pichle kuch mahino mein aapki IndiaMart activity dheere-dheere kam hui hai — kya koi specific issue hai jisme hum help kar sakte hain?",
+          "cliff_month_index": 7,
+          "cliff_drop_pct": null,
+          "monthly_enq": [
+            34,
+            41,
+            52,
+            30,
+            32,
+            11,
+            20,
+            37,
+            25,
+            19,
+            19,
+            6
+          ],
+          "peer_median_enq": 0,
+          "account_age_days": 3694,
+          "is_type_c": false,
+          "run_onboarding": false
+        },
+        "error": null
+      }
+    },
+    "phase1_onboarding": {
+      "skipped": true,
+      "reason": "condition false: context.account_age_days <= 90"
+    },
+    "phase2_churn": {
+      "churn-scoring": {
+        "success": true,
+        "confidence": 1.0,
+        "latency_ms": 12006,
+        "data": {
+          "churn_score": 41,
+          "risk": "Green",
+          "churn_reasons": [
+            "BL velocity collapse: -75.0% MoM",
+            "Critical PNS rate 25.9% — buyers can't reach seller",
+            "No hotlead activity — no engagement events"
+          ],
+          "reason_tags": [
+            "BL_VELOCITY_CATASTROPHIC",
+            "CRITICAL_PNS_RATE",
+            "NO_HOTLEAD",
+            "TYPE_B_GRADUAL_DRIFT"
+          ],
+          "score_breakdown": {
+            "bl_velocity": 18,
+            "pns": 10,
+            "hotleads": 4
+          },
+          "red_flag_count": 2,
+          "red_flags": [
+            "BL_VELOCITY_CATASTROPHIC",
+            "CRITICAL_PNS_RATE"
+          ],
+          "reply_rate_30d": 505.1,
+          "signals_available": 9,
+          "base_score": 32,
+          "compound_multiplier": 1.0,
+          "compounded_score": 32.0,
+          "trajectory_adjustment": 1,
+          "trajectory_note": "TYPE_B Gradual Drift → +1 (proactive window)",
+          "pre_llm_score": 33,
+          "pre_llm_risk": "Green",
+          "llm_adjustment": 8,
+          "llm_justification": "The rule-based model underweights the compound severity here: a 75% BL velocity collapse combined with a critically low PNS answer rate (25.9%) and zero hotlead activity creates a reinforcing disengagement loop — fewer buyers are reaching the seller, and those who do are largely going unanswered, which likely accelerates further BL decline. The anomalous reply rate (505.1%, implying bulk/automated replies across far more BLs than received) suggests data quality issues or gaming behavior rather than genuine engagement, making the CQS of 77 and clickstream of 149 less reassuring than they appear.",
+          "llm_interactions": [
+            "BL velocity collapse (-75% MoM) + low PNS answer rate (25.9%) = compounding buyer-reach failure with no recovery signal",
+            "Reply rate >500% (197 replies to 39 BLs) suggests automated or bulk reply behavior, undermining the apparent engagement quality",
+            "Zero hotlead activity despite 149 clickstream events indicates passive browsing with no conversion intent — engagement is hollow",
+            "Only 10 active days in 30d combined with TYPE_B gradual drift trajectory suggests accelerating disengagement, not stabilization",
+            "CQS of 77 and clickstream activity are isolated positives that do not interact positively with the other declining signals"
+          ],
+          "llm_used": true,
+          "llm_error": null
+        },
+        "error": null
+      },
+      "shap-rca": {
+        "success": true,
+        "confidence": 0.3,
+        "latency_ms": 0,
+        "data": {
+          "rca_category": "NO_LEADS",
+          "rca_confidence": 0.3,
+          "rca_explanation_en": "No specific root cause identified. General engagement improvement recommended.",
+          "rca_explanation_hi": "Aapka account review kiya maine — kuch areas hain jahan help kar sakta hoon.",
+          "intervention_hint": "Generic retention call — discovery-first approach.",
+          "top_feature": null,
+          "top_feature_value": null,
+          "top_feature_contribution": 0,
+          "shap_breakdown": []
+        },
+        "error": null
+      }
+    },
+    "phase2_llm": {
+      "llm-cohort-scorer": {
+        "success": true,
+        "confidence": 0.66,
+        "latency_ms": 5448,
+        "data": {
+          "skipped": false,
+          "risk_level": "Very High",
+          "pipeline_tier": "Red",
+          "confidence_score": 66,
+          "bands": {
+            "bl": "A",
+            "lms": "R",
+            "activity": "R"
+          },
+          "reasoning": "BL consumption rate (0.55) sits near the boundary between churned and retained cohorts, with consumed_30d of 9 being low but reply_rate of 1.30 being a positive differentiator — placing this in Amber. LMS engagement is Red: call_pickup_ratio of 0.24 is the lowest in the entire cohort, call_attempts_90d of 29 is low, and lms_active_days_30d of 10 is below retained norms. Activity trend is Red: recent_enq_trend shows a sharp drop from 19→19→6, and activity_30d of 149 is at the lower end of retained sellers while resembling churned patterns.",
+          "churned_lookalikes": [
+            41584202,
+            16128834,
+            58309731
+          ],
+          "retained_lookalikes": [
+            5957111,
+            9149400
+          ],
+          "cohort_match": {
+            "n_filtered": 175,
+            "tier": "loose",
+            "shown_to_llm": 10
+          },
+          "snapshot_context": {
+            "company": "Ayaan Leathers",
+            "turnover": "0 - 40 L",
+            "turnover_raw": "Slab: Rs. 40 lakhs to 1.5 Cr. (For FY 2024-2025)",
+            "city": "Vellore",
+            "state": "TN",
+            "mcats": [],
+            "custtype": "TSCATALOG",
+            "account_age_days": 3694,
+            "rag_category": "",
+            "paid_history": true
+          }
+        },
+        "error": null
+      }
+    },
+    "phase3_actions": {
+      "skipped": true,
+      "reason": "condition false: flow.risk in [Red, Amber]"
+    },
+    "phase3c_cross_platform": {
+      "skipped": true,
+      "reason": "condition false: flow.risk in [Red, Amber] AND flow.rca_category in [POOR_CATALOG, PEER_GAP, NO_LEADS, LOW_ENGAGEMENT, BL_DECLINE]"
+    },
+    "phase4": {
+      "bl-upgrade": {
+        "success": true,
+        "confidence": 0.9,
+        "latency_ms": 0,
+        "data": {
+          "eligible": true,
+          "mode": "AT_RISK_RETENTION",
+          "upgrade_leads_count": 5,
+          "upgrade_message_hi": "Ramesh Bhai, renewal se pehle aapke liye 5 premium leads unlock ki hain — yeh normal sellers ko nahi milti.",
+          "upgrade_message_en": "We've unlocked 5 premium leads for you before renewal — these aren't available to regular sellers.",
+          "action": "OFFER_PREMIUM_LEADS",
+          "expected_conversion_uplift": 0.22
+        },
+        "error": null
+      }
+    },
+    "phase5": {
+      "skipped": true,
+      "reason": "condition false: flow.risk == Red"
+    },
+    "phase6_card": {
+      "bl-card": {
+        "success": true,
+        "confidence": 0.95,
+        "latency_ms": 0,
+        "data": {
+          "header": {
+            "glid": 1575438,
+            "company": "Ayaan Leathers",
+            "location": "Vellore, TN",
+            "customer_type": "TSCATALOG",
+            "rag": "—",
+            "account_age_days": 3694,
+            "verdict": "AT RISK — Schedule retention call within 7 days",
+            "priority": 41,
+            "im_product_count": 0
+          },
+          "scores": {
+            "churn_score": 41,
+            "risk_tier": "Green",
+            "base_churn_score": 41,
+            "cp_adjustment": 0,
+            "cp_adjustment_note": "",
+            "llm_risk": "Very High",
+            "llm_tier": "Red",
+            "llm_confidence": 66,
+            "bands": {
+              "bl": "🟡 A",
+              "lms": "🔴 R",
+              "activity": "🔴 R"
+            },
+            "churn_breakdown": {
+              "base_score": 32,
+              "compound_multiplier": 1.0,
+              "trajectory_adjustment": 1,
+              "trajectory_note": "TYPE_B Gradual Drift → +1 (proactive window)",
+              "pre_llm_score": 33,
+              "llm_adjustment": 8,
+              "llm_justification": "The rule-based model underweights the compound severity here: a 75% BL velocity collapse combined with a critically low PNS answer rate (25.9%) and zero hotlead activity creates a reinforcing disengagement loop — fewer buyers are reaching the seller, and those who do are largely going unanswered, which likely accelerates further BL decline. The anomalous reply rate (505.1%, implying bulk/automated replies across far more BLs than received) suggests data quality issues or gaming behavior rather than genuine engagement, making the CQS of 77 and clickstream of 149 less reassuring than they appear.",
+              "llm_used": true,
+              "red_flag_count": 2
+            }
+          },
+          "root_cause": {
+            "category": "NO_LEADS",
+            "confidence": 0.3,
+            "english": "No specific root cause identified. General engagement improvement recommended.",
+            "hindi": "Aapka account review kiya maine — kuch areas hain jahan help kar sakta hoon.",
+            "intervention": "Generic retention call — discovery-first approach."
+          },
+          "signals": {
+            "churn_reasons": [
+              "BL velocity collapse: -75.0% MoM",
+              "Critical PNS rate 25.9% — buyers can't reach seller",
+              "No hotlead activity — no engagement events"
+            ],
+            "reason_tags": [
+              "BL_VELOCITY_CATASTROPHIC",
+              "CRITICAL_PNS_RATE",
+              "NO_HOTLEAD",
+              "TYPE_B_GRADUAL_DRIFT"
+            ],
+            "reply_rate_30d": 505.1,
+            "trajectory": "Gradual Drift",
+            "trajectory_explanation": "Seller showed 3+ months of continuous decline — gradual drift away from platform.",
+            "demand_tier": "Red",
+            "demand_index": 5,
+            "demand_message": "Market has 0.0 BLs per paid seller, trend is declining.",
+            "peer_comparison": "No peer data available for group TSCATALOG|TSCATALOG.",
+            "peer_n": 0
+          },
+          "action_plan": {
+            "opening_en": "",
+            "opening_hi": "Pichle kuch mahino mein aapki IndiaMart activity dheere-dheere kam hui hai — kya koi specific issue hai jisme hum help kar sakte hain?",
+            "suggested_actions": [],
+            "do_not_mention": [
+              "renewal price",
+              "subscription cost",
+              "competitor pricing"
+            ],
+            "estimated_duration": "8-12 min"
+          },
+          "messaging": {
+            "whatsapp_hi": "",
+            "whatsapp_en": "",
+            "call_script_hi": {},
+            "call_script_en": {}
+          },
+          "interventions": {
+            "bl_upgrade_eligible": true,
+            "bl_upgrade_reason": "",
+            "winback_score": null,
+            "winback_pitch": "",
+            "winback_priority": null,
+            "winback_pre_llm": null,
+            "winback_llm_used": null,
+            "winback_llm_adjustment": null,
+            "winback_llm_justification": null,
+            "winback_interaction_bonus": null,
+            "winback_sub_scores": {},
+            "winback_weights": {},
+            "winback_cool_off_elapsed": null,
+            "winback_cool_off_days_remaining": null,
+            "winback_demand_provided": null
+          },
+          "lookalikes": {
+            "churned": [
+              41584202,
+              16128834,
+              58309731
+            ],
+            "retained": [
+              5957111,
+              9149400
+            ]
+          },
+          "cross_platform": {
+            "platforms_found": [],
+            "platform_data": {},
+            "im_catalog_gap": {},
+            "headline_hi": "",
+            "headline_en": "",
+            "data_points": [],
+            "suggested_action": "",
+            "urgency": "",
+            "competitive_positioning": ""
+          },
+          "onboarding": {
+            "health_score": null,
+            "health_tier": null,
+            "checks": {},
+            "trigger_action": "",
+            "risk_priors": [],
+            "activation_plan": {},
+            "plan_method": "",
+            "ran": false
+          },
+          "summary_text": "╔═══════════════════════════════════════════════════════════════════╗\n║ SELLER BL CARD — GLID 1575438\n║ Ayaan Leathers | Vellore, TN | TSCATALOG | Age: 3694d\n╠═══════════════════════════════════════════════════════════════════╣\n║ VERDICT:  AT RISK — Schedule retention call within 7 days\n║ PRIORITY: 41/100\n║ CHURN:    41/100 (Green)  |  LLM: Very High\n║ RCA:      NO_LEADS — No specific root cause identified. General engagement improv\n║ DEMAND:   Red  |  TRAJECTORY: Gradual Drift\n╠═══════════════════════════════════════════════════════════════════╣\n║ OPENING:  \n║ ACTIONS:  Discovery call\n╚═══════════════════════════════════════════════════════════════════╝"
+        },
+        "error": null
+      }
+    }
+  }
+}

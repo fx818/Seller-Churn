@@ -1,0 +1,675 @@
+{
+  "glid": 4731119,
+  "run_at": "2026-05-16T18:22:19.868459",
+  "context": {
+    "company": "Geestone Tyre Co. (Ravi Nandan And Sons)",
+    "turnover": "1.5 Cr - 5 Cr",
+    "turnover_raw": "Slab: Rs. 5 Cr. to 25 Cr. (For FY 2024-2025)",
+    "city": "Ludhiana",
+    "state": "PB",
+    "mcats": [],
+    "custtype": "ExportTS",
+    "account_age_days": 5189,
+    "rag_category": "",
+    "paid_history": true
+  },
+  "phases": {
+    "phase0_benchmark": {
+      "peer-benchmark": {
+        "success": true,
+        "confidence": 0.2,
+        "latency_ms": 0,
+        "data": {
+          "peer_group": "ExportTS|ExportTS",
+          "peer_n": 0,
+          "peer_data_available": false,
+          "gap_severity": "unknown",
+          "peer_summary_line": "No peer data available for group ExportTS|ExportTS."
+        },
+        "error": null
+      },
+      "demand-index": {
+        "success": true,
+        "confidence": 0.3,
+        "latency_ms": 0,
+        "data": {
+          "demand_index": 35,
+          "demand_tier": "Amber",
+          "market_bl_per_seller": 0.0,
+          "trend": "growing",
+          "trend_slope": 1.9161,
+          "is_high_risk_city": false,
+          "city_risk_prior": 0,
+          "is_high_risk_category": false,
+          "demand_explanation": "Market has 0.0 BLs per paid seller, trend is growing.",
+          "recommended_action": "Expand to nearby cities; improve catalog to capture existing demand"
+        },
+        "error": null
+      },
+      "conversion-point": {
+        "success": true,
+        "confidence": 0.85,
+        "latency_ms": 0,
+        "data": {
+          "trajectory_type": "TYPE_A",
+          "trajectory_label": "Sudden Cliff",
+          "explanation": "Seller had strong activity then dropped ~74.7% around month 2 — sudden disengagement.",
+          "opening_line_hi": "Aapka business pehle bahut achha chal raha tha, phir achanak activity kam ho gayi — aaj iske baare mein baat karte hain.",
+          "cliff_month_index": 1,
+          "cliff_drop_pct": 74.7,
+          "monthly_enq": [
+            87,
+            22,
+            23,
+            15,
+            19,
+            17,
+            32,
+            29,
+            40,
+            56,
+            86,
+            48
+          ],
+          "peer_median_enq": 0,
+          "account_age_days": 5189,
+          "is_type_c": false,
+          "run_onboarding": false
+        },
+        "error": null
+      }
+    },
+    "phase1_onboarding": {
+      "skipped": true,
+      "reason": "condition false: context.account_age_days <= 90"
+    },
+    "phase2_churn": {
+      "churn-scoring": {
+        "success": true,
+        "confidence": 1.0,
+        "latency_ms": 10235,
+        "data": {
+          "churn_score": 47,
+          "risk": "Amber",
+          "churn_reasons": [
+            "Critical reply rate: 14.4%",
+            "BL velocity collapse: -55.6% MoM",
+            "No hotlead activity — no engagement events",
+            "Trajectory: sudden cliff (last few months) — emergency intervention window"
+          ],
+          "reason_tags": [
+            "CRITICAL_REPLY_RATE",
+            "BL_VELOCITY_CATASTROPHIC",
+            "NO_HOTLEAD",
+            "TYPE_A_SUDDEN_CLIFF"
+          ],
+          "score_breakdown": {
+            "reply_rate": 14,
+            "bl_velocity": 18,
+            "hotleads": 4
+          },
+          "red_flag_count": 2,
+          "red_flags": [
+            "CRITICAL_REPLY_RATE",
+            "BL_VELOCITY_CATASTROPHIC"
+          ],
+          "reply_rate_30d": 14.4,
+          "signals_available": 9,
+          "base_score": 36,
+          "compound_multiplier": 1.0,
+          "compounded_score": 36.0,
+          "trajectory_adjustment": 3,
+          "trajectory_note": "TYPE_A Sudden Cliff (drop 74.7%) → +3 urgency",
+          "pre_llm_score": 39,
+          "pre_llm_risk": "Green",
+          "llm_adjustment": 8,
+          "llm_justification": "The combination of a catastrophic reply rate (14.4%) with a simultaneous -55.6% BL velocity collapse and zero hotlead activity creates a compounding disengagement signal that the rule-based model underweights at 39 — the seller is both receiving far fewer leads AND ignoring the ones they do get, while the TYPE_A sudden cliff trajectory suggests this deterioration is acute and accelerating rather than gradual. The high clickstream (2425) and active days (24) indicate platform presence but deliberate non-conversion behavior, which is a stronger churn precursor than passive absence.",
+          "llm_interactions": [
+            "Low reply rate (14.4%) × BL velocity collapse (-55.6%) — simultaneous demand-side shrinkage and supply-side non-response amplifies churn risk beyond either signal alone",
+            "Zero hotleads × 278 BLs received — high enquiry volume with no hotlead conversion suggests severe quality mismatch or deliberate disengagement from conversion funnel",
+            "High clickstream (2425) + 24 active days × zero reply engagement — seller is browsing but not acting, indicating platform fatigue or intent to leave rather than technical absence",
+            "TYPE_A sudden cliff × CQS 89 — a high catalog quality score alongside sudden behavioral collapse suggests an external trigger (competitor, pricing, business issue) rather than gradual dissatisfaction, making recovery window narrow",
+            "PNS answer rate 150% (anomalous) × 14.4% BL reply rate — inconsistency between phone responsiveness and BL reply behavior may indicate selective disengagement or data artifact worth flagging"
+          ],
+          "llm_used": true,
+          "llm_error": null
+        },
+        "error": null
+      },
+      "shap-rca": {
+        "success": true,
+        "confidence": 0.3,
+        "latency_ms": 0,
+        "data": {
+          "rca_category": "NO_LEADS",
+          "rca_confidence": 0.3,
+          "rca_explanation_en": "No specific root cause identified. General engagement improvement recommended.",
+          "rca_explanation_hi": "Aapka account review kiya maine — kuch areas hain jahan help kar sakta hoon.",
+          "intervention_hint": "Generic retention call — discovery-first approach.",
+          "top_feature": null,
+          "top_feature_value": null,
+          "top_feature_contribution": 0,
+          "shap_breakdown": []
+        },
+        "error": null
+      }
+    },
+    "phase2_llm": {
+      "llm-cohort-scorer": {
+        "success": true,
+        "confidence": 0.63,
+        "latency_ms": 10099,
+        "data": {
+          "skipped": false,
+          "risk_level": "Moderate",
+          "pipeline_tier": "Amber",
+          "confidence_score": 63,
+          "bands": {
+            "bl": "G",
+            "lms": "R",
+            "activity": "G"
+          },
+          "reasoning": "The target seller's BL consumption rate (0.74) and consumed_30d (185) are well above both churned and retained cohorts, firmly Green; reply_rate (0.05) is low but consistent with retained sellers. LMS is Red: call_attempts_90d (7) is far below all cohort sellers (min 10, most 30–78), and while lms_active_days_30d (24) is high, call_pickup_ratio (0.43) sits at the lower retained boundary, making overall LMS engagement thin and churn-like. Activity trend is Green with activity_30d (2425) and event_count (2425) dwarfing all cohort peers, though the enquiry trend [56,86,48] shows a mid-period spike then dip warranting monitoring.",
+          "churned_lookalikes": [
+            3817312,
+            264501360,
+            15854803
+          ],
+          "retained_lookalikes": [
+            108983094,
+            50538556,
+            15652992
+          ],
+          "cohort_match": {
+            "n_filtered": 28,
+            "tier": "loose",
+            "shown_to_llm": 10
+          },
+          "snapshot_context": {
+            "company": "Geestone Tyre Co. (Ravi Nandan And Sons)",
+            "turnover": "1.5 Cr - 5 Cr",
+            "turnover_raw": "Slab: Rs. 5 Cr. to 25 Cr. (For FY 2024-2025)",
+            "city": "Ludhiana",
+            "state": "PB",
+            "mcats": [],
+            "custtype": "ExportTS",
+            "account_age_days": 5189,
+            "rag_category": "",
+            "paid_history": true
+          }
+        },
+        "error": null
+      }
+    },
+    "phase3_actions": {
+      "pre-call-brief": {
+        "success": true,
+        "confidence": 0.85,
+        "latency_ms": 0,
+        "data": {
+          "company": "Geestone Tyre Co. (Ravi Nandan And Sons)",
+          "city": "Ludhiana",
+          "enterprise": "ExportTS",
+          "ctype": "ExportTS",
+          "opening_line_hi": "Geestone Bhai, maine aapka account dekha — last month leads 55.6% kam ho gayi hain.",
+          "opening_line_en": "Geestone ji, leads dropped 55.6% last month. There's a specific reason I can explain.",
+          "key_signals": [
+            {
+              "label": "Churn Score",
+              "value": "47/100",
+              "severity": "high"
+            },
+            {
+              "label": "AI Risk Level",
+              "value": "Moderate (cohort-calibrated)",
+              "severity": "high"
+            },
+            {
+              "label": "Lead Volume Trend",
+              "value": "-56% MoM",
+              "severity": "critical"
+            },
+            {
+              "label": "PNS Answer Rate",
+              "value": "150.0%",
+              "severity": "medium"
+            },
+            {
+              "label": "Active Days (30d)",
+              "value": "24",
+              "severity": "medium"
+            },
+            {
+              "label": "Catalog Score (CQS)",
+              "value": "89",
+              "severity": "medium"
+            }
+          ],
+          "suggested_actions": [
+            "Discuss national geography expansion",
+            "Show buyer demand data from Delhi/Mumbai"
+          ],
+          "do_not_mention": [
+            "renewal price",
+            "subscription cost",
+            "competitor pricing"
+          ],
+          "call_type": "RETENTION",
+          "estimated_call_duration": "8-12 min",
+          "rca_category": "NO_LEADS",
+          "llm_risk_level": "Moderate",
+          "llm_bands_display": {
+            "BL Consumption": "🟢 Green",
+            "LMS Activity": "🔴 Red",
+            "Activity Trend": "🟢 Green"
+          },
+          "llm_reasoning": "The target seller's BL consumption rate (0.74) and consumed_30d (185) are well above both churned and retained cohorts, firmly Green; reply_rate (0.05) is low but consistent with retained sellers. LMS is Red: call_attempts_90d (7) is far below all cohort sellers (min 10, most 30–78), and while lms_active_days_30d (24) is high, call_pickup_ratio (0.43) sits at the lower retained boundary, making overall LMS engagement thin and churn-like. Activity trend is Green with activity_30d (2425) and event_count (2425) dwarfing all cohort peers, though the enquiry trend [56,86,48] shows a mid-period spike then dip warranting monitoring.",
+          "churned_lookalikes": [],
+          "retained_lookalikes": [],
+          "brief_text": "SELLER: Geestone Tyre Co. (Ravi Nandan And Sons) | Ludhiana | ExportTS/ExportTS | Age: 5189d\nCHURN SCORE: 47/100 | RISK: Amber | AI: Moderate\nMAIN ISSUE: NO_LEADS — No specific root cause identified. General engagement improvement recommended.\nOPENING: Geestone ji, leads dropped 55.6% last month. There's a specific reason I can explain.\nACTIONS: Discuss national geography expansion; Show buyer demand data from Delhi/Mumbai"
+        },
+        "error": null
+      },
+      "whatsapp-message": {
+        "success": true,
+        "confidence": 0.9,
+        "latency_ms": 0,
+        "data": {
+          "message_hi": "Geestone Tyre Co. (Ravi Nandan And Sons) Bhai, aapka account review kiya maine —\naapki category mein national buyers (Delhi, Mumbai) actively\nsearch kar rahe hain abhi. Local se zyada reach milegi.\nEk setting change 2 min mein kar dete hain? 📱",
+          "message_en": "Hi Geestone Tyre Co. (Ravi Nandan And Sons), reviewed your account —\nBuyers from Delhi/Mumbai are actively searching your category.\nA quick geography setting change could get you more leads.\nCan we do this together? Takes 2 min. 📱",
+          "message_type": "retention_nudge",
+          "rca_used": "NO_LEADS",
+          "cta": "Reply YES for a quick setup call",
+          "personalization_vars": [
+            "name",
+            "enq_30d",
+            "cqs",
+            "pns_success_pct",
+            "bl_velocity_pct_abs"
+          ],
+          "estimated_open_rate": 0.72
+        },
+        "error": null
+      },
+      "script-generation": {
+        "success": true,
+        "confidence": 0.92,
+        "latency_ms": 26028,
+        "data": {
+          "script_parts": {
+            "opening": "Namaste Ravi Nandan ji, main IndiaMART se bol raha hoon — Geestone Tyre ke baare mein baat karni thi. Ji, aapka account kaafi strong raha hai — 14 saal se upar ho gaye hain aapke saath — lekin last 2 mahine mein aapki Business Leads mein 55.6% ki sudden drop aayi hai, toh seedha aapse samajhna chahta tha ki kya ho raha hai.",
+            "diagnostic": "Bhai, ek cheez puchna tha — pehle aap regularly platform use kar rahe the, phir achanak engagement ruk gayi; kya koi specific reason tha — jaise buyers ki quality theek nahi lagi, ya aapki team ki taraf se koi operational change hua, ya simply time nahi mil raha tha replies dene ka?",
+            "value_demo": "Dekho ji, aapka CQS score 89 hai jo bahut achha hai — matlab aapka catalog aur profile strong hai — aur aapka PNS success 150% pe hai, toh platform pe aapki visibility bani hui hai; problem sirf yeh hai ki last 30 din mein reply rate 14.4% pe aa gayi hai, aur jab buyer ko reply nahi milta toh wo next seller ke paas chala jaata hai — yeh directly aapke leads ko affect kar raha hai.",
+            "action": "Chaliye abhi ek kaam karte hain — main aapke saath live aapka Leads section open karta hoon aur jo last 30 din ke unanswered leads hain unhe dekhte hain; agar aap 5 minute de sako toh hum ek quick reply template bhi set kar dete hain taaki future mein koi lead miss na ho.",
+            "close": "Ravi Nandan ji, aaj ke liye bas itna kaafi hai — agle 7 din mein agar aap sirf un pending leads ko reply kar do, toh hum next call mein actual improvement track karenge; koi pressure nahi, bas ek chhota sa step — theek hai?"
+          },
+          "script_parts_en": {
+            "opening": "Hello Ravi Nandan ji, this is IndiaMART calling regarding your Geestone Tyre account. You've been with us for over 14 years, which is remarkable — but in the last 2 months, your Business Lead velocity has dropped by 55.6%, so I wanted to speak with you directly to understand what's happening.",
+            "diagnostic": "Bhai, I wanted to ask — you were very active on the platform earlier, and then engagement dropped quite suddenly; was there a specific reason — like the buyer quality wasn't satisfactory, or there was some operational change on your end, or simply not enough time to reply to leads?",
+            "value_demo": "Here's what the data shows, ji — your CQS score is 89, which means your catalog and profile are in great shape, and your PNS success is at 150%, so your visibility on the platform is intact; the only issue is that your reply rate in the last 30 days has fallen to 14.4%, and when a buyer doesn't get a response, they simply move to the next seller — that's directly causing your lead drop.",
+            "action": "Let's do one thing right now on this call — I'll walk you through your Leads section and we'll look at the unanswered leads from the last 30 days together; if you can give me 5 minutes, we can also set up a quick reply template so no future lead gets missed.",
+            "close": "Ravi Nandan ji, that's all for today — if over the next 7 days you can respond to those pending leads, we'll track the actual improvement on our next call together; no pressure at all, just one small step — does that work for you?"
+          },
+          "objection_handlers": {
+            "competitor_platform": "Samajh sakta hoon — doosre platforms bhi kaam karte hain. Lekin IndiaMART pe B2B buyers specifically aate hain jo bulk order dene ka intent rakhte hain. Ek baar compare karte hain — aapke last 3 mahine ke leads ka source kya raha?",
+            "price_too_high": "Bilkul valid point hai. Lekin aise socho — agar sirf 2 orders extra aaye subscription se, toh ROI positive ho jaata hai. Main aapke category ke average order value se calculate kar sakta hoon.",
+            "no_time": "Koi baat nahi — main ek quick summary WhatsApp pe bhej deta hoon. Aap apne time pe dekh lena, aur jo bhi question ho directly reply karna."
+          },
+          "objection_handlers_en": {
+            "competitor_platform": "I understand — other platforms work too. But IndiaMART specifically attracts B2B buyers who intend to place bulk orders. Let's compare — what was the source of your leads over the last 3 months?",
+            "price_too_high": "Completely valid point. But think of it this way — if just 2 extra orders come through the subscription, the ROI turns positive. I can calculate that using your category's average order value.",
+            "no_time": "No problem — I'll send you a quick summary on WhatsApp. Check it at your convenience, and just reply directly with any questions."
+          },
+          "language": "hi",
+          "rca_used": "NO_LEADS",
+          "trajectory_type": "TYPE_A",
+          "estimated_duration_min": 7,
+          "call_type": "RETENTION",
+          "llm_used": true,
+          "personalization_signals_used": [
+            "bl_velocity_-55.6%_MoM",
+            "reply_rate_14.4%",
+            "account_age_5189_days",
+            "CQS_89",
+            "PNS_success_150%",
+            "trajectory_TYPE_A_sudden_cliff",
+            "active_days_24"
+          ],
+          "generation_method": "llm"
+        },
+        "error": null
+      },
+      "gifted-lead": {
+        "success": true,
+        "confidence": 0.5,
+        "latency_ms": 0,
+        "data": {
+          "lead_found": false,
+          "reason": "No hotleads data available",
+          "fallback": "Use peer comparison data as value demonstration",
+          "total_qualifying": 0
+        },
+        "error": null
+      }
+    },
+    "phase3c_cross_platform": {
+      "cross-platform-intelligence": {
+        "success": true,
+        "confidence": 1.0,
+        "latency_ms": 43283,
+        "data": {
+          "platforms_found": [
+            "own_website"
+          ],
+          "platform_data": {
+            "justdial": {
+              "found": false,
+              "product_count": 0,
+              "photo_count": 0,
+              "rating": 0.0,
+              "reviews": 0,
+              "categories": [],
+              "url": ""
+            },
+            "tradeindia": {
+              "found": false,
+              "product_count": 0,
+              "rating": 0.0,
+              "reviews": 0,
+              "categories": [],
+              "url": ""
+            },
+            "own_website": {
+              "found": true,
+              "product_count": 3,
+              "product_titles": [
+                "English",
+                "French",
+                "E-CATALOGUE",
+                "PRODUCT RANGE"
+              ],
+              "url": "https://nandanworld.com/",
+              "domain": "nandanworld.com"
+            }
+          },
+          "im_catalog_gap": {
+            "im_products": 49,
+            "other_total_products": 4,
+            "other_max_products": 3,
+            "other_combination": "name_dedupe_distinct",
+            "platform_counts": [
+              3
+            ],
+            "other_avg_products": 4,
+            "gap_pct": 1125.0,
+            "severity": "low",
+            "match_method": "names",
+            "unique_via_names": 4,
+            "overlap_pairs": [],
+            "per_platform_unique": {
+              "own_website": 4
+            },
+            "titles_sampled": {
+              "own_website": [
+                "English",
+                "French",
+                "E-CATALOGUE",
+                "PRODUCT RANGE"
+              ]
+            }
+          },
+          "call_card": {
+            "headline_hi": "Geestone Bhai, aap Own Website pe bhi listed hain — IM catalog fresh rakho.",
+            "headline_en": "Listed on Own Website too. IndiaMART catalog at parity — keep it updated.",
+            "data_points": [
+              "Own Website: Listed | 3 products",
+              "GST: 03ABEPK5962E1ZW",
+              "Address: 171, Gill Road"
+            ],
+            "suggested_action": "Maintain catalog sync quarterly.",
+            "effort_estimate": "20 minutes",
+            "urgency": "low"
+          },
+          "competitive_positioning": "seller_stronger_on_im",
+          "scrape_status": "success",
+          "context_enriched": true,
+          "company_name_used": "Geestone Tyre Co. (Ravi Nandan And Sons)",
+          "im_product_count": 49,
+          "gst": "03ABEPK5962E1ZW",
+          "address": "171, Gill Road",
+          "own_website_domain": "nandanworld.com"
+        },
+        "error": null
+      }
+    },
+    "phase4": {
+      "bl-upgrade": {
+        "success": true,
+        "confidence": 0.95,
+        "latency_ms": 0,
+        "data": {
+          "eligible": false,
+          "mode": null,
+          "reason": "churn_score=47, days_to_renewal=999 — no trigger criteria met"
+        },
+        "error": null
+      }
+    },
+    "phase5": {
+      "skipped": true,
+      "reason": "condition false: flow.risk == Red"
+    },
+    "phase6_card": {
+      "bl-card": {
+        "success": true,
+        "confidence": 0.95,
+        "latency_ms": 0,
+        "data": {
+          "header": {
+            "glid": 4731119,
+            "company": "Geestone Tyre Co. (Ravi Nandan And Sons)",
+            "location": "Ludhiana, PB",
+            "customer_type": "ExportTS",
+            "rag": "—",
+            "account_age_days": 5189,
+            "verdict": "AT RISK — Schedule retention call within 7 days",
+            "priority": 47,
+            "im_product_count": 49
+          },
+          "scores": {
+            "churn_score": 47,
+            "risk_tier": "Amber",
+            "base_churn_score": 47,
+            "cp_adjustment": 0,
+            "cp_adjustment_note": "",
+            "llm_risk": "Moderate",
+            "llm_tier": "Amber",
+            "llm_confidence": 63,
+            "bands": {
+              "bl": "🟢 G",
+              "lms": "🔴 R",
+              "activity": "🟢 G"
+            },
+            "churn_breakdown": {
+              "base_score": 36,
+              "compound_multiplier": 1.0,
+              "trajectory_adjustment": 3,
+              "trajectory_note": "TYPE_A Sudden Cliff (drop 74.7%) → +3 urgency",
+              "pre_llm_score": 39,
+              "llm_adjustment": 8,
+              "llm_justification": "The combination of a catastrophic reply rate (14.4%) with a simultaneous -55.6% BL velocity collapse and zero hotlead activity creates a compounding disengagement signal that the rule-based model underweights at 39 — the seller is both receiving far fewer leads AND ignoring the ones they do get, while the TYPE_A sudden cliff trajectory suggests this deterioration is acute and accelerating rather than gradual. The high clickstream (2425) and active days (24) indicate platform presence but deliberate non-conversion behavior, which is a stronger churn precursor than passive absence.",
+              "llm_used": true,
+              "red_flag_count": 2
+            }
+          },
+          "root_cause": {
+            "category": "NO_LEADS",
+            "confidence": 0.3,
+            "english": "No specific root cause identified. General engagement improvement recommended.",
+            "hindi": "Aapka account review kiya maine — kuch areas hain jahan help kar sakta hoon.",
+            "intervention": "Generic retention call — discovery-first approach."
+          },
+          "signals": {
+            "churn_reasons": [
+              "Critical reply rate: 14.4%",
+              "BL velocity collapse: -55.6% MoM",
+              "No hotlead activity — no engagement events",
+              "Trajectory: sudden cliff (last few months) — emergency intervention window"
+            ],
+            "reason_tags": [
+              "CRITICAL_REPLY_RATE",
+              "BL_VELOCITY_CATASTROPHIC",
+              "NO_HOTLEAD",
+              "TYPE_A_SUDDEN_CLIFF"
+            ],
+            "reply_rate_30d": 14.4,
+            "trajectory": "Sudden Cliff",
+            "trajectory_explanation": "Seller had strong activity then dropped ~74.7% around month 2 — sudden disengagement.",
+            "demand_tier": "Amber",
+            "demand_index": 35,
+            "demand_message": "Market has 0.0 BLs per paid seller, trend is growing.",
+            "peer_comparison": "No peer data available for group ExportTS|ExportTS.",
+            "peer_n": 0
+          },
+          "action_plan": {
+            "opening_en": "Geestone ji, leads dropped 55.6% last month. There's a specific reason I can explain.",
+            "opening_hi": "Geestone Bhai, maine aapka account dekha — last month leads 55.6% kam ho gayi hain.",
+            "suggested_actions": [
+              "Discuss national geography expansion",
+              "Show buyer demand data from Delhi/Mumbai"
+            ],
+            "do_not_mention": [
+              "renewal price",
+              "subscription cost",
+              "competitor pricing"
+            ],
+            "estimated_duration": "8-12 min"
+          },
+          "messaging": {
+            "whatsapp_hi": "Geestone Tyre Co. (Ravi Nandan And Sons) Bhai, aapka account review kiya maine —\naapki category mein national buyers (Delhi, Mumbai) actively\nsearch kar rahe hain abhi. Local se zyada reach milegi.\nEk setting change 2 min mein kar dete hain? 📱",
+            "whatsapp_en": "Hi Geestone Tyre Co. (Ravi Nandan And Sons), reviewed your account —\nBuyers from Delhi/Mumbai are actively searching your category.\nA quick geography setting change could get you more leads.\nCan we do this together? Takes 2 min. 📱",
+            "call_script_hi": {
+              "opening": "Namaste Ravi Nandan ji, main IndiaMART se bol raha hoon — Geestone Tyre ke baare mein baat karni thi. Ji, aapka account kaafi strong raha hai — 14 saal se upar ho gaye hain aapke saath — lekin last 2 mahine mein aapki Business Leads mein 55.6% ki sudden drop aayi hai, toh seedha aapse samajhna chahta tha ki kya ho raha hai.",
+              "diagnostic": "Bhai, ek cheez puchna tha — pehle aap regularly platform use kar rahe the, phir achanak engagement ruk gayi; kya koi specific reason tha — jaise buyers ki quality theek nahi lagi, ya aapki team ki taraf se koi operational change hua, ya simply time nahi mil raha tha replies dene ka?",
+              "value_demo": "Dekho ji, aapka CQS score 89 hai jo bahut achha hai — matlab aapka catalog aur profile strong hai — aur aapka PNS success 150% pe hai, toh platform pe aapki visibility bani hui hai; problem sirf yeh hai ki last 30 din mein reply rate 14.4% pe aa gayi hai, aur jab buyer ko reply nahi milta toh wo next seller ke paas chala jaata hai — yeh directly aapke leads ko affect kar raha hai.",
+              "action": "Chaliye abhi ek kaam karte hain — main aapke saath live aapka Leads section open karta hoon aur jo last 30 din ke unanswered leads hain unhe dekhte hain; agar aap 5 minute de sako toh hum ek quick reply template bhi set kar dete hain taaki future mein koi lead miss na ho.",
+              "close": "Ravi Nandan ji, aaj ke liye bas itna kaafi hai — agle 7 din mein agar aap sirf un pending leads ko reply kar do, toh hum next call mein actual improvement track karenge; koi pressure nahi, bas ek chhota sa step — theek hai?"
+            },
+            "call_script_en": {
+              "opening": "Hello Ravi Nandan ji, this is IndiaMART calling regarding your Geestone Tyre account. You've been with us for over 14 years, which is remarkable — but in the last 2 months, your Business Lead velocity has dropped by 55.6%, so I wanted to speak with you directly to understand what's happening.",
+              "diagnostic": "Bhai, I wanted to ask — you were very active on the platform earlier, and then engagement dropped quite suddenly; was there a specific reason — like the buyer quality wasn't satisfactory, or there was some operational change on your end, or simply not enough time to reply to leads?",
+              "value_demo": "Here's what the data shows, ji — your CQS score is 89, which means your catalog and profile are in great shape, and your PNS success is at 150%, so your visibility on the platform is intact; the only issue is that your reply rate in the last 30 days has fallen to 14.4%, and when a buyer doesn't get a response, they simply move to the next seller — that's directly causing your lead drop.",
+              "action": "Let's do one thing right now on this call — I'll walk you through your Leads section and we'll look at the unanswered leads from the last 30 days together; if you can give me 5 minutes, we can also set up a quick reply template so no future lead gets missed.",
+              "close": "Ravi Nandan ji, that's all for today — if over the next 7 days you can respond to those pending leads, we'll track the actual improvement on our next call together; no pressure at all, just one small step — does that work for you?"
+            }
+          },
+          "interventions": {
+            "bl_upgrade_eligible": false,
+            "bl_upgrade_reason": "churn_score=47, days_to_renewal=999 — no trigger criteria met",
+            "winback_score": null,
+            "winback_pitch": "",
+            "winback_priority": null,
+            "winback_pre_llm": null,
+            "winback_llm_used": null,
+            "winback_llm_adjustment": null,
+            "winback_llm_justification": null,
+            "winback_interaction_bonus": null,
+            "winback_sub_scores": {},
+            "winback_weights": {},
+            "winback_cool_off_elapsed": null,
+            "winback_cool_off_days_remaining": null,
+            "winback_demand_provided": null
+          },
+          "lookalikes": {
+            "churned": [],
+            "retained": []
+          },
+          "cross_platform": {
+            "platforms_found": [
+              "own_website"
+            ],
+            "platform_data": {
+              "justdial": {
+                "found": false,
+                "product_count": 0,
+                "photo_count": 0,
+                "rating": 0.0,
+                "reviews": 0,
+                "categories": [],
+                "url": ""
+              },
+              "tradeindia": {
+                "found": false,
+                "product_count": 0,
+                "rating": 0.0,
+                "reviews": 0,
+                "categories": [],
+                "url": ""
+              },
+              "own_website": {
+                "found": true,
+                "product_count": 3,
+                "product_titles": [
+                  "English",
+                  "French",
+                  "E-CATALOGUE",
+                  "PRODUCT RANGE"
+                ],
+                "url": "https://nandanworld.com/",
+                "domain": "nandanworld.com"
+              }
+            },
+            "im_catalog_gap": {
+              "im_products": 49,
+              "other_total_products": 4,
+              "other_max_products": 3,
+              "other_combination": "name_dedupe_distinct",
+              "platform_counts": [
+                3
+              ],
+              "other_avg_products": 4,
+              "gap_pct": 1125.0,
+              "severity": "low",
+              "match_method": "names",
+              "unique_via_names": 4,
+              "overlap_pairs": [],
+              "per_platform_unique": {
+                "own_website": 4
+              },
+              "titles_sampled": {
+                "own_website": [
+                  "English",
+                  "French",
+                  "E-CATALOGUE",
+                  "PRODUCT RANGE"
+                ]
+              }
+            },
+            "headline_hi": "Geestone Bhai, aap Own Website pe bhi listed hain — IM catalog fresh rakho.",
+            "headline_en": "Listed on Own Website too. IndiaMART catalog at parity — keep it updated.",
+            "data_points": [
+              "Own Website: Listed | 3 products",
+              "GST: 03ABEPK5962E1ZW",
+              "Address: 171, Gill Road"
+            ],
+            "suggested_action": "Maintain catalog sync quarterly.",
+            "urgency": "low",
+            "competitive_positioning": "seller_stronger_on_im"
+          },
+          "onboarding": {
+            "health_score": null,
+            "health_tier": null,
+            "checks": {},
+            "trigger_action": "",
+            "risk_priors": [],
+            "activation_plan": {},
+            "plan_method": "",
+            "ran": false
+          },
+          "summary_text": "╔═══════════════════════════════════════════════════════════════════╗\n║ SELLER BL CARD — GLID 4731119\n║ Geestone Tyre Co. (Ravi Nandan And Sons) | Ludhiana, PB | ExportTS | Age: 5189d\n╠═══════════════════════════════════════════════════════════════════╣\n║ VERDICT:  AT RISK — Schedule retention call within 7 days\n║ PRIORITY: 47/100\n║ CHURN:    47/100 (Amber)  |  LLM: Moderate\n║ RCA:      NO_LEADS — No specific root cause identified. General engagement improv\n║ DEMAND:   Amber  |  TRAJECTORY: Sudden Cliff\n║ CROSS-PLATFORM: own_website  IM=49p  OTHER=4p (name_dedupe_distinct)  GAP=1125.0%\n╠═══════════════════════════════════════════════════════════════════╣\n║ OPENING:  Geestone ji, leads dropped 55.6% last month. There's a specific reason I can exp\n║ ACTIONS:  Discuss national geography expansion | Show buyer demand data from Delhi/Mumbai\n╚═══════════════════════════════════════════════════════════════════╝"
+        },
+        "error": null
+      }
+    }
+  }
+}

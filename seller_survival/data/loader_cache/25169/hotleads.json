@@ -1,0 +1,29 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 25169,
+        "hotlead_date": "2026-05-02",
+        "hotlead_id": 13141799,
+        "hotlead_type_id": 1113208898,
+        "data_type": "PNSR",
+        "activity": "Premium Activity - PNS Call Received",
+        "activity_id": 10001
+      },
+      {
+        "gluser_id": 25169,
+        "hotlead_date": "2026-04-03",
+        "hotlead_id": 13141799,
+        "hotlead_type_id": 1102125634,
+        "data_type": "PUA",
+        "activity": "Premium Activity - Online",
+        "activity_id": 4707
+      }
+    ],
+    "total": 2,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

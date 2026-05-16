@@ -1,0 +1,31 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 140051792,
+        "event_date": "2026-02-09",
+        "offer_id": 138562342534,
+        "mcat_id": 156193,
+        "reason_code": 11,
+        "reason_text": "Retail Lead",
+        "comment": null,
+        "module_id": "IMOB"
+      },
+      {
+        "gluser_id": 140051792,
+        "event_date": "2025-08-25",
+        "offer_id": 128070955946,
+        "mcat_id": null,
+        "reason_code": 1,
+        "reason_text": "Wrong Product",
+        "comment": null,
+        "module_id": null
+      }
+    ],
+    "total": 2,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

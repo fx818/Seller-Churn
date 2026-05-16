@@ -1,0 +1,630 @@
+{
+  "glid": 32415265,
+  "run_at": "2026-05-16T18:22:16.191222",
+  "context": {
+    "company": "MS Super Bihar Tyre Works",
+    "turnover": "0 - 40 L",
+    "turnover_raw": "Slab: Rs. 0 to 40 lakhs (For FY 2024-2025)",
+    "city": "Mandla",
+    "state": "MP",
+    "mcats": [],
+    "custtype": "CATALOG",
+    "account_age_days": 3481,
+    "rag_category": "Amber",
+    "paid_history": true
+  },
+  "phases": {
+    "phase0_benchmark": {
+      "peer-benchmark": {
+        "success": true,
+        "confidence": 0.2,
+        "latency_ms": 0,
+        "data": {
+          "peer_group": "CATALOG|CATALOG",
+          "peer_n": 0,
+          "peer_data_available": false,
+          "gap_severity": "unknown",
+          "peer_summary_line": "No peer data available for group CATALOG|CATALOG."
+        },
+        "error": null
+      },
+      "demand-index": {
+        "success": true,
+        "confidence": 0.3,
+        "latency_ms": 0,
+        "data": {
+          "demand_index": 20,
+          "demand_tier": "Red",
+          "market_bl_per_seller": 0.0,
+          "trend": "flat",
+          "trend_slope": 0.2343,
+          "is_high_risk_city": false,
+          "city_risk_prior": 0,
+          "is_high_risk_category": false,
+          "demand_explanation": "Market has 0.0 BLs per paid seller, trend is flat.",
+          "recommended_action": "Suggest national geography expansion; highlight metro buyer demand"
+        },
+        "error": null
+      },
+      "conversion-point": {
+        "success": true,
+        "confidence": 0.85,
+        "latency_ms": 0,
+        "data": {
+          "trajectory_type": "TYPE_A",
+          "trajectory_label": "Sudden Cliff",
+          "explanation": "Seller had strong activity then dropped ~60.0% around month 10 — sudden disengagement.",
+          "opening_line_hi": "Aapka business pehle bahut achha chal raha tha, phir achanak activity kam ho gayi — aaj iske baare mein baat karte hain.",
+          "cliff_month_index": 9,
+          "cliff_drop_pct": 60.0,
+          "monthly_enq": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            4,
+            2,
+            5,
+            2,
+            2,
+            0
+          ],
+          "peer_median_enq": 0,
+          "account_age_days": 3481,
+          "is_type_c": false,
+          "run_onboarding": false
+        },
+        "error": null
+      }
+    },
+    "phase1_onboarding": {
+      "skipped": true,
+      "reason": "condition false: context.account_age_days <= 90"
+    },
+    "phase2_churn": {
+      "churn-scoring": {
+        "success": true,
+        "confidence": 1.0,
+        "latency_ms": 14426,
+        "data": {
+          "churn_score": 63,
+          "risk": "Amber",
+          "churn_reasons": [
+            "Critical reply rate: 5.6%",
+            "Zero LMS active days in last 30d",
+            "Critical PNS rate 12.5% — buyers can't reach seller",
+            "RAG category: Amber — moderate churn risk",
+            "CQS: 72 — below 75, room for improvement",
+            "Only 4 clickstream events — very low activity",
+            "Trajectory: sudden cliff (last few months) — emergency intervention window"
+          ],
+          "reason_tags": [
+            "CRITICAL_REPLY_RATE",
+            "ZERO_ACTIVE_DAYS",
+            "CRITICAL_PNS_RATE",
+            "RAG_AMBER",
+            "LOW_CQS_MODERATE",
+            "LOW_PLATFORM_ACTIVITY",
+            "TYPE_A_SUDDEN_CLIFF"
+          ],
+          "score_breakdown": {
+            "reply_rate": 14,
+            "active_days": 14,
+            "pns": 10,
+            "rag": 8,
+            "cqs": 3,
+            "activity": 3
+          },
+          "red_flag_count": 3,
+          "red_flags": [
+            "CRITICAL_REPLY_RATE",
+            "ZERO_ACTIVE_DAYS",
+            "CRITICAL_PNS_RATE"
+          ],
+          "reply_rate_30d": 5.6,
+          "signals_available": 7,
+          "base_score": 52,
+          "compound_multiplier": 1.0,
+          "compounded_score": 52.0,
+          "trajectory_adjustment": 3,
+          "trajectory_note": "TYPE_A Sudden Cliff (drop 60.0%) → +3 urgency",
+          "pre_llm_score": 55,
+          "pre_llm_risk": "Amber",
+          "llm_adjustment": 8,
+          "llm_justification": "The combination of zero active days, 4 clickstream events, and a 5.6% reply rate alongside 12.5% PNS answer rate creates a compounding disengagement signal that the rule-based model underweights — the seller is not just underperforming but has effectively gone dark despite receiving 18 BLs, meaning live buyer demand is being wasted in real time. The TYPE_A sudden cliff trajectory amplifies urgency since this is not gradual decay but an abrupt abandonment pattern, suggesting an external trigger (business disruption, competitor switch, or deliberate non-renewal intent) that materially raises near-term churn probability beyond what individual signal penalties capture.",
+          "llm_interactions": [
+            "Zero active days + 4 clickstream events together confirm near-total platform abandonment, not just low engagement",
+            "18 BLs received with only 1 reply means active buyer demand is being squandered — lost opportunity cost accelerates seller frustration and exit likelihood",
+            "Critical PNS rate (12.5%) compounded with zero active days suggests seller is unreachable both digitally and telephonically — dual-channel blackout",
+            "TYPE_A sudden cliff + zero active days interaction implies a discrete break event, not gradual drift — rule-based trajectory adjustment of +3 is insufficient for this pattern",
+            "2 hotleads present but seller is not engaging — high-value leads going cold reinforces irreversible disengagement risk"
+          ],
+          "llm_used": true,
+          "llm_error": null
+        },
+        "error": null
+      },
+      "shap-rca": {
+        "success": true,
+        "confidence": 0.6,
+        "latency_ms": 0,
+        "data": {
+          "rca_category": "LOW_ENGAGEMENT",
+          "rca_confidence": 0.6,
+          "rca_explanation_en": "Seller is not using the platform actively. Low login frequency, few clickstream events.",
+          "rca_explanation_hi": "Aapne platform pe login nahi kiya last few weeks. Notifications miss ho rahi hain.",
+          "intervention_hint": "Mobile app setup + notification activation call within 24h.",
+          "top_feature": null,
+          "top_feature_value": null,
+          "top_feature_contribution": 0,
+          "shap_breakdown": []
+        },
+        "error": null
+      }
+    },
+    "phase2_llm": {
+      "llm-cohort-scorer": {
+        "success": true,
+        "confidence": 0.74,
+        "latency_ms": 7687,
+        "data": {
+          "skipped": false,
+          "risk_level": "Critical",
+          "pipeline_tier": "Red",
+          "confidence_score": 74,
+          "bands": {
+            "bl": "R",
+            "lms": "R",
+            "activity": "R"
+          },
+          "reasoning": "The target seller's BL consumption rate (0.225) and consumed_30d (0) sit at or below the lowest retained sellers and align with the low-consumption churned outlier (264144052), while reply_rate (0.025) is negligible and consumed_30d is zero — a clear disengagement signal. LMS activity is critically weak: lms_active_days_30d=0 and call_attempts_90d=3 are far below every churned and retained seller in the cohort, and call_pickup_ratio=1.0 simply reflects no missed calls among an almost non-existent call volume. Activity trend shows a declining enquiry arc [2,2,0] with activity_30d=4 and event_count=4, which are the lowest values across the entire cohort by a large margin, strongly resembling churned seller 264144052 who also had zero consumed and low engagement.",
+          "churned_lookalikes": [
+            264144052,
+            202041505,
+            55709000
+          ],
+          "retained_lookalikes": [
+            16221202,
+            5957111
+          ],
+          "cohort_match": {
+            "n_filtered": 54,
+            "tier": "strict",
+            "shown_to_llm": 9
+          },
+          "snapshot_context": {
+            "company": "MS Super Bihar Tyre Works",
+            "turnover": "0 - 40 L",
+            "turnover_raw": "Slab: Rs. 0 to 40 lakhs (For FY 2024-2025)",
+            "city": "Mandla",
+            "state": "MP",
+            "mcats": [],
+            "custtype": "CATALOG",
+            "account_age_days": 3481,
+            "rag_category": "Amber",
+            "paid_history": true
+          }
+        },
+        "error": null
+      }
+    },
+    "phase3_actions": {
+      "pre-call-brief": {
+        "success": true,
+        "confidence": 0.85,
+        "latency_ms": 0,
+        "data": {
+          "company": "MS Super Bihar Tyre Works",
+          "city": "Mandla",
+          "enterprise": "CATALOG",
+          "ctype": "CATALOG",
+          "opening_line_hi": "MS Bhai, platform pe kuch din se activity nahi dikhte — sab theek hai?",
+          "opening_line_en": "MS ji, haven't seen much platform activity recently. Everything okay?",
+          "key_signals": [
+            {
+              "label": "Churn Score",
+              "value": "63/100",
+              "severity": "high"
+            },
+            {
+              "label": "AI Risk Level",
+              "value": "Critical (cohort-calibrated)",
+              "severity": "critical"
+            },
+            {
+              "label": "PNS Answer Rate",
+              "value": "12.5%",
+              "severity": "high"
+            },
+            {
+              "label": "Active Days (30d)",
+              "value": "0",
+              "severity": "critical"
+            },
+            {
+              "label": "Catalog Score (CQS)",
+              "value": "72",
+              "severity": "medium"
+            }
+          ],
+          "suggested_actions": [
+            "⚠️ AI-flagged as high churn risk — prioritize this call",
+            "Fix notification setup on mobile",
+            "Enable LMS reply from app"
+          ],
+          "do_not_mention": [
+            "renewal price",
+            "subscription cost",
+            "competitor pricing"
+          ],
+          "call_type": "RETENTION",
+          "estimated_call_duration": "8-12 min",
+          "rca_category": "LOW_ENGAGEMENT",
+          "llm_risk_level": "Critical",
+          "llm_bands_display": {
+            "BL Consumption": "🔴 Red",
+            "LMS Activity": "🔴 Red",
+            "Activity Trend": "🔴 Red"
+          },
+          "llm_reasoning": "The target seller's BL consumption rate (0.225) and consumed_30d (0) sit at or below the lowest retained sellers and align with the low-consumption churned outlier (264144052), while reply_rate (0.025) is negligible and consumed_30d is zero — a clear disengagement signal. LMS activity is critically weak: lms_active_days_30d=0 and call_attempts_90d=3 are far below every churned and retained seller in the cohort, and call_pickup_ratio=1.0 simply reflects no missed calls among an almost non-existent call volume. Activity trend shows a declining enquiry arc [2,2,0] with activity_30d=4 and event_count=4, which are the lowest values across the entire cohort by a large margin, strongly resembling churned seller 264144052 who also had zero consumed and low engagement.",
+          "churned_lookalikes": [],
+          "retained_lookalikes": [],
+          "brief_text": "SELLER: MS Super Bihar Tyre Works | Mandla | CATALOG/CATALOG | Age: 3481d\nCHURN SCORE: 63/100 | RISK: Amber | AI: Critical\nMAIN ISSUE: LOW_ENGAGEMENT — Seller is not using the platform actively. Low login frequency, few clickstream events.\nOPENING: MS ji, haven't seen much platform activity recently. Everything okay?\nACTIONS: ⚠️ AI-flagged as high churn risk — prioritize this call; Fix notification setup on mobile; Enable LMS reply from app"
+        },
+        "error": null
+      },
+      "whatsapp-message": {
+        "success": true,
+        "confidence": 0.9,
+        "latency_ms": 0,
+        "data": {
+          "message_hi": "MS Super Bihar Tyre Works Bhai, aapke 18 leads last week respond nahi hue —\nkoi notification issue toh nahi aaya?\nMobile pe setup karein saath mein, 5 minute mein ho jaata hai. 🔔",
+          "message_en": "Hi MS Super Bihar Tyre Works, your 18 leads went unanswered last week —\nSeems like a notification issue.\nLet's fix it together — 5 minutes on mobile. 🔔",
+          "message_type": "retention_nudge",
+          "rca_used": "LOW_ENGAGEMENT",
+          "cta": "Reply YES to fix notification setup",
+          "personalization_vars": [
+            "name",
+            "enq_30d",
+            "cqs",
+            "pns_success_pct"
+          ],
+          "estimated_open_rate": 0.72
+        },
+        "error": null
+      },
+      "script-generation": {
+        "success": true,
+        "confidence": 0.92,
+        "latency_ms": 23953,
+        "data": {
+          "script_parts": {
+            "opening": "Namaskar, MS Super Bihar Tyre Works se baat ho rahi hai? Bhai ji, main IndiaMART se bol raha hoon — aapka account kaafi purana hai, almost 9 saal se aap hamare saath hain, lekin last 30 dinon mein aapka login zero raha hai aur sirf 4 clickstream events record hue hain — yeh dekh ke thoda concern hua, isliye directly call kiya.",
+            "diagnostic": "Bhai, pehle yeh samajhna chahta hoon — kya koi specific problem aayi hai platform ke saath, ya business mein kuch changes hue hain jo aapko platform use karne se rok rahe hain? Kyunki aapki reply rate bhi 5.6% par aa gayi hai aur PNS success sirf 12.5% hai, matlab buyers aap tak reach hi nahi kar pa rahe.",
+            "value_demo": "Dekho bhai, aapka CQS score abhi 72 hai — threshold 75 ka hai, matlab sirf thodi si improvement se aapka catalog buyers ke liye zyada visible ho sakta hai. Aur yeh jo PNS 12.5% wali problem hai, iska seedha matlab hai ki 100 mein se 87 buyers jab call karte hain toh connect nahi ho pata — yeh directly aapka business loss hai, chahe lead aaye ya na aaye.",
+            "action": "Bhai, abhi call par hi ek kaam karte hain — main aapko guide karta hoon ki apna phone number aur availability settings update karein IndiaMART app mein, taaki PNS issue turant fix ho jaye; sirf 2 minute lagenge aur aaj se hi buyers aap tak reach kar payenge.",
+            "close": "Bhai ji, koi badi commitment nahi maang raha — bas yeh ek setting aaj fix kar lo aur agli baar jab main 7 din baad call karun, toh dekhtey hain ki PNS rate improve hua ya nahi; theek lagta hai?"
+          },
+          "script_parts_en": {
+            "opening": "Hello, am I speaking with MS Super Bihar Tyre Works? Sir, this is IndiaMART calling — your account is almost 9 years old with us, but in the last 30 days your login count is zero and only 4 clickstream events were recorded, which is what prompted me to call you directly today.",
+            "diagnostic": "Before anything else, I want to understand — has there been a specific issue with the platform, or have there been changes in your business that have been keeping you away? I ask because your reply rate has dropped to 5.6% and your PNS success rate is only 12.5%, which means buyers are simply not able to reach you.",
+            "value_demo": "Your current CQS score is 72, just below the 75 threshold — a small improvement there can meaningfully increase your catalog's visibility to buyers. More critically, a 12.5% PNS success rate means 87 out of every 100 buyers who try to call you cannot connect — that is direct business loss regardless of how many leads come in.",
+            "action": "Let's fix one thing right now on this call — I'll walk you through updating your phone number and availability settings on the IndiaMART app so that the PNS issue is resolved immediately; it will take just 2 minutes and buyers will be able to reach you starting today.",
+            "close": "I'm not asking for any big commitment, sir — just get this one setting fixed today, and when I call back in 7 days we can check together whether the PNS rate has improved; does that work for you?"
+          },
+          "objection_handlers": {
+            "competitor_platform": "Samajh sakta hoon — doosre platforms bhi kaam karte hain. Lekin IndiaMART pe B2B buyers specifically aate hain jo bulk order dene ka intent rakhte hain. Ek baar compare karte hain — aapke last 3 mahine ke leads ka source kya raha?",
+            "price_too_high": "Bilkul valid point hai. Lekin aise socho — agar sirf 2 orders extra aaye subscription se, toh ROI positive ho jaata hai. Main aapke category ke average order value se calculate kar sakta hoon.",
+            "no_time": "Koi baat nahi — main ek quick summary WhatsApp pe bhej deta hoon. Aap apne time pe dekh lena, aur jo bhi question ho directly reply karna."
+          },
+          "objection_handlers_en": {
+            "competitor_platform": "I understand — other platforms work too. But IndiaMART specifically attracts B2B buyers who intend to place bulk orders. Let's compare — what was the source of your leads over the last 3 months?",
+            "price_too_high": "Completely valid point. But think of it this way — if just 2 extra orders come through the subscription, the ROI turns positive. I can calculate that using your category's average order value.",
+            "no_time": "No problem — I'll send you a quick summary on WhatsApp. Check it at your convenience, and just reply directly with any questions."
+          },
+          "language": "hi",
+          "rca_used": "LOW_ENGAGEMENT",
+          "trajectory_type": "TYPE_A",
+          "estimated_duration_min": 7,
+          "call_type": "RETENTION",
+          "llm_used": true,
+          "personalization_signals_used": [
+            "active_days_30d_zero",
+            "clickstream_events_4",
+            "reply_rate_5.6pct",
+            "pns_success_12.5pct",
+            "cqs_72",
+            "account_age_3481_days",
+            "trajectory_type_a_sudden_cliff",
+            "demand_tier_red"
+          ],
+          "generation_method": "llm"
+        },
+        "error": null
+      },
+      "gifted-lead": {
+        "success": true,
+        "confidence": 0.5,
+        "latency_ms": 0,
+        "data": {
+          "lead_found": false,
+          "reason": "No hotleads data available",
+          "fallback": "Use peer comparison data as value demonstration",
+          "total_qualifying": 0
+        },
+        "error": null
+      }
+    },
+    "phase3c_cross_platform": {
+      "cross-platform-intelligence": {
+        "success": true,
+        "confidence": 1.0,
+        "latency_ms": 42559,
+        "data": {
+          "platforms_found": [],
+          "platform_data": {
+            "justdial": {
+              "found": false,
+              "product_count": 0,
+              "photo_count": 0,
+              "rating": 0.0,
+              "reviews": 0,
+              "categories": [],
+              "url": ""
+            },
+            "tradeindia": {
+              "found": false,
+              "product_count": 0,
+              "rating": 0.0,
+              "reviews": 0,
+              "categories": [],
+              "url": ""
+            }
+          },
+          "im_catalog_gap": {
+            "im_products": 17,
+            "other_total_products": 0,
+            "other_max_products": 0,
+            "other_combination": "none",
+            "gap_pct": 0,
+            "severity": "unknown",
+            "match_method": "none",
+            "overlap_pairs": [],
+            "per_platform_unique": {}
+          },
+          "call_card": {
+            "headline_hi": "Aapka account kisi aur platform pe nahi mila — IM pe hi strongest presence hai.",
+            "headline_en": "Seller not found on other platforms — IndiaMART is their primary channel.",
+            "data_points": [
+              "GST: 23AFXPM8212J1Z1",
+              "Address: 00, Near Divyajtoti Nursingh Home, Bijhiya"
+            ],
+            "suggested_action": "Strengthen IM catalog — unmatched B2B buyer volume.",
+            "urgency": "low"
+          },
+          "competitive_positioning": "parity",
+          "scrape_status": "success",
+          "context_enriched": true,
+          "company_name_used": "MS Super Bihar Tyre Works",
+          "im_product_count": 17,
+          "gst": "23AFXPM8212J1Z1",
+          "address": "00, Near Divyajtoti Nursingh Home, Bijhiya",
+          "own_website_domain": "gmail.com"
+        },
+        "error": null
+      }
+    },
+    "phase4": {
+      "bl-upgrade": {
+        "success": true,
+        "confidence": 0.9,
+        "latency_ms": 0,
+        "data": {
+          "eligible": true,
+          "mode": "AT_RISK_RETENTION",
+          "upgrade_leads_count": 5,
+          "upgrade_message_hi": "Ramesh Bhai, renewal se pehle aapke liye 5 premium leads unlock ki hain — yeh normal sellers ko nahi milti.",
+          "upgrade_message_en": "We've unlocked 5 premium leads for you before renewal — these aren't available to regular sellers.",
+          "action": "OFFER_PREMIUM_LEADS",
+          "expected_conversion_uplift": 0.22
+        },
+        "error": null
+      }
+    },
+    "phase5": {
+      "skipped": true,
+      "reason": "condition false: flow.risk == Red"
+    },
+    "phase6_card": {
+      "bl-card": {
+        "success": true,
+        "confidence": 0.95,
+        "latency_ms": 0,
+        "data": {
+          "header": {
+            "glid": 32415265,
+            "company": "MS Super Bihar Tyre Works",
+            "location": "Mandla, MP",
+            "customer_type": "CATALOG",
+            "rag": "Amber",
+            "account_age_days": 3481,
+            "verdict": "AT RISK — Schedule retention call within 7 days",
+            "priority": 78,
+            "im_product_count": 17
+          },
+          "scores": {
+            "churn_score": 63,
+            "risk_tier": "Amber",
+            "base_churn_score": 63,
+            "cp_adjustment": 0,
+            "cp_adjustment_note": "",
+            "llm_risk": "Critical",
+            "llm_tier": "Red",
+            "llm_confidence": 74,
+            "bands": {
+              "bl": "🔴 R",
+              "lms": "🔴 R",
+              "activity": "🔴 R"
+            },
+            "churn_breakdown": {
+              "base_score": 52,
+              "compound_multiplier": 1.0,
+              "trajectory_adjustment": 3,
+              "trajectory_note": "TYPE_A Sudden Cliff (drop 60.0%) → +3 urgency",
+              "pre_llm_score": 55,
+              "llm_adjustment": 8,
+              "llm_justification": "The combination of zero active days, 4 clickstream events, and a 5.6% reply rate alongside 12.5% PNS answer rate creates a compounding disengagement signal that the rule-based model underweights — the seller is not just underperforming but has effectively gone dark despite receiving 18 BLs, meaning live buyer demand is being wasted in real time. The TYPE_A sudden cliff trajectory amplifies urgency since this is not gradual decay but an abrupt abandonment pattern, suggesting an external trigger (business disruption, competitor switch, or deliberate non-renewal intent) that materially raises near-term churn probability beyond what individual signal penalties capture.",
+              "llm_used": true,
+              "red_flag_count": 3
+            }
+          },
+          "root_cause": {
+            "category": "LOW_ENGAGEMENT",
+            "confidence": 0.6,
+            "english": "Seller is not using the platform actively. Low login frequency, few clickstream events.",
+            "hindi": "Aapne platform pe login nahi kiya last few weeks. Notifications miss ho rahi hain.",
+            "intervention": "Mobile app setup + notification activation call within 24h."
+          },
+          "signals": {
+            "churn_reasons": [
+              "Critical reply rate: 5.6%",
+              "Zero LMS active days in last 30d",
+              "Critical PNS rate 12.5% — buyers can't reach seller",
+              "RAG category: Amber — moderate churn risk",
+              "CQS: 72 — below 75, room for improvement",
+              "Only 4 clickstream events — very low activity",
+              "Trajectory: sudden cliff (last few months) — emergency intervention window"
+            ],
+            "reason_tags": [
+              "CRITICAL_REPLY_RATE",
+              "ZERO_ACTIVE_DAYS",
+              "CRITICAL_PNS_RATE",
+              "RAG_AMBER",
+              "LOW_CQS_MODERATE",
+              "LOW_PLATFORM_ACTIVITY",
+              "TYPE_A_SUDDEN_CLIFF"
+            ],
+            "reply_rate_30d": 5.6,
+            "trajectory": "Sudden Cliff",
+            "trajectory_explanation": "Seller had strong activity then dropped ~60.0% around month 10 — sudden disengagement.",
+            "demand_tier": "Red",
+            "demand_index": 20,
+            "demand_message": "Market has 0.0 BLs per paid seller, trend is flat.",
+            "peer_comparison": "No peer data available for group CATALOG|CATALOG.",
+            "peer_n": 0
+          },
+          "action_plan": {
+            "opening_en": "MS ji, haven't seen much platform activity recently. Everything okay?",
+            "opening_hi": "MS Bhai, platform pe kuch din se activity nahi dikhte — sab theek hai?",
+            "suggested_actions": [
+              "⚠️ AI-flagged as high churn risk — prioritize this call",
+              "Fix notification setup on mobile",
+              "Enable LMS reply from app"
+            ],
+            "do_not_mention": [
+              "renewal price",
+              "subscription cost",
+              "competitor pricing"
+            ],
+            "estimated_duration": "8-12 min"
+          },
+          "messaging": {
+            "whatsapp_hi": "MS Super Bihar Tyre Works Bhai, aapke 18 leads last week respond nahi hue —\nkoi notification issue toh nahi aaya?\nMobile pe setup karein saath mein, 5 minute mein ho jaata hai. 🔔",
+            "whatsapp_en": "Hi MS Super Bihar Tyre Works, your 18 leads went unanswered last week —\nSeems like a notification issue.\nLet's fix it together — 5 minutes on mobile. 🔔",
+            "call_script_hi": {
+              "opening": "Namaskar, MS Super Bihar Tyre Works se baat ho rahi hai? Bhai ji, main IndiaMART se bol raha hoon — aapka account kaafi purana hai, almost 9 saal se aap hamare saath hain, lekin last 30 dinon mein aapka login zero raha hai aur sirf 4 clickstream events record hue hain — yeh dekh ke thoda concern hua, isliye directly call kiya.",
+              "diagnostic": "Bhai, pehle yeh samajhna chahta hoon — kya koi specific problem aayi hai platform ke saath, ya business mein kuch changes hue hain jo aapko platform use karne se rok rahe hain? Kyunki aapki reply rate bhi 5.6% par aa gayi hai aur PNS success sirf 12.5% hai, matlab buyers aap tak reach hi nahi kar pa rahe.",
+              "value_demo": "Dekho bhai, aapka CQS score abhi 72 hai — threshold 75 ka hai, matlab sirf thodi si improvement se aapka catalog buyers ke liye zyada visible ho sakta hai. Aur yeh jo PNS 12.5% wali problem hai, iska seedha matlab hai ki 100 mein se 87 buyers jab call karte hain toh connect nahi ho pata — yeh directly aapka business loss hai, chahe lead aaye ya na aaye.",
+              "action": "Bhai, abhi call par hi ek kaam karte hain — main aapko guide karta hoon ki apna phone number aur availability settings update karein IndiaMART app mein, taaki PNS issue turant fix ho jaye; sirf 2 minute lagenge aur aaj se hi buyers aap tak reach kar payenge.",
+              "close": "Bhai ji, koi badi commitment nahi maang raha — bas yeh ek setting aaj fix kar lo aur agli baar jab main 7 din baad call karun, toh dekhtey hain ki PNS rate improve hua ya nahi; theek lagta hai?"
+            },
+            "call_script_en": {
+              "opening": "Hello, am I speaking with MS Super Bihar Tyre Works? Sir, this is IndiaMART calling — your account is almost 9 years old with us, but in the last 30 days your login count is zero and only 4 clickstream events were recorded, which is what prompted me to call you directly today.",
+              "diagnostic": "Before anything else, I want to understand — has there been a specific issue with the platform, or have there been changes in your business that have been keeping you away? I ask because your reply rate has dropped to 5.6% and your PNS success rate is only 12.5%, which means buyers are simply not able to reach you.",
+              "value_demo": "Your current CQS score is 72, just below the 75 threshold — a small improvement there can meaningfully increase your catalog's visibility to buyers. More critically, a 12.5% PNS success rate means 87 out of every 100 buyers who try to call you cannot connect — that is direct business loss regardless of how many leads come in.",
+              "action": "Let's fix one thing right now on this call — I'll walk you through updating your phone number and availability settings on the IndiaMART app so that the PNS issue is resolved immediately; it will take just 2 minutes and buyers will be able to reach you starting today.",
+              "close": "I'm not asking for any big commitment, sir — just get this one setting fixed today, and when I call back in 7 days we can check together whether the PNS rate has improved; does that work for you?"
+            }
+          },
+          "interventions": {
+            "bl_upgrade_eligible": true,
+            "bl_upgrade_reason": "No hotleads data available",
+            "winback_score": null,
+            "winback_pitch": "",
+            "winback_priority": null,
+            "winback_pre_llm": null,
+            "winback_llm_used": null,
+            "winback_llm_adjustment": null,
+            "winback_llm_justification": null,
+            "winback_interaction_bonus": null,
+            "winback_sub_scores": {},
+            "winback_weights": {},
+            "winback_cool_off_elapsed": null,
+            "winback_cool_off_days_remaining": null,
+            "winback_demand_provided": null
+          },
+          "lookalikes": {
+            "churned": [],
+            "retained": []
+          },
+          "cross_platform": {
+            "platforms_found": [],
+            "platform_data": {
+              "justdial": {
+                "found": false,
+                "product_count": 0,
+                "photo_count": 0,
+                "rating": 0.0,
+                "reviews": 0,
+                "categories": [],
+                "url": ""
+              },
+              "tradeindia": {
+                "found": false,
+                "product_count": 0,
+                "rating": 0.0,
+                "reviews": 0,
+                "categories": [],
+                "url": ""
+              }
+            },
+            "im_catalog_gap": {
+              "im_products": 17,
+              "other_total_products": 0,
+              "other_max_products": 0,
+              "other_combination": "none",
+              "gap_pct": 0,
+              "severity": "unknown",
+              "match_method": "none",
+              "overlap_pairs": [],
+              "per_platform_unique": {}
+            },
+            "headline_hi": "Aapka account kisi aur platform pe nahi mila — IM pe hi strongest presence hai.",
+            "headline_en": "Seller not found on other platforms — IndiaMART is their primary channel.",
+            "data_points": [
+              "GST: 23AFXPM8212J1Z1",
+              "Address: 00, Near Divyajtoti Nursingh Home, Bijhiya"
+            ],
+            "suggested_action": "Strengthen IM catalog — unmatched B2B buyer volume.",
+            "urgency": "low",
+            "competitive_positioning": "parity"
+          },
+          "onboarding": {
+            "health_score": null,
+            "health_tier": null,
+            "checks": {},
+            "trigger_action": "",
+            "risk_priors": [],
+            "activation_plan": {},
+            "plan_method": "",
+            "ran": false
+          },
+          "summary_text": "╔═══════════════════════════════════════════════════════════════════╗\n║ SELLER BL CARD — GLID 32415265\n║ MS Super Bihar Tyre Works | Mandla, MP | CATALOG | Age: 3481d\n╠═══════════════════════════════════════════════════════════════════╣\n║ VERDICT:  AT RISK — Schedule retention call within 7 days\n║ PRIORITY: 78/100\n║ CHURN:    63/100 (Amber)  |  LLM: Critical\n║ RCA:      LOW_ENGAGEMENT — Seller is not using the platform actively. Low login frequen\n║ DEMAND:   Red  |  TRAJECTORY: Sudden Cliff\n╠═══════════════════════════════════════════════════════════════════╣\n║ OPENING:  MS ji, haven't seen much platform activity recently. Everything okay?\n║ ACTIONS:  ⚠️ AI-flagged as high churn risk — prioritize this call | Fix notification setup\n╚═══════════════════════════════════════════════════════════════════╝"
+        },
+        "error": null
+      }
+    }
+  }
+}

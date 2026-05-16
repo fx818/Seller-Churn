@@ -1,0 +1,691 @@
+{
+  "glid": 15420,
+  "run_at": "2026-05-16T18:07:38.358728",
+  "context": {
+    "company": "Neelkanth Rubber Mills",
+    "turnover": "1.5 Cr - 5 Cr",
+    "turnover_raw": "Slab: Rs. 25 Cr. to 100 Cr.  (For FY 2024-2025)",
+    "city": "Jalandhar",
+    "state": "PB",
+    "mcats": [],
+    "custtype": "vgFCPplus with PNS(G)",
+    "account_age_days": 8867,
+    "rag_category": "Green+",
+    "paid_history": true
+  },
+  "phases": {
+    "phase0_benchmark": {
+      "peer-benchmark": {
+        "success": true,
+        "confidence": 0.2,
+        "latency_ms": 0,
+        "data": {
+          "peer_group": "vgFCPplus with PNS(G)|vgFCPplus with PNS(G)",
+          "peer_n": 0,
+          "peer_data_available": false,
+          "gap_severity": "unknown",
+          "peer_summary_line": "No peer data available for group vgFCPplus with PNS(G)|vgFCPplus with PNS(G)."
+        },
+        "error": null
+      },
+      "demand-index": {
+        "success": true,
+        "confidence": 0.3,
+        "latency_ms": 0,
+        "data": {
+          "demand_index": 20,
+          "demand_tier": "Red",
+          "market_bl_per_seller": 0.0,
+          "trend": "flat",
+          "trend_slope": -0.1853,
+          "is_high_risk_city": false,
+          "city_risk_prior": 0,
+          "is_high_risk_category": false,
+          "demand_explanation": "Market has 0.0 BLs per paid seller, trend is flat.",
+          "recommended_action": "Suggest national geography expansion; highlight metro buyer demand"
+        },
+        "error": null
+      },
+      "conversion-point": {
+        "success": true,
+        "confidence": 0.85,
+        "latency_ms": 0,
+        "data": {
+          "trajectory_type": "TYPE_A",
+          "trajectory_label": "Sudden Cliff",
+          "explanation": "Seller had strong activity then dropped ~66.7% around month 5 — sudden disengagement.",
+          "opening_line_hi": "Aapka business pehle bahut achha chal raha tha, phir achanak activity kam ho gayi — aaj iske baare mein baat karte hain.",
+          "cliff_month_index": 4,
+          "cliff_drop_pct": 66.7,
+          "monthly_enq": [
+            2,
+            2,
+            0,
+            3,
+            1,
+            0,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "peer_median_enq": 0,
+          "account_age_days": 8867,
+          "is_type_c": false,
+          "run_onboarding": false
+        },
+        "error": null
+      }
+    },
+    "phase1_onboarding": {
+      "skipped": true,
+      "reason": "condition false: context.account_age_days <= 90"
+    },
+    "phase2_churn": {
+      "churn-scoring": {
+        "success": true,
+        "confidence": 0.6214285714285714,
+        "latency_ms": 8683,
+        "data": {
+          "churn_score": 43,
+          "risk": "Amber",
+          "churn_reasons": [
+            "Zero LMS active days in last 30d",
+            "Zero enquiries in last 30d — no lead flow",
+            "Zero clickstream events — no platform activity",
+            "Trajectory: sudden cliff (last few months) — emergency intervention window"
+          ],
+          "reason_tags": [
+            "ZERO_ACTIVE_DAYS",
+            "NO_ENQUIRY_FLOW",
+            "NO_PLATFORM_ACTIVITY",
+            "TYPE_A_SUDDEN_CLIFF"
+          ],
+          "score_breakdown": {
+            "active_days": 14,
+            "enq": 10,
+            "activity": 8
+          },
+          "red_flag_count": 3,
+          "red_flags": [
+            "ZERO_ACTIVE_DAYS",
+            "NO_ENQUIRY_FLOW",
+            "NO_PLATFORM_ACTIVITY"
+          ],
+          "reply_rate_30d": 0,
+          "signals_available": 4,
+          "base_score": 32,
+          "compound_multiplier": 1.0,
+          "compounded_score": 32.0,
+          "trajectory_adjustment": 3,
+          "trajectory_note": "TYPE_A Sudden Cliff (drop 66.7%) → +3 urgency",
+          "pre_llm_score": 35,
+          "pre_llm_risk": "Green",
+          "llm_adjustment": 8,
+          "llm_justification": "The rule-based model underweights the severity of total platform abandonment: zero active days, zero clickstream events, and zero reply rate together constitute complete disengagement, not partial risk. The TYPE_A sudden cliff trajectory combined with a Green+ RAG and decent CQS (79) suggests this seller was previously healthy and has abruptly stopped all activity — a pattern strongly associated with imminent churn rather than gradual decline, making the 35 score materially too low.",
+          "llm_interactions": [
+            "Zero active days + zero clickstream events + zero reply rate = complete platform abandonment, not additive but multiplicative risk",
+            "TYPE_A sudden cliff on a previously Green+ seller signals an external shock (competitor switch, business closure, or dissatisfaction event) rather than organic drift",
+            "High CQS (79) and Green+ RAG with zero current engagement creates a sharp divergence — historical quality metrics mask present-state total inactivity",
+            "Single hotlead with 0% reply rate means even live commercial opportunity is being ignored, amplifying abandonment signal",
+            "PNS answer rate of 66.7% (non-zero) is the only counter-signal but is insufficient to offset complete LMS and clickstream silence"
+          ],
+          "llm_used": true,
+          "llm_error": null
+        },
+        "error": null
+      },
+      "shap-rca": {
+        "success": true,
+        "confidence": 0.6,
+        "latency_ms": 0,
+        "data": {
+          "rca_category": "LOW_ENGAGEMENT",
+          "rca_confidence": 0.6,
+          "rca_explanation_en": "Seller is not using the platform actively. Low login frequency, few clickstream events.",
+          "rca_explanation_hi": "Aapne platform pe login nahi kiya last few weeks. Notifications miss ho rahi hain.",
+          "intervention_hint": "Mobile app setup + notification activation call within 24h.",
+          "top_feature": null,
+          "top_feature_value": null,
+          "top_feature_contribution": 0,
+          "shap_breakdown": []
+        },
+        "error": null
+      }
+    },
+    "phase2_llm": {
+      "llm-cohort-scorer": {
+        "success": true,
+        "confidence": 0.58,
+        "latency_ms": 5083,
+        "data": {
+          "skipped": false,
+          "risk_level": "Critical",
+          "pipeline_tier": "Red",
+          "confidence_score": 58,
+          "bands": {
+            "bl": "R",
+            "lms": "R",
+            "activity": "R"
+          },
+          "reasoning": "The target seller shows zero BL consumption, zero reply rate, and zero consumed leads in 30 days, matching the worst-performing churned sellers. LMS engagement is critically low with only 4 call attempts in 90 days and zero active days, far below even the least active churned peers. Activity trend is completely flat at zero across all recent enquiry periods with no platform events, mirroring the most disengaged churned sellers like glid 3480876 and 12355439.",
+          "churned_lookalikes": [
+            3480876,
+            12355439,
+            10384463
+          ],
+          "retained_lookalikes": [],
+          "cohort_match": {
+            "n_filtered": 9,
+            "tier": "strict",
+            "shown_to_llm": 5
+          },
+          "snapshot_context": {
+            "company": "Neelkanth Rubber Mills",
+            "turnover": "1.5 Cr - 5 Cr",
+            "turnover_raw": "Slab: Rs. 25 Cr. to 100 Cr.  (For FY 2024-2025)",
+            "city": "Jalandhar",
+            "state": "PB",
+            "mcats": [],
+            "custtype": "vgFCPplus with PNS(G)",
+            "account_age_days": 8867,
+            "rag_category": "Green+",
+            "paid_history": true
+          }
+        },
+        "error": null
+      }
+    },
+    "phase3_actions": {
+      "pre-call-brief": {
+        "success": true,
+        "confidence": 0.85,
+        "latency_ms": 0,
+        "data": {
+          "company": "Neelkanth Rubber Mills",
+          "city": "Jalandhar",
+          "enterprise": "vgFCPplus with PNS(G)",
+          "ctype": "vgFCPplus with PNS(G)",
+          "opening_line_hi": "Neelkanth Bhai, platform pe kuch din se activity nahi dikhte — sab theek hai?",
+          "opening_line_en": "Neelkanth ji, haven't seen much platform activity recently. Everything okay?",
+          "key_signals": [
+            {
+              "label": "Churn Score",
+              "value": "43/100",
+              "severity": "medium"
+            },
+            {
+              "label": "AI Risk Level",
+              "value": "Critical (cohort-calibrated)",
+              "severity": "critical"
+            },
+            {
+              "label": "PNS Answer Rate",
+              "value": "66.7%",
+              "severity": "medium"
+            },
+            {
+              "label": "Active Days (30d)",
+              "value": "0",
+              "severity": "critical"
+            },
+            {
+              "label": "Catalog Score (CQS)",
+              "value": "79",
+              "severity": "medium"
+            }
+          ],
+          "suggested_actions": [
+            "⚠️ AI-flagged as high churn risk — prioritize this call",
+            "Fix notification setup on mobile",
+            "Enable LMS reply from app"
+          ],
+          "do_not_mention": [
+            "renewal price",
+            "subscription cost",
+            "competitor pricing"
+          ],
+          "call_type": "RETENTION",
+          "estimated_call_duration": "8-12 min",
+          "rca_category": "LOW_ENGAGEMENT",
+          "llm_risk_level": "Critical",
+          "llm_bands_display": {
+            "BL Consumption": "🔴 Red",
+            "LMS Activity": "🔴 Red",
+            "Activity Trend": "🔴 Red"
+          },
+          "llm_reasoning": "The target seller shows zero BL consumption, zero reply rate, and zero consumed leads in 30 days, matching the worst-performing churned sellers. LMS engagement is critically low with only 4 call attempts in 90 days and zero active days, far below even the least active churned peers. Activity trend is completely flat at zero across all recent enquiry periods with no platform events, mirroring the most disengaged churned sellers like glid 3480876 and 12355439.",
+          "churned_lookalikes": [],
+          "retained_lookalikes": [],
+          "brief_text": "SELLER: Neelkanth Rubber Mills | Jalandhar | vgFCPplus with PNS(G)/vgFCPplus with PNS(G) | Age: 8867d\nCHURN SCORE: 43/100 | RISK: Amber | AI: Critical\nMAIN ISSUE: LOW_ENGAGEMENT — Seller is not using the platform actively. Low login frequency, few clickstream events.\nOPENING: Neelkanth ji, haven't seen much platform activity recently. Everything okay?\nACTIONS: ⚠️ AI-flagged as high churn risk — prioritize this call; Fix notification setup on mobile; Enable LMS reply from app"
+        },
+        "error": null
+      },
+      "whatsapp-message": {
+        "success": true,
+        "confidence": 0.9,
+        "latency_ms": 0,
+        "data": {
+          "message_hi": "Neelkanth Rubber Mills Bhai, aapke 0 leads last week respond nahi hue —\nkoi notification issue toh nahi aaya?\nMobile pe setup karein saath mein, 5 minute mein ho jaata hai. 🔔",
+          "message_en": "Hi Neelkanth Rubber Mills, your 0 leads went unanswered last week —\nSeems like a notification issue.\nLet's fix it together — 5 minutes on mobile. 🔔",
+          "message_type": "retention_nudge",
+          "rca_used": "LOW_ENGAGEMENT",
+          "cta": "Reply YES to fix notification setup",
+          "personalization_vars": [
+            "name",
+            "enq_30d",
+            "cqs",
+            "pns_success_pct"
+          ],
+          "estimated_open_rate": 0.72
+        },
+        "error": null
+      },
+      "script-generation": {
+        "success": true,
+        "confidence": 0.92,
+        "latency_ms": 23147,
+        "data": {
+          "script_parts": {
+            "opening": "Namaskar, Neelkanth Rubber Mills se baat ho rahi hai? Ji, main IndiaMART se bol raha hoon — aapka account kaafi purana hai, lagbhag 24 saal se — lekin pichle 30 dinon mein ek bhi login nahi hua, zero enquiries aayi hain, aur yeh dekh ke thoda concern hua toh directly call kiya.",
+            "diagnostic": "Bhai ji, seedha poochna chahta hoon — pichle kuch mahino mein aisa kya hua ki platform bilkul band ho gayi? Koi specific issue tha — leads ki quality, product catalog, ya business mein koi change aaya?",
+            "value_demo": "Aapka CQS score 79 hai, jo actually achha hai — matlab aapka catalog technically theek hai. Problem yeh hai ki Red demand tier mein hain aap abhi, aur jab login aur activity zero ho jaati hai toh jo bhi organic visibility thi, woh bhi gir jaati hai — yeh ek sudden cliff pattern hai jo hum data mein clearly dekh rahe hain month 5 ke baad.",
+            "action": "Abhi is call pe, main aapka account open karta hoon aur aap ek baar apna primary product category check karein — hum milke dekhte hain ki kaunsi listings active hain aur kaunsi pause ho gayi hain, aur ek quick setting fix karein taaki incoming enquiries aapke phone pe directly aane lagein.",
+            "close": "Bhai ji, ek kaam karo — aaj ke baad sirf hafte mein ek baar, 10 minute login karo aur enquiries check karo. Agle 15 din mein main dobara call karta hoon — agar tab bhi koi improvement nahi dikhti toh hum renewal ke baare mein honestly baat karenge, koi pressure nahi."
+          },
+          "script_parts_en": {
+            "opening": "Hello, am I speaking with someone from Neelkanth Rubber Mills? This is IndiaMART calling — your account is nearly 24 years old, which is remarkable, but in the last 30 days there have been zero logins, zero enquiries, and zero platform activity, so I wanted to reach out directly.",
+            "diagnostic": "I want to ask you directly — what happened in the last few months that led to a complete stop in platform usage? Was it a lead quality issue, something with the product catalog, or has there been a change in the business itself?",
+            "value_demo": "Your CQS score is 79, which means your catalog quality is actually decent — the content is not the problem. The issue is that you're currently in a Red demand tier, and when login and activity drop to zero, whatever organic visibility you had also collapses. Our data shows a sudden cliff pattern starting around month 5 — this is a recoverable situation but the window is narrow.",
+            "action": "Right now on this call, I'll pull up your account and I'd like you to check your primary product category with me — we'll identify which listings are active versus paused, and fix the notification settings so any incoming enquiries route directly to your mobile number.",
+            "close": "Here's what I'd suggest — just commit to logging in once a week for 10 minutes over the next 15 days. I'll call you back after that window, and if we don't see any movement together, we'll have an honest conversation about renewal options — no pressure either way."
+          },
+          "objection_handlers": {
+            "competitor_platform": "Samajh sakta hoon — doosre platforms bhi kaam karte hain. Lekin IndiaMART pe B2B buyers specifically aate hain jo bulk order dene ka intent rakhte hain. Ek baar compare karte hain — aapke last 3 mahine ke leads ka source kya raha?",
+            "price_too_high": "Bilkul valid point hai. Lekin aise socho — agar sirf 2 orders extra aaye subscription se, toh ROI positive ho jaata hai. Main aapke category ke average order value se calculate kar sakta hoon.",
+            "no_time": "Koi baat nahi — main ek quick summary WhatsApp pe bhej deta hoon. Aap apne time pe dekh lena, aur jo bhi question ho directly reply karna."
+          },
+          "objection_handlers_en": {
+            "competitor_platform": "I understand — other platforms work too. But IndiaMART specifically attracts B2B buyers who intend to place bulk orders. Let's compare — what was the source of your leads over the last 3 months?",
+            "price_too_high": "Completely valid point. But think of it this way — if just 2 extra orders come through the subscription, the ROI turns positive. I can calculate that using your category's average order value.",
+            "no_time": "No problem — I'll send you a quick summary on WhatsApp. Check it at your convenience, and just reply directly with any questions."
+          },
+          "language": "hi",
+          "rca_used": "LOW_ENGAGEMENT",
+          "trajectory_type": "TYPE_A",
+          "estimated_duration_min": 7,
+          "call_type": "RETENTION",
+          "llm_used": true,
+          "personalization_signals_used": [
+            "account_age_8867_days",
+            "zero_active_days_30d",
+            "zero_enquiries_30d",
+            "zero_clickstream_events",
+            "cqs_79",
+            "demand_tier_red",
+            "trajectory_type_a_sudden_cliff",
+            "pns_success_66.7_percent"
+          ],
+          "generation_method": "llm"
+        },
+        "error": null
+      },
+      "gifted-lead": {
+        "success": true,
+        "confidence": 0.5,
+        "latency_ms": 0,
+        "data": {
+          "lead_found": false,
+          "reason": "No hotleads data available",
+          "fallback": "Use peer comparison data as value demonstration",
+          "total_qualifying": 0
+        },
+        "error": null
+      }
+    },
+    "phase3c_cross_platform": {
+      "cross-platform-intelligence": {
+        "success": true,
+        "confidence": 1.0,
+        "latency_ms": 44830,
+        "data": {
+          "platforms_found": [
+            "justdial",
+            "own_website"
+          ],
+          "platform_data": {
+            "justdial": {
+              "found": true,
+              "name_matched": "Neelkanth Rubber Mills",
+              "product_count": 1,
+              "photo_count": 1,
+              "catalog_items": 1,
+              "catalog_flag": false,
+              "rating": 3.9,
+              "reviews": 14,
+              "categories": [
+                "Corporate Companies",
+                "Gajipur Road Balehar Kalan"
+              ],
+              "url": "https://www.justdial.com/DT-3129JVFZQWZ",
+              "match_score": 1.0
+            },
+            "tradeindia": {
+              "found": false,
+              "product_count": 0,
+              "rating": 0.0,
+              "reviews": 0,
+              "categories": [],
+              "url": ""
+            },
+            "own_website": {
+              "found": true,
+              "product_count": 1,
+              "product_titles": [
+                "Neelkanth Rubber Mills",
+                "PRODUCTS",
+                "Explore Products"
+              ],
+              "url": "https://neelkanthrubbermills.com/",
+              "domain": "neelrub.com"
+            }
+          },
+          "im_catalog_gap": {
+            "im_products": 12,
+            "other_total_products": 2,
+            "other_max_products": 1,
+            "other_combination": "name_dedupe_distinct",
+            "platform_counts": [
+              1,
+              1
+            ],
+            "other_avg_products": 2,
+            "gap_pct": 500.0,
+            "severity": "low",
+            "match_method": "names",
+            "unique_via_names": 2,
+            "overlap_pairs": [],
+            "per_platform_unique": {
+              "justdial": 0,
+              "own_website": 2
+            },
+            "titles_sampled": {
+              "own_website": [
+                "Neelkanth Rubber Mills",
+                "PRODUCTS",
+                "Explore Products"
+              ]
+            }
+          },
+          "call_card": {
+            "headline_hi": "Neelkanth Bhai, aap Justdial pe bhi listed hain — IM catalog fresh rakho.",
+            "headline_en": "Listed on Justdial too. IndiaMART catalog at parity — keep it updated.",
+            "data_points": [
+              "Justdial: Listed | 1 products | Rating 3.9/5 | 14 reviews",
+              "Own Website: Listed | 1 products",
+              "GST: 03AAAFN6433A1Z0",
+              "Address: Village Gazipur, P.O. Chamiara, Kapurthala Road, Gazipur"
+            ],
+            "suggested_action": "Maintain catalog sync quarterly.",
+            "effort_estimate": "20 minutes",
+            "urgency": "low"
+          },
+          "competitive_positioning": "seller_stronger_on_im",
+          "scrape_status": "success",
+          "context_enriched": true,
+          "company_name_used": "Neelkanth Rubber Mills",
+          "im_product_count": 12,
+          "gst": "03AAAFN6433A1Z0",
+          "address": "Village Gazipur, P.O. Chamiara, Kapurthala Road, Gazipur",
+          "own_website_domain": "neelrub.com"
+        },
+        "error": null
+      }
+    },
+    "phase4": {
+      "bl-upgrade": {
+        "success": true,
+        "confidence": 0.9,
+        "latency_ms": 0,
+        "data": {
+          "eligible": true,
+          "mode": "AT_RISK_RETENTION",
+          "upgrade_leads_count": 5,
+          "upgrade_message_hi": "Ramesh Bhai, renewal se pehle aapke liye 5 premium leads unlock ki hain — yeh normal sellers ko nahi milti.",
+          "upgrade_message_en": "We've unlocked 5 premium leads for you before renewal — these aren't available to regular sellers.",
+          "action": "OFFER_PREMIUM_LEADS",
+          "expected_conversion_uplift": 0.22
+        },
+        "error": null
+      }
+    },
+    "phase5": {
+      "skipped": true,
+      "reason": "condition false: flow.risk == Red"
+    },
+    "phase6_card": {
+      "bl-card": {
+        "success": true,
+        "confidence": 0.95,
+        "latency_ms": 0,
+        "data": {
+          "header": {
+            "glid": 15420,
+            "company": "Neelkanth Rubber Mills",
+            "location": "Jalandhar, PB",
+            "customer_type": "vgFCPplus with PNS(G)",
+            "rag": "Green+",
+            "account_age_days": 8867,
+            "verdict": "AT RISK — Schedule retention call within 7 days",
+            "priority": 58,
+            "im_product_count": 12
+          },
+          "scores": {
+            "churn_score": 43,
+            "risk_tier": "Amber",
+            "base_churn_score": 43,
+            "cp_adjustment": 0,
+            "cp_adjustment_note": "",
+            "llm_risk": "Critical",
+            "llm_tier": "Red",
+            "llm_confidence": 58,
+            "bands": {
+              "bl": "🔴 R",
+              "lms": "🔴 R",
+              "activity": "🔴 R"
+            },
+            "churn_breakdown": {
+              "base_score": 32,
+              "compound_multiplier": 1.0,
+              "trajectory_adjustment": 3,
+              "trajectory_note": "TYPE_A Sudden Cliff (drop 66.7%) → +3 urgency",
+              "pre_llm_score": 35,
+              "llm_adjustment": 8,
+              "llm_justification": "The rule-based model underweights the severity of total platform abandonment: zero active days, zero clickstream events, and zero reply rate together constitute complete disengagement, not partial risk. The TYPE_A sudden cliff trajectory combined with a Green+ RAG and decent CQS (79) suggests this seller was previously healthy and has abruptly stopped all activity — a pattern strongly associated with imminent churn rather than gradual decline, making the 35 score materially too low.",
+              "llm_used": true,
+              "red_flag_count": 3
+            }
+          },
+          "root_cause": {
+            "category": "LOW_ENGAGEMENT",
+            "confidence": 0.6,
+            "english": "Seller is not using the platform actively. Low login frequency, few clickstream events.",
+            "hindi": "Aapne platform pe login nahi kiya last few weeks. Notifications miss ho rahi hain.",
+            "intervention": "Mobile app setup + notification activation call within 24h."
+          },
+          "signals": {
+            "churn_reasons": [
+              "Zero LMS active days in last 30d",
+              "Zero enquiries in last 30d — no lead flow",
+              "Zero clickstream events — no platform activity",
+              "Trajectory: sudden cliff (last few months) — emergency intervention window"
+            ],
+            "reason_tags": [
+              "ZERO_ACTIVE_DAYS",
+              "NO_ENQUIRY_FLOW",
+              "NO_PLATFORM_ACTIVITY",
+              "TYPE_A_SUDDEN_CLIFF"
+            ],
+            "reply_rate_30d": 0,
+            "trajectory": "Sudden Cliff",
+            "trajectory_explanation": "Seller had strong activity then dropped ~66.7% around month 5 — sudden disengagement.",
+            "demand_tier": "Red",
+            "demand_index": 20,
+            "demand_message": "Market has 0.0 BLs per paid seller, trend is flat.",
+            "peer_comparison": "No peer data available for group vgFCPplus with PNS(G)|vgFCPplus with PNS(G).",
+            "peer_n": 0
+          },
+          "action_plan": {
+            "opening_en": "Neelkanth ji, haven't seen much platform activity recently. Everything okay?",
+            "opening_hi": "Neelkanth Bhai, platform pe kuch din se activity nahi dikhte — sab theek hai?",
+            "suggested_actions": [
+              "⚠️ AI-flagged as high churn risk — prioritize this call",
+              "Fix notification setup on mobile",
+              "Enable LMS reply from app"
+            ],
+            "do_not_mention": [
+              "renewal price",
+              "subscription cost",
+              "competitor pricing"
+            ],
+            "estimated_duration": "8-12 min"
+          },
+          "messaging": {
+            "whatsapp_hi": "Neelkanth Rubber Mills Bhai, aapke 0 leads last week respond nahi hue —\nkoi notification issue toh nahi aaya?\nMobile pe setup karein saath mein, 5 minute mein ho jaata hai. 🔔",
+            "whatsapp_en": "Hi Neelkanth Rubber Mills, your 0 leads went unanswered last week —\nSeems like a notification issue.\nLet's fix it together — 5 minutes on mobile. 🔔",
+            "call_script_hi": {
+              "opening": "Namaskar, Neelkanth Rubber Mills se baat ho rahi hai? Ji, main IndiaMART se bol raha hoon — aapka account kaafi purana hai, lagbhag 24 saal se — lekin pichle 30 dinon mein ek bhi login nahi hua, zero enquiries aayi hain, aur yeh dekh ke thoda concern hua toh directly call kiya.",
+              "diagnostic": "Bhai ji, seedha poochna chahta hoon — pichle kuch mahino mein aisa kya hua ki platform bilkul band ho gayi? Koi specific issue tha — leads ki quality, product catalog, ya business mein koi change aaya?",
+              "value_demo": "Aapka CQS score 79 hai, jo actually achha hai — matlab aapka catalog technically theek hai. Problem yeh hai ki Red demand tier mein hain aap abhi, aur jab login aur activity zero ho jaati hai toh jo bhi organic visibility thi, woh bhi gir jaati hai — yeh ek sudden cliff pattern hai jo hum data mein clearly dekh rahe hain month 5 ke baad.",
+              "action": "Abhi is call pe, main aapka account open karta hoon aur aap ek baar apna primary product category check karein — hum milke dekhte hain ki kaunsi listings active hain aur kaunsi pause ho gayi hain, aur ek quick setting fix karein taaki incoming enquiries aapke phone pe directly aane lagein.",
+              "close": "Bhai ji, ek kaam karo — aaj ke baad sirf hafte mein ek baar, 10 minute login karo aur enquiries check karo. Agle 15 din mein main dobara call karta hoon — agar tab bhi koi improvement nahi dikhti toh hum renewal ke baare mein honestly baat karenge, koi pressure nahi."
+            },
+            "call_script_en": {
+              "opening": "Hello, am I speaking with someone from Neelkanth Rubber Mills? This is IndiaMART calling — your account is nearly 24 years old, which is remarkable, but in the last 30 days there have been zero logins, zero enquiries, and zero platform activity, so I wanted to reach out directly.",
+              "diagnostic": "I want to ask you directly — what happened in the last few months that led to a complete stop in platform usage? Was it a lead quality issue, something with the product catalog, or has there been a change in the business itself?",
+              "value_demo": "Your CQS score is 79, which means your catalog quality is actually decent — the content is not the problem. The issue is that you're currently in a Red demand tier, and when login and activity drop to zero, whatever organic visibility you had also collapses. Our data shows a sudden cliff pattern starting around month 5 — this is a recoverable situation but the window is narrow.",
+              "action": "Right now on this call, I'll pull up your account and I'd like you to check your primary product category with me — we'll identify which listings are active versus paused, and fix the notification settings so any incoming enquiries route directly to your mobile number.",
+              "close": "Here's what I'd suggest — just commit to logging in once a week for 10 minutes over the next 15 days. I'll call you back after that window, and if we don't see any movement together, we'll have an honest conversation about renewal options — no pressure either way."
+            }
+          },
+          "interventions": {
+            "bl_upgrade_eligible": true,
+            "bl_upgrade_reason": "No hotleads data available",
+            "winback_score": null,
+            "winback_pitch": "",
+            "winback_priority": null,
+            "winback_pre_llm": null,
+            "winback_llm_used": null,
+            "winback_llm_adjustment": null,
+            "winback_llm_justification": null,
+            "winback_interaction_bonus": null,
+            "winback_sub_scores": {},
+            "winback_weights": {},
+            "winback_cool_off_elapsed": null,
+            "winback_cool_off_days_remaining": null,
+            "winback_demand_provided": null
+          },
+          "lookalikes": {
+            "churned": [],
+            "retained": []
+          },
+          "cross_platform": {
+            "platforms_found": [
+              "justdial",
+              "own_website"
+            ],
+            "platform_data": {
+              "justdial": {
+                "found": true,
+                "name_matched": "Neelkanth Rubber Mills",
+                "product_count": 1,
+                "photo_count": 1,
+                "catalog_items": 1,
+                "catalog_flag": false,
+                "rating": 3.9,
+                "reviews": 14,
+                "categories": [
+                  "Corporate Companies",
+                  "Gajipur Road Balehar Kalan"
+                ],
+                "url": "https://www.justdial.com/DT-3129JVFZQWZ",
+                "match_score": 1.0
+              },
+              "tradeindia": {
+                "found": false,
+                "product_count": 0,
+                "rating": 0.0,
+                "reviews": 0,
+                "categories": [],
+                "url": ""
+              },
+              "own_website": {
+                "found": true,
+                "product_count": 1,
+                "product_titles": [
+                  "Neelkanth Rubber Mills",
+                  "PRODUCTS",
+                  "Explore Products"
+                ],
+                "url": "https://neelkanthrubbermills.com/",
+                "domain": "neelrub.com"
+              }
+            },
+            "im_catalog_gap": {
+              "im_products": 12,
+              "other_total_products": 2,
+              "other_max_products": 1,
+              "other_combination": "name_dedupe_distinct",
+              "platform_counts": [
+                1,
+                1
+              ],
+              "other_avg_products": 2,
+              "gap_pct": 500.0,
+              "severity": "low",
+              "match_method": "names",
+              "unique_via_names": 2,
+              "overlap_pairs": [],
+              "per_platform_unique": {
+                "justdial": 0,
+                "own_website": 2
+              },
+              "titles_sampled": {
+                "own_website": [
+                  "Neelkanth Rubber Mills",
+                  "PRODUCTS",
+                  "Explore Products"
+                ]
+              }
+            },
+            "headline_hi": "Neelkanth Bhai, aap Justdial pe bhi listed hain — IM catalog fresh rakho.",
+            "headline_en": "Listed on Justdial too. IndiaMART catalog at parity — keep it updated.",
+            "data_points": [
+              "Justdial: Listed | 1 products | Rating 3.9/5 | 14 reviews",
+              "Own Website: Listed | 1 products",
+              "GST: 03AAAFN6433A1Z0",
+              "Address: Village Gazipur, P.O. Chamiara, Kapurthala Road, Gazipur"
+            ],
+            "suggested_action": "Maintain catalog sync quarterly.",
+            "urgency": "low",
+            "competitive_positioning": "seller_stronger_on_im"
+          },
+          "onboarding": {
+            "health_score": null,
+            "health_tier": null,
+            "checks": {},
+            "trigger_action": "",
+            "risk_priors": [],
+            "activation_plan": {},
+            "plan_method": "",
+            "ran": false
+          },
+          "summary_text": "╔═══════════════════════════════════════════════════════════════════╗\n║ SELLER BL CARD — GLID 15420\n║ Neelkanth Rubber Mills | Jalandhar, PB | vgFCPplus with PNS(G) | Age: 8867d\n╠═══════════════════════════════════════════════════════════════════╣\n║ VERDICT:  AT RISK — Schedule retention call within 7 days\n║ PRIORITY: 58/100\n║ CHURN:    43/100 (Amber)  |  LLM: Critical\n║ RCA:      LOW_ENGAGEMENT — Seller is not using the platform actively. Low login frequen\n║ DEMAND:   Red  |  TRAJECTORY: Sudden Cliff\n║ CROSS-PLATFORM: justdial,own_website  IM=12p  OTHER=2p (name_dedupe_distinct)  GAP=500.0%\n╠═══════════════════════════════════════════════════════════════════╣\n║ OPENING:  Neelkanth ji, haven't seen much platform activity recently. Everything okay?\n║ ACTIONS:  ⚠️ AI-flagged as high churn risk — prioritize this call | Fix notification setup\n╚═══════════════════════════════════════════════════════════════════╝"
+        },
+        "error": null
+      }
+    }
+  }
+}

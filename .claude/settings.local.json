@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(PYTHONIOENCODING=utf-8 python -m churn_analysis pipeline --glids-file testid.txt --out-dir runs/batch_testid)",
+      "Bash(tee runs/batch_testid/_run.log)",
+      "Bash(xargs -n1 basename)",
+      "Bash(PYTHONIOENCODING=utf-8 python *)",
+      "Bash(xargs -n1 basename echo echo \"=== Background process still running? ===\" ps aux)",
+      "Bash(uniq comm *)",
+      "Bash(uniq ls *)",
+      "Bash(sort -u ls runs/batch_testid/seller_*.json)",
+      "mcp__plugin_context-mode_context-mode__ctx_execute",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git commit *)"
+    ]
+  }
+}

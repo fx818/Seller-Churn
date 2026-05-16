@@ -51,7 +51,7 @@ def run_seller(
 
     # ── STEP 1: ChurnScoringSkill ────────────────────────────────────────────
     emit("churn_scoring", {"status": "running"})
-    r1 = registry.run("churn_scoring", {
+    r1 = registry.run("churn-scoring", {
         "glid":            glid,
         "enq_30d":         signals.get("enq_30d"),
         "replied_30d":     signals.get("replied_30d"),
@@ -73,7 +73,7 @@ def run_seller(
 
     # ── STEP 2: SHAPRCASkill ────────────────────────────────────────────────
     emit("shap_rca", {"status": "running"})
-    r2 = registry.run("shap_rca", {
+    r2 = registry.run("shap-rca", {
         "glid":             glid,
         "reason_tags":      reason_tags,
         "score_breakdown":  score_break,
@@ -88,7 +88,7 @@ def run_seller(
 
     # ── STEP 3: PeerBenchmarkSkill ──────────────────────────────────────────
     emit("peer_benchmark", {"status": "running"})
-    r3 = registry.run("peer_benchmark", {
+    r3 = registry.run("peer-benchmark", {
         "glid":            glid,
         "enterprise":      signals.get("enterprise"),
         "ctype":           signals.get("ctype"),
@@ -104,7 +104,7 @@ def run_seller(
 
     # ── STEP 3b: ConversionPointSkill (runs after peer_benchmark for TYPE_C accuracy) ─
     emit("conversion_point", {"status": "running"})
-    r0 = registry.run("conversion_point", {
+    r0 = registry.run("conversion-point", {
         "monthly_enq":      signals.get("monthly_enq", []),
         "account_age_days": signals.get("account_age"),
         "enq_30d":          signals.get("enq_30d"),
@@ -120,7 +120,7 @@ def run_seller(
 
     # ── STEP 4: DemandIndexSkill ────────────────────────────────────────────
     emit("demand_index", {"status": "running"})
-    r4 = registry.run("demand_index", {
+    r4 = registry.run("demand-index", {
         "glid":              glid,
         "city":              signals.get("city"),
         "enterprise":        signals.get("enterprise"),
@@ -138,7 +138,7 @@ def run_seller(
     # ── STEP 5: OnboardingHealth (new sellers OR TYPE_C trajectory) ──────────
     if account_age <= 90 or force_onboarding:
         emit("onboarding_health", {"status": "running"})
-        r5 = registry.run("onboarding_health", {
+        r5 = registry.run("onboarding-health", {
             "glid":                 glid,
             "account_age_days":     account_age,
             "city":                 signals.get("city"),
@@ -165,7 +165,7 @@ def run_seller(
     llm_result = {}
     if account_age > 90:
         emit("llm_cohort_scorer", {"status": "running"})
-        r13 = registry.run("llm_cohort_scorer", {
+        r13 = registry.run("llm-cohort-scorer", {
             "glid":             glid,
             "account_age_days": account_age,
             "api_responses":    api_responses,
@@ -184,7 +184,7 @@ def run_seller(
 
     # ── STEP 7: WhatsAppMessage ─────────────────────────────────────────────
     emit("whatsapp_message", {"status": "running"})
-    r6 = registry.run("whatsapp_message", {
+    r6 = registry.run("whatsapp-message", {
         "glid":              glid,
         "company":           signals.get("company"),
         "seller_name":       signals.get("company", "").split()[0] if signals.get("company") else "Seller",
@@ -209,7 +209,7 @@ def run_seller(
     # ── STEP 8: PreCallBrief (Red and Amber sellers) ────────────────────────
     if risk_tier in ("Red", "Amber"):
         emit("pre_call_brief", {"status": "running"})
-        r7 = registry.run("pre_call_brief", {
+        r7 = registry.run("pre-call-brief", {
             "glid":               glid,
             "company":            signals.get("company"),
             "seller_name":        signals.get("company", "").split()[0] if signals.get("company") else "Seller",
@@ -248,7 +248,7 @@ def run_seller(
         emit("cross_platform", {"status": "running"})
         # Extract IM product count from API responses
         im_product_count = _extract_im_product_count(api_responses)
-        r_xp = registry.run("cross_platform_intelligence", {
+        r_xp = registry.run("cross-platform-intelligence", {
             "glid":             glid,
             "company":          signals.get("company", ""),
             "city":             signals.get("city", ""),
@@ -265,7 +265,7 @@ def run_seller(
 
     # ── STEP 10: ScriptGenerationSkill ──────────────────────────────────────
     emit("script_generation", {"status": "running"})
-    r_script = registry.run("script_generation", {
+    r_script = registry.run("script-generation", {
         "glid":              glid,
         "company":           signals.get("company", ""),
         "seller_name":       (signals.get("company") or "").split()[0] or "Seller",
@@ -293,7 +293,7 @@ def run_seller(
 
     # ── STEP 11: GiftedLeadSkill ─────────────────────────────────────────────
     emit("gifted_lead", {"status": "running"})
-    r_lead = registry.run("gifted_lead", {
+    r_lead = registry.run("gifted-lead", {
         "glid":         glid,
         "hotleads":     (api_responses.get("gifted_lead_v2") or {}).get("data", {}).get("results", []),
         "rca_category": rca_category,
@@ -304,7 +304,7 @@ def run_seller(
 
     # ── STEP 12: WinbackPrioritySkill ────────────────────────────────────────
     emit("winback_priority", {"status": "running"})
-    r_wb = registry.run("winback_priority", {
+    r_wb = registry.run("winback-priority", {
         "glid":           glid,
         "churn_score":    churn_score,
         "rca_category":   rca_category,
@@ -323,7 +323,7 @@ def run_seller(
 
     # ── STEP 13: BLUpgradeSkill ──────────────────────────────────────────────
     emit("bl_upgrade", {"status": "running"})
-    r_bl = registry.run("bl_upgrade", {
+    r_bl = registry.run("bl-upgrade", {
         "glid":            glid,
         "churn_score":     churn_score,
         "enterprise":      signals.get("enterprise"),

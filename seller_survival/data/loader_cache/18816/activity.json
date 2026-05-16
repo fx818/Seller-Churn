@@ -1,0 +1,2531 @@
+{
+  "status": 200,
+  "data": {
+    "gluser_id": 18816,
+    "event_count": 35,
+    "events": [
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 729,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.google.com/",
+        "glb_city": "Anand",
+        "glusr_id": 18816,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            180568
+          ]
+        },
+        "datevalue": "20260417084747",
+        "glb_state": "GJ",
+        "remote_ip": "117.212.167.123",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "www.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /proddetail/solar-powered-hybrid-bulk-milk-cooler-23103010791.html?srsltid=AfmBOoq1UP_oU62DodSH-O-iMeejnqmflnGLm35fbpO-vnj1imt6TV45 HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 22.564517,
+        "glb_longitude": 72.928871,
+        "response_size": 8275,
+        "response_time": 1566,
+        "fk_activity_id": 438,
+        "ga_utma_cookie": "GA1.1.624578516.1721703397",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604170847"
+        },
+        "seller_city_id": 70470,
+        "fk_glcat_grp_id": 34,
+        "log_status_flag": 35,
+        "product_disp_id": 23103010791,
+        "fk_display_title": "Show Product Details Page",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 3299,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 18816,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.indiamart.com/proddetail/solar-powered-hybrid-bulk-milk-cooler-23103010791.html?srsltid=AfmBOoq1UP_oU62DodSH-O-iMeejnqmflnGLm35fbpO-vnj1imt6TV45",
+        "glb_city": "Anand",
+        "glusr_id": 18816,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260417084749",
+        "glb_state": "GJ",
+        "remote_ip": "117.212.167.123",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "www.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /api/ajax-services/caps_service/?displayid=23103010791&count=20&cityid=70473&mcatid=180568&webAddLoc=www.indiamart.com&glidBuyer=18816&iitd_kMod=1 HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 22.564517,
+        "glb_longitude": 72.928871,
+        "response_size": 6204,
+        "response_time": 81123,
+        "fk_activity_id": 527,
+        "ga_utma_cookie": "GA1.1.624578516.1721703397",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604170847"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Page",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 3299,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 18816,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.indiamart.com/proddetail/solar-powered-hybrid-bulk-milk-cooler-23103010791.html?srsltid=AfmBOoq1UP_oU62DodSH-O-iMeejnqmflnGLm35fbpO-vnj1imt6TV45",
+        "glb_city": "Anand",
+        "glusr_id": 18816,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260417084749",
+        "glb_state": "GJ",
+        "remote_ip": "117.212.167.123",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "www.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /api/ajax-services/supplierrating/?suppid=42981736&webAddLoc=www.indiamart.com&mcatId=180568&pName=solar+powered+hybrid+bulk+milk+cooler HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 22.564517,
+        "glb_longitude": 72.928871,
+        "response_size": 762,
+        "response_time": 30323,
+        "fk_activity_id": 527,
+        "ga_utma_cookie": "GA1.1.624578516.1721703397",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604170847"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Page",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 3299,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 18816,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.indiamart.com/proddetail/solar-powered-hybrid-bulk-milk-cooler-23103010791.html?srsltid=AfmBOoq1UP_oU62DodSH-O-iMeejnqmflnGLm35fbpO-vnj1imt6TV45",
+        "glb_city": "Anand",
+        "glusr_id": 18816,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260417084749",
+        "glb_state": "GJ",
+        "remote_ip": "117.212.167.123",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "www.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /api/ajax-services/glb_city/?_ts=1776395822949 HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 22.564517,
+        "glb_longitude": 72.928871,
+        "response_size": 117,
+        "response_time": 17386,
+        "fk_activity_id": 527,
+        "ga_utma_cookie": "GA1.1.624578516.1721703397",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604170847"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Page",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 3299,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 18816,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.indiamart.com/proddetail/solar-powered-hybrid-bulk-milk-cooler-23103010791.html?srsltid=AfmBOoq1UP_oU62DodSH-O-iMeejnqmflnGLm35fbpO-vnj1imt6TV45",
+        "glb_city": "Anand",
+        "glusr_id": 18816,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260417084749",
+        "glb_state": "GJ",
+        "remote_ip": "117.212.167.123",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "www.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /api/ajax-services/glb_city/?_ts=1776395822889 HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 22.564517,
+        "glb_longitude": 72.928871,
+        "response_size": 117,
+        "response_time": 20946,
+        "fk_activity_id": 527,
+        "ga_utma_cookie": "GA1.1.624578516.1721703397",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604170847"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Page",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 3299,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 18816,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 812,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.google.com/",
+        "glb_city": "Anand",
+        "glusr_id": 18816,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            30239
+          ]
+        },
+        "datevalue": "20260430143026",
+        "glb_state": "GJ",
+        "remote_ip": "59.95.221.228",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "www.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /proddetail/cold-room-door-hinges-4195551062.html?srsltid=AfmBOooyK0kJpQ7U-MZD6J1G-7JBnfTD6FOSngj5iEAaiGHoD46bz7q6 HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 22.564517,
+        "glb_longitude": 72.928871,
+        "response_size": 10562,
+        "response_time": 78552,
+        "fk_activity_id": 438,
+        "ga_utma_cookie": "GA1.1.624578516.1721703397",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604301430"
+        },
+        "seller_city_id": 70627,
+        "fk_glcat_grp_id": 7,
+        "log_status_flag": 35,
+        "product_disp_id": 4195551062,
+        "fk_display_title": "Show Product Details Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 3299,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 18816,
+        "catalog_owner_glusr_id": 678652,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 199,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.indiamart.com/proddetail/cold-room-door-hinges-4195551062.html?srsltid=AfmBOooyK0kJpQ7U-MZD6J1G-7JBnfTD6FOSngj5iEAaiGHoD46bz7q6",
+        "glb_city": "Anand",
+        "glusr_id": 18816,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260430143032",
+        "glb_state": "GJ",
+        "remote_ip": "59.95.221.228",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "www.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /api/ajax-services/supplierrating/?suppid=678652&webAddLoc=www.indiamart.com&mcatId=30239&pName=cold+room+door+hinges HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 22.564517,
+        "glb_longitude": 72.928871,
+        "response_size": 1621,
+        "response_time": 90252,
+        "fk_activity_id": 527,
+        "ga_utma_cookie": "GA1.1.624578516.1721703397",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604301430"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Page",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 3299,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 18816,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.indiamart.com/proddetail/cold-room-door-hinges-4195551062.html?srsltid=AfmBOooyK0kJpQ7U-MZD6J1G-7JBnfTD6FOSngj5iEAaiGHoD46bz7q6",
+        "glb_city": "Anand",
+        "glusr_id": 18816,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260430143032",
+        "glb_state": "GJ",
+        "remote_ip": "59.95.221.228",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "www.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /api/ajax-services/caps_service/?displayid=4195551062&count=20&cityid=70473&mcatid=30239&webAddLoc=www.indiamart.com&glidBuyer=18816 HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 22.564517,
+        "glb_longitude": 72.928871,
+        "response_size": 3507,
+        "response_time": 62353,
+        "fk_activity_id": 527,
+        "ga_utma_cookie": "GA1.1.624578516.1721703397",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604301430"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Page",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 3299,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 18816,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.indiamart.com/proddetail/cold-room-door-hinges-4195551062.html?srsltid=AfmBOooyK0kJpQ7U-MZD6J1G-7JBnfTD6FOSngj5iEAaiGHoD46bz7q6",
+        "glb_city": "Anand",
+        "glusr_id": 18816,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260430143032",
+        "glb_state": "GJ",
+        "remote_ip": "59.95.221.228",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "www.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /api/ajax-services/glb_city/?_ts=1777539578907 HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 22.564517,
+        "glb_longitude": 72.928871,
+        "response_size": 113,
+        "response_time": 13393,
+        "fk_activity_id": 527,
+        "ga_utma_cookie": "GA1.1.624578516.1721703397",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604301430"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Page",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 3299,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 18816,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.indiamart.com/proddetail/cold-room-door-hinges-4195551062.html?srsltid=AfmBOooyK0kJpQ7U-MZD6J1G-7JBnfTD6FOSngj5iEAaiGHoD46bz7q6",
+        "glb_city": "Anand",
+        "glusr_id": 18816,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260430143032",
+        "glb_state": "GJ",
+        "remote_ip": "59.95.221.228",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "www.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /api/ajax-services/glb_city/?_ts=1777539578889 HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 22.564517,
+        "glb_longitude": 72.928871,
+        "response_size": 112,
+        "response_time": 15298,
+        "fk_activity_id": 527,
+        "ga_utma_cookie": "GA1.1.624578516.1721703397",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604301430"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Page",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 3299,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 18816,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 812,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.google.com/",
+        "glb_city": "Anand",
+        "glusr_id": 18816,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            188989
+          ]
+        },
+        "datevalue": "20260430152050",
+        "glb_state": "GJ",
+        "remote_ip": "59.95.221.228",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "www.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /proddetail/coolmax-cm-1238-hs-hinges-12938502248.html?srsltid=AfmBOorMwjsnWoXpOblEvMs3CI9rG_nQyX82x6N0cMmC_Da1dAUd6C1A HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 22.564517,
+        "glb_longitude": 72.928871,
+        "response_size": 8941,
+        "response_time": 61305,
+        "fk_activity_id": 438,
+        "ga_utma_cookie": "GA1.1.624578516.1721703397",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604301520"
+        },
+        "seller_city_id": 70699,
+        "fk_glcat_grp_id": 7,
+        "log_status_flag": 35,
+        "product_disp_id": 12938502248,
+        "fk_display_title": "Show Product Details Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 3299,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 18816,
+        "catalog_owner_glusr_id": 29739811,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 1119,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.indiamart.com/proddetail/coolmax-cm-1238-hs-hinges-12938502248.html?srsltid=AfmBOorMwjsnWoXpOblEvMs3CI9rG_nQyX82x6N0cMmC_Da1dAUd6C1A",
+        "glb_city": "Anand",
+        "glusr_id": 18816,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260430152054",
+        "glb_state": "GJ",
+        "remote_ip": "59.95.221.228",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "www.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /api/ajax-services/caps_service/?displayid=12938502248&count=20&cityid=70473&mcatid=188989&webAddLoc=www.indiamart.com&glidBuyer=18816 HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 22.564517,
+        "glb_longitude": 72.928871,
+        "response_size": 2826,
+        "response_time": 55464,
+        "fk_activity_id": 527,
+        "ga_utma_cookie": "GA1.1.624578516.1721703397",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604301520"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Page",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 3299,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 18816,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.indiamart.com/proddetail/coolmax-cm-1238-hs-hinges-12938502248.html?srsltid=AfmBOorMwjsnWoXpOblEvMs3CI9rG_nQyX82x6N0cMmC_Da1dAUd6C1A",
+        "glb_city": "Anand",
+        "glusr_id": 18816,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260430152054",
+        "glb_state": "GJ",
+        "remote_ip": "59.95.221.228",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "www.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /api/ajax-services/supplierrating/?suppid=29739811&webAddLoc=www.indiamart.com&mcatId=188989&pName=coolmax+-+cm+-+1238+-+hs+hinges HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 22.564517,
+        "glb_longitude": 72.928871,
+        "response_size": 312,
+        "response_time": 29361,
+        "fk_activity_id": 527,
+        "ga_utma_cookie": "GA1.1.624578516.1721703397",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604301520"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Page",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 3299,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 18816,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.indiamart.com/proddetail/coolmax-cm-1238-hs-hinges-12938502248.html?srsltid=AfmBOorMwjsnWoXpOblEvMs3CI9rG_nQyX82x6N0cMmC_Da1dAUd6C1A",
+        "glb_city": "Anand",
+        "glusr_id": 18816,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260430152054",
+        "glb_state": "GJ",
+        "remote_ip": "59.95.221.228",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "www.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /api/ajax-services/glb_city/?_ts=1777542600978 HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 22.564517,
+        "glb_longitude": 72.928871,
+        "response_size": 113,
+        "response_time": 16469,
+        "fk_activity_id": 527,
+        "ga_utma_cookie": "GA1.1.624578516.1721703397",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604301520"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Page",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 3299,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 18816,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "DIR",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.google.com/",
+        "glb_city": "Anand",
+        "glusr_id": 18816,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260430152818",
+        "glb_state": "GJ",
+        "remote_ip": "59.95.221.228",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "dir.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /impcat/powder-coated-sheets.html HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 22.564517,
+        "glb_longitude": 72.928871,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 393,
+        "ga_utma_cookie": "GA1.1.624578516.1721703397",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604301528"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show Mcat Page",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 3299,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 18816,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "DIR",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.google.com/",
+        "glb_city": "Anand",
+        "glusr_id": 18816,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260511084857",
+        "glb_state": "GJ",
+        "remote_ip": "117.222.219.70",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "dir.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /impcat/wire-mesh-conveyor.html HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 22.564517,
+        "glb_longitude": 72.928871,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 393,
+        "ga_utma_cookie": "GA1.1.624578516.1721703397",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605110848"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show Mcat Page",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 3299,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 18816,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "DIR",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 18816,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260511085029",
+        "glb_state": "-",
+        "remote_ip": "10.143.12.191:41484",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "-",
+        "http_status": 200,
+        "request_url": "index.php?r=Newreqform/IntentGeneration?modref_type=product&modref_id=23901727530&s_prod_name=Wire+Mesh+Conveyor&flag=12&s_mobile=&modid=DIR&mcatID=159712&catID=841&login_mode=2&s_glusrid=18816&s_country_iso=IN&s_ip_country=India&s_ip=117.222.219.70&s_ip_country_iso=IN&curr_page_url=https%3A%2F%2Fdir.indiamart.com%2Fimpcat%2Fwire-mesh-conveyor.html&landing_ref_url=&prev_page_url=https%3A%2F%2Fwww.google.com%2F&form_type=SE&ipct=Anand&prefct=&glbct=&_=1778469563784&rfq_query_ref_text=ctaName%3DContact+Supplier%7CctaType%3DProduct+Enquiry%7CPT%3Dimpcat%7CSection%3DListing-MainProd%7CPosition%3Dpg-1_0%7CScriptVer%3DenqBl_desktop.min.js%3Fv%3D388%7Ctemplate7%7CAbexperiment%3DExp2%7CcompRank%3D%7CsearchTerm%3DWire+Mesh+Conveyor%7CP%7CReact%7CABlogin&r_glusrid=6429997",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 4251,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605110850"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 20,
+        "product_disp_id": 23901727530,
+        "fk_display_title": "Contact Intent",
+        "owner_gl_country": null,
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 3299,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 6429997,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "NFL"
+      },
+      {
+        "empid": 0,
+        "modid": "DIR",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 18816,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260511085055",
+        "glb_state": "-",
+        "remote_ip": "10.143.12.191:41484",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "-",
+        "http_status": 200,
+        "request_url": "index.php?r=Newreqform/IntentGeneration?modref_type=product&modref_id=23901727530&s_prod_name=Wire+Mesh+Conveyor&flag=17&s_mobile=9825085951&modid=DIR&mcatID=159712&catID=841&login_mode=2&s_glusrid=18816&s_country_iso=IN&s_ip_country=India&s_ip=117.222.219.70&s_ip_country_iso=IN&curr_page_url=https%3A%2F%2Fdir.indiamart.com%2Fimpcat%2Fwire-mesh-conveyor.html&landing_ref_url=&prev_page_url=https%3A%2F%2Fwww.google.com%2F&form_type=SE&ipct=Anand&prefct=&glbct=&_=1778469589772&rfq_query_ref_text=ctaName%3DContact+Supplier%7CctaType%3DProduct+Enquiry%7CPT%3Dimpcat%7CSection%3DListing-MainProd%7CPosition%3Dpg-1_0%7CScriptVer%3DenqBl_desktop.min.js%3Fv%3D388%7Ctemplate7%7CAbexperiment%3DExp2%7CcompRank%3D%7CsearchTerm%3DWire+Mesh+Conveyor%7CP%7CReact%7CABlogin&r_glusrid=6429997&s_first_name=Paresh",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 4251,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605110850"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 20,
+        "product_disp_id": 23901727530,
+        "fk_display_title": "Contact Intent",
+        "owner_gl_country": null,
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 3299,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 6429997,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "NFL"
+      },
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.indiamart.com/proddetail/wire-mesh-conveyor-2852409451762.html?pos=2&kwd=per%20feet%20wire%20mesh%20conveyor&tags=rk:B||dt:62|db:02|prc:1|dtp:p|pfs:1|sv:T|rsf:emg|prv:15000|ri:T_B_100_NP|em:1-|-res:RC2|spcfl:1|ktp:N0|stype:attr=1|mtp",
+        "glb_city": "Anand",
+        "glusr_id": 18816,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260511085214",
+        "glb_state": "GJ",
+        "remote_ip": "117.222.219.70",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "www.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /api/ajax-services/caps_service/?displayid=2852409451762&count=20&cityid=70473&mcatid=159712&webAddLoc=www.indiamart.com&glidBuyer=18816&iitd_kMod=1 HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 22.564517,
+        "glb_longitude": 72.928871,
+        "response_size": 5542,
+        "response_time": 65547,
+        "fk_activity_id": 527,
+        "ga_utma_cookie": "GA1.1.624578516.1721703397",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605110852"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Page",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 3299,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 18816,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": null,
+        "glb_city": null,
+        "glusr_id": 18816,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260511085228",
+        "glb_state": null,
+        "remote_ip": null,
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": null,
+        "http_status": 200,
+        "request_url": null,
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 4270,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605110852"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": 2857640372297,
+        "fk_display_title": null,
+        "owner_gl_country": null,
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 3299,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 18816,
+        "catalog_owner_glusr_id": 10699885,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": null
+      },
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.indiamart.com/proddetail/wire-mesh-conveyor-2852409451762.html?pos=2&kwd=per%20feet%20wire%20mesh%20conveyor&tags=rk:B||dt:62|db:02|prc:1|dtp:p|pfs:1|sv:T|rsf:emg|prv:15000|ri:T_B_100_NP|em:1-|-res:RC2|spcfl:1|ktp:N0|stype:attr=1|mtp",
+        "glb_city": "Anand",
+        "glusr_id": 18816,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260511085228",
+        "glb_state": "GJ",
+        "remote_ip": "117.222.219.70",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "www.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /api/ajax-services/CSL_Service/?date=20260511085123&activity_id=4270&catalog_owner_glusr_id=10699885&request_url=&http_status=200&imeshvisitor_glusr_id=18816&gl_country=&glusr_usr_custtype_weight=0&remote_ip=117.222.219.70&url_weight=1&imeshvisitor_m HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 22.564517,
+        "glb_longitude": 72.928871,
+        "response_size": 36,
+        "response_time": 53480,
+        "fk_activity_id": 527,
+        "ga_utma_cookie": "GA1.1.624578516.1721703397",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605110852"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Page",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 3299,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 18816,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": null,
+        "glb_city": null,
+        "glusr_id": 18816,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260511085255",
+        "glb_state": null,
+        "remote_ip": null,
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": null,
+        "http_status": 200,
+        "request_url": null,
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 4270,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605110852"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": 2853700359448,
+        "fk_display_title": null,
+        "owner_gl_country": null,
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 3299,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 18816,
+        "catalog_owner_glusr_id": 62108406,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": null
+      },
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.indiamart.com/proddetail/wire-mesh-conveyor-2852409451762.html?pos=2&kwd=per%20feet%20wire%20mesh%20conveyor&tags=rk:B||dt:62|db:02|prc:1|dtp:p|pfs:1|sv:T|rsf:emg|prv:15000|ri:T_B_100_NP|em:1-|-res:RC2|spcfl:1|ktp:N0|stype:attr=1|mtp",
+        "glb_city": "Anand",
+        "glusr_id": 18816,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260511085255",
+        "glb_state": "GJ",
+        "remote_ip": "117.222.219.70",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "www.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /api/ajax-services/CSL_Service/?date=20260511085150&activity_id=4270&catalog_owner_glusr_id=62108406&request_url=&http_status=200&imeshvisitor_glusr_id=18816&gl_country=&glusr_usr_custtype_weight=0&remote_ip=117.222.219.70&url_weight=1&imeshvisitor_m HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 22.564517,
+        "glb_longitude": 72.928871,
+        "response_size": 36,
+        "response_time": 52743,
+        "fk_activity_id": 527,
+        "ga_utma_cookie": "GA1.1.624578516.1721703397",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605110852"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Page",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 3299,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 18816,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": null,
+        "glb_city": null,
+        "glusr_id": 18816,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260511085325",
+        "glb_state": null,
+        "remote_ip": null,
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": null,
+        "http_status": 200,
+        "request_url": null,
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 4270,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605110853"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": 6317177348,
+        "fk_display_title": null,
+        "owner_gl_country": null,
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 3299,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 18816,
+        "catalog_owner_glusr_id": 9196808,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": null
+      },
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.indiamart.com/proddetail/wire-mesh-conveyor-2852409451762.html?pos=2&kwd=per%20feet%20wire%20mesh%20conveyor&tags=rk:B||dt:62|db:02|prc:1|dtp:p|pfs:1|sv:T|rsf:emg|prv:15000|ri:T_B_100_NP|em:1-|-res:RC2|spcfl:1|ktp:N0|stype:attr=1|mtp",
+        "glb_city": "Anand",
+        "glusr_id": 18816,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260511085325",
+        "glb_state": "GJ",
+        "remote_ip": "117.222.219.70",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "www.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /api/ajax-services/CSL_Service/?date=20260511085220&activity_id=4270&catalog_owner_glusr_id=9196808&request_url=&http_status=200&imeshvisitor_glusr_id=18816&gl_country=&glusr_usr_custtype_weight=0&remote_ip=117.222.219.70&url_weight=1&imeshvisitor_mo HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 22.564517,
+        "glb_longitude": 72.928871,
+        "response_size": 36,
+        "response_time": 62066,
+        "fk_activity_id": 527,
+        "ga_utma_cookie": "GA1.1.624578516.1721703397",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605110853"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Page",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 3299,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 18816,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": null,
+        "glb_city": null,
+        "glusr_id": 18816,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260511085328",
+        "glb_state": null,
+        "remote_ip": null,
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": null,
+        "http_status": 200,
+        "request_url": null,
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 4270,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605110853"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": 2857666847533,
+        "fk_display_title": null,
+        "owner_gl_country": null,
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 3299,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 18816,
+        "catalog_owner_glusr_id": 21098073,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": null
+      },
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.indiamart.com/proddetail/wire-mesh-conveyor-2852409451762.html?pos=2&kwd=per%20feet%20wire%20mesh%20conveyor&tags=rk:B||dt:62|db:02|prc:1|dtp:p|pfs:1|sv:T|rsf:emg|prv:15000|ri:T_B_100_NP|em:1-|-res:RC2|spcfl:1|ktp:N0|stype:attr=1|mtp",
+        "glb_city": "Anand",
+        "glusr_id": 18816,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260511085328",
+        "glb_state": "GJ",
+        "remote_ip": "117.222.219.70",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "www.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /api/ajax-services/CSL_Service/?date=20260511085222&activity_id=4270&catalog_owner_glusr_id=21098073&request_url=&http_status=200&imeshvisitor_glusr_id=18816&gl_country=&glusr_usr_custtype_weight=0&remote_ip=117.222.219.70&url_weight=1&imeshvisitor_m HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 22.564517,
+        "glb_longitude": 72.928871,
+        "response_size": 36,
+        "response_time": 51622,
+        "fk_activity_id": 527,
+        "ga_utma_cookie": "GA1.1.624578516.1721703397",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605110853"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Page",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 3299,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 18816,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": null,
+        "glb_city": null,
+        "glusr_id": 18816,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260511085332",
+        "glb_state": null,
+        "remote_ip": null,
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": null,
+        "http_status": 200,
+        "request_url": null,
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 4270,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605110853"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": 23901727530,
+        "fk_display_title": null,
+        "owner_gl_country": null,
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 3299,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 18816,
+        "catalog_owner_glusr_id": 6429997,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": null
+      },
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.indiamart.com/proddetail/wire-mesh-conveyor-2852409451762.html?pos=2&kwd=per%20feet%20wire%20mesh%20conveyor&tags=rk:B||dt:62|db:02|prc:1|dtp:p|pfs:1|sv:T|rsf:emg|prv:15000|ri:T_B_100_NP|em:1-|-res:RC2|spcfl:1|ktp:N0|stype:attr=1|mtp",
+        "glb_city": "Anand",
+        "glusr_id": 18816,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260511085332",
+        "glb_state": "GJ",
+        "remote_ip": "117.222.219.70",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "www.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /api/ajax-services/CSL_Service/?date=20260511085226&activity_id=4270&catalog_owner_glusr_id=6429997&request_url=&http_status=200&imeshvisitor_glusr_id=18816&gl_country=&glusr_usr_custtype_weight=0&remote_ip=117.222.219.70&url_weight=1&imeshvisitor_mo HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 22.564517,
+        "glb_longitude": 72.928871,
+        "response_size": 36,
+        "response_time": 55078,
+        "fk_activity_id": 527,
+        "ga_utma_cookie": "GA1.1.624578516.1721703397",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605110853"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 35,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Page",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 3299,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 18816,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IM",
+        "cat_id": 841,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": null,
+        "glb_city": null,
+        "glusr_id": 18816,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260511091632",
+        "glb_state": null,
+        "remote_ip": null,
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+        "domain_name": "www.indiamart.com",
+        "http_status": 200,
+        "request_url": "index.php?r=Newreqform/IntentGeneration?modref_type=product&modref_id=2853700359448&s_prod_name=50+Kg+Stainless+Steel+Wire+Mesh+Chain+Conveyor&flag=12&s_mobile=9825085951&modid=PRODDTL&mcatID=159712&catID=841&login_mode=1&s_glusrid=18816&s_country_iso=IN&s_ip_country=India&s_ip=117.222.219.70&s_ip_country_iso=IN&curr_page_url=https%3A%2F%2Fwww.indiamart.com%2Fproddetail%2Fwire-mesh-conveyor-2852409451762.html%3Fpos%3D2%26kwd%3Dper%2520feet%2520wire%2520mesh%2520conveyor%26tags%3Drk%3AB%7C%7Cdt%3A62%7Cdb%3A02%7Cprc%3A1%7Cdtp%3Ap%7Cpfs%3A1%7Csv%3AT%7Crsf%3Aemg%7Cprv%3A15000%7Cri%3AT_B_100_NP%7Cem%3A1-%7C-res%3ARC2%7Cspcfl%3A1%7Cktp%3AN0%7Cstype%3Aattr%3D1%7Cmtp%3AS%7Cisu%3A1%7Cemr%3A1%7Cwc%3A7%7Clcf%3A3%7Ccq%3Aanand%7Cqr_nm%3Aemg-emp-gl-gd%7Ccs%3A20429%7Ccom-cf%3Anl%7Cptrs%3Ana%7Cspc-%3A%7Cmc%3A159712%7Cerc%3A14%7Ccat%3A841%7Cqry_typ%3AP%7Clang%3Aen%7Ctyr%3A3%7Cqrd%3A260511%7Cmrd%3A260511%7Cprdt%3A260511%7Cmsf%3Ahs%7Cpfen%3A1%7Cgli%3AU0G0I0%7Cscw%3A1%7Cemt%3A5%3Fecom%26tempid%3D113_even%26SLD%3D2&landing_ref_url=referral%3Dexternal&prev_page_url=https%3A%2F%2Fdir.indiamart.com%2Fimpcat%2Fwire-mesh-conveyor.html&form_type=SE&ipct=Anand&prefct=&glbct=Anand&_=1778471126924&rfq_query_ref_text=ctaName%3DGet+Latest+Price%7CctaType%3DProduct+Enquiry%7CPT%3DProduct%7CSection%3DCW%7CImg4%7CS_C-70472-Ahmedabad%7CRt5%7CReact%7CPosition%3Dpg-1_1%7CScriptVer%3DenqBl_desktop.min.js%3Fv%3D400%7CcompRank%3D%7CsearchTerm%3DWire+Mesh+Conveyor%7CP%7CReact%7CABlogin&pdp=true&r_glusrid=62108406&s_first_name=Paresh",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 4269,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605110916"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": 2853700359448,
+        "fk_display_title": "Get Best Price (Recommendation Widget)",
+        "owner_gl_country": null,
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 3299,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 62108406,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": null
+      },
+      {
+        "empid": 0,
+        "modid": "DIR",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.google.com/",
+        "glb_city": "Anand",
+        "glusr_id": 18816,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260513134529",
+        "glb_state": "GJ",
+        "remote_ip": "117.222.75.196",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+        "domain_name": "dir.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /impcat/crankshafts.html?biz=10 HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 22.564517,
+        "glb_longitude": 72.928871,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 393,
+        "ga_utma_cookie": "GA1.1.624578516.1721703397",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605131345"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Show Mcat Page",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 3299,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 18816,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "DIR",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "https://www.google.com/",
+        "glb_city": "Anand",
+        "glusr_id": 18816,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260513134633",
+        "glb_state": "GJ",
+        "remote_ip": "117.222.75.196",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+        "domain_name": "dir.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /rajkot/crankshafts.html HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 22.564517,
+        "glb_longitude": 72.928871,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 194,
+        "ga_utma_cookie": "GA1.1.624578516.1721703397",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605131346"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Show City Mcat Listing",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 3299,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 18816,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            70487
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[Rajkot]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "DIR",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 18816,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260513134703",
+        "glb_state": "-",
+        "remote_ip": "10.143.8.188:55878",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+        "domain_name": "-",
+        "http_status": 200,
+        "request_url": "index.php?r=Newreqform/IntentGeneration?modref_type=product&modref_id=26167585291&s_prod_name=Comet+Diesel+Engine+Crankshaft&flag=16&s_mobile=9825085951&modid=DIR&mcatID=11219&catID=539&login_mode=1&s_glusrid=18816&s_country_iso=IN&s_ip_country=India&s_ip=117.222.75.196&s_ip_country_iso=IN&curr_page_url=https%3A%2F%2Fdir.indiamart.com%2Frajkot%2Fcrankshafts.html&landing_ref_url=referral%3Dexternal%7Cutm_source%3Dgoogle%7Cutm_campaign%3D22422867093%7Cutm_medium%3Dprd_ads%7CGCLID%3DCjwKCAjwwpDQBhAuEiwAa-4Wo4U-IesOuy5zKx4KXxNk9h2dPJCudvwXRuEXJmT-W7SVHc8P4LqENBoCDMEQAvD_BwE&prev_page_url=https%3A%2F%2Fwww.google.com%2F&form_type=SE&ipct=Ahmedabad&prefct=Rajkot&glbct=&_=1778660222902&rfq_query_ref_text=ctaName%3DImage%7CctaType%3DImage%7CPT%3Dcity-mcat%7CSection%3DListing-MainProd%7CPosition%3Dpg-1_0%7CScriptVer%3DenqBl_desktop.min.js%3Fv%3D388%7Ctemplate7%7CAbexperiment%3DExp2%7CcompRank%3D%7CsearchTerm%3DCrankshafts+and+Crankshafts+Parts%7CP%7CReact%7CFBimage&r_glusrid=16143707&s_first_name=Paresh",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 4249,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605131347"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 20,
+        "product_disp_id": 26167585291,
+        "fk_display_title": "Images Viewed",
+        "owner_gl_country": null,
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 3299,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 16143707,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "NFL"
+      },
+      {
+        "empid": 0,
+        "modid": "DIR",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 18816,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260513134704",
+        "glb_state": "-",
+        "remote_ip": "10.143.8.188:48414",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+        "domain_name": "-",
+        "http_status": 200,
+        "request_url": "index.php?r=Newreqform/IntentGeneration?modref_type=product&modref_id=2856789368291&s_prod_name=Steel+Crank+Shaft&flag=16&s_mobile=9825085951&modid=DIR&mcatID=11219&catID=539&login_mode=1&s_glusrid=18816&s_country_iso=IN&s_ip_country=India&s_ip=117.222.75.196&s_ip_country_iso=IN&curr_page_url=https%3A%2F%2Fdir.indiamart.com%2Frajkot%2Fcrankshafts.html&landing_ref_url=referral%3Dexternal%7Cutm_source%3Dgoogle%7Cutm_campaign%3D22422867093%7Cutm_medium%3Dprd_ads%7CGCLID%3DCjwKCAjwwpDQBhAuEiwAa-4Wo4U-IesOuy5zKx4KXxNk9h2dPJCudvwXRuEXJmT-W7SVHc8P4LqENBoCDMEQAvD_BwE&prev_page_url=https%3A%2F%2Fwww.google.com%2F&form_type=SE&ipct=Ahmedabad&prefct=Rajkot&glbct=&_=1778660224636&rfq_query_ref_text=ctaName%3DImage%7CctaType%3DImage%7CPT%3Dcity-mcat%7CSection%3DListing-MainProd%7CPosition%3Dpg-1_1%7CScriptVer%3DenqBl_desktop.min.js%3Fv%3D388%7CAbexperiment%3DExp2%7CcompRank%3D%7CsearchTerm%3DCrankshafts+and+Crankshafts+Parts%7CP%7CReact%7CFBimage&r_glusrid=19066262&s_first_name=Paresh",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 4249,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605131347"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 20,
+        "product_disp_id": 2856789368291,
+        "fk_display_title": "Images Viewed",
+        "owner_gl_country": null,
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 3299,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 19066262,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "NFL"
+      },
+      {
+        "empid": 0,
+        "modid": "DIR",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 18816,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260513134716",
+        "glb_state": "-",
+        "remote_ip": "10.143.8.188:48414",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+        "domain_name": "-",
+        "http_status": 200,
+        "request_url": "index.php?r=Newreqform/IntentGeneration?modref_type=product&modref_id=12933282788&s_prod_name=Diesel+Engine+Crankshaft&flag=16&s_mobile=9825085951&modid=DIR&mcatID=11219&catID=539&login_mode=1&s_glusrid=18816&s_country_iso=IN&s_ip_country=India&s_ip=117.222.75.196&s_ip_country_iso=IN&curr_page_url=https%3A%2F%2Fdir.indiamart.com%2Frajkot%2Fcrankshafts.html&landing_ref_url=referral%3Dexternal%7Cutm_source%3Dgoogle%7Cutm_campaign%3D22422867093%7Cutm_medium%3Dprd_ads%7CGCLID%3DCjwKCAjwwpDQBhAuEiwAa-4Wo4U-IesOuy5zKx4KXxNk9h2dPJCudvwXRuEXJmT-W7SVHc8P4LqENBoCDMEQAvD_BwE&prev_page_url=https%3A%2F%2Fwww.google.com%2F&form_type=SE&ipct=Ahmedabad&prefct=Rajkot&glbct=&_=1778660236377&rfq_query_ref_text=ctaName%3DImage%7CctaType%3DImage%7CPT%3Dcity-mcat%7CSection%3DListing-MainProd%7CPosition%3Dpg-1_2%7CScriptVer%3DenqBl_desktop.min.js%3Fv%3D388%7CAbexperiment%3DExp2%7CcompRank%3D%7CsearchTerm%3DCrankshafts+and+Crankshafts+Parts%7CP%7CReact%7CFBimage&r_glusrid=2354441&s_first_name=Paresh",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 4249,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605131347"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 20,
+        "product_disp_id": 12933282788,
+        "fk_display_title": "Images Viewed",
+        "owner_gl_country": null,
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 3299,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 2354441,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "NFL"
+      }
+    ],
+    "updated_at": "2026-05-16T12:48:27.089287Z"
+  },
+  "error": null
+}
