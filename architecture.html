@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Seller Churn — Flow Diagram</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<style>
+  :root{
+    --bg:#0a0a0c;
+    --panel:#121217;
+    --line:#23232c;
+    --line2:#2e2e38;
+    --ink:#ebebef;
+    --mute:#7e7e88;
+    --accent:#7cd0ff;
+    --warn:#ffb86b;
+    --crit:#ff7a8a;
+    --good:#9ce6a8;
+    --orch:#c39bff;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.55 ui-sans-serif,system-ui,Inter,Segoe UI,sans-serif;-webkit-font-smoothing:antialiased}
+  header{padding:40px 56px 4px;max-width:1280px;margin:0 auto}
+  header h1{font-size:26px;font-weight:600;letter-spacing:-.01em;margin:0}
+  header p{color:var(--mute);max-width:760px;margin:8px 0 0}
+  .legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:16px;color:var(--mute);font-size:12px}
+  .legend span{display:inline-flex;align-items:center;gap:6px}
+  .legend i{width:9px;height:9px;border-radius:50%;display:inline-block}
+
+  main{max-width:1280px;margin:0 auto;padding:8px 24px 80px;position:relative}
+
+  svg{width:100%;height:auto;display:block;font-family:inherit}
+  .stage-label{fill:var(--mute);font-size:11px;letter-spacing:.18em;text-transform:uppercase}
+  .stage-label b{fill:var(--ink);font-weight:600}
+
+  .node rect{fill:var(--panel);stroke:var(--line);stroke-width:1;transition:stroke .2s ease, fill .2s ease, filter .35s ease, opacity .35s ease}
+  .node text{fill:var(--ink);pointer-events:none}
+  .node .title{font-size:13.5px;font-weight:600}
+  .node .tag{font-size:10px;letter-spacing:.12em;text-transform:uppercase;fill:var(--mute)}
+  .node .dot{transition:opacity .35s ease}
+  .node{cursor:pointer}
+  .node:hover rect{stroke:var(--line2)}
+
+  .edge{fill:none;stroke:#262630;stroke-width:1.2;transition:opacity .35s ease, stroke .25s ease}
+  .edge.dashed{stroke-dasharray:4 4;stroke:#2c2c38}
+  .arrowhead{fill:#3a3a48}
+
+  /* focus mode */
+  body.focus .node:not(.active) rect{opacity:.18}
+  body.focus .node:not(.active) text{opacity:.18}
+  body.focus .node:not(.active) .dot{opacity:.18}
+  body.focus .edge{opacity:.12}
+  body.focus .stage-label{opacity:.2}
+  body.focus .node.active rect{stroke:#4a4a5c;fill:#16161c;filter:drop-shadow(0 0 0 rgba(124,208,255,.0))}
+
+  /* detail panel */
+  #panel{
+    position:fixed;top:0;right:0;height:100vh;width:380px;
+    background:rgba(14,14,18,.92);backdrop-filter:blur(14px);
+    border-left:1px solid var(--line);
+    padding:48px 28px 28px;
+    transform:translateX(100%);transition:transform .35s ease;
+    overflow-y:auto;
+    z-index:10;
+  }
+  body.focus #panel{transform:translateX(0)}
+  #panel h2{margin:0 0 4px;font-size:18px;font-weight:600;letter-spacing:-.005em}
+  #panel .ptag{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+  #panel p{color:#bcbcc4;margin:14px 0 0;font-size:13.5px;line-height:1.6}
+  #panel ul{margin:10px 0 0;padding-left:18px;color:#bcbcc4;font-size:13px;line-height:1.6}
+  #panel li{margin:4px 0}
+  #panel b{color:var(--ink);font-weight:500}
+  #panel .close{position:absolute;top:14px;right:14px;width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--mute);cursor:pointer;border:1px solid var(--line)}
+  #panel .close:hover{color:var(--ink);border-color:var(--line2)}
+
+  .hint{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);font-size:12px;color:var(--mute);background:rgba(17,17,20,.8);border:1px solid var(--line);padding:8px 14px;border-radius:999px;backdrop-filter:blur(8px);z-index:5}
+  .hint kbd{font:inherit;border:1px solid var(--line);padding:1px 6px;border-radius:4px;color:var(--ink);margin:0 2px}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>How a seller flows through the skill-based system</h1>
+  <p>One GLID enters at the top. A structured risk card comes out at the bottom. Click any node to focus it — everything else dims and the detail opens on the right.</p>
+  <div class="legend">
+    <span><i style="background:var(--accent)"></i> data / pipeline</span>
+    <span><i style="background:var(--warn)"></i> root-cause</span>
+    <span><i style="background:var(--crit)"></i> risk decision</span>
+    <span><i style="background:var(--orch)"></i> orchestrator stage</span>
+    <span><i style="background:var(--good)"></i> output</span>
+  </div>
+</header>
+
+<main>
+<svg viewBox="0 0 1200 2080" preserveAspectRatio="xMidYMin meet" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" class="arrowhead"/>
+    </marker>
+  </defs>
+
+  <!-- ============== STAGE: INPUT ============== -->
+  <text class="stage-label" x="40" y="40"><tspan font-weight="600" fill="#ebebef">Input</tspan>   one seller, one number</text>
+
+  <g class="node" data-id="glid">
+    <rect x="500" y="60" width="200" height="70" rx="12"/>
+    <circle class="dot" cx="518" cy="84" r="4" fill="#9ce6a8"/>
+    <text class="title" x="532" y="88">GLID</text>
+    <text class="tag" x="516" y="108">seller identifier</text>
+  </g>
+
+  <!-- to snapshot -->
+  <path class="edge" d="M600,130 L600,170" marker-end="url(#ah)"/>
+
+  <!-- ============== STAGE: SNAPSHOT ============== -->
+  <text class="stage-label" x="40" y="200"><tspan font-weight="600" fill="#ebebef">Step 1</tspan>   fetch the snapshot</text>
+
+  <g class="node" data-id="behavioral">
+    <rect x="80"  y="220" width="280" height="80" rx="12"/>
+    <circle class="dot" cx="98" cy="244" r="4" fill="#7cd0ff"/>
+    <text class="title" x="112" y="248">Behavioral signals</text>
+    <text class="tag"   x="98"  y="266">last 30 / 90 days</text>
+    <text x="98" y="286" font-size="12" fill="#9d9da6">BL received · replied · LMS active · PNS · CQS · BLNI</text>
+  </g>
+
+  <g class="node" data-id="context">
+    <rect x="460" y="220" width="280" height="80" rx="12"/>
+    <circle class="dot" cx="478" cy="244" r="4" fill="#7cd0ff"/>
+    <text class="title" x="492" y="248">Context</text>
+    <text class="tag"   x="478" y="266">who they are</text>
+    <text x="478" y="286" font-size="12" fill="#9d9da6">category · city · package · age · RAG · NOB</text>
+  </g>
+
+  <g class="node" data-id="derived">
+    <rect x="840" y="220" width="280" height="80" rx="12"/>
+    <circle class="dot" cx="858" cy="244" r="4" fill="#7cd0ff"/>
+    <text class="title" x="872" y="248">Derived</text>
+    <text class="tag"   x="858" y="266">computed signals</text>
+    <text x="858" y="286" font-size="12" fill="#9d9da6">velocity · reply rate · baseline drift · consumption</text>
+  </g>
+
+  <!-- fan in from glid -->
+  <path class="edge" d="M600,170 C600,190 220,200 220,220" marker-end="url(#ah)"/>
+  <path class="edge" d="M600,170 L600,220" marker-end="url(#ah)"/>
+  <path class="edge" d="M600,170 C600,190 980,200 980,220" marker-end="url(#ah)"/>
+
+  <!-- to phase 0 -->
+  <path class="edge" d="M220,300 C220,330 220,340 220,360" marker-end="url(#ah)"/>
+  <path class="edge" d="M600,300 L600,360" marker-end="url(#ah)"/>
+  <path class="edge" d="M980,300 L980,360" marker-end="url(#ah)"/>
+
+  <!-- ============== STAGE: PHASE 0 ============== -->
+  <text class="stage-label" x="40" y="350"><tspan font-weight="600" fill="#ebebef">Step 2</tspan>   place the seller</text>
+
+  <g class="node" data-id="peer">
+    <rect x="80"  y="360" width="280" height="80" rx="12"/>
+    <circle class="dot" cx="98" cy="384" r="4" fill="#7cd0ff"/>
+    <text class="title" x="112" y="388">Peer Benchmark</text>
+    <text class="tag"   x="98"  y="406">cohort percentile</text>
+    <text x="98" y="426" font-size="12" fill="#9d9da6">vs same category × city × tier</text>
+  </g>
+
+  <g class="node" data-id="demand">
+    <rect x="460" y="360" width="280" height="80" rx="12"/>
+    <circle class="dot" cx="478" cy="384" r="4" fill="#7cd0ff"/>
+    <text class="title" x="492" y="388">Demand Index</text>
+    <text class="tag"   x="478" y="406">market alive or dying?</text>
+    <text x="478" y="426" font-size="12" fill="#9d9da6">separates seller fault from market fault</text>
+  </g>
+
+  <g class="node" data-id="trajectory">
+    <rect x="840" y="360" width="280" height="80" rx="12"/>
+    <circle class="dot" cx="858" cy="384" r="4" fill="#7cd0ff"/>
+    <text class="title" x="872" y="388">Conversion Point</text>
+    <text class="tag"   x="858" y="406">12-month curve shape</text>
+    <text x="858" y="426" font-size="12" fill="#9d9da6">cliff · drift · never engaged</text>
+  </g>
+
+  <!-- fan into churn -->
+  <path class="edge" d="M220,440 C220,490 500,490 500,520" marker-end="url(#ah)"/>
+  <path class="edge" d="M600,440 L600,520" marker-end="url(#ah)"/>
+  <path class="edge" d="M980,440 C980,490 700,490 700,520" marker-end="url(#ah)"/>
+
+  <!-- ============== STAGE: SCORING ============== -->
+  <text class="stage-label" x="40" y="510"><tspan font-weight="600" fill="#ebebef">Step 3</tspan>   score the risk</text>
+
+  <g class="node" data-id="churn">
+    <rect x="380" y="520" width="440" height="100" rx="14"/>
+    <circle class="dot" cx="402" cy="548" r="5" fill="#ff7a8a"/>
+    <text class="title" x="420" y="552" font-size="15">Churn Scoring</text>
+    <text class="tag"   x="402" y="572">the heart of the system · 0–100</text>
+    <text x="402" y="594" font-size="12" fill="#bcbcc4">14 signals → severity tiers → compound mult → trajectory → LLM ±10</text>
+    <text x="402" y="610" font-size="12" fill="#9d9da6">≥72 Red · 42–71 Amber · &lt;42 Green</text>
+  </g>
+
+  <g class="node" data-id="onboarding">
+    <rect x="900" y="520" width="220" height="100" rx="12"/>
+    <circle class="dot" cx="918" cy="548" r="4" fill="#9ce6a8"/>
+    <text class="title" x="932" y="552">Onboarding Health</text>
+    <text class="tag"   x="918" y="572">only if age ≤ 90d</text>
+    <text x="918" y="594" font-size="11" fill="#9d9da6">7 checks · risk priors</text>
+    <text x="918" y="608" font-size="11" fill="#9d9da6">LLM activation plan</text>
+  </g>
+
+  <!-- side branch -->
+  <path class="edge dashed" d="M820,560 L900,560"/>
+
+  <!-- churn down to RCA -->
+  <path class="edge" d="M600,620 L600,660" marker-end="url(#ah)"/>
+
+  <!-- ============== STAGE: RCA ============== -->
+  <text class="stage-label" x="40" y="660"><tspan font-weight="600" fill="#ebebef">Step 4</tspan>   diagnose <tspan font-style="italic">why</tspan></text>
+
+  <g class="node" data-id="shap">
+    <rect x="200" y="680" width="360" height="90" rx="12"/>
+    <circle class="dot" cx="220" cy="708" r="4" fill="#ffb86b"/>
+    <text class="title" x="234" y="712">SHAP RCA</text>
+    <text class="tag"   x="220" y="730">rule-based attribution</text>
+    <text x="220" y="750" font-size="12" fill="#9d9da6">7 buckets: POOR_CATALOG · NO_LEADS · LOW_ENGAGEMENT ·</text>
+    <text x="220" y="764" font-size="12" fill="#9d9da6">BL_DECLINE · LOW_PNS · PEER_GAP · RAG_RISK</text>
+  </g>
+
+  <g class="node" data-id="cohort">
+    <rect x="640" y="680" width="360" height="90" rx="12"/>
+    <circle class="dot" cx="660" cy="708" r="4" fill="#ffb86b"/>
+    <text class="title" x="674" y="712">LLM Cohort Scorer</text>
+    <text class="tag"   x="660" y="730">qualitative second opinion</text>
+    <text x="660" y="750" font-size="12" fill="#9d9da6">compares to ~50 churned + ~50 retained lookalikes</text>
+    <text x="660" y="764" font-size="12" fill="#9d9da6">returns matching GLIDs as precedents</text>
+  </g>
+
+  <!-- split from churn -->
+  <path class="edge" d="M600,620 C600,650 380,650 380,680" marker-end="url(#ah)"/>
+  <path class="edge" d="M600,620 C600,650 820,650 820,680" marker-end="url(#ah)"/>
+
+  <!-- RCA to cross-platform (dashed, conditional) -->
+  <path class="edge dashed" d="M380,770 C380,820 600,820 600,840" marker-end="url(#ah)"/>
+  <path class="edge dashed" d="M820,770 C820,820 600,820 600,840" marker-end="url(#ah)"/>
+
+  <!-- ============== STAGE: COMPETITIVE ============== -->
+  <text class="stage-label" x="40" y="830"><tspan font-weight="600" fill="#ebebef">Step 5</tspan>   check the rest of the internet</text>
+
+  <g class="node" data-id="xplatform">
+    <rect x="380" y="840" width="440" height="80" rx="12"/>
+    <circle class="dot" cx="402" cy="864" r="4" fill="#7cd0ff"/>
+    <text class="title" x="416" y="868">Cross-Platform Intelligence</text>
+    <text class="tag"   x="402" y="886">runs only if RCA hints catalog / leads / engagement</text>
+    <text x="402" y="906" font-size="12" fill="#9d9da6">scrapes JustDial · TradeIndia · Shopify · own site</text>
+  </g>
+
+  <!-- down to actions -->
+  <path class="edge" d="M600,920 L600,960" marker-end="url(#ah)"/>
+
+  <!-- ============== STAGE: ACTIONS ============== -->
+  <text class="stage-label" x="40" y="960"><tspan font-weight="600" fill="#ebebef">Step 6</tspan>   generate the rep's playbook</text>
+
+  <g class="node" data-id="precall">
+    <rect x="40"  y="980" width="260" height="80" rx="12"/>
+    <circle class="dot" cx="58" cy="1004" r="4" fill="#7cd0ff"/>
+    <text class="title" x="72" y="1008">Pre-Call Brief</text>
+    <text class="tag"   x="58" y="1026">phone card</text>
+    <text x="58" y="1046" font-size="12" fill="#9d9da6">opening line · signals · do-not-mention</text>
+  </g>
+
+  <g class="node" data-id="whatsapp">
+    <rect x="320" y="980" width="260" height="80" rx="12"/>
+    <circle class="dot" cx="338" cy="1004" r="4" fill="#7cd0ff"/>
+    <text class="title" x="352" y="1008">WhatsApp Message</text>
+    <text class="tag"   x="338" y="1026">pre-call warm-up</text>
+    <text x="338" y="1046" font-size="12" fill="#9d9da6">Hindi + English · CTA · routed by RCA</text>
+  </g>
+
+  <g class="node" data-id="script">
+    <rect x="600" y="980" width="260" height="80" rx="12"/>
+    <circle class="dot" cx="618" cy="1004" r="4" fill="#7cd0ff"/>
+    <text class="title" x="632" y="1008">Script Generation</text>
+    <text class="tag"   x="618" y="1026">LLM-personalised</text>
+    <text x="618" y="1046" font-size="12" fill="#9d9da6">5-part call script · template fallback</text>
+  </g>
+
+  <g class="node" data-id="gifted">
+    <rect x="880" y="980" width="260" height="80" rx="12"/>
+    <circle class="dot" cx="898" cy="1004" r="4" fill="#7cd0ff"/>
+    <text class="title" x="912" y="1008">Gifted Lead</text>
+    <text class="tag"   x="898" y="1026">the carrot</text>
+    <text x="898" y="1046" font-size="12" fill="#9d9da6">one real un-served buyer in seller's pool</text>
+  </g>
+
+  <!-- to phase4/5 -->
+  <path class="edge" d="M170,1060 C170,1110 380,1110 380,1140" marker-end="url(#ah)"/>
+  <path class="edge" d="M450,1060 C450,1110 600,1110 600,1140" marker-end="url(#ah)"/>
+  <path class="edge" d="M730,1060 C730,1110 820,1110 820,1140" marker-end="url(#ah)"/>
+  <path class="edge" d="M1010,1060 C1010,1110 820,1110 820,1140" marker-end="url(#ah)"/>
+
+  <!-- ============== STAGE: TIER-SPECIFIC ============== -->
+  <text class="stage-label" x="40" y="1130"><tspan font-weight="600" fill="#ebebef">Step 7</tspan>   tier-specific paths</text>
+
+  <g class="node" data-id="upgrade">
+    <rect x="200" y="1140" width="360" height="80" rx="12"/>
+    <circle class="dot" cx="220" cy="1164" r="4" fill="#9ce6a8"/>
+    <text class="title" x="234" y="1168">BL Upgrade</text>
+    <text class="tag"   x="220" y="1186">for healthy / undersold sellers</text>
+    <text x="220" y="1206" font-size="12" fill="#9d9da6">UPGRADE · DOWNGRADE · HOLD</text>
+  </g>
+
+  <g class="node" data-id="winback">
+    <rect x="640" y="1140" width="360" height="80" rx="12"/>
+    <circle class="dot" cx="660" cy="1164" r="4" fill="#ff7a8a"/>
+    <text class="title" x="674" y="1168">Winback Priority</text>
+    <text class="tag"   x="660" y="1186">for already-churned sellers</text>
+    <text x="660" y="1206" font-size="12" fill="#9d9da6">7 sub-scores · cool-off gate · LLM ±10</text>
+  </g>
+
+  <!-- converge to BL card -->
+  <path class="edge" d="M380,1220 C380,1260 600,1260 600,1290" marker-end="url(#ah)"/>
+  <path class="edge" d="M820,1220 C820,1260 600,1260 600,1290" marker-end="url(#ah)"/>
+
+  <!-- ============== STAGE: BL CARD ============== -->
+  <text class="stage-label" x="40" y="1280"><tspan font-weight="600" fill="#ebebef">Step 8</tspan>   one seller, one card</text>
+
+  <g class="node" data-id="blcard">
+    <rect x="380" y="1290" width="440" height="100" rx="14"/>
+    <circle class="dot" cx="402" cy="1318" r="5" fill="#9ce6a8"/>
+    <text class="title" x="420" y="1322" font-size="15">BL Card</text>
+    <text class="tag"   x="402" y="1342">aggregator · what the rep sees</text>
+    <text x="402" y="1364" font-size="12" fill="#bcbcc4">verdict · priority · signals · actions · messaging · lookalikes</text>
+    <text x="402" y="1380" font-size="12" fill="#9d9da6">CRITICAL · AT RISK · HEALTHY</text>
+  </g>
+
+  <!-- divider line -->
+  <line x1="40" y1="1450" x2="1160" y2="1450" stroke="#1c1c24" stroke-width="1"/>
+
+  <!-- ============== ORCHESTRATOR ============== -->
+  <text class="stage-label" x="40" y="1490"><tspan font-weight="600" fill="#ebebef">The orchestrator</tspan>   what the LLM agent does on top of the pipeline</text>
+  <text x="40" y="1518" font-size="13" fill="#9d9da6">The 16 skills above are tools. The seller-churn-assessment skill runs the pipeline once,</text>
+  <text x="40" y="1536" font-size="13" fill="#9d9da6">then walks through five interpretive stages before emitting the final structured card.</text>
+
+  <!-- pipeline ref -->
+  <g class="node" data-id="pipeline-ref">
+    <rect x="40" y="1570" width="260" height="60" rx="10"/>
+    <circle class="dot" cx="58" cy="1592" r="4" fill="#c39bff"/>
+    <text class="title" x="72" y="1596" font-size="13">run_pipeline(glid)</text>
+    <text class="tag" x="58" y="1614">one tool call · all 16 skills</text>
+  </g>
+
+  <path class="edge" d="M300,1600 L340,1600" marker-end="url(#ah)"/>
+
+  <!-- 5 orchestrator stages -->
+  <g class="node" data-id="o1">
+    <rect x="340" y="1570" width="160" height="60" rx="10"/>
+    <circle class="dot" cx="356" cy="1592" r="4" fill="#c39bff"/>
+    <text class="title" x="370" y="1596" font-size="12.5">1. Decline analysis</text>
+    <text class="tag" x="356" y="1614">how fast fading?</text>
+  </g>
+  <path class="edge" d="M500,1600 L520,1600" marker-end="url(#ah)"/>
+
+  <g class="node" data-id="o2">
+    <rect x="520" y="1570" width="160" height="60" rx="10"/>
+    <circle class="dot" cx="536" cy="1592" r="4" fill="#c39bff"/>
+    <text class="title" x="550" y="1596" font-size="12.5">2. Engagement health</text>
+    <text class="tag" x="536" y="1614">frustrated or gone?</text>
+  </g>
+  <path class="edge" d="M680,1600 L700,1600" marker-end="url(#ah)"/>
+
+  <g class="node" data-id="o3">
+    <rect x="700" y="1570" width="160" height="60" rx="10"/>
+    <circle class="dot" cx="716" cy="1592" r="4" fill="#c39bff"/>
+    <text class="title" x="730" y="1596" font-size="12.5">3. Root-cause</text>
+    <text class="tag" x="716" y="1614">most important stage</text>
+  </g>
+  <path class="edge" d="M860,1600 L880,1600" marker-end="url(#ah)"/>
+
+  <g class="node" data-id="o4">
+    <rect x="880" y="1570" width="160" height="60" rx="10"/>
+    <circle class="dot" cx="896" cy="1592" r="4" fill="#c39bff"/>
+    <text class="title" x="910" y="1596" font-size="12.5">4. Risk synthesis</text>
+    <text class="tag" x="896" y="1614">final tier · can override</text>
+  </g>
+
+  <path class="edge" d="M960,1630 L960,1680" marker-end="url(#ah)"/>
+
+  <g class="node" data-id="o5">
+    <rect x="880" y="1680" width="160" height="60" rx="10"/>
+    <circle class="dot" cx="896" cy="1702" r="4" fill="#c39bff"/>
+    <text class="title" x="910" y="1706" font-size="12.5">5. Action + outreach</text>
+    <text class="tag" x="896" y="1724">drafts for Critical / High</text>
+  </g>
+
+  <path class="edge" d="M880,1710 C700,1710 700,1710 520,1710" marker-end="url(#ah)"/>
+
+  <!-- final card -->
+  <g class="node" data-id="final">
+    <rect x="200" y="1680" width="320" height="80" rx="12"/>
+    <circle class="dot" cx="220" cy="1704" r="4" fill="#9ce6a8"/>
+    <text class="title" x="234" y="1708">Final structured card</text>
+    <text class="tag"   x="220" y="1726">JSON · what the RM sees</text>
+    <text x="220" y="1746" font-size="12" fill="#9d9da6">risk_tier · root_cause · evidence · actions</text>
+  </g>
+
+</svg>
+</main>
+
+<aside id="panel">
+  <div class="close" id="closeBtn">×</div>
+  <div class="ptag" id="ptag">node</div>
+  <h2 id="ptitle">—</h2>
+  <div id="pbody"></div>
+</aside>
+
+<div class="hint">click any node to focus · <kbd>Esc</kbd> to clear</div>
+
+<script>
+const D = {
+  glid: { tag:"input", title:"GLID", html:`<p>A single IndiaMART seller ID is the only thing the agent needs to start. Everything else is fetched.</p><p><b>Example.</b> <code>11282573</code> — an active paid seller. The agent never asks "what category?" or "what city?". It pulls the live snapshot and derives every signal itself.</p>` },
+
+  behavioral: { tag:"snapshot", title:"Behavioral signals", html:`<p>How is the seller actually using the platform <em>right now</em>?</p><ul><li>Buy Leads received / replied (30 / 90d)</li><li>LMS active days</li><li>PNS pickup ratio</li><li>CQS, BLNI volume, event count</li></ul><p>This is the "vital signs" layer the score is built on.</p>` },
+  context: { tag:"snapshot", title:"Context", html:`<p>Fixed-ish attributes about who the seller is.</p><ul><li>Category (mcats)</li><li>City</li><li>Package tier · account age</li><li>RAG flag · nature of business</li></ul><p>Used by every downstream skill to pick the right peer group, the right script, and the right tone.</p>` },
+  derived: { tag:"snapshot", title:"Derived signals", html:`<p>A small computation layer that turns raw counters into ratios.</p><ul><li><b>bl_velocity_pct</b> — change in Buy Lead consumption</li><li><b>recent_vs_baseline_activity</b> — is the seller fading?</li><li><b>bl_consumption_rate</b> — are they using what they paid for?</li><li><b>pns_pickup_ratio</b> — response health</li><li><b>cqs_band</b>, <b>blni_volume</b>, monthly enq curve</li></ul>` },
+
+  peer: { tag:"phase 0", title:"Peer Benchmark", html:`<p>Compares the seller against the <b>same category × city × tier</b> cohort.</p><p>Removes "we're a small town" excuses. A seller in the 20th percentile of their own peer group is in trouble even if absolute numbers look fine.</p>` },
+  demand: { tag:"phase 0", title:"Demand Index", html:`<p>Is the seller's market alive, saturated, or collapsing? Separates <b>seller fault</b> from <b>market fault</b>.</p><p>A mask manufacturer post-COVID doesn't need a retention pitch — the category vanished. Skipping this step is how teams waste calls on dying markets.</p>` },
+  trajectory: { tag:"phase 0", title:"Conversion Point", html:`<p>Classifies the 12-month enquiry curve into one of three shapes:</p><ul><li><b>Cliff</b> — sudden drop (servicing / quality break)</li><li><b>Drift</b> — slow erosion (catalog rot)</li><li><b>Never engaged</b> — paid but never started</li></ul><p>Decides the opening line of the call.</p>` },
+
+  churn: { tag:"phase 2 · heart of the system", title:"Churn Scoring", html:`<p>14 signals → severity-tiered penalties → compound multiplier when 4+ red flags stack → trajectory adjustment → LLM ±10 sanity check → <b>0–100 score</b>.</p><ul><li><b>Severity tiers</b> — zero reply rate is worse than low reply rate</li><li><b>Compound multiplier</b> — stacks compound, but only past 4 flags</li><li><b>Trajectory</b> — same score means different things for cliff vs drift</li><li><b>LLM second opinion</b> — catches "model says Red but seller paid yesterday"</li></ul><p>Tiers: ≥72 Red · 42–71 Amber · &lt;42 Green.</p>` },
+  onboarding: { tag:"phase 1 · age ≤ 90d only", title:"Onboarding Health", html:`<p>Different scoring path for new sellers. A 30-day-old seller with zero leads isn't churning — they never started.</p><ul><li>7 weighted activation checks (CQS gate, catalog completeness, first BL, KYC, etc.)</li><li>City + category risk priors (high-risk markets add penalty)</li><li>LLM activation plan with Hindi + English opening pitches</li></ul><p>Catches activation gaps in week 1 instead of month 3.</p>` },
+
+  shap: { tag:"root cause · rule-based", title:"SHAP RCA", html:`<p>Looks at which signals contributed most to the churn score. Maps the top contributor into one of 7 buckets:</p><ul><li>POOR_CATALOG · NO_LEADS · LOW_ENGAGEMENT</li><li>BL_DECLINE · LOW_PNS_RESPONSE</li><li>PEER_GAP · RAG_RISK</li></ul><p>The score says <em>how bad</em>. RCA says <em>why</em>. Without it, the rep has no angle.</p>` },
+  cohort: { tag:"root cause · LLM", title:"LLM Cohort Scorer", html:`<p>Compares the seller's BL / LMS / Activity bands to ~50 known-churned and ~50 known-retained sellers.</p><p>Returns risk level, confidence, and the actual GLIDs of similar sellers — so the rep has real precedents: "this seller looks like X who churned and Y who recovered".</p>` },
+
+  xplatform: { tag:"conditional", title:"Cross-Platform Intelligence", html:`<p>Headless scrape of JustDial, TradeIndia, Shopify, and the seller's own website. Counts products, photos, ratings; computes the IM-vs-others gap.</p><p>Runs only when RCA hints at a catalog / lead / engagement issue — saves scrape cost on the ~60% of sellers where it adds no signal.</p><p>Now the rep can say <em>"You have 24 products on JustDial and 8 on IndiaMART"</em> — a fact, not a guess. A large gap also bumps the final churn score before the BL Card is built.</p>` },
+
+  precall: { tag:"phase 3 · messaging", title:"Pre-Call Brief", html:`<p>One phone-card with opening line (Hindi + English), top signals colour-coded by severity, suggested actions, and a do-not-mention list.</p><p>Replaces 5 minutes of CRM trawling with a 30-second card.</p>` },
+  whatsapp: { tag:"phase 3 · messaging", title:"WhatsApp Message", html:`<p>Pre-call warm-up message in Hindi + English, routed by RCA, with a clear CTA.</p><p>Boosts seller pick-up rates when they've already been primed before the rep dials.</p>` },
+  script: { tag:"phase 3 · LLM", title:"Script Generation", html:`<p>5-part LLM-personalised call script (opening, diagnostic, value demo, action, close) built from the seller's own signals.</p><p>Replaces the previous template library where every seller in a category heard the same words.</p>` },
+  gifted: { tag:"phase 3 · action", title:"Gifted Lead", html:`<p>Allocates one real un-served buyer lead from the seller's <code>mcat × city</code> pool — given on the call as proof of platform value.</p><p>The carrot for fence-sitters. Closes a meaningful share of "let me think about it" calls on the same call.</p>` },
+
+  upgrade: { tag:"phase 4", title:"BL Upgrade", html:`<p>Detects sellers whose engagement justifies a tier above their current package, or who should be downgraded gracefully.</p><p>Revenue uplift on accounts the retention pipeline would otherwise leave alone.</p>` },
+  winback: { tag:"phase 5 · churned sellers only", title:"Winback Priority", html:`<p>7 weighted sub-scores + interaction multiplier + cool-off hard gate + LLM ±10.</p><ul><li>Historical quality · demand · recoverability</li><li>Paid history · trajectory · peer recovery · recency</li><li>Cool-off gate prevents calling too early</li></ul><p>Of ~50K churned sellers, surfaces the top ~5K worth calling this week.</p>` },
+
+  blcard: { tag:"phase 6 · aggregator", title:"BL Card", html:`<p>Reads every prior skill's output and produces a single document:</p><ul><li>Verdict — CRITICAL / AT RISK / HEALTHY</li><li>Priority score 0–100</li><li>Signals, action plan, messaging, lookalikes</li><li>Cross-platform pills</li><li>Plain-text summary the rep pastes into CRM</li></ul><p>One seller → one card → one call. End-to-end.</p>` },
+
+  "pipeline-ref": { tag:"orchestrator · tool", title:"run_pipeline(glid)", html:`<p>The orchestrator's single pipeline tool. Executes all 16 leaf skills via the phase definition in <code>pipeline.md</code> and returns a <code>flow_state</code> JSON with <code>derived.*</code>, <code>phases.*</code>, and a tentative <code>final_tier</code>.</p><p>Called <b>once</b> per assessment. Everything else the agent does is interpretation on top of this output.</p>` },
+  o1: { tag:"stage 1", title:"Decline analysis", html:`<p>Reads recent-vs-baseline activity, BL consumption, reply rate.</p><p>Anchors on the seller's <em>own</em> baseline — not a generic "what does a churned seller look like" template. Carries forward a <b>decline_severity</b> verdict: none / mild / moderate / sharp.</p>` },
+  o2: { tag:"stage 2", title:"Engagement health", html:`<p>Reads PNS pickup, CQS band, BLNI volume, and the signal-level score breakdown.</p><p>Classifies the seller as healthy / mixed / frustrated / collapsed. <b>High BLNI is engagement, not churn</b> — frustrated ≠ gone.</p>` },
+  o3: { tag:"stage 3 · most important", title:"Root-cause diagnosis", html:`<p>The pivotal stage. Combines category, city, peer benchmark, SHAP RCA, and world knowledge into a single named root cause.</p><p>This is where the agent can <em>downgrade</em> the pipeline's tier — a "Critical" niche seller in a tiny but stable category may actually be fine.</p>` },
+  o4: { tag:"stage 4", title:"Risk synthesis", html:`<p>Combines the carry-forwards into final <b>risk_tier</b>, <b>churn_score</b>, and <b>confidence</b>. Trusts the diagnosis over the pipeline's raw final_tier.</p><p>Two named overrides:</p><ul><li><code>niche_false_positive</code> — downgrade</li><li><code>newbie_ramp_failure</code> — upgrade</li></ul>` },
+  o5: { tag:"stage 5", title:"Action + outreach", html:`<p>Up to 3 recommended actions tied to the <b>root cause</b>, not just the tier.</p><p>Drafts call-script or email text for Critical &amp; High only — a human RM sends it. Moderate / Low return an empty actions list.</p>` },
+
+  final: { tag:"output", title:"Final structured card", html:`<p>The JSON the RM sees. Fragments and concrete numbers — no narration. Every field has a word budget.</p><ul><li><b>risk_tier</b> · churn_score · confidence · tenure_bucket</li><li><b>root_cause</b> · category_context</li><li>risk_drivers[] · protective_factors[]</li><li>evidence[] (signal · value · interpretation)</li><li>recommended_actions[] · drafted_outreach</li><li>data_gaps[]</li></ul>` },
+};
+
+const body = document.body;
+const panel = document.getElementById('panel');
+const ptag = document.getElementById('ptag');
+const ptitle = document.getElementById('ptitle');
+const pbody = document.getElementById('pbody');
+const nodes = document.querySelectorAll('.node');
+
+function clearFocus(){
+  body.classList.remove('focus');
+  nodes.forEach(n => n.classList.remove('active'));
+}
+
+nodes.forEach(n => {
+  n.addEventListener('click', e => {
+    e.stopPropagation();
+    const id = n.getAttribute('data-id');
+    const wasActive = n.classList.contains('active');
+    nodes.forEach(o => o.classList.remove('active'));
+    if (wasActive){ clearFocus(); return; }
+    n.classList.add('active');
+    body.classList.add('focus');
+    const d = D[id] || {tag:'', title:id, html:''};
+    ptag.textContent = d.tag;
+    ptitle.textContent = d.title;
+    pbody.innerHTML = d.html;
+  });
+});
+
+document.getElementById('closeBtn').addEventListener('click', e => { e.stopPropagation(); clearFocus(); });
+document.addEventListener('click', clearFocus);
+document.addEventListener('keydown', e => { if (e.key === 'Escape') clearFocus(); });
+</script>
+
+</body>
+</html>

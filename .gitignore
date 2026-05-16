@@ -1,1 +1,6 @@
 .env
+runs/*
+cohort.csv
+seller_survival/data/loader_cache*
+api_outputs*
+.claude

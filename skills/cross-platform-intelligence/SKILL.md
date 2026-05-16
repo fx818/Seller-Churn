@@ -2,53 +2,6 @@
 name: cross-platform-intelligence
 description: Headless-browser scrape of the seller's footprint on JustDial, TradeIndia, their own website (from email domain), and Shopify, then compute the catalog gap vs IndiaMART using product-name matching with Jaccard similarity to deduplicate cross-listed inventory. Use this skill in Phase 3c of the churn pipeline (only for Red/Amber sellers with catalog/lead/engagement RCAs) to surface where the seller is investing instead of IndiaMART.
 compatibility: Requires Python 3.11+, seller_survival package
-metadata:
-  version: "1.0"
-  category: analysis
-  python_class: cross-platform-intelligence
-  inputs:
-    required:
-      - key: glid
-        source: snapshot.glid
-        type: int
-      - key: company
-        source: context.company
-        type: str
-      - key: city
-        source: context.city
-        type: str
-    optional:
-      - key: mcats
-        source: context.mcats
-        type: list
-      - key: rca_category
-        source: flow.rca_category
-        type: str
-      - key: ctype
-        source: context.custtype
-        type: str
-      - key: im_product_count
-        source: behavioral.activity.approved_products
-        type: int
-  outputs:
-    - key: platforms_found
-      type: list
-    - key: platform_data
-      type: dict
-    - key: im_catalog_gap
-      type: dict
-    - key: call_card
-      type: dict
-    - key: competitive_positioning
-      type: str
-    - key: scrape_status
-      type: str
-    - key: company_name_used
-      type: str
-    - key: im_product_count
-      type: int
-    - key: own_website_domain
-      type: str
 ---
 
 # Cross-Platform Intelligence Skill

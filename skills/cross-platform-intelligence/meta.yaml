@@ -1,0 +1,46 @@
+version: "1.0"
+category: analysis
+python_class: cross-platform-intelligence
+inputs:
+  required:
+    - key: glid
+      source: snapshot.glid
+      type: int
+    - key: company
+      source: context.company
+      type: str
+    - key: city
+      source: context.city
+      type: str
+  optional:
+    - key: mcats
+      source: context.mcats
+      type: list
+    - key: rca_category
+      source: flow.rca_category
+      type: str
+    - key: ctype
+      source: context.custtype
+      type: str
+    - key: im_product_count
+      source: behavioral.activity.approved_products
+      type: int
+outputs:
+  - key: platforms_found
+    type: list
+  - key: platform_data
+    type: dict
+  - key: im_catalog_gap
+    type: dict
+  - key: call_card
+    type: dict
+  - key: competitive_positioning
+    type: str
+  - key: scrape_status
+    type: str
+  - key: company_name_used
+    type: str
+  - key: im_product_count
+    type: int
+  - key: own_website_domain
+    type: str

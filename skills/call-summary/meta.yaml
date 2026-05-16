@@ -1,0 +1,28 @@
+version: "1.0"
+category: analysis
+python_class: call-summary
+inputs:
+  required:
+    - key: glid
+      source: snapshot.glid
+      type: int
+  optional:
+    - key: company
+      source: context.company
+      type: str
+    - key: rca_category
+      source: flow.rca_category
+      type: str
+outputs:
+  - key: summary_lines
+    type: list
+  - key: sentiment
+    type: str
+  - key: updated_rca
+    type: str
+  - key: stated_concern
+    type: str
+  - key: next_action
+    type: str
+  - key: next_action_detail
+    type: str

@@ -2,51 +2,6 @@
 name: whatsapp-message
 description: Generate a personalized warmup WhatsApp message in Hindi and English keyed to the seller's RCA category, with CTA and an estimated open rate. Use this skill in Phase 3 of the churn pipeline (Red/Amber sellers) to send before the rep's call so the seller is primed before pickup.
 compatibility: Requires Python 3.11+, seller_survival package
-metadata:
-  version: "1.0"
-  category: messaging
-  python_class: whatsapp-message
-  inputs:
-    required:
-      - key: glid
-        source: snapshot.glid
-        type: int
-    optional:
-      - key: company
-        source: context.company
-        type: str
-      - key: city
-        source: context.city
-        type: str
-      - key: enterprise
-        source: context.custtype
-        type: str
-      - key: rca_category
-        source: flow.rca_category
-        type: str
-      - key: enq_30d
-        source: behavioral.bl.received_30d
-        type: int
-      - key: cqs
-        source: behavioral.activity.cqs
-        type: float
-      - key: pns_success_pct
-        source: derived.pns_success_pct
-        type: float
-      - key: bl_velocity_pct
-        source: derived.bl_velocity_pct
-        type: float
-  outputs:
-    - key: message_hi
-      type: str
-    - key: message_en
-      type: str
-    - key: cta
-      type: str
-    - key: rca_used
-      type: str
-    - key: estimated_open_rate
-      type: float
 ---
 
 # WhatsApp Message Skill

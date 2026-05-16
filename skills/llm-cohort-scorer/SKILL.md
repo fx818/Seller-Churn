@@ -2,40 +2,6 @@
 name: llm-cohort-scorer
 description: LLM-based churn risk assessment that compares the seller against 10 churned + 10 retained look-alike sellers from the 292-seller reference cohort, returning a qualitative risk level, confidence score, BL/LMS/Activity bands, narrative reasoning, and the two lookalike GLID lists. Use this skill in Phase 2b of the churn pipeline as a qualitative second opinion alongside the quantitative `churn-scoring`, especially for sellers older than 90 days with a snapshot history.
 compatibility: Requires Python 3.11+, seller_survival package
-metadata:
-  version: "1.0"
-  category: scoring
-  python_class: llm-cohort-scorer
-  inputs:
-    required:
-      - key: glid
-        source: snapshot.glid
-        type: int
-    optional:
-      - key: account_age_days
-        source: context.account_age_days
-        type: int
-      - key: api_responses
-        source: flow.api_responses
-        type: dict
-      - key: model
-        source: flow.model
-        type: str
-  outputs:
-    - key: risk_level
-      type: str
-    - key: pipeline_tier
-      type: str
-    - key: confidence_score
-      type: float
-    - key: bands
-      type: dict
-    - key: reasoning
-      type: str
-    - key: churned_lookalikes
-      type: list
-    - key: retained_lookalikes
-      type: list
 ---
 
 # LLM Cohort Scorer Skill

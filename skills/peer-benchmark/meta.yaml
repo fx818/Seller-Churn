@@ -1,0 +1,40 @@
+version: "1.0"
+category: analysis
+python_class: peer-benchmark
+inputs:
+  required:
+    - key: glid
+      source: snapshot.glid
+      type: int
+  optional:
+    - key: enterprise
+      source: context.custtype
+      type: str
+    - key: ctype
+      source: context.custtype
+      type: str
+    - key: enq_30d
+      source: behavioral.bl.received_30d
+      type: int
+      default: 0
+    - key: active_days_30d
+      source: behavioral.lms.lms_active_days_30d
+      type: int
+      default: 0
+    - key: cqs
+      source: behavioral.activity.cqs
+      type: float
+    - key: pns_success_pct
+      source: derived.pns_success_pct
+      type: float
+outputs:
+  - key: peer_group
+    type: str
+  - key: peer_percentile
+    type: float
+  - key: peer_delta_pct
+    type: float
+  - key: peer_median_enq
+    type: float
+  - key: peer_benchmark_result
+    type: dict

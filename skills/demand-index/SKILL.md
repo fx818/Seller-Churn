@@ -2,39 +2,6 @@
 name: demand-index
 description: Evaluate the buyer demand health in the seller's city × category combination and flag high-risk combos (e.g. dying mcat, oversaturated city). Use this skill in Phase 0 of the churn pipeline so churn-scoring and winback-priority can distinguish "seller fault" from "market collapsed" — sellers in dying categories should not be retention-spent the same way as sellers in healthy markets.
 compatibility: Requires Python 3.11+, seller_survival package
-metadata:
-  version: "1.0"
-  category: analysis
-  python_class: demand-index
-  inputs:
-    required:
-      - key: glid
-        source: snapshot.glid
-        type: int
-    optional:
-      - key: city
-        source: context.city
-        type: str
-      - key: mcats
-        source: context.mcats
-        type: list
-      - key: weekly_bl_active
-        source: behavioral.bl.weekly_bl_active
-        type: list
-      - key: monthly_enq
-        source: derived.monthly_enq
-        type: list
-  outputs:
-    - key: demand_health
-      type: str
-    - key: demand_index
-      type: int
-    - key: city_risk
-      type: str
-    - key: category_risk
-      type: str
-    - key: demand_index_result
-      type: dict
 ---
 
 # Demand Index Skill

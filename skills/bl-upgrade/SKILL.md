@@ -2,48 +2,6 @@
 name: bl-upgrade
 description: Identify sellers eligible for a Buy Lead (BL) tier upgrade and choose between two modes — a retention-mode (at-risk seller close to renewal) and a growth-mode (FreeList seller showing healthy engagement around day 25-35). Use this skill in the action phase of the churn pipeline whenever you want to know whether and how to pitch a BL upgrade to a specific seller.
 compatibility: Requires Python 3.11+, seller_survival package
-metadata:
-  version: "1.0"
-  category: action
-  python_class: bl-upgrade
-  inputs:
-    required:
-      - key: glid
-        source: snapshot.glid
-        type: int
-    optional:
-      - key: churn_score
-        source: flow.churn_score
-        type: int
-      - key: ctype
-        source: context.custtype
-        type: str
-      - key: account_age_days
-        source: context.account_age_days
-        type: int
-      - key: active_days_30d
-        source: behavioral.lms.lms_active_days_30d
-        type: int
-      - key: replied_30d
-        source: behavioral.bl.replied_90d
-        type: int
-      - key: enq_30d
-        source: behavioral.bl.received_30d
-        type: int
-      - key: llm_risk_level
-        source: flow.risk_level
-        type: str
-  outputs:
-    - key: upgrade_eligible
-      type: bool
-    - key: upgrade_mode
-      type: str
-    - key: recommended_tier
-      type: str
-    - key: upgrade_reason
-      type: str
-    - key: pitch_angle
-      type: str
 ---
 
 # BL Upgrade Skill

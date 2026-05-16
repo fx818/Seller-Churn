@@ -1,0 +1,128 @@
+version: "2.0"
+category: messaging
+python_class: script-generation
+inputs:
+  required:
+    - key: glid
+      source: snapshot.glid
+      type: int
+  optional:
+    - key: seller_name
+      source: context.company
+      type: str
+    - key: company
+      source: context.company
+      type: str
+    - key: city
+      source: context.city
+      type: str
+    - key: enterprise
+      source: context.custtype
+      type: str
+    - key: ctype
+      source: context.custtype
+      type: str
+    - key: account_age_days
+      source: context.account_age_days
+      type: int
+    - key: churn_score
+      source: flow.churn_score
+      type: int
+    - key: risk
+      source: flow.risk
+      type: str
+    - key: llm_risk_level
+      source: flow.llm_risk_level
+      type: str
+    - key: llm_reasoning
+      source: flow.reasoning
+      type: str
+    - key: churn_reasons
+      source: flow.churn_reasons
+      type: list
+    - key: reply_rate_30d
+      source: flow.reply_rate_30d
+      type: float
+    - key: bl_velocity_pct
+      source: derived.bl_velocity_pct
+      type: float
+    - key: pns_success_pct
+      source: derived.pns_success_pct
+      type: float
+    - key: active_days_30d
+      source: behavioral.lms.lms_active_days_30d
+      type: int
+    - key: cqs
+      source: behavioral.activity.cqs
+      type: float
+    - key: enq_30d
+      source: behavioral.bl.received_30d
+      type: int
+    - key: rca_category
+      source: flow.rca_category
+      type: str
+    - key: rca_explanation_en
+      source: flow.rca_explanation_en
+      type: str
+    - key: rca_explanation_hi
+      source: flow.rca_explanation_hi
+      type: str
+    - key: intervention_hint
+      source: flow.intervention_hint
+      type: str
+    - key: peer_median_enq
+      source: flow.peer_median_enq
+      type: float
+    - key: peer_summary_line
+      source: flow.peer_summary_line
+      type: str
+    - key: demand_tier
+      source: flow.demand_tier
+      type: str
+    - key: demand_explanation
+      source: flow.demand_explanation
+      type: str
+    - key: trajectory_type
+      source: flow.trajectory_type
+      type: str
+    - key: trajectory_label
+      source: flow.trajectory_label
+      type: str
+    - key: explanation
+      source: flow.explanation
+      type: str
+    - key: platforms_found
+      source: flow.platforms_found
+      type: list
+    - key: platform_data
+      source: flow.platform_data
+      type: dict
+    - key: im_catalog_gap
+      source: flow.im_catalog_gap
+      type: dict
+    - key: call_card
+      source: flow.call_card
+      type: dict
+    - key: days_to_renewal
+      source: flow.days_to_renewal
+      type: int
+    - key: language
+      source: flow.language
+      type: str
+outputs:
+  - key: script_parts
+    type: dict
+  - key: script_parts_en
+    type: dict
+  - key: objection_handlers
+    type: dict
+  - key: estimated_duration_min
+    type: int
+  - key: llm_used
+    type: bool
+  - key: generation_method
+    type: str
+  - key: personalization_signals_used
+    type: list
+  - key: rca_used
+    type: str

@@ -1,0 +1,1171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Seller Risk · Three Cases</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:           #faf9f6;
+      --bg-2:         #f3f1ec;
+      --surface:      #ffffff;
+      --ink:          #0e0e0c;
+      --ink-2:        #4a4842;
+      --ink-3:        #8a877f;
+      --line:         #ece8df;
+      --line-2:       #d8d3c6;
+
+      --crit:         #d94528;
+      --crit-soft:    #fcebe5;
+      --high:         #c47615;
+      --high-soft:    #faeed5;
+      --mod:          #4b7f5d;
+      --mod-soft:     #e5efe7;
+      --low:          #2f5a3e;
+      --low-soft:     #dfeae0;
+
+      --tier:         var(--crit);
+      --tier-soft:    var(--crit-soft);
+
+      --radius:       14px;
+      --radius-lg:    20px;
+      --shadow-sm:    0 1px 2px rgba(14,14,12,0.04), 0 1px 1px rgba(14,14,12,0.02);
+      --shadow-md:    0 4px 14px rgba(14,14,12,0.06), 0 1px 2px rgba(14,14,12,0.04);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Inter", system-ui, sans-serif;
+      font-size: 15px;
+      line-height: 1.55;
+      letter-spacing: -0.005em;
+      -webkit-font-smoothing: antialiased;
+      font-feature-settings: "ss01", "cv01";
+    }
+
+    /* ─── Top bar ────────────────────────────── */
+    .topbar {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(14px) saturate(140%);
+      background: rgba(250,249,246,0.78);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar-inner {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 14px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: -0.01em;
+    }
+    .brand-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--tier);
+      box-shadow: 0 0 0 4px var(--tier-soft);
+      transition: background 320ms ease, box-shadow 320ms ease;
+    }
+    .brand span.thin { color: var(--ink-3); font-weight: 400; margin-left: 2px; }
+    .topbar nav {
+      font-size: 13px;
+      color: var(--ink-2);
+      display: flex; gap: 26px;
+    }
+    .topbar nav a { color: inherit; text-decoration: none; }
+    .topbar nav a:hover { color: var(--ink); }
+    .pill {
+      font-family: "Inter", sans-serif;
+      font-size: 11px;
+      padding: 4px 10px;
+      border: 1px solid var(--line-2);
+      border-radius: 999px;
+      color: var(--ink-2);
+      background: var(--surface);
+    }
+
+    /* ─── App layout ─────────────────────────── */
+    .app {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 32px 32px 96px;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 36px;
+    }
+    @media (max-width: 980px) {
+      .app { grid-template-columns: 1fr; padding: 24px 18px 80px; }
+      .sidebar { position: relative !important; top: 0 !important; }
+    }
+
+    /* ─── Sidebar ────────────────────────────── */
+    .sidebar { position: sticky; top: 84px; align-self: start; }
+    .sidebar h2 {
+      font-family: "Inter", sans-serif;
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      margin: 0 0 14px;
+      padding-left: 4px;
+    }
+    .case-list {
+      display: grid; gap: 10px;
+    }
+    .case-card {
+      all: unset;
+      cursor: pointer;
+      padding: 16px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      display: grid;
+      grid-template-columns: 4px 1fr;
+      gap: 14px;
+      align-items: center;
+      transition: all 200ms ease;
+      position: relative;
+    }
+    .case-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-1px);
+    }
+    .case-card[aria-selected="true"] {
+      background: var(--ink);
+      color: var(--bg);
+      border-color: var(--ink);
+    }
+    .case-card[aria-selected="true"] .case-sub,
+    .case-card[aria-selected="true"] .case-meta { color: rgba(250,249,246,0.66); }
+    .case-stripe { background: var(--accent); height: 100%; min-height: 44px; border-radius: 3px; }
+    .case-body { display: grid; gap: 4px; }
+    .case-name {
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: -0.01em;
+    }
+    .case-sub {
+      font-size: 12px;
+      color: var(--ink-2);
+    }
+    .case-meta {
+      font-family: "Inter", sans-serif;
+      font-size: 10px;
+      color: var(--ink-3);
+      letter-spacing: 0.04em;
+      margin-top: 2px;
+    }
+
+    /* ─── Main ───────────────────────────────── */
+    main { min-width: 0; }
+    .page {
+      animation: page-in 380ms cubic-bezier(.2,.7,.2,1) both;
+    }
+    @keyframes page-in { from { opacity: 0; transform: translateY(8px);} to { opacity: 1; transform: none;} }
+
+    /* Hero */
+    .hero {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 36px;
+      align-items: center;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 100% 0%, var(--tier-soft) 0%, transparent 40%);
+      pointer-events: none;
+      opacity: 0.55;
+    }
+    .hero > * { position: relative; z-index: 1; }
+    @media (max-width: 760px) {
+      .hero { grid-template-columns: 1fr; padding: 24px; gap: 20px; }
+    }
+
+    .score-ring {
+      width: 132px; height: 132px;
+      position: relative;
+      display: grid;
+      place-items: center;
+    }
+    .score-ring svg { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotate(-90deg); }
+    .score-ring .ring-track { stroke: var(--bg-2); }
+    .score-ring .ring-fill  { stroke: var(--tier); stroke-linecap: round; transition: stroke-dashoffset 900ms cubic-bezier(.2,.7,.2,1); }
+    .score-num {
+      font-family: "Inter", sans-serif;
+      font-style: italic;
+      font-size: 56px;
+      line-height: 1;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+    }
+    .score-num small {
+      font-family: "Inter", sans-serif;
+      font-style: normal;
+      font-size: 11px;
+      color: var(--ink-3);
+      display: block;
+      margin-top: 2px;
+      letter-spacing: 0.1em;
+    }
+
+    .hero-mid { min-width: 0; }
+    .tier-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--tier-soft);
+      color: var(--tier);
+      font-family: "Inter", sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .tier-badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--tier); }
+    .hero h1 {
+      margin: 12px 0 6px;
+      font-size: clamp(28px, 3.6vw, 42px);
+      letter-spacing: -0.025em;
+      line-height: 1.05;
+      font-weight: 600;
+    }
+    .hero .loc {
+      color: var(--ink-2);
+      font-size: 15px;
+    }
+    .hero .loc em {
+      font-family: "Inter", sans-serif;
+      font-style: italic;
+      color: var(--ink);
+      font-weight: 400;
+    }
+
+    .hero-meta {
+      text-align: right;
+      font-family: "Inter", sans-serif;
+      font-size: 11px;
+      color: var(--ink-3);
+      letter-spacing: 0.06em;
+      display: grid; gap: 6px;
+    }
+    .hero-meta b { color: var(--ink); font-weight: 500; }
+
+    /* Summary block */
+    .summary {
+      margin-top: 24px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-left: 3px solid var(--tier);
+      border-radius: var(--radius);
+      padding: 22px 26px;
+      font-family: "Inter", sans-serif;
+      font-size: 22px;
+      font-style: italic;
+      line-height: 1.4;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
+    .summary b {
+      font-style: normal;
+      font-family: "Inter", sans-serif;
+      font-weight: 600;
+      background: var(--tier-soft);
+      padding: 0 6px;
+      border-radius: 4px;
+      color: var(--tier);
+    }
+
+    /* Section heading */
+    .section { margin-top: 36px; }
+    .section h2 {
+      font-family: "Inter", sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+      margin: 0 0 14px;
+    }
+    .section h2 .num {
+      display: inline-grid;
+      place-items: center;
+      width: 18px; height: 18px;
+      background: var(--ink);
+      color: var(--bg);
+      border-radius: 4px;
+      font-size: 10px;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    /* Stats grid */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 12px;
+    }
+    .stat {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px 16px 14px;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      overflow: hidden;
+      transition: transform 200ms ease, box-shadow 200ms ease;
+    }
+    .stat:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .stat-label {
+      font-size: 11px;
+      color: var(--ink-3);
+      letter-spacing: 0.02em;
+      margin-bottom: 8px;
+      line-height: 1.3;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    .stat-value {
+      font-family: "Inter", sans-serif;
+      font-size: 32px;
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+    .stat-value.tier { color: var(--tier); }
+    .stat-unit {
+      font-family: "Inter", sans-serif;
+      font-style: normal;
+      font-size: 12px;
+      color: var(--ink-3);
+      margin-left: 4px;
+      font-weight: 400;
+    }
+    .stat-bar {
+      margin-top: 10px;
+      height: 4px;
+      background: var(--bg-2);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .stat-bar > span {
+      display: block;
+      height: 100%;
+      background: var(--tier);
+      border-radius: 999px;
+      animation: bar-grow 700ms cubic-bezier(.2,.7,.2,1) both;
+    }
+    @keyframes bar-grow { from { width: 0 !important; } }
+
+    /* Trend chart card */
+    .trend-card {
+      grid-column: span 2;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px 18px 14px;
+      box-shadow: var(--shadow-sm);
+    }
+    .trend-card .stat-label { margin-bottom: 14px; }
+    .bars {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 4px;
+      height: 72px;
+      align-items: end;
+    }
+    .bar {
+      background: var(--bg-2);
+      border-radius: 3px 3px 0 0;
+      min-height: 3px;
+      transform-origin: bottom;
+      animation: bar-rise 700ms cubic-bezier(.2,.7,.2,1) both;
+    }
+    .bar.recent { background: var(--tier); }
+    .bar.zero   { background: transparent; border-top: 1.5px dashed var(--ink-3); height: 1px !important; min-height: 1px; }
+    .bar:nth-child(1){animation-delay:40ms}.bar:nth-child(2){animation-delay:80ms}.bar:nth-child(3){animation-delay:120ms}
+    .bar:nth-child(4){animation-delay:160ms}.bar:nth-child(5){animation-delay:200ms}.bar:nth-child(6){animation-delay:240ms}
+    .bar:nth-child(7){animation-delay:280ms}.bar:nth-child(8){animation-delay:320ms}.bar:nth-child(9){animation-delay:360ms}
+    .bar:nth-child(10){animation-delay:400ms}.bar:nth-child(11){animation-delay:440ms}.bar:nth-child(12){animation-delay:480ms}
+    @keyframes bar-rise { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+    .trend-axis {
+      display: flex; justify-content: space-between;
+      font-family: "Inter", sans-serif;
+      font-size: 10px;
+      color: var(--ink-3);
+      margin-top: 8px;
+      letter-spacing: 0.06em;
+    }
+
+    /* Two-column layout */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 760px) { .two-col { grid-template-columns: 1fr; } }
+
+    /* Driver / protector lists */
+    .list-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px 22px 18px;
+      box-shadow: var(--shadow-sm);
+    }
+    .list-card h3 {
+      margin: 0 0 14px;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .list-card h3 .marker {
+      width: 8px; height: 8px; border-radius: 2px;
+    }
+    .marker.risk { background: var(--tier); }
+    .marker.good { background: #4b7f5d; }
+    .list-card ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+    .list-card li {
+      font-size: 14px;
+      color: var(--ink);
+      padding-left: 22px;
+      position: relative;
+      line-height: 1.5;
+    }
+    .list-card li::before {
+      content: ""; position: absolute;
+      left: 0; top: 8px;
+      width: 12px; height: 2px;
+      background: var(--ink-3);
+      border-radius: 1px;
+    }
+    .list-card.risk li::before { background: var(--tier); }
+
+    /* Evidence table */
+    .ev {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .ev table { width: 100%; border-collapse: collapse; }
+    .ev th, .ev td {
+      text-align: left;
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--line);
+      font-size: 13px;
+      vertical-align: top;
+    }
+    .ev thead th {
+      background: var(--bg-2);
+      color: var(--ink-3);
+      font-family: "Inter", sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 10px 18px;
+    }
+    .ev tr:last-child td { border-bottom: none; }
+    .ev td.signal { font-weight: 500; white-space: nowrap; width: 26%; }
+    .ev td.value  { font-family: "Inter", sans-serif; color: var(--tier); white-space: nowrap; width: 22%; }
+    .ev td.interp { color: var(--ink-2); }
+
+    /* Action cards */
+    .actions { display: grid; gap: 12px; }
+    .action {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px 22px;
+      box-shadow: var(--shadow-sm);
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+    .action.primary {
+      background: var(--ink);
+      color: var(--bg);
+      border-color: var(--ink);
+    }
+    .action.primary .action-num { background: var(--tier); color: var(--bg); }
+    .action.primary .action-rationale { color: rgba(250,249,246,0.66); }
+    .action-num {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: var(--tier-soft);
+      color: var(--tier);
+      display: grid; place-items: center;
+      font-family: "Inter", sans-serif;
+      font-style: italic;
+      font-size: 18px;
+      font-weight: 500;
+    }
+    .action-text {
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.4;
+      letter-spacing: -0.005em;
+    }
+    .action-rationale {
+      margin-top: 6px;
+      font-size: 12px;
+      color: var(--ink-3);
+      font-family: "Inter", sans-serif;
+      letter-spacing: 0.01em;
+    }
+
+    /* Outreach card */
+    .outreach {
+      background: linear-gradient(180deg, var(--tier-soft) 0%, var(--surface) 100%);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px 26px;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+    }
+    .outreach-tag {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      font-family: "Inter", sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--tier);
+      background: var(--surface);
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+    }
+    .outreach-subject {
+      margin: 14px 0 6px;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+    }
+    .outreach-body {
+      font-family: "Inter", sans-serif;
+      font-size: 17px;
+      font-style: italic;
+      line-height: 1.55;
+      color: var(--ink-2);
+    }
+    .outreach-sign {
+      margin-top: 14px;
+      font-family: "Inter", sans-serif;
+      font-size: 11px;
+      color: var(--ink-3);
+      letter-spacing: 0.08em;
+    }
+
+    /* Pipeline vs synthesis */
+    .compare {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px 22px;
+      box-shadow: var(--shadow-sm);
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 22px;
+    }
+    .compare-col h4 {
+      margin: 0 0 6px;
+      font-family: "Inter", sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-3);
+    }
+    .compare-col .v {
+      font-family: "Inter", sans-serif;
+      font-style: italic;
+      font-size: 28px;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    .compare-col .v small {
+      font-family: "Inter", sans-serif;
+      font-style: normal;
+      font-size: 11px;
+      color: var(--ink-3);
+      letter-spacing: 0.06em;
+      margin-left: 8px;
+    }
+    .compare-arrow {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: var(--bg-2);
+      display: grid; place-items: center;
+      color: var(--ink-2);
+      font-family: "Inter", sans-serif;
+      font-size: 14px;
+    }
+    .compare-note {
+      grid-column: 1 / -1;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--line-2);
+      font-size: 13px;
+      color: var(--ink-2);
+      line-height: 1.55;
+    }
+    @media (max-width: 580px) { .compare { grid-template-columns: 1fr; } .compare-arrow { transform: rotate(90deg); } }
+
+    /* Data gaps */
+    .gaps {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px 22px;
+      box-shadow: var(--shadow-sm);
+    }
+    .gaps summary {
+      cursor: pointer; list-style: none;
+      display: flex; align-items: center; gap: 10px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ink-2);
+    }
+    .gaps summary::-webkit-details-marker { display: none; }
+    .gaps summary::before {
+      content: ""; width: 8px; height: 8px; border-right: 2px solid var(--ink-3); border-bottom: 2px solid var(--ink-3);
+      transform: rotate(-45deg);
+      transition: transform 200ms ease;
+    }
+    .gaps[open] summary::before { transform: rotate(45deg); }
+    .gaps ul { margin: 14px 0 0 0; padding-left: 22px; }
+    .gaps li { font-size: 13px; color: var(--ink-2); padding: 4px 0; }
+    .gaps .conf-tag {
+      margin-left: auto;
+      font-family: "Inter", sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: var(--bg-2);
+      color: var(--ink-2);
+    }
+
+    /* Tier theming */
+    [data-tier="critical"] { --tier: var(--crit); --tier-soft: var(--crit-soft); --accent: var(--crit); }
+    [data-tier="high"]     { --tier: var(--high); --tier-soft: var(--high-soft); --accent: var(--high); }
+    [data-tier="moderate"] { --tier: var(--mod);  --tier-soft: var(--mod-soft);  --accent: var(--mod);  }
+    [data-tier="low"]      { --tier: var(--low);  --tier-soft: var(--low-soft);  --accent: var(--low);  }
+    [data-accent="critical"] { --accent: var(--crit); }
+    [data-accent="high"]     { --accent: var(--high); }
+    [data-accent="moderate"] { --accent: var(--mod);  }
+    [data-accent="low"]      { --accent: var(--low);  }
+  </style>
+</head>
+<body data-tier="critical">
+
+  <!-- ───── TOP BAR ───────────────────────────── -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <span class="brand-dot"></span>
+        Seller Risk<span class="thin">·three cases</span>
+      </div>
+      <nav>
+        <a href="#verdict">Verdict</a>
+        <a href="#signals">Signals</a>
+        <a href="#actions">Actions</a>
+        <a href="#outreach">Outreach</a>
+      </nav>
+      <span class="pill" id="run-stamp">runs · 2026·05·16</span>
+    </div>
+  </header>
+
+  <div class="app">
+
+    <!-- ───── SIDEBAR ───────────────────────────── -->
+    <aside class="sidebar">
+      <h2>Case files</h2>
+      <div class="case-list" id="case-list"><!-- injected --></div>
+    </aside>
+
+    <!-- ───── MAIN ──────────────────────────────── -->
+    <main>
+      <div class="page" id="page"><!-- injected --></div>
+    </main>
+
+  </div>
+
+  <script>
+    // ─── CASE DATA (from real agent output: runs/trace_<glid>/synthesis_card.json) ───
+    const CASES = [
+      {
+        slug: "curtains",
+        tier: "critical",
+        tier_name: "Critical",
+        score: 82,
+        glid: 205634747,
+        company: "Mumbai Curtains",
+        city: "Coimbatore, Tamil Nadu",
+        tenure: "2 years 5 months",
+        custtype: "CATALOG",
+        turnover: "₹0 – 40 L",
+        confidence: "medium",
+        root_cause: "engagement collapse",
+
+        summary: "After two years of steady activity, this seller <b>fell off a cliff three months ago</b>. Zero replies, zero logins, zero clicks. They're still picking up phone calls sometimes — the only thread left.",
+
+        stats: [
+          { label: "Reply rate",     value: "0",   unit: "%", bar: 0, tier: true,
+            sub: "0 of 1 buy leads answered" },
+          { label: "Active days",    value: "0",   unit: "/ 30", bar: 0, tier: true,
+            sub: "in the last 30 days" },
+          { label: "Activity vs baseline", value: "0", unit: "×", bar: 0, tier: true,
+            sub: "0 enquiries vs 2-4/mo earlier" },
+          { label: "Phone pickup",   value: "40",  unit: "%", bar: 40,
+            sub: "still partially reachable" },
+          { label: "Catalog quality",value: "73",  unit: "/ 100", bar: 73,
+            sub: "medium band — not the cause" },
+          { label: "Tenure",         value: "29",  unit: "months", bar: 100,
+            sub: "mature paid history" },
+        ],
+        trend: { values: [1,2,3,3,0,1,3,2,4,0,0,0], recent_from: 9 },
+
+        risk_drivers: [
+          "100% activity cliff at month 10 (sudden, not gradual)",
+          "Zero reply rate across 30 days",
+          "Zero days active on platform (last 30 / 30)",
+          "Zero clickstream events — no platform footprint",
+        ],
+        protective_factors: [
+          "PNS pickup 40% — still answers some buyer calls",
+          "Mature 2.4-year tenure with paid history",
+        ],
+
+        evidence: [
+          { signal: "Trajectory pattern",      value: "TYPE_A, 100% drop", interp: "Sudden cliff at month 10" },
+          { signal: "Reply rate (30d)",        value: "0%",                interp: "Below 5% engagement floor" },
+          { signal: "Active days (30d)",       value: "0 / 30",            interp: "Total platform abandonment" },
+          { signal: "PNS pickup",              value: "40%",               interp: "Mixed — partially reachable" },
+          { signal: "Recent vs baseline",      value: "0.0",               interp: "Sharp decline band (>70% drop)" },
+          { signal: "Last successful call",    value: "2026-05-11",        interp: "5 days before run — fresh contact" },
+        ],
+
+        actions: [
+          { text: "RM-led save call within 7 days; offer retention discount or service review.",
+            rationale: "Engagement collapse — total platform abandonment after sudden cliff" },
+          { text: "Audit catalog and re-tag product categories (currently empty) to restore lead flow.",
+            rationale: "MCATs unmapped — blocking buy-lead allocation" },
+          { text: "Schedule renewal conversation before NACH window.",
+            rationale: "Mature 876-day tenure worth saving" },
+        ],
+
+        outreach: {
+          channel: "Phone call (script)",
+          subject: "Quick check on your IndiaMART account",
+          body: "Namaste — Mumbai Curtains pichhle 3 mahine se IndiaMART par active nahi hai, month 10 ke baad activity zero ho gayi. Coimbatore market mein aapke jaisa 2-saal pura seller waapas laana hum chahte hain — 15 minute mein situation samajhna chahenge.",
+          sign: "Your IndiaMART team",
+        },
+
+        compare: {
+          pipeline_tier:  "High",  pipeline_score: 68,
+          synthesis_tier: "Critical", synthesis_score: 82,
+          note: "Pipeline scored 68/100 (High) because its rule-based scorer caps trajectory bonus at +5 and LLM adjustment at +10. Synthesis upgrades to Critical via the engagement_collapse rule — sharp decline + collapsed engagement always warrants the top tier."
+        },
+
+        gaps: [
+          "Product categories (MCATs) empty — can't diagnose category fit",
+          "Buy-lead complaint reasons missing — wrong product / location / spec share unknown",
+          "Peer benchmark has 0 sellers in this segment — no relative read",
+          "LLM cohort lookalikes skipped — snapshots.parquet not built",
+          "Last call summary text missing — qualitative context unavailable",
+        ],
+      },
+
+      {
+        slug: "tyres",
+        tier: "high",
+        tier_name: "High",
+        score: 64,
+        glid: 966321,
+        company: "Merhaba Tyres",
+        city: "Secunderabad, Telangana",
+        tenure: "18 years 7 months",
+        custtype: "CATALOG",
+        turnover: "₹1.5 – 5 Cr",
+        confidence: "medium",
+        root_cause: "catalog quality gap",
+
+        summary: "Looks like a star customer from the outside — 18 years on the platform, ₹1.5-5 Cr turnover. But the storefront scores <b>21 out of 100</b>, and only 6 of every 100 buyer messages get a reply.",
+
+        stats: [
+          { label: "Catalog quality", value: "21",  unit: "/ 100", bar: 21, tier: true,
+            sub: "very low band" },
+          { label: "Reply rate",      value: "6.4", unit: "%", bar: 6.4, tier: true,
+            sub: "94 of 100 messages ignored" },
+          { label: "BL consumption",  value: "30.8",unit: "%", bar: 30.8,
+            sub: "borderline competitive" },
+          { label: "Activity vs baseline", value: "0.84", unit: "×", bar: 84,
+            sub: "stable — no decline" },
+          { label: "Phone pickup",    value: "60",  unit: "%", bar: 60,
+            sub: "responsive on phone" },
+          { label: "Tenure",          value: "18.6",unit: "years", bar: 100,
+            sub: "premium long-term customer" },
+        ],
+        trend: { values: [47,64,33,47,14,40,43,52,32,36,38,23], recent_from: 9 },
+
+        risk_drivers: [
+          "Catalog quality 21/100 — bottom band, suppressing buyer trust",
+          "Reply rate 6.4% across 100+ inbound messages",
+          "BL consumption 30.8% — weak queue competitiveness",
+        ],
+        protective_factors: [
+          "Activity stable at 0.84× baseline — no decline pattern",
+          "Phone pickup 60% — responsive",
+          "18.6-year tenure with paid history",
+          "Turnover ₹1.5–5 Cr — established business",
+        ],
+
+        evidence: [
+          { signal: "Catalog quality",      value: "21 (very_low)", interp: "Bottom quality band" },
+          { signal: "Reply rate (30d)",     value: "6.4%",          interp: "94 of 100 messages ignored" },
+          { signal: "BL consumption",       value: "30.8%",         interp: "Below 0.3 floor — borderline" },
+          { signal: "Recent vs baseline",   value: "0.843",         interp: "Stable — no decline" },
+          { signal: "PNS pickup",           value: "60%",           interp: "Responsive to calls" },
+          { signal: "Tenure",               value: "6788 days",     interp: "Long-standing paid customer" },
+        ],
+
+        actions: [
+          { text: "Send catalog enrichment specialist; rebuild top 10 product listings with photos, prices, and descriptions.",
+            rationale: "Catalog quality is the gating factor" },
+          { text: "Coach reply-handling for inbound buy leads; review last 30 days of unanswered messages.",
+            rationale: "94% ignore rate is workflow-fixable" },
+          { text: "Schedule renewal conversation tied to PQS improvement milestone.",
+            rationale: "Premium tenure worth securing" },
+        ],
+
+        outreach: {
+          channel: "Phone call (script)",
+          subject: "Quick walkthrough of your IndiaMART storefront",
+          body: "Namaste — Merhaba Tyres ke saath 18 saal ka relationship hai. Aaj aapke catalog ko dekha aur kuch updates suggest karne hain — buyers tak aapke products achhe se pohunch sake. 20 minute mein walkthrough karenge.",
+          sign: "Your IndiaMART team",
+        },
+
+        compare: {
+          pipeline_tier:  "Critical", pipeline_score: 80,
+          synthesis_tier: "High",     synthesis_score: 64,
+          note: "Pipeline scored 80/100 (Critical) on raw signal severity. Synthesis downgrades to High because the diagnosis is a fixable catalog quality gap — not engagement collapse. Recent activity at 0.84× baseline shows the seller is still showing up; the storefront is the bottleneck."
+        },
+
+        gaps: [
+          "Product categories (MCATs) empty",
+          "Lead-complaint reasons missing",
+          "Peer benchmark has 0 sellers in this segment",
+          "LLM cohort lookalikes skipped",
+        ],
+      },
+
+      {
+        slug: "furniture",
+        tier: "moderate",
+        tier_name: "Moderate",
+        score: 48,
+        glid: 9236750,
+        company: "Aakarshan Furniture",
+        city: "New Delhi",
+        tenure: "12 years 4 months",
+        custtype: "TSCATALOG",
+        turnover: "₹0 – 40 L",
+        confidence: "medium",
+        root_cause: "catalog quality gap",
+
+        summary: "Six months of silence — then leads came flooding back. The seller showed up: <b>25 of 30 days active, 4,869 platform clicks</b>. But of 128 inbound buyer messages, zero replies. Loud on the platform, silent in the inbox.",
+
+        stats: [
+          { label: "Reply rate",      value: "0",    unit: "%", bar: 0, tier: true,
+            sub: "0 of 128 messages answered" },
+          { label: "Active days",     value: "25",   unit: "/ 30", bar: 83,
+            sub: "highly engaged" },
+          { label: "Activity vs baseline", value: "2.46", unit: "×", bar: 100,
+            sub: "leads growing fast" },
+          { label: "Phone pickup",    value: "75.6", unit: "%", bar: 75.6,
+            sub: "very responsive" },
+          { label: "Catalog quality", value: "53",   unit: "/ 100", bar: 53, tier: true,
+            sub: "low band — needs work" },
+          { label: "Platform events", value: "4.9",  unit: "K", bar: 100,
+            sub: "strong daily engagement" },
+        ],
+        trend: { values: [0,0,0,0,0,0,1,1,23,14,17,15], recent_from: 6 },
+
+        risk_drivers: [
+          "Zero reply rate across 128 inbound buy leads",
+          "Catalog quality 53/100 — low band, gating conversion",
+          "RAG flag: Amber",
+        ],
+        protective_factors: [
+          "Activity 2.46× baseline — leads growing, not declining",
+          "Phone pickup 75.6% — highly responsive",
+          "Active 25 of last 30 days",
+          "4,869 platform events — strongly engaged",
+          "12.3-year tenure",
+        ],
+
+        evidence: [
+          { signal: "Reply rate (30d)",     value: "0%",                  interp: "0 of 128 messages answered" },
+          { signal: "Active days (30d)",    value: "25 / 30",             interp: "Highly active — not absent" },
+          { signal: "Event count",          value: "4,869",               interp: "Strong platform engagement" },
+          { signal: "PNS pickup",           value: "75.6%",               interp: "Above 0.6 — responsive on phone" },
+          { signal: "Catalog quality",      value: "53 (low)",            interp: "Below 60 — needs work" },
+          { signal: "Recent vs baseline",   value: "2.462",               interp: "Activity growing, not declining" },
+          { signal: "Monthly enq trend",    value: "[0,0,0,0,0,0,1,1,23,14,17,15]", interp: "6 dead months then ramp to 15-23/mo" },
+        ],
+
+        actions: [
+          { text: "Coach written-message reply workflow in one short demo session; show how to handle the inbox.",
+            rationale: "Zero written replies despite strong engagement" },
+          { text: "Schedule catalog cleanup for top-selling categories to lift quality score above 60.",
+            rationale: "Catalog quality gating conversion" },
+          { text: "Re-score in 30 days to track recovery momentum.",
+            rationale: "Activity growing — protect momentum" },
+        ],
+
+        outreach: {
+          channel: "Phone call (script)",
+          subject: "Helping you convert your new lead flow",
+          body: "Namaste — Aakarshan Furniture ke leads pichhle 4 mahine se badh rahe hain — yeh achhi khabar hai. Lekin 128 buyer messages ka jawab nahi gaya. 15 minute mein dikhayenge ki inbox kaise handle kare.",
+          sign: "Your IndiaMART team",
+        },
+
+        compare: {
+          pipeline_tier:  "High",     pipeline_score: 42,
+          synthesis_tier: "Moderate", synthesis_score: 48,
+          note: "Pipeline flagged High on the basis of zero replies and Amber RAG. Synthesis downgrades to Moderate because the seller is showing strong recovery momentum (2.46× baseline) and the issue is a workflow gap, not engagement loss. The right intervention is coaching, not a save call."
+        },
+
+        gaps: [
+          "Product categories (MCATs) empty",
+          "Lead-complaint reasons missing",
+          "Peer benchmark has 0 sellers in this segment",
+          "LLM cohort lookalikes skipped",
+        ],
+      },
+    ];
+
+    // ─── RENDERING ────────────────────────────────
+    function renderSidebar(activeSlug) {
+      const list = CASES.map(c => `
+        <button class="case-card" role="tab" data-slug="${c.slug}" data-accent="${c.tier}"
+                aria-selected="${c.slug === activeSlug}">
+          <div class="case-stripe"></div>
+          <div class="case-body">
+            <div class="case-name">${c.company}</div>
+            <div class="case-sub">${c.city} · ${c.tier_name}</div>
+            <div class="case-meta">GLID ${c.glid} · score ${c.score}</div>
+          </div>
+        </button>
+      `).join("");
+      document.getElementById("case-list").innerHTML = list;
+      document.querySelectorAll(".case-card").forEach(b => {
+        b.addEventListener("click", () => renderCase(b.dataset.slug));
+      });
+    }
+
+    function ringSvg(score) {
+      const R = 58, C = 2 * Math.PI * R;
+      const off = C - (score / 100) * C;
+      return `<svg viewBox="0 0 132 132">
+        <circle class="ring-track" cx="66" cy="66" r="${R}" stroke-width="8" fill="none" />
+        <circle class="ring-fill"  cx="66" cy="66" r="${R}" stroke-width="8" fill="none"
+                stroke-dasharray="${C}" stroke-dashoffset="${off}" />
+      </svg>`;
+    }
+
+    function bars(values, recent_from) {
+      const max = Math.max(...values, 1);
+      return values.map((v, i) => {
+        const cls = ["bar"];
+        if (v === 0) cls.push("zero");
+        if (i >= recent_from) cls.push("recent");
+        const h = v === 0 ? 0 : Math.max(4, Math.round((v / max) * 100));
+        return `<div class="${cls.join(" ")}" style="height:${h}%" title="month ${i+1}: ${v}"></div>`;
+      }).join("");
+    }
+
+    function statCard(s) {
+      return `
+        <div class="stat">
+          <div class="stat-label">${s.label}</div>
+          <div class="stat-value${s.tier ? " tier" : ""}">${s.value}<span class="stat-unit">${s.unit}</span></div>
+          <div class="stat-bar"><span style="width:${Math.min(100, s.bar)}%"></span></div>
+          <div class="stat-label" style="margin-top:8px; text-transform:none; font-weight:400; letter-spacing:0; color:var(--ink-3)">${s.sub}</div>
+        </div>
+      `;
+    }
+
+    function renderCase(slug) {
+      const c = CASES.find(x => x.slug === slug);
+      if (!c) return;
+      document.body.dataset.tier = c.tier;
+      document.querySelectorAll(".case-card").forEach(b => {
+        b.setAttribute("aria-selected", b.dataset.slug === slug ? "true" : "false");
+      });
+
+      const html = `
+        <!-- HERO -->
+        <section class="hero" id="verdict">
+          <div class="score-ring">
+            ${ringSvg(c.score)}
+            <div class="score-num">${c.score}<small>SCORE / 100</small></div>
+          </div>
+          <div class="hero-mid">
+            <div class="tier-badge">${c.tier_name} risk</div>
+            <h1>${c.company}</h1>
+            <div class="loc">${c.city} · <em>${c.tenure}</em> on platform</div>
+          </div>
+          <div class="hero-meta">
+            <div>GLID <b>${c.glid}</b></div>
+            <div>${c.custtype}</div>
+            <div>${c.turnover}</div>
+            <div>confidence: <b>${c.confidence}</b></div>
+          </div>
+        </section>
+
+        <div class="summary">${c.summary} <br><span style="font-family:'Inter',sans-serif;font-style:normal;font-weight:500;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-3);margin-top:8px;display:inline-block">Root cause: ${c.root_cause}</span></div>
+
+        <!-- SIGNALS -->
+        <section class="section" id="signals">
+          <h2><span class="num">1</span>Key signals</h2>
+          <div class="stats">
+            ${c.stats.map(statCard).join("")}
+            <div class="trend-card">
+              <div class="stat-label">Monthly buyer enquiries — last 12 months</div>
+              <div class="bars">${bars(c.trend.values, c.trend.recent_from)}</div>
+              <div class="trend-axis"><span>12 MO. AGO</span><span>NOW</span></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- DRIVERS / PROTECTORS -->
+        <section class="section">
+          <h2><span class="num">2</span>Why this verdict</h2>
+          <div class="two-col">
+            <div class="list-card risk">
+              <h3><span class="marker risk"></span>Risk drivers</h3>
+              <ul>${c.risk_drivers.map(d => `<li>${d}</li>`).join("")}</ul>
+            </div>
+            <div class="list-card">
+              <h3><span class="marker good"></span>Protective factors</h3>
+              <ul>${c.protective_factors.map(p => `<li>${p}</li>`).join("")}</ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- EVIDENCE -->
+        <section class="section">
+          <h2><span class="num">3</span>Evidence (from pipeline)</h2>
+          <div class="ev">
+            <table>
+              <thead><tr><th>Signal</th><th>Value</th><th>Reading</th></tr></thead>
+              <tbody>
+                ${c.evidence.map(e => `
+                  <tr><td class="signal">${e.signal}</td><td class="value">${e.value}</td><td class="interp">${e.interp}</td></tr>
+                `).join("")}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ACTIONS -->
+        <section class="section" id="actions">
+          <h2><span class="num">4</span>Recommended actions</h2>
+          <div class="actions">
+            ${c.actions.map((a, i) => `
+              <div class="action${i === 0 ? " primary" : ""}">
+                <div class="action-num">${i+1}</div>
+                <div>
+                  <div class="action-text">${a.text}</div>
+                  <div class="action-rationale">${a.rationale}</div>
+                </div>
+              </div>
+            `).join("")}
+          </div>
+        </section>
+
+        <!-- OUTREACH -->
+        <section class="section" id="outreach">
+          <h2><span class="num">5</span>Drafted outreach</h2>
+          <div class="outreach">
+            <span class="outreach-tag">${c.outreach.channel}</span>
+            <div class="outreach-subject">${c.outreach.subject}</div>
+            <div class="outreach-body">${c.outreach.body}</div>
+            <div class="outreach-sign">— ${c.outreach.sign}</div>
+          </div>
+        </section>
+
+        <!-- COMPARE -->
+        <section class="section">
+          <h2><span class="num">6</span>Pipeline vs synthesis</h2>
+          <div class="compare">
+            <div class="compare-col" data-accent="${c.tier}">
+              <h4>Python pipeline</h4>
+              <div class="v">${c.compare.pipeline_tier}<small>${c.compare.pipeline_score}/100</small></div>
+            </div>
+            <div class="compare-arrow">→</div>
+            <div class="compare-col" data-accent="${c.tier}">
+              <h4>LLM synthesis</h4>
+              <div class="v" style="color:var(--tier)">${c.compare.synthesis_tier}<small>${c.compare.synthesis_score}/100</small></div>
+            </div>
+            <div class="compare-note">${c.compare.note}</div>
+          </div>
+        </section>
+
+        <!-- GAPS -->
+        <section class="section">
+          <details class="gaps">
+            <summary>Data quality &amp; gaps <span class="conf-tag">confidence · ${c.confidence}</span></summary>
+            <ul>${c.gaps.map(g => `<li>${g}</li>`).join("")}</ul>
+          </details>
+        </section>
+      `;
+
+      const page = document.getElementById("page");
+      page.style.animation = "none"; void page.offsetWidth; page.style.animation = "";
+      page.innerHTML = html;
+    }
+
+    // boot
+    renderSidebar(CASES[0].slug);
+    renderCase(CASES[0].slug);
+  </script>
+</body>
+</html>

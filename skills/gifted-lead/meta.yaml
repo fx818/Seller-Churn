@@ -1,0 +1,28 @@
+version: "1.0"
+category: action
+python_class: gifted-lead
+inputs:
+  required:
+    - key: glid
+      source: snapshot.glid
+      type: int
+  optional:
+    - key: rca_category
+      source: flow.rca_category
+      type: str
+    - key: city
+      source: context.city
+      type: str
+    - key: mcats
+      source: context.mcats
+      type: list
+    - key: enq_30d
+      source: behavioral.bl.received_30d
+      type: int
+outputs:
+  - key: gifted_lead
+    type: dict
+  - key: gift_reason
+    type: str
+  - key: eligible
+    type: bool

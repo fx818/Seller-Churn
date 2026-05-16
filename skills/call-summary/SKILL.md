@@ -2,35 +2,6 @@
 name: call-summary
 description: Parse a rep's post-call transcript via LLM and return a 3-line summary, seller sentiment, updated RCA category, stated concern, and next action recommendation. Use this skill in the post-call flow (NOT in the main churn pipeline) to capture call outcome and inform the next intervention for a seller.
 compatibility: Requires Python 3.11+, seller_survival package
-metadata:
-  version: "1.0"
-  category: analysis
-  python_class: call-summary
-  inputs:
-    required:
-      - key: glid
-        source: snapshot.glid
-        type: int
-    optional:
-      - key: company
-        source: context.company
-        type: str
-      - key: rca_category
-        source: flow.rca_category
-        type: str
-  outputs:
-    - key: summary_lines
-      type: list
-    - key: sentiment
-      type: str
-    - key: updated_rca
-      type: str
-    - key: stated_concern
-      type: str
-    - key: next_action
-      type: str
-    - key: next_action_detail
-      type: str
 ---
 
 # Call Summary Skill

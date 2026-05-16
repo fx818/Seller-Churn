@@ -2,43 +2,6 @@
 name: conversion-point
 description: Detect where in a seller's lead-flow history the trajectory broke and classify it as one of three patterns — TYPE_A Sudden Cliff (peak then ≥60% drop in <=2 months), TYPE_B Gradual Drift (slow steady decline), or TYPE_C Never Engaged (lifetime enq <=5). Use this skill in Phase 0 of the churn pipeline to provide the trajectory signal that churn-scoring, pre-call-brief, and winback-priority all consume.
 compatibility: Requires Python 3.11+, seller_survival package
-metadata:
-  version: "1.0"
-  category: analysis
-  python_class: conversion-point
-  inputs:
-    required:
-      - key: monthly_enq
-        source: derived.monthly_enq
-        type: list
-    optional:
-      - key: account_age_days
-        source: context.account_age_days
-        type: int
-      - key: peer_median_enq
-        source: flow.peer_median_enq
-        type: float
-      - key: enq_30d
-        source: behavioral.bl.received_30d
-        type: int
-      - key: active_days_30d
-        source: behavioral.lms.lms_active_days_30d
-        type: int
-      - key: cqs
-        source: behavioral.activity.cqs
-        type: float
-      - key: churn_score
-        source: flow.churn_score
-        type: int
-  outputs:
-    - key: trajectory_type
-      type: str
-    - key: trajectory_label
-      type: str
-    - key: inflection_month
-      type: int
-    - key: severity
-      type: str
 ---
 
 # Conversion Point Skill

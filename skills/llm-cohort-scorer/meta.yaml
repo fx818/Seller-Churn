@@ -1,0 +1,33 @@
+version: "1.0"
+category: scoring
+python_class: llm-cohort-scorer
+inputs:
+  required:
+    - key: glid
+      source: snapshot.glid
+      type: int
+  optional:
+    - key: account_age_days
+      source: context.account_age_days
+      type: int
+    - key: api_responses
+      source: flow.api_responses
+      type: dict
+    - key: model
+      source: flow.model
+      type: str
+outputs:
+  - key: risk_level
+    type: str
+  - key: pipeline_tier
+    type: str
+  - key: confidence_score
+    type: float
+  - key: bands
+    type: dict
+  - key: reasoning
+    type: str
+  - key: churned_lookalikes
+    type: list
+  - key: retained_lookalikes
+    type: list
