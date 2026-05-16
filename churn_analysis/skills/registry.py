@@ -49,7 +49,7 @@ _SKILLS_DIR = os.path.join(_REPO_ROOT, "skills")
 
 
 def _discover_and_register():
-    """Walk skills/<name>/skill.py, import each via importlib, register Skill subclasses."""
+    """Walk each skills/<name>/ folder, import scripts/skill.py (preferred) or skill.py via importlib, register Skill subclasses."""
     if not os.path.isdir(_SKILLS_DIR):
         return
 
