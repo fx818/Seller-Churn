@@ -1,20 +1,24 @@
 """
-SkillLoader — parses skills/*.md frontmatter and maps snapshot fields to skill inputs.
+SkillLoader — reads Anthropic-format skill folders and maps snapshot fields to skill inputs.
 
-The MD file is the contract. SkillSpec tells the runner:
-  - which Python registry key to call (python_class)
+Each skill lives in its own folder under `skills/<name>/`:
+  - SKILL.md   — Anthropic-compliant frontmatter (name + description) + body
+  - meta.yaml  — extension fields (version, category, python_class, inputs, outputs)
+  - skill.py   — Python implementation, loaded by churn_analysis/skills/registry.py
+
+SkillSpec merges both files into a single record that the runner consumes:
+  - which Python registry key to call (python_class, defaults to name)
   - how to build inputs from snapshot / derived / flow state
 """
 import os
-import re
 from dataclasses import dataclass, field
 from typing import Any
 
 
-# ── Frontmatter parser ────────────────────────────────────────────────────────
+# ── Frontmatter / YAML parsing ────────────────────────────────────────────────
 
 def _parse_frontmatter(path: str) -> dict:
-    """Read YAML frontmatter between --- delimiters from an MD file."""
+    """Read the YAML block between --- delimiters at the top of an MD file."""
     with open(path, encoding="utf-8") as f:
         content = f.read()
     if not content.startswith("---"):
@@ -22,9 +26,16 @@ def _parse_frontmatter(path: str) -> dict:
     end = content.find("---", 3)
     if end == -1:
         return {}
-    yaml_str = content[3:end].strip()
     import yaml
-    return yaml.safe_load(yaml_str) or {}
+    return yaml.safe_load(content[3:end].strip()) or {}
+
+
+def _parse_yaml_file(path: str) -> dict:
+    if not os.path.isfile(path):
+        return {}
+    import yaml
+    with open(path, encoding="utf-8") as f:
+        return yaml.safe_load(f) or {}
 
 
 # ── Data classes ─────────────────────────────────────────────────────────────
@@ -49,7 +60,7 @@ class SkillSpec:
     name: str
     version: str = "1.0"
     description: str = ""
-    python_class: str = ""   # registry key (same as name by default)
+    python_class: str = ""   # registry key (defaults to name)
     category: str = ""
     inputs_required: list = field(default_factory=list)
     inputs_optional: list = field(default_factory=list)
@@ -72,18 +83,30 @@ class SkillLoader:
     def _load_all(self):
         if not os.path.isdir(self._dir):
             return
-        for fname in sorted(os.listdir(self._dir)):
-            if not fname.endswith(".md") or fname in ("README.md", "pipeline.md"):
+        for entry in sorted(os.listdir(self._dir)):
+            full = os.path.join(self._dir, entry)
+            if not os.path.isdir(full):
                 continue
-            path = os.path.join(self._dir, fname)
+            skill_md  = os.path.join(full, "SKILL.md")
+            meta_yml  = os.path.join(full, "meta.yaml")
+            if not os.path.isfile(skill_md):
+                continue
             try:
-                fm = _parse_frontmatter(path)
+                front = _parse_frontmatter(skill_md)
+                meta  = _parse_yaml_file(meta_yml)
             except Exception as exc:
-                print(f"  [WARN] Could not parse {fname}: {exc}")
+                print(f"  [WARN] Could not parse {entry}: {exc}")
                 continue
-            if not fm.get("name"):
+            if not front.get("name"):
                 continue
-            spec = self._build_spec(fm)
+            # Merge: SKILL.md provides name + description; metadata: key provides
+            # extension fields (version, category, inputs, outputs, python_class).
+            # meta.yaml (if present) wins over frontmatter metadata for backward compat.
+            front_meta = front.get("metadata") or {}
+            merged = {**front_meta, **dict(meta)}
+            merged["name"]        = front.get("name")
+            merged["description"] = front.get("description", "")
+            spec = self._build_spec(merged)
             self._specs[spec.name] = spec
 
     def _build_spec(self, fm: dict) -> SkillSpec:

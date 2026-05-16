@@ -42,3 +42,39 @@ def test_registry_discovers_scripts_skill_py(tmp_path):
     finally:
         reg_module._SKILLS_DIR = original_dir
         reg_module.registry._skills = original_skills
+
+
+def test_skill_loader_reads_metadata_frontmatter(tmp_path):
+    """SkillLoader must read version/category/inputs/outputs/python_class from metadata: key."""
+    from churn_analysis.skill_loader import SkillLoader
+
+    skill_folder = tmp_path / "test-meta-skill"
+    skill_folder.mkdir()
+    (skill_folder / "SKILL.md").write_text(textwrap.dedent("""
+        ---
+        name: test-meta-skill
+        description: test metadata merge
+        metadata:
+          version: "3.0"
+          category: scoring
+          python_class: test-meta-skill
+          inputs:
+            required:
+              - key: glid
+                source: snapshot.glid
+                type: int
+          outputs:
+            - key: score
+              type: int
+        ---
+        # body
+    """).lstrip())
+
+    loader = SkillLoader(str(tmp_path))
+    spec = loader.get("test-meta-skill")
+    assert spec is not None
+    assert spec.version == "3.0"
+    assert spec.category == "scoring"
+    assert spec.python_class == "test-meta-skill"
+    assert len(spec.inputs_required) == 1
+    assert spec.inputs_required[0].key == "glid"
