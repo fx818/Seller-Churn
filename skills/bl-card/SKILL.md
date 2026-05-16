@@ -1,0 +1,396 @@
+---
+name: bl-card
+description: Final aggregator skill — runs last in the pipeline and combines every prior skill's output into a single seller briefing card containing verdict, churn and winback scores, root cause analysis, signals, action plan, messaging, interventions and lookalikes. Use this skill at the end of the churn pipeline to produce the CRM-pasteable briefing for a sales rep before they call a seller.
+compatibility: Requires Python 3.11+, seller_survival package
+metadata:
+  version: "1.0"
+  category: messaging
+  python_class: bl-card
+  inputs:
+    required:
+      - key: glid
+        source: snapshot.glid
+        type: int
+    optional:
+      # Context (from snapshot)
+      - key: company
+        source: context.company
+        type: str
+      - key: city
+        source: context.city
+        type: str
+      - key: state
+        source: context.state
+        type: str
+      - key: custtype
+        source: context.custtype
+        type: str
+      - key: rag_category
+        source: context.rag_category
+        type: str
+      - key: account_age_days
+        source: context.account_age_days
+        type: int
+      - key: turnover
+        source: context.turnover
+        type: str
+      - key: paid_history
+        source: context.paid_history
+        type: bool
+
+      # Churn scoring (from flow)
+      - key: churn_score
+        source: flow.churn_score
+        type: int
+      - key: risk
+        source: flow.risk
+        type: str
+      - key: churn_reasons
+        source: flow.churn_reasons
+        type: list
+      - key: reason_tags
+        source: flow.reason_tags
+        type: list
+      - key: score_breakdown
+        source: flow.score_breakdown
+        type: dict
+      - key: reply_rate_30d
+        source: flow.reply_rate_30d
+        type: float
+      - key: signals_available
+        source: flow.signals_available
+        type: int
+
+      # Churn scoring v2.0 breakdown
+      - key: base_score
+        source: flow.base_score
+        type: float
+      - key: compound_multiplier
+        source: flow.compound_multiplier
+        type: float
+      - key: trajectory_adjustment
+        source: flow.trajectory_adjustment
+        type: int
+      - key: trajectory_note
+        source: flow.trajectory_note
+        type: str
+      - key: pre_llm_score
+        source: flow.pre_llm_score
+        type: int
+      - key: llm_adjustment
+        source: flow.llm_adjustment
+        type: int
+      - key: llm_justification
+        source: flow.llm_justification
+        type: str
+      - key: llm_used
+        source: flow.llm_used
+        type: bool
+      - key: red_flag_count
+        source: flow.red_flag_count
+        type: int
+
+      # SHAP RCA
+      - key: rca_category
+        source: flow.rca_category
+        type: str
+      - key: rca_confidence
+        source: flow.rca_confidence
+        type: float
+      - key: rca_explanation_en
+        source: flow.rca_explanation_en
+        type: str
+      - key: rca_explanation_hi
+        source: flow.rca_explanation_hi
+        type: str
+      - key: intervention_hint
+        source: flow.intervention_hint
+        type: str
+
+      # LLM cohort
+      - key: llm_risk_level
+        source: flow.llm_risk_level
+        type: str
+      - key: risk_level
+        source: flow.risk_level
+        type: str
+      - key: pipeline_tier
+        source: flow.pipeline_tier
+        type: str
+      - key: confidence_score
+        source: flow.confidence_score
+        type: int
+      - key: bands
+        source: flow.bands
+        type: dict
+      - key: reasoning
+        source: flow.reasoning
+        type: str
+      - key: churned_lookalikes
+        source: flow.churned_lookalikes
+        type: list
+      - key: retained_lookalikes
+        source: flow.retained_lookalikes
+        type: list
+
+      # Peer benchmark
+      - key: peer_group
+        source: flow.peer_group
+        type: str
+      - key: peer_n
+        source: flow.peer_n
+        type: int
+      - key: peer_summary_line
+        source: flow.peer_summary_line
+        type: str
+      - key: gap_severity
+        source: flow.gap_severity
+        type: str
+
+      # Demand
+      - key: demand_index
+        source: flow.demand_index
+        type: int
+      - key: demand_tier
+        source: flow.demand_tier
+        type: str
+      - key: market_bl_per_seller
+        source: flow.market_bl_per_seller
+        type: float
+      - key: trend
+        source: flow.trend
+        type: str
+      - key: demand_explanation
+        source: flow.demand_explanation
+        type: str
+      - key: recommended_action
+        source: flow.recommended_action
+        type: str
+
+      # Conversion
+      - key: trajectory_type
+        source: flow.trajectory_type
+        type: str
+      - key: trajectory_label
+        source: flow.trajectory_label
+        type: str
+      - key: explanation
+        source: flow.explanation
+        type: str
+
+      # Pre-call brief
+      - key: opening_line_en
+        source: flow.opening_line_en
+        type: str
+      - key: opening_line_hi
+        source: flow.opening_line_hi
+        type: str
+      - key: key_signals
+        source: flow.key_signals
+        type: list
+      - key: suggested_actions
+        source: flow.suggested_actions
+        type: list
+      - key: brief_text
+        source: flow.brief_text
+        type: str
+
+      # WhatsApp
+      - key: message_hi
+        source: flow.message_hi
+        type: str
+      - key: message_en
+        source: flow.message_en
+        type: str
+
+      # Script
+      - key: script_parts
+        source: flow.script_parts
+        type: dict
+      - key: script_parts_en
+        source: flow.script_parts_en
+        type: dict
+      - key: rca_used
+        source: flow.rca_used
+        type: str
+
+      # Gifted lead
+      - key: lead_found
+        source: flow.lead_found
+        type: bool
+      - key: fallback
+        source: flow.fallback
+        type: str
+
+      # BL upgrade
+      - key: eligible
+        source: flow.eligible
+        type: bool
+      - key: mode
+        source: flow.mode
+        type: str
+      - key: reason
+        source: flow.reason
+        type: str
+
+      # Winback (v2.0 derivation)
+      - key: winback_score
+        source: flow.winback_score
+        type: int
+      - key: pitch
+        source: flow.pitch
+        type: str
+      - key: days_to_renewal
+        source: flow.days_to_renewal
+        type: int
+      - key: winback_priority
+        source: flow.winback_priority
+        type: str
+      - key: winback_pre_llm
+        source: flow.winback_pre_llm_score
+        type: int
+      - key: winback_llm_used
+        source: flow.winback_llm_used
+        type: bool
+      - key: winback_llm_adjustment
+        source: flow.winback_llm_adjustment
+        type: int
+      - key: winback_llm_justification
+        source: flow.winback_llm_justification
+        type: str
+      - key: winback_interaction_bonus
+        source: flow.winback_interaction_bonus
+        type: float
+      - key: winback_sub_scores
+        source: flow.winback_sub_scores
+        type: dict
+      - key: winback_weights
+        source: flow.winback_weights
+        type: dict
+      - key: winback_cool_off_elapsed
+        source: flow.winback_cool_off_elapsed
+        type: bool
+      - key: winback_cool_off_days_remaining
+        source: flow.winback_cool_off_days_remaining
+        type: int
+      - key: winback_demand_provided
+        source: flow.winback_demand_provided
+        type: bool
+
+      # IM product count (always available — from snapshot, regardless of cross_platform phase)
+      - key: im_approved_products
+        source: behavioral.activity.approved_products
+        type: int
+      - key: im_product_count
+        source: flow.im_product_count
+        type: int
+
+      # Cross-platform intelligence
+      - key: platforms_found
+        source: flow.platforms_found
+        type: list
+      - key: platform_data
+        source: flow.platform_data
+        type: dict
+      - key: im_catalog_gap
+        source: flow.im_catalog_gap
+        type: dict
+      - key: call_card
+        source: flow.call_card
+        type: dict
+      - key: competitive_positioning
+        source: flow.competitive_positioning
+        type: str
+
+      # Onboarding
+      - key: health_score
+        source: flow.health_score
+        type: float
+      - key: health_tier
+        source: flow.health_tier
+        type: str
+      - key: onboarding_checks
+        source: flow.checks
+        type: dict
+      - key: trigger_action
+        source: flow.trigger_action
+        type: str
+      - key: risk_priors
+        source: flow.risk_priors
+        type: list
+      - key: activation_plan
+        source: flow.activation_plan
+        type: dict
+      - key: plan_method
+        source: flow.plan_method
+        type: str
+  outputs:
+    - key: header
+      type: dict
+    - key: scores
+      type: dict
+    - key: root_cause
+      type: dict
+    - key: signals
+      type: dict
+    - key: action_plan
+      type: dict
+    - key: messaging
+      type: dict
+    - key: interventions
+      type: dict
+    - key: lookalikes
+      type: dict
+    - key: summary_text
+      type: str
+---
+
+# BL Card Skill
+
+## Instructions
+
+Aggregate accumulated `flow.*` state from every prior pipeline phase into one structured BL Card with these sections:
+
+- **header** — GLID, company, location, customer type, verdict, priority
+- **scores** — final churn score, risk tier, LLM risk, BL/LMS/Activity bands, plus the full churn-score derivation breakdown
+- **root_cause** — RCA category, explanations in Hindi and English, intervention hint
+- **signals** — churn reasons, trajectory, demand, peer comparison
+- **action_plan** — opening line, suggested actions, do-not-mention list
+- **messaging** — WhatsApp message plus the 5-part call script (Hindi and English)
+- **interventions** — BL upgrade eligibility, full winback derivation (sub-scores, weights, LLM adjustment)
+- **lookalikes** — churned and retained seller GLIDs from the LLM cohort scorer
+- **cross_platform** — JustDial / TradeIndia / own-website findings, IM catalog gap, headline pitch
+- **summary_text** — plain-text printable card for CRM paste
+
+Compute a 0-100 priority score (boosted by Red risk, LLM Critical/High, near-renewal, and HIGH winback priority) and a verdict string. Verdict ladder:
+
+1. `Red risk OR churn_score >= 70` → CRITICAL — Immediate retention call
+2. `winback_score >= 75 AND winback_priority == HIGH` → CRITICAL — HIGH winback priority, call immediately
+3. `Amber risk OR churn_score >= 40` → AT RISK — Schedule retention call within 7 days
+4. `LLM risk in [Critical, High, Very High]` → AT RISK — LLM-flagged, prioritize
+5. `winback_score >= 65` → AT RISK — Recoverable churn, prioritize
+6. `winback_score >= 40` → AT RISK — Winback opportunity, schedule call
+7. Otherwise → HEALTHY — Routine check-in
+
+Apply a cross-platform churn adjustment if the seller is "stronger elsewhere": gap < -40% adds +10 to the churn score (capped at 100), gap < -20% adds +5.
+
+When run standalone (not via the full pipeline), `flow.*` fields are empty — the card only shows snapshot context. Always invoke through the pipeline for the full card.
+
+## Examples
+
+```bash
+python -m churn_analysis skill bl-card 11282573 --pretty
+python -m churn_analysis pipeline --glid 11282573
+```
+
+Output sketch:
+```json
+{
+  "header":   {"glid": 11282573, "company": "...", "verdict": "CRITICAL — Immediate retention call", "priority": 92},
+  "scores":   {"churn_score": 78, "risk_tier": "Red", "churn_breakdown": {...}},
+  "root_cause": {"rca_category": "LOW_ENGAGEMENT", "explanation_hi": "...", "intervention": "..."},
+  "messaging": {"call_script_hi": {...}, "whatsapp_hi": "..."},
+  "interventions": {"winback_score": 72, "winback_priority": "HIGH", "winback_sub_scores": {...}},
+  "summary_text": "..."
+}
+```

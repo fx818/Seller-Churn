@@ -8,61 +8,61 @@ phases:
     name: "Phase 0 — Benchmarks (Peer + Demand + Trajectory)"
     condition: null
     skills:
-      - peer_benchmark
-      - demand_index
-      - conversion_point
+      - peer-benchmark
+      - demand-index
+      - conversion-point
 
   - id: phase1_onboarding
     name: "Phase 1 — Onboarding Health"
     condition: "context.account_age_days <= 90"
     skills:
-      - onboarding_health
+      - onboarding-health
 
   - id: phase2_churn
     name: "Phase 2 — Churn Scoring + RCA"
     condition: null
     skills:
-      - churn_scoring
-      - shap_rca
+      - churn-scoring
+      - shap-rca
 
   - id: phase2_llm
     name: "Phase 2b — LLM Cohort Scoring"
     condition: "context.account_age_days > 90 AND derived.snapshots_exist"
     skills:
-      - llm_cohort_scorer
+      - llm-cohort-scorer
 
   - id: phase3_actions
     name: "Phase 3 — Action Skills (Red + Amber only)"
     condition: "flow.risk in [Red, Amber]"
     skills:
-      - pre_call_brief
-      - whatsapp_message
-      - script_generation
-      - gifted_lead
+      - pre-call-brief
+      - whatsapp-message
+      - script-generation
+      - gifted-lead
 
   - id: phase3c_cross_platform
     name: "Phase 3c — Cross-Platform Intelligence (Playwright)"
     condition: "flow.risk in [Red, Amber] AND flow.rca_category in [POOR_CATALOG, PEER_GAP, NO_LEADS, LOW_ENGAGEMENT, BL_DECLINE]"
     skills:
-      - cross_platform_intelligence
+      - cross-platform-intelligence
 
   - id: phase4
     name: "Phase 4 — BL Upgrade"
     condition: null
     skills:
-      - bl_upgrade
+      - bl-upgrade
 
   - id: phase5
     name: "Phase 5 — Winback Priority"
     condition: "flow.risk == Red"
     skills:
-      - winback_priority
+      - winback-priority
 
   - id: phase6_card
     name: "Phase 6 — BL Card (Aggregated Briefing)"
     condition: null
     skills:
-      - bl_card
+      - bl-card
 ---
 
 # Pipeline — Full Churn Analysis
