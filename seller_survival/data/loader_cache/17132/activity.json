@@ -1,0 +1,6203 @@
+{
+  "status": 200,
+  "data": {
+    "gluser_id": 17132,
+    "event_count": 86,
+    "events": [
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            8365
+          ]
+        },
+        "datevalue": "20260416122808",
+        "glb_state": "-",
+        "remote_ip": "106.219.121.98",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Similar Leads FullView-BL List",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2206,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604161228"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Similar Leads",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 15.117,
+        "coordinate_latitude": 28.403473,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.31911,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260416123351",
+        "glb_state": "-",
+        "remote_ip": "223.190.87.194",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Supplier Dashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2176,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604161234"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Supplier Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 15.117,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260416123352",
+        "glb_state": "-",
+        "remote_ip": "223.190.87.194",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "User Verification Blocker Screen",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2186,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604161234"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "User Verification",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 100,
+        "coordinate_latitude": 28.357485,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.30864,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260416123352",
+        "glb_state": "-",
+        "remote_ip": "223.190.87.194",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Supplier-Dashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2176,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604161233"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Supplier Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 15.117,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260416154506",
+        "glb_state": "-",
+        "remote_ip": "223.190.87.194",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Supplier-Dashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2176,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604161545"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Supplier Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 100,
+        "coordinate_latitude": 28.357485,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.30864,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260418175612",
+        "glb_state": "-",
+        "remote_ip": "106.219.122.126",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Supplier Dashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2176,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604181757"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Supplier Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 27.449,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260418175612",
+        "glb_state": "-",
+        "remote_ip": "106.219.122.126",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "User Verification Blocker Screen",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2186,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604181756"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "User Verification",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 72.9,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260418175612",
+        "glb_state": "-",
+        "remote_ip": "106.219.122.126",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Supplier-Dashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2176,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604181756"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Supplier Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 27.449,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260418175614",
+        "glb_state": "-",
+        "remote_ip": "106.219.122.126",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "User Verification Blocker Screen",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2186,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604181756"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "User Verification",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 14.618,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 551,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "Faridabad",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            139384
+          ]
+        },
+        "datevalue": "20260418194856",
+        "glb_state": "HR",
+        "remote_ip": "106.219.122.126",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 16; SM-S721B Build/BP2A.250605.031.A3; wv) Version/4.0 Chrome/147.0.7727.55 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /proddetail/2855663794997.html?utm_medium=prd_ads&utm_campaign=22492968458&utm_ad_group=192060221455&utm_content=product&utm_source=google&gclsrc=aw.ds&gad_source=1&gad_campaignid=22492968458&app=deeplink HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.408912,
+        "glb_longitude": 77.317789,
+        "response_size": 51581,
+        "response_time": 60796,
+        "fk_activity_id": 4738,
+        "ga_utma_cookie": "GA1.1.1146036629.1747816946",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604181948"
+        },
+        "seller_city_id": 70469,
+        "fk_glcat_grp_id": 30,
+        "log_status_flag": 40,
+        "product_disp_id": 2855663794997,
+        "fk_display_title": "Show Ad Landing PDP Page",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 17132,
+        "catalog_owner_glusr_id": 239512341,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n*********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/proddetail/2855663794997.html?utm_medium=prd_ads&utm_campaign=22492968458&utm_ad_group=192060221455&utm_content=product&utm_source=google&gclsrc=aw.ds&gad_source=1&gad_campaignid=22492968458&app=deeplink&utm_se=pdp",
+        "glb_city": "Faridabad",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260418194857",
+        "glb_state": "HR",
+        "remote_ip": "106.219.122.126",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 16; SM-S721B Build/BP2A.250605.031.A3; wv) Version/4.0 Chrome/147.0.7727.55 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /ajaxrequest/proddetail/widgets/relatedproducts?MCAT_ID=139384&city=70496&prod_count=20&ecomflag=&smp=2855663794997&glid=17132 HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.408912,
+        "glb_longitude": 77.317789,
+        "response_size": 6015,
+        "response_time": 46205,
+        "fk_activity_id": 4746,
+        "ga_utma_cookie": "GA1.1.1146036629.1747816946",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604181948"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Related Products",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 17132,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n*********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260418194924",
+        "glb_state": "-",
+        "remote_ip": "106.219.122.126",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Supplier-Dashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2176,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604181949"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Supplier Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 13.43,
+        "coordinate_latitude": 28.403458,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.31912,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260419063403",
+        "glb_state": "-",
+        "remote_ip": "106.219.122.126",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Message Center-Contact-Details",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2188,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604190634"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Message Center-Contact-Details",
+        "owner_gl_country": "ZW",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 13.43,
+        "coordinate_latitude": 28.403458,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.31912,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 247388968,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "NFL"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260419063403",
+        "glb_state": "-",
+        "remote_ip": "106.219.122.126",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Message Center-Message Detail",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2189,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604190634"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Message Center Conversations",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 13.43,
+        "coordinate_latitude": 28.403458,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.31912,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 239512341,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 199,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260419063418",
+        "glb_state": "-",
+        "remote_ip": "106.219.122.126",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Supplier Dashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2176,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604190634"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Supplier Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 15.002,
+        "coordinate_latitude": 28.403471,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.31912,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260419063418",
+        "glb_state": "-",
+        "remote_ip": "106.219.122.126",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Supplier-Dashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2176,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604190634"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Supplier Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 15.002,
+        "coordinate_latitude": 28.403471,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.31912,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260420084200",
+        "glb_state": "-",
+        "remote_ip": "106.219.120.138",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "User Verification Blocker Screen",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2186,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604200842"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "User Verification",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 15.002,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260420084201",
+        "glb_state": "-",
+        "remote_ip": "106.219.120.138",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Supplier Dashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2176,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604200842"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Supplier Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 48.9,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260420084201",
+        "glb_state": "-",
+        "remote_ip": "106.219.120.138",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Supplier-Dashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2176,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604200842"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Supplier Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 48.9,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260420084202",
+        "glb_state": "-",
+        "remote_ip": "106.219.120.138",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "User Verification Blocker Screen",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2186,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604200842"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "User Verification",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 48.9,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260420155944",
+        "glb_state": "-",
+        "remote_ip": "223.190.84.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Supplier Dashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2176,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604201600"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Supplier Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 21.195,
+        "coordinate_latitude": 28.357351,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.30853,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260420155944",
+        "glb_state": "-",
+        "remote_ip": "223.190.84.144",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Supplier-Dashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2176,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604201559"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Supplier Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 21.195,
+        "coordinate_latitude": 28.357351,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.30853,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421143431",
+        "glb_state": "-",
+        "remote_ip": "223.190.83.253",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "User Verification Blocker Screen",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2186,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211435"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "User Verification",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 21.195,
+        "coordinate_latitude": 28.357351,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.30853,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421143431",
+        "glb_state": "-",
+        "remote_ip": "223.190.83.253",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Supplier Dashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2176,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211434"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Supplier Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 21.195,
+        "coordinate_latitude": 28.357351,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.30853,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421143431",
+        "glb_state": "-",
+        "remote_ip": "223.190.83.253",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Supplier-Dashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2176,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211434"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Supplier Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 21.195,
+        "coordinate_latitude": 28.357351,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.30853,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421143433",
+        "glb_state": "-",
+        "remote_ip": "223.190.83.253",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "User Verification Blocker Screen",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2186,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211434"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "User Verification",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 29.923,
+        "coordinate_latitude": 28.35736,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.3085,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260422171743",
+        "glb_state": "-",
+        "remote_ip": "223.190.85.135",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Supplier Dashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2176,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604221718"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Supplier Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 29.923,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260422171744",
+        "glb_state": "-",
+        "remote_ip": "223.190.85.135",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "User Verification Blocker Screen",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2186,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604221718"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "User Verification",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 29.923,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260422171744",
+        "glb_state": "-",
+        "remote_ip": "223.190.85.135",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Supplier-Dashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2176,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604221717"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Supplier Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 29.923,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260422171746",
+        "glb_state": "-",
+        "remote_ip": "223.190.85.135",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "User Verification Blocker Screen",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2186,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604221718"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "User Verification",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 25.697,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260423131630",
+        "glb_state": "-",
+        "remote_ip": "223.190.86.132",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Supplier Dashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2176,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604231317"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Supplier Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 25.697,
+        "coordinate_latitude": 28.357393,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.308556,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260423131630",
+        "glb_state": "-",
+        "remote_ip": "223.190.86.132",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Supplier-Dashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2176,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604231316"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Supplier Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 25.697,
+        "coordinate_latitude": 28.357393,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.308556,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260423193938",
+        "glb_state": "-",
+        "remote_ip": "106.219.120.138",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "User Verification Blocker Screen",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2186,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604231940"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "User Verification",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 26.296,
+        "coordinate_latitude": 28.35739,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.308525,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260423193938",
+        "glb_state": "-",
+        "remote_ip": "106.219.120.138",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Supplier Dashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2176,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604231940"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Supplier Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 26.296,
+        "coordinate_latitude": 28.35739,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.308525,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260423193938",
+        "glb_state": "-",
+        "remote_ip": "106.219.120.138",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Supplier-Dashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2176,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604231939"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Supplier Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 26.296,
+        "coordinate_latitude": 28.35739,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.308525,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260423193940",
+        "glb_state": "-",
+        "remote_ip": "106.219.120.138",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "User Verification Blocker Screen",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2186,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604231940"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "User Verification",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 14.659,
+        "coordinate_latitude": 28.403448,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.31912,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260424101303",
+        "glb_state": "-",
+        "remote_ip": "223.190.86.135",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Supplier Dashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2176,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604241013"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Supplier Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 14.659,
+        "coordinate_latitude": 28.403448,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.31912,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260424101303",
+        "glb_state": "-",
+        "remote_ip": "223.190.86.135",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Supplier-Dashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2176,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604241013"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Supplier Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 14.659,
+        "coordinate_latitude": 28.403448,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.31912,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260424164743",
+        "glb_state": "-",
+        "remote_ip": "223.190.86.135",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Supplier Dashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2176,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604241648"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Supplier Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 22.857,
+        "coordinate_latitude": 28.357382,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.30852,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260424164743",
+        "glb_state": "-",
+        "remote_ip": "223.190.86.135",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Supplier-Dashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2176,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604241647"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Supplier Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 22.857,
+        "coordinate_latitude": 28.357382,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.30852,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260424183719",
+        "glb_state": "-",
+        "remote_ip": "106.219.120.138",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Message Center-Message Detail",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2189,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604241837"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Message Center Conversations",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 23.405,
+        "coordinate_latitude": 28.357384,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.30852,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 142335449,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "NFL"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260424183719",
+        "glb_state": "-",
+        "remote_ip": "106.219.120.138",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Message Center-Contact-Details",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2188,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604241837"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Message Center-Contact-Details",
+        "owner_gl_country": "ZW",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 23.405,
+        "coordinate_latitude": 28.357384,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.30852,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 247388968,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "NFL"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260424183739",
+        "glb_state": "-",
+        "remote_ip": "106.219.120.138",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Supplier-Dashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2176,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604241837"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Supplier Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 68.4,
+        "coordinate_latitude": 28.403475,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.319145,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260425100246",
+        "glb_state": "-",
+        "remote_ip": "223.190.87.216",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Supplier Dashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2176,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604251003"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Supplier Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 68.4,
+        "coordinate_latitude": 28.403475,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.319145,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260425100247",
+        "glb_state": "-",
+        "remote_ip": "223.190.87.216",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "User Verification Blocker Screen",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2186,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604251003"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "User Verification",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 68.4,
+        "coordinate_latitude": 28.403475,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.319145,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "Gurugram",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            486
+          ]
+        },
+        "datevalue": "20260425100247",
+        "glb_state": "HR",
+        "remote_ip": "223.190.87.216",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 16; SM-S721B Build/BP2A.250605.031.A3; wv) Version/4.0 Chrome/147.0.7727.55 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /kanpurengineering-works-kanpur/sewing-needles.html?app=organic HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.459497,
+        "glb_longitude": 77.026638,
+        "response_size": 17560,
+        "response_time": 155767,
+        "fk_activity_id": 660,
+        "ga_utma_cookie": "GA1.1.1146036629.1747816946",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604251002"
+        },
+        "seller_city_id": 70743,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Inside Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 17132,
+        "catalog_owner_glusr_id": 9571856,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n*********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 1114,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260425100247",
+        "glb_state": "-",
+        "remote_ip": "223.190.87.216",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Supplier-Dashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2176,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604251002"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Supplier Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 68.4,
+        "coordinate_latitude": 28.403475,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.319145,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260425100249",
+        "glb_state": "-",
+        "remote_ip": "223.190.87.216",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "User Verification Blocker Screen",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2186,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604251003"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "User Verification",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 35.708,
+        "coordinate_latitude": 28.357565,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.308464,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/kanpurengineering-works-kanpur/sewing-needles.html?app=organic",
+        "glb_city": "Gurugram",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            1470
+          ]
+        },
+        "datevalue": "20260425100409",
+        "glb_state": "HR",
+        "remote_ip": "223.190.87.216",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 16; SM-S721B Build/BP2A.250605.031.A3; wv) Version/4.0 Chrome/147.0.7727.55 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /kanpurengineering-works-kanpur/products-and-services.html HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.459497,
+        "glb_longitude": 77.026638,
+        "response_size": 21821,
+        "response_time": 155369,
+        "fk_activity_id": 660,
+        "ga_utma_cookie": "GA1.1.1146036629.1747816946",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604251004"
+        },
+        "seller_city_id": 70743,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Inside Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 17132,
+        "catalog_owner_glusr_id": 9571856,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n*********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 1114,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDWEB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "Gurugram",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            486
+          ]
+        },
+        "datevalue": "20260425100438",
+        "glb_state": "HR",
+        "remote_ip": "223.190.87.216",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 16; SM-S721B Build/BP2A.250605.031.A3; wv) Version/4.0 Chrome/147.0.7727.55 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /kanpurengineering-works-kanpur/sewing-needles.html?app=organic HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 28.459497,
+        "glb_longitude": 77.026638,
+        "response_size": 17536,
+        "response_time": 639,
+        "fk_activity_id": 660,
+        "ga_utma_cookie": "GA1.1.1146036629.1747816946",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604251004"
+        },
+        "seller_city_id": 70743,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Show FCP / MDC Inside Page",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 17132,
+        "catalog_owner_glusr_id": 9571856,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n*********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 1114,
+        "owner_glusr_usr_listing_status": "LST"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260425163911",
+        "glb_state": "-",
+        "remote_ip": "223.190.87.216",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Supplier Dashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2176,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604251639"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Supplier Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 26.547,
+        "coordinate_latitude": 28.357388,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.308525,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260425163911",
+        "glb_state": "-",
+        "remote_ip": "223.190.87.216",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Supplier-Dashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2176,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604251639"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Supplier Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 699,
+        "coordinate_accuracy": 26.547,
+        "coordinate_latitude": 28.357388,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.308525,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260427164629",
+        "glb_state": "-",
+        "remote_ip": "223.190.82.142",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 16; SM-S721B Build/BP2A.250605.031.A3; wv) Version/4.0 Chrome/147.0.7727.55 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26/New_BMC",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /messages/conversation?sup_glid=MjYxNjIxOTY0&state_name=Haryana&journey=notification&type=ASTBuy_Supplier_buyerdetail_image&varient=_WrtAimgTempISQ&process_identifier=ASTBuy_Supplier_buyerdetail HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 19332,
+        "response_time": 256415,
+        "fk_activity_id": 2103,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604271646"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Load Messages",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1114,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 17132,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n*********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260427164630",
+        "glb_state": "-",
+        "remote_ip": "223.190.82.142",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "User Verification Blocker Screen",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2186,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604271646"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "User Verification",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1114,
+        "coordinate_accuracy": 100,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/messages/conversation?sup_glid=MjYxNjIxOTY0&state_name=Haryana&journey=notification&type=ASTBuy_Supplier_buyerdetail_image&varient=_WrtAimgTempISQ&process_identifier=ASTBuy_Supplier_buyerdetail",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260427164630",
+        "glb_state": "-",
+        "remote_ip": "223.190.82.142",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 16; SM-S721B Build/BP2A.250605.031.A3; wv) Version/4.0 Chrome/147.0.7727.55 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26/New_BMC",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "POST /api/bmcajax/addressbook/conversation_Seller HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 553,
+        "response_time": 33319,
+        "fk_activity_id": 4682,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604271646"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "BMC Conversation Seller\n",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 70496,
+        "gl_custtype_weight": 1114,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 17132,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n*********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260427164632",
+        "glb_state": "-",
+        "remote_ip": "223.190.82.142",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "User Verification Blocker Screen",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2186,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604271647"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "User Verification",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1114,
+        "coordinate_accuracy": 29.351,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/messages",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260427164641",
+        "glb_state": "-",
+        "remote_ip": "223.190.82.142",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 16; SM-S721B Build/BP2A.250605.031.A3; wv) Version/4.0 Chrome/147.0.7727.55 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26/New_BMC",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "POST /api/bmcajax/addressbook/listing_Seller HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 553,
+        "response_time": 21327,
+        "fk_activity_id": 4680,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604271646"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "BMC Listing Seller\n",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 70496,
+        "gl_custtype_weight": 1114,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 17132,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n*********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/messages/conversation?sup_glid=MjYxNjIxOTY0&state_name=Haryana&journey=notification&type=ASTBuy_Supplier_buyerdetail_image&varient=_WrtAimgTempISQ&process_identifier=ASTBuy_Supplier_buyerdetail",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260427164641",
+        "glb_state": "-",
+        "remote_ip": "223.190.82.142",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 16; SM-S721B Build/BP2A.250605.031.A3; wv) Version/4.0 Chrome/147.0.7727.55 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26/New_BMC",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /messages?_rsc=tupmq HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 7096,
+        "response_time": 138432,
+        "fk_activity_id": 2103,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604271646"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Load Messages",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 70496,
+        "gl_custtype_weight": 1114,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 17132,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n*********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260427164642",
+        "glb_state": "-",
+        "remote_ip": "223.190.82.142",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "BuyerDashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2175,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604271646"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Buyer Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1114,
+        "coordinate_accuracy": 29.351,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260427201736",
+        "glb_state": "-",
+        "remote_ip": "-",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 16; SM-S721B Build/BP2A.250605.031.A3; wv) Version/4.0 Chrome/147.0.7727.55 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26/New_BMC",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /messages/conversation?sup_glid=MjY4MTU1MTMz&state_name=Haryana&journey=notification&type=Enq_Supplier_newenquiry_image&varient=_WrtAimgTempNew&process_identifier=Enq_Supplier_newenquiry HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 19561,
+        "response_time": 127369,
+        "fk_activity_id": 2103,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604272017"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Load Messages",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1114,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 17132,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n*********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/messages/conversation?sup_glid=MjY4MTU1MTMz&state_name=Haryana&journey=notification&type=Enq_Supplier_newenquiry_image&varient=_WrtAimgTempNew&process_identifier=Enq_Supplier_newenquiry",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260427201737",
+        "glb_state": "-",
+        "remote_ip": "-",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 16; SM-S721B Build/BP2A.250605.031.A3; wv) Version/4.0 Chrome/147.0.7727.55 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26/New_BMC",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "POST /api/bmcajax/addressbook/conversation_Seller HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 553,
+        "response_time": 17929,
+        "fk_activity_id": 4682,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604272017"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "BMC Conversation Seller\n",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 70496,
+        "gl_custtype_weight": 1114,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 17132,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n*********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/messages/conversation?sup_glid=MjY4MTU1MTMz&state_name=Haryana&journey=notification&type=Enq_Supplier_newenquiry_image&varient=_WrtAimgTempNew&process_identifier=Enq_Supplier_newenquiry",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260427201754",
+        "glb_state": "-",
+        "remote_ip": "-",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 16; SM-S721B Build/BP2A.250605.031.A3; wv) Version/4.0 Chrome/147.0.7727.55 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26/New_BMC",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "POST /api/bmcajax/addressbook/callenquiry HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 623,
+        "response_time": 35740,
+        "fk_activity_id": 4685,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604272017"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Call CTA",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 70496,
+        "gl_custtype_weight": 1114,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 17132,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n*********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260505132640",
+        "glb_state": "-",
+        "remote_ip": "223.190.80.228",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "User Verification Blocker Screen",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2186,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605051326"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "User Verification",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1114,
+        "coordinate_accuracy": 14.353,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260505132640",
+        "glb_state": "-",
+        "remote_ip": "223.190.80.228",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Android_Call_Clicked",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2382,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605051326"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Call_Now_Clicked_Android",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1114,
+        "coordinate_accuracy": 14.353,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260505132640",
+        "glb_state": "-",
+        "remote_ip": "223.190.80.228",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "BuyerDashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2175,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605051326"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Buyer Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1114,
+        "coordinate_accuracy": 14.353,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260505132642",
+        "glb_state": "-",
+        "remote_ip": "223.190.80.228",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "User Verification Blocker Screen",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2186,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605051326"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "User Verification",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1114,
+        "coordinate_accuracy": 14.292,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260505132702",
+        "glb_state": "-",
+        "remote_ip": "223.190.80.228",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 16; SM-S721B Build/BP2A.250605.031.A3; wv) Version/4.0 Chrome/147.0.7727.111 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26/New_BMC",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /messages/conversation?sup_glid=MTQzMzgxODcy&state_name=Haryana&journey=_call HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 21841,
+        "response_time": 78614,
+        "fk_activity_id": 2103,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605051327"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Load Messages",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1114,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 17132,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n*********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/messages/conversation?sup_glid=MTQzMzgxODcy&state_name=Haryana&journey=_call",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260505132703",
+        "glb_state": "-",
+        "remote_ip": "223.190.80.228",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 16; SM-S721B Build/BP2A.250605.031.A3; wv) Version/4.0 Chrome/147.0.7727.111 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26/New_BMC",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "POST /api/bmcajax/addressbook/conversation_Seller HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 528,
+        "response_time": 22019,
+        "fk_activity_id": 4682,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605051327"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "BMC Conversation Seller\n",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 70496,
+        "gl_custtype_weight": 1114,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 17132,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n*********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/messages/conversation?sup_glid=MTQzMzgxODcy&state_name=Haryana&journey=_call",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260505132704",
+        "glb_state": "-",
+        "remote_ip": "223.190.80.228",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 16; SM-S721B Build/BP2A.250605.031.A3; wv) Version/4.0 Chrome/147.0.7727.111 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26/New_BMC",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /messages?_rsc=tupmq HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 7245,
+        "response_time": 120163,
+        "fk_activity_id": 2103,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605051327"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Load Messages",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 70496,
+        "gl_custtype_weight": 1114,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 17132,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n*********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/messages",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260505132705",
+        "glb_state": "-",
+        "remote_ip": "223.190.80.228",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 16; SM-S721B Build/BP2A.250605.031.A3; wv) Version/4.0 Chrome/147.0.7727.111 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26/New_BMC",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "POST /api/bmcajax/addressbook/listing_Seller HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 528,
+        "response_time": 21896,
+        "fk_activity_id": 4680,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605051327"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "BMC Listing Seller\n",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 70496,
+        "gl_custtype_weight": 1114,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 17132,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n*********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/messages",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260505132724",
+        "glb_state": "-",
+        "remote_ip": "223.190.80.228",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 16; SM-S721B Build/BP2A.250605.031.A3; wv) Version/4.0 Chrome/147.0.7727.111 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26/New_BMC",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "POST /api/bmcajax/addressbook/callenquiry HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 623,
+        "response_time": 39750,
+        "fk_activity_id": 4685,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605051327"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Call CTA",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 70496,
+        "gl_custtype_weight": 1114,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 17132,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n*********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260505132805",
+        "glb_state": "-",
+        "remote_ip": "223.190.80.228",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "BuyerDashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2175,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605051328"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Buyer Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1114,
+        "coordinate_accuracy": 14.292,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260505143841",
+        "glb_state": "-",
+        "remote_ip": "223.190.80.228",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 16; SM-S721B Build/BP2A.250605.031.A3; wv) Version/4.0 Chrome/147.0.7727.111 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26/New_BMC",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /messages/conversation?sup_glid=MTQzMzgxODcy&state_name=Haryana&journey=notification&type=Enq_Supplier_newenquiry_image&varient=_WrtAimgTempNew&process_identifier=Enq_Supplier_newenquiry HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 22136,
+        "response_time": 83113,
+        "fk_activity_id": 2103,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605051438"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Load Messages",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1114,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 17132,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n*********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/messages/conversation?sup_glid=MTQzMzgxODcy&state_name=Haryana&journey=notification&type=Enq_Supplier_newenquiry_image&varient=_WrtAimgTempNew&process_identifier=Enq_Supplier_newenquiry",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260505143842",
+        "glb_state": "-",
+        "remote_ip": "223.190.80.228",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 16; SM-S721B Build/BP2A.250605.031.A3; wv) Version/4.0 Chrome/147.0.7727.111 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26/New_BMC",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "POST /api/bmcajax/addressbook/conversation_Seller HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 528,
+        "response_time": 23150,
+        "fk_activity_id": 4682,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605051438"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "BMC Conversation Seller\n",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 70496,
+        "gl_custtype_weight": 1114,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 17132,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n*********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/messages/conversation?sup_glid=MTQzMzgxODcy&state_name=Haryana&journey=notification&type=Enq_Supplier_newenquiry_image&varient=_WrtAimgTempNew&process_identifier=Enq_Supplier_newenquiry",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260505143846",
+        "glb_state": "-",
+        "remote_ip": "223.190.80.228",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 16; SM-S721B Build/BP2A.250605.031.A3; wv) Version/4.0 Chrome/147.0.7727.111 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26/New_BMC",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /messages?_rsc=tupmq HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 7232,
+        "response_time": 336004,
+        "fk_activity_id": 2103,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605051438"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Load Messages",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 70496,
+        "gl_custtype_weight": 1114,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 17132,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n*********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            1470
+          ]
+        },
+        "datevalue": "20260505143847",
+        "glb_state": "-",
+        "remote_ip": "223.190.80.228",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "BuyerDashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2175,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605051438"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Buyer Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1114,
+        "coordinate_accuracy": 27.907,
+        "coordinate_latitude": 28.357395,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.308525,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/messages",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260505143847",
+        "glb_state": "-",
+        "remote_ip": "223.190.80.228",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 16; SM-S721B Build/BP2A.250605.031.A3; wv) Version/4.0 Chrome/147.0.7727.111 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26/New_BMC",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "POST /api/bmcajax/addressbook/listing_Seller HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 528,
+        "response_time": 25244,
+        "fk_activity_id": 4680,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605051438"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "BMC Listing Seller\n",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 70496,
+        "gl_custtype_weight": 1114,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 17132,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n*********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/messages/conversation?sup_glid=MTQzMzgxODcy&state_name=Haryana&journey=notification&type=Enq_Supplier_newenquiry_image&varient=_WrtAimgTempNew&process_identifier=Enq_Supplier_newenquiry",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260505143847",
+        "glb_state": "-",
+        "remote_ip": "223.190.80.228",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 16; SM-S721B Build/BP2A.250605.031.A3; wv) Version/4.0 Chrome/147.0.7727.111 Mobile Safari/537.36 IM-Android_Webview/13.7.6_15APR26/New_BMC",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /messages?_rsc=tupmq HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 7179,
+        "response_time": 65606,
+        "fk_activity_id": 2103,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605051438"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Load Messages",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 70496,
+        "gl_custtype_weight": 1114,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 17132,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n*********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            1470
+          ]
+        },
+        "datevalue": "20260514143626",
+        "glb_state": "-",
+        "remote_ip": "223.190.82.88",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "BuyerDashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2175,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605141436"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Buyer Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1114,
+        "coordinate_accuracy": 27.907,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260514143627",
+        "glb_state": "-",
+        "remote_ip": "223.190.82.88",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "User Verification Blocker Screen",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2186,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605141436"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "User Verification",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1114,
+        "coordinate_accuracy": 27.907,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260514143627",
+        "glb_state": "-",
+        "remote_ip": "223.190.82.88",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Android_Call_Clicked",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2382,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605141436"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Call_Now_Clicked_Android",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1114,
+        "coordinate_accuracy": 27.907,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260514143629",
+        "glb_state": "-",
+        "remote_ip": "223.190.82.88",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "User Verification Blocker Screen",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2186,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605141437"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "User Verification",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1114,
+        "coordinate_accuracy": 20.234,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260514143629",
+        "glb_state": "-",
+        "remote_ip": "223.190.82.88",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 16; SM-S721B Build/BP2A.250605.031.A3; wv) Version/4.0 Chrome/148.0.7778.120 Mobile Safari/537.36 IM-Android_Webview/13.7.7_05MAY26/New_BMC",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /messages/conversation?sup_glid=OTE2ODIwMTk%3D&state_name=Haryana&journey=_call HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 23831,
+        "response_time": 81487,
+        "fk_activity_id": 2103,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605141436"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Load Messages",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1114,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 17132,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n*********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/messages/conversation?sup_glid=OTE2ODIwMTk%3D&state_name=Haryana&journey=_call",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260514144049",
+        "glb_state": "-",
+        "remote_ip": "223.190.82.88",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 16; SM-S721B Build/BP2A.250605.031.A3; wv) Version/4.0 Chrome/148.0.7778.120 Mobile Safari/537.36 IM-Android_Webview/13.7.7_05MAY26/New_BMC",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "GET /messages?_rsc=tupmq HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 7378,
+        "response_time": 79877,
+        "fk_activity_id": 2103,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605141440"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Load Messages",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 70496,
+        "gl_custtype_weight": 1114,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 17132,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n*********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260514144050",
+        "glb_state": "-",
+        "remote_ip": "223.190.82.88",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "BuyerDashboard",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2175,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605141440"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Buyer Dashboard Screen",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 1114,
+        "coordinate_accuracy": 20.234,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IMOB",
+        "cat_id": 0,
+        "adminln": "AdminLn0AdmnSales0",
+        "keyword": "-",
+        "referer": "https://m.indiamart.com/messages",
+        "glb_city": "-",
+        "glusr_id": 17132,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260514144050",
+        "glb_state": "-",
+        "remote_ip": "223.190.82.88",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "Mozilla/5.0 (Linux; Android 16; SM-S721B Build/BP2A.250605.031.A3; wv) Version/4.0 Chrome/148.0.7778.120 Mobile Safari/537.36 IM-Android_Webview/13.7.7_05MAY26/New_BMC",
+        "domain_name": "m.indiamart.com",
+        "http_status": 200,
+        "request_url": "POST /api/bmcajax/addressbook/listing_Seller HTTP/1.1",
+        "server_name": 31,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 528,
+        "response_time": 22611,
+        "fk_activity_id": 4680,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605141440"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "BMC Listing Seller\n",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 70496,
+        "gl_custtype_weight": 1114,
+        "coordinate_accuracy": 0,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 17132,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "n*********@gmail.com",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      }
+    ],
+    "updated_at": "2026-05-15T18:49:13.834521Z"
+  },
+  "error": null
+}

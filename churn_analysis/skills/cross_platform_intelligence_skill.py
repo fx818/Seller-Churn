@@ -105,13 +105,42 @@ def _name_score(company: str, text: str) -> float:
 
 
 def _extract_number(text: str, keyword: str) -> int:
-    m = re.search(rf"(\d[\d,]*)\s*{re.escape(keyword)}", text, re.IGNORECASE)
-    if m:
-        try:
-            return int(m.group(1).replace(",", ""))
-        except ValueError:
-            pass
+    """Find a number near a keyword. Tries multiple patterns:
+       "24 Products", "Products: 24", "Products (24)", "Products 24",
+       "Showing 1-12 of 24", "All 24 Products".
+    """
+    if not text or not keyword:
+        return 0
+    kw = re.escape(keyword)
+    patterns = [
+        rf"(\d[\d,]*)\s*{kw}",                                # "24 Products"
+        rf"{kw}\s*[:\-]?\s*\(?\s*(\d[\d,]*)\s*\)?",           # "Products: 24" / "Products (24)"
+        rf"{kw}\s+(\d[\d,]*)",                                # "Products 24"
+        rf"showing\s+\d+\s*[-–to]+\s*\d+\s+of\s+(\d[\d,]*)",  # "Showing 1-12 of 24"
+        rf"all\s+(\d[\d,]*)\s+{kw}",                          # "All 24 Products"
+        rf"view\s+all\s*\(?\s*(\d[\d,]*)\s*\)?",              # "View All (24)"
+        rf"total\s+(\d[\d,]*)\s+{kw}",                        # "Total 24 Products"
+    ]
+    for pat in patterns:
+        m = re.search(pat, text, re.IGNORECASE)
+        if m:
+            try:
+                n = int(m.group(1).replace(",", ""))
+                if 0 < n < 10000:        # sanity bound
+                    return n
+            except (ValueError, IndexError):
+                continue
     return 0
+
+
+def _extract_any_count(text: str, keywords: list[str]) -> int:
+    """Try a list of keywords, return the largest plausible count found."""
+    best = 0
+    for kw in keywords:
+        n = _extract_number(text, kw)
+        if 0 < n < 10000 and n > best:
+            best = n
+    return best
 
 
 def _wait(page, ms=1500):
@@ -223,8 +252,11 @@ def _jd_discover(hints: dict, sess: requests.Session) -> dict:
             price_count  = int(ev.get("price_count") or 0)
             dimages      = _get(best_row, "dimages") or []
             dimages_cnt  = len(dimages) if isinstance(dimages, list) else 0
-            product_count = ev_svc or sc_count or price_count
-            photocnt = int(_get(best_row, "photocnt") or 0)
+            photocnt     = int(_get(best_row, "photocnt") or 0)
+            # Fallback chain: structured catalog → service catalog → price entries
+            # → catalog images (dimages) → photo count. JustDial often has zero
+            # in the first three but real entries in `dimages` for small sellers.
+            product_count = ev_svc or sc_count or price_count or dimages_cnt or photocnt
             catalog_flag = str(ev.get("catalog_flag") or _get(best_row, "catalog_flag") or "0")
 
             nwtaglin   = _get(best_row, "nwtaglin") or []
@@ -252,87 +284,507 @@ def _jd_discover(hints: dict, sess: requests.Session) -> dict:
 
 # ── Phase 2: Playwright product count extraction ─────────────────────────────
 
-def _pw_count_products(page, url: str, company: str) -> int:
-    """Visit a page and count products using multiple selector strategies."""
-    if not _goto(page, url):
+_PRODUCT_TEXT_KEYWORDS = [
+    "Products", "Services", "Items", "Catalogue", "Catalog",
+    "Product Listing", "Product Range", "Our Products",
+    "products", "services", "items",
+]
+
+
+def _autoscroll(page, max_scrolls: int = 6, step_px: int = 1200) -> None:
+    """Scroll to bottom to trigger lazy-loaded product cards."""
+    try:
+        last_h = page.evaluate("document.body.scrollHeight")
+        for _ in range(max_scrolls):
+            page.evaluate(f"window.scrollBy(0, {step_px})")
+            page.wait_for_timeout(700)
+            h = page.evaluate("document.body.scrollHeight")
+            if h == last_h:
+                break
+            last_h = h
+        page.evaluate("window.scrollTo(0, 0)")
+    except Exception:
+        pass
+
+
+def _count_jsonld_products(page) -> int:
+    """Look for JSON-LD schema with Product / ItemList markup."""
+    try:
+        scripts = page.query_selector_all('script[type="application/ld+json"]')
+        total = 0
+        for s in scripts:
+            try:
+                raw = s.inner_text() or s.text_content() or ""
+                if not raw.strip():
+                    continue
+                data = json.loads(raw)
+            except Exception:
+                continue
+            items = data if isinstance(data, list) else [data]
+            for it in items:
+                if not isinstance(it, dict):
+                    continue
+                t = it.get("@type") or it.get("type") or ""
+                if isinstance(t, list):
+                    t = ",".join(t)
+                # ItemList → numberOfItems or itemListElement
+                if "ItemList" in str(t):
+                    n = it.get("numberOfItems")
+                    if isinstance(n, (int, float)) and n > 0:
+                        return int(n)
+                    elements = it.get("itemListElement") or []
+                    if isinstance(elements, list) and elements:
+                        total += len(elements)
+                # OfferCatalog
+                elif "OfferCatalog" in str(t):
+                    offers = it.get("itemListElement") or []
+                    if isinstance(offers, list):
+                        total += len(offers)
+                # Bare Product entries
+                elif "Product" in str(t):
+                    total += 1
+        return total
+    except Exception:
         return 0
-    _wait(page, 2000)
-    text = _page_text(page)
 
-    # Try structured count from text first
-    for kw in ["Products", "Services", "Items", "products", "services"]:
-        n = _extract_number(text, kw)
-        if n > 0:
-            return n
 
-    # Count product card elements
+def _count_via_js_heuristics(page) -> int:
+    """Use page.evaluate to find repeating card-like structures.
+
+       Strategies inside the browser:
+         1. Count anchors whose href contains /product, /catalog, /catalogue, /item, /service
+         2. Count direct children of grid/flex containers that have >=4 similar siblings
+         3. Count <img> tags inside common catalogue containers with product-shaped src
+    """
+    js = """
+    () => {
+      const counts = [];
+
+      // 1. Product-like anchors
+      const productHrefRe = /\\/(product|products|catalogue|catalog|item|items|service|services|prod)[\\/_-]/i;
+      const anchors = Array.from(document.querySelectorAll('a[href]'));
+      const productAnchors = new Set();
+      for (const a of anchors) {
+        const href = a.getAttribute('href') || '';
+        if (productHrefRe.test(href) && href.length < 400) {
+          // normalize trailing slash + querystring
+          productAnchors.add(href.split('?')[0].replace(/\\/+$/, ''));
+        }
+      }
+      if (productAnchors.size > 0) counts.push(productAnchors.size);
+
+      // 2. Grid children that look uniform
+      const containerSel = [
+        '[class*="product"]', '[class*="catalog"]', '[class*="catalogue"]',
+        '[class*="grid"]', '[class*="listing"]', '[id*="product"]', '[id*="catalog"]'
+      ].join(',');
+      const containers = Array.from(document.querySelectorAll(containerSel));
+      for (const c of containers) {
+        const kids = Array.from(c.children).filter(k => k.tagName !== 'SCRIPT' && k.tagName !== 'STYLE');
+        if (kids.length >= 3 && kids.length < 500) {
+          // require uniform tag (e.g. all LI / all DIV) AND similar class
+          const tags = new Set(kids.map(k => k.tagName));
+          if (tags.size === 1) {
+            const klass = kids[0].className || '';
+            const sameClass = kids.filter(k => (k.className || '') === klass).length;
+            if (sameClass >= 3) counts.push(sameClass);
+          }
+        }
+      }
+
+      // 3. Distinct product images
+      const productImgRe = /(product|catalog|catalogue|prod|item|service)/i;
+      const imgs = Array.from(document.querySelectorAll('img'));
+      const productImgs = new Set();
+      for (const img of imgs) {
+        const src = img.getAttribute('src') || img.getAttribute('data-src') || '';
+        if (src && productImgRe.test(src)) {
+          productImgs.add(src.split('?')[0]);
+        }
+      }
+      if (productImgs.size > 1) counts.push(productImgs.size);
+
+      // Return the most common plausible value (not the max, not the min)
+      if (counts.length === 0) return 0;
+      counts.sort((a, b) => a - b);
+      // Pick the median to be robust against outliers
+      return counts[Math.floor(counts.length / 2)];
+    }
+    """
+    try:
+        n = page.evaluate(js)
+        return int(n or 0)
+    except Exception:
+        return 0
+
+
+def _count_via_css_selectors(page) -> int:
+    """Fallback: try a broader set of CSS selectors for product cards."""
     product_selectors = [
         "[class*='product-item']", "[class*='product-card']",
         "[class*='ProductCard']", "[class*='product_item']",
         "[class*='catalogue-item']", "[class*='catalog-item']",
+        "[class*='catalog-card']", "[class*='catalogue-card']",
         ".product", ".prod-item", ".item-card",
-        "[class*='listing-item']", "[class*='product-list'] li",
+        "[class*='listing-item']", "[class*='product-list'] > li",
+        "[class*='product-list'] > div",
         ".grid-item", "[class*='prd-box']",
+        "[data-testid*='product']", "[data-test*='product']",
+        "[class*='cat-item']", "[class*='prd-card']",
+        "[class*='service-list'] > li", "[class*='serv-list'] > li",
+        "ul[class*='product'] > li", "div[class*='product-grid'] > div",
     ]
+    counts = []
     for sel in product_selectors:
         try:
             items = page.query_selector_all(sel)
-            if len(items) >= 2:
-                return len(items)
+            if 2 <= len(items) < 500:
+                counts.append(len(items))
         except Exception:
             pass
+    if not counts:
+        return 0
+    counts.sort()
+    # median is more robust than max (one bad selector can match the whole nav)
+    return counts[len(counts) // 2]
 
-    return 0
+
+# ── Title extraction + fuzzy matching ───────────────────────────────────────
+
+_TITLE_STOPWORDS = {
+    "the", "a", "an", "and", "or", "of", "for", "with", "in", "on",
+    "by", "to", "from", "at", "is", "are", "this", "that", "our",
+    "we", "us", "you", "your", "best", "high", "quality", "premium",
+    "wholesale", "retail", "supplier", "manufacturer", "exporter",
+    "trader", "company", "online", "offer", "buy", "sale", "new",
+    "pack", "set", "piece", "pcs", "kg", "gm", "mg", "ml", "ltr",
+    "inch", "cm", "mm", "ft", "size", "model", "type", "grade",
+    "indian", "india",
+}
+
+_UNIT_RE  = re.compile(r"\b\d+(?:\.\d+)?\s*(?:kg|gm|g|mg|ml|l|ltr|cm|mm|m|inch|ft|pcs|pc|piece|pack|set|hp|kw|watt|w|v|amp|ah|rpm)\b", re.IGNORECASE)
+_PUNCT_RE = re.compile(r"[^\w\s]")
+_WS_RE    = re.compile(r"\s+")
+
+
+def _normalize_title(s: str) -> str:
+    if not s:
+        return ""
+    s = s.lower().strip()
+    s = _UNIT_RE.sub(" ", s)
+    s = _PUNCT_RE.sub(" ", s)
+    s = _WS_RE.sub(" ", s).strip()
+    return s
+
+
+def _title_tokens(s: str) -> set:
+    n = _normalize_title(s)
+    if not n:
+        return set()
+    return {t for t in n.split() if len(t) >= 3 and t not in _TITLE_STOPWORDS}
+
+
+def _title_similar(a: str, b: str, threshold: float = 0.6) -> bool:
+    """Jaccard token overlap >= threshold OR one is a substring of the other."""
+    ta, tb = _title_tokens(a), _title_tokens(b)
+    if not ta or not tb:
+        return False
+    inter = ta & tb
+    union = ta | tb
+    jaccard = len(inter) / len(union) if union else 0.0
+    if jaccard >= threshold:
+        return True
+    # Substring containment (handles "LED Bulb 9W" vs "LED Bulb")
+    na = _normalize_title(a)
+    nb = _normalize_title(b)
+    if na and nb and (na in nb or nb in na) and min(len(na), len(nb)) >= 6:
+        return True
+    return False
+
+
+def _dedupe_across_platforms(titles_by_platform: dict) -> dict:
+    """Cluster matching products across platforms.
+
+    Returns:
+      {
+        "clusters":         [[("platform", "title"), ...], ...],
+        "unique_count":     int  (number of distinct products across all platforms),
+        "overlap_pairs":    [("p1","p2", overlap_count), ...],
+        "per_platform_unique": {platform: count of titles not matched anywhere else},
+      }
+    """
+    # Flatten to (platform, title) entries
+    entries = []
+    for platform, titles in titles_by_platform.items():
+        for t in titles or []:
+            if t and len(t) >= 3:
+                entries.append((platform, t))
+
+    if not entries:
+        return {"clusters": [], "unique_count": 0, "overlap_pairs": [],
+                "per_platform_unique": {}}
+
+    # Greedy clustering by similarity to cluster head
+    clusters: list = []
+    for ent in entries:
+        placed = False
+        for cl in clusters:
+            head_title = cl[0][1]
+            if _title_similar(ent[1], head_title):
+                cl.append(ent)
+                placed = True
+                break
+        if not placed:
+            clusters.append([ent])
+
+    # Pairwise overlap counts
+    from collections import Counter
+    pair_counts: Counter = Counter()
+    for cl in clusters:
+        platforms_in_cluster = sorted({e[0] for e in cl})
+        for i in range(len(platforms_in_cluster)):
+            for j in range(i + 1, len(platforms_in_cluster)):
+                pair_counts[(platforms_in_cluster[i], platforms_in_cluster[j])] += 1
+    overlap_pairs = [(p1, p2, c) for (p1, p2), c in pair_counts.items()]
+
+    # Per-platform unique = titles in clusters that contain ONLY that platform
+    per_platform_unique: dict = {p: 0 for p in titles_by_platform.keys()}
+    for cl in clusters:
+        platforms_in_cluster = {e[0] for e in cl}
+        if len(platforms_in_cluster) == 1:
+            p = next(iter(platforms_in_cluster))
+            per_platform_unique[p] = per_platform_unique.get(p, 0) + 1
+
+    return {
+        "clusters":            clusters,
+        "unique_count":        len(clusters),
+        "overlap_pairs":       overlap_pairs,
+        "per_platform_unique": per_platform_unique,
+    }
+
+
+def _pw_extract_titles(page, max_titles: int = 80) -> list:
+    """Extract candidate product titles from the page using multiple strategies.
+
+    Order:
+      1. JSON-LD Product/ItemList name fields
+      2. Anchors with product-like hrefs (use anchor text)
+      3. <img alt="..."> for product-shaped src
+      4. h2/h3/h4 inside product card containers
+    Deduplicates exact-match strings, returns at most max_titles.
+    """
+    titles: list = []
+    seen: set = set()
+
+    def _add(t: str):
+        t = (t or "").strip()
+        if not t or len(t) < 3 or len(t) > 200:
+            return
+        key = _normalize_title(t)
+        if not key or key in seen:
+            return
+        seen.add(key)
+        titles.append(t)
+
+    # 1. JSON-LD names
+    try:
+        scripts = page.query_selector_all('script[type="application/ld+json"]')
+        for s in scripts:
+            try:
+                raw  = s.inner_text() or s.text_content() or ""
+                data = json.loads(raw) if raw.strip() else None
+            except Exception:
+                continue
+            items = data if isinstance(data, list) else [data]
+            for it in items:
+                if not isinstance(it, dict):
+                    continue
+                t = str(it.get("@type") or "")
+                if "Product" in t and it.get("name"):
+                    _add(str(it["name"]))
+                elements = it.get("itemListElement") or []
+                if isinstance(elements, list):
+                    for el in elements:
+                        if isinstance(el, dict):
+                            nm = el.get("name") or (el.get("item") or {}).get("name") if isinstance(el.get("item"), dict) else el.get("name")
+                            if nm:
+                                _add(str(nm))
+    except Exception:
+        pass
+
+    if len(titles) >= 4:
+        return titles[:max_titles]
+
+    # 2 + 3 + 4 via single JS evaluation
+    js = """
+    () => {
+      const out = new Set();
+      const productHrefRe = /\\/(product|products|catalogue|catalog|item|items|service|services|prod)[\\/_-]/i;
+
+      // Anchors with product-like hrefs
+      for (const a of document.querySelectorAll('a[href]')) {
+        const href = a.getAttribute('href') || '';
+        if (!productHrefRe.test(href)) continue;
+        const t = (a.innerText || a.textContent || '').trim();
+        if (t && t.length >= 3 && t.length < 200) out.add(t);
+      }
+
+      // Product-shaped image alt text
+      const productImgRe = /(product|catalog|catalogue|prod|item|service)/i;
+      for (const img of document.querySelectorAll('img[alt]')) {
+        const src = img.getAttribute('src') || img.getAttribute('data-src') || '';
+        const alt = (img.getAttribute('alt') || '').trim();
+        if (alt && alt.length >= 3 && alt.length < 200 && (productImgRe.test(src) || productImgRe.test(alt))) {
+          out.add(alt);
+        }
+      }
+
+      // Headings inside product cards
+      const cardSel = '[class*="product"], [class*="catalog"], [class*="catalogue"], [class*="item-card"], [class*="prd"]';
+      for (const c of document.querySelectorAll(cardSel)) {
+        for (const h of c.querySelectorAll('h2, h3, h4, [class*="title"], [class*="name"]')) {
+          const t = (h.innerText || h.textContent || '').trim();
+          if (t && t.length >= 3 && t.length < 200) out.add(t);
+        }
+      }
+
+      return Array.from(out).slice(0, 200);
+    }
+    """
+    try:
+        js_titles = page.evaluate(js) or []
+        for t in js_titles:
+            _add(t)
+    except Exception:
+        pass
+
+    return titles[:max_titles]
+
+
+def _pw_count_products(page, url: str, company: str) -> int:
+    """Multi-strategy product counter.
+
+    Order of strategies (most reliable first):
+      1. JSON-LD schema (Product / ItemList / OfferCatalog) — explicit machine data
+      2. Text patterns — "24 Products", "Showing 1-12 of 24", "View All (24)"
+      3. JS heuristics — distinct product anchors / uniform grid kids / product images
+      4. CSS selector median — fallback if everything else fails
+    """
+    if not _goto(page, url):
+        return 0
+    _wait(page, 2000)
+
+    # Trigger lazy-loading
+    _autoscroll(page)
+    _wait(page, 500)
+
+    # Strategy 1 — JSON-LD
+    n = _count_jsonld_products(page)
+    if n > 0:
+        return n
+
+    # Strategy 2 — text patterns
+    text = _page_text(page)
+    n = _extract_any_count(text, _PRODUCT_TEXT_KEYWORDS)
+    if n > 0:
+        return n
+
+    # Strategy 3 — JS heuristics (DOM-driven)
+    n = _count_via_js_heuristics(page)
+    if n > 0:
+        return n
+
+    # Strategy 4 — CSS selector fallback
+    return _count_via_css_selectors(page)
 
 
 def _pw_justdial_products(page, profile_url: str, company: str) -> int:
-    """Visit JustDial profile catalog tab and count products."""
+    """Visit JustDial profile, navigate to catalogue tab, count products via DOM."""
     if not profile_url:
         return 0
-    try:
-        catalogue_url = profile_url.rstrip("/") + "/catalogue"
-        for url in [catalogue_url, profile_url]:
-            if not _goto(page, url):
-                continue
-            _wait(page, 2500)
 
-            if url == profile_url:
-                for tab_sel in [
-                    "a[href*='catalogue']", "a[href*='catalog']",
-                    "button:has-text('Products')", "a:has-text('Products')",
-                    "a:has-text('Catalogue')", "[class*='tab']:has-text('Product')",
-                ]:
-                    try:
-                        el = page.query_selector(tab_sel)
-                        if el:
-                            el.click()
-                            _wait(page, 1500)
-                            break
-                    except Exception:
-                        pass
+    # JustDial-specific URL variants to try (catalogue tab + base profile)
+    candidates = [
+        profile_url.rstrip("/") + "/catalogue",
+        profile_url.rstrip("/") + "/products",
+        profile_url,
+    ]
 
-            text = _page_text(page)
-            for kw in ["Products", "Services", "Catalogue", "Items"]:
-                n = _extract_number(text, kw)
-                if n > 0:
-                    return n
+    for url in candidates:
+        if not _goto(page, url):
+            continue
+        _wait(page, 2000)
 
-            for sel in [
-                "[class*='catalogue']", "[class*='catalog-item']",
-                "[class*='catprod']", "[class*='jd-catalog']",
-                "[class*='product-item']", ".jdcatalog li",
-                "[class*='service-list'] li", "[class*='serv-list'] li",
-                ".cat-item", "[class*='prodlist'] li",
+        # If on base profile, try clicking through to catalogue tab
+        if url == profile_url:
+            for tab_sel in [
+                "a[href*='catalogue']", "a[href*='catalog']",
+                "a[href*='products']",
+                "button:has-text('Products')", "a:has-text('Products')",
+                "a:has-text('Catalogue')", "[class*='tab']:has-text('Product')",
             ]:
                 try:
-                    items = page.query_selector_all(sel)
-                    if len(items) >= 1:
-                        return len(items)
+                    el = page.query_selector(tab_sel)
+                    if el:
+                        el.click()
+                        _wait(page, 1500)
+                        break
                 except Exception:
                     pass
 
-    except Exception:
-        pass
+        # Trigger lazy-loaded catalog cards
+        _autoscroll(page)
+        _wait(page, 500)
+
+        # Strategy 1 — JSON-LD (JustDial sometimes embeds OfferCatalog)
+        n = _count_jsonld_products(page)
+        if n > 0:
+            return n
+
+        # Strategy 2 — text patterns
+        text = _page_text(page)
+        n = _extract_any_count(text, [
+            "Products", "Services", "Catalogue", "Items", "Catalog",
+        ])
+        if n > 0:
+            return n
+
+        # Strategy 3 — JustDial-specific DOM: catalogue cards have class
+        # patterns like `jd-cat-list`, `jdcat`, `catbox`, plus generic ones
+        jd_js = """
+        () => {
+          const sels = [
+            '[class*="jdcat"]', '[class*="jd-cat"]', '[class*="jd-catalog"]',
+            '[class*="catprod"]', '[class*="catbox"]',
+            '[class*="catalogue-item"]', '[class*="catalog-item"]',
+            '[class*="cat-item"]', '[class*="prdlist"] > li',
+            '[class*="product-item"]', '[class*="service-item"]',
+            'ul[class*="catalog"] > li', 'div[class*="catalog"] > div',
+          ];
+          let best = 0;
+          for (const s of sels) {
+            try {
+              const items = document.querySelectorAll(s);
+              if (items.length >= 1 && items.length < 500 && items.length > best) {
+                best = items.length;
+              }
+            } catch (e) {}
+          }
+          return best;
+        }
+        """
+        try:
+            n = page.evaluate(jd_js)
+            if n and int(n) > 0:
+                return int(n)
+        except Exception:
+            pass
+
+        # Strategy 4 — generic heuristics
+        n = _count_via_js_heuristics(page)
+        if n > 0:
+            return n
+
     return 0
 
 
@@ -388,6 +840,10 @@ def _pw_tradeindia(page, hints: dict) -> dict:
                     profile_text = _page_text(page)
 
                     product_count = _pw_count_products(page, profile_url, company)
+                    try:
+                        product_titles = _pw_extract_titles(page)
+                    except Exception:
+                        product_titles = []
 
                     categories = []
                     for sel in ["[class*='breadcrumb'] li", "h1", "[class*='category']"]:
@@ -402,12 +858,13 @@ def _pw_tradeindia(page, hints: dict) -> dict:
                             pass
 
                     return {
-                        "found":         True,
-                        "product_count": product_count,
-                        "rating":        0.0,
-                        "reviews":       0,
-                        "categories":    categories[:3],
-                        "url":           profile_url,
+                        "found":          True,
+                        "product_count":  product_count,
+                        "product_titles": product_titles,
+                        "rating":         0.0,
+                        "reviews":        0,
+                        "categories":     categories[:3],
+                        "url":            profile_url,
                     }
                 except Exception:
                     pass
@@ -427,8 +884,13 @@ def _pw_tradeindia(page, hints: dict) -> dict:
             text = _page_text(page)
             if text and _name_score(company, text) >= 0.4:
                 product_count = _pw_count_products(page, url, company)
+                try:
+                    product_titles = _pw_extract_titles(page)
+                except Exception:
+                    product_titles = []
                 return {
                     "found": True, "product_count": product_count,
+                    "product_titles": product_titles,
                     "rating": 0.0, "reviews": 0, "categories": [], "url": page.url,
                 }
         except Exception:
@@ -482,11 +944,17 @@ def _pw_own_website(page, hints: dict) -> dict:
                 except Exception:
                     pass
 
+        try:
+            product_titles = _pw_extract_titles(page)
+        except Exception:
+            product_titles = []
+
         return {
-            "found":         True,
-            "product_count": product_count,
-            "url":           final_url,
-            "domain":        domain,
+            "found":          True,
+            "product_count":  product_count,
+            "product_titles": product_titles,
+            "url":            final_url,
+            "domain":         domain,
         }
     except Exception:
         return empty
@@ -495,19 +963,108 @@ def _pw_own_website(page, hints: dict) -> dict:
 # ── Gap + call card ──────────────────────────────────────────────────────────
 
 def _compute_gap(im_count: int, platform_data: dict) -> dict:
+    """Combine competitor product counts across platforms.
+
+    Preferred path — NAME-BASED DEDUPE (robust):
+      If any platform has scraped product titles, cluster matching titles
+      across platforms (Jaccard token overlap + substring containment).
+      The true competitor catalogue size = number of distinct clusters.
+
+    Fallback path — COUNT-BASED HEURISTIC (when titles missing):
+      - All counts within 30% of max → likely overlapping catalogues → MAX
+      - Counts differ widely → likely distinct catalogues → SUM
+      - One platform only → use directly
+    """
     other_counts = [
-        d["product_count"]
+        d.get("product_count", 0)
         for d in platform_data.values()
         if d.get("found") and d.get("product_count", 0) > 0
     ]
-    if not other_counts:
-        return {"im_products": im_count, "other_avg_products": 0,
-                "gap_pct": 0, "severity": "unknown"}
-    avg     = sum(other_counts) / len(other_counts)
-    gap_pct = round((im_count - avg) / max(avg, 1) * 100, 1)
-    sev     = "high" if gap_pct < -40 else "medium" if gap_pct < -20 else "low"
-    return {"im_products": im_count, "other_avg_products": round(avg, 1),
-            "gap_pct": gap_pct, "severity": sev}
+    titles_by_platform = {
+        p: (d.get("product_titles") or [])
+        for p, d in platform_data.items()
+        if d.get("found")
+    }
+    has_titles = sum(len(v) for v in titles_by_platform.values()) >= 3
+
+    if not other_counts and not has_titles:
+        return {"im_products": im_count, "other_total_products": 0,
+                "other_max_products": 0, "other_combination": "none",
+                "gap_pct": 0, "severity": "unknown",
+                "match_method": "none",
+                "overlap_pairs": [], "per_platform_unique": {}}
+
+    # ---- Path A: name-based dedupe ----
+    if has_titles:
+        dd = _dedupe_across_platforms(titles_by_platform)
+        unique_via_names = dd["unique_count"]
+
+        # If unique_via_names is suspiciously lower than the reported count for any
+        # platform (e.g. JustDial reports 24 products but we only scraped 8 titles),
+        # don't penalize — fall back to the max of (name-unique, max raw count).
+        max_raw_count = max(other_counts) if other_counts else 0
+        other_total = max(unique_via_names, max_raw_count)
+
+        # Combination label inferred from cluster structure
+        if not other_counts:
+            combination = "name_dedupe"
+        elif unique_via_names < sum(other_counts) * 0.65:
+            combination = "name_dedupe_overlap"   # heavy cross-listing
+        else:
+            combination = "name_dedupe_distinct"  # mostly unique per platform
+
+        gap_pct = round((im_count - other_total) / max(other_total, 1) * 100, 1)
+        sev = "high" if gap_pct < -40 else "medium" if gap_pct < -20 else "low"
+
+        return {
+            "im_products":          im_count,
+            "other_total_products": other_total,
+            "other_max_products":   max_raw_count,
+            "other_combination":    combination,
+            "platform_counts":      other_counts,
+            "other_avg_products":   other_total,  # back-compat
+            "gap_pct":              gap_pct,
+            "severity":             sev,
+            "match_method":         "names",
+            "unique_via_names":     unique_via_names,
+            "overlap_pairs":        [{"platforms": [p1, p2], "shared": c}
+                                     for p1, p2, c in dd["overlap_pairs"]],
+            "per_platform_unique":  dd["per_platform_unique"],
+            "titles_sampled":       {p: t[:20] for p, t in titles_by_platform.items() if t},
+        }
+
+    # ---- Path B: count-based heuristic ----
+    max_cnt = max(other_counts)
+    sum_cnt = sum(other_counts)
+
+    if len(other_counts) == 1:
+        other_total = max_cnt
+        combination = "single"
+    else:
+        threshold = max_cnt * 0.7
+        if all(c >= threshold for c in other_counts):
+            other_total = max_cnt
+            combination = "max_overlap"
+        else:
+            other_total = sum_cnt
+            combination = "sum_distinct"
+
+    gap_pct = round((im_count - other_total) / max(other_total, 1) * 100, 1)
+    sev = "high" if gap_pct < -40 else "medium" if gap_pct < -20 else "low"
+
+    return {
+        "im_products":          im_count,
+        "other_total_products": other_total,
+        "other_max_products":   max_cnt,
+        "other_combination":    combination,
+        "platform_counts":      other_counts,
+        "other_avg_products":   other_total,
+        "gap_pct":              gap_pct,
+        "severity":             sev,
+        "match_method":         "counts",
+        "overlap_pairs":        [],
+        "per_platform_unique":  {},
+    }
 
 
 def _build_call_card(company: str, gap: dict, platform_data: dict, hints: dict) -> dict:
@@ -644,12 +1201,24 @@ class CrossPlatformIntelligenceSkill(Skill):
                 page = ctx_browser.new_page()
                 page.set_default_timeout(_PW_TIMEOUT)
 
-                # JustDial: get product count from profile page
+                # JustDial: get product count from profile page.
+                # Only overwrite if Playwright found MORE than the discovery
+                # phase did (some sellers have catalog photos that aren't in
+                # the search listing's `dimages`).
                 if jd_base.get("found") and jd_base.get("url"):
                     jd_products = _pw_justdial_products(page, jd_base["url"], hints["company_name"])
-                    platform_data["justdial"]["product_count"] = jd_products
+                    existing = platform_data["justdial"].get("product_count", 0) or 0
+                    if jd_products > existing:
+                        platform_data["justdial"]["product_count"] = jd_products
+                    # Capture titles from the current page (catalogue tab) for name-matching
+                    try:
+                        jd_titles = _pw_extract_titles(page)
+                        if jd_titles:
+                            platform_data["justdial"]["product_titles"] = jd_titles
+                    except Exception:
+                        pass
 
-                # TradeIndia: full search + product count
+                # TradeIndia: full search + product count + titles
                 _wait(page, 1000)
                 platform_data["tradeindia"] = _pw_tradeindia(page, hints)
 

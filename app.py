@@ -3,7 +3,7 @@ Seller Survival Intelligence — Flask Web UI
 Usage: python app.py
 Then open http://localhost:5000
 """
-import json, os, sys, time
+import json, os, sys, time, threading, queue
 from flask import Flask, render_template, request, Response, jsonify
 
 # Ensure Hackathon root is on path
@@ -145,7 +145,16 @@ def score_stream():
                 "complete":          "Finalizing action plan...",
             }
 
-            _buffer = []
+            # ── Live progress streaming via thread + queue ──
+            # Why: run_seller() blocks for 30-60s (Playwright scrape + LLM calls).
+            # If we buffer progress events and flush at the end, the browser sees
+            # silence, EventSource times out, auto-reconnects, and the pipeline
+            # restarts in a loop. Instead, push progress events to a queue and
+            # yield them live from the main generator while a worker thread runs
+            # the pipeline.
+            q: queue.Queue = queue.Queue()
+            _RESULT_SENTINEL = object()
+            _DONE_SENTINEL   = object()
 
             def progress_cb(step: str, data: dict):
                 status = data.get("status", "")
@@ -156,34 +165,64 @@ def score_stream():
                         label = f"{label} (skipped)"
                     elif status == "done":
                         label = f"{label.replace('...', '')} ✓"
-                    _buffer.append(json.dumps({
-                        "event": "skill_progress",
-                        "step":  step,
-                        "label": label,
-                        "pct":   pct,
+                    q.put(("skill_progress", {
+                        "step":   step,
+                        "label":  label,
+                        "pct":    pct,
                         "status": status,
-                        "data":  {k: v for k, v in data.items() if k != "status"},
-                    }, ensure_ascii=False, default=str))
+                        "data":   {k: v for k, v in data.items() if k != "status"},
+                    }))
 
-            from churn_analysis.agent.orchestrator import run_seller
-            action_plan = run_seller(
-                glid       = glid,
-                signals    = signals,
-                api_responses = api_responses,
-                peer_benchmarks = peer_benchmarks,
-                model      = None if skip_llm else model,
-                progress_cb = progress_cb,
-            )
+            def worker():
+                try:
+                    from churn_analysis.agent.orchestrator import run_seller
+                    ap = run_seller(
+                        glid          = glid,
+                        signals       = signals,
+                        api_responses = api_responses,
+                        peer_benchmarks = peer_benchmarks,
+                        model         = None if skip_llm else model,
+                        progress_cb   = progress_cb,
+                    )
+                    q.put((_RESULT_SENTINEL, ap))
+                except Exception as exc:
+                    import traceback
+                    q.put(("error", {"message": str(exc), "trace": traceback.format_exc()}))
+                finally:
+                    q.put((_DONE_SENTINEL, None))
 
-            for msg in _buffer:
-                yield f"data: {msg}\n\n"
+            t = threading.Thread(target=worker, daemon=True)
+            t.start()
 
-            yield from emit("result", {
-                "step":  "result",
-                "label": "Complete",
-                "pct":   100,
-                "data":  action_plan,
-            })
+            # Drain the queue: heartbeat every 10s if nothing comes in,
+            # so proxies / browsers don't kill the connection.
+            action_plan = None
+            while True:
+                try:
+                    kind, payload = q.get(timeout=10)
+                except queue.Empty:
+                    # SSE comment line = heartbeat, ignored by JS but keeps socket alive
+                    yield ": keepalive\n\n"
+                    continue
+
+                if kind is _DONE_SENTINEL:
+                    break
+                if kind is _RESULT_SENTINEL:
+                    action_plan = payload
+                    continue
+                if kind == "error":
+                    yield from emit("error", payload)
+                    return
+                # Normal event
+                yield f"data: {json.dumps({'event': kind, **payload}, ensure_ascii=False, default=str)}\n\n"
+
+            if action_plan is not None:
+                yield from emit("result", {
+                    "step":  "result",
+                    "label": "Complete",
+                    "pct":   100,
+                    "data":  action_plan,
+                })
 
         except Exception as exc:
             import traceback

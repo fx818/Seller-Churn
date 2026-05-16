@@ -42,6 +42,7 @@ def _auto_register():
     from .call_summary_skill import CallSummarySkill
     from .cross_platform_intelligence_skill import CrossPlatformIntelligenceSkill
     from .conversion_point_skill import ConversionPointSkill
+    from .bl_card_skill import BLCardSkill
     for cls in [
         ChurnScoringSkill, SHAPRCASkill, PeerBenchmarkSkill,
         DemandIndexSkill, OnboardingHealthSkill, WhatsAppMessageSkill,
@@ -49,6 +50,7 @@ def _auto_register():
         GiftedLeadSkill, WinbackPrioritySkill, BLUpgradeSkill,
         ScriptGenerationSkill, CallSummarySkill,
         CrossPlatformIntelligenceSkill, ConversionPointSkill,
+        BLCardSkill,
     ]:
         registry.register(cls())
 

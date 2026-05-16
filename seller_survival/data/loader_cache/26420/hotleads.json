@@ -1,0 +1,74 @@
+{
+  "status": 200,
+  "data": {
+    "items": [
+      {
+        "gluser_id": 26420,
+        "hotlead_date": "2026-01-21",
+        "hotlead_id": 13411219,
+        "hotlead_type_id": 1071227164,
+        "data_type": "NVGT",
+        "activity": "New VGFCP Top3",
+        "activity_id": 10005
+      },
+      {
+        "gluser_id": 26420,
+        "hotlead_date": "2025-10-16",
+        "hotlead_id": 13411219,
+        "hotlead_type_id": 1031522244,
+        "data_type": "PNSM",
+        "activity": "Premium Activity - PNS Call Missed",
+        "activity_id": 10002
+      },
+      {
+        "gluser_id": 26420,
+        "hotlead_date": "2025-10-15",
+        "hotlead_id": 13411219,
+        "hotlead_type_id": 1031019751,
+        "data_type": "ENQR",
+        "activity": "Premium Activity - Enquiry Received",
+        "activity_id": 10004
+      },
+      {
+        "gluser_id": 26420,
+        "hotlead_date": "2025-09-05",
+        "hotlead_id": 13411219,
+        "hotlead_type_id": 1013621905,
+        "data_type": "PNSM",
+        "activity": "Premium Activity - PNS Call Missed",
+        "activity_id": 10002
+      },
+      {
+        "gluser_id": 26420,
+        "hotlead_date": "2025-07-23",
+        "hotlead_id": 13411219,
+        "hotlead_type_id": 993234873,
+        "data_type": "PNSR",
+        "activity": "Premium Activity - PNS Call Received",
+        "activity_id": 10001
+      },
+      {
+        "gluser_id": 26420,
+        "hotlead_date": "2025-07-19",
+        "hotlead_id": 13411219,
+        "hotlead_type_id": 991395457,
+        "data_type": "ENQR",
+        "activity": "Premium Activity - Enquiry Received",
+        "activity_id": 10004
+      },
+      {
+        "gluser_id": 26420,
+        "hotlead_date": "2025-06-17",
+        "hotlead_id": 13411219,
+        "hotlead_type_id": 976743356,
+        "data_type": "PNSR",
+        "activity": "Premium Activity - PNS Call Received",
+        "activity_id": 10001
+      }
+    ],
+    "total": 7,
+    "page": 1,
+    "page_size": 20
+  },
+  "error": null
+}

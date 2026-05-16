@@ -1,5 +1,198 @@
-"""Script generation skill — routes by RCA category, generates Hindi-primary call scripts."""
+"""Script generation skill — LLM-personalized 5-part Hindi-primary call scripts.
+
+If the LLM is reachable, generates a script tailored to this specific seller's
+signals (RCA, churn reasons, peer gap, demand tier, trajectory, cross-platform
+data). Falls back to deterministic templates if the LLM call fails.
+"""
+import json
+import os
+import re
+
+import requests as _requests
+
+try:
+    from dotenv import load_dotenv
+    load_dotenv(os.path.join(os.path.dirname(__file__), "..", "..", ".env"), override=True)
+except Exception:
+    pass
+
 from .base_skill import Skill, SkillResult
+
+
+# ── LLM helpers ──────────────────────────────────────────────────────────────
+
+_LLM_SYSTEM = (
+    "You are an expert IndiaMART retention call coach. "
+    "Your job: write a 5-part Hindi-primary (Devanagari Hindi in Latin script, "
+    "code-mixed with English business terms) call script tailored to a SPECIFIC "
+    "seller's data. The script should sound natural, empathetic, and data-driven — "
+    "the rep should be able to read it almost verbatim. Reference the seller's actual "
+    "numbers (lead drop %, peer gap, IM products, JustDial products, demand tier, "
+    "etc.). Avoid generic platitudes. Each part is 1-3 sentences. "
+    "Return STRICT JSON only — no markdown, no commentary."
+)
+
+_LLM_USER_TEMPLATE = """\
+SELLER DATA
+-----------
+Company:         {company}
+City:            {city}
+Customer type:   {ctype}
+Account age:     {account_age} days
+Days to renewal: {days_to_renewal}
+
+CHURN SIGNALS
+-------------
+Churn score:     {churn_score}/100  (tier: {risk})
+LLM risk:        {llm_risk}
+RCA category:    {rca}
+RCA explanation: {rca_explanation}
+Top churn reasons:
+{reasons_block}
+
+Behavioral:
+  Reply rate (30d):  {reply_rate}%
+  BL velocity:       {bl_velocity}% MoM
+  PNS success:       {pns}%
+  Active days (30d): {active_days}
+  CQS:               {cqs}
+
+Peer & demand:
+  Peer median enq:   {peer_median}
+  Peer gap:          {peer_summary}
+  Demand tier:       {demand_tier}
+  Demand explanation: {demand_explanation}
+
+Trajectory: {trajectory_type} — {trajectory_label}
+{trajectory_explanation}
+
+Cross-platform (seller's footprint elsewhere):
+{cross_platform_block}
+
+INSTRUCTIONS
+------------
+Write a 5-part call script. Each part addresses these goals:
+  1. opening     — Personalized hook in first 10s using ONE specific seller stat
+  2. diagnostic  — Open question that probes the root cause (RCA-aware)
+  3. value_demo  — Concrete data point or peer/cross-platform comparison
+  4. action      — One specific step the rep + seller will do together on the call
+  5. close       — Low-pressure commitment that respects the seller
+
+Tone:
+  - Hindi-primary mixed with English business terms (e.g. "leads", "geography",
+    "catalog", "settings"). Use "Bhai" / "ji" naturally.
+  - Reference real numbers from the seller's data above.
+  - Avoid platitudes ("aapki success hamara priority hai").
+  - The TYPE_A (Sudden Cliff) urgency tone is different from TYPE_C (Never Engaged).
+
+Return STRICT JSON, this exact shape:
+{{
+  "script_hi": {{
+    "opening":     "...",
+    "diagnostic":  "...",
+    "value_demo":  "...",
+    "action":      "...",
+    "close":       "..."
+  }},
+  "script_en": {{
+    "opening":     "...",
+    "diagnostic":  "...",
+    "value_demo":  "...",
+    "action":      "...",
+    "close":       "..."
+  }},
+  "estimated_duration_min": 7,
+  "personalization_signals_used": ["short, comma-separated list of which signals you referenced, e.g. bl_velocity, peer_gap, cross_platform_jd"]
+}}
+"""
+
+
+def _call_llm(system: str, user: str, model: str, timeout: int = 45) -> str:
+    base    = os.getenv("LLM_BASE_URL", "https://api.openai.com/v1").rstrip("/")
+    api_key = os.getenv("LLM_API_KEY", "")
+    if not api_key:
+        raise RuntimeError("LLM_API_KEY not set")
+    url = f"{base}/chat/completions"
+    resp = _requests.post(
+        url,
+        json={
+            "model":      model,
+            "max_tokens": 1400,
+            "temperature": 0.4,
+            "messages": [
+                {"role": "system", "content": system},
+                {"role": "user",   "content": user},
+            ],
+        },
+        headers={"Authorization": f"Bearer {api_key}"},
+        timeout=timeout,
+    )
+    resp.raise_for_status()
+    return resp.json()["choices"][0]["message"]["content"]
+
+
+def _parse_llm_json(text: str) -> dict:
+    text = (text or "").strip()
+    text = re.sub(r"```json\s*", "", text)
+    text = re.sub(r"```\s*", "", text)
+    m = re.search(r"\{.*\}", text, re.DOTALL)
+    if m:
+        text = m.group(0)
+    return json.loads(text)
+
+
+def _build_user_prompt(inputs: dict) -> str:
+    reasons = inputs.get("churn_reasons") or []
+    reasons_block = "\n".join(f"  - {r}" for r in reasons[:6]) or "  (none)"
+
+    cp_data = inputs.get("cross_platform_data") or {}
+    if isinstance(cp_data, dict) and cp_data.get("platforms_found"):
+        platforms = cp_data.get("platforms_found", [])
+        gap       = cp_data.get("im_catalog_gap", {}) or {}
+        cp_block_lines = [f"  Platforms found: {', '.join(platforms)}"]
+        for p, det in (cp_data.get("platform_data") or {}).items():
+            if det.get("found"):
+                cp_block_lines.append(
+                    f"  {p}: {det.get('product_count', 0)} products"
+                    + (f", rating {det.get('rating')}/5" if det.get("rating") else "")
+                )
+        combo = gap.get("other_combination", "n/a")
+        other_total = gap.get("other_total_products", gap.get("other_avg_products", 0))
+        cp_block_lines.append(
+            f"  IM products: {gap.get('im_products', 0)} | "
+            f"Other platforms ({combo}): {other_total} | "
+            f"Gap %: {gap.get('gap_pct', 0)}"
+        )
+        cross_platform_block = "\n".join(cp_block_lines)
+    else:
+        cross_platform_block = "  (seller appears IM-exclusive or scrape skipped)"
+
+    return _LLM_USER_TEMPLATE.format(
+        company        = inputs.get("company") or inputs.get("seller_name") or "Bhai",
+        city           = inputs.get("city") or "—",
+        ctype          = inputs.get("enterprise") or inputs.get("ctype") or "—",
+        account_age    = inputs.get("account_age_days") or "—",
+        days_to_renewal= inputs.get("days_to_renewal", "—"),
+        churn_score    = inputs.get("churn_score", "—"),
+        risk           = inputs.get("risk", "—"),
+        llm_risk       = inputs.get("llm_risk_level") or "—",
+        rca            = inputs.get("rca_category") or "UNKNOWN",
+        rca_explanation= inputs.get("rca_explanation_en") or "—",
+        reasons_block  = reasons_block,
+        reply_rate     = inputs.get("reply_rate_30d", "—"),
+        bl_velocity    = inputs.get("bl_velocity_pct", "—"),
+        pns            = inputs.get("pns_success_pct", "—"),
+        active_days    = inputs.get("active_days_30d", "—"),
+        cqs            = inputs.get("cqs", "—"),
+        peer_median    = inputs.get("peer_median_enq", "—"),
+        peer_summary   = inputs.get("peer_summary_line") or "—",
+        demand_tier    = inputs.get("demand_tier") or "—",
+        demand_explanation = inputs.get("demand_explanation") or "—",
+        trajectory_type    = inputs.get("trajectory_type") or "UNKNOWN",
+        trajectory_label   = inputs.get("trajectory_label") or "—",
+        trajectory_explanation = inputs.get("explanation") or "",
+        cross_platform_block   = cross_platform_block,
+    )
 
 
 def _fmt(template: str, **kwargs) -> str:
@@ -274,33 +467,95 @@ def _build_script(inputs: dict) -> tuple[dict, dict]:
 
 class ScriptGenerationSkill(Skill):
     name: str = "script_generation"
-    required_inputs: list[str] = ["glid", "rca_category", "seller_name", "company", "city"]
+    required_inputs: list[str] = ["glid"]
     optional_inputs: list[str] = [
-        "enterprise", "peer_median_enq", "enq_30d", "bl_velocity_pct",
-        "gifted_lead", "days_to_renewal", "language", "llm_reasoning",
-        "llm_risk_level", "trajectory_type", "trajectory_description",
-        "call_frame_hi", "call_frame_en", "cross_platform_data",
+        # Identity
+        "rca_category", "seller_name", "company", "city",
+        "enterprise", "ctype", "account_age_days",
+        # Scoring
+        "churn_score", "risk", "llm_risk_level", "llm_reasoning",
+        # Signals
+        "churn_reasons", "reply_rate_30d", "bl_velocity_pct",
+        "pns_success_pct", "active_days_30d", "cqs",
+        # RCA
+        "rca_explanation_en", "rca_explanation_hi", "intervention_hint",
+        # Peer & demand
+        "peer_median_enq", "enq_30d", "peer_summary_line",
+        "demand_tier", "demand_explanation",
+        # Trajectory
+        "trajectory_type", "trajectory_label", "explanation",
+        # Cross-platform
+        "cross_platform_data", "platforms_found", "platform_data",
+        "im_catalog_gap", "call_card",
+        # Other
+        "gifted_lead", "days_to_renewal", "language",
+        "trajectory_description", "call_frame_hi", "call_frame_en",
+        # LLM controls
+        "model", "force_template",
     ]
 
     def invoke(self, inputs: dict) -> SkillResult:
-        rca = inputs.get("rca_category", "").upper()
-        language = inputs.get("language", "hi")
+        rca        = (inputs.get("rca_category") or "").upper()
+        language   = inputs.get("language", "hi")
         trajectory = inputs.get("trajectory_type", "")
 
-        hi_parts, en_parts = _build_script(inputs)
+        # Bundle cross-platform fields into a single dict for the prompt
+        if not inputs.get("cross_platform_data") and inputs.get("platforms_found"):
+            inputs["cross_platform_data"] = {
+                "platforms_found": inputs.get("platforms_found"),
+                "platform_data":   inputs.get("platform_data") or {},
+                "im_catalog_gap":  inputs.get("im_catalog_gap") or {},
+                "call_card":       inputs.get("call_card") or {},
+            }
+
+        force_template = bool(inputs.get("force_template"))
+        llm_used       = False
+        llm_error      = None
+        signals_used   = []
+
+        if not force_template and os.getenv("LLM_API_KEY"):
+            try:
+                model = inputs.get("model") or os.getenv("LLM_MODEL", "gpt-4o-mini")
+                user_prompt = _build_user_prompt(inputs)
+                raw = _call_llm(_LLM_SYSTEM, user_prompt, model)
+                parsed = _parse_llm_json(raw)
+
+                hi_parts = parsed.get("script_hi") or {}
+                en_parts = parsed.get("script_en") or {}
+                # Validate — must have all 5 parts in Hindi
+                required_keys = {"opening", "diagnostic", "value_demo", "action", "close"}
+                if required_keys.issubset(hi_parts.keys()) and required_keys.issubset(en_parts.keys()):
+                    llm_used     = True
+                    signals_used = parsed.get("personalization_signals_used") or []
+                    est_duration = parsed.get("estimated_duration_min", 7)
+                else:
+                    raise ValueError(f"LLM returned incomplete script (missing parts)")
+            except Exception as exc:
+                llm_error = str(exc)[:200]
+                hi_parts, en_parts = _build_script(inputs)
+                est_duration = 10 if trajectory == "TYPE_C" else 7
+        else:
+            hi_parts, en_parts = _build_script(inputs)
+            est_duration = 10 if trajectory == "TYPE_C" else 7
 
         data = {
-            "script_parts": hi_parts,
-            "script_parts_en": en_parts,
-            "objection_handlers": _OBJECTION_HANDLERS,
+            "script_parts":          hi_parts,
+            "script_parts_en":       en_parts,
+            "objection_handlers":    _OBJECTION_HANDLERS,
             "objection_handlers_en": _OBJECTION_HANDLERS_EN,
-            "language": language,
-            "rca_used": rca if rca else "DEFAULT",
-            "trajectory_type": trajectory,
-            "estimated_duration_min": 10 if trajectory == "TYPE_C" else 7,
-            "call_type": "RETENTION",
+            "language":              language,
+            "rca_used":              rca if rca else "DEFAULT",
+            "trajectory_type":       trajectory,
+            "estimated_duration_min": est_duration,
+            "call_type":             "RETENTION",
+            "llm_used":              llm_used,
+            "personalization_signals_used": signals_used,
+            "generation_method":     "llm" if llm_used else "template",
         }
-        return SkillResult(success=True, data=data, confidence=1.0)
+        if llm_error:
+            data["llm_error"] = llm_error
+        confidence = 0.92 if llm_used else 0.7
+        return SkillResult(success=True, data=data, confidence=confidence)
 
     def fallback(self, inputs: dict, error: Exception) -> SkillResult:
         seller = inputs.get("seller_name", "Bhai")

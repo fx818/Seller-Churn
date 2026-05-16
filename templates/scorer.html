@@ -270,6 +270,25 @@ select.inp{cursor:pointer}
   <!-- ── RIGHT: Results pane ── -->
   <div class="results-pane" id="results-pane">
 
+    <!-- Seller header (company + GLID) -->
+    <div id="seller-header" style="display:none;background:var(--s2);border:1px solid var(--bdr);border-radius:var(--r);padding:14px 18px;margin-bottom:14px;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+        <div style="width:44px;height:44px;border-radius:50%;background:var(--acc);color:#fff;font-weight:700;font-size:18px;display:flex;align-items:center;justify-content:center" id="seller-initial">·</div>
+        <div>
+          <div id="seller-company" style="font-size:18px;font-weight:700;color:var(--fg)">—</div>
+          <div style="font-size:12px;color:var(--mut);margin-top:2px">
+            GLID <span id="seller-glid" style="color:var(--fg);font-family:monospace">—</span>
+            · <span id="seller-loc">—</span>
+            · <span id="seller-ctype">—</span>
+          </div>
+        </div>
+      </div>
+      <div style="font-size:11px;color:var(--mut);text-align:right">
+        <div>Account age: <span id="seller-age" style="color:var(--fg)">—</span></div>
+        <div>RAG: <span id="seller-rag" style="color:var(--fg)">—</span></div>
+      </div>
+    </div>
+
     <!-- Risk banner -->
     <div class="risk-banner" id="risk-banner">
       <div class="risk-circle" id="risk-circle">?</div>
@@ -564,6 +583,24 @@ function renderSnapshot(data){
   const bl  = beh.bl || {};
   const lms = beh.lms || {};
   const act = beh.activity || {};
+
+  // ── Seller header (company + GLID badge) ─────────────────────────
+  document.getElementById('results-pane').classList.add('show');
+  const hdr = document.getElementById('seller-header');
+  if (hdr) {
+    hdr.style.display = 'flex';
+    const company = ctx.company || ctx.firmName || '—';
+    document.getElementById('seller-company').textContent = company;
+    document.getElementById('seller-initial').textContent =
+      (company && company !== '—' ? company.trim().charAt(0).toUpperCase() : '·');
+    document.getElementById('seller-glid').textContent = ctx.glid || data.glid || '—';
+    const loc = [ctx.city, ctx.state].filter(Boolean).join(', ');
+    document.getElementById('seller-loc').textContent = loc || '—';
+    document.getElementById('seller-ctype').textContent = ctx.custtype || ctx.ctype || '—';
+    document.getElementById('seller-age').textContent =
+      (ctx.account_age_days != null ? ctx.account_age_days + 'd' : '—');
+    document.getElementById('seller-rag').textContent = ctx.rag_category || ctx.rag || '—';
+  }
 
   // Overview sig-grid
   const sigs = [

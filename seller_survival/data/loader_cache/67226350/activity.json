@@ -1,0 +1,1451 @@
+{
+  "status": 200,
+  "data": {
+    "gluser_id": 67226350,
+    "event_count": 20,
+    "events": [
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 67226350,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421124110",
+        "glb_state": "-",
+        "remote_ip": "157.50.207.132",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Message Center-Message Detail",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2189,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211241"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Message Center Conversations",
+        "owner_gl_country": "IN",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 16.505,
+        "coordinate_latitude": 12.928044,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.60352,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 104750653,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "NFL"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 67226350,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421124110",
+        "glb_state": "-",
+        "remote_ip": "157.50.207.132",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Message Center-Contact-Details",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2188,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211241"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Message Center-Contact-Details",
+        "owner_gl_country": "ZW",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 16.505,
+        "coordinate_latitude": 12.928044,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.60352,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 247388968,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "NFL"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 67226350,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421124111",
+        "glb_state": "-",
+        "remote_ip": "157.50.172.113",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "User Verification Blocker Screen",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2186,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211241"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "User Verification",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 100,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 67226350,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260421124113",
+        "glb_state": "-",
+        "remote_ip": "157.50.172.113",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "User Verification Blocker Screen",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2186,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604211241"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "User Verification",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 13.707,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IOS",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 67226350,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260429124418",
+        "glb_state": "-",
+        "remote_ip": "152.57.97.68",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "My Profile Screen",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2247,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604291245"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "My Profile Page",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 10.52644239723569,
+        "coordinate_latitude": 12.93189898740091,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.59806479004415,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IOS",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 67226350,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260429124420",
+        "glb_state": "-",
+        "remote_ip": "152.57.97.68",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "My-Product-Listing",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2391,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604291245"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "My-Product-Listing",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 10.52644239723569,
+        "coordinate_latitude": 12.93189898740091,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.59806479004415,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IOS",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 67226350,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260429124420",
+        "glb_state": "-",
+        "remote_ip": "152.57.97.68",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Buyer Message Centre Conversation Listing",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2261,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604291245"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Message Center Contact Listing",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 10.52644239723569,
+        "coordinate_latitude": 12.93189898740091,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.59806479004415,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IOS",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 67226350,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260429124420",
+        "glb_state": "-",
+        "remote_ip": "152.57.97.68",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Sell-on-Indiamart",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2385,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604291245"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "SOI Click on Sell-on-Indiamart",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 10.52644239723569,
+        "coordinate_latitude": 12.93189898740091,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.59806479004415,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IOS",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 67226350,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260429124420",
+        "glb_state": "-",
+        "remote_ip": "152.57.97.68",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Default-Seller",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2409,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604291244"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Default",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 10.52644239723569,
+        "coordinate_latitude": 12.93189898740091,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.59806479004415,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IOS",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 67226350,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260429124421",
+        "glb_state": "-",
+        "remote_ip": "49.36.223.59",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Default-Seller",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2409,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604291244"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Default",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 19.383,
+        "coordinate_latitude": 28.496517,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.40233,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IOS",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 67226350,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260430162635",
+        "glb_state": "-",
+        "remote_ip": "152.57.117.65",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "My Profile Screen",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2247,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604301627"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "My Profile Page",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 10.52644239723569,
+        "coordinate_latitude": 12.93189898740091,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.59806479004415,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IOS",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 67226350,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260430162636",
+        "glb_state": "-",
+        "remote_ip": "152.57.117.65",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Buyer Message Centre Conversation Listing",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2261,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604301627"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Message Center Contact Listing",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 10.52644239723569,
+        "coordinate_latitude": 12.93189898740091,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.59806479004415,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IOS",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 67226350,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260430162636",
+        "glb_state": "-",
+        "remote_ip": "152.57.117.65",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Default-Seller",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2409,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604301626"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Default",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 10.52644239723569,
+        "coordinate_latitude": 12.93189898740091,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.59806479004415,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IOS",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 67226350,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260430162637",
+        "glb_state": "-",
+        "remote_ip": "152.57.117.65",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Sell-on-Indiamart",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2385,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604301627"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "SOI Click on Sell-on-Indiamart",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 10.52644239723569,
+        "coordinate_latitude": 12.93189898740091,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.59806479004415,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IOS",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 67226350,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260430162637",
+        "glb_state": "-",
+        "remote_ip": "152.57.117.65",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "My-Product-Listing",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2391,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604301626"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "My-Product-Listing",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 10.52644239723569,
+        "coordinate_latitude": 12.93189898740091,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.59806479004415,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IOS",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 67226350,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260430162637",
+        "glb_state": "-",
+        "remote_ip": "152.57.117.65",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "My Profile Screen",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2247,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604301626"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "My Profile Page",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 10.52644239723569,
+        "coordinate_latitude": 12.93189898740091,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.59806479004415,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IOS",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 67226350,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260430162637",
+        "glb_state": "-",
+        "remote_ip": "49.36.223.59",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Default-Seller",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2409,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604301626"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Default",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 19.383,
+        "coordinate_latitude": 28.496517,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.40233,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "IOS",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 67226350,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260430162639",
+        "glb_state": "-",
+        "remote_ip": "49.36.223.59",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "Default-Seller",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2409,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202604301626"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "Default",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 19.383,
+        "coordinate_latitude": 28.496517,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 77.40233,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 67226350,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260501172746",
+        "glb_state": "-",
+        "remote_ip": "152.57.8.37",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "User Verification Blocker Screen",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2186,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605011728"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "User Verification",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 100,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      },
+      {
+        "empid": 0,
+        "modid": "ANDROID",
+        "cat_id": 0,
+        "adminln": "-",
+        "keyword": "-",
+        "referer": "-",
+        "glb_city": "-",
+        "glusr_id": 67226350,
+        "mcat_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "datevalue": "20260501172748",
+        "glb_state": "-",
+        "remote_ip": "152.57.8.37",
+        "gl_country": "IN",
+        "mcat_names": null,
+        "url_weight": 1,
+        "user_agent": "-",
+        "domain_name": "-",
+        "http_status": 0,
+        "request_url": "User Verification Blocker Screen",
+        "server_name": 0,
+        "glb_latitude": 0,
+        "glb_longitude": 0,
+        "response_size": 0,
+        "response_time": 0,
+        "fk_activity_id": 2186,
+        "ga_utma_cookie": "-",
+        "insertion_time": {
+          "type": {
+            "name": "bigint"
+          },
+          "value": "202605011728"
+        },
+        "seller_city_id": 0,
+        "fk_glcat_grp_id": 0,
+        "log_status_flag": 40,
+        "product_disp_id": null,
+        "fk_display_title": "User Verification",
+        "owner_gl_country": "-",
+        "v4iilex_glusr_id": 0,
+        "gl_custtype_weight": 199,
+        "coordinate_accuracy": 14.508,
+        "coordinate_latitude": 0,
+        "v4iilex_glusr_email": "-",
+        "coordinate_longitude": 0,
+        "imeshvisitor_glusr_id": 0,
+        "catalog_owner_glusr_id": 0,
+        "location_pref_city_ids": {
+          "type": {
+            "valueType": {
+              "name": "int"
+            }
+          },
+          "values": [
+            0
+          ]
+        },
+        "glusr_usr_listing_status": "LST",
+        "imeshvisitor_glusr_email": "-",
+        "location_pref_city_names": "[-]",
+        "owner_gl_custtype_weight": 0,
+        "owner_glusr_usr_listing_status": "-"
+      }
+    ],
+    "updated_at": "2026-05-16T07:18:22.102398Z"
+  },
+  "error": null
+}
