@@ -66,6 +66,7 @@ class PipelineRunner:
             "glid":    glid,
             "run_at":  datetime.now().isoformat(),
             "context": snap["context"],
+            "behavioral": snap.get("behavioral", {}),
             "phases":  {},
         }
 

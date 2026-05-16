@@ -15,19 +15,19 @@ action in outreach.
   `structural_category` patterns — it does not depend on whether the RM
   has written a call summary.
 - `context.customer_vintage_months` and `derived.tenure_bucket`.
-- BLNI reason-code breakdown in `behavioral.prediction.bl.blni_breakdown`
+- BLNI reason-code breakdown in `behavioral.bl.blni_breakdown`
   (`location`, `specification`, `wrong_product`, `other`, `total`). If absent,
   fall back to reason-code keys inside weekly/monthly activity.
-- Product list in `behavioral.prediction.activity.product_catalog`, if present.
+- Product list in `behavioral.activity.product_catalog`, if present.
 - Category-level product summary in
-  `behavioral.prediction.activity.category_product_summary`, if present.
+  `behavioral.activity.category_product_summary`, if present.
 - Bottom-quality examples in
-  `behavioral.prediction.activity.bottom_quality_products`, if present.
-- `behavioral.prediction.lms.last_call_summary`: free-text RM note from the
+  `behavioral.activity.bottom_quality_products`, if present.
+- `behavioral.lms.last_call_summary`: free-text RM note from the
   most recent successful call with the seller, when present. Often names the
   cause directly (complaints, category fit, RM-flagged issues, competitor
   mentions) and is the highest-signal qualitative input you have.
-- `behavioral.prediction.lms.last_succ_call_dt`: date of that call, for
+- `behavioral.lms.last_succ_call_dt`: date of that call, for
   recency context. A summary older than ~4 months may be stale.
 - The carry-forwards from the decline-analysis and engagement-health stages
   (`decline_severity`, `engagement_verdict`).

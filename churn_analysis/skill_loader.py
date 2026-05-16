@@ -211,10 +211,18 @@ def _nested_get(d: Any, path: str) -> Any:
 
 
 def compute_derived(snap: dict) -> dict:
-    """Compute derived values that don't exist directly in the snapshot."""
+    """Compute derived values that don't exist directly in the snapshot.
+
+    Includes both Python-skill inputs (bl_velocity_pct, pns_success_pct,
+    monthly_enq, snapshots_exist) and LLM-playbook inputs
+    (recent_vs_baseline_activity, bl_consumption_rate, bl_reply_rate,
+    pns_pickup_ratio, cqs_band, blni_volume, tenure_bucket,
+    customer_vintage_months).
+    """
     bl  = snap.get("behavioral", {}).get("bl", {})
     lms = snap.get("behavioral", {}).get("lms", {})
     act = snap.get("behavioral", {}).get("activity", {})
+    ctx = snap.get("context", {})
 
     trend = act.get("monthly_trend", [])
     bl_vel = None
@@ -228,8 +236,53 @@ def compute_derived(snap: dict) -> dict:
     pns_a = lms.get("call_answered_90d", 0) or 0
     pns_pct = round(pns_a / pns_r * 100, 1) if pns_r > 0 else None
 
-    # monthly_enq list for ConversionPointSkill
     monthly_enq = [m.get("total_enq", 0) or 0 for m in trend]
+
+    # LLM-playbook fields ───────────────────────────────────────────────────
+    # recent_vs_baseline_activity = last 2mo enq avg / prior 6mo avg
+    recent_vs_baseline_activity = None
+    if len(monthly_enq) >= 8:
+        recent = sum(monthly_enq[-2:]) / 2.0
+        baseline = sum(monthly_enq[-8:-2]) / 6.0
+        if baseline > 0:
+            recent_vs_baseline_activity = round(recent / baseline, 3)
+
+    # bl_consumption_rate = consumed_30d / received_30d
+    bl_received_30d = bl.get("received_30d", 0) or 0
+    bl_consumed_30d = bl.get("consumed_30d", 0) or 0
+    bl_consumption_rate = round(bl_consumed_30d / bl_received_30d, 3) if bl_received_30d > 0 else None
+
+    # bl_reply_rate = replied / received (replied_30d preferred, falls back to replied_90d)
+    bl_replied = bl.get("replied_30d", bl.get("replied_90d", 0)) or 0
+    bl_received_window = bl_received_30d if bl_received_30d > 0 else (bl.get("received_90d", 0) or 0)
+    bl_reply_rate = round(bl_replied / bl_received_window, 3) if bl_received_window > 0 else None
+
+    # pns_pickup_ratio = call_pickup_ratio_90d (already computed) as float 0-1
+    pns_pickup_ratio_raw = lms.get("call_pickup_ratio_90d")
+    pns_pickup_ratio = None
+    if pns_pickup_ratio_raw is not None:
+        pns_pickup_ratio = round(float(pns_pickup_ratio_raw), 3)
+
+    # cqs_band — band the CQS value
+    cqs = act.get("cqs")
+    cqs_band = None
+    if cqs is not None:
+        if cqs >= 80:   cqs_band = "high"
+        elif cqs >= 60: cqs_band = "medium"
+        elif cqs >= 40: cqs_band = "low"
+        else:           cqs_band = "very_low"
+
+    # blni_volume = blni_count_1yr
+    blni_volume = bl.get("blni_count_1yr")
+
+    # tenure_bucket from account_age_days
+    age_days = ctx.get("account_age_days") or 0
+    if   age_days < 90:    tenure_bucket = "newbie"
+    elif age_days < 365:   tenure_bucket = "early"
+    else:                  tenure_bucket = "mature"
+
+    # customer_vintage_months
+    customer_vintage_months = round(age_days / 30.0, 1) if age_days else 0.0
 
     _snaps_path = os.path.join(
         os.path.dirname(__file__), "..", "seller_survival", "data", "snapshots.parquet"
@@ -240,4 +293,13 @@ def compute_derived(snap: dict) -> dict:
         "pns_success_pct":  pns_pct,
         "monthly_enq":      monthly_enq,
         "snapshots_exist":  os.path.isfile(_snaps_path),
+        # LLM-playbook fields
+        "recent_vs_baseline_activity": recent_vs_baseline_activity,
+        "bl_consumption_rate":         bl_consumption_rate,
+        "bl_reply_rate":               bl_reply_rate,
+        "pns_pickup_ratio":            pns_pickup_ratio,
+        "cqs_band":                    cqs_band,
+        "blni_volume":                 blni_volume,
+        "tenure_bucket":               tenure_bucket,
+        "customer_vintage_months":     customer_vintage_months,
     }

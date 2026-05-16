@@ -10,10 +10,10 @@ in v1; RM-side reciprocity is out of scope.
   re-read here
 - `derived.cqs_band` - catalog quality band (high / medium / low / very_low)
 - `derived.blni_volume` - raw count of BLNI markings in the last year
-- BLNI breakdown inside `behavioral.prediction.activity.weekly_activity`
+- BLNI breakdown inside `behavioral.activity.weekly_activity`
   and `monthly_activity` (`blni_loc`, `blni_spec`, `blni_wrng_product`)
-- `behavioral.prediction.lms.meeting_comments_dated` and
-  `behavioral.prediction.lms.call_transcripts_text` if present, for
+- `behavioral.lms.meeting_comments_dated` and
+  `behavioral.lms.call_transcripts_text` if present, for
   qualitative call context
 
 ## How to read
